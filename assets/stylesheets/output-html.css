@@ -65,7 +65,6 @@ span.vin {
   width: 2em; }
 
 .titlepage-cover {
-  text-align: center;
   margin-top: 2em; }
   .titlepage-cover h1 {
     text-align: center;
@@ -74,8 +73,7 @@ span.vin {
     font-weight: normal;
     text-align: center; }
   .titlepage-cover img {
-    width: 300px;
-    margin: 0 auto; }
+    width: 300px; }
 
 .download-item {
   margin-top: 1em; }
@@ -83,6 +81,79 @@ span.vin {
     margin-top: 0.5em; }
   .download-item .item-cover img {
     width: 170px; }
+
+.opening-illustration {
+  float: right;
+  margin: 10px 0px 10px 10px;
+  width: 50%; }
+
+.opening-page {
+  text-align: center; }
+  .opening-page img {
+    margin: 0 auto; }
+
+.illustration {
+  margin: 10px auto;
+  width: 60%; }
+  .illustration .caption {
+    text-align: center; }
+
+.sutta > blockquote {
+  border-left: 2px solid #8c8c8c;
+  padding-left: 1em; }
+
+span.caption {
+  font-style: italic;
+  text-align: centering; }
+
+.note {
+  clear: both;
+  padding: 10px;
+  border-top: 2px solid #8c8c8c; }
+  .note span.caption {
+    padding: 0px 20px;
+    font-style: normal; }
+
+.list-none ul, .list-none ol {
+  list-style-type: none; }
+  .list-none ul li > p > strong:first-child, .list-none ol li > p > strong:first-child {
+    font-weight: normal;
+    margin-left: -1.3em; }
+  .list-none ul li > strong:first-child, .list-none ol li > strong:first-child {
+    font-weight: normal;
+    margin-left: -1.3em; }
+
+.list-upper-alpha ol {
+  list-style-type: upper-alpha; }
+
+.list-decimal ol {
+  list-style-type: decimal; }
+
+ol {
+  list-style-type: decimal; }
+  ol ol {
+    list-style-type: upper-alpha; }
+    ol ol ol {
+      list-style-type: lower-alpha; }
+
+.figure {
+  margin: 1em 2em; }
+  .figure img {
+    display: block;
+    object-fit: scale-down;
+    width: auto;
+    max-width: 100%; }
+
+html.light .note {
+  background-color: #eee; }
+
+html.rust .note {
+  background-color: #c8c8c8; }
+
+html.coal .note,
+html.navy .note,
+html.ayu .note {
+  background-color: #000; }
 
 body {
   font-size: 1.6rem;

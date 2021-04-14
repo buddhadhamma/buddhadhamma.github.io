@@ -1,0 +1,809 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - Buddhadhamma</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="assets/stylesheets/output-html.css">
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html" class="active">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="supreme-peace-nibbana.html">Ch. 6. Supreme Peace: Nibbāna</a></li><li class="chapter-item "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li><li class="chapter-item "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Buddhadhamma</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+<div class="opening-illustration">
+<p><img src="./includes/images/illustrations/introduction-buddha-trade.jpg" alt="image" /></p>
+<p><img src="./includes/images/illustrations/bodhi-leaf-lineart-trade.jpg" alt="image" /></p>
+</div>
+<p>People today frequently pose the question whether Buddhism is a
+religion, a philosophy, or simply a way of life. This query gives rise
+to all sorts of debates and opinions, which often just create confusion.</p>
+<p>Although this book <em>Buddhadhamma</em> is written as a form of philosophical
+treatise, I will not engage in the aforementioned debate.<sup class="footnote-reference"><a href="#fn1">1</a></sup> My focus
+will simply be on what is stated in the Buddha’s teachings – on the
+gist of these teachings. As for the question whether Buddhism is a
+philosophy or not, it is up to various philosophical systems themselves
+to determine whether Buddhism fits their criteria. Buddhism remains what
+it is; it is unaffected by these judgements and interpretations. The
+only specification I wish to make here is that any teaching or doctrine
+on truth that is only intended as an intellectual exercise of logic or
+reason, and contains no corresponding elements for practical application
+in everyday life, is not Buddhism, especially the original and genuine
+teachings given by the Buddha himself, which are referred to as
+Buddha-Dhamma.</p>
+<p>It is a difficult task to compile the Buddha’s teachings, especially on
+the premise that one is presenting the true or genuine teachings, even
+if one cites passages from the Pali Canon which are considered the words
+of the Buddha. This is because these teachings are copious and contain
+various dimensions or levels of profundity, and also because imparting
+them accurately depends on the intelligence and sincerity of the person
+presenting them. It may happen that two people with divergent opinions
+are both able to quote passages from the sacred texts supporting their
+own points of view. To determine the truth is dependent on how
+accurately one grasps the essence of these teachings, and on how
+consistent the link is between one’s theories and the evidence one uses
+to support them. In many cases the supporting evidence is not
+comprehensive enough, and thus it is inevitable that the presentation of
+Buddha-Dhamma often reflects the opinions and understanding of the
+person interpreting it.</p>
+<p>To clarify one’s analysis of the teachings, it is helpful to examine the
+life and conduct of the Buddha, the supreme teacher, who is the origin
+and source of these teachings. {2} Although one may argue that the
+stories of the Buddha’s activities come from the same sources as the
+formal teachings, nonetheless they are very useful for reflection.
+Occasionally, the Buddha’s actions reflect his aims and wishes more
+clearly than the formal teachings in the scriptures.</p>
+<p>From the evidence in the scriptures and from other historical sources,
+one can draw a rough sketch of the events and the social environment at
+the time of the Buddha as follows:</p>
+<p>The Buddha was born in the Indian subcontinent about 2,600 years ago. He
+was born among the warrior caste (<em>kṣatriyaḥ</em>/<em>katthiya</em>), and named
+Prince Siddhattha. He was the son of King Suddhodana, the ruler of the
+Sakyan country, which lay at the northeast of the Indian subcontinent,
+adjoining the Himalayan mountain range. As a prince, and in accord with
+the wishes of the royal family, he was fully provided with worldly
+pleasures, which he enjoyed for twenty-nine years, during which time he
+was married and had a son.</p>
+<p>At this time, absolute monarchies were in the ascendency and were trying
+to expand their empires by waging war. Many other states, especially the
+republics, who ruled by a general assembly based on unanimous decisions,
+were gradually losing their power. Some of these states were conquered
+and incorporated into larger states, while others that remained strong
+were under duress, aware that war could break out at any time. And the
+large, powerful nations were often at war with one another.</p>
+<p>Trade and commerce were burgeoning, giving rise to a new group of highly
+influential wealthy merchants (<em>seṭṭhi</em>), whose prestige and authority
+began to extend even to the royal courts.</p>
+<p>According to the teachings of Brahmanism, people were divided into four
+social classes or castes (<em>vaṇṇa</em>). People’s privileges and social
+standing, as well as their occupations, were determined by their caste.
+Although Hindu historians claim that the caste system at that time was
+not yet very strict, members of the class of manual workers
+(<em>śūdra</em>/<em>sudda</em>) were not entitled to listen to or to recite passages
+of the Vedas, the sacred texts of the brahmans. These restrictions
+became increasingly rigid and severe; śūdra who defied these injunctions
+and studied the Vedas were penalized with capital punishment. Moreover,
+outcastes (<em>caṇḍāla</em>) were not entitled to any form of formal education.
+The sole factor for determining one’s caste was birth, and the members
+of the brahman class claimed to be superior to all others.</p>
+<p>The brahmans safeguarded and upheld the traditions of Brahmanism. They
+developed ever greater arcane and mysterious teachings and rituals,
+which became increasingly irrational. Rituals were observed not simply
+for religious purposes, but also as a way for powerful rulers to
+demonstrate their importance. And the priests who conducted these
+rituals gained personal advantage and riches.</p>
+<p>These ceremonies and rituals increased selfishness in those people
+seeking wealth and pleasure. At the same time, they caused distress for
+members of the downtrodden lower classes – the slaves, servants, and
+labourers – and they caused agony to those countless animals
+slaughtered as a sacrifice.<sup class="footnote-reference"><a href="#fn2">2</a></sup> {3}</p>
+<p>During the same period, one group of brahmans doubted whether these
+religious rituals actually lead to eternal life, and they began to
+devote themselves to the contemplation of immortality and the path to
+its realization. In their search for truth, many of them separated
+themselves from society and resorted to the forests in seclusion. Such
+renunciants, who renounced the household life and went forth in search
+of the true meaning of life, were collectively referred to as <em>samaṇa</em>.</p>
+<p>The brahmanical teachings during this time – the era of the Upanishads
+– was full of contradictions. Some religious factions affirmed the
+effectiveness of the established rituals, while other factions denounced
+these very same rituals. There were conflicting views on the subject of
+immortality and the soul (<em>ātman</em>). Some brahmans claimed that the
+<em>ātman</em> is equivalent to <em>brahman</em> (Brahmā/Brahma; the godhead; the
+divine essence); they claimed that Brahma generates and permeates all
+things, and is ineffable, as is expressed in the phrase, <em>neti neti</em>
+(’not this, not that’). They believed that the <em>ātman</em>/<em>brahman</em> unity
+is the supreme goal of spiritual practice. They engaged in religious
+debates on this subject, while at the same time jealously guarding
+knowledge on this matter within their own circles.</p>
+<p>Meanwhile, another group of renunciants were disenchanted with the
+seeming meaninglessness of life, and practised in the hope of attaining
+exceptional states of mind or of reaching the deathless state. Some of
+them engaged in extreme forms of self-mortification, by fasting and
+undertaking strange and unusual ascetic practices, which ordinary people
+would not believe were possible. Others developed the concentrative
+absorptions (<em>jhāna</em>), reaching the fine-material attainments
+(<em>rūpa-samāpatti</em>) and the formless attainments (<em>arūpa-samāpatti</em>),
+while some became so proficient in the jhānas that they were able to
+perform marvels of psychic powers.</p>
+<p>Included among the groups of renunciants were those who wandered from
+village to village, establishing themselves as teachers and expounding
+their various religious views by engaging in religious debate and
+dialectic.</p>
+<p>The search for meaning and the propagation of various beliefs and
+teachings proceeded in an intense and energetic manner, leading to
+numerous ideologies and doctrines.<sup class="footnote-reference"><a href="#fn3">3</a></sup> As is mentioned in the
+scriptures, there were six major established doctrines at the time of
+the Buddha.<sup class="footnote-reference"><a href="#fn4">4</a></sup></p>
+<p>To sum up, one group of people was growing in wealth and power,
+revelling in sensual pleasures and seeking increased riches. At the same
+time, many other people were neglected, and their social standing and
+quality of living was declining. Another group of people was separating
+itself from society, bent on discovering philosophical truths, but they
+too did not take much interest in the conditions of society.</p>
+<p>Prince Siddhattha enjoyed worldly pleasures for twenty-nine years. Not
+only did his family provide him with such pleasures, they also prevented
+him from seeing firsthand the lives of the ordinary folk, which were
+full of suffering. This suffering, however, could not be concealed from
+him forever. The problems and afflictions of human beings – most
+notably aging, sickness, and death – preoccupied the prince and caused
+him to seek a solution. {4}</p>
+<p>When the prince reflected on these social problems, he saw a group of
+privileged people who pursued their own personal comforts, competing
+with one another and indulging in pleasure, without any care or concern
+for the suffering of others. They were enslaved by material things. In
+times of happiness, they were engrossed in their own selfish pursuits;
+in times of affliction, they were obsessed with their own distress and
+despair. In the end, they grew old and sick, and died in vain. Another
+group of people, the disadvantaged, had no opportunity to prosper and
+were desperately abused and oppressed. They too aged, grew ill, and died
+in a seemingly meaningless way.</p>
+<p>Seeing his pleasures and delights as pointless, the prince became
+disillusioned with his own life. Although at first his search was
+unsuccessful, he began to look for a solution, for a way to discover
+lasting and meaningful happiness. His life full of temptations and
+distractions was not conducive to his reflections. In the end he
+recognized that the renunciant life is uncomplicated, free from worry,
+and conducive to spiritual knowledge. He considered that this way of
+life would probably help him solve these universal human problems, and
+he may very well encounter renunciants who could teach him valuable
+lessons.</p>
+<p>This line of thinking prompted the prince to relinquish the princely
+life and go forth as a renunciant. He wandered around studying with
+various teachers, learning the methods of spiritual endeavour (<em>yoga</em>)
+and developing meditation, until he reached the concentrative
+attainments (<em>jhāna-samāpatti</em>) – including the highest formless
+attainments (<em>arūpa-samāpatti</em>) – and became proficient at psychic
+powers (<em>iddhi-pāṭihāriya</em>). Eventually, he practised extreme
+austerities.</p>
+<p>In the end he came to the conclusion that none of the methods belonging
+to these other renunciants were able to solve his conundrum. When he
+compared his present life to his earlier life in the palace, he realized
+that both were expressions of extremes. He decided to follow his own
+reflections and investigations, until he finally reached complete
+awakening.<sup class="footnote-reference"><a href="#fn5">5</a></sup> Later, when he proclaimed to others the truth, the
+Dhamma,<sup class="footnote-reference"><a href="#fn6">6</a></sup> that he had discovered, he referred to it as the middle
+truth (<em>majjhena-dhamma</em>) or the middle teaching
+(<em>majjhena-dhammadesanā</em>), and he referred to the system of practice
+that he laid down for others as the middle way (<em>majjhimā-paṭipadā</em>; the
+‘middle path of practice’).</p>
+<p>The Buddhist perspective is that both a life of greed and indulgence –
+abandoning oneself to the stream of mental defilements – and a life of
+complete retreat from the world – giving up all involvement in and
+responsibility for society, and afflicting oneself with hardship – are
+incorrect and extreme forms of practice. Neither of these can lead
+people to a truly meaningful way of life.</p>
+<p>After his awakening the Buddha returned to the wider society and began
+to teach the Dhamma in an earnest and devoted manner for the wellbeing
+of the manyfolk. He devoted himself to this task for the remaining
+forty-five years of his life.</p>
+<p>The Buddha realized that sharing the teachings and helping others would
+be most effective through the renunciant form. He thus encouraged many
+members of the upper classes to renounce their wealth, go forth into the
+renunciant life, and realize the Dhamma. These individuals then
+participated in the work of self-sacrifice, devoting themselves to
+benefiting others, by wandering around the country and meeting with
+people of all social classes. {5}</p>
+<p>The monastic community itself is an important medium for solving social
+problems. For example, every person, regardless of which caste or social
+class he or she comes from – even from the class of outcastes – has
+the same rights and privileges to be ordained, to train, and to reach
+the highest goal.</p>
+<p>Merchants and householders, who are not yet prepared to fully renounce
+their possessions, may live as male and female lay disciples, supporting
+the monastic sangha’s activities and duties, and assisting other people
+by sharing their wealth.</p>
+<p>The true objective and extent of activities by the Buddha and his
+disciples is summed up by the Buddha’s injunction, which he gave when he
+sent out the first generation of disciples to proclaim the teachings:</p>
+<div class="sutta">
+<blockquote>
+<p>Bhikkhus, wander forth for the welfare and happiness of the manyfolk,
+out of compassion for the world, for the benefit, welfare and
+happiness of gods and humans.</p>
+<p><em>Vin. I. 20-21.</em></p>
+</blockquote>
+</div>
+<p>The Pāsādika Sutta offers a summary of how the Buddhist teachings are
+connected to society and how they benefit various groups of people:</p>
+<p>The ‘holy life’ (<em>brahmacariya</em> = the Buddhist religion) is only
+considered to have reached fulfilment, to be of benefit to the manyfolk,
+and to be firmly established – what is referred to as ‘well-declared by
+devas<sup class="footnote-reference"><a href="#fn7">7</a></sup> and human beings’ – when the following factors are complete:</p>
+<ol>
+<li>
+<p>The Teacher (<em>satthā</em>) is distinguished, experienced, mature, and
+advanced in seniority.</p>
+</li>
+<li>
+<p>There are bhikkhu elder disciples with expert knowledge, who are
+well-trained and fearless, who have realized the unsurpassed safety
+from bondage, who are able to teach the Dhamma to others
+effectively, and who successfully refute (opposing) doctrines
+correctly and in line with the Dhamma. Moreover, there are bhikkhus
+of middle-standing and newly ordained monks who have the same
+abilities.</p>
+</li>
+<li>
+<p>There are bhikkhuni<sup class="footnote-reference"><a href="#fn8">8</a></sup> disciples – nuns who are senior, of
+middle-standing, and newly ordained – who have the same abilities.</p>
+</li>
+<li>
+<p>There are male lay disciples, both those who live a celibate life
+and those who live at home and enjoy the pleasures of the senses,
+who have the same abilities.</p>
+</li>
+<li>
+<p>There are female lay disciples, both those who live a celibate life
+and those who live at home and enjoy the pleasures of the senses,
+who have the same abilities.</p>
+</li>
+</ol>
+<p>Even lacking female householders with such virtuous qualities means that
+Buddhism is not yet prospering and complete.<sup class="footnote-reference"><a href="#fn9">9</a></sup></p>
+<p>This sutta reveals how the Buddhist teachings are intended for everyone,
+both renunciants and householders. Buddhism embraces all of society. {6}</p>
+<h2><a class="header" href="#primary-attributes-of-buddha-dhamma" id="primary-attributes-of-buddha-dhamma">Primary Attributes of Buddha-Dhamma</a></h2>
+<p>The two main attributes of Buddha-Dhamma may be summarized as follows:</p>
+<ol>
+<li>
+<p>It reveals ‘middle’ (i.e. ‘objective’) principles of truth, and is
+thus referred to as the middle truth (<em>majjhena-dhamma</em>) or the
+middle teaching (<em>majjhena-dhammadesanā</em>). It reflects the truth in
+strict line with cause and effect and according to laws of nature.
+It has been revealed solely for the benefit of practical application
+in real life. It does not promote an attempt to realize the truth by
+creating various theories and dogmas based on philosophical
+conjecture and inference, which are consequently adhered to, debated
+and defended.</p>
+</li>
+<li>
+<p>It lays down a system of practice referred to as the ‘middle way’
+(<em>majjhimā-paṭipadā</em>), which acts as a guideline for those
+undergoing spiritual training. These practitioners gain a clear
+insight into their lives, steer away from credulity, and aim for
+those fruits of practice accessible in this lifetime, namely:
+happiness, purity, enlightenment, peace, and liberation. In
+practical application the Middle Way is connected to other factors,
+such as one’s life as a renunciant or life as a householder.</p>
+</li>
+</ol>
+<p>Buddhism is a religion of action (<em>kamma-vāda</em>; <em>kiriya-vāda</em>), a
+religion of effort (<em>viriya-vāda</em>).<sup class="footnote-reference"><a href="#fn10">10</a></sup> It is not a religion of
+supplication nor is it a religion based on hope.</p>
+<p>The practical benefits of the teachings are available to everyone no
+matter what his or her situation, beginning with the present moment.
+Regardless of a person’s station in or condition of life, everyone can
+access and utilize these teachings as is suitable to his or her
+circumstances, both in terms of understanding the Middle Truth and of
+walking the Middle Way. If one is still anxious or concerned about life
+after this world, one is encouraged to devote oneself through proper
+conduct to generating the desired favourable conditions now, until one
+gains confidence and dispels all worries and fears about the future
+life.<sup class="footnote-reference"><a href="#fn11">11</a></sup></p>
+<p>Every person is equally eligible according to nature to reach the fruits
+of spiritual practice. Although people’s spiritual abilities differ,
+everyone should have equal opportunity to develop these wholesome
+results of practice according to his or her ability. Although each one
+of us must generate these results through individual effort – by
+reflecting on one’s full responsibility in these matters – we are all
+important agents for assisting the spiritual practice of others. For
+this reason, the Buddha stressed the two chief principles of heedfulness
+(<em>appamāda</em>) and virtuous friendship (<em>kalyāṇa-mittatā</em>). On the one
+hand, one takes full responsibility for one’s own life, and on the other
+hand one recognizes the supreme value of wholesome external influences.</p>
+<p>The Buddha focused on several major tasks. One of these was his attempt
+to eliminate naive and superstitious beliefs around misguided religious
+ceremonies, in particular the practice of animal sacrifice (not to
+mention human sacrifice), by pointing out their harmful effects and
+overall fruitlessness. {7}</p>
+<p>There were several reasons why the Buddha gave so much emphasis to
+abandoning the practice of sacrifices. First, these practices caused
+people to seek help from divine intervention. Second, they caused great
+hardship and affliction for other people and living creatures. Third,
+they increased selfishness and craving for material rewards. Fourth,
+they brought about a preoccupation with the future, rather than a wish
+to improve the present state of affairs. To counteract these detrimental
+practices, the Buddha emphasized generosity and service to society.</p>
+<p>The second thing that the Buddha tried to abolish was the caste system,
+which used people’s birth as a way to restrict their privileges and
+opportunities, both in society and in regard to spiritual development.
+He established the monastic community, which welcomes people from all
+social classes into a system of equality, just as the ocean receives all
+rivers, as one unified and whole body of water.<sup class="footnote-reference"><a href="#fn12">12</a></sup> This then led to
+the institution of monasteries, which later became vital centres of
+education and the spreading of culture, to the point that Hinduism
+followed suit and created their own monastic institutions about
+1,400-1,700 years after the Buddha.<sup class="footnote-reference"><a href="#fn13">13</a></sup></p>
+<p>According to the principles of Buddha-Dhamma, both women and men are
+equally able to realize the highest goal of Buddhism. Not long after the
+Buddha had established the bhikkhu sangha, he also established the
+bhikkhuni sangha, despite social conditions being unfavourable to a
+female monastic order. The Buddha was fully aware of how difficult it
+would be to create a suitable form for women to live the renunciant
+life. He exercised great care in its establishment at a time when
+extreme restrictions around spiritual practice were placed on women by
+the religions of the Vedic period, to the extent that one may say the
+door had been closed to them.</p>
+<p>The Buddha taught the Dhamma using vernacular language – the language
+used by the common people – so that everyone, regardless of his or her
+station in life or level of education, would be able to benefit. This
+was in contrast to Brahmanism, which insisted on the sacredness of the
+Vedic texts and used various means to reserve higher religious knowledge
+within a narrow, elite group. Specifically, the brahmans used the
+Sanskrit language, the knowledge of which was confined to their own
+group, to transmit and guard the texts. Later, some individuals asked
+the Buddha for permission to preserve and transmit the Buddhist
+teachings in the Vedic language, but he rejected this proposal and had
+the monks continue to use the language of the common people.<sup class="footnote-reference"><a href="#fn14">14</a></sup></p>
+<p>Furthermore, the Buddha absolutely refused to waste time debating on
+matters of truth through philosophical speculation – on matters which
+cannot be empirically proven by way of rational discussion. If people
+came to him with such questions, the Buddha would remain silent. He
+would then lead the person back to everyday, practical matters.<sup class="footnote-reference"><a href="#fn15">15</a></sup>
+Those things to be understood by way of speech he would share with
+others by speaking; those things to be understood by way of sight he
+would reveal to others to see. He would use the most direct and
+appropriate method according to the circumstances.</p>
+<p>The Buddha used many different methods when teaching the Dhamma, so that
+everyone may benefit. His teachings contain many layers: those aimed for
+householders and members of mainstream society, and those aimed for
+individuals who have relinquished the household life. There are
+teachings focusing on material benefits and others focusing on deeper,
+spiritual benefits. {8}</p>
+<p>Because the Buddha taught within a brahmanic culture and was surrounded
+by various religious belief systems, he was required to engage with
+spiritual terms used by these other traditions. As the Buddha wished for
+his teachings to reach the greatest number of people within a short
+period of time, he applied a unique approach in regard to these terms.
+Rather than directly refuting or discrediting people’s beliefs
+associated with these terms, he questioned or challenged the true
+meanings of these terms. He did not use an aggressive approach; instead,
+he promoted a natural form of transformation through understanding and
+spiritual development.</p>
+<p>To accomplish this the Buddha used some of these already established
+spiritual terms and gave them new meanings in line with Buddha-Dhamma.
+For example, he defined the term <em>brahma</em>/<em>brahmā</em> (’Brahma,’ ‘divine,’
+‘sublime,’ ‘sacred’) as referring to one kind of celestial (yet mortal)
+being; in other contexts it was used in reference to parents. He altered
+the concept of worshipping the six cardinal directions into the notion
+of maintaining and honouring one’s social relationships. He changed the
+meaning of the sacred brahmanic fire worship, by the three kinds of
+sacrificial ceremonies, into fulfilling a responsibility vis-à-vis three
+kinds of individuals in society. And he transformed the factor
+determining a person as a brahman (<em>brāhmaṇa</em>; ‘one who is sacred,’ ‘one
+who has divine knowledge’) and as noble (<em>ariya</em>; ‘cultured,’
+‘civilized’) from a person’s birth into a person’s conduct and spiritual
+development.</p>
+<p>Occasionally, the Buddha encouraged his disciples to draw upon wholesome
+and beneficial aspects of other religious traditions. He acknowledged
+and approved of any teaching that is correct and connected to virtue,
+considering that such righteousness and virtue is a universal aspect of
+nature. In the case that specific principles of practice by these other
+traditions had varying interpretations, the Buddha explained which ones
+are correct and which ones are false. He sanctioned only the practice of
+what is correct and wholesome.</p>
+<p>The Buddha pointed out that faulty or harmful practices observed by
+other religious traditions were sometimes a result of a decline or
+degeneracy within these traditions themselves. The original teachings
+espoused by these traditions were sometimes virtuous and correct. He
+occasionally described these original wholesome teachings. Examples of
+this include his historical explanations on the notions of ‘religious
+austerity’ (<em>tapa</em>), the offering of sacrifices (<em>yañña</em>), the
+principles of leadership in regard to social assistance, and the duties
+of a brahman (<em>brāhmaṇa-dhamma</em>).<sup class="footnote-reference"><a href="#fn16">16</a></sup></p>
+<p>In the centuries following the Buddha’s death, after his teachings had
+spread to different areas, numerous disparities arose in people’s
+understanding of Buddha-Dhamma. This occurred for various reasons: those
+people who transmitted the teachings had different levels of training,
+understanding, and aptitude, and they interpreted the teachings in
+different ways; people began to mix in beliefs from other religious
+traditions; local cultures exerted an influence on people’s ideas and
+understanding; and some aspects of the teachings grew in prominence
+while other aspects fell into obscurity, due to the interest,
+predisposition, and skill of those individuals who safeguarded the
+teachings. These disparities resulted in the breaking off into various
+schools (<em>nikāya</em>), as is evident today in the division between
+Theravada Buddhism and Mahayana Buddhism, along with numerous other
+subsidiary schools and lineages. {9}</p>
+<p>Although the Theravada tradition is known for its precision and accuracy
+in preserving the original standards and teachings, it could not escape
+some changes and alterations. The authenticity and validity of some
+teachings, even those that are contained in the scriptures, are debated
+among members of the current generation, who often seek proof in order
+to either substantiate their own opinions or repudiate the views of
+others. Discrepancies are especially evident in the views and practices
+upheld by the general public. In some cases, these views and practices
+seem to stand in direct opposition to the original teachings, or they
+have almost developed into another religious ideology, perhaps even one
+refuted by the original teachings.</p>
+<p>Take for example the understanding in Thailand of the word <em>kamma</em>
+(Sanskrit: ‘karma’). Most Buddhists in Thailand when they encounter this
+word think of the past, in particular of deeds from past lives. They
+focus on the harmful effects in the present of bad deeds from past lives
+and on the negative results of previous evil actions. In most cases,
+their understanding is shaped by a collection of such thoughts. When
+compared to the true definitions of <em>kamma</em> in the scriptures, one can
+see how remote some of these ideas are from genuine Buddha-Dhamma.<sup class="footnote-reference"><a href="#fn17">17</a></sup></p>
+<p>In this book the author<sup class="footnote-reference"><a href="#fn18">18</a></sup> is attempting to present Buddha-Dhamma in a
+way that is as true and accurate as possible. Because it is considered
+superfluous to this task, these divergent views, definitions, and
+practices are not discussed.</p>
+<p>The source of the material for this book is the collection of Buddhist
+scriptures, which, unless otherwise specified, refers to the Tipiṭaka
+(Pali Canon). It is generally accepted that this text is the most
+accurate and complete compilation of the Buddha’s teachings. The author
+has selected those teachings in the Pali Canon which are deemed most
+authentic and accurate, by applying the principles of compatibility and
+coherence in respect to the overall body of Theravada scripture. As an
+added assurance in this undertaking, the author considers the Buddha’s
+conduct as a complement to the formal Dhamma teachings.</p>
+<p>Having selected these guidelines, the author is confident that he has
+accurately explained and presented the true essence of Buddha-Dhamma.</p>
+<p>On a fundamental level, however, the accuracy of this presentation
+depends on the extent of the author’s wisdom and intelligence, as well
+as any unacknowledged bias or prejudice. Let us simply conclude that
+this is one attempt to present the Buddha’s teachings in the most
+accurate way, based on specific methods of scholarship in which the
+author has the most confidence. {10}</p>
+<p>One may separate Buddha-Dhamma into two parts, as matters of truth
+(<em>sacca-dhamma</em>) and matters of conduct (<em>cariya-dhamma</em>): as theory and
+practice. The former is defined as those teachings pertaining to
+reality, to manifestations of truth, to nature, and to the laws and
+processes of nature. The latter is defined as those teachings pertaining
+to principles of practice or behaviour, to benefiting in a practical way
+from one’s knowledge of reality or one’s understanding of the laws of
+nature. <em>Sacca-dhamma</em> is equated with nature and natural truths;
+<em>cariya-dhamma</em> is equated with knowing how to act in response to such
+truths. Within this entire teaching, no significance is given to
+supernatural agents – to any alleged forces over and above nature –
+for example of a creator God.</p>
+<p>In order to do justice to the entire range and scope of Buddha-Dhamma as
+an integrated system, one should describe both of these aspects. That
+is, one should first reveal the theoretical teachings, followed by an
+analysis of how to apply these teachings in an effective and valuable
+way.</p>
+<p>For this reason, the chapters in this book, each of which deals with a
+specific aspect of truth, also contain guidelines on how to apply these
+truths in a practical way. For example, at the end of the second chapter
+dealing with different kinds of knowledge, there is a section on the
+practical meaning and benefit of such knowledge. Moreover, the main body
+of <em>Buddhadhamma</em> follows this format: the first main section pertains
+to specific laws of nature, and is titled ‘The Middle Teachings.’ The
+second main section pertains to a practical application of such laws in
+everyday life, and is titled ‘The Middle Way.’</p>
+<p>Although the presentation in this book may seem unorthodox, it
+corresponds to an original style of teaching. It begins with those
+aspects of life that are problematic, and it then traces back to the
+source of such problems. The analysis continues to a deeper inspection
+of the causes of suffering, the ultimate goal of spiritual practice, and
+the practical methods for solving problems and for realizing the goal.
+Indeed, the presentation is consistent with the Four Noble Truths.<sup class="footnote-reference"><a href="#fn19">19</a></sup></p>
+<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
+<p>When I began to write this book, I was invited to compile the
+Buddha’s teachings (Buddha-Dhamma) into chapters by following a
+philosophical approach.</p>
+</div>
+<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
+<p>See, e.g.: Vāseṭṭha Sutta (Sn. 115-16) and Brāhmaṇadhammika Sutta
+(Sn. 52-5).</p>
+</div>
+<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+<p>According to the evidence in the scriptures, the doctrines of the
+renunciants and brahmans can be divided into sixty-two different
+views or belief systems (D. I. 13-45).</p>
+</div>
+<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+<p>For a closer examination of the conditions in the Indian
+subcontinent at the time of the Buddha, see, e.g.: G. C. Pande,
+<em>Studies in the Origins of Buddhism</em> (India: University of
+Allahabad, 1957), pp. 310-368.</p>
+</div>
+<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+<p>For more on this period of the Buddha’s life, see, e.g. the
+Sagārava Sutta: M. II. 209-213. [Trans.: this sutta is also known
+as the Saṅgārava Sutta.]</p>
+</div>
+<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+<p>Trans: Sanskrit: <em>dharma</em>. The word <em>dhamma</em> has many definitions;
+some of the most common are: thing, phenomenon, quality, property,
+nature, natural law, truth, reality, virtue, righteousness, the
+teachings revealed by the Buddha, and mind object.</p>
+</div>
+<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
+<p>Trans: <em>deva</em> = god; divine being.</p>
+</div>
+<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
+<p>Trans: Pali: <em>bhikkhunī</em>. For the sake of simplicity, I use the
+spelling ‘bhikkhuni’ in this text.</p>
+</div>
+<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
+<p>See the Pāsādika Sutta: D. III. 122-5. Note how the term
+<em>brahmacariya</em> (’holy life’, ‘sublime life’) incorporates
+householders.</p>
+</div>
+<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
+<p>E.g.: A. I. 286-7.</p>
+</div>
+<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
+<p>E.g.: S. V. 386.</p>
+</div>
+<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
+<p>See, e.g.: A. IV. 202-203; D. III. 97-8.</p>
+</div>
+<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
+<p>See, e.g.: B. V. Bapat, <em>2500 Years of Buddhism</em>, (1959), p. 335,
+and: S. Dutt, <em>Buddhist Monks and Monasteries of India</em>, (1962), p.
+210.</p>
+</div>
+<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
+<p>See: Vin. II. 139.</p>
+</div>
+<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
+<p>See, e.g.: A. V. 193-8; M. I. 426-32.</p>
+</div>
+<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
+<p>See: A. IV. 41; A. V. 190-91; Sn. 51-53; see also the following
+subject material.</p>
+</div>
+<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
+<p>Thai people have developed similarly unique meanings of other
+concepts and terms, e.g.: <em>ārammaṇa</em> (’sense object’), <em>viññāṇa</em>
+(’consciousness’), <em>pāramī</em> (’spiritual perfection’), <em>santosa</em>
+(’contentment’), <em>upekkhā</em> (’equanimity’), <em>adhiṭṭhāna</em>
+(’determination’), <em>parikamma</em> (’preliminary meditation exercise’),
+<em>bhāvanā</em> (’cultivation’), <em>vipassanā</em> (’insight’), <em>kāma</em> (’sense
+desire’), <em>lokiya</em> (’mundane’), <em>lokuttara</em> (’transcendent’),
+<em>puñña</em> (’merit’), <em>icchā</em> (’longing’), etc. These terms are now
+used either in a completely different meaning from how they were
+originally intended, or else their range of meaning has changed. In
+the study of Buddha-Dhamma it is vital to be able to recognize and
+distinguish these newer meanings in order to understand the true
+definition of these terms.</p>
+</div>
+<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+<p>Trans: In the original Thai text of <em>Buddhadhamma</em>, the venerable
+author never uses the first person pronoun to refer to himself. This
+is a means of distancing himself from the text. As he states in the
+Author’s Notes, he wishes as much as possible to present an
+objective account of the Buddha’s teachings, and in this regard, to
+have the readers forget that he is there. As this is unusual in an
+English context, I have occasionally inserted the first person
+pronoun.</p>
+</div>
+<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+<p>See the ‘sequence of teaching’ (<em>desanānukkama</em>) at: MA. II. 219
+(in reference to: M. I. 184-91). [Trans.: this final statement, of
+the presentation being consistent with the Four Noble Truths, is
+particularly noteworthy. For more on this subject, see how the four
+factors of <em>Dukkha</em>, <em>Samudaya</em>, <em>Nirodha</em>, and <em>Magga</em> are included
+in the Contents. See also chapter 19 on the Four Noble Truths.]</p>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="foreword-by-translator.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="middle-teaching.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="foreword-by-translator.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="middle-teaching.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
