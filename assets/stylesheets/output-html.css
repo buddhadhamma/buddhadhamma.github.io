@@ -80,7 +80,7 @@ span.vin {
   .download-item .item-description h3 {
     margin-top: 0.5em; }
   .download-item .item-cover img {
-    width: 170px; }
+    width: 100%; }
 
 .caption {
   text-align: center;
