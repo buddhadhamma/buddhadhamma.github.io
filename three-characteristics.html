@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,10 +8,9 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -33,15 +32,16 @@
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,27 +57,34 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -87,20 +94,42 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +162,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -806,7 +835,7 @@ sustained in an original shape, due to the pressure, stress and friction
 from rising and disintegration, as explained above. It is a
 characteristic of all conditioned phenomena (<em>sabbe saṅkhārā dukkhā</em>),
 encompassing the same range as impermanence: whatever is impermanent is
-also dukkha (<em>yad’aniccaṃ taṃ dukkhaṃ</em>).</p>
+also dukkha (<em>yad’aniccaṁ taṁ dukkhaṁ</em>).</p>
 <p>The dukkha with the most restricted meaning, and is simply a
 consequence of the dukkha of the Three Characteristics, is dukkha as
 feeling, called <em>dukkha-vedanā</em>: a feeling of pain. It is a feeling
@@ -846,7 +875,7 @@ human problems. It arises as a result of the sense faculties
 sense faculties (<em>anindriyabaddha</em>). It is not the dukkha
 mentioned in the passages ’all conditioned phenomena are dukkha’
 (<em>sabbe saṅkhārā dukkhā</em>), and ’whatever is impermanent is dukkha’
-(<em>yad’aniccaṃ taṃ dukkhaṃ</em>), which refer to the all-inclusive
+(<em>yad’aniccaṁ taṁ dukkhaṁ</em>), which refer to the all-inclusive
 dukkha of the Three Characteristics.</p>
 </li>
 <li>
@@ -1589,7 +1618,7 @@ designation of an arahant as one who has ’abandoned the self’ or
 ’discarded the self’ (<em>attañjaho</em>/<em>attañjaha</em>):<sup class="footnote-reference"><a href="#fn58">58</a></sup> an arahant has
 abandoned the belief in a self, the view of existing as or possessing a
 self. Some passages describe an arahant as ’having abandoned the self,
-not clinging to anything’ (<em>attaṃ pahāya anupādiyāno</em>).<sup class="footnote-reference"><a href="#fn59">59</a></sup></p>
+not clinging to anything’ (<em>attaṁ pahāya anupādiyāno</em>).<sup class="footnote-reference"><a href="#fn59">59</a></sup></p>
 <p>The following passage from the Tipiṭaka summarizes this matter: {92}</p>
 <div class="sutta">
 <blockquote>
@@ -2200,7 +2229,7 @@ soul (<em>attavāda</em>).</p>
 <p>The three characteristics of <em>anicca</em>, <em>dukkha</em> and <em>anattā</em> are linked;
 they are three facets of the same truth, as is seen in the Buddha’s
 frequent teaching: <em>Whatever is impermanent is dukkha; whatever is
-dukkha is nonself</em> (<em>yad’aniccaṃ taṃ dukkhaṃ, yaṃ dukkhaṃ tad’anattā</em>).
+dukkha is nonself</em> (<em>yad’aniccaṁ taṁ dukkhaṁ, yaṁ dukkhaṁ tad’anattā</em>).
 This passage is often followed by the statement: <em>Whatever is nonself
 should be seen with correct wisdom, as it truly is thus: ’This is not
 mine, I am not this, this is not my self.’</em><sup class="footnote-reference"><a href="#fn69">69</a></sup> The relationship is
@@ -2444,7 +2473,7 @@ is nothing to be relinquished, as confirmed by the Buddha’s words:</p>
 <blockquote>
 <p>That which is clung to does not exist; where then is there something
 to relinquish?</p>
-<p><em>Natthi attā kuto nirattaṃ vā.</em></p>
+<p><em>Natthi attā kuto nirattaṁ vā.</em></p>
 <p><em>Sn. 180; explained at Nd. I. 352-3.</em></p>
 </blockquote>
 </div>
@@ -2637,7 +2666,7 @@ eternalism (<em>sassata-diṭṭhi</em>). As <em>attā</em> in this case refers 
 view’, which is a defilement to be abandoned, there are Pali verses in
 the Suttanipāta describing the relinquishment of self, for example:
 <em>One who has relinquished the self</em> (<em>attañjaho</em>),<sup class="footnote-reference"><a href="#fn76">76</a></sup> and <em>having
-relinquished the self</em> (<em>attaṃ pahāya</em>).<sup class="footnote-reference"><a href="#fn77">77</a></sup></p>
+relinquished the self</em> (<em>attaṁ pahāya</em>).<sup class="footnote-reference"><a href="#fn77">77</a></sup></p>
 <p>There exists another form of belief concerning self, which differs from holding to a view (<em>diṭṭhi</em>). <em>Diṭṭhi</em> here is the belief that one
 possesses or exists as a self, for example identifying with something or
 viewing the self as permanent. The other form of belief relating to self
@@ -3741,7 +3770,7 @@ is the most excellent way to live, as extolled by the Buddha:</p>
 <div class="sutta">
 <blockquote>
 <p>Life with wisdom is the supreme life. {135}</p>
-<p><em>Paññājīviṃ jīvitamāhu seṭṭhaṃ.</em></p>
+<p><em>Paññājīviṁ jīvitamāhu seṭṭhaṁ.</em></p>
 <p><em>Sn. 32.</em></p>
 </blockquote>
 </div>
@@ -4777,7 +4806,7 @@ results (<em>vipāka</em>) in the four planes; neutral actions
 </div>
 <div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
 <p>Substantiating passages from the commentaries include: <em>The
-Deathless is void of self</em> (<em>attasuññamatapadaṃ</em>; Vism. 513); and:
+Deathless is void of self</em> (<em>attasuññamatapadaṁ</em>; Vism. 513); and:
 <em>Indeed, Nibbāna is empty of self because it is without self</em>
 (<em>nibbānadhammo attasseva abhāvato attasuñño</em>; PsA. III. 638-39).
 For the commentarial analysis of this verse see Appendix 2.</p>
@@ -4819,7 +4848,7 @@ Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā,
 Rūpasattakasammasanakathāvaṇṇanā states that these four definitions
 refer only to material phenomena, but the Vibhaṅga Aṭṭhakathā shows
 that they can be used in regard to all conditioned phenomena. See
-also: VinṬ. Mahākhandhakaṃ, Anattalakkhaṇasuttavaṇṇanā.</p>
+also: VinṬ. Mahākhandhakaṁ, Anattalakkhaṇasuttavaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
 <p>Ps1. 37; referred to at Vism. 610.</p>
@@ -4854,7 +4883,7 @@ characteristic of all formations, as explained above.</p>
 <div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
 <p>The commentaries and sub-commentaries describe an object marked
 by dukkha as a basis for the 3 <em>dukkhatā</em> (see below) and for
-<em>saṁsāra-dukkha</em>; e.g. VinṬ. Mahākhandhakaṃ,
+<em>saṁsāra-dukkha</em>; e.g. VinṬ. Mahākhandhakaṁ,
 Anattalakkhaṇasuttavaṇṇanā; VismṬ.
 Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā
 (Cattārīsākāra-anupassanakathāvaṇṇanā and
@@ -4980,17 +5009,17 @@ then indirectly.</p>
 <p>Vism. 628, 640; occasionally one finds <em>avasavattito</em>.</p>
 </div>
 <div class="footnote-definition" id="fn62"><sup class="footnote-definition-label">62</sup>
-<p>Vism. 618; VinṬ. Mahākhandhakaṃ Anattalakkhaṇasuttavaṇṇanā.</p>
+<p>Vism. 618; VinṬ. Mahākhandhakaṁ Anattalakkhaṇasuttavaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn63"><sup class="footnote-definition-label">63</sup>
-<p>Mahākhandhakaṃ Anattalakkhaṇasuttavaṇṇanā refers to the Buddha’s
+<p>Mahākhandhakaṁ Anattalakkhaṇasuttavaṇṇanā refers to the Buddha’s
 sermon in the Anattalakkhaṇa Sutta (S. III. 66).</p>
 </div>
 <div class="footnote-definition" id="fn64"><sup class="footnote-definition-label">64</sup>
 <p>See Vism. 593-5.</p>
 </div>
 <div class="footnote-definition" id="fn65"><sup class="footnote-definition-label">65</sup>
-<p>Vism. 618; MA. II. 113; VbhA. 48; See also VinṬ. Mahākhandhakaṃ
+<p>Vism. 618; MA. II. 113; VbhA. 48; See also VinṬ. Mahākhandhakaṁ
 Anattalakkhaṇasuttavaṇṇanā; VismṬ.
 Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā,
 Rūpasattakasammasanakathāvaṇṇanā.</p>
@@ -5016,9 +5045,9 @@ Paṭipadāñāṇadassanavisuddhiniddesavaṇṇanā.</p>
 movement’.</p>
 </div>
 <div class="footnote-definition" id="fn72"><sup class="footnote-definition-label">72</sup>
-<p>Alternatively, <em>attaṃ</em> and <em>nirattaṃ</em>. The Siam Raṭṭha edition of
-the Tipiṭaka in Thai script has <em>attā</em> and <em>nirattaṃ</em> in some
-places, <em>attaṃ</em> and <em>nirattaṃ</em> in others (see Sn. 154, 168, 180, and
+<p>Alternatively, <em>attaṁ</em> and <em>nirattaṁ</em>. The Siam Raṭṭha edition of
+the Tipiṭaka in Thai script has <em>attā</em> and <em>nirattaṁ</em> in some
+places, <em>attaṁ</em> and <em>nirattaṁ</em> in others (see Sn. 154, 168, 180, and
 related passages at Sn. 157, 213.) In other editions, however,
 I have found only <em>attā</em> and <em>nirattā</em>.</p>
 </div>
@@ -5031,7 +5060,7 @@ I have found only <em>attā</em> and <em>nirattā</em>.</p>
 </div>
 <div class="footnote-definition" id="fn75"><sup class="footnote-definition-label">75</sup>
 <p>VbhA. 48-9; and in some sections of MA. II. 113; VinṬ.
-Mahākhandhakaṃ, Anattalakkhaṇasuttavaṇṇanā.</p>
+Mahākhandhakaṁ, Anattalakkhaṇasuttavaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn76"><sup class="footnote-definition-label">76</sup>
 <p>Sn. 155 (see related passages at Nd. I. 90-91).</p>
@@ -5219,7 +5248,7 @@ edition of <em>Buddhadhamma</em>: footnote 156.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="process-of-life.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="process-of-life.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -5233,7 +5262,7 @@ edition of <em>Buddhadhamma</em>: footnote 156.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="process-of-life.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="process-of-life.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -5243,21 +5272,22 @@ edition of <em>Buddhadhamma</em>: footnote 156.</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,10 +8,9 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -33,15 +32,16 @@
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,27 +57,34 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -87,20 +94,42 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +162,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -341,7 +370,7 @@ dictate the actions of the Creator?’ and ’Who supervises the Creator?’
 If in reply one claims that the Creator acts entirely by his own will,
 then surely he is able to change the laws according to his whim. Some
 day, he may alter the laws and create chaos for human beings. (Indeed,
-if such a Creator of natural laws were to exit, and he is endowed with
+if such a Creator of natural laws were to exist, and he is endowed with
 compassion, he would change some laws in order to assist people. For
 example, he would prevent the birth of handicapped, crippled, or
 mentally impaired people.)</p>
@@ -476,7 +505,7 @@ chief, defining a person’s aims and purposes, and determining the
 direction of all human actions. It initiates action and all forms of
 conceptual and creative activity. It thus lies at the heart of
 kamma. This is confirmed by the Buddha’s words: ’It is intention,
-bhikkhus, that I call kamma’ (<em>cetanāhaṃ bhikkhave kammaṃ vadāmi</em>).
+bhikkhus, that I call kamma’ (<em>cetanāhaṁ bhikkhave kammaṁ vadāmi</em>).
 With intention, people then act by way of body, speech, and
 mind.<sup class="footnote-reference"><a href="#fn8">8</a></sup></p>
 </li>
@@ -962,7 +991,7 @@ supple, robust, upright, not frail, unbiased, not crooked,
 non-deviating, not distorted.</p>
 </li>
 <li>
-<p>Peace: relaxed, calm, content, not stressed, not lacking, not
+<p>Peace: e.g.: relaxed, calm, content, not stressed, not lacking, not
 hankering, not agitated, untroubled, undisturbed.</p>
 </li>
 </ol>
@@ -2255,10 +2284,10 @@ derived from the following Buddhist proverb:<sup class="footnote-reference"><a h
 That is the sort of fruit one reaps:<br />
 The doer of good reaps good;<br />
 The doer of evil reaps evil.</p>
-<p><em>Yādisaṃ vapate bījaṃ<br />
-Tādisaṃ labhate phalaṃ<br />
-Kalyāṇakārī kalyānaṃ<br />
-Pāpakārī pāpakaṃ.</em> {272}</p>
+<p><em>Yādisaṁ vapate bījaṁ<br />
+Tādisaṁ labhate phalaṁ<br />
+Kalyāṇakārī kalyānaṁ<br />
+Pāpakārī pāpakaṁ.</em> {272}</p>
 <p><em>S. I. 227; J. II. 202; J. III. 158;</em></p>
 </blockquote>
 </div>
@@ -5732,7 +5761,7 @@ definition of ’lust’, but it has a wider range of meaning. See: Paṭ:
 <div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
 <p>In regard to these definitions, see: ItA. I. 78, 152-3; AA. II.
 42, 91; UdA. 220; VinA. II. 404; VbhA. 142; VinT. [2/142]; VinṬ.:
-Tatiyapārājikaṃ, Paṭhamapaññatinidānavaṇṇanā; VismṬ.:
+Tatiyapārājikaṁ, Paṭhamapaññatinidānavaṇṇanā; VismṬ.:
 Khandhaniddesavaṇṇanā, Viññāṇakkhandhakathāvaṇṇanā; VismṬ.:
 Paññābhūminiddesavaṇṇanā, Avijjāpaccayāsaṅkhārapadakathāvaṇṇanā.</p>
 </div>
@@ -5899,8 +5928,8 @@ displeasure are known as the eight ’worldly phenomena’
 sources contains expanded material. The related stories in the
 Jātaka texts seem to emphasize results manifesting as clearly
 visible incidents and circumstances. The second verse in the Jātaka
-texts is occasionally <em>tādisaṃ ruhate phalaṃ</em> or <em>tādisaṃ harate
-phalaṃ</em>, which translate as ’that is the sort of fruit that grows’
+texts is occasionally <em>tādisaṁ ruhate phalaṁ</em> or <em>tādisaṁ harate
+phalaṁ</em>, which translate as ’that is the sort of fruit that grows’
 and ’that is the sort of fruit borne’, respectively.</p>
 </div>
 <div class="footnote-definition" id="fn68"><sup class="footnote-definition-label">68</sup>
@@ -5996,20 +6025,20 @@ AA. II. 361).</p>
 <p>Trans.: the Dhamma and the Discipline.</p>
 </div>
 <div class="footnote-definition" id="fn86"><sup class="footnote-definition-label">86</sup>
-<p>Vin. I. 126. <em>Ahaṃ āvuso itthannāmāya āpattiyā vematiko yadā
-nibbematiko bhavissāmi tadā taṃ āpattiṃ paṭikarissāmi</em>. Note how the
+<p>Vin. I. 126. <em>Ahaṁ āvuso itthannāmāya āpattiyā vematiko yadā
+nibbematiko bhavissāmi tadā taṁ āpattiṁ paṭikarissāmi</em>. Note how the
 verb (past participle) form of <em>paṭikamma</em> is <em>paṭikara</em>.</p>
 </div>
 <div class="footnote-definition" id="fn87"><sup class="footnote-definition-label">87</sup>
-<p>Vin. I. 159-60. <em>Saṅghaṃ āvuso pavāremi diṭṭhena vā sutena vā
-parisaṅkāya vā vadantu maṃ āyasmanto anukampaṃ upādāya passanto
+<p>Vin. I. 159-60. <em>Saṅghaṁ āvuso pavāremi diṭṭhena vā sutena vā
+parisaṅkāya vā vadantu maṁ āyasmanto anukampaṁ upādāya passanto
 paṭikarissāmi</em>.</p>
 </div>
 <div class="footnote-definition" id="fn88"><sup class="footnote-definition-label">88</sup>
-<p>Vin. II. 192. <em>Yato ca kho tvaṃ āvuso accayaṃ accayato disvā
-yathādhammaṃ paṭikarosi tante mayaṃ paṭiggaṇhāma vuddhi hesā āvuso
-ariyassa vinaye yo accayaṃ accayato disvā yathādhammaṃ paṭikaroti
-āyatiṃ saṁvaraṃ āpajjati</em>.</p>
+<p>Vin. II. 192. <em>Yato ca kho tvaṁ āvuso accayaṁ accayato disvā
+yathādhammaṁ paṭikarosi tante mayaṁ paṭiggaṇhāma vuddhi hesā āvuso
+ariyassa vinaye yo accayaṁ accayato disvā yathādhammaṁ paṭikaroti
+āyatiṁ saṁvaraṁ āpajjati</em>.</p>
 </div>
 <div class="footnote-definition" id="fn89"><sup class="footnote-definition-label">89</sup>
 <p>Spoken by Ven. Aṅgulimāla at: M. II. 104-105; Thag. verses
@@ -6076,7 +6105,7 @@ also mean: ’dignified’, ’eminent’, ’imposing’.</p>
 <p>See: Vism. 601; an abstract from Ps. II. 78.</p>
 </div>
 <div class="footnote-definition" id="fn104"><sup class="footnote-definition-label">104</sup>
-<p>Comp.: Vīthimuttaparicchedo, Kammacatukkaṃ; explained at:
+<p>Comp.: Vīthimuttaparicchedo, Kammacatukkaṁ; explained at:
 CompṬ.: Vīthimuttaparicchedavaṇṇanā, Kammacatukkavaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn105"><sup class="footnote-definition-label">105</sup>
@@ -6127,7 +6156,7 @@ Thera.]</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="goal-of-life.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="goal-of-life.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -6141,7 +6170,7 @@ Thera.]</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="goal-of-life.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="goal-of-life.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -6151,21 +6180,22 @@ Thera.]</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

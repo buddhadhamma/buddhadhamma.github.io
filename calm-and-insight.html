@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,10 +8,9 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -33,15 +32,16 @@
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,27 +57,34 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -87,20 +94,42 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +162,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -3570,7 +3599,7 @@ UdA. 397; ItA. II. 29.</p>
 </div>
 <div class="footnote-definition" id="fn71"><sup class="footnote-definition-label">71</sup>
 <p>For more detail, see: Vism. 633-8; AA. III. 143; NdA. 106; VinṬ.:
-Tatiyapārājikaṃ, Ānāpānassatisamādhikathāvaṇṇanā; VismṬ.:
+Tatiyapārājikaṁ, Ānāpānassatisamādhikathāvaṇṇanā; VismṬ.:
 Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā,
 Vipassanupakkilesakathāvaṇṇanā; see also the second part of the
 Paṭisambhidāmagga Aṭṭhakathā, on the section including the
@@ -3655,7 +3684,7 @@ Hawaii, 1975), pp. 181-2.</p>
 <p>S. II. 120-27.</p>
 </div>
 <div class="footnote-definition" id="fn85"><sup class="footnote-definition-label">85</sup>
-<p>Dhs. 55-6; DA. II. 387, 514; VinṬ.: Catutthapārājikaṃ,
+<p>Dhs. 55-6; DA. II. 387, 514; VinṬ.: Catutthapārājikaṁ,
 Vinītavatthuvaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn86"><sup class="footnote-definition-label">86</sup>
@@ -3666,10 +3695,10 @@ Paṭhamāruppavaṇṇanā.</p>
 <p>See: AA. II. 100.</p>
 </div>
 <div class="footnote-definition" id="fn88"><sup class="footnote-definition-label">88</sup>
-<p>DA. II. 514; VinṬ.: Catutthapārājikaṃ, Vinītavatthuvaṇṇanā.</p>
+<p>DA. II. 514; VinṬ.: Catutthapārājikaṁ, Vinītavatthuvaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn89"><sup class="footnote-definition-label">89</sup>
-<p>See: Vism. 336-7; VinṬ.: Dutiyapārājikaṃ, Dhaniyavatthuvaṇṇanā.</p>
+<p>See: Vism. 336-7; VinṬ.: Dutiyapārājikaṁ, Dhaniyavatthuvaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn90"><sup class="footnote-definition-label">90</sup>
 <p>E.g.: M. I. 477-8; Pug. 72; DA. II. 514; DA. III. 889; MA. III.
@@ -3878,7 +3907,7 @@ transcendent forms of knowledge; the remaining fourteen are mundane.
 Note that the Abhidhammatthasaṅgaha adds ’investigative knowledge’
 (<em>sammasana-ñāṇa</em>) (#3) to the list of insight-knowledge
 (<em>vipassanā-ñāṇa</em>), resulting in a group of ten; see: Comp.:
-Kammaṭṭhānaparicchedo, Vipassanākammaṭṭhānaṃ, Visuddhibhedo.</p>
+Kammaṭṭhānaparicchedo, Vipassanākammaṭṭhānaṁ, Visuddhibhedo.</p>
 </div>
 <div class="footnote-definition" id="fn133"><sup class="footnote-definition-label">133</sup>
 <p>Also known as <em>paccayapaṭisevana-sīla</em>.</p>
@@ -3927,7 +3956,7 @@ groups’.</p>
 attainment-concentration.</p>
 </div>
 <div class="footnote-definition" id="fn144"><sup class="footnote-definition-label">144</sup>
-<p>Dhs. 60; VinṬ.: Tatiyapārājikaṃ, Paṭhamapaññatinidānavaṇṇanā;
+<p>Dhs. 60; VinṬ.: Tatiyapārājikaṁ, Paṭhamapaññatinidānavaṇṇanā;
 VismṬ.: Pathavīkasiṇaniddesavaṇṇanā, Tividhakalyāṇavaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn145"><sup class="footnote-definition-label">145</sup>
@@ -3954,7 +3983,7 @@ SnA. II. 593; NdA. [2/247]; Nd2A. 102; Vism. 286-7, 667.</p>
 </div>
 <div class="footnote-definition" id="fn152"><sup class="footnote-definition-label">152</sup>
 <p>MA. II. 30; AA. III. 409; AA. V. 15; VbhA. 463; VinṬ.:
-Tatiyapārājikaṃ, Ānāpānassatisamādhikathāvaṇṇanā; [VinṬ. 4/137];
+Tatiyapārājikaṁ, Ānāpānassatisamādhikathāvaṇṇanā; [VinṬ. 4/137];
 VismṬ.: Paññābhāvanānisaṁsaniddesavaṇṇanā,
 Nirodhasamāpattikathāvaṇṇanā.</p>
 </div>
@@ -3972,7 +4001,7 @@ AA. II. 100 = VinA. I. 167 = DA. I. 223 = MA. III. 265 = AA. II. 263
 = PañcA. 243; VinA. I. 244 = DA. III. 897, 1002 = MA. II. 87 =
 SA. I. 26 = NdA. I. 120 = VinṬ.: Paṭhamo Bhāgo, Verañjakaṇḍavaṇṇanā,
 Dibbacakkuñāṇakathā; MA. II. 146 = NdA. II. 332 = VinṬ.:
-Pārājikakaṇḍaṃ, Bhikkhupadabhājanīyavaṇṇanā; MA. [2/468]; MA. IV.
+Pārājikakaṇḍaṁ, Bhikkhupadabhājanīyavaṇṇanā; MA. [2/468]; MA. IV.
 160; [3/571]; VbhA. 413; MA. IV. 200; AA. I. 223; AA. II. 41;
 MA. I. 142; [1/257]; MA. II. 234.</p>
 </div>
@@ -4031,7 +4060,7 @@ SA. II. 135; DhsA. 206-11; Vism. 335-7; VismṬ.:
 <div class="footnote-definition" id="fn170"><sup class="footnote-definition-label">170</sup>
 <p>E.g.: PsA. I. 194 = DhsA. 228 = Vism. 666-7; MA. II. 146,
 [2/468]; MA. IV. 160, [3/571]; AA. IV. 202; VinA. I. 244; VbhA.
-413; NdA. I. 120; NdA. II. 332; VinṬ.: Pārājikakaṇḍaṃ,
+413; NdA. I. 120; NdA. II. 332; VinṬ.: Pārājikakaṇḍaṁ,
 Sikkhāsājīvapadabhājanīyavaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn171"><sup class="footnote-definition-label">171</sup>
@@ -4057,7 +4086,7 @@ the realm of neither-perception-nor-non-perception. See, e.g.:
 D. III. 265-6; Vbh. 245; DhsA. 208; Vism. 333-8.</p>
 </div>
 <div class="footnote-definition" id="fn176"><sup class="footnote-definition-label">176</sup>
-<p>See: Dhs. 55-6; DA. II. 387, 514; VinṬ.: Catutthapārājikaṃ,
+<p>See: Dhs. 55-6; DA. II. 387, 514; VinṬ.: Catutthapārājikaṁ,
 Vinītavatthuvaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn177"><sup class="footnote-definition-label">177</sup>
@@ -4095,8 +4124,8 @@ process of insight.</p>
 to that shown above.</p>
 </div>
 <div class="footnote-definition" id="fn185"><sup class="footnote-definition-label">185</sup>
-<p>Vbh. 425; Comp.: Vīthimuttaparicchedo, Kammacatukkaṃ; Comp.:
-Vīthimuttaparicchedo, Bhūmicatukkaṃ.</p>
+<p>Vbh. 425; Comp.: Vīthimuttaparicchedo, Kammacatukkaṁ; Comp.:
+Vīthimuttaparicchedo, Bhūmicatukkaṁ.</p>
 </div>
 <div class="footnote-definition" id="fn186"><sup class="footnote-definition-label">186</sup>
 <p>CompṬ.: Vīthimuttaparicchedavaṇṇanā, Kammacatukkavaṇṇanā.</p>
@@ -4145,7 +4174,7 @@ meant here.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="a-noble-life.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="a-noble-life.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -4159,7 +4188,7 @@ meant here.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="a-noble-life.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="a-noble-life.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -4169,21 +4198,22 @@ meant here.</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

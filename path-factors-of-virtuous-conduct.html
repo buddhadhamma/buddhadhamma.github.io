@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,10 +8,9 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -33,15 +32,16 @@
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,27 +57,34 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -87,20 +94,42 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +162,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -2119,7 +2148,7 @@ pleasures, and mistreat other beings.</p>
 </div>
 <p>A person who accumulates wealth but does not utilize or share it is
 compared to the <em>mayhaka</em> bird, which sits in a fig tree full of ripe
-fruit and cries, <em>mayhaṃ, mayhaṃ</em> (from the Pali meaning ’mine, mine’).
+fruit and cries, <em>mayhaṁ, mayhaṁ</em> (from the Pali meaning ’mine, mine’).
 When flocks of other birds come to peck at the fruit and fly off again,
 the <em>mayhaka</em> bird remains babbling away.<sup class="footnote-reference"><a href="#fn34">34</a></sup></p>
 <p>There are many stories in the scriptures criticizing stingy people who
@@ -2132,8 +2161,8 @@ and the use of wealth.<sup class="footnote-reference"><a href="#fn35">35</a></su
 <p>There is a common custom in Thailand of the laity asking for and
 receiving the five precepts.<sup class="footnote-reference"><a href="#fn36">36</a></sup> When the laypeople have undertaken and
 determined these precepts, the monk who gives them concludes by pointing
-out the blessings of moral conduct, chanting: <em>Sīlena sugatiṃ yanti,
-sīlena bhogasampadā, sīlena nibbutiṃ</em>…. This verse can be translated
+out the blessings of moral conduct, chanting: <em>Sīlena sugatiṁ yanti,
+sīlena bhogasampadā, sīlena nibbutiṁ</em>…. This verse can be translated
 as: ’By way of virtuous conduct, one goes to heaven, one achieves an
 abundance of wealth, one reaches Nibbāna….’</p>
 <p>The pertinent clause here is that referring to an abundance of wealth:
@@ -2241,8 +2270,8 @@ other people, to know one’s community, and to know one’s society, e.g.:
 to be able to select the right people for a specific job, to know the
 needs and desires of specific groups of people, etc.<sup class="footnote-reference"><a href="#fn41">41</a></sup></p>
 <p>The Buddha frequently emphasized this clever management of affairs, both
-in teachings to the monastic community (using the expression: <em>alaṃ
-saṁvidhātuṃ</em> – ’able at managing one’s affairs’), and in particular to
+in teachings to the monastic community (using the expression: <em>alaṁ
+saṁvidhātuṁ</em> – ’able at managing one’s affairs’), and in particular to
 householders, who are responsible for activities within the wider
 society. In regard to looking after a household, the Buddha taught this
 principle: ’A householder … should be charitable and clever at
@@ -4461,7 +4490,7 @@ Note <a href="#note-establishing">Establishing the Dhamma-Vinaya</a>)</p>
 <p><em>Evil One, I will not take final Nibbāna till I have monks and
 disciples who are astute, well-trained, learned, fearless, knowers
 of the Dhamma, trained in conformity with the Dhamma….</em></p>
-<p><em>Na tāvāhaṃ pāpima parinibbāyissāmi yāva me bhikkhū na sāvakā
+<p><em>Na tāvāhaṁ pāpima parinibbāyissāmi yāva me bhikkhū na sāvakā
 bhavissanti viyattā vinītā visāradā bahussutā dhammadharā
 dhammānudhammapaṭipannā….</em></p>
 <p><em>D. II. 104-105.</em></p>
@@ -4471,8 +4500,8 @@ Dhamma in the sense that it is a natural truth (<em>sabhāva</em>); it is
 called <em>vinaya</em> in the sense that it ought to be practised’: NdA.
 [143]; PsA. II. 505; VbhA. [348].</p>
 <p>One commentarial passage states: ’<em>Vinaya</em> is the threefold training’
-(<em>vinayo sikkhattayaṃ</em> – Vibhaṅga Mūlaṭīkā: Jhānavibhaṅgo,
-Suttantabhājanīyaṃ, Niddesavaṇṇanā).</p>
+(<em>vinayo sikkhattayaṁ</em> – Vibhaṅga Mūlaṭīkā: Jhānavibhaṅgo,
+Suttantabhājanīyaṁ, Niddesavaṇṇanā).</p>
 <p>Another passage states: ’One is not well-trained (<em>vinīta</em>) when one
 has not trained in the higher moral training, etc.’: Majjhima Nikāya
 Ṭīkā: Mūlapaṇṇāsaṭīkā, Mūlapariyāyavaggo, Suttanikkhepavaṇṇanā.</p>
@@ -4876,7 +4905,7 @@ baptism or through confession of one’s sins.</p>
 <p>As for the issue of withdrawing from worldly matters, Prof. Sutton
 refers to the following quote: ’Those who love nothing in this world are
 rich in joy and free from pain.’ This quotation is found in the Udāna:
-<em>Tasmā hi te sukhino vītasokā yesaṃ piyaṃ natthi kuhiñci loke</em>.<sup class="footnote-reference"><a href="#fn165">165</a></sup>
+<em>Tasmā hi te sukhino vītasokā yesaṁ piyaṁ natthi kuhiñci loke</em>.<sup class="footnote-reference"><a href="#fn165">165</a></sup>
 The Pali word for love here is <em>piya</em>, which refers to a form of
 infatuation leading to personal attachment. This passage describes the
 attributes of an awakened being; it emphasizes liberation and the
@@ -5056,8 +5085,8 @@ way of the mind door (<em>mano-dvāra</em>) – MA. I. 178.</p>
 <p>Trans.: unlike fair-weather friends.</p>
 </div>
 <div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
-<p><em>Adhanānaṃ dhanānupadānaṃ</em>; or in full: <em>ye ca te tāta vijite
-adhanā tesañca dhanaṃ anuppadajjeyyāsi</em> (D. III. 61).</p>
+<p><em>Adhanānaṁ dhanānupadānaṁ</em>; or in full: <em>ye ca te tāta vijite
+adhanā tesañca dhanaṁ anuppadajjeyyāsi</em> (D. III. 61).</p>
 </div>
 <div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
 <p>M. III. 75.</p>
@@ -5217,7 +5246,7 @@ obsession, etc.). Similar passages are found at: D. III. 224-5;
 Nd. II. 59.</p>
 </div>
 <div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
-<p>Vism. 15-46; Comp.: Kammaṭṭhānaparicchedo, Vipassanākammaṭṭhānaṃ,
+<p>Vism. 15-46; Comp.: Kammaṭṭhānaparicchedo, Vipassanākammaṭṭhānaṁ,
 Visuddhibhedo. Note that in the Pali Canon <em>indriya-saṁvara</em> is
 classified under <em>samādhi</em> (e.g.: D. I. 207).</p>
 </div>
@@ -5571,7 +5600,7 @@ Paṭhamamahāsaṅgītikathāvaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn137"><sup class="footnote-definition-label">137</sup>
 <p>See: DA. III. 998; ItA. II. 25; DhsA. 158; Comp.:
-Vīthimuttaparicchedo, Kammacatukkaṃ.</p>
+Vīthimuttaparicchedo, Kammacatukkaṁ.</p>
 </div>
 <div class="footnote-definition" id="fn138"><sup class="footnote-definition-label">138</sup>
 <p>The five precepts referred to as the five training rules
@@ -5721,7 +5750,7 @@ elder (<em>thera-dhamma</em>) at A. V. 201.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="path-factors-of-concentration.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="path-factors-of-concentration.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -5735,7 +5764,7 @@ elder (<em>thera-dhamma</em>) at A. V. 201.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="path-factors-of-concentration.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="path-factors-of-concentration.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -5745,21 +5774,22 @@ elder (<em>thera-dhamma</em>) at A. V. 201.</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

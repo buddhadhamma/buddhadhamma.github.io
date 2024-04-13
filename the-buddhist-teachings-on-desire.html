@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,10 +8,9 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -33,15 +32,16 @@
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,27 +57,34 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -87,20 +94,42 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +162,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -664,8 +693,8 @@ Efforts and in the Four Paths to Success as
 <p>The Four Right Efforts: In the phrase ’generate chanda’, how is
 chanda interpreted? Whichever delight, aspiration, desire to act, or
 wholesome love of truth there is is called chanda.</p>
-<p><em>Chandaṃ janetīti tatha katamo chando? Yo chando chandikatā
-kattukamyatā kusalo dhammachando ayaṃ vuccati chando.</em></p>
+<p><em>Chandaṁ janetīti tatha katamo chando? Yo chando chandikatā
+kattukamyatā kusalo dhammachando ayaṁ vuccati chando.</em></p>
 </li>
 <li>
 <p>The Four Paths to Success: In the Four Paths to Success what is the
@@ -673,9 +702,9 @@ path to success of aspiration (chanda-iddhipāda)? At whichever time
 a monk in this Dhamma and Discipline cultivates the transcendent
 jhānas (lokuttara-jhāna) … the delight, aspiration, desire to act,
 or wholesome love of truth at that time is called chanda.</p>
-<p><em>Tattha katamo chandiddhipādo? idha bhikkhu yasmiṃ samaye lokuttaraṃ
-jhānaṃ bhāveti … yo tasmiṃ samaye chando chandikatā kattukamyatā
-kusalo dhammachando ayaṃ vuccati chandiddhipādo.</em></p>
+<p><em>Tattha katamo chandiddhipādo? idha bhikkhu yasmiṁ samaye lokuttaraṁ
+jhānaṁ bhāveti … yo tasmiṁ samaye chando chandikatā kattukamyatā
+kusalo dhammachando ayaṁ vuccati chandiddhipādo.</em></p>
 </li>
 </ul>
 <p>This definition in the Vibhaṅga is the basis for later commentarial
@@ -1021,8 +1050,8 @@ action, as will be discussed below.</p>
 <div class="note">
 <p><span class="caption">Craving and Seeking</span><a id="note-craving-seeking"></a></p>
 <blockquote>
-<p><em>Taṇhaṃ paṭicca pariyesanā</em>: ’with craving as condition, there is
-seeking’; <em>pariyesanaṃ paṭicca lābho</em>: ’with seeking as condition,
+<p><em>Taṇhaṁ paṭicca pariyesanā</em>: ’with craving as condition, there is
+seeking’; <em>pariyesanaṁ paṭicca lābho</em>: ’with seeking as condition,
 there is acquisition.’</p>
 <p>(D. II. 58-9; A. IV. 400-401; Vbh. 390-1; cf.: S. II. 143 where
 craving is expressed as the term <em>chanda</em>).</p>
@@ -3020,7 +3049,7 @@ and is distinct from the <em>dhamma-chanda</em> in the third kind of desire
 <p>Vin. I. 11; S. V. 422.</p>
 </div>
 <div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
-<p>Vism. 462-3, 466; Comp.: Cetasikaparicchedo, Aññasamānacetasikaṃ;
+<p>Vism. 462-3, 466; Comp.: Cetasikaparicchedo, Aññasamānacetasikaṁ;
 CompṬ.: Cetasikaparicchedavaṇṇanā, Aññasamānacetasikavaṇṇanā. The
 commentaries explain the mind states according to the quality,
 ’flavour’ (<em>rasa</em>), appearance (<em>paccupaṭṭhāna</em>), and proximate
@@ -3051,7 +3080,7 @@ see, e.g.: DA. III. 1006 (an explanation of D. III. 221); MA. III.
 243 (an explanation of M. II. 11); AA. II. 43 (an explanation of
 A. I. 38-9); MA. III. 193 (an explanation of M. I. 480); AA. II. 346
 (an explanation of A. I. 229); SA. III. 133 (an explanation of S. V.
-30); VinṬ.: Tatiyapārājikaṃ, Ānāpānassatisamādhikathāvaṇṇanā; VbhA.
+30); VinṬ.: Tatiyapārājikaṁ, Ānāpānassatisamādhikathāvaṇṇanā; VbhA.
 290 (an explanation of Vbh. 211). These commentaries offer further
 classifications of <em>chanda</em>, for example as <em>taṇhā-chanda</em>,
 <em>diṭṭhi-chanda</em>, <em>viriya-chanda</em>, and <em>dhamma-chanda</em>, but I won’t
@@ -3170,7 +3199,7 @@ reflection; rational thinking. ’Cause’ = ’origin’: <em>samuṭṭhāna</
 <p>A corroborative passage is: <em>Kattukamyatā-lakkhaṇo
 kusala-chando</em>, which translates as: ’The enthusiasm for virtue has
 the characteristic of desiring action’, or: ’the mark of desiring
-virtue is the desire to act’ (VinṬ.: Tatiyapārājikaṃ,
+virtue is the desire to act’ (VinṬ.: Tatiyapārājikaṁ,
 Ānāpānassatisamādhikathāvaṇṇanā).</p>
 </div>
 <div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
@@ -3180,7 +3209,7 @@ explanation on the development of mindfulness of breathing (Ps. I.
 mindfulness of breathing and focuses on the in- and out-breath,
 <em>chanda</em> arises. When <em>chanda</em> arises, the breathing becomes more
 refined. By continuing one’s focus on breathing, delight arises,
-etc. (cf.: VinṬ.: Tatiyapārājikaṃ, Ānāpānassatisamādhikathāvaṇṇanā).</p>
+etc. (cf.: VinṬ.: Tatiyapārājikaṁ, Ānāpānassatisamādhikathāvaṇṇanā).</p>
 </div>
 <div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
 <p>’If a bhikkhu gains concentration, gains one-pointedness of mind
@@ -3383,7 +3412,7 @@ Sāriputtasīhanādavaṇṇanā.</p>
 and <em>upekkhā</em> – are usually referred to as the ’excellent abidings’
 (<em>brahmavihāra</em>; ’divine abidings’). The commentators state that
 these four factors have wholesome desire as their starting point
-(<em>sabbesampi ca etesaṃ kattukamyatā-chando ādi</em>); see, e.g.: DhsA.
+(<em>sabbesampi ca etesaṁ kattukamyatā-chando ādi</em>); see, e.g.: DhsA.
 194. See footnote 64.</p>
 </div>
 <div class="footnote-definition" id="fn77"><sup class="footnote-definition-label">77</sup>
@@ -3396,7 +3425,7 @@ has a mind empowered by the strength of compassion [and therefore
 he teaches the Dhamma]’ (DhA. I. 1; cf.: ItA. II. 142, which
 contains the term <em>karuṇā-samussāhita</em>). Note also the expression in
 the Pali Canon describing the moment when the Buddha began to
-proclaim the Dhamma: <em>sattesu ca kāruññataṃ paṭicca</em>, which
+proclaim the Dhamma: <em>sattesu ca kāruññataṁ paṭicca</em>, which
 translates as: ’[The Blessed One] relies on the quality of
 compassion (and thus shows consideration to the human race)’; see:
 Vin. I. 6-7 = M. I. 169 = S. I. 138; D. II. 37-8.</p>
@@ -3429,7 +3458,7 @@ Cha-anussatiniddesavaṇṇanā.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="happiness.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="happiness.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -3443,7 +3472,7 @@ Cha-anussatiniddesavaṇṇanā.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="happiness.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="happiness.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -3453,21 +3482,22 @@ Cha-anussatiniddesavaṇṇanā.</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

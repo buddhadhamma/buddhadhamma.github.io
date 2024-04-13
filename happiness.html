@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,10 +8,9 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -33,15 +32,16 @@
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,27 +57,34 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -87,20 +94,42 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +162,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -383,8 +412,8 @@ teaching of the Four Noble Truths with the four ’duties’ (<em>kicca</em>). I
 one performs these duties incorrectly, then one trips up from the very
 start; one will not be able to reach the heart of Buddhism. Especially
 in regard to the first noble truth, one needs to be as accurate as
-possible. If it helps, one can memorize the Pali phrase: <em>Dukkhaṃ
-ariyasaccaṃ pariññeyyaṃ</em> (’the noble truth of suffering should be
+possible. If it helps, one can memorize the Pali phrase: <em>Dukkhaṁ
+ariyasaccaṁ pariññeyyaṁ</em> (’the noble truth of suffering should be
 thoroughly understood’).</p>
 <p>Our responsibility in the face of suffering is comprehensive
 understanding; suffering is to be thoroughly understood. Suffering is a
@@ -4493,7 +4522,7 @@ abide in happiness tend to share their joy with others, even when there
 is no direct intention to do so. Thus, to increase happiness in the
 world, we need to increase happiness in individuals.</p>
 <p>This corresponds with the Buddha’s aim in relation to society:
-<em>abyāpajjhaṃ sukhaṃ lokaṃ</em>: ’to create and abide in a world that is
+<em>abyāpajjhaṁ sukhaṁ lokaṁ</em>: ’to create and abide in a world that is
 happy, free from oppression.’ This is our task as human beings: to
 create a happier world, to reduce oppression, to offer mutual support
 and assistance, and to abide in collective, lasting happiness.</p>
@@ -4663,7 +4692,7 @@ duty or responsibility, one’s progress in the Dhamma will come to naught
 and one’s efforts will be in vain; it will be impossible to awaken or to
 realize the Dhamma.</p>
 <p>In respect to the first noble truth, the Pali states: ’With suffering
-there should be thorough understanding’ (<em>dukkhaṃ pariññeyyaṃ</em>).
+there should be thorough understanding’ (<em>dukkhaṁ pariññeyyaṁ</em>).
 Suffering must be understood by way of wisdom – suffering is there to
 be understood. A simple example of this is that before one is able to
 solve a problem, one must first understand the nature of the problem.</p>
@@ -5231,8 +5260,8 @@ the Dhammapada it states:</p>
 confident in the Buddha’s teaching,<br />
 A bhikkhu will attain the peaceful state,<br />
 The stilling of formations, the bliss [supreme].</p>
-<p><em>Pāmojjabahulo bhikkhu pasanno buddhasāsane adhigacche padaṃ
-santaṃ saṅkhārūpasamaṃ sukhaṃ.</em></p>
+<p><em>Pāmojjabahulo bhikkhu pasanno buddhasāsane adhigacche padaṁ
+santaṁ saṅkhārūpasamaṁ sukhaṁ.</em></p>
 <p><em>Dh. verse 381.</em></p>
 </blockquote>
 </div>
@@ -5242,7 +5271,7 @@ and ends:</p>
 <blockquote>
 <p>Full of joy,<br />
 He will make an end of suffering.</p>
-<p><em>Tato pāmojjabahulo dukkhassantaṃ karissati.</em></p>
+<p><em>Tato pāmojjabahulo dukkhassantaṁ karissati.</em></p>
 <p><em>Dh. verse 376.</em></p>
 </blockquote>
 </div>
@@ -5919,7 +5948,7 @@ determined to listen, and possesses skilful reflection
 <em>suta</em>) is transformed into wisdom. The teacher is unable to inject this
 wisdom into the student.</p>
 <p>I have often pointed out how laypeople go to monks and ask for moral
-conduct. They chant: <em>Mayaṃ bhante tisaraṇena saha pañca sīlāni yācāma</em>:
+conduct. They chant: <em>Mayaṁ bhante tisaraṇena saha pañca sīlāni yācāma</em>:
 ’We request the five precepts.’ Yet the monks reply: ’We are unable to
 confer on you moral conduct – this is something you must develop
 yourself.’ So what is to be done? The monks know that moral rectitude
@@ -5929,7 +5958,7 @@ reciting these precepts, go and keep them, go and follow them; true
 morality will then arise within you.’</p>
 <p>The laypeople ask for morality (<em>sīla</em>) and the monks give them precepts
 or training rules (<em>sikkhāpada</em>). They recite: <em>Pāṇātipāta veramaṇī
-sikkhāpadaṃ samādiyāmi</em>: ’I undertake the precept of refraining from
+sikkhāpadaṁ samādiyāmi</em>: ’I undertake the precept of refraining from
 harming living creatures,’ etc. By keeping the precepts, morality arises
 within the individual. Laypeople may ask for concentration from the
 monks, who will reply in a similar way, saying: ’This is not something I
@@ -6490,7 +6519,7 @@ Together they build an environment of peace, friendliness, dignity,
 prosperity, and happiness. {1067}</p>
 <h3 id="perfect-happiness-1"><a class="header" href="#perfect-happiness-1">Perfect Happiness</a></h3>
 <p>Here we arrive at the highest happiness, which in Buddhism is succinctly
-described as: <em>nibbānaṃ paramaṃ sukhaṃ</em>: Nibbāna is the supreme
+described as: <em>nibbānaṁ paramaṁ sukhaṁ</em>: Nibbāna is the supreme
 happiness.</p>
 <p>When one has made initial contact with supreme happiness, or even when
 simply referring to it, one should be familiar with its main attributes,
@@ -6587,7 +6616,7 @@ disquiet and turmoil. Note the verse in the Dhammapada:</p>
 <p>Whether in village or in forest, on hill or in dale, wherever
 arahants dwell – delightful, indeed, is that spot.</p>
 <p><em>Gāme vā yadi vāraññe ninne vā yadi vā thale yattha arahanto viharanti
-taṃ bhūmirāmaṇeyyakaṃ.</em></p>
+taṁ bhūmirāmaṇeyyakaṁ.</em></p>
 <p><em>Dh. verse 98.</em></p>
 </blockquote>
 </div>
@@ -6648,7 +6677,7 @@ proclaim the Buddhist teachings, he said that both he and they were
 similar in being liberated from all snares and bonds, both human and
 divine. He went on to say: ’Bhikkhus, wander forth for the welfare and
 happiness of the manyfolk, for the compassionate assistance of the
-world’ (<em>caratha bhikkhave cārikaṃ bahujanahitāya bahujanasukhāya
+world’ (<em>caratha bhikkhave cārikaṁ bahujanahitāya bahujanasukhāya
 lokānukampāya</em>). This the motto of all arahants. Having completed all
 personal affairs and duties, they dedicate their lives for the good of
 the world, just as the Buddha did.</p>
@@ -7391,7 +7420,7 @@ happiness is not the same as ’neutral sensation’ (<em>upekkhā-vedanā</em>)
 </div>
 <div class="footnote-definition" id="fn99"><sup class="footnote-definition-label">99</sup>
 <p>See: Cūḷaniddesa Aṭṭhakathā 106; Vism. 636-7; VinṬ.:
-Tatiyapārājikaṃ, Ānāpānassatisamādhikathāvaṇṇanā.</p>
+Tatiyapārājikaṁ, Ānāpānassatisamādhikathāvaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn100"><sup class="footnote-definition-label">100</sup>
 <p>SnA. I. 331.</p>
@@ -7409,7 +7438,7 @@ Tatiyapārājikaṃ, Ānāpānassatisamādhikathāvaṇṇanā.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="middle-way.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="middle-way.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -7423,7 +7452,7 @@ Tatiyapārājikaṃ, Ānāpānassatisamādhikathāvaṇṇanā.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="middle-way.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="middle-way.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -7433,21 +7462,22 @@ Tatiyapārājikaṃ, Ānāpānassatisamādhikathāvaṇṇanā.</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

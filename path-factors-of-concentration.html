@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,10 +8,9 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -33,15 +32,16 @@
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,27 +57,34 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -87,20 +94,42 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +162,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -320,7 +349,7 @@ the Dhammapada:</p>
 <blockquote>
 <p>The Awakened Ones can but point the way;<br />
 You must make the effort yourselves.</p>
-<p><em>Tumhehi kiccaṃ ātappaṃ akkhātāro tathāgatā.</em></p>
+<p><em>Tumhehi kiccaṁ ātappaṁ akkhātāro tathāgatā.</em></p>
 <p><em>Dh. verse 276.</em></p>
 </blockquote>
 </div>
@@ -1145,7 +1174,7 @@ prevents delusion from arising in regard to them.</p>
 each moment, preventing forgetfulness and confusion.</p>
 </li>
 </ol>
-<p><em>Vineyya loke abhijjhā-domanassaṃ</em>: ’free from covetousness and grief in
+<p><em>Vineyya loke abhijjhā-domanassaṁ</em>: ’free from covetousness and grief in
 the world’. This phrase refers to a freedom from desire and aversion,
 likes and dislikes. By practising in this way, the mind is spacious and
 bright; neither attachment nor aversion can overwhelm the mind.</p>
@@ -1171,7 +1200,7 @@ dictate one’s thoughts, reflections, and general wellbeing.</p>
 world.’ One does not grasp at or attach to anything at all, whether
 form, feeling, perception, volitional formations, or consciousness as
 being self or belonging to self (<em>attaniya</em>).</p>
-<p><em>Ajjhattaṃ vā… bahiddhā vā….</em>: ’either internally or externally’.
+<p><em>Ajjhattaṁ vā… bahiddhā vā….</em>: ’either internally or externally’.
 Scholars have differed in their explanations of this phrase, but the
 consensus of the commentators is that ’internal’ refers to oneself and
 ’external’ refers to others.<sup class="footnote-reference"><a href="#fn20">20</a></sup> Such an interpretation corresponds
@@ -2624,7 +2653,7 @@ individuals generally apply concentration for the benefit of dwelling at
 ease in the present. They can dedicate the large remainder of their time
 to live according to the Buddha’s original exhortation: ’Bhikkhus,
 wander forth for the welfare and happiness of the manyfolk, for the
-compassionate assistance of the world’ (<em>caratha bhikkhave cārikaṃ
+compassionate assistance of the world’ (<em>caratha bhikkhave cārikaṁ
 bahujanahitāya bahujanasukhāya lokānukampāya</em>).</p>
 <p>The way of practice for an individual monk depends on suitability,
 aptitude, personality traits, and interests. Some monks wish to live
@@ -2959,7 +2988,7 @@ stages, be accompanied by happiness.</p>
 <p>As stated earlier, the objective of concentration is knowledge and
 vision according to reality (<em>yathābhūta-ñāṇadassana</em>).<sup class="footnote-reference"><a href="#fn82">82</a></sup> As the
 Buddha said: ’A person with a concentrated mind knows and sees according
-to the truth (<em>samāhito … yathābhūtaṃ pajānāti</em>).<sup class="footnote-reference"><a href="#fn83">83</a></sup> This means that
+to the truth (<em>samāhito … yathābhūtaṁ pajānāti</em>).<sup class="footnote-reference"><a href="#fn83">83</a></sup> This means that
 concentration is the ’domain of practice’ for wisdom; it promotes the
 development and fulfilment of wisdom. In any case, in regard to the
 interconnectedness between factors of the Path, wisdom – ’right view’
@@ -2976,7 +3005,7 @@ interdependent:</p>
 A person lacking in concentrative absorption has no wisdom.<br />
 Indeed, a person possessing both concentrative absorption<br />
 and wisdom abides close to Nibbāna.</p>
-<p><em>Natthi jhānaṃ apaññassa; natthi paññā ajhāniyo; yamhi jhānañca
+<p><em>Natthi jhānaṁ apaññassa; natthi paññā ajhāniyo; yamhi jhānañca
 paññañca sa ve nibbānasantike.</em><sup class="footnote-reference"><a href="#fn84">84</a></sup></p>
 <p><em>Dh. verse 372.</em></p>
 </blockquote>
@@ -6617,7 +6646,7 @@ people at different stages of spiritual development.</p>
 original group of four, which is referred to as <em>jhāna-catukkanaya</em>.
 The original reference to these five is found at Dhs. 42-3, 236; in
 the context of later texts, see the classification of four or five
-jhānas at: Vism. 89; Comp.: Cittaparicchedo, Rūpāvacaracittaṃ.</p>
+jhānas at: Vism. 89; Comp.: Cittaparicchedo, Rūpāvacaracittaṁ.</p>
 </div>
 <div class="footnote-definition" id="fn73"><sup class="footnote-definition-label">73</sup>
 <p>Trans.: the author uses the English translation: ’cessation of
@@ -7072,11 +7101,11 @@ in parentheses are added material from the commentaries. For more
 detail, see: Vism. 101-110.</p>
 </div>
 <div class="footnote-definition" id="fn161"><sup class="footnote-definition-label">161</sup>
-<p><em>Imāhaṃ bhagavā attabhāvaṃ tumhākaṃ pariccajāmi</em>. This can also
+<p><em>Imāhaṁ bhagavā attabhāvaṁ tumhākaṁ pariccajāmi</em>. This can also
 be translated as: ’I offer my life….’</p>
 </div>
 <div class="footnote-definition" id="fn162"><sup class="footnote-definition-label">162</sup>
-<p><em>Imāhaṃ bhante attabhāvaṃ tumhākaṃ pariccajāmi</em>. This can also
+<p><em>Imāhaṁ bhante attabhāvaṁ tumhākaṁ pariccajāmi</em>. This can also
 be translated as: ’I offer my life….’</p>
 </div>
 <div class="footnote-definition" id="fn163"><sup class="footnote-definition-label">163</sup>
@@ -7246,7 +7275,7 @@ outwards one will get distracted by various other sense impressions.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="four-noble-truths.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="four-noble-truths.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -7260,7 +7289,7 @@ outwards one will get distracted by various other sense impressions.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="four-noble-truths.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="four-noble-truths.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -7270,21 +7299,22 @@ outwards one will get distracted by various other sense impressions.</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

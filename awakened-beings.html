@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,10 +8,9 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -33,15 +32,16 @@
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,27 +57,34 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -87,20 +94,42 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +162,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -594,7 +623,7 @@ stream-entry’ (<em>sotāpatti-phala</em>), ’path of stream-entry’
 (<em>sakadāgāmi-phala</em>), ’path of once-returning’ (<em>sakadāgāmi-magga</em>),
 etc. This translation follows commentarial terminology: for
 <em>maggaṭṭha</em> and <em>phalaṭṭha</em> see Nd1A. II. 254; Nd2A. 15; KhA. 183;
-DhA. I. 334; VinṬ.: Pārājikakaṇḍaṃ, Bhikkhupadabhājanīyavaṇṇanā;
+DhA. I. 334; VinṬ.: Pārājikakaṇḍaṁ, Bhikkhupadabhājanīyavaṇṇanā;
 DA. II. 515 = AA. IV. 3 = PañcA. 191; MA. II. 120; UdA. 306. The terms
 <em>sotāpatti-magga</em>, <em>sakadāgāmi-magga</em> and <em>anāgāmi-magga</em> do not
 appear in the older texts of the Tipiṭaka; they first appear in the
@@ -889,7 +918,7 @@ efforts, the four paths to success, the five faculties, the five
 powers, the seven factors of enlightenment, the Eightfold Path. He has
 abandoned the defilements, penetrated the unshakeable truth, realized
 cessation.)<sup class="footnote-reference"><a href="#fn46">46</a></sup></p>
-<p><em>Kathaṃ bhagavā bhāvitatto bhagavā bhāvitakāyo bhāvitasīlo
+<p><em>Kathaṁ bhagavā bhāvitatto bhagavā bhāvitakāyo bhāvitasīlo
 bhāvitacitto bhāvitapañño (bhāvitasatipaṭṭhāno bhāvitasammappadhāno
 bhāvitaiddhipādo bhāvitindriyo bhāvitabalo bhāvitabojjaṅgo
 bhāvitamaggo pahīnakileso paṭividdhākuppo sacchikatanirodho.)</em></p>
@@ -1709,7 +1738,7 @@ comprise individual monasteries, originally referred to by the Buddha as
 <em>ārāma</em> (’park’, ’grove’). These monasteries developed from forested
 areas: from woodlands (<em>vana</em>) and royal parks (<em>uyyāna</em>). The first
 Buddhist monastery, offered by King Bimbisāra to the Buddha, was
-Veḷuvanaṃ Uyyānaṃ – the ’Bamboo Grove and Royal Park’, and the
+Veḷuvanaṁ Uyyānaṁ – the ’Bamboo Grove and Royal Park’, and the
 monastery in which the Buddha spent the most amount of time was Jetavana
 Royal Park, later called Jetavana Grove.<sup class="footnote-reference"><a href="#fn58">58</a></sup> {360}</p>
 <p>From monasteries in smaller woodlands on the outskirts of towns and
@@ -2046,7 +2075,7 @@ ministry: to act for the welfare and happiness of the many
 (<em>bahujanahitāya bahujanasukhāya</em>), for the compassionate assistance of
 the world (<em>lokānukampāya</em>), and for the wellbeing, support and
 happiness of gods and human beings (<em>atthāya hitāya sukhāya
-devamanussānaṃ</em>).<sup class="footnote-reference"><a href="#fn72">72</a></sup> These qualities are significant objectives of the
+devamanussānaṁ</em>).<sup class="footnote-reference"><a href="#fn72">72</a></sup> These qualities are significant objectives of the
 holy life (<em>brahmacariya</em>);<sup class="footnote-reference"><a href="#fn73">73</a></sup> they are the criteria of behaviour and
 practice for bhikkhus;<sup class="footnote-reference"><a href="#fn74">74</a></sup> and they are the virtues present in persons
 who are considered supreme according to the Buddhist teachings.<sup class="footnote-reference"><a href="#fn75">75</a></sup>
@@ -4232,7 +4261,7 @@ faith-devotees and truth-devotees.</p>
 <p>Compare with the ’small stream-enterer’ mentioned at
 Note <a href="#note-devotees">Faith- and Truth-devotees</a>.</p>
 <p><em>VinA. I. 242; MA. I. 40; VbhA. 329; AA. II. 147; ItA. I. 60; VinṬ.:
-Pārājikakaṇḍaṃ, Bhikkhupadabhājanīyavaṇṇanā.</em> Pārājikakaṇḍaṃ,
+Pārājikakaṇḍaṁ, Bhikkhupadabhājanīyavaṇṇanā.</em> Pārājikakaṇḍaṁ,
 Bhikkhupadabhājanīyavaṇṇanā.&gt;</p>
 </blockquote>
 </div>
@@ -4461,7 +4490,7 @@ M. I. 37.</p>
 <p><span class="caption">Irreproachable</span><a id="note-irreproachable"></a></p>
 <blockquote>
 <p>Following DA. II. 537; AA. III. 345; VinṬ.: Parivāra-ṭīkā,
-Antarapeyyālaṃ, Katipucchāvāravaṇṇanā, etc., the term <em>aparāmaṭṭha</em>
+Antarapeyyālaṁ, Katipucchāvāravaṇṇanā, etc., the term <em>aparāmaṭṭha</em>
 can be translated two ways: first, as ’irreproachable’: a person’s
 conduct is flawless and no one can find true fault with it. Second, a
 person’s conduct is not defiled by craving and fixed views – it is
@@ -6228,7 +6257,7 @@ kamma;</p>
 </li>
 </ol>
 <p>Apart from <em>tathāgatabodhi-saddhā</em> (a term formed from the Pali
-<em>saddahati tathāgatassa bodhiṃ</em>), this group of four is not found in the
+<em>saddahati tathāgatassa bodhiṁ</em>), this group of four is not found in the
 Pali Canon or even in the commentaries. This collection of four is a
 compilation of teachings found in different locations, but they are not
 found in the Pali Canon as these specific terms.</p>
@@ -6242,7 +6271,7 @@ kamma, which are usually associated with wrong view (<em>micchā-diṭṭhi</em>
 and right view (<em>sammā-diṭṭhi</em>),<sup class="footnote-reference"><a href="#fn317">317</a></sup> but these specific terms are not
 found in the Pali Canon. Even the expression ’believing in kamma’, which
 is one of the five qualities of a lay-disciple (<em>upāsaka-dhamma</em>), is
-translated from <em>kammaṃ pacceti</em>, which means focusing on achievement
+translated from <em>kammaṁ pacceti</em>, which means focusing on achievement
 through action rather than relying on luck. This subject reflects the
 development of Buddhist thought and tradition later, post-canonical
 times.</p>
@@ -6313,7 +6342,7 @@ action (<em>kamma</em>) and the fruits of action (<em>kamma-vipāka</em>), not
 given with the expectation of medical assistance or other favours;
 see: [KhA. 200]. Some places mention things offered by those who
 believe in the ’world beyond’ (<em>paraloka</em>); e.g.: Vism. 220; ItA. I.
-88; VinṬ.: Pārājikakaṇḍaṃ, Sikkhāpaccakkhānavibhaṅgavaṇṇanā.</p>
+88; VinṬ.: Pārājikakaṇḍaṁ, Sikkhāpaccakkhānavibhaṅgavaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
 <p>Trans.: four basic requisites: food, clothing, lodging, and
@@ -6323,7 +6352,7 @@ medicine.</p>
 <p><em>Anuttaraṁ puññakkhettaṁ lokassa</em>.</p>
 </div>
 <div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
-<p>See, e.g.: DA. III. 996; AA. IV. 29; VinṬ.: Pārājikakaṇḍaṃ,
+<p>See, e.g.: DA. III. 996; AA. IV. 29; VinṬ.: Pārājikakaṇḍaṁ,
 Sikkhāpaccakkhānavibhaṅgavaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
@@ -6342,7 +6371,7 @@ Canon, which claims that all unawakened persons use offerings as
 debtors.</p>
 </div>
 <div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
-<p>VinṬ.: Nissaggiyakaṇḍaṃ, Kosiyavaggo, Rūpiyasikkhāpadavaṇṇanā;
+<p>VinṬ.: Nissaggiyakaṇḍaṁ, Kosiyavaggo, Rūpiyasikkhāpadavaṇṇanā;
 MA. III. 343; SA. II. 199; AA. I. 72; Vism. 43; VismṬ.:
 Sīlaniddesavaṇṇanā, Catupārisuddhisampādanavidhivaṇṇanā.</p>
 </div>
@@ -6440,7 +6469,7 @@ metaphor, in reference to one who has ’bathed in the Dhamma’.</p>
 </div>
 <div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
 <p>These translations are of the Pali word <em>bhāvitatto</em>, which is
-equivalent in meaning to the phrase: <em>attānaṃ bhāvetvā vaḍḍhetvā
+equivalent in meaning to the phrase: <em>attānaṁ bhāvetvā vaḍḍhetvā
 ṭhito</em>. A <em>bhāvitatta</em> refers to one who has developed him- or
 herself and is established in such cultivation; SA. I. 207.</p>
 </div>
@@ -6466,8 +6495,8 @@ main explanation.</p>
 <p>Occasionally other terms with a similar meaning are used instead
 of <em>bhāvitatta</em>, in particular the term <em>atta-danta</em> (’one who has
 trained himself’; ’self-tamed’), as in the verse praising the
-Buddha: <em>manussabhūtaṃ sambuddhaṃ attadantaṃ samāhitaṃ … devāpi
-taṃ namassanti</em> (’Indeed, although a human being, The Perfectly
+Buddha: <em>manussabhūtaṁ sambuddhaṁ attadantaṁ samāhitaṁ … devāpi
+taṁ namassanti</em> (’Indeed, although a human being, The Perfectly
 Enlightened One has achieved self-mastery, whose heart is
 well-cultivated … even the devas venerate him.’) – A. III. 345-6.</p>
 </div>
@@ -6522,10 +6551,10 @@ attractiveness, but only for the support and sustenance of this
 body….’ E.g.: A. III. 388-9.</p>
 </div>
 <div class="footnote-definition" id="fn58"><sup class="footnote-definition-label">58</sup>
-<p><em>Jetassa rājakumārassa uyyānaṃ</em> became <em>jetavana anāthapiṇḍikassa
+<p><em>Jetassa rājakumārassa uyyānaṁ</em> became <em>jetavana anāthapiṇḍikassa
 ārāme</em>. The Buddha’s words for allowing the creation of a monastery,
 in response to King Bimbisāra’s offering of the Veḷuvana Royal Park,
-is: <em>anujānāmi bhikkhave ārāmaṃ</em> (Vin. I. 38-9).</p>
+is: <em>anujānāmi bhikkhave ārāmaṁ</em> (Vin. I. 38-9).</p>
 </div>
 <div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
 <p>There are also places of delight that should be avoided, for
@@ -6875,7 +6904,7 @@ linked to the dominant faculties. These three liberations are
 <em>suññata-vimokkha</em>, <em>animitta-vimokkha</em> and <em>appaṇihita-vimokkha</em>.
 To avoid overburdening the reader I will not list these categories
 here. See: Ps. II. 35-71; Vism. 657-9; Comp.: Kammaṭṭhānaparicchedo,
-Vipassanākammaṭṭhānaṃ, Visuddhibhedo. The Vinaya Piṭaka lists these
+Vipassanākammaṭṭhānaṁ, Visuddhibhedo. The Vinaya Piṭaka lists these
 three liberations, but the commentarial explanation is different;
 see: Vin. III. 92-3; Vin. IV. 25-6; VinA. II. 493. Moreover, the
 commentaries classify the five <em>paññā-vimutta</em> and the five
@@ -7131,7 +7160,7 @@ the path of non-returning, e.g.: VinA. III. 537; DA. I. 237; PsA. I.
 77; DhsA. 306. Sometimes it refers to the three paths and the three
 fruits, e.g.: SA. III. 297. And in some places it refers to all four
 paths and all four fruits, including the fruit of arahantship, e.g.:
-NdA. 83; MA. III. 92; MA. V. 99; SA. II. 392; VinṬ.: Mahākhandhakaṃ,
+NdA. 83; MA. III. 92; MA. V. 99; SA. II. 392; VinṬ.: Mahākhandhakaṁ,
 Dhammacakkappavattanasuttavaṇṇanā. One passage in the Pali Canon
 refers to two occasions for the arising of the Dhamma eye; the first
 is the path of stream-entry and the second the path of non-returning
@@ -7584,7 +7613,7 @@ from this text.</p>
 <p>See: MA. I. 21; SA. II. 97; AA. I. 63; DhsA. 349; cf.: Nd. I.
 146-7, 248-9; DA. I. 59; Nd1A. II. 273; PsA. I. 205, 266; VinṬ.:
 Paṭhamo Bhāgo, Paṭhamamahāsaṅgītikathāvaṇṇanā; VinṬ.:
-Pārājikakaṇḍaṃ, Bhikkhupadabhājanīyavaṇṇanā.</p>
+Pārājikakaṇḍaṁ, Bhikkhupadabhājanīyavaṇṇanā.</p>
 </div>
 <div class="footnote-definition" id="fn301"><sup class="footnote-definition-label">301</sup>
 <p>The factors in this group and in the following groups are
@@ -7658,7 +7687,7 @@ view ceases, these views cease as well.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="calm-and-insight.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="calm-and-insight.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -7672,7 +7701,7 @@ view ceases, these views cease as well.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="calm-and-insight.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="calm-and-insight.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -7682,21 +7711,22 @@ view ceases, these views cease as well.</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

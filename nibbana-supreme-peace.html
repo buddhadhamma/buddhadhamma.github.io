@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,10 +8,9 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -33,15 +32,16 @@
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,27 +57,34 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -87,20 +94,42 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +162,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -577,7 +606,7 @@ Note <a href="#note-nibbana">Definitions of Nibbāna</a>)</p>
 <p><span class="caption">Definitions of Nibbāna</span><a id="note-nibbana"></a></p>
 <blockquote>
 <p>Analyses of the word <em>nibbāna</em> occur at many scriptural passages,
-especially: Nd2. 33; VinA.: Pārājikaṇḍaṃ, Paṭhamapārājikaṃ,
+especially: Nd2. 33; VinA.: Pārājikaṇḍaṁ, Paṭhamapārājikaṁ,
 Sudinnabhāṇavāravaṇṇana; DA. II. 464; AA. II. 283; KhA. 151; ItA. I.
 165; SnA. I. 253, 299; NdA. I. 82, 104; DhsA. 409; Vism. 293-4; VinṬ.:
 Paṭhamo Bhāgo, Verañjakaṇḍavaṇṇanā, Vinayapaññattiyācanakathā; VismṬ.:
@@ -762,7 +791,7 @@ many metaphors, for example: <em>ārogya</em> (without illness; perfect
 health), <em>dīpa</em> (an island; freedom from danger), and <em>leṇa</em> (a
 cave; shelter from danger). In later scriptures composed by
 disciples there are metaphors referring to Nibbāna as a city, e.g.
-<em>puramuttamaṃ</em> (’magnificent city’)<sup class="footnote-reference"><a href="#fn22">22</a></sup> and <em>nibbāna-nagara</em>
+<em>puramuttamaṁ</em> (’magnificent city’)<sup class="footnote-reference"><a href="#fn22">22</a></sup> and <em>nibbāna-nagara</em>
 (’fortress of Nibbāna’)<sup class="footnote-reference"><a href="#fn23">23</a></sup> used as oratorical and literary terms.
 Thai idioms include ’great deathless citadel’
 (<em>amatamahānagara-nirvāna</em>), and ’crystal city’, but these later
@@ -1228,7 +1257,7 @@ association with Nibbāna, that is, it describes Nibbāna in connection to
 enlightened beings. It uses enlightened beings as a means to understand
 Nibbāna; it does not attempt to explain Nibbāna in an absolute sense.
 This is because Nibbāna is <em>sandiṭṭhika</em>, ’to be seen for oneself’, and
-is <em>paccattaṃ veditabbaṁ viññūhi</em>, ’to be experienced individually by
+is <em>paccattaṁ veditabbaṁ viññūhi</em>, ’to be experienced individually by
 the wise’, as mentioned earlier. Therefore, this division of Nibbāna
 does not introduce anything different or mysterious into the earlier
 examination of the nature of Nibbāna. As the commentators say, Nibbāna
@@ -3128,7 +3157,7 @@ S. IV. 52; Ud. 75). In later texts the two were used as a compound
 used in the Canon in this sense, except in the Paṭisambhidāmagga
 (e.g. Ps. I. 2, 107-11.) Later, in the commentaries and
 sub-commentaries it was frequently used (e.g. Vism. 694; VinA.:
-Pācittiyakhaṇḍaṃ, Musāvādavaggo, Padasodhammasikkhāpadavaṇṇanā;
+Pācittiyakhaṇḍaṁ, Musāvādavaggo, Padasodhammasikkhāpadavaṇṇanā;
 AA. III. 337; VismṬ.: Paṭhamo Bhāgo, Sīlaniddesavaṇṇanā,
 Dutiyasīlapañcakavaṇṇanā.)</p>
 </div>
@@ -3140,7 +3169,7 @@ Dutiyasīlapañcakavaṇṇanā.)</p>
 qualities of the Dhamma. This is consistent with the explanation
 that the first quality of the Dhamma (<em>svākkhāto</em>) is the teaching,
 later called <em>pariyatti-dhamma</em>, the Dhamma that should be studied.
-Qualities 2-6 (<em>sanditthiko</em> to <em>paccattaṃ veditabbo viññūhi</em>) are
+Qualities 2-6 (<em>sanditthiko</em> to <em>paccattaṁ veditabbo viññūhi</em>) are
 attributes specific to <em>lokuttara-dhamma</em>, the Transcendent (Vism.
 215-18).</p>
 </div>
@@ -3485,8 +3514,8 @@ See also D. II. 314-5; M. I. 62-3.)</p>
 <div class="footnote-definition" id="fn82"><sup class="footnote-definition-label">82</sup>
 <p>The Thai translated edition renders the phrase ’the one
 liberation is the same as the other’ as ’they are both liberated by
-deliverance’, since the Thai Pali edition reads: <em>yadidaṃ vimuttiyā
-vimuttanti</em>. The Burmese and Roman editions read: <em>yadidaṃ vimuttiyā
+deliverance’, since the Thai Pali edition reads: <em>yadidaṁ vimuttiyā
+vimuttanti</em>. The Burmese and Roman editions read: <em>yadidaṁ vimuttiyā
 vimuttinti</em>. The phrase also occurs at A. III. 34, for which the
 Thai edition translates it differently. The commentaries (SA. III.
 292 and AA. III. 244 explain ’vimutti’ as <em>arahattaphala-vimutti</em>.
@@ -3512,7 +3541,7 @@ necessary to end grasping, see, e.g.: M. II. 237-8.</p>
 </div>
 <div class="footnote-definition" id="fn85"><sup class="footnote-definition-label">85</sup>
 <p>A much quoted passage by the Buddha on non-attachment is: <em>sabbe
-dhammā nālaṃ abhinivesāya</em>, meaning ’nothing is worth adhering to’
+dhammā nālaṁ abhinivesāya</em>, meaning ’nothing is worth adhering to’
 or ’nothing can be seized’ (M. I. 251, 254; S. IV. 50, 88);
 <em>abhinivesa</em> is a synonym of <em>upādāna</em> (e.g.: Vbh. 149).</p>
 </div>
@@ -3641,7 +3670,7 @@ rebirth for one with fuel, not for one without fuel…. Craving is
 <p>ItA. I. 167.</p>
 </div>
 <div class="footnote-definition" id="fn113"><sup class="footnote-definition-label">113</sup>
-<p>See VinṬ.: Dutiyo Bhāgo, Pārājikakaṇḍaṃ, Paṭhamapārājikaṃ,
+<p>See VinṬ.: Dutiyo Bhāgo, Pārājikakaṇḍaṁ, Paṭhamapārājikaṁ,
 Sudinnabhāṇavāravaṇṇanā, and the Burmese sub-commentary on the
 Dīgha-Nikāya [1/364; 2/161, 419]; the Thai edition is not yet in
 print.</p>
@@ -3709,7 +3738,7 @@ ItA. II. 106.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="awakened-beings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="awakened-beings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -3723,7 +3752,7 @@ ItA. II. 106.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="awakened-beings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="awakened-beings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -3733,21 +3762,22 @@ ItA. II. 106.</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

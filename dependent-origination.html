@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,10 +8,9 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -33,15 +32,16 @@
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,27 +57,34 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -87,20 +94,42 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +162,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -172,10 +201,10 @@ analyzing each factor of Dependent Origination.</p>
 With the arising of this, that arises.</p>
 <p>When this does not exist, that does not come to be;<br />
 With the cessation of this, that ceases.</p>
-<p><em>Imasmiṃ sati idaṃ hoti,<br />
-imassuppādā idaṃ uppajjati.</em></p>
-<p><em>Imasmiṃ asati idaṃ na hoti,<br />
-imasmiṃ nirodhā idaṃ nirujjhati.</em><sup class="footnote-reference"><a href="#fn1">1</a></sup> <em>S. II. 28, 65.</em></p>
+<p><em>Imasmiṁ sati idaṁ hoti,<br />
+imassuppādā idaṁ uppajjati.</em></p>
+<p><em>Imasmiṁ asati idaṁ na hoti,<br />
+imasmiṁ nirodhā idaṁ nirujjhati.</em><sup class="footnote-reference"><a href="#fn1">1</a></sup> <em>S. II. 28, 65.</em></p>
 </blockquote>
 </div>
 <h3 id="detailed-or-applied-presentation"><a class="header" href="#detailed-or-applied-presentation">Detailed (or ’Applied’) Presentation</a></h3>
@@ -184,11 +213,11 @@ imasmiṃ nirodhā idaṃ nirujjhati.</em><sup class="footnote-reference"><a hre
 <p>With ignorance as condition, there are volitional formations.<br />
 <em>avijjāpaccayā saṅkhārā</em></p>
 <p>With volitional formations as condition, there is consciousness.<br />
-<em>saṅkhārapaccayā viññāṇaṃ</em></p>
+<em>saṅkhārapaccayā viññāṇaṁ</em></p>
 <p>With consciousness as condition, there is mind-and-body.<sup class="footnote-reference"><a href="#fn2">2</a></sup><br />
-<em>viññāṇapaccayā nāma-rūpaṃ</em></p>
+<em>viññāṇapaccayā nāma-rūpaṁ</em></p>
 <p>With mind-and-body as condition, there are the six sense bases.<br />
-<em>nāmarūpapaccayā saḷāyatanaṃ</em></p>
+<em>nāmarūpapaccayā saḷāyatanaṁ</em></p>
 <p>With the six sense bases as condition, there is contact.<br />
 <em>saḷāyatanapaccayā phasso</em></p>
 <p>With contact as condition, there is feeling.<br />
@@ -196,13 +225,13 @@ imasmiṃ nirodhā idaṃ nirujjhati.</em><sup class="footnote-reference"><a hre
 <p>With feeling as condition, there is craving.<br />
 <em>vedanāpaccayā taṇhā</em></p>
 <p>With craving as condition, there is clinging. {155}<br />
-<em>taṇhāpaccayā upādānaṃ</em></p>
+<em>taṇhāpaccayā upādānaṁ</em></p>
 <p>With clinging as condition, there is becoming.<br />
 <em>upādānapaccayā bhavo</em></p>
 <p>With becoming as condition, there is birth.<br />
 <em>bhavapaccayā jāti</em></p>
 <p>With birth as condition, there is aging-and-death.<br />
-<em>jātipaccayā jarā-maraṇaṃ</em></p>
+<em>jātipaccayā jarā-maraṇaṁ</em></p>
 <p>Sorrow, lamentation, pain, grief and despair thus come to be.<br />
 <em>soka-parideva-dukkha-domanassupāyāsā sambhavanti</em></p>
 <p>Such is the origin of this whole mass of suffering.<br />
@@ -230,7 +259,7 @@ consciousness.<br />
 <p>With the cessation of becoming, cessation of birth.<br />
 <em>bhavanirodhā jātinirodho</em></p>
 <p>With the cessation of birth, (cessation of) aging-and-death.<br />
-<em>jātinirodhā jarāmaraṇaṃ</em></p>
+<em>jātinirodhā jarāmaraṇaṁ</em></p>
 <p>Sorrow, lamentation, pain, grief and despair cease.<br />
 <em>soka-parideva-dukkha-domanassupāyāsā nirujjhanti</em></p>
 <p>Such is the cessation of this whole mass of suffering.<br />
@@ -256,12 +285,12 @@ and cessation of the ’world’:</p>
 <blockquote>
 <p>This, bhikkhus, is the origin of the world;<br />
 this, bhikkhus, is the cessation of the world;</p>
-<p><em>Ayaṃ kho bhikkhave lokassa samudayo;<br />
-ayaṃ kho bhikkhave lokassa atthaṅgamo.</em> <em>S. II. 73.</em></p>
+<p><em>Ayaṁ kho bhikkhave lokassa samudayo;<br />
+ayaṁ kho bhikkhave lokassa atthaṅgamo.</em> <em>S. II. 73.</em></p>
 <p>In such a way the world originates,<br />
 in such a way the world ceases. {156}</p>
-<p><em>Evamayaṃ loko samudayati;<br />
-evamayaṃ loko nirujjhati.</em> <em>S. II. 78.</em></p>
+<p><em>Evamayaṁ loko samudayati;<br />
+evamayaṁ loko nirujjhati.</em> <em>S. II. 78.</em></p>
 </blockquote>
 </div>
 <p>Here the words ’suffering’ and ’world’ are interchangeable, which
@@ -3203,7 +3232,7 @@ arising of feeling without subsequent craving. When a person experiences
 feeling with adequate mindfulness and clear comprehension, the link is
 cut and craving does not arise.</p>
 <p>Note from the Mahānidāna Sutta that the Buddha began his analysis of
-social woes at this juncture, where feeling conditions craving (<em>vedanaṃ
+social woes at this juncture, where feeling conditions craving (<em>vedanaṁ
 paṭicca taṇhā</em>). This link between feeling and craving is a crucial
 stage and has a direct bearing on human behaviour and social wellbeing.</p>
 <p>The suttas cited above describe how aspects of human society, like the
@@ -3768,7 +3797,7 @@ referred to as the fulfilment of the holy life (M. I. 521-2); and it is
 equivalent to the threefold training (D. I. 206-209). According to this
 format, sense restraint is grouped under ’concentration’, but in later
 texts, e.g. Vism. 15-16 and Comp.: Kammaṭṭhānaparicchedo,
-Vipassanākammaṭṭhānaṃ, Visuddhibhedo, it is grouped under moral conduct
+Vipassanākammaṭṭhānaṁ, Visuddhibhedo, it is grouped under moral conduct
 and is called the ’virtuous conduct of sense restraint’
 (<em>indriyasaṁvara-sīla</em>), where it is the second factor of the four
 ’modes of pure conduct’ (<em>pārisuddhi-sīla</em>). On many occasions
@@ -4050,29 +4079,29 @@ factors, which in the Pali Canon are described as follows:</p>
 <li>
 <p>’Whether Tathāgatas appear or not, this truth exists as constant and
 stable, that is, specific conditionality.’</p>
-<p>(<em>Uppādā vā tathāgatānaṃ anuppādā vā tathāgatānaṃ ṭhitāva sā dhātu
+<p>(<em>Uppādā vā tathāgatānaṁ anuppādā vā tathāgatānaṁ ṭhitāva sā dhātu
 dhammaṭṭhitatā dhammaniyāmatā idappaccayatā.</em>)</p>
 </li>
 <li>
 <p>’Monks, whether Tathāgatas appear or not, this truth exists as
 constant and stable, that is, all conditioned phenomena are
 impermanent.’</p>
-<p>(<em>Uppādā vā bhikkhave tathāgatānaṃ anuppādā vā tathāgatānaṃ ṭhitāva
-sā dhātu dhammaṭṭhitatā dhamma-niyāmatā sabbe saṅkhārā aniccāti.</em>)
+<p>(<em>Uppādā vā bhikkhave tathāgatānaṁ anuppādā vā tathāgatānaṁ ṭhitāva
+sā dhātu dhammaṭṭhitatā dhammaniyāmatā sabbe saṅkhārā aniccāti.</em>)
 {215}</p>
 </li>
 <li>
 <p>’Monks, whether Tathāgatas appear or not, this truth exists as
 constant and stable, that is, all conditioned phenomena are
 unenduring.’</p>
-<p>(<em>Uppādā vā bhikkhave tathāgatānaṃ anuppādā vā tathāgatānaṃ ṭhitāva
-sā dhātu dhammaṭṭhitatā dhamma-niyāmatā sabbe saṅkhārā dukkhāti.</em>)</p>
+<p>(<em>Uppādā vā bhikkhave tathāgatānaṁ anuppādā vā tathāgatānaṁ ṭhitāva
+sā dhātu dhammaṭṭhitatā dhammaniyāmatā sabbe saṅkhārā dukkhāti.</em>)</p>
 </li>
 <li>
 <p>’Monks, whether Tathāgatas appear or not, this truth exists as
 constant and stable, that is, all things are nonself.’</p>
-<p>(<em>Uppādā vā bhikkhave tathāgatānaṃ anuppādā vā tathāgatānaṃ ṭhitāva
-sā dhātu dhammaṭṭhitatā dhammaniyāmatā sabbe saṅkhārā dukkhāti.</em>)</p>
+<p>(<em>Uppādā vā bhikkhave tathāgatānaṁ anuppādā vā tathāgatānaṁ ṭhitāva
+sā dhātu dhammaṭṭhitatā dhammaniyāmatā sabbe dhammā anattāti.</em>)</p>
 </li>
 </ol>
 <p>In brief, the factors are:</p>
@@ -4187,7 +4216,7 @@ absent in the passages describing the three characteristics:</p>
 <div class="sutta">
 <blockquote>
 <p><em>Iti kho bhikkhave yā tatra tathatā avitathatā anaññathatā
-idappaccayatā ayaṃ vuccati bhikkhave paṭiccasamuppādo.</em></p>
+idappaccayatā ayaṁ vuccati bhikkhave paṭiccasamuppādo.</em></p>
 <p>’Monks, suchness (tathatā; the state of existing ’just so’), inerrancy
 (avitathatā; the state of not deviating from existing as such), and
 invariability (anaññathatā; the state of not being otherwise) is
@@ -4386,9 +4415,9 @@ not appear anywhere in the Tipiṭaka.</p>
 <p>Because the commentators regularly mentioned and explained this
 collection of three factors, they came up with a convenient abbreviation
 to refer to them individually, by simply adding the term <em>ādi</em>
-(’beginning with’) to <em>aniccatā</em>, e.g.: <em>aniccatādi-paṭisaṁyuttaṃ</em>,
-<em>aniccatādi-lakkhaṇattayaṃ</em>, <em>aniccatādi-vasena</em>,
-<em>aniccatādi-sāmaññalakkhaṇaṃ</em>, and <em>aniccatādinaṃ</em>. Only in the
+(’beginning with’) to <em>aniccatā</em>, e.g.: <em>aniccatādi-paṭisaṁyuttaṁ</em>,
+<em>aniccatādi-lakkhaṇattayaṁ</em>, <em>aniccatādi-vasena</em>,
+<em>aniccatādi-sāmaññalakkhaṇaṁ</em>, and <em>aniccatādinaṁ</em>. Only in the
 sub-commentaries were these three terms combined into a distinct group,
 although, even here, this presentation is not common.</p>
 <h3 id="terms-pertaining-to-specific-conditionality-idappaccayatā"><a class="header" href="#terms-pertaining-to-specific-conditionality-idappaccayatā">Terms Pertaining to Specific Conditionality (idappaccayatā)</a></h3>
@@ -4468,7 +4497,7 @@ used, but less frequently.</p>
 <em>dhammaṭṭhitatā dhammaniyāmatā</em>, which together constitute a name for
 this law of nature, there was derived another important term –
 <em>dhammaṭṭhiti-ñāṇa</em>, which appears in the Buddha’s words:
-<em>dhammaṭṭhitiñāṇaṃ pubbe pacchā nibbāne ñāṇaṃ</em> (’knowledge of constancy
+<em>dhammaṭṭhitiñāṇaṁ pubbe pacchā nibbāne ñāṇaṁ</em> (’knowledge of constancy
 first, knowledge of Nibbāna afterwards’, or ’endowed first with
 knowledge of constancy, knowledge of Nibbāna ensues’).<sup class="footnote-reference"><a href="#fn124">124</a></sup></p>
 <p>The Buddha spoke these words to Ven. Susima, who had previously been a
@@ -4531,7 +4560,7 @@ Varanasi.</p>
 night of experiencing the bliss of liberation, he gave three inspired
 utterances, one during each of the three watches of the night. Here, he
 contemplates Dependent Origination, both in its forward and reverse
-sequences (<em>paṭiccasamuppādaṃ anuloma-paṭilomaṃ manasākāsi</em>; note that
+sequences (<em>paṭiccasamuppādaṁ anuloma-paṭilomaṁ manasākāsi</em>; note that
 here the term <em>paṭiccasamuppāda</em> appears alone, without the accompanying
 term <em>idappaccayatā</em>).</p>
 <p>In contrast to later teachings, here the Buddha does not clearly name
@@ -4544,7 +4573,7 @@ and meditative, all doubts vanish away, since he knows the truth
 together with its cause’ (<em>sahetu-dhamma</em> = suffering and its origin).</p>
 <p>Verse no. 2: ’When truths manifest to a purified one, diligent and
 meditative, all doubts vanish away, since he has realized the
-cessation of conditioning factors’ (<em>khayaṃ paccayānaṃ</em> = Nibbāna).</p>
+cessation of conditioning factors’ (<em>khayaṁ paccayānaṁ</em> = Nibbāna).</p>
 <p>Verse no. 3: ’When truths manifest to a purified one, diligent and
 meditative, then he dispels Māra and his forces, and remains like the
 sun illuminating the sky.’</p>
@@ -4669,14 +4698,14 @@ teachings address this issue. Many unique terms and expressions are used
 to designate this form of attachment. Following is a summary of such
 terms and expressions, organized into groups:</p>
 <blockquote>
-<p><em>Group 1: <em>etaṃ mama, esohamasmi, eso me attā-ti</em>: ’this is mine, I am
+<p><em>Group 1: <em>etaṁ mama, esohamasmi, eso me attā-ti</em>: ’this is mine, I am
 this, this is my self.’</em></p>
 <p>Group 2: <em>ahanti vā mamanti vā asmīti vā</em>: ’(the belief in) “I”, (the
 belief in) “mine”, and (the belief), “I exist”.’</p>
 <p>Group 3: <em>ahaṅkāra mamaṅkāra mānānusaya</em>: ’(the belief in) “I”, (the
 belief in) “mine”, and an underlying tendency of conceit.’</p>
 <p>Group 4: <em>mamāyita</em> (or: <em>mamatta</em>) and <em>asmimāna</em>: the belief in
-“mine”, (’the belief in “I”), and the conceit “I am”.’</p>
+’mine’, (the belief in ’I’), and the conceit ’I am’.</p>
 <p>Group 5: <em>attā</em>, <em>attaniya</em>, (and <em>asmīti</em>): the self, things
 associated with the self, (and the belief ’I exist’).</p>
 <p>Group 6: <em>taṇhā</em>, <em>māna</em>, and <em>diṭṭhi</em>: craving, conceit, and fixed
@@ -4691,18 +4720,18 @@ characteristics, leading to an understanding of things that prevents the
 attachment: ’this is mine’, ’I am this’, or ’this is my self’.<sup class="footnote-reference"><a href="#fn133">133</a></sup></p>
 <p><strong>Group 2:</strong> this group is an abbreviation of group #1 above: <em>ahanti</em>
 (’a belief in “I” ’) = <em>eso me attā</em>; <em>mamanti</em> (’a belief in “mine” ’)
-= <em>etaṃ mama</em>; <em>asmīti</em> (a belief such as ’I am this’ or ’I still
+= <em>etaṁ mama</em>; <em>asmīti</em> (a belief such as ’I am this’ or ’I still
 exist’) = <em>esohamasmi</em>.<sup class="footnote-reference"><a href="#fn134">134</a></sup></p>
 <p><strong>Group 3:</strong> this is another abbreviation of group #1: <em>ahaṅkāra</em> =
-<em>eso me attā</em>; <em>mamaṅkāra</em> = <em>etaṃ mama</em>; <em>mānānusaya</em> = <em>esohamasmi</em>.
+<em>eso me attā</em>; <em>mamaṅkāra</em> = <em>etaṁ mama</em>; <em>mānānusaya</em> = <em>esohamasmi</em>.
 {224} These terms are most often found in the phrase: ’There is an
 absence of (or ’freedom from’, or ’eradication of’) “I-making”,
 “mine-making” and an underlying tendency of conceit in regard to this
 body with its consciousness and all external signs.’<sup class="footnote-reference"><a href="#fn135">135</a></sup></p>
 <p><strong>Group 4:</strong> the term <em>mamāyita</em> is most often used to mean ’an
 attachment as “mine” ’ or ’an object attached to as “mine” ’ and is thus
-equivalent to <em>etaṃ mama</em>.<sup class="footnote-reference"><a href="#fn136">136</a></sup> Occasionally it is defined as both a
-belief in ’I’ and a belief in ’mine’ (equivalent to <em>etaṃ mama</em> and <em>eso me
+equivalent to <em>etaṁ mama</em>.<sup class="footnote-reference"><a href="#fn136">136</a></sup> Occasionally it is defined as both a
+belief in ’I’ and a belief in ’mine’ (equivalent to <em>etaṁ mama</em> and <em>eso me
 attā</em>, or to <em>taṇhā</em> and <em>diṭṭhi</em>).<sup class="footnote-reference"><a href="#fn137">137</a></sup> <em>Mamatta</em> (or <em>mamattā</em>) has an
 identical meaning to <em>mamāyita</em>, but tends to appear in verses paired
 with <em>mamāyita</em> or in place of <em>mamāyita</em>,<sup class="footnote-reference"><a href="#fn138">138</a></sup> or as a definition of
@@ -4721,7 +4750,7 @@ be simply called <em>māna</em>: (the most refined form of) conceit.</p>
 rather to things that are attached to, or to the state of affairs
 arising due to attachment. If one makes a broad comparison with group
 #1, <em>attā</em> is equivalent to <em>eso me attā</em> and <em>esohamasmi</em>, while
-<em>attaniya</em> is equivalent to <em>etaṃ mama</em>. Strictly speaking, however, the
+<em>attaniya</em> is equivalent to <em>etaṁ mama</em>. Strictly speaking, however, the
 term <em>attā</em> is confined to the view of possessing or existing as a
 ’self’ (i.e. it pertains to ’views’ – <em>diṭṭhi</em>). It therefore refers
 only to <em>eso me attā</em>, not to <em>esohamasmi</em>. To encompass the entire
@@ -4847,7 +4876,7 @@ or <em>taṇhā</em> conditions <em>adhimokkha</em> (intent, inclination),<br />
 or <em>paṭigha</em> conditions <em>adhimokkha</em>,<br />
 or <em>uddhacca</em> conditions <em>adhimokkha</em>.<br />
 <em>Upādāna</em> conditions <em>bhava</em>,<br />
-or <em>adhimokkha</em> conditions <em>bhava</em>.<br />
+or <em>adhimokkha</em> conditions <em>bhava</em>,<br />
 or <em>vicikicchā</em> conditions <em>bhava</em>.<br />
 <em>Bhava</em> conditions <em>jāti</em>.<br />
 <em>Jāti</em> conditions <em>jarāmaraṇa</em>.<br />
@@ -4982,7 +5011,7 @@ consequence of volitional formations’.</p>
 origination cycle of Dependent Origination. The Pali terms cover a wider
 range of meaning than can be captured by single English counterparts.
 For example, the teaching: <em>Avijjāpaccayā saṅkhārā</em> … <em>jātipaccayā
-jarāmaraṇaṃ</em> in Pali can also mean: ’Because ignorance exists in this
+jarāmaraṇaṁ</em> in Pali can also mean: ’Because ignorance exists in this
 way, volitional formations exist in this way; because volitional
 formations exist in this way, consciousness exists in this way …
 because becoming exists in this way, birth exists in this way; because
@@ -5690,7 +5719,7 @@ consciousness as self … or self as in consciousness</em> (M. I. 300).</p>
 </div>
 <div class="footnote-definition" id="fn66"><sup class="footnote-definition-label">66</sup>
 <p>The Buddha used the expression ’impartial teaching of truth’
-(<em>majjhena dhammaṃ deseti</em>). SA. II. 36 defines this as ’established
+(<em>majjhena dhammaṁ deseti</em>). SA. II. 36 defines this as ’established
 in the Middle Way, he teaches (in this way)’. At Vism. 522 the
 impartial teaching of truth is equated to the Middle Way. [Trans.:
 the author continues to use the expression ’impartial teaching of
@@ -5772,7 +5801,7 @@ objects, and the six forms of consciousness.</p>
 </div>
 <div class="footnote-definition" id="fn84"><sup class="footnote-definition-label">84</sup>
 <p>The expression ’Middle Teaching’ comes from the Pali: <em>majjhena
-dhammaṃ deseti</em>. This expression is found frequently in the Nidāna
+dhammaṁ deseti</em>. This expression is found frequently in the Nidāna
 Vagga of the Saṁyutta Nikāya (S. II. 17-77).</p>
 </div>
 <div class="footnote-definition" id="fn85"><sup class="footnote-definition-label">85</sup>
@@ -5986,7 +6015,7 @@ someone who is purified and has passed beyond sin.</p>
 S. III. 18, 45, 67-8, 104, 182, 187, 204, 223; S. IV. 1-4, 24-5,
 34-5, 43-5, 54-5, 58-9, 63-4, 105-6, 151-6, 382, 393; A. I. 284;
 A. II. 164-5, 171, 202; A. V. 187; etc. The passage that conveys the
-opposite meaning is: <em>netaṃ mama, nesohamasmi, na eso me attā-ti</em>.</p>
+opposite meaning is: <em>netaṁ mama, nesohamasmi, na eso me attā-ti</em>.</p>
 </div>
 <div class="footnote-definition" id="fn134"><sup class="footnote-definition-label">134</sup>
 <p>This passage occurs in only a few places, e.g.: M. I. 185-9;
@@ -6097,7 +6126,7 @@ nirodhadhammā.</em></p>
 <p>D. III. 215-6, 275.</p>
 </div>
 <div class="footnote-definition" id="fn159"><sup class="footnote-definition-label">159</sup>
-<p><em>Vibhavaṃ abhinandanti</em>; [ItA. 233] interprets <em>vibhava</em> as
+<p><em>Vibhavaṁ abhinandanti</em>; [ItA. 233] interprets <em>vibhava</em> as
 <em>uccheda</em> – ’extinction’.</p>
 </div>
 <div class="footnote-definition" id="fn160"><sup class="footnote-definition-label">160</sup>
@@ -6161,7 +6190,7 @@ M. I. 426-32, 484-6; S. II. 222; A. IV. 67-8; A. V. 193-8.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="law-of-kamma.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="law-of-kamma.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -6175,7 +6204,7 @@ M. I. 426-32, 484-6; S. II. 222; A. IV. 67-8; A. V. 193-8.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="law-of-kamma.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="law-of-kamma.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -6185,21 +6214,22 @@ M. I. 426-32, 484-6; S. II. 222; A. IV. 67-8; A. V. 193-8.</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>
