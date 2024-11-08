@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html" class="active">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -196,7 +177,7 @@ importance.</p>
 <blockquote>
 <p>Monks, there are two factors conducive to the arising of right view:
 the teachings of others (paratoghosa) and wise reflection
-(yoniso-manasikāra).<sup class="footnote-reference"><a href="#fn1">1</a></sup></p>
+(yoniso-manasikāra).<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup></p>
 <p><em>A. I. 87.</em></p>
 </blockquote>
 </div>
@@ -231,7 +212,7 @@ spiritual training:</p>
 <p>For a monk who is still in training … I do not see any other
 external factor that is so helpful as good friendship.</p>
 <p>For a monk who is still in training … I do not see any other
-internal factor that is so helpful as wise reflection.<sup class="footnote-reference"><a href="#fn2">2</a></sup></p>
+internal factor that is so helpful as wise reflection.<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup></p>
 <p><em>It. 9-10.</em></p>
 </blockquote>
 </div>
@@ -300,7 +281,7 @@ below.</p>
 righteous or virtuous person seeks one out. On the contrary, one should
 strive to find such a person – to consult with, listen to, request
 teachings from, associate with, and study with the wise. This is called
-association with the righteous or virtuous.<sup class="footnote-reference"><a href="#fn3">3</a></sup></p>
+association with the righteous or virtuous.<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup></p>
 <p>Regardless of who initiates the contact, once there is mutual influence
 and acknowledgement the person is said to have a virtuous friend and to
 participate in a virtuous friendship (<em>kalyāṇamittatā</em>).</p>
@@ -311,7 +292,7 @@ model in the correct path of spiritual training. The Visuddhimagga
 offers examples, including the Buddha, the arahant disciples, teachers,
 mentors, and wise, learned individuals, who are capable of teaching and
 providing consultation, even those people who are younger than
-oneself.<sup class="footnote-reference"><a href="#fn4">4</a></sup></p>
+oneself.<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup></p>
 <p>In the formal development of wisdom, the presence of a virtuous friend
 is classified as part of the stage of faith (<em>saddhā</em>). In the wider
 system of spiritual training, good companionship encompasses a whole
@@ -402,18 +383,18 @@ as the audience. There are, however, many general teachings and sayings
 by the Buddha, especially those given to householders, highlighting the
 importance of association with virtuous people, for example: good
 companionship is one factor conducive to realizing immediate, everyday
-benefits (<em>diṭṭhadhammikattha</em>);<sup class="footnote-reference"><a href="#fn5">5</a></sup> associating with evil people is a
-path to ruin (<em>apāya-mukha</em>);<sup class="footnote-reference"><a href="#fn6">6</a></sup> contact with and proper conduct
-towards friends is one aspect of the teaching on the six directions;<sup class="footnote-reference"><a href="#fn7">7</a></sup>
+benefits (<em>diṭṭhadhammikattha</em>);<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup> associating with evil people is a
+path to ruin (<em>apāya-mukha</em>);<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup> contact with and proper conduct
+towards friends is one aspect of the teaching on the six directions;<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup>
 the criteria for choosing friends according to the attributes of true
-and false friends;<sup class="footnote-reference"><a href="#fn8">8</a></sup> association with honest people is one of the four
-vehicles (<em>cakka</em>) leading to prosperity,<sup class="footnote-reference"><a href="#fn9">9</a></sup> one of the four virtues
-conducive to growth (<em>vuḍḍhi-dhamma</em>),<sup class="footnote-reference"><a href="#fn10">10</a></sup> and one of the four factors
-of stream-entry (<em>sotāpattiyaṅga</em>);<sup class="footnote-reference"><a href="#fn11">11</a></sup> and good friendship is one of
-the ten virtues making for self-reliance (<em>nāthakaraṇa-dhamma</em>).<sup class="footnote-reference"><a href="#fn12">12</a></sup>
+and false friends;<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup> association with honest people is one of the four
+vehicles (<em>cakka</em>) leading to prosperity,<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup> one of the four virtues
+conducive to growth (<em>vuḍḍhi-dhamma</em>),<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup> and one of the four factors
+of stream-entry (<em>sotāpattiyaṅga</em>);<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup> and good friendship is one of
+the ten virtues making for self-reliance (<em>nāthakaraṇa-dhamma</em>).<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup>
 The Jātaka tales, which apply to people of all walks of life, especially
 to laypeople, contain numerous stories and sayings pertaining to
-association and fellowship with others.<sup class="footnote-reference"><a href="#fn13">13</a></sup></p>
+association and fellowship with others.<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup></p>
 <p>Furthermore, there are teachings on this subject scattered throughout
 the Suttanta Piṭaka, for example: {568}</p>
 <div class="sutta">
@@ -514,13 +495,13 @@ higher, transcendent principles are implicit in the mundane teachings,
 however, and the Buddha would introduce them as befitting the
 circumstances. People are at different levels of spiritual maturity; the
 Buddha would prepare people by gradually laying a foundation for
-them.<sup class="footnote-reference"><a href="#fn14">14</a></sup></p>
+them.<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup></p>
 <h2 id="attributes-of-a-virtuous-friend"><a class="header" href="#attributes-of-a-virtuous-friend">Attributes of a Virtuous Friend</a></h2>
 <p>The specific attributes of a virtuous friend, distinguishing such a
 person as a ’righteous person’ (<em>sappurisa</em>) or a ’wise person’
 (<em>paṇḍita</em>), are as follows:</p>
 <p>There are seven distinguishing qualities (<em>sappurisa-dhamma</em>) of a
-virtuous person:<sup class="footnote-reference"><a href="#fn15">15</a></sup></p>
+virtuous person:<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup></p>
 <ol>
 <li>
 <p><em>Dhammaññutā</em>: one knows essential principles and causes; one knows
@@ -578,7 +559,7 @@ person’s attributes, for example:</p>
 <div class="sutta">
 <blockquote>
 <p>Monks, by his deeds a fool is marked, by his deeds a wise man is
-marked. Both are revealed clearly by way of their actions.<sup class="footnote-reference"><a href="#fn16">16</a></sup> By
+marked. Both are revealed clearly by way of their actions.<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup> By
 three things the fool can be known: by bad conduct of body, speech and
 mind. By three things the wise person can be known: by good conduct of
 body, speech and mind.</p>
@@ -615,7 +596,7 @@ with a desire for sense pleasures; whether affected by pleasure or
 pain, the wise show neither elation nor dejection. {571}</p>
 <p>Neither for the sake of himself nor for the sake of another does a
 sage do any wrong; he desires not son, wealth, kingdom, or personal
-success by unjust means; he is virtuous, wise, and upright.<sup class="footnote-reference"><a href="#fn17">17</a></sup></p>
+success by unjust means; he is virtuous, wise, and upright.<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup></p>
 <p><em>Dh. verses 83 and 84.</em></p>
 </blockquote>
 </div>
@@ -625,7 +606,7 @@ success by unjust means; he is virtuous, wise, and upright.<sup class="footnote-
 he abides vigilant and alert. Such a person meditates consistently and
 makes constant effort; he possesses insight with subtle understanding,
 delighting in the destruction of clinging. They call him a superior
-man.<sup class="footnote-reference"><a href="#fn18">18</a></sup></p>
+man.<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup></p>
 <p><em>S. II. 232.</em></p>
 <p>Irrigators channel water, fletchers straighten arrows, woodworkers
 craft wood, the wise train themselves.</p>
@@ -707,7 +688,7 @@ action advisable for two reasons, for it is both pleasant and
 beneficial.</p>
 <p><em>A. II. 118-19.</em></p>
 <p>The steadfast one, by attaining the desired good, is called a person
-of wisdom.<sup class="footnote-reference"><a href="#fn19">19</a></sup></p>
+of wisdom.<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup></p>
 <p><em>S. I. 87, 90; A. II. 46; A. III. 48-9; It. 16-17.</em></p>
 <p>Whoever grows in faith, virtuous conduct, learning, generosity, and
 wisdom: such a person is righteous, possesses discriminative
@@ -737,7 +718,7 @@ dependants, workers and servants, of his friends and colleagues, of
 his ancestors, of the king, of the devas, of ascetics and brahmins.
 This is similar to how a great rain cloud brings all the crops to
 growth and exists for the good, welfare and happiness of many
-people.<sup class="footnote-reference"><a href="#fn20">20</a></sup></p>
+people.<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup></p>
 <p><em>A. IV. 244-5.</em></p>
 </blockquote>
 </div>
@@ -756,16 +737,16 @@ the qualities mentioned in the definition of virtuous friendship
 <p>Virtuous friendship is defined as ’consorting, associating, and
 affiliating with, and a devotion and dedication to, someone who has
 faith (<em>saddhā</em>), morality (<em>sīla</em>), (great) learning (<em>suta</em>),
-generosity (<em>cāga</em>), and wisdom (<em>paññā</em>).’<sup class="footnote-reference"><a href="#fn21">21</a></sup></p>
+generosity (<em>cāga</em>), and wisdom (<em>paññā</em>).’<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup></p>
 <p>In some passages only four of these qualities are mentioned, excluding
 learning, which is considered to be less important than the other four
 factors. Other passages suggest that when one lives in a specific
 locality one should associate closely, converse, and consult with those
 people who are endowed with faith, virtue, generosity, and wisdom; one
 should take these people as role models and emulate their spiritual
-qualities.<sup class="footnote-reference"><a href="#fn22">22</a></sup></p>
+qualities.<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup></p>
 <p>A virtuous friend should also possess the seven basic virtues referred
-to as the ’qualities of a virtuous friend’ (<em>kalyāṇamitta-dhamma</em>):<sup class="footnote-reference"><a href="#fn23">23</a></sup></p>
+to as the ’qualities of a virtuous friend’ (<em>kalyāṇamitta-dhamma</em>):<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup></p>
 <ol>
 <li>
 <p><em>Piyo</em>: ’endearing’; the ability to ’access another’s heart’, create
@@ -842,7 +823,7 @@ benefit and welfare of himself and others. What six? Here, a monk:</p>
 </li>
 <li>
 <p>By clearly understanding the meaning (attha) and fundamental
-principles (dhamma), he practises correctly.<sup class="footnote-reference"><a href="#fn24">24</a></sup></p>
+principles (dhamma), he practises correctly.<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup></p>
 </li>
 <li>
 <p>Has pleasing and lovely speech, consisting of sophisticated,
@@ -981,7 +962,7 @@ destitute.</p>
 </blockquote>
 </div>
 <p>The general principles of friendship are outlined in the teaching on the
-six directions:<sup class="footnote-reference"><a href="#fn25">25</a></sup></p>
+six directions:<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup></p>
 <div class="sutta">
 <blockquote>
 <p>See here, householder’s son, there are five ways in which a man should
@@ -1019,8 +1000,8 @@ friends.</p>
 ability to adapt to others, to not be conceited, and to be a friend in
 good times and bad – is essential and goes to the heart of friendship.
 As described earlier, the Buddha distinguishes the friend in happy and
-unhappy times as one of the four ’true’ friends.<sup class="footnote-reference"><a href="#fn26">26</a></sup> {577}</p>
-<p>The bhikkhus, or renunciants in general,<sup class="footnote-reference"><a href="#fn27">27</a></sup> should act as virtuous
+unhappy times as one of the four ’true’ friends.<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup> {577}</p>
+<p>The bhikkhus, or renunciants in general,<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup> should act as virtuous
 friends for the laypeople. The responsibilities for a bhikkhu in
 relation to a householder, according to honouring the zenith in the
 teaching on the six directions, are identical to the attributes of a
@@ -1028,7 +1009,7 @@ true friend. The attribute of a true friend: ’one who points out what is
 good’ can be rephrased in this context as ’bhikkhus are true friends as
 they point out what is good.’ The duties of the monastic sangha towards
 the laity, however, contain an additional two factors, amounting to six
-factors in total:<sup class="footnote-reference"><a href="#fn28">28</a></sup></p>
+factors in total:<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup></p>
 <ol>
 <li>
 <p>To discourage them from doing evil.</p>
@@ -1037,13 +1018,13 @@ factors in total:<sup class="footnote-reference"><a href="#fn28">28</a></sup></p
 <p>To encourage them to do good.</p>
 </li>
 <li>
-<p>To assist them with benevolence.<sup class="footnote-reference"><a href="#fn29">29</a></sup></p>
+<p>To assist them with benevolence.<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup></p>
 </li>
 <li>
 <p>To inform them of things they have not previously known or heard.</p>
 </li>
 <li>
-<p>To explain and clarify those things they have heard.<sup class="footnote-reference"><a href="#fn30">30</a></sup></p>
+<p>To explain and clarify those things they have heard.<sup class="footnote-reference" id="fr-fn30-1"><a href="#fn-fn30">30</a></sup></p>
 </li>
 <li>
 <p>To point out the way to heaven (to teach a way of life leading to
@@ -1097,14 +1078,14 @@ by (other) human beings’: {578}</p>
 lives overly associating with laypeople; he rejoices with them and
 grieves with them, he is happy when they are happy and sad when they
 are sad, and he involves himself in their affairs and duties (he acts
-as a busybody). This is called getting caught by human beings.<sup class="footnote-reference"><a href="#fn31">31</a></sup></p>
+as a busybody). This is called getting caught by human beings.<sup class="footnote-reference" id="fr-fn31-1"><a href="#fn-fn31">31</a></sup></p>
 <p><em>S. IV. 180-81.</em></p>
 </blockquote>
 </div>
 <p>When engaged in the direct instruction of others, a virtuous friend
 should follow the teachings emphasizing purity, kindness, and sincerity:</p>
 <p>First, there is the group of five factors known as the ’qualities of a
-teacher’ (<em>dhammadesaka-dhamma</em>):<sup class="footnote-reference"><a href="#fn32">32</a></sup></p>
+teacher’ (<em>dhammadesaka-dhamma</em>):<sup class="footnote-reference" id="fr-fn32-1"><a href="#fn-fn32">32</a></sup></p>
 <ol>
 <li>
 <p>To teach gradually and sequentially (<em>anupubbikathā</em>): to teach a
@@ -1157,7 +1138,7 @@ concern. Such a bhikkhu’s teaching of the Dhamma is pure. {579}</p>
 <p>In a similar way, the teaching on the six directions in reference to the
 duties of teachers towards their students contains similar attributes.
 Here, the emphasis is not so much on purity, but rather on kindness and
-sincere commitment:<sup class="footnote-reference"><a href="#fn33">33</a></sup></p>
+sincere commitment:<sup class="footnote-reference" id="fr-fn33-1"><a href="#fn-fn33">33</a></sup></p>
 <ol>
 <li>
 <p>To counsel and train students in virtue.</p>
@@ -1203,10 +1184,10 @@ in this respect.</p>
 <p>Occasionally, a very learned person, who possesses knowledge through
 reading texts or other forms of study, can facilitate Dhamma realization
 in someone else despite he himself having not yet attained such a
-realization.<sup class="footnote-reference"><a href="#fn34">34</a></sup> Similarly, it can happen that two people at equal
+realization.<sup class="footnote-reference" id="fr-fn34-1"><a href="#fn-fn34">34</a></sup> Similarly, it can happen that two people at equal
 stages of spiritual maturity discuss and review the Dhamma together and
 as a consequence they simultaneously arrive at a realization of
-truth.<sup class="footnote-reference"><a href="#fn35">35</a></sup></p>
+truth.<sup class="footnote-reference" id="fr-fn35-1"><a href="#fn-fn35">35</a></sup></p>
 <p>One of the great benefits of having a virtuous friend is that he or she
 acts as a role model. As a result one is confident that those things one
 practises and aspires to are truly feasible and achievable, and by
@@ -1257,7 +1238,7 @@ unextinguished, should train another, discipline him, and help
 extinguish his defilements is impossible. That one who is himself
 trained, disciplined, with defilements extinguished, should train
 another, discipline him, and help extinguish his defilements is
-possible.<sup class="footnote-reference"><a href="#fn36">36</a></sup></p>
+possible.<sup class="footnote-reference" id="fr-fn36-1"><a href="#fn-fn36">36</a></sup></p>
 <p><em>M. I. 45.</em></p>
 </blockquote>
 </div>
@@ -1268,7 +1249,7 @@ determined as a code of ethics for renunciants:</p>
 <blockquote>
 <p>A renunciant should not be overly busy, acting indiscriminately; he
 should not be the man of someone else. Not in dependence on another
-should he live, nor go about treating the Dhamma as a commodity.<sup class="footnote-reference"><a href="#fn37">37</a></sup></p>
+should he live, nor go about treating the Dhamma as a commodity.<sup class="footnote-reference" id="fr-fn37-1"><a href="#fn-fn37">37</a></sup></p>
 <p><em>Ud. 66.</em></p>
 </blockquote>
 </div>
@@ -1283,7 +1264,7 @@ constraints and from the oppression of mental defilement. {581}</p>
 grows up in the water, but having risen up above the water, it stands
 unsullied by the water, so too the Tathāgata was born in the world and
 grew up in the world, but having risen above the world, he dwells
-untarnished by the world.<sup class="footnote-reference"><a href="#fn38">38</a></sup></p>
+untarnished by the world.<sup class="footnote-reference" id="fr-fn38-1"><a href="#fn-fn38">38</a></sup></p>
 <p><em>S. III. 140-41.</em></p>
 <p>See here, Bāhuna, the Tathāgata is free, detached, and released from
 ten things and thus dwells with a boundless mind. What ten? Here, the
@@ -1301,14 +1282,14 @@ teaches the Dhamma for the sake of training. The Blessed One is at
 peace himself and thus teaches the Dhamma for the sake of peace. The
 Blessed One has crossed over himself and thus teaches the Dhamma for
 crossing over. The Blessed One is completely quenched himself and thus
-teaches the Dhamma for extinguishment.<sup class="footnote-reference"><a href="#fn39">39</a></sup></p>
+teaches the Dhamma for extinguishment.<sup class="footnote-reference" id="fr-fn39-1"><a href="#fn-fn39">39</a></sup></p>
 <p><em>D. III. 53-4; M. I. 235.</em></p>
 </blockquote>
 </div>
 <p>The following three characteristics of the Buddha’s teaching style,
 which are referred to as the ’Buddha’s mode of teaching’, can be used as
 general principles of self-assessment for those people who act as
-virtuous friends and instruct others:<sup class="footnote-reference"><a href="#fn40">40</a></sup></p>
+virtuous friends and instruct others:<sup class="footnote-reference" id="fr-fn40-1"><a href="#fn-fn40">40</a></sup></p>
 <ol>
 <li>
 <p>The Buddha teaches the Dhamma through direct knowledge. He teaches
@@ -1349,14 +1330,14 @@ possesses great learning, despite the fact that he or she has not yet
 reached the gist of the teaching. {582}</p>
 <p>In this case, such a person is like a cowherd who looks after the cows
 belonging to someone else, or like a blind person who carries a lantern
-– a person with good vision is thus able to see.<sup class="footnote-reference"><a href="#fn41">41</a></sup> A person with
+– a person with good vision is thus able to see.<sup class="footnote-reference" id="fr-fn41-1"><a href="#fn-fn41">41</a></sup> A person with
 good vision here refers to someone endowed with wise reflection
 (<em>yoniso-manasikāra</em>).</p>
 <p>This is not only the case with someone who has vast knowledge and is a
 highly skilled teacher – even the speech of a simpleton or someone who
 parrots the wise words of others can provide food for thought. A person
 with wise reflection may hear these words and consequently attain
-realization.<sup class="footnote-reference"><a href="#fn42">42</a></sup></p>
+realization.<sup class="footnote-reference" id="fr-fn42-1"><a href="#fn-fn42">42</a></sup></p>
 <p>In these circumstances, however, the vital factor rests with the
 listener, that is, he or she possesses the internal spiritual factor of
 wise reflection, which will be discussed in a following chapter.</p>
@@ -1405,7 +1386,7 @@ The decisive factor determining whether one fulfils the responsibility
 of a ’virtuous friend’ is whether the person one associates with arrives
 at right view. {583}</p>
 <p>A technical and doctrinal explanation of right view (<em>sammā-diṭṭhi</em>)
-will be presented in a following chapter.<sup class="footnote-reference"><a href="#fn43">43</a></sup> As an introduction it is
+will be presented in a following chapter.<sup class="footnote-reference" id="fr-fn43-1"><a href="#fn-fn43">43</a></sup> As an introduction it is
 useful here to point out that the virtuous and correct views, opinions,
 values, and forms of understanding which are collectively called ’right
 view’ have many details and particulars, and may be explained in many
@@ -1477,7 +1458,7 @@ truth. {584}</p>
 <p>All Buddhists, regardless of whether they aim directly for this highest
 goal or not, should be careful not to stop at the first kind of right
 view. Rather, they should advance to the second kind, by cultivating
-this form of wisdom, at least to an initial degree.<sup class="footnote-reference"><a href="#fn44">44</a></sup> This is because
+this form of wisdom, at least to an initial degree.<sup class="footnote-reference" id="fr-fn44-1"><a href="#fn-fn44">44</a></sup> This is because
 this kind of right view reduces and alleviates greed, hatred and
 delusion; it helps to establish an improved relationship to the world,
 it makes the mind clear and bright, and it increases happiness. It
@@ -1494,14 +1475,14 @@ the teaching:</p>
 <blockquote>
 <p><em>Association with a wise person (to have a ’virtuous friend’) →<br />
 to listen to the Dhamma →<br />
-faith.<sup class="footnote-reference"><a href="#fn45">45</a></sup></em></p>
+faith.<sup class="footnote-reference" id="fr-fn45-1"><a href="#fn-fn45">45</a></sup></em></p>
 </blockquote>
 <p>Here we come to a vital point in spiritual training or practice: the
 connection between an external, social factor and an internal, personal
 factor. The external factor is ’learning from others’ (<em>paratoghosa</em>),
 here meaning to have a virtuous friend (<em>kalyāṇamitta</em>). On its own it
 results in faith and leads only to ’mundane right view’
-(<em>lokiya-sammādiṭṭhi</em>).<sup class="footnote-reference"><a href="#fn46">46</a></sup> {585}</p>
+(<em>lokiya-sammādiṭṭhi</em>).<sup class="footnote-reference" id="fr-fn46-1"><a href="#fn-fn46">46</a></sup> {585}</p>
 <p>If one only reaches this stage then one’s spiritual training is
 incomplete and one will not reach the highest goal of Buddhism. When one
 abides only at the level of faith, one still relies on one’s teachers –
@@ -1552,7 +1533,7 @@ stream-entry, however, the Buddha does not mention faith. It may be that
 in this context he considered faith to be a minor or subsidiary factor,
 and that it does not require emphasis. {586}</p>
 <p>The process of wisdom development, or the process involving the factors
-leading to stream-entry, is illustrated thus:<sup class="footnote-reference"><a href="#fn47">47</a></sup></p>
+leading to stream-entry, is illustrated thus:<sup class="footnote-reference" id="fr-fn47-1"><a href="#fn-fn47">47</a></sup></p>
 <blockquote>
 <p><em>Association with a wise person (to have a ’virtuous friend’) →<br />
 listening to the Dhamma →<br />
@@ -1618,7 +1599,7 @@ in] rightness in wholesome qualities. What five?</p>
 attention.</p>
 </li>
 <li>
-<p>He reflects wisely.<sup class="footnote-reference"><a href="#fn48">48</a></sup> {587}</p>
+<p>He reflects wisely.<sup class="footnote-reference" id="fr-fn48-1"><a href="#fn-fn48">48</a></sup> {587}</p>
 </li>
 </ol>
 <p><em>A. III. 174-5.</em></p>
@@ -1636,7 +1617,7 @@ a following chapter. But before finishing this section on the influence
 by others (<em>paratoghosa</em>), it seems appropriate to speak some more on
 the subject of faith (<em>saddhā</em>), which is a key factor in the discussion
 so far. The focus here will be on the proper role and practice of faith
-in the course of bringing suffering to cessation.<sup class="footnote-reference"><a href="#fn49">49</a></sup></p>
+in the course of bringing suffering to cessation.<sup class="footnote-reference" id="fr-fn49-1"><a href="#fn-fn49">49</a></sup></p>
 <h2 id="appendix-1-four-bases-of-social-solidarity-saṅgaha-vatthu"><a class="header" href="#appendix-1-four-bases-of-social-solidarity-saṅgaha-vatthu">Appendix 1: Four Bases of Social Solidarity (saṅgaha-vatthu)</a></h2>
 <ol>
 <li>
@@ -1653,19 +1634,19 @@ in the course of bringing suffering to cessation.<sup class="footnote-reference"
 </li>
 </ol>
 <p>This key teaching on the four bases of social solidarity is found
-frequently in the Pali Canon.<sup class="footnote-reference"><a href="#fn50">50</a></sup> One example of the importance the
+frequently in the Pali Canon.<sup class="footnote-reference" id="fr-fn50-1"><a href="#fn-fn50">50</a></sup> One example of the importance the
 Buddha gave to mutual assistance and to social harmony is the story of
 Hatthaka Āḷavaka, whom the Buddha praised as one of the two ’mastheads’
 of the assembly of laymen, and who was declared foremost among those who
 support and protect a following by means of the four bases of social
-solidarity.<sup class="footnote-reference"><a href="#fn51">51</a></sup></p>
+solidarity.<sup class="footnote-reference" id="fr-fn51-1"><a href="#fn-fn51">51</a></sup></p>
 <p>In the Siṅgālaka Sutta, when the Buddha describes honouring the six
 directions within the ’noble discipline’ (<em>ariya-vinaya</em>), he concludes
-with these four bases of social solidarity.<sup class="footnote-reference"><a href="#fn52">52</a></sup></p>
+with these four bases of social solidarity.<sup class="footnote-reference" id="fr-fn52-1"><a href="#fn-fn52">52</a></sup></p>
 <p>The commentaries define the term <em>rājā</em> (’king’, ’majesty’) as someone
-who gladdens the people by way of the four bases of solidarity,<sup class="footnote-reference"><a href="#fn53">53</a></sup> and
+who gladdens the people by way of the four bases of solidarity,<sup class="footnote-reference" id="fr-fn53-1"><a href="#fn-fn53">53</a></sup> and
 state that these four bases of solidarity are a form of ’sublime
-conduct’ (<em>brahmacariya</em>).<sup class="footnote-reference"><a href="#fn54">54</a></sup></p>
+conduct’ (<em>brahmacariya</em>).<sup class="footnote-reference" id="fr-fn54-1"><a href="#fn-fn54">54</a></sup></p>
 <p>The last factor – <em>samānattatā</em> – can cause some problems in
 interpretation because the origin of this word is unclear and it is
 translated in different ways. The term <em>samāna</em> means ’even’, ’equal’,
@@ -1674,24 +1655,24 @@ or ’common’, and thus the term <em>samānattatā</em> is often translated as
 as one would wish them to do onto you). The commentaries generally
 translate this latter term as ’in good times and in bad’ (i.e. to be
 constant), or as equality and impartiality, expressed for example by
-eating or sitting together;<sup class="footnote-reference"><a href="#fn55">55</a></sup> it is related to the term
+eating or sitting together;<sup class="footnote-reference" id="fr-fn55-1"><a href="#fn-fn55">55</a></sup> it is related to the term
 <em>samāna-kicca</em>, which means ’to work together’ or ’to help one another
-accomplish a task’.<sup class="footnote-reference"><a href="#fn56">56</a></sup></p>
+accomplish a task’.<sup class="footnote-reference" id="fr-fn56-1"><a href="#fn-fn56">56</a></sup></p>
 <p>The commentary to the Paṭisambhidāmagga gives an alternative definition
 for <em>samānattatā</em>, stating that it means ’proper discrimination’ or ’to
 place oneself in a correct relationship’, i.e. to act appropriately in
 respect to another’s status, as lower, equal, or higher than
-oneself.<sup class="footnote-reference"><a href="#fn57">57</a></sup> The Jātaka commentaries offer yet another definition,
+oneself.<sup class="footnote-reference" id="fr-fn57-1"><a href="#fn-fn57">57</a></sup> The Jātaka commentaries offer yet another definition,
 stating that it means ’to be consistent’: not to act one way in private
 and another way in public, for example to be respectful to one’s parents
-irrespective of whether one is at home or in a public gathering.<sup class="footnote-reference"><a href="#fn58">58</a></sup></p>
+irrespective of whether one is at home or in a public gathering.<sup class="footnote-reference" id="fr-fn58-1"><a href="#fn-fn58">58</a></sup></p>
 <p>At the highest level, the Buddha acknowledged the equality among those
-of similar states of realization.<sup class="footnote-reference"><a href="#fn59">59</a></sup></p>
+of similar states of realization.<sup class="footnote-reference" id="fr-fn59-1"><a href="#fn-fn59">59</a></sup></p>
 <h2 id="appendix-2-commentarial-analysis-of-right-view-sammā-diṭṭhi"><a class="header" href="#appendix-2-commentarial-analysis-of-right-view-sammā-diṭṭhi">Appendix 2: Commentarial Analysis of Right View (sammā-diṭṭhi)</a></h2>
 <p>The commentaries provide a more detailed analysis of right view,
-dividing it into five kinds:<sup class="footnote-reference"><a href="#fn60">60</a></sup> <em>kammassakatā-sammādiṭṭhi</em>,
+dividing it into five kinds:<sup class="footnote-reference" id="fr-fn60-1"><a href="#fn-fn60">60</a></sup> <em>kammassakatā-sammādiṭṭhi</em>,
 <em>jhāna-sammādiṭṭhi</em>, <em>vipassanā-sammādiṭṭhi</em>, <em>magga-sammādiṭṭhi</em>, and
-<em>phala-sammādiṭṭhi</em>.<sup class="footnote-reference"><a href="#fn61">61</a></sup> The first three kinds are mundane; the last
+<em>phala-sammādiṭṭhi</em>.<sup class="footnote-reference" id="fr-fn61-1"><a href="#fn-fn61">61</a></sup> The first three kinds are mundane; the last
 two are transcendent. Of the two kinds of right view mentioned in
 section 5 above (’The Responsibility of a Virtuous Friend’), the first
 is equivalent to <em>kammassakatā-sammādiṭṭhi</em>, while the second is
@@ -1703,23 +1684,23 @@ transcendence’.</p>
 <p>A familiar example of <em>kammassakatā-ñāṇa</em> (or
 <em>kammassakatā-sammādiṭṭhi</em>) is the factor of right view in the teaching
 on righteous conduct (<em>dhamma-cariyā</em>) or the ten wholesome courses of
-action (<em>kusala-kammapatha</em>).<sup class="footnote-reference"><a href="#fn62">62</a></sup> This is a form of right view found
+action (<em>kusala-kammapatha</em>).<sup class="footnote-reference" id="fr-fn62-1"><a href="#fn-fn62">62</a></sup> This is a form of right view found
 both within and outside Buddhism, and it existed even before the time of
 the Buddha, that is, it is a part of all religious teachings that
 espouse the doctrine of kamma. (No matter what teaching is upheld, in
 whichever religious tradition, if this teaching accords with truth,
 Buddhism acknowledges and accepts it.) For more on this subject see the
-commentaries to the Vinaya Piṭaka and the Majjhima Nikāya.<sup class="footnote-reference"><a href="#fn63">63</a></sup> The
+commentaries to the Vinaya Piṭaka and the Majjhima Nikāya.<sup class="footnote-reference" id="fr-fn63-1"><a href="#fn-fn63">63</a></sup> The
 second of these two commentaries reiterates that both
 <em>kammassakatā-ñāṇa</em> and <em>saccānulomika-ñāṇa</em> are mundane forms of right
 view. <em>Saccānulomika-ñāṇa</em> is ’knowledge consistent with truth’ or
-’knowledge in line with truth’;<sup class="footnote-reference"><a href="#fn64">64</a></sup> it is equivalent to
-<em>vipassanā-ñāṇa</em>.<sup class="footnote-reference"><a href="#fn65">65</a></sup></p>
+’knowledge in line with truth’;<sup class="footnote-reference" id="fr-fn64-1"><a href="#fn-fn64">64</a></sup> it is equivalent to
+<em>vipassanā-ñāṇa</em>.<sup class="footnote-reference" id="fr-fn65-1"><a href="#fn-fn65">65</a></sup></p>
 <p>Furthermore, a passage from the commentary to the Majjhima Nikāya
 presents a different division of fivefold <em>sammādiṭṭhi</em>, namely:
 <em>vipassanā-sammādiṭṭhi</em>, <em>kammassakatā-sammādiṭṭhi</em>,
 <em>magga-sammādiṭṭhi</em>, <em>phala-sammādiṭṭhi</em>, and
-<em>paccavekkhaṇa-sammādiṭṭhi</em>.<sup class="footnote-reference"><a href="#fn66">66</a></sup> Here, <em>jhāna-sammādiṭṭhi</em> is removed
+<em>paccavekkhaṇa-sammādiṭṭhi</em>.<sup class="footnote-reference" id="fr-fn66-1"><a href="#fn-fn66">66</a></sup> Here, <em>jhāna-sammādiṭṭhi</em> is removed
 and replaced by <em>paccavekkhaṇa-sammādiṭṭhi</em>. <em>Jhāna-sammādiṭṭhi</em> is also
 a form of mundane right view, but it pertains to those individuals who
 have achieved jhāna and is not directly related to the subject at hand.
@@ -1735,54 +1716,55 @@ mundane form of right view.</p>
   </a>
 </p>
 </div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
 <p>See also: M. I. 294. Likewise, there are two opposite factors
 giving rise to wrong view (<em>micchā-diṭṭhi</em>): (incorrect) teachings
-of others and a lack of wise reflection: A. V. 187-8.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
-<p>Cf.: S. V. 101-102.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+of others and a lack of wise reflection: A. V. 187-8. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
+<p>Cf.: S. V. 101-102. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>There are many Pali words for such association:
 <em>sappurisa-saṁseva</em>, <em>sappurisūpasaṁseva</em>, <em>sappurisūpassaya</em>,
-<em>sappurisūpanissaya</em>, <em>sappurisa-sevanā</em>, or <em>paṇḍita-sevanā</em>.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+<em>sappurisūpanissaya</em>, <em>sappurisa-sevanā</em>, or <em>paṇḍita-sevanā</em>. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
 <p>See: Vism. 97-101; this text provides examples in the context of
-training in meditation.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
-<p>A. IV. 281.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
-<p>D. III. 184; A. IV. 283-4.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
-<p>D. III. 190-91.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
-<p>D. III. 185-6. This is a significant and comprehensive teaching.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
+training in meditation. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
+<p>A. IV. 281. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
+<p>D. III. 184; A. IV. 283-4. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
+<p>D. III. 190-91. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
+<p>D. III. 185-6. This is a significant and comprehensive teaching. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
 <p>Virtues leading one to prosperity are like wheels which lead a
 vehicle to its destination; these four qualities are also referred
 to as ’virtues of great assistance’ (<em>bahukāra-dhamma</em>): D. III.
-276; A. II. 32.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
+276; A. II. 32. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
 <p>Factors for wisdom development; principles for developing wisdom;
 A. II. 245-6. These virtues are greatly beneficial for all people:
-A. II. 246.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
-<p>Factors leading to stream-entry: S. V. 347.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
+A. II. 246. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
+<p>Factors leading to stream-entry: S. V. 347. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
 <p>This teaching was given to bhikkhus, e.g.: D. III. 266-7, 290;
-A. V. 23-4.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
+A. V. 23-4. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
 <p>The most prominent of these include: the two red-breasted
 parakeets who are siblings (Sattigumba Jātaka: J. IV. 432; JA. IV.
 430); the exceptionally flavoured mangos (Dadhivāhana Jātaka: J. II.
@@ -1800,15 +1782,15 @@ Jātaka (J. III. 491; JA. III. 490); Kusanāḷi Jātaka (J. I. 443;
 JA. I. 440); Kuruṅgamiga Jātaka (J. II. 153; JA. II. 152);
 Mahā-ukkusa Jātaka (J. IV. 291; JA. IV. 288). There are also many
 sayings in reference to association with people inserted in Jātaka
-stories which are not directly related to this subject.</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
+stories which are not directly related to this subject. <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
 <p>Examples of such teachings for the general public include: having
 people come to terms with death by contemplating the truth of
 impermanence and instability, and discouraging people from indulging
-in material gain, prestige, pleasure, and praise.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
+in material gain, prestige, pleasure, and praise. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
 <p>D. III. 252, 283; A. IV. 113-14; another group of qualities for a
 righteous person containing eight factors occurs at: M. III. 23.
 ’Righteous conduct’ (<em>dhamma-cariyā</em>) or the ten wholesome ways of
@@ -1820,94 +1802,94 @@ referred to as <em>sappurisa-dhamma</em> (A. V. 245); sometimes a
 (S. V. 19-20). The Buddhist teachings on a righteous person and an
 unrighteous person (<em>asappurisa</em>) are numerous; here only a
 selection have been presented to illustrate the essence of these
-teachings.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
+teachings. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
 <p><em>Apadāne sobhati paññā</em>; I have translated this phrase according
-to AA. II. 169.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
+to AA. II. 169. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
 <p>The commentaries interpret the phrase ’unattached to all
 conditions’ as ’abandoning delight and attachment (<em>chanda-rāga</em>) in
-all things’ (DhA. II. 156).</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+all things’ (DhA. II. 156). <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
 <p>In the Thai Pali edition the phrase ’abides vigilant and alert’
-is replaced by ’dwells with measureless concentration’.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+is replaced by ’dwells with measureless concentration’. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
 <p>The desired good is twofold: good visible in this very life and
-the good of the future life.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
-<p>A similar passage exists at A. III. 46-7.</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
-<p>See: Dhs. 228.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
-<p>See, e.g.: A. IV. 281-2.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
+the good of the future life. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
+<p>A similar passage exists at A. III. 46-7. <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
+<p>See: Dhs. 228. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
+<p>See, e.g.: A. IV. 281-2. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
 <p>A. IV. 32. The commentaries describe an additional eight
 ’attributes of a virtuous friend’ (<em>kalyāṇamitta-lakkhaṇa</em>), namely:
 faith, morality, learning, generosity, effort, mindfulness,
-concentration, and wisdom (UdA. 221; ItA. I. 65).</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
+concentration, and wisdom (UdA. 221; ItA. I. 65). <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
 <p><em>Dhammānudhamma-paṭipanno</em>: he practises secondary principles of
 Dhamma in accord with primary principles, that is, he practises
 aspects of Dhamma correctly according to their formal principles as
-well as their true objective.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
+well as their true objective. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
 <p>D. III. 190. (Specific to this passage, the term <em>piya-vācā</em> is
 sometimes written as <em>piya-vajja</em> or <em>peyya-vajja</em>; the meaning is
-the same.)</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
+the same.) <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
 <p>The teaching on the <em>saṅgaha-vatthu</em> is a very important one; for
-more on this teaching, see Appendix 1.</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
+more on this teaching, see Appendix 1. <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
 <p>Trans: the author here uses the scriptural expression ’ascetics
-and brahmins’.</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
-<p>D. III. 191.</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
-<p>Added factor.</p>
-</div>
-<div class="footnote-definition" id="fn30"><sup class="footnote-definition-label">30</sup>
-<p>Ibid.</p>
-</div>
-<div class="footnote-definition" id="fn31"><sup class="footnote-definition-label">31</sup>
+and brahmins’. <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
+<p>D. III. 191. <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
+<p>Added factor. <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn30"><sup class="footnote-definition-label">30</sup>
+<p>Ibid. <a href="#fr-fn30-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn31"><sup class="footnote-definition-label">31</sup>
 <p>This is sometimes referred to as ’there arises intimacy in the
 household’ (S. III. 11; Nd. I. 198-9); other times it is referred to
 as ’caught up in the household’ (Nd. I. 387); it is part of the
-worry connected to a sympathy for others (Vbh. 356-7).</p>
-</div>
-<div class="footnote-definition" id="fn32"><sup class="footnote-definition-label">32</sup>
+worry connected to a sympathy for others (Vbh. 356-7). <a href="#fr-fn31-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn32"><sup class="footnote-definition-label">32</sup>
 <p>See: A. III. 184. These are not literal definitions from this
-sutta passage.</p>
-</div>
-<div class="footnote-definition" id="fn33"><sup class="footnote-definition-label">33</sup>
-<p>D. III. 189-90.</p>
-</div>
-<div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
+sutta passage. <a href="#fr-fn32-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn33"><sup class="footnote-definition-label">33</sup>
+<p>D. III. 189-90. <a href="#fr-fn33-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn34"><sup class="footnote-definition-label">34</sup>
 <p>The texts liken such a person to a cowherd who looks after
 someone else’s cattle: he simply counts the cows without ever
 savouring the fivefold dairy products (see: Dh. verse 19; DhA. I.
-155).</p>
-</div>
-<div class="footnote-definition" id="fn35"><sup class="footnote-definition-label">35</sup>
-<p>E.g.: S. III. 126-32.</p>
-</div>
-<div class="footnote-definition" id="fn36"><sup class="footnote-definition-label">36</sup>
-<p>Referred to at: Nd. I. 31-2; Nd. II. 21.</p>
-</div>
-<div class="footnote-definition" id="fn37"><sup class="footnote-definition-label">37</sup>
+155). <a href="#fr-fn34-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn35"><sup class="footnote-definition-label">35</sup>
+<p>E.g.: S. III. 126-32. <a href="#fr-fn35-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn36"><sup class="footnote-definition-label">36</sup>
+<p>Referred to at: Nd. I. 31-2; Nd. II. 21. <a href="#fr-fn36-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn37"><sup class="footnote-definition-label">37</sup>
 <p>The phrase ’should not be overly busy, acting indiscriminately’
 is translated from the Pali: <em>na vāyameyya sabbattha</em>, which
 literally means: ’should not make an effort everywhere’ or ’should
@@ -1915,41 +1897,41 @@ not make an effort in all matters’. The commentaries explain this
 phrase as ’should not make an effort in all kinds of unskilful
 activities’, for example by acting as a messenger or a scout, like a
 royal official (UdA. 334). ’Should not be the man of someone else’
-means to not be someone’s servant or subordinate.</p>
-</div>
-<div class="footnote-definition" id="fn38"><sup class="footnote-definition-label">38</sup>
-<p>Cf.: A. II. 38-9.</p>
-</div>
-<div class="footnote-definition" id="fn39"><sup class="footnote-definition-label">39</sup>
+means to not be someone’s servant or subordinate. <a href="#fr-fn37-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn38"><sup class="footnote-definition-label">38</sup>
+<p>Cf.: A. II. 38-9. <a href="#fr-fn38-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn39"><sup class="footnote-definition-label">39</sup>
 <p>The expressions ’completely quenched’ and ’extinguishment’ are
 translated from the phrase: ’He has attained <em>parinibbāna</em> himself
-and thus teaches the Dhamma for attaining <em>parinibbāna</em>.’</p>
-</div>
-<div class="footnote-definition" id="fn40"><sup class="footnote-definition-label">40</sup>
+and thus teaches the Dhamma for attaining <em>parinibbāna</em>.’ <a href="#fr-fn39-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn40"><sup class="footnote-definition-label">40</sup>
 <p>M. II. 9-10; A. I. 276; Nd. I. 271-2. One finds contradictory
 translations of this passage; for example, different editions of the
 Tipiṭaka in Thai contain varying translations. It is helpful to
 compare this passage with the teachings at: D. I. 193, 198-9, 239;
 M. II. 33; DA. II. 379, 555; MA. III. 273; SA. III. 254; UdA. 326;
-NdA. II. 355.</p>
-</div>
-<div class="footnote-definition" id="fn41"><sup class="footnote-definition-label">41</sup>
+NdA. II. 355. <a href="#fr-fn40-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn41"><sup class="footnote-definition-label">41</sup>
 <p>See: Thag. verses: 1024-1033 (in reference to the first analogy,
-see footnote 84 above).</p>
-</div>
-<div class="footnote-definition" id="fn42"><sup class="footnote-definition-label">42</sup>
-<p>For examples, see the stories at: SA. I. 273; SnA. II. 398.</p>
-</div>
-<div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
-<p>See chapter 16 on the wisdom factors of the Noble Eightfold Path.</p>
-</div>
-<div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
+see footnote 84 above). <a href="#fr-fn41-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn42"><sup class="footnote-definition-label">42</sup>
+<p>For examples, see the stories at: SA. I. 273; SnA. II. 398. <a href="#fr-fn42-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn43"><sup class="footnote-definition-label">43</sup>
+<p>See chapter 16 on the wisdom factors of the Noble Eightfold Path. <a href="#fr-fn43-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn44"><sup class="footnote-definition-label">44</sup>
 <p>On the Buddha’s words pertaining to mundane and transcendent
 right view, see the subsequent chapters on the factors of the
 Eightfold Path. For a commentarial analysis of right view see
-Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
+Appendix 2. <a href="#fr-fn44-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn45"><sup class="footnote-definition-label">45</sup>
 <p>This is one part of a sequence presented at A. V. 114. In Pali it
 reads: <em>sappurisa-saṁseva</em> → <em>saddhamma-savana</em> → <em>saddhā</em>. At A. V.
 145-9 there is a passage describing a process of relinquishment,
@@ -1958,13 +1940,13 @@ able to eliminate a lack of faith, narrow-mindedness, and
 indolence.’ Later texts like the Visuddhimagga apply this teaching
 to explain the nature of faith, stating: ’Faith may have a factor of
 stream-entry, like association with the virtuous, as a proximate
-cause’ (Vism. 464; DhsA. 119; NdA. I. 55).</p>
-</div>
-<div class="footnote-definition" id="fn46"><sup class="footnote-definition-label">46</sup>
+cause’ (Vism. 464; DhsA. 119; NdA. I. 55). <a href="#fr-fn45-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn46"><sup class="footnote-definition-label">46</sup>
 <p>Citing UdA. 107. For the connection between wise reflection and
-transcendent right view, see the same reference.</p>
-</div>
-<div class="footnote-definition" id="fn47"><sup class="footnote-definition-label">47</sup>
+transcendent right view, see the same reference. <a href="#fr-fn46-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn47"><sup class="footnote-definition-label">47</sup>
 <p>The virtues conducive to the growth of wisdom
 (<em>paññāvuḍḍhi-dhamma</em>; factors conducive to wisdom development) are
 sometimes abbreviated to the four factors for growth (<em>vuḍḍhi</em>;
@@ -1976,9 +1958,9 @@ Many of the sources of these teachings have been cited earlier,
 including: D. III. 227; S. V. 347, 404, 410-11; A. II. 245-6; cf.:
 D. II. 214. These virtues are found in teachings throughout the
 Tipiṭaka, as if the Buddha was looking for opportunities to mention
-them. Another potent teaching in this context occurs at Kh. 7.</p>
-</div>
-<div class="footnote-definition" id="fn48"><sup class="footnote-definition-label">48</sup>
+them. Another potent teaching in this context occurs at Kh. 7. <a href="#fr-fn47-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn48"><sup class="footnote-definition-label">48</sup>
 <p>This sutta passage is followed by two similar passages, in which
 some of the factors above are replaced by the following factors: ’he
 is wise, not a dimwit’; ’he does not listen with contempt’; ’he does
@@ -1987,67 +1969,68 @@ looking to find fault, with a heart hardened towards the speaker’;
 and ’he does not presume to understand that which he has not yet
 understood.’ These three suttas also describe the opposite qualities
 to those mentioned in each passage. These positive qualities are
-found in many passages throughout the Tipiṭaka.</p>
-</div>
-<div class="footnote-definition" id="fn49"><sup class="footnote-definition-label">49</sup>
-<p>Trans.: see the following chapter on faith.</p>
-</div>
-<div class="footnote-definition" id="fn50"><sup class="footnote-definition-label">50</sup>
+found in many passages throughout the Tipiṭaka. <a href="#fr-fn48-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn49"><sup class="footnote-definition-label">49</sup>
+<p>Trans.: see the following chapter on faith. <a href="#fr-fn49-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn50"><sup class="footnote-definition-label">50</sup>
 <p>D. III. 152-3, 232; A. II. 32-3, 248; A. IV. 219, 363-4; J. V.
-330-31.</p>
-</div>
-<div class="footnote-definition" id="fn51"><sup class="footnote-definition-label">51</sup>
-<p>A. I. 25-6.</p>
-</div>
-<div class="footnote-definition" id="fn52"><sup class="footnote-definition-label">52</sup>
+330-31. <a href="#fr-fn50-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn51"><sup class="footnote-definition-label">51</sup>
+<p>A. I. 25-6. <a href="#fr-fn51-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn52"><sup class="footnote-definition-label">52</sup>
 <p>D. III. 191-2. The commentaries claim that the Buddha taught this
-sutta as a disciplinary code for laypeople (<em>gihi-vinaya</em>).</p>
-</div>
-<div class="footnote-definition" id="fn53"><sup class="footnote-definition-label">53</sup>
-<p>JA. I. 135.</p>
-</div>
-<div class="footnote-definition" id="fn54"><sup class="footnote-definition-label">54</sup>
-<p>JA. I. 136.</p>
-</div>
-<div class="footnote-definition" id="fn55"><sup class="footnote-definition-label">55</sup>
-<p>DA. III. 928; AA. III. 65; AA. IV. 115; PsA. I. 299.</p>
-</div>
-<div class="footnote-definition" id="fn56"><sup class="footnote-definition-label">56</sup>
+sutta as a disciplinary code for laypeople (<em>gihi-vinaya</em>). <a href="#fr-fn52-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn53"><sup class="footnote-definition-label">53</sup>
+<p>JA. I. 135. <a href="#fr-fn53-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn54"><sup class="footnote-definition-label">54</sup>
+<p>JA. I. 136. <a href="#fr-fn54-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn55"><sup class="footnote-definition-label">55</sup>
+<p>DA. III. 928; AA. III. 65; AA. IV. 115; PsA. I. 299. <a href="#fr-fn55-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn56"><sup class="footnote-definition-label">56</sup>
 <p>Nett. Ṭīkā: Nidesavāravaṇṇanā, Hārasaṅkhepavaṇṇanā; Nett.
-Vibhāvinī: Nidesavāra-atthavibhāvanā, Soḷasahāraniddesavibhāvanā.</p>
-</div>
-<div class="footnote-definition" id="fn57"><sup class="footnote-definition-label">57</sup>
-<p>PsA. I. 299.</p>
-</div>
-<div class="footnote-definition" id="fn58"><sup class="footnote-definition-label">58</sup>
-<p>JA. V. 332.</p>
-</div>
-<div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
-<p>See: A. IV. 363-4.</p>
-</div>
-<div class="footnote-definition" id="fn60"><sup class="footnote-definition-label">60</sup>
+Vibhāvinī: Nidesavāra-atthavibhāvanā, Soḷasahāraniddesavibhāvanā. <a href="#fr-fn56-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn57"><sup class="footnote-definition-label">57</sup>
+<p>PsA. I. 299. <a href="#fr-fn57-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn58"><sup class="footnote-definition-label">58</sup>
+<p>JA. V. 332. <a href="#fr-fn58-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn59"><sup class="footnote-definition-label">59</sup>
+<p>See: A. IV. 363-4. <a href="#fr-fn59-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn60"><sup class="footnote-definition-label">60</sup>
 <p>Trans.: this appendix comprises material from footnote 1203 of
-the Thai version of <em>Buddhadhamma</em>.</p>
-</div>
-<div class="footnote-definition" id="fn61"><sup class="footnote-definition-label">61</sup>
-<p>E.g.: AA. II. 24, 162; AA. III. 281.</p>
-</div>
-<div class="footnote-definition" id="fn62"><sup class="footnote-definition-label">62</sup>
-<p>E.g.: A. V. 267-8; Vbh. 328; ItA. II. 25.</p>
-</div>
-<div class="footnote-definition" id="fn63"><sup class="footnote-definition-label">63</sup>
-<p>VinA. I. 244 and MA. I. 196.</p>
-</div>
-<div class="footnote-definition" id="fn64"><sup class="footnote-definition-label">64</sup>
-<p>Vbh. 328.</p>
-</div>
-<div class="footnote-definition" id="fn65"><sup class="footnote-definition-label">65</sup>
+the Thai version of <em>Buddhadhamma</em>. <a href="#fr-fn60-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn61"><sup class="footnote-definition-label">61</sup>
+<p>E.g.: AA. II. 24, 162; AA. III. 281. <a href="#fr-fn61-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn62"><sup class="footnote-definition-label">62</sup>
+<p>E.g.: A. V. 267-8; Vbh. 328; ItA. II. 25. <a href="#fr-fn62-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn63"><sup class="footnote-definition-label">63</sup>
+<p>VinA. I. 244 and MA. I. 196. <a href="#fr-fn63-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn64"><sup class="footnote-definition-label">64</sup>
+<p>Vbh. 328. <a href="#fr-fn64-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn65"><sup class="footnote-definition-label">65</sup>
 <p>DA. III. 984; VbhA. 415; VinṬ.: Pārājikakaṇḍaṁ,
 Sikkhāsājīvapadabhājanīyavaṇṇanā; VismṬ.: Khandhaniddesavaṇṇanā,
-Paññāpabhedakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn66"><sup class="footnote-definition-label">66</sup>
-<p>MA. IV. 135.</p>
+Paññāpabhedakathāvaṇṇanā. <a href="#fr-fn65-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn66"><sup class="footnote-definition-label">66</sup>
+<p>MA. IV. 135. <a href="#fr-fn66-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

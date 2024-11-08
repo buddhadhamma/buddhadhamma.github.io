@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html" class="active">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -254,7 +235,7 @@ sense doors.</p>
 <p>The term <em>āyatana</em> literally means ’link’ or ’sphere’. In this context
 it refers to ’cognitive link’, ’sphere of cognition’, ’source of
 awareness’, or ’doorway of perception’. There are six such doorways: the
-eye, ear, nose, tongue, body, and mind.<sup class="footnote-reference"><a href="#fn1">1</a></sup></p>
+eye, ear, nose, tongue, body, and mind.<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup></p>
 <p>One may then ask, ’To what are these senses linked?’ The answer is that
 they are linked to the world, to the external environment. Yet the world
 only reveals limited parts or aspects of itself to human beings,
@@ -274,7 +255,7 @@ that detains the mind’ or ’something that holds attention’. Simply
 speaking, they are ’objects of attention’.</p>
 <p>When an internal sense base (<em>āyatana</em>; ’sphere of cognition’) comes
 into contact with an (external) object of attention (<em>ārammaṇa</em>), an
-awareness specific to that individual sense sphere arises.<sup class="footnote-reference"><a href="#fn2">2</a></sup> When the
+awareness specific to that individual sense sphere arises.<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup> When the
 eye comes into contact with forms, the awareness of ’seeing’ arises;
 when the ear contacts sounds, the awareness of ’hearing’, etc. This
 awareness is called ’consciousness’ (<em>viññāṇa</em>): the awareness of sense
@@ -307,7 +288,7 @@ giving rise to tactile awareness (<em>kāya-viññāṇa</em>).</p>
 </li>
 <li>
 <p>Mind (<em>mano</em>) is the sphere for cognizing mental objects
-(<em>dhamma</em>),<sup class="footnote-reference"><a href="#fn3">3</a></sup> giving rise to awareness of mental objects
+(<em>dhamma</em>),<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup> giving rise to awareness of mental objects
 (<em>mano-viññāṇa</em>).</p>
 </li>
 </ol>
@@ -334,10 +315,10 @@ mind-consciousness.</p>
 </blockquote>
 </div>
 <p>Although the arising of consciousness is dependent on the contact
-between a sense base and its respective sense object,<sup class="footnote-reference"><a href="#fn4">4</a></sup> the fact that
+between a sense base and its respective sense object,<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup> the fact that
 a sense object becomes manifest to a sense base does not invariably
 result in consciousness. Other accompanying factors, such as
-receptivity, determination, and interest must also be present.<sup class="footnote-reference"><a href="#fn5">5</a></sup> For
+receptivity, determination, and interest must also be present.<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup> For
 example, while a person is asleep, agitated, absentminded, focused on an
 activity, or highly concentrated, various visual forms and sounds within
 range of potential awareness are neither seen nor heard. {31} Similarly,
@@ -369,7 +350,7 @@ experience, to experiencing the ’flavour’ of sense impressions. These
 sensations are either pleasurable, painful, or neutral.</p>
 <p>If classified according to the pathways of cognition, there are six
 kinds of feeling, corresponding to the six sense bases: feelings arising
-from eye-contact, feelings arising from ear-contact, etc.<sup class="footnote-reference"><a href="#fn6">6</a></sup> If
+from eye-contact, feelings arising from ear-contact, etc.<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup> If
 classified according to the quality of feeling, however, there are three
 kinds:</p>
 <ol>
@@ -380,7 +361,7 @@ kinds:</p>
 <p><em>Dukkha</em>: painful, uncomfortable.</p>
 </li>
 <li>
-<p><em>Adukkhamasukha</em> (also referred to as <em>upekkha</em>):<sup class="footnote-reference"><a href="#fn7">7</a></sup> neutral;
+<p><em>Adukkhamasukha</em> (also referred to as <em>upekkha</em>):<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup> neutral;
 neither pleasant nor painful.</p>
 </li>
 </ol>
@@ -473,7 +454,7 @@ feeling (<em>vedanā</em>) is removed or considered inconsequential. Here,
 cognition is completed with contact (<em>phassa</em>). The following stage is
 referred to as the process of knowing and seeing (<em>ñāṇa-dassana</em>), or the
 process of ’turning away’ (<em>vivaṭṭa</em>), which is the opposite to the
-’round of rebirth’ (<em>saṁsāra-vaṭṭa</em>).<sup class="footnote-reference"><a href="#fn8">8</a></sup></p>
+’round of rebirth’ (<em>saṁsāra-vaṭṭa</em>).<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup></p>
 <p>Second, the link following on from contact is a critical juncture in
 terms of ethical conduct. It is the decisive turning point between good
 and evil, between wholesome and unwholesome, and between liberation and
@@ -526,7 +507,7 @@ this second function, to the point that people’s entire lives revolve
 around the six sense bases.</p>
 <p>Although the six sense bases are only one part of the five aggregates
 and do not comprise the entirety of human life (as the five aggregates
-do),<sup class="footnote-reference"><a href="#fn9">9</a></sup> they play a vital role for people and are highly influential in
+do),<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup> they play a vital role for people and are highly influential in
 directing people’s lives. One can say that life as ordinary people know
 it is defined by their engagement with the world by way of the six
 senses. The six senses give meaning to people’s lives. If the six senses
@@ -558,7 +539,7 @@ objects.) {35}</p>
 <p>With the arising of diverse and complex perceptions (<em>papañca-saññā</em>),
 there is an increase in elaborate and embellished thinking, giving rise
 to such defilements as lust, aversion, possessiveness, and
-jealously.<sup class="footnote-reference"><a href="#fn10">10</a></sup></p>
+jealously.<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup></p>
 <h3 id="nota-bene"><a class="header" href="#nota-bene">Nota Bene</a></h3>
 <ol>
 <li>
@@ -685,7 +666,7 @@ six kinds: perception of form (<em>rūpa-saññā</em>), perception of sound
 (<em>sadda-saññā</em>), perception of smell (<em>gandha-saññā</em>), perception of
 taste (<em>rasa-saññā</em>), perception of tangible objects
 (<em>phoṭṭhabba-saññā</em>), and perception of mind objects (<em>dhamma-saññā</em>;
-perception of thoughts).<sup class="footnote-reference"><a href="#fn11">11</a></sup></p>
+perception of thoughts).<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup></p>
 <p>According to how perceptions are formed, they can be roughly divided
 into two stages:</p>
 <ol>
@@ -693,13 +674,13 @@ into two stages:</p>
 <p>Basic or initial perception: direct perception of the features and
 characteristics of things as they are, for example one perceives
 green, white, black, red, hard, soft, sour, sweet, round, flat,
-long, and short.<sup class="footnote-reference"><a href="#fn12">12</a></sup> This also includes perceptions linked to
+long, and short.<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup> This also includes perceptions linked to
 conventional designations (<em>paññatti</em>), for example: ’cat’, ’desk’,
 and ’chair’.</p>
 </li>
 <li>
 <p>Overlapping or supplementary perception: perception resulting from
-mental conceptualization,<sup class="footnote-reference"><a href="#fn13">13</a></sup> or perception in accord with various
+mental conceptualization,<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup> or perception in accord with various
 levels of knowledge and understanding, for example one perceives
 something as beautiful, revolting, despicable, impermanent, or
 nonself. This supplementary or secondary perception may be further
@@ -711,7 +692,7 @@ subdivided into two kinds:</p>
 from the elaborate embellishment by craving (<em>taṇhā</em>), conceit
 (<em>māna</em>), and wrong view (<em>diṭṭhi</em>). The commentaries refer to
 it as ’defiled perception’ (<em>kilesa-saññā</em>): perception tinged
-with mental defilement.<sup class="footnote-reference"><a href="#fn14">14</a></sup> {38} It is perverted by defilement
+with mental defilement.<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup> {38} It is perverted by defilement
 and thus deviates from the path of knowledge. Rather than
 fostering understanding, it breeds greed, hatred, and delusion,
 and it distorts or obstructs understanding. Examples of this
@@ -737,8 +718,8 @@ nonself, etc.</p>
 </ol>
 </li>
 </ol>
-<p>Arahants<sup class="footnote-reference"><a href="#fn15">15</a></sup> have perception, but it is perception free from mental
-taints (<em>āsava</em>), free from defilement (<em>kilesa</em>).<sup class="footnote-reference"><a href="#fn16">16</a></sup> Arahants are
+<p>Arahants<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup> have perception, but it is perception free from mental
+taints (<em>āsava</em>), free from defilement (<em>kilesa</em>).<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup> Arahants are
 able to identify proliferative perception (<em>papañca-saññā</em>) as
 experienced by unawakened people, or as they themselves used to
 experience it before their full awakening, but they do so simply for the
@@ -755,13 +736,13 @@ Consciousness is aware of all mental activity, as explained in Chapter
 <p><strong>3. Wisdom</strong> (<em>paññā</em>): This is the principal form of knowledge
 contained within the volitional formation aggregate
 (<em>saṅkhāra-khandha</em>). This factor too was already explained at length in
-chapter 1.<sup class="footnote-reference"><a href="#fn17">17</a></sup> Besides this chief form of knowledge, there are many
+chapter 1.<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup> Besides this chief form of knowledge, there are many
 other factors within the group of volitional formations that are related
 to the principle of knowledge and understanding. These factors are
 related to wisdom, either by supporting it, by acting as intermediary
 factors in wisdom development, or by acting as criteria for revealing
 the presence, absence, diminishment, or increase of wisdom. Most
-notably, these factors are:<sup class="footnote-reference"><a href="#fn18">18</a></sup></p>
+notably, these factors are:<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup></p>
 <ul>
 <li>
 <p><strong>Faith</strong> (<em>saddhā</em>): belief; conviction; confidence; inspiration.
@@ -780,7 +761,7 @@ to apply wise reflection – and the people (along with other sources
 of information) he associates with are misguided, and he is without
 virtuous friends or has evil-minded friends, the results may be the
 opposite. He may be led to greater misunderstanding and
-delusion.<sup class="footnote-reference"><a href="#fn19">19</a></sup> {39}</p>
+delusion.<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup> {39}</p>
 </li>
 <li>
 <p><strong>View</strong> (<em>diṭṭhi</em>): knowledge according to one’s own notions and
@@ -793,13 +774,13 @@ single matter: the entrusting oneself to others’ knowledge and the
 willingness to follow them (with devotion) is faith; the adoption of
 those aspects of knowledge or of others’ advice, and identifying
 them as one’s own is ’view’. The important attribute of view is
-adhering to something as one’s own.<sup class="footnote-reference"><a href="#fn20">20</a></sup></p>
+adhering to something as one’s own.<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup></p>
 <p>The knowledge classified as ’view’ (<em>diṭṭhi</em>) ranges from the
 irrational, to the moderately rational, to the highly rational. When
 view is developed to the point of correct knowledge and
 understanding – that which corresponds with reality – it is called
 ’right view’ (<em>sammā-diṭṭhi</em>) and is designated as ’wisdom’
-(<em>paññā</em>).<sup class="footnote-reference"><a href="#fn21">21</a></sup> When one develops wisdom to the point of clearly
+(<em>paññā</em>).<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup> When one develops wisdom to the point of clearly
 discerning the nature of things, one no longer needs to seize this
 understanding as one’s own. This is because the truth exists in a
 neutral, objective way; it does not depend on anyone’s assertions or
@@ -851,21 +832,21 @@ be recognized and understood; our only task is to understand it as it
 is. We have no responsibility beyond this, because no matter what we do,
 consciousness functions according to its own nature.</p>
 <p>Generally speaking, perception (<em>saññā</em>) is also a <em>pariññeyya-dhamma</em>:
-something to simply understand as it is.<sup class="footnote-reference"><a href="#fn22">22</a></sup> Perception resulting from
+something to simply understand as it is.<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup> Perception resulting from
 unwholesome mental proliferation (<em>papañca-saññā</em>), or ’defiled
 perception’ (<em>kilesa-saññā</em>), however, is a <em>pahātabba-dhamma</em>:
-something to be abandoned or eliminated.<sup class="footnote-reference"><a href="#fn23">23</a></sup> Perception supportive to
+something to be abandoned or eliminated.<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup> Perception supportive to
 understanding and to fostering wholesome qualities is a
 <em>bhāvetabba-dhamma</em>: something to be cultivated, increased, and
-perfected.<sup class="footnote-reference"><a href="#fn24">24</a></sup></p>
+perfected.<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup></p>
 <p>Wisdom (<em>paññā</em>) is a <em>bhāvetabba-dhamma</em>: something to be trained and
 developed, until it can be used to completely dispel delusion and
-ignorance.<sup class="footnote-reference"><a href="#fn25">25</a></sup></p>
+ignorance.<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup></p>
 <h3 id="pathways-of-cognition"><a class="header" href="#pathways-of-cognition">Pathways of Cognition</a></h3>
 <p>According to Buddha-Dhamma, ’contact’ (<em>phassa</em>) is the source of
 knowledge: all forms of understanding arise as a result of contact, or
 they arise at the point of contact (see
-Note <a href="#note-contact-consciousness">Contact and Consciousness</a>).<sup class="footnote-reference"><a href="#fn26">26</a></sup> That is, knowledge is
+Note <a href="#note-contact-consciousness">Contact and Consciousness</a>).<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup> That is, knowledge is
 dependent on cognition, whereby data passes through the six ’spheres’
 (<em>āyatana</em>) or doorways (<em>dvāra</em>) of cognition: the eye, ear, nose,
 tongue, body, and mind.</p>
@@ -897,11 +878,11 @@ heat or temperature; and ’wind’ (<em>vāyo</em>): movement, vibration, and
 tension). {41}</p>
 </li>
 <li>
-<p>Knowledge obtained by way of the mind door (<em>mano-dvāra</em>),<sup class="footnote-reference"><a href="#fn27">27</a></sup> i.e.
+<p>Knowledge obtained by way of the mind door (<em>mano-dvāra</em>),<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup> i.e.
 knowing mind objects (<em>dhammārammaṇa</em>; or <em>dhamma</em>, for short). This
 refers to all of those things known and reflected upon by the mind.
 For the sake of clarity, the Abhidhamma divides these into five
-kinds:<sup class="footnote-reference"><a href="#fn28">28</a></sup></p>
+kinds:<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup></p>
 <ol>
 <li>
 <p>The feeling aggregate (<em>vedanā-khandha</em>). (This refers to
@@ -917,10 +898,10 @@ four factors should be understood in the same way.)</p>
 <li>
 <p><em>Anidassana-appaṭigha-rūpa</em>: invisible, intangible form included
 in the classification of mind objects. This is also referred to
-as refined form (<em>sukhuma-rūpa</em>), and it is comprised of sixteen
+as refined form (<em>sukhuma-rūpa</em>), and it comprises sixteen
 factors: the element of cohesion (<em>āpo-dhātu</em>); femininity
 (<em>itthī-bhāva</em>); masculinity (<em>purisa-bhāva</em>); physical basis of
-the mind (<em>hadaya-rūpa</em>); life-faculty (<em>jīvitin-driya</em>);
+the mind (<em>hadaya-rūpa</em>); life-faculty (<em>jīvitindriya</em>);
 material quality of nutrition (<em>āhāra-rūpa</em>; nutritive essence
 – <em>ojā</em>); space (<em>ākāsa</em>); bodily communication
 (<em>kāya-viññatti</em>); verbal communication (<em>vacī-viññatti</em>); the
@@ -938,7 +919,7 @@ continuity (<em>santati</em>); decay (<em>jaratā</em>); and disintegration
 </li>
 </ol>
 <p>Later Abhidhamma texts present a more detailed analysis of mind objects
-(<em>dhammārammaṇa</em>), dividing them into six kinds:<sup class="footnote-reference"><a href="#fn29">29</a></sup></p>
+(<em>dhammārammaṇa</em>), dividing them into six kinds:<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup></p>
 <ol>
 <li>
 <p>Five sense organs (<em>pasāda</em>), i.e. the clarity or sensitivity which
@@ -1044,7 +1025,7 @@ knowledge’).</p>
 </li>
 </ol>
 <p>Note that in the scriptures, the preferred classification of knowledge
-obtained by way of the cognitive doorways is fourfold:<sup class="footnote-reference"><a href="#fn30">30</a></sup> {43}</p>
+obtained by way of the cognitive doorways is fourfold:<sup class="footnote-reference" id="fr-fn30-1"><a href="#fn-fn30">30</a></sup> {43}</p>
 <ol>
 <li>
 <p><em>Diṭṭha</em>: ’the seen’, i.e. all visible objects (<em>rūpārammaṇa</em>) and
@@ -1073,7 +1054,7 @@ odours, tastes, and tangibles – literally make contact with the
 respective sense base. This differs from the eye and the ear, which
 cognize objects that do not ’touch’ the sense base (visual objects rely
 on light and sounds rely on waves as the means of conveying
-information.)<sup class="footnote-reference"><a href="#fn31">31</a></sup></p>
+information.)<sup class="footnote-reference" id="fr-fn31-1"><a href="#fn-fn31">31</a></sup></p>
 <p>Technically speaking, the knowledge obtained by way of the five senses
 is very limited. In this context, however, this knowledge is defined in
 a broad, general sense: <em>diṭṭha</em> refers both to that which is seen and
@@ -1154,7 +1135,7 @@ of such thought, because it connects with some aspect of reality that
 truly exists. This is one distinction between <em>ñāṇa</em> and <em>diṭṭhi</em>. The
 knowledge referred to as <em>diṭṭhi</em> relies on personal beliefs and logical
 reasoning, whereas <em>ñāṇa</em> makes contact with external aspects of reality
-that truly exist.<sup class="footnote-reference"><a href="#fn32">32</a></sup></p>
+that truly exist.<sup class="footnote-reference" id="fr-fn32-1"><a href="#fn-fn32">32</a></sup></p>
 <p>On a basic level, perception (<em>saññā</em>) is the raw material for all
 thinking and subsequent knowledge. For this reason, both view (<em>diṭṭhi</em>)
 and direct knowledge (<em>ñāṇa</em>) rely on perception.</p>
@@ -1176,7 +1157,7 @@ by perception, pertaining to the seen, the heard, and the experienced.
 To wit: view has perception as its leader and principal agent, and it
 discriminates things according to perception. An arahant, free from
 mental taints, possesses no view produced by perception, created by
-perception, fashioned by perception, pertaining to the seen, etc.<sup class="footnote-reference"><a href="#fn33">33</a></sup>
+perception, fashioned by perception, pertaining to the seen, etc.<sup class="footnote-reference" id="fr-fn33-1"><a href="#fn-fn33">33</a></sup>
 {45}</p>
 <p><em>Nd. I. 110-11 (explaining: Sn. 156-8)</em></p>
 <p>There are not many diverse truths in the world, except as a
@@ -1222,7 +1203,7 @@ of the Brahma god named Baka, who was able to recall the birth of beings
 for an expanse of time that appeared infinite. He observed the countless
 births and deaths of other beings, while he himself remained the same.
 He thus developed the view that the abode of Brahma is permanent and
-eternal, and that Brahma is the creator of all things.<sup class="footnote-reference"><a href="#fn34">34</a></sup> Similarly,
+eternal, and that Brahma is the creator of all things.<sup class="footnote-reference" id="fr-fn34-1"><a href="#fn-fn34">34</a></sup> Similarly,
 Newton, after his discovery of gravity, used this insight to further
 observe natural phenomena, but his vision and understanding was not
 comprehensive. He was still stuck at or deceived by certain things.
@@ -1242,10 +1223,10 @@ give rise to perception (<em>saññā</em>), which acts as the raw material for
 further contemplation and understanding. The difference here is that
 view tends to create false perceptions, whereas direct knowledge helps
 to create accurate, correct perceptions and to dispel false
-perceptions.<sup class="footnote-reference"><a href="#fn35">35</a></sup></p>
+perceptions.<sup class="footnote-reference" id="fr-fn35-1"><a href="#fn-fn35">35</a></sup></p>
 <p>The three kinds of knowledge – <em>saññā</em>, <em>diṭṭhi</em>, and <em>ñāṇa</em> –
 embodied in wisdom development are related to the three methods the
-Buddha described for generating wisdom:<sup class="footnote-reference"><a href="#fn36">36</a></sup></p>
+Buddha described for generating wisdom:<sup class="footnote-reference" id="fr-fn36-1"><a href="#fn-fn36">36</a></sup></p>
 <ol>
 <li>
 <p><em>Cintāmaya-paññā</em>: wisdom arising from one’s own reflection and
@@ -1290,7 +1271,7 @@ reflection (<em>yoniso-manasikāra</em>; <em>yoniso-upaparikkhā</em>); evaluati
 (<em>tulanā</em>); examination, investigation, and analysis (<em>vīmaṁsā</em>);
 experimentation and selection (<em>vijaya</em>); repetition (<em>āsevana</em>);
 cultivation (<em>bhāvanā</em>); and continuous and devoted practice
-(<em>bahulī-karaṇa</em>).<sup class="footnote-reference"><a href="#fn37">37</a></sup></p>
+(<em>bahulī-karaṇa</em>).<sup class="footnote-reference" id="fr-fn37-1"><a href="#fn-fn37">37</a></sup></p>
 <p>Reflection (<em>cintā</em>), learning (<em>suta</em>), and training (<em>bhāvanā</em>) help
 to generate, improve, and fine-tune perception (<em>saññā</em>), view
 (<em>diṭṭhi</em>), and direct knowledge (<em>ñāṇa</em>).</p>
@@ -1322,7 +1303,7 @@ including: communication, imparting of information, research, symbolism,
 means of showing respect, social affiliations, and the transmission of a
 society’s heritage, which is the possession of all people and marks the
 advancement of a particular civilization. This form of knowledge can be
-divided into three kinds:<sup class="footnote-reference"><a href="#fn38">38</a></sup></p>
+divided into three kinds:<sup class="footnote-reference" id="fr-fn38-1"><a href="#fn-fn38">38</a></sup></p>
 <ol>
 <li>
 <p><em>Suta</em> (or <em>suti</em>): knowledge that has been heard, learned, or
@@ -1336,7 +1317,7 @@ In the context of wisdom development, it is referred to as the
 ’instruction by others’ (<em>paratoghosa</em>; literally, the
 ’utterance by others’). Wholesome instruction is given great
 emphasis in the teachings, as a basis and condition for right
-view (<em>sammā-diṭṭhi</em>).<sup class="footnote-reference"><a href="#fn39">39</a></sup> This knowledge (<em>suta</em>) includes
+view (<em>sammā-diṭṭhi</em>).<sup class="footnote-reference" id="fr-fn39-1"><a href="#fn-fn39">39</a></sup> This knowledge (<em>suta</em>) includes
 formal schooling, news by way of the media, book- or textual
 knowledge, and recorded history. Even the suttas in the Tipiṭaka
 are a form of such knowledge. (Most of the suttas begin with the
@@ -1370,7 +1351,7 @@ institutions or schools of thought.</p>
 idea’, ’acceptable principle’); <em>ruci</em> (’cherished idea’, ’pleasing
 principle’); and <em>laddhi</em> (’acquired idea’, ’dogma’, ’tenet of
 practice’, ’way of practice considered beneficial’, ’religious
-belief’.)<sup class="footnote-reference"><a href="#fn40">40</a></sup></p>
+belief’.)<sup class="footnote-reference" id="fr-fn40-1"><a href="#fn-fn40">40</a></sup></p>
 </li>
 <li>
 <p><em>Ñāṇa</em>: gnosis; direct knowledge; insight; pure knowledge; knowledge
@@ -1436,7 +1417,7 @@ according to a basic, conventional understanding of the world, they
 attach to teachings on ultimate truth, causing all sorts of confusion
 and even harm for themselves and others.</p>
 <p>As an attempt to prevent such confusion and erroneous behaviour, the
-Abhidhamma divides the truth (<em>sacca</em>) into two levels:<sup class="footnote-reference"><a href="#fn41">41</a></sup></p>
+Abhidhamma divides the truth (<em>sacca</em>) into two levels:<sup class="footnote-reference" id="fr-fn41-1"><a href="#fn-fn41">41</a></sup></p>
 <ol>
 <li>
 <p>Conventional truth (<em>sammati-sacca</em>): another name for this is
@@ -1508,10 +1489,10 @@ designations. The Tathāgata uses these, but does not attach to them.</p>
 </div>
 <p>Note that the Abhidhamma describes the suttas – the Suttanta Piṭaka –
 as a vernacular teaching (<em>vohāra-desanā</em>), because the majority of its
-subject matter is comprised of conventional language. In contrast, the
+subject matter consists of conventional language. In contrast, the
 Abhidhamma describes itself as an absolute teaching
 (<em>paramattha-desanā</em>), because the majority of its content is a direct
-presentation of absolute truths.<sup class="footnote-reference"><a href="#fn42">42</a></sup> {50}</p>
+presentation of absolute truths.<sup class="footnote-reference" id="fr-fn42-1"><a href="#fn-fn42">42</a></sup> {50}</p>
 <h3 id="three-aberrations-of-knowledge"><a class="header" href="#three-aberrations-of-knowledge">Three Aberrations of Knowledge</a></h3>
 <p>The Pali term <em>vipallāsa</em> refers to aberrant or errant knowledge –
 knowledge that deviates from the truth. It is fundamentally flawed,
@@ -1540,7 +1521,7 @@ fleeing from the light of a flashing sign, perceiving it as a fire.</p>
 food; a deranged person paranoid of others, thinking they plan to do him
 harm; someone seeing a moving shadow in the dark and imagining it to be
 a ghost; and the story of Chicken Little, who, after an acorn hit her on
-the head, thought that the sky is falling.<sup class="footnote-reference"><a href="#fn43">43</a></sup></p>
+the head, thought that the sky is falling.<sup class="footnote-reference" id="fr-fn43-1"><a href="#fn-fn43">43</a></sup></p>
 <p>Aberrant view generally arises as a consequence of aberrant perception
 and aberrant mind. When one perceives something incorrectly, one views
 it incorrectly. Similarly, when one thinks in deviant and errant ways,
@@ -1579,7 +1560,7 @@ nonself to be self.</p>
 </li>
 <li>
 <p>The aberration of perception, mind, and view that takes what is
-unattractive to be attractive.<sup class="footnote-reference"><a href="#fn44">44</a></sup> {51}</p>
+unattractive to be attractive.<sup class="footnote-reference" id="fr-fn44-1"><a href="#fn-fn44">44</a></sup> {51}</p>
 <p><em>A. II. 52; Ps. II. 80.</em></p>
 </li>
 </ol>
@@ -1590,7 +1571,7 @@ development, and their elimination is thus an important target of wisdom
 practice. Those methods of developing knowledge described earlier all
 help to dispel these aberrations. Most effective for this task is an
 investigation into causes and conditions and a detailed and mindful
-analysis of the building blocks of conditioned reality.<sup class="footnote-reference"><a href="#fn45">45</a></sup></p>
+analysis of the building blocks of conditioned reality.<sup class="footnote-reference" id="fr-fn45-1"><a href="#fn-fn45">45</a></sup></p>
 <h2 id="the-buddhas-words-on-the-sense-spheres"><a class="header" href="#the-buddhas-words-on-the-sense-spheres">The Buddha’s Words on the Sense Spheres</a></h2>
 <p>(<em>The expression ’Buddha’s words’ here refers to the ’sayings of the
 wise, with the Buddha at the helm’</em> (<em>buddhādivacana</em>) <em>, that is, the
@@ -1600,7 +1581,7 @@ the sake of simplicity. The references indicate which passages are by
 the Buddha’s disciples.</em>)</p>
 <div class="sutta">
 <blockquote>
-<p>Monks, I will teach you the all.<sup class="footnote-reference"><a href="#fn46">46</a></sup> Listen carefully. And what is
+<p>Monks, I will teach you the all.<sup class="footnote-reference" id="fr-fn46-1"><a href="#fn-fn46">46</a></sup> Listen carefully. And what is
 the all? The eye and forms, the ear and sounds, the nose and odours,
 the tongue and tastes, the body and tactile objects, the mind and
 mental phenomena. This is called the all.</p>
@@ -1742,15 +1723,15 @@ that you do not know and would not think might be known?’</p>
 <p>’No, venerable sir.’</p>
 <p>’Here, Māluṅkyaputta, regarding things seen, heard, sensed, and known
 by you: in the seen there will be merely the seen; in the heard there
-will be merely the heard; in the sensed<sup class="footnote-reference"><a href="#fn47">47</a></sup> there will be merely the
+will be merely the heard; in the sensed<sup class="footnote-reference" id="fr-fn47-1"><a href="#fn-fn47">47</a></sup> there will be merely the
 sensed; in the known there will be merely the known.</p>
 <p>’When, regarding things seen, heard, sensed, and known by you, in the
 seen there will be merely the seen, in the heard there will be merely
 the heard, in the sensed there will be merely the sensed, in the known
 there will be merely the known, then, you will not exist by way of
-that.<sup class="footnote-reference"><a href="#fn48">48</a></sup> When you do not exist by way of that, you will not exist
-therein.<sup class="footnote-reference"><a href="#fn49">49</a></sup> When you do not exist therein, then there will be
-neither here nor beyond nor in between the two.<sup class="footnote-reference"><a href="#fn50">50</a></sup> This itself is
+that.<sup class="footnote-reference" id="fr-fn48-1"><a href="#fn-fn48">48</a></sup> When you do not exist by way of that, you will not exist
+therein.<sup class="footnote-reference" id="fr-fn49-1"><a href="#fn-fn49">49</a></sup> When you do not exist therein, then there will be
+neither here nor beyond nor in between the two.<sup class="footnote-reference" id="fr-fn50-1"><a href="#fn-fn50">50</a></sup> This itself is
 the end of suffering.’</p>
 <p>’I understand, venerable sir…. Having seen a form with muddled
 mindfulness, attending only to the pleasing signs, one experiences it
@@ -1795,7 +1776,7 @@ liberation of mind, that liberation by wisdom, wherein those evil
 unwholesome states within cease without remainder. Having heard a
 sound … having smelt an odour … having tasted a flavour … having
 felt a tangible … having known a mental object he is not intent upon
-a pleasing object and not repelled by a displeasing object.<sup class="footnote-reference"><a href="#fn51">51</a></sup></p>
+a pleasing object and not repelled by a displeasing object.<sup class="footnote-reference" id="fr-fn51-1"><a href="#fn-fn51">51</a></sup></p>
 <p><em>S. IV. 119-120.</em></p>
 <p>And how, monks, does one dwell diligently? If one dwells with
 restraint over the eye faculty, the mind is not distracted by forms
@@ -1944,7 +1925,7 @@ like a rope which holds and sustains attention. Mindfulness used at this
 initial stage of care and protection while receiving sense impressions
 is connected to the principle of ’sense restraint’ (<em>indriya-saṁvara</em>),
 which is also referred to as ’guarding the sense doors
-(<em>gutta-dvāra</em>)’.<sup class="footnote-reference"><a href="#fn52">52</a></sup> Here, mindfulness is fully prepared to receive a
+(<em>gutta-dvāra</em>)’.<sup class="footnote-reference" id="fr-fn52-1"><a href="#fn-fn52">52</a></sup> Here, mindfulness is fully prepared to receive a
 sense impression, for example when seeing a visual form by way of the
 eye. One does not allow attention to fix on those signs and features
 that give rise to infatuations and resentments, preferences and
@@ -1959,7 +1940,7 @@ the meaning of the term <em>indriya-bhāvanā</em>: ’cultivating the sense
 faculties’. {58}</p>
 <p>Those individuals who have cultivated the sense faculties are safe from
 unwholesome states, from suffering, and from distorted
-understanding.<sup class="footnote-reference"><a href="#fn53">53</a></sup> They are able to prevent these negative qualities
+understanding.<sup class="footnote-reference" id="fr-fn53-1"><a href="#fn-fn53">53</a></sup> They are able to prevent these negative qualities
 from arising. Even if preferences and aversions manage to slip in, they
 are able to quell them or cast them aside instantly.</p>
 <p>Sense restraint (<em>indriya-saṁvara</em>) is classified as part of the stage
@@ -2004,11 +1985,11 @@ some confusion about the meaning of these terms, it is useful to examine
 some of the scriptural explanations.</p>
 <p>In most presentations of these three kinds of wisdom, <em>sutamaya-paññā</em>
 is placed as the first factor, but in the original texts, both in the
-suttas<sup class="footnote-reference"><a href="#fn54">54</a></sup> and in the Abhidhamma,<sup class="footnote-reference"><a href="#fn55">55</a></sup> <em>cintāmaya-paññā</em> comes first.
+suttas<sup class="footnote-reference" id="fr-fn54-1"><a href="#fn-fn54">54</a></sup> and in the Abhidhamma,<sup class="footnote-reference" id="fr-fn55-1"><a href="#fn-fn55">55</a></sup> <em>cintāmaya-paññā</em> comes first.
 An exception to this is the Nettipakaraṇa, which in the Burmese
 Theravada tradition is included in the Tipiṭaka (as part of the Khuddaka
 Nikāya in the Suttanta Piṭaka); here, s<em>utamaya-paññā</em> is the first
-factor.<sup class="footnote-reference"><a href="#fn56">56</a></sup> In the commentaries and sub-commentaries, these three
+factor.<sup class="footnote-reference" id="fr-fn56-1"><a href="#fn-fn56">56</a></sup> In the commentaries and sub-commentaries, these three
 factors are increasingly referred to as: <em>sutamaya-ñāṇa</em>,
 <em>cintāmaya-ñāṇa</em>, and <em>bhāvanāmaya-ñāṇa</em> (’knowledge’, arising by way of
 study, contemplation, and spiritual cultivation, respectively).</p>
@@ -2057,7 +2038,7 @@ referred to as <em>bhāvanāmaya-paññā</em>. {60}</p>
 <p>Note that for many people, although they obtain a great deal of
 information (<em>suta</em>), they do not necessarily develop wisdom (<em>paññā</em>).
 So in regard to the first factor, only some individuals apply their
-learning to give rise to wisdom comprised of learning
+learning to give rise to wisdom resulting from learning
 (<em>sutamaya-paññā</em>).</p>
 <p>In the Vibhaṅga of the Abhidhamma, <em>bhāvanāmaya-paññā</em> is defined as
 <em>samāpannassa-paññā</em>, which literally means the ’wisdom of one who
@@ -2072,7 +2053,7 @@ lamentation’; ’brimful with a swift flowing current’.</p>
 its own, it generally refers to accessing the concentrative attainments
 (<em>jhāna-samāpatti</em>). The commentary to the Vibhaṅga explains: ’The
 wisdom of one endowed with the concentrative attainments, and occurring
-within such attainments, is called “consisting of cultivation”.’<sup class="footnote-reference"><a href="#fn57">57</a></sup>
+within such attainments, is called “consisting of cultivation”.’<sup class="footnote-reference" id="fr-fn57-1"><a href="#fn-fn57">57</a></sup>
 This appears to be a very narrow definition. Other texts, however,
 including the Paramatthamañjusā, explain that the aforementioned
 definition is only an example. The essential meaning of the term
@@ -2085,7 +2066,7 @@ meaning. This explanation considers the term <em>appanā</em> (’absorption’)
 which refers to the concentration lying at the heart of jhāna. One
 example from the Visuddhimagga states: ’Wisdom achieved by the power of
 cultivation reaching absorption is called “endowed with
-cultivation”.’<sup class="footnote-reference"><a href="#fn58">58</a></sup> This explanation is linked to the passage above,
+cultivation”.’<sup class="footnote-reference" id="fr-fn58-1"><a href="#fn-fn58">58</a></sup> This explanation is linked to the passage above,
 referring to diligent contemplation of all phenomena, which is
 equivalent to insight meditation (<em>vipassanā</em>). When insight wisdom
 (<em>vipassanā-paññā</em>) reaches an adequate degree of clarity, the mind
@@ -2216,7 +2197,7 @@ and mental concomitants (<em>cetasika</em>), i.e. the locus of their active
 engagement; the point of expansion for the mind and mental concomitants;
 the agents behind the continuation of the protracted suffering in the
 round of rebirth (<em>saṁsāra-dukkha</em>); the source; the domain; the point
-of convergence; etc.<sup class="footnote-reference"><a href="#fn59">59</a></sup></p>
+of convergence; etc.<sup class="footnote-reference" id="fr-fn59-1"><a href="#fn-fn59">59</a></sup></p>
 <p>Note that the internal physical senses pertaining to movement, balance,
 etc., which are referred to as somesthesia (kinesthetic, vestibular, and
 visceral senses), are not added here as additional senses (<em>āyatana</em>).
@@ -2246,7 +2227,7 @@ aggregates: three kinds of <em>nāma-khandha</em> (<em>vedanā</em>, <em>saññ�
 forms (<em>sukhuma-rūpa</em>), e.g.: the element of space (<em>ākāsa-dhātu</em>),
 femininity, masculinity, levity, flexibility, continuation, decay,
 expansion, physical transformation, etc. The exception here is Nibbāna,
-which transcends the five aggregates (<em>khandha-vinimutta</em>).<sup class="footnote-reference"><a href="#fn60">60</a></sup></p>
+which transcends the five aggregates (<em>khandha-vinimutta</em>).<sup class="footnote-reference" id="fr-fn60-1"><a href="#fn-fn60">60</a></sup></p>
 <div class="illustration">
 <p><a href="https://buddhadhamma.github.io/includes/images/illustrations/buddha-bodhi-tree-trade.pdf"><img src="./includes/images/illustrations/buddha-bodhi-tree-trade.jpg" alt="image" /></a></p>
 <p class="caption">
@@ -2255,60 +2236,61 @@ which transcends the five aggregates (<em>khandha-vinimutta</em>).<sup class="fo
   </a>
 </p>
 </div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
-<p>On the commentarial analysis of the sense spheres see Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
+<p>On the commentarial analysis of the sense spheres see Appendix 2. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
 <p>Normally, the term <em>dvāra</em> is paired with <em>ārammaṇa</em>, and the term
 ’internal <em>āyatana</em>’ is paired with ’external <em>āyatana</em>’. In this
 exposition, however, the internal sense spheres will be referred to
-as <em>āyatana</em>, and the external sense objects as <em>ārammaṇa</em>.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+as <em>āyatana</em>, and the external sense objects as <em>ārammaṇa</em>. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>To avoid confusion, these mental objects are usually referred to
 as <em>dhammārammaṇa</em>, instead of simply <em>dhamma</em>, which is a term used
 in many different contexts and which has multiple nuances of
-meaning.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
-<p>M. I. 258-9.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
-<p>M. I. 190.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+meaning. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
+<p>M. I. 258-9. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
+<p>M. I. 190. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
 <p>Six kinds of feeling (<em>vedanā</em>): <em>cakkhu-samphassajā vedanā</em>,
 <em>sota-samphassajā vedanā</em>, <em>ghāna-samphassajā vedanā</em>,
 <em>jivhā-samphassajā vedanā</em>, <em>kāya-samphassajā vedanā</em>, and
-<em>mano-samphassajā vedanā</em> (S. IV. 232).</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
+<em>mano-samphassajā vedanā</em> (S. IV. 232). <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
 <p>Note that <em>upekkhā</em> in this context of <em>vedanā</em> differs from
 <em>upekkhā</em> in the context of volitional formations (<em>saṅkhāra</em>),
-e.g.: <em>upekkhā-brahmavihāra</em>, <em>upekkhā-sambojjhaṅga</em>, etc.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
+e.g.: <em>upekkhā-brahmavihāra</em>, <em>upekkhā-sambojjhaṅga</em>, etc. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
 <p>’Turning away’ (<em>vivaṭṭa</em>) pertains to solving life’s problems,
 and will be discussed in section IV: ’Goal of Life’ and section VI:
-’A Worthy Life’.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
+’A Worthy Life’. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
 <p>On the relationship between the six sense spheres and the five
-aggregates see Appendix 3.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
-<p>See: D. II. 277-8.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
-<p>See the appendix in Chapter 1.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
+aggregates see Appendix 3. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
+<p>See: D. II. 277-8. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
+<p>See the appendix in Chapter 1. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
 <p>This is ’perception by way of the five sense doors’
 (<em>pañcadvārika-saññā</em>): perception of forms, sounds, smells, tastes,
 and tangibles (see: MA. IV. 20). The subsequent kinds of perception
-(below) are exclusively perception by way of the mind-door.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
+(below) are exclusively perception by way of the mind-door. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
 <p>An example of perception resulting from mental conceptualization:
 ’When he is established in supreme perception (the most subtle and
 refined perception = <em>ākiñcaññāyatana</em>) it occurs to him: “Thinking
@@ -2316,44 +2298,44 @@ and deliberating is worse for me, lack of thought and deliberation
 is better. If I were to think and conceptualize, these perceptions
 [that I have attained] would cease, and coarser perceptions would
 arise in me. Suppose I were not to think or conceptualize?” (D. I.
-184-5).</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
-<p>E.g.: MA. II. 74; SA. II. 382.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
-<p>Trans: <em>arahant</em>: a fully awakened person.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
-<p>See: M. III. 108.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
+184-5). <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
+<p>E.g.: MA. II. 74; SA. II. 382. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
+<p>Trans: <em>arahant</em>: a fully awakened person. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
+<p>See: M. III. 108. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
 <p>For a detailed classification of the various kinds of wisdom
 (<em>paññā</em>), see: Vism. 438-42. For more on this subject of wisdom,
-see chapter 16: ’Path Factors of Wisdom’.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+see chapter 16: ’Path Factors of Wisdom’. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
 <p>According to the Abhidhamma, wisdom (<em>paññā</em>), faith (<em>saddhā</em>),
 view (<em>diṭṭhi</em>), and delusion (<em>moha</em>) are ’mental concomitants’
 (<em>cetasika</em>) and are classified as part of the volitional formation
 aggregate (see: Comp.: Cetasikaparicchedo). For the reasoning behind
-this classification, see Chapter 1.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
-<p>For more on the subject of faith (<em>saddhā</em>), see Chapter 14.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
+this classification, see Chapter 1. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
+<p>For more on the subject of faith (<em>saddhā</em>), see Chapter 14. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
 <p>Terms related to <em>diṭṭhi</em> include: <em>abhinivesa</em> (’adherence’),
 <em>parāmāsa</em> (’taking hold’), and <em>upādāna</em> (’grasping’, which on a
-deeper level is conditioned by craving – <em>taṇhā</em>); see: Vbh. 149.</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
-<p>E.g.: Vbh. 124, 250.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
-<p>See: Ps. I. 23.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
+deeper level is conditioned by craving – <em>taṇhā</em>); see: Vbh. 149. <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
+<p>E.g.: Vbh. 124, 250. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
+<p>See: Ps. I. 23. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
 <p>See: A. III. 447; cf.: A. IV. 352-3, 358; Ud. 37; Ps. I. 57-8,
 78, etc. Perception that is a <em>bhāvetabba-dhamma</em> – something to be
 cultivated – is sometimes referred to as perception conducive to
@@ -2361,30 +2343,30 @@ knowledge (<em>vijjābhāgiya-saññā</em>; see: A. III. 334), perception
 conducive to eliminating defilement (<em>nibbedhabhāgiya-sañña</em>; see:
 SA. II. 392), wholesome perception (<em>kusala-saññā</em>), or unimpaired
 perception (<em>aviparīta-saññā</em>; for the last two terms see: Nett.
-126).</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
-<p>See previous footnote.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
+126). <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
+<p>See previous footnote. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
 <p>Consciousness (<em>viññāṇa</em>) is a <em>pariññeyya-dhamma</em>, wisdom
-(<em>paññā</em>) is a <em>bhāvetabba-dhamma</em>; see: M. I. 292.</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
+(<em>paññā</em>) is a <em>bhāvetabba-dhamma</em>; see: M. I. 292. <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
 <p>See, e.g.: S. III. 59-60, 63-4; S. IV. 68-9; A. III. 413; A. IV.
-338-9, 385; Ps. I. 57.</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
-<p>Knowledge obtained by ’mind-contact’ (<em>mano-samphassa</em>).</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
-<p>Vbh. 71-72; Dhs. 169; Vism. 483-4.</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
+338-9, 385; Ps. I. 57. <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
+<p>Knowledge obtained by ’mind-contact’ (<em>mano-samphassa</em>). <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
+<p>Vbh. 71-72; Dhs. 169; Vism. 483-4. <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
 <p>Comp.: Pakiṇṇakaparicchedo, Ālambaṇasaṅgaho; CompṬ.:
-Pakiṇṇakaparicchedavaṇṇanā, Ālambaṇasaṅgahavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn30"><sup class="footnote-definition-label">30</sup>
+Pakiṇṇakaparicchedavaṇṇanā, Ālambaṇasaṅgahavaṇṇanā. <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn30"><sup class="footnote-definition-label">30</sup>
 <p>This classification is found frequently; important passages
 include: S. IV. 73; Vbh. 429; Nd. I. 55. See also: D. III. 135 =
 A. II. 23-4; A. II. 25 = It. 121-22; M. I. 135-6; M. III. 261;
@@ -2392,9 +2374,9 @@ S. III. 202-203; A. V. 318, 353-8; A. V. 321-22. Found as compound
 words at: M. II. 231-32; Sn. 209-210; Nd. I. 9, 50-51, 53-4, 133-4,
 189-90, 203-204, 227, 245, 247, 333-4; Nd. II. 16. As a threefold
 classification of <em>diṭṭhi</em>, <em>suta</em> and <em>muta</em>, e.g.: S. I. 202-203;
-Sn. 155, 175-6; Nd. I. 95-6, 106, 110-11, 315; Nd. II. 28.</p>
-</div>
-<div class="footnote-definition" id="fn31"><sup class="footnote-definition-label">31</sup>
+Sn. 155, 175-6; Nd. I. 95-6, 106, 110-11, 315; Nd. II. 28. <a href="#fr-fn30-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn31"><sup class="footnote-definition-label">31</sup>
 <p>The eye (<em>cakkhu</em>) and the ear (<em>sota</em>) cognize objects that have
 ’not reached (the sense bases)’:
 <em>appattavisayaggāhika</em>/<em>appattagāhika</em>. The nose (<em>ghāna</em>), tongue
@@ -2402,49 +2384,49 @@ Sn. 155, 175-6; Nd. I. 95-6, 106, 110-11, 315; Nd. II. 28.</p>
 bases)’: <em>sampattavisayaggāhika</em>/<em>sampattagāhika</em>. See: Comp.:
 Rūpaparicchedo, Rūpavibhāgo; CompṬ.: Rūpaparicchedavaṇṇanā,
 Rūpavibhāgavaṇṇanā; VismṬ.: Khandhaniddesavaṇṇanā,
-Rūpakkhandakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn32"><sup class="footnote-definition-label">32</sup>
+Rūpakkhandakathāvaṇṇanā. <a href="#fr-fn31-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn32"><sup class="footnote-definition-label">32</sup>
 <p>CompṬ.: Cetasikaparicchedavaṇṇanā, Akusalacetasikavaṇṇanā
 outlines this distinction between <em>diṭṭhi</em> and <em>ñāṇa</em>: ’An attribute
 of <em>diṭṭhi</em> is the belief: “Only this is true; all else is invalid.”
 <em>Ñāṇa</em> knows things objectively; <em>diṭṭhi</em> forsakes the objective
-truth and apprehends things subjectively.’</p>
-</div>
-<div class="footnote-definition" id="fn33"><sup class="footnote-definition-label">33</sup>
+truth and apprehends things subjectively.’ <a href="#fr-fn32-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn33"><sup class="footnote-definition-label">33</sup>
 <p>cf. UdA. 373, which states: ’<em>Saññā</em> is the <em>nimitta</em> (’sign’;
-’point of origin’) of proliferative view (<em>diṭṭhi-papañca</em>).</p>
-</div>
-<div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
-<p>See: M. I. 326-9.</p>
-</div>
-<div class="footnote-definition" id="fn35"><sup class="footnote-definition-label">35</sup>
+’point of origin’) of proliferative view (<em>diṭṭhi-papañca</em>). <a href="#fr-fn33-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn34"><sup class="footnote-definition-label">34</sup>
+<p>See: M. I. 326-9. <a href="#fr-fn34-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn35"><sup class="footnote-definition-label">35</sup>
 <p>Compare with this passage from the Pali Canon: ’Whoever
 speculates by relying on the view of existence (<em>bhava-diṭṭhi</em>) and
 the view of non-existence (<em>vibhava-diṭṭhi</em>) is devoid of knowledge
 of cessation, [and] this is the cause for human beings to harbour
-perverted views (<em>saññā-viparīta</em>)’; see: Ps. I. 159.</p>
-</div>
-<div class="footnote-definition" id="fn36"><sup class="footnote-definition-label">36</sup>
-<p>D. III. 219-20; Vbh. 324-5.</p>
-</div>
-<div class="footnote-definition" id="fn37"><sup class="footnote-definition-label">37</sup>
+perverted views (<em>saññā-viparīta</em>)’; see: Ps. I. 159. <a href="#fr-fn35-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn36"><sup class="footnote-definition-label">36</sup>
+<p>D. III. 219-20; Vbh. 324-5. <a href="#fr-fn36-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn37"><sup class="footnote-definition-label">37</sup>
 <p>These supplementary factors are found dispersed throughout the
 scriptures. Many of them are mentioned as supports for realizing
-truth at M. II. 174.</p>
-</div>
-<div class="footnote-definition" id="fn38"><sup class="footnote-definition-label">38</sup>
+truth at M. II. 174. <a href="#fr-fn37-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn38"><sup class="footnote-definition-label">38</sup>
 <p>This classification accords with: Sn. 164-5 and Sn. 207-208;
 explicated at Nd. I. 187-8 and Nd. II. 26. These references are in
 verse form, and these three factors are listed in the order of
 <em>diṭṭhi</em>, <em>suti</em> and <em>ñāṇa</em>. Here, they have been reorganized to
-accord with the preceding section (C).</p>
-</div>
-<div class="footnote-definition" id="fn39"><sup class="footnote-definition-label">39</sup>
+accord with the preceding section (C). <a href="#fr-fn38-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn39"><sup class="footnote-definition-label">39</sup>
 <p>See chapter 13, on the preliminary stage of spiritual training
-(factor #1: virtuous friendship).</p>
-</div>
-<div class="footnote-definition" id="fn40"><sup class="footnote-definition-label">40</sup>
+(factor #1: virtuous friendship). <a href="#fr-fn39-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn40"><sup class="footnote-definition-label">40</sup>
 <p>E.g.: Nd. I. 64-5, 105, 162, 169-70, 310-11. The most frequent
 grouping of these terms is that of <em>diṭṭhi</em>, <em>khanti</em> and <em>ruci</em>,
 e.g.: Vin. I. 69-70; it occurs in many passages of the Mahāniddesa.
@@ -2455,9 +2437,9 @@ includes: <em>diṭṭhi</em>, <em>khanti</em>, <em>ruci</em>, <em>ādāya</em> 
 <em>dhamma-vinaya</em> (’doctrine and discipline’), <em>pāvacana</em> (’fundamental
 teaching’), <em>brahmacariya</em> (’supreme teaching’), and <em>satthu-sāsana</em>
 (’teaching of the Master’), e.g.: Nd. I. 40, 156; Nd. II. 9, 20;
-Vbh. 245-6 (in these cases the reference is to Buddhism).</p>
-</div>
-<div class="footnote-definition" id="fn41"><sup class="footnote-definition-label">41</sup>
+Vbh. 245-6 (in these cases the reference is to Buddhism). <a href="#fr-fn40-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn41"><sup class="footnote-definition-label">41</sup>
 <p>This concept of the two levels of truth began to take shape as a
 clear notion in the Kathāvatthu, although this text does not yet
 provide a clear distinction of terms. The term <em>sammati-sacca</em> is
@@ -2468,83 +2450,84 @@ clear description and distinction of these terms occurs at PañcA.
 SA. II. 13; DhA. III. 403; [Saṅganī Mūlaṭīkā: 165, 280]; [Saṅgaṇī
 Anuṭīkā: 328]; VismṬ.: Brahmavihāraniddesavaṇṇanā,
 Pakiṇṇakakathāvaṇṇanā; UdA. 396; ItA. I. 162; CompṬ.:
-Paccayaparicchedavaṇṇanā, Paññattibhedavaṇṇanā.[Trans.: In the <em>Dictionary of Buddhism</em>, in the alphabetical list of Pali terms at the end of the book, the venerable author acknowledges both spellings of <em>sammati</em> and <em>sammuti</em> as valid. In the main text of the dictionary, however, he only uses <em>sammati</em>, e.g.: <em>sammati-sacca</em>, <em>sammati-desanā</em>, etc. In his <em>Dictionary of Buddhist Terminology</em> (Thai edition only), he only provides the spelling of <em>sammati</em>. Moreover, in Sir Monier Monier-Williams’s <em>A Sanskrit English Dictionary</em>, only <em>sammati</em> is provided. Although the Pali Text Society’s <em>Pali-English Dictionary</em> greatly favors <em>sammuti</em> (it includes <em>sammata</em> as a past participle), and has no mention of <em>sammati</em>, I decided to go exclusively with <em>sammati</em> in this book.]</p>
-</div>
-<div class="footnote-definition" id="fn42"><sup class="footnote-definition-label">42</sup>
-<p>VinA. I. 21; DA. I. 19; DhsA. 21, 56; MA. I. 217 = SA. 13.</p>
-</div>
-<div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
+Paccayaparicchedavaṇṇanā, Paññattibhedavaṇṇanā.[Trans.: In the <em>Dictionary of Buddhism</em>, in the alphabetical list of Pali terms at the end of the book, the venerable author acknowledges both spellings of <em>sammati</em> and <em>sammuti</em> as valid. In the main text of the dictionary, however, he only uses <em>sammati</em>, e.g.: <em>sammati-sacca</em>, <em>sammati-desanā</em>, etc. In his <em>Dictionary of Buddhist Terminology</em> (Thai edition only), he only provides the spelling of <em>sammati</em>. Moreover, in Sir Monier Monier-Williams’s <em>A Sanskrit English Dictionary</em>, only <em>sammati</em> is provided. Although the Pali Text Society’s <em>Pali-English Dictionary</em> greatly favors <em>sammuti</em> (it includes <em>sammata</em> as a past participle), and has no mention of <em>sammati</em>, I decided to go exclusively with <em>sammati</em> in this book.] <a href="#fr-fn41-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn42"><sup class="footnote-definition-label">42</sup>
+<p>VinA. I. 21; DA. I. 19; DhsA. 21, 56; MA. I. 217 = SA. 13. <a href="#fr-fn42-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn43"><sup class="footnote-definition-label">43</sup>
 <p>Trans: the author uses the Thai version of this story, of a
 rabbit who panics after hearing a coconut fall on the ground,
-thinking the world is coming to an end.</p>
-</div>
-<div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
+thinking the world is coming to an end. <a href="#fr-fn43-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn44"><sup class="footnote-definition-label">44</sup>
 <p>In the Abhidhamma <em>vipallāsa</em> is referred to as <em>vipariyesa</em>
 (Vbh. 376; this alternative term has its source in the suttas, at
 S. I. 188-9; cf.: SA. I. 271; NdA. I. 163; DhsA. 253). At VinṬ.:
 Dutiyapārājikaṁ, Verañjakaṇḍavaṇṇanā, it states that these three
-aberrations are placed in order of power, from weaker to stronger.</p>
-</div>
-<div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
+aberrations are placed in order of power, from weaker to stronger. <a href="#fr-fn44-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn45"><sup class="footnote-definition-label">45</sup>
 <p>See Chapter 15 on the preliminary stage of spiritual practice
-(factor #2: wise reflection).</p>
-</div>
-<div class="footnote-definition" id="fn46"><sup class="footnote-definition-label">46</sup>
-<p>’The all’ = ’everything’, ’entirety’.</p>
-</div>
-<div class="footnote-definition" id="fn47"><sup class="footnote-definition-label">47</sup>
-<p>Trans: the ’sensed’: tastes, odours, and tangibles.</p>
-</div>
-<div class="footnote-definition" id="fn48"><sup class="footnote-definition-label">48</sup>
+(factor #2: wise reflection). <a href="#fr-fn45-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn46"><sup class="footnote-definition-label">46</sup>
+<p>’The all’ = ’everything’, ’entirety’. <a href="#fr-fn46-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn47"><sup class="footnote-definition-label">47</sup>
+<p>Trans: the ’sensed’: tastes, odours, and tangibles. <a href="#fr-fn47-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn48"><sup class="footnote-definition-label">48</sup>
 <p>The commentaries explain: ’one is not dominated by greed, hatred,
-and delusion’.</p>
-</div>
-<div class="footnote-definition" id="fn49"><sup class="footnote-definition-label">49</sup>
+and delusion’. <a href="#fr-fn48-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn49"><sup class="footnote-definition-label">49</sup>
 <p>The commentaries explain: ’one is not caught up in the seen,
-etc’.</p>
-</div>
-<div class="footnote-definition" id="fn50"><sup class="footnote-definition-label">50</sup>
+etc’. <a href="#fr-fn49-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn50"><sup class="footnote-definition-label">50</sup>
 <p>There will be neither this existence (<em>bhava</em>), another
-existence, or an existence between the two.</p>
-</div>
-<div class="footnote-definition" id="fn51"><sup class="footnote-definition-label">51</sup>
+existence, or an existence between the two. <a href="#fr-fn50-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn51"><sup class="footnote-definition-label">51</sup>
 <p>At S. IV. 198-200, the questions are posed: ’How is there
 non-restraint’ and ’How is there restraint?’; the reply is the same as
-above.</p>
-</div>
-<div class="footnote-definition" id="fn52"><sup class="footnote-definition-label">52</sup>
+above. <a href="#fr-fn51-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn52"><sup class="footnote-definition-label">52</sup>
 <p>In full, this is called: ’guarding the sense doors in regard to
-the sense faculties’ (<em>indriyesu gutta-dvāra</em>).</p>
-</div>
-<div class="footnote-definition" id="fn53"><sup class="footnote-definition-label">53</sup>
+the sense faculties’ (<em>indriyesu gutta-dvāra</em>). <a href="#fr-fn52-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn53"><sup class="footnote-definition-label">53</sup>
 <p>In regard to being safe from distorted understanding, in this
 context it refers only to new sources of such distortions; it does
 not refer to previously accumulated factors such as craving
 (<em>taṇhā</em>), conceit (<em>māna</em>), or view (<em>diṭṭhi</em>), which pertain to
-another stage of spiritual practice.</p>
-</div>
-<div class="footnote-definition" id="fn54"><sup class="footnote-definition-label">54</sup>
-<p>D. III. 219-20.</p>
-</div>
-<div class="footnote-definition" id="fn55"><sup class="footnote-definition-label">55</sup>
-<p>Vbh. 310.</p>
-</div>
-<div class="footnote-definition" id="fn56"><sup class="footnote-definition-label">56</sup>
+another stage of spiritual practice. <a href="#fr-fn53-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn54"><sup class="footnote-definition-label">54</sup>
+<p>D. III. 219-20. <a href="#fr-fn54-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn55"><sup class="footnote-definition-label">55</sup>
+<p>Vbh. 310. <a href="#fr-fn55-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn56"><sup class="footnote-definition-label">56</sup>
 <p>In this text the terms are also spelled slightly differently, as:
-<em>sutamayī-paññā</em>, <em>cintāmayī-paññā</em>, and <em>bhāvanāmayī-paññā</em>.</p>
-</div>
-<div class="footnote-definition" id="fn57"><sup class="footnote-definition-label">57</sup>
-<p>VbhA. 412.</p>
-</div>
-<div class="footnote-definition" id="fn58"><sup class="footnote-definition-label">58</sup>
-<p>Vism. 439.</p>
-</div>
-<div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
+<em>sutamayī-paññā</em>, <em>cintāmayī-paññā</em>, and <em>bhāvanāmayī-paññā</em>. <a href="#fr-fn56-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn57"><sup class="footnote-definition-label">57</sup>
+<p>VbhA. 412. <a href="#fr-fn57-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn58"><sup class="footnote-definition-label">58</sup>
+<p>Vism. 439. <a href="#fr-fn58-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn59"><sup class="footnote-definition-label">59</sup>
 <p>See: Vism. 481-2; CompṬ.: Samuccayaparicchedavaṇṇanā,
-Sabbasaṅgahavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn60"><sup class="footnote-definition-label">60</sup>
-<p>See: Vbh. 70-72.</p>
+Sabbasaṅgahavaṇṇanā. <a href="#fr-fn59-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn60"><sup class="footnote-definition-label">60</sup>
+<p>See: Vbh. 70-72. <a href="#fr-fn60-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html" class="active">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -306,7 +287,7 @@ Here are some examples of happiness found in the scriptures:</p>
 </ul>
 <p>In terms of beginning stages of practice, the Buddha stated that ’merit
 is a name for happiness’ (merit = <em>puñña</em>; ’goodness’, ’performing
-wholesome deeds’).<sup class="footnote-reference"><a href="#fn1">1</a></sup></p>
+wholesome deeds’).<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup></p>
 <div class="note">
 <p><span class="caption">Author’s Note</span><a id="note-author-happiness"></a></p>
 <blockquote>
@@ -332,16 +313,16 @@ integrated whole.]</p>
 </div>
 <p>In terms of meditation, happiness is an important factor giving rise to
 concentration (<em>samādhi</em>), as confirmed by the Buddha: <em>A happy mind
-becomes well-established [in concentration]</em>.<sup class="footnote-reference"><a href="#fn2">2</a></sup> In the scriptures,
+becomes well-established [in concentration]</em>.<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup> In the scriptures,
 happiness is described as the ’proximate cause’ (<em>padaṭṭhāna</em>) for
 concentration. When the mind is highly concentrated and one reaches the
 state of jhāna, happiness (<em>sukha</em>) is one of the jhāna factors
-(<em>jhānaṅga</em>), present up to the third jhāna.<sup class="footnote-reference"><a href="#fn3">3</a></sup> Although happiness is
+(<em>jhānaṅga</em>), present up to the third jhāna.<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup> Although happiness is
 technically not a factor of the concentrative attainments
 (<em>jhāna-samāpatti</em>) higher than the third jhāna, these states are
-nonetheless considered to be a more refined form of happiness.<sup class="footnote-reference"><a href="#fn4">4</a></sup></p>
+nonetheless considered to be a more refined form of happiness.<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup></p>
 <p>Finally, the highest goal of Buddhism – Nibbāna – is described as a
-form of happiness, the supreme form of happiness (<em>parama-sukha</em>).<sup class="footnote-reference"><a href="#fn5">5</a></sup></p>
+form of happiness, the supreme form of happiness (<em>parama-sukha</em>).<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup></p>
 <p>An important synonym for Nibbāna is <em>nirodha</em> (’cessation’), which is
 endowed with three key attributes:</p>
 <ol>
@@ -363,11 +344,11 @@ attainment of supreme happiness.</p>
 <p>Although this third attribute – the end of suffering – was described
 to some extent in the chapter on an arahants’s mental self-mastery
 (<em>bhāvita-citta</em>), there are several more aspects to this attribute that
-need to be considered.<sup class="footnote-reference"><a href="#fn6">6</a></sup></p>
+need to be considered.<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup></p>
 <p>Moreover, this highest goal of Buddhism, of awakening (<em>bodhi</em>) or
 supreme happiness, is to be reached by way of happiness or through a
-practice comprised of happiness. It is not to be reached by way of
-suffering or through affliction and torment.<sup class="footnote-reference"><a href="#fn7">7</a></sup> {1024}</p>
+practice imbued with happiness. It is not to be reached by way of
+suffering or through affliction and torment.<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup> {1024}</p>
 <p>In relation to Dhamma practice, the scriptures describe various kinds of
 happiness, and at the same time they describe both the advantages and
 the faults of each kind. They also compare each kind of happiness with
@@ -442,7 +423,7 @@ otherwise.’ {1071} He remembered an event from his childhood, when he
 was sitting quietly alone in the shade of a jambolan tree and had
 attained the first jhāna, distinguished by bliss and joy. He had the
 insight that this is the path, as confirmed by the words he spoke to
-himself: ’Here, indeed, is the path to awakening.’<sup class="footnote-reference"><a href="#fn8">8</a></sup></p>
+himself: ’Here, indeed, is the path to awakening.’<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup></p>
 <p>When he was clear in his mind about this issue he asked himself whether
 he is afraid of this happiness free from sensual pleasure and free from
 unwholesome states. This was a way of verifying whether this happiness
@@ -680,7 +661,7 @@ who is travelling through a desert, who is parched and exhausted, will
 experience rapture when he sees water or hears from another that water
 is nearby. When he reaches the shade of the oasis, and drinks from and
 bathes in the pool, he experiences happiness.</p>
-<p>The commentaries provide an example for clarification.<sup class="footnote-reference"><a href="#fn9">9</a></sup> A man has
+<p>The commentaries provide an example for clarification.<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup> A man has
 travelled a long distance through a barren wilderness. He is soaked in
 sweat, famished and thirsty. At one point he meets someone travelling
 the other way and asks whether there is any drinking water ahead. He is
@@ -785,7 +766,7 @@ gaining any footing and leads to true peace.</p>
 <p>Regardless of whether one stills desire by way of gratification or one
 abstains from gratifying unhealthy desires by empowering wholesome
 qualities and applying wisdom, the resulting stillness and peace
-(<em>santi</em>) itself constitutes happiness. Happiness is peace.<sup class="footnote-reference"><a href="#fn10">10</a></sup> {1078}</p>
+(<em>santi</em>) itself constitutes happiness. Happiness is peace.<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup> {1078}</p>
 <h3 id="dual-pathways-to-happiness"><a class="header" href="#dual-pathways-to-happiness">Dual Pathways to Happiness</a></h3>
 <p>Most people are endowed with a ’starting capital’ of both craving and
 wholesome enthusiasm. Those leaders in society or those who act as
@@ -982,7 +963,7 @@ perfection. The first three forms of well-wishing are confined to
 factors of the mind. The fourth factor involves wisdom, which prompts
 true application of the mind and leads to liberation. {1097}</p>
 <p>In sum, although people may possess positive emotions, they need wisdom
-to regulate, refine, and elevate these emotions.<sup class="footnote-reference"><a href="#fn11">11</a></sup> The fourth factor
+to regulate, refine, and elevate these emotions.<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup> The fourth factor
 of equanimity constitutes this link with wisdom.</p>
 <p>If people lack wisdom, they are unable to solve life’s problems. Even if
 they are possessed with virtues and wholesome sentiments, they may apply
@@ -1024,12 +1005,12 @@ clearly discern with right wisdom that sense pleasure has little
 sweetness and much suffering – much affliction and danger – if he has
 not yet experienced the sublime bliss and happiness independent of
 sensuality, then he cannot yet say with confidence that he will not
-revert back in search of sense pleasure.<sup class="footnote-reference"><a href="#fn12">12</a></sup></p>
+revert back in search of sense pleasure.<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup></p>
 <p>Similarly, he warned the monks in particular that if someone who has
 gone forth has not yet savoured the sublime bliss and happiness
 independent of sensual pleasures, it is still possible for various
 defilements, like covetousness, ill-will, restlessness, laziness, and
-boredom, to overwhelm the mind.<sup class="footnote-reference"><a href="#fn13">13</a></sup> Such a person will not delight in
+boredom, to overwhelm the mind.<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup> Such a person will not delight in
 the holy life or will not be able to endure living the holy life.</p>
 <p>Apart from demonstrating the importance Buddhism gives to happiness,
 these references also reveal how noble disciples do not abandon sense
@@ -1037,7 +1018,7 @@ desire because sensuality is void of pleasure or because Buddhism
 teaches to abstain from pleasure. Buddhism acknowledges pleasure and
 happiness as it truly exists; it encourages people to practise in order
 to achieve happiness and it recognizes that sensuality comprises one
-form of happiness.<sup class="footnote-reference"><a href="#fn14">14</a></sup></p>
+form of happiness.<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup></p>
 <p>Noble disciples abandon sense desire because they see that despite the
 inherent pleasures of sensuality it is still mixed up with a great deal
 of suffering. And importantly, there is a more profound form of
@@ -1052,35 +1033,35 @@ kinds and degrees, providing a long list of pairs, including: the
 happiness of householders and the happiness of renunciants, the
 happiness of sensuality and the happiness of renunciation, mundane
 happiness and transcendent happiness, and the happiness of noble beings
-and the happiness of ordinary beings.<sup class="footnote-reference"><a href="#fn15">15</a></sup></p>
+and the happiness of ordinary beings.<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup></p>
 <p>A clear and detailed classification of the various levels of happiness
 is the teaching on the ten levels of happiness which is found in many
-places in the Tipiṭaka:<sup class="footnote-reference"><a href="#fn16">16</a></sup></p>
+places in the Tipiṭaka:<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup></p>
 <ol>
 <li>
 <p>Sense pleasure (<em>kāma</em>): joy and happiness dependent on the five
-cords of sensuality (<em>kāma-guṇa</em>).<sup class="footnote-reference"><a href="#fn17">17</a></sup></p>
+cords of sensuality (<em>kāma-guṇa</em>).<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup></p>
 </li>
 <li>
 <p>Happiness of the first jhāna (<em>paṭhamajhāna-sukha</em>): happiness of
 the first jhāna, which is removed from sensuality and unwholesome
-states, and is comprised of initial and sustained thought (<em>vitakka</em>
+states, and consists of initial and sustained thought (<em>vitakka</em>
 and <em>vicāra</em>), bliss (<em>pīti</em>), happiness (<em>sukha</em>), and
 one-pointedness (<em>ekaggatā</em>).</p>
 </li>
 <li>
 <p>Happiness of the second jhāna (<em>dutiyajhāna-sukha</em>): happiness of
-the second jhāna, which is comprised of bliss (<em>pīti</em>), happiness
+the second jhāna, which consists of bliss (<em>pīti</em>), happiness
 (<em>sukha</em>), and one-pointedness (<em>ekaggatā</em>). {1025}</p>
 </li>
 <li>
 <p>Happiness of the third jhāna (<em>tatiyajhāna-sukha</em>): happiness of the
-third jhāna, which is comprised of happiness (<em>sukha</em>) and
+third jhāna, which consists of happiness (<em>sukha</em>) and
 one-pointedness (<em>ekaggatā</em>).</p>
 </li>
 <li>
 <p>Happiness of the fourth jhāna (<em>catutthajhāna-sukha</em>): happiness of
-the fourth jhāna, which is comprised of equanimity (<em>upekkhā</em>) and
+the fourth jhāna, which consists of equanimity (<em>upekkhā</em>) and
 one-pointedness (<em>ekaggatā</em>).</p>
 </li>
 <li>
@@ -1114,7 +1095,7 @@ perception and feeling (<em>saññāvedayitanirodhasamāpatti-sukha</em>).</p>
 </li>
 </ol>
 <p>It is possible to abbreviate these ten kinds of happiness into three
-levels:<sup class="footnote-reference"><a href="#fn18">18</a></sup></p>
+levels:<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup></p>
 <ol>
 <li>
 <p>Happiness associated with sensuality (<em>kāma-sukha</em>).</p>
@@ -1157,7 +1138,7 @@ abandons the coarser forms and seeks ever more sublime happiness. At the
 very least one will not be overly engrossed in coarse pleasures.</p>
 <p>Whenever people are liberated in a decisive way and the bonds of mental
 defilement have been utterly severed, they will never return to seek out
-coarser forms of happiness.<sup class="footnote-reference"><a href="#fn19">19</a></sup> They will experience only the refined
+coarser forms of happiness.<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup> They will experience only the refined
 happiness corresponding to a liberated mind. Experiencing these
 gradually more refined forms of happiness is one attribute of making
 progress in Dhamma practice. {1026}</p>
@@ -1223,7 +1204,7 @@ her womb for nine or ten months with great risk to her life, as a
 heavy burden. Then, at the end of nine or ten months, the mother gives
 birth with great risk to her life, as a heavy burden. She then
 nourishes the newborn child with her own blood; for the mother’s
-breast-milk is called ’blood’ in the noble ones’ tradition.<sup class="footnote-reference"><a href="#fn20">20</a></sup>
+breast-milk is called ’blood’ in the noble ones’ tradition.<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup>
 {1027}</p>
 <p><em>M. I. 265-6.</em></p>
 <p>’A young infant child, lying on his back, plays [even] with his own
@@ -1244,7 +1225,7 @@ sounds … odours … tastes … tangibles that are are desirable,
 alluring, likeable and appealing, attractive and provocative of lust.
 What do you think, isn’t this amusement superior and more refined than
 the former kind?’</p>
-<p>’Yes, venerable sir.’<sup class="footnote-reference"><a href="#fn21">21</a></sup></p>
+<p>’Yes, venerable sir.’<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup></p>
 <p><em>A. V. 203.</em></p>
 </blockquote>
 </div>
@@ -1330,7 +1311,7 @@ quotation. Nevertheless, the Buddha said that however great is the
 happiness of a universal emperor, it is paltry – even inconsequential
 – when compared to the happiness of the celestial realms. It is similar
 to comparing a small stone the size of one’s palm to the towering
-Himalayas.<sup class="footnote-reference"><a href="#fn22">22</a></sup></p>
+Himalayas.<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup></p>
 <p>Although divine happiness (<em>dibba-sukha</em>) is an elevated form of sensual
 pleasure, greatly exceeding the sense pleasure of human beings, there
 exists a happiness more sublime than this. Such a latter form of sublime
@@ -1341,7 +1322,7 @@ similar to celestial beings, who feel no envy or delight in the inferior
 happiness of human beings. Moreover, these individuals have no yearning
 even for divine happiness, because they have experienced a superior form
 of happiness.</p>
-<p>In this context, the Buddha recounted his own experiences:<sup class="footnote-reference"><a href="#fn23">23</a></sup></p>
+<p>In this context, the Buddha recounted his own experiences:<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup></p>
 <div class="sutta">
 <blockquote>
 <p>’So too, Māgandiya, formerly when I lived the home life, I enjoyed
@@ -1457,7 +1438,7 @@ feelings [transforms into] clinging. With this clinging as
 condition, there is becoming; with becoming as condition, birth; with
 birth as condition, aging and death; sorrow, lamentation, pain, grief,
 and despair all come to be. Such is the origin of this whole mass of
-suffering.<sup class="footnote-reference"><a href="#fn24">24</a></sup></p>
+suffering.<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup></p>
 <p><em>M. I. 266.</em></p>
 </blockquote>
 </div>
@@ -1516,7 +1497,7 @@ who are able will climb the tree to gather the fruit, while those
 who cannot will use other means; if they are foolish or evil-minded,
 they will cut the entire tree down. If those people up in the tree
 do not get down in time, the tree will fall on them, leading to
-injury or even death.<sup class="footnote-reference"><a href="#fn25">25</a></sup></p>
+injury or even death.<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup></p>
 </li>
 <li>
 <p>Sense objects are similar to a chopping block. Meddling with them is
@@ -1530,7 +1511,7 @@ pierce, wounding one and causing injury.</p>
 <p>Sense objects are similar to the head of a snake; if one is exposed
 to it, one must always live in distrust; one is unable to truly feel
 secure or be at ease. The snake can strike at any time, placing one
-in a constant state of danger.<sup class="footnote-reference"><a href="#fn26">26</a></sup></p>
+in a constant state of danger.<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup></p>
 </li>
 </ul>
 <p>The disadvantages or flaws of <em>kāma</em> can be summarized as follows:
@@ -1575,7 +1556,7 @@ behaviour, like theft, burglary, adultery, and rape. When they are
 caught they receive various kinds of punishments. And when they die they
 must experience further torment in planes of misery, bad destinations,
 lower worlds, and hell. All of these actions and results are due to
-sense desire.<sup class="footnote-reference"><a href="#fn27">27</a></sup></p>
+sense desire.<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup></p>
 <p>Those who discern the aforementioned disadvantages and dangers of sense
 desire (<em>kāma</em>), and who have experienced a superior kind of happiness,
 to the point of no longer hankering after objects of sensual enjoyment,
@@ -1607,7 +1588,7 @@ So too it is with sensuality.</p>
 by burning and agitation. People are ordinarily infected by craving for
 sensuality, however, and possess damaged and faulty faculties, giving
 rise to warped perceptions about sensuality, experiencing the actual
-pain as pleasure.<sup class="footnote-reference"><a href="#fn28">28</a></sup></p>
+pain as pleasure.<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup></p>
 <p>The more a leper scratches and burns his lesions, the dirtier and more
 putrid they become. His happiness and delight stems from scratching his
 wounds, or exists at the point of the wound that is being scratched. As
@@ -1629,9 +1610,9 @@ internal happiness independent of external sense objects? {1033}</p>
 are freed from the provocations of sense desire, they will be able to
 experience a sublime, internal happiness. This is referred to as a
 freedom from disease, an absence of mental disturbance, or perfect
-mental health, which is one of the definitions for Nibbāna.<sup class="footnote-reference"><a href="#fn29">29</a></sup></p>
+mental health, which is one of the definitions for Nibbāna.<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup></p>
 <p>In the Sakka Sutta the Buddha converses with a group of Sakyan
-householders.<sup class="footnote-reference"><a href="#fn30">30</a></sup> After being questioned, the Sakyans acknowledge that
+householders.<sup class="footnote-reference" id="fr-fn30-1"><a href="#fn-fn30">30</a></sup> After being questioned, the Sakyans acknowledge that
 someone who makes his living righteously and abstains from anything
 unwholesome, and who as a result earns half a coin, a single coin, two
 coins – all the way up to five hundred coins – per day, is worthy to
@@ -1704,7 +1685,7 @@ itching. Consider which of these kinds of happiness is superior.</p>
 <p>Does a healthy person free from illness consider this state of health,
 this state of wellbeing, to be happiness? Is not such freedom from
 illness, freedom from affliction, freedom from chafing, itching, and
-physical pain a true state of happiness?<sup class="footnote-reference"><a href="#fn31">31</a></sup> {1101} The state of
+physical pain a true state of happiness?<sup class="footnote-reference" id="fr-fn31-1"><a href="#fn-fn31">31</a></sup> {1101} The state of
 physical health, free from weakness and irritation, in which all of
 one’s organs function well, is an inherent state of happiness. Indeed,
 such health, such freedom from affliction, is a basic, primary form of
@@ -1750,7 +1731,7 @@ people to develop wisdom and have a proper relationship to sense
 pleasure; only then can one escape from its power and influence.</p>
 <p>In the Pāsarāsi Sutta the Buddha compares the five objects of sense
 pleasure to a hunter’s snare. This teaching pertains to three groups of
-ascetics and brahmins:<sup class="footnote-reference"><a href="#fn32">32</a></sup></p>
+ascetics and brahmins:<sup class="footnote-reference" id="fr-fn32-1"><a href="#fn-fn32">32</a></sup></p>
 <ol>
 <li>
 <p><em>First Group:</em> those ascetics and brahmins who enjoy the five cords
@@ -1795,7 +1776,7 @@ escaping the enticements by craving’ or ’wisdom preventing entrapment by
 craving’.</p>
 <p>The commentaries generally define <em>nissaraṇa-paññā</em> as an ability to
 reflect when using the four requisites, by focusing on the true purpose,
-benefit, or value of these things.<sup class="footnote-reference"><a href="#fn33">33</a></sup> For example, one uses clothing
+benefit, or value of these things.<sup class="footnote-reference" id="fr-fn33-1"><a href="#fn-fn33">33</a></sup> For example, one uses clothing
 primarily to ward off cold, heat, wind, and biting insects, and to cover
 one’s private parts, not for boasting or for show. One eats food in
 order to keep the body strong and at ease and so that one can perform
@@ -1807,14 +1788,14 @@ and suffering stemming from spinning around in the vortex of moodiness,
 of joy and sorrow, pleasure and disappointment. Moreover, it generates a
 balanced use of the requisites, which is a boon for one’s life. Practice
 endowed with liberating wisdom (<em>nissaraṇa-paññā</em>) is thus referred to
-as ’knowledge of moderation’.<sup class="footnote-reference"><a href="#fn34">34</a></sup></p>
+as ’knowledge of moderation’.<sup class="footnote-reference" id="fr-fn34-1"><a href="#fn-fn34">34</a></sup></p>
 <p>Someone who relates properly to sense pleasure will find it easy to
 access more refined forms of happiness, as such happiness is dependent
 on wholesome states of mind. When one has experienced refined happiness,
 this happiness then helps in turn to guide one’s search for and
-partaking of sense pleasure, keeping it within correct boundaries. This
+partaking of sense pleasure, keeping it within proper boundaries. This
 is because one appreciates the value of more refined happiness. And when
-one reaches higher states of realization, comprised of ever more
+one reaches higher states of realization, consisting of ever more
 profound forms of happiness, one will not return to seek out sense
 pleasure again. {1037}</p>
 <h3 id="liberated-enjoyment-of-sense-pleasure"><a class="header" href="#liberated-enjoyment-of-sense-pleasure">Liberated Enjoyment of Sense Pleasure</a></h3>
@@ -1828,11 +1809,11 @@ wellbeing of themselves, their families, their companions, their
 dependants, their coworkers, their community, and indeed of their entire
 society. Moreover, they are aware, both in regard to themselves and to
 others, of how to progress and develop on the noble path
-(<em>ariya-magga</em>).<sup class="footnote-reference"><a href="#fn35">35</a></sup></p>
+(<em>ariya-magga</em>).<sup class="footnote-reference" id="fr-fn35-1"><a href="#fn-fn35">35</a></sup></p>
 <p>In reference to monks or monastic residents, who aim for higher forms of
 happiness and freedom, the Buddha taught to abandon sensual desire and
 to pass beyond material things. But in reference to householders, he did
-not emphasize the abstinence from sensuality.<sup class="footnote-reference"><a href="#fn36">36</a></sup> Instead, he
+not emphasize the abstinence from sensuality.<sup class="footnote-reference" id="fr-fn36-1"><a href="#fn-fn36">36</a></sup> Instead, he
 emphasized managing the consumption of material things and dwelling in
 contentment in a way that is safe from ill-effects and conducive to the
 greatest blessings for oneself and others.</p>
@@ -1853,7 +1834,7 @@ renounce the household life, the Buddha usually began with basic levels
 of practice followed by more refined levels. This teaching by the Buddha
 is called the ’progressive instruction’ or ’gradual instruction’
 (<em>anupubbikathā</em>).</p>
-<p>The gradual instruction is comprised of five factors (three expositions
+<p>The gradual instruction consists of five factors (three expositions
 – <em>kathā</em> – and two related subjects). (See
 Note <a href="#note-expositions">Expositions</a>) The three expositions are as follows:</p>
 <ol>
@@ -1925,7 +1906,7 @@ witness to truth, until there arose the ’eye of Dhamma’
 (<em>dhamma-cakkhu</em>) and they would enter the community of the noble ones
 (<em>ariya-puggala</em>), from stream-enterers upwards.</p>
 <p>Most of these awakened individuals with the ’eye of Dhamma’ continue to
-live as householders.<sup class="footnote-reference"><a href="#fn37">37</a></sup> They still enjoy sensuality, but it is a
+live as householders.<sup class="footnote-reference" id="fr-fn37-1"><a href="#fn-fn37">37</a></sup> They still enjoy sensuality, but it is a
 sensual happiness integrated with the happiness independent of material
 things (<em>nirāmisa-sukha</em>), which acts as a guarantee, preventing
 sensuality from causing harm and indeed generating blessings and virtue.
@@ -2070,7 +2051,7 @@ given the name ’supreme benefit’ (<em>paramattha</em>).</p>
 <p>In sum, this term <em>attha</em>, which refers to the purpose or objective of
 life, can be divided simply into two kinds: visible benefit and
 inconspicuous (i.e. spiritual) benefit (including the supreme benefit).
-A more detailed division, however, is into three kinds:<sup class="footnote-reference"><a href="#fn38">38</a></sup></p>
+A more detailed division, however, is into three kinds:<sup class="footnote-reference" id="fr-fn38-1"><a href="#fn-fn38">38</a></sup></p>
 <ol>
 <li>
 <p>Visible benefit (<em>diṭṭhadhammikattha</em>) emphasizes physical health,
@@ -2088,7 +2069,7 @@ wisdom, leading to true purity, clarity, happiness, and liberation.</p>
 <p>Besides encouraging people to gradually reach these three kinds of
 benefit, the Buddha also taught to broaden one’s perspective, so that
 one develops these benefits not only for oneself but also for the sake
-of others. There is thus a second group of three benefits:<sup class="footnote-reference"><a href="#fn39">39</a></sup></p>
+of others. There is thus a second group of three benefits:<sup class="footnote-reference" id="fr-fn39-1"><a href="#fn-fn39">39</a></sup></p>
 <ol>
 <li>
 <p>Self-benefit (<em>attattha</em>): to generate the above three kinds of
@@ -2126,7 +2107,7 @@ forms of happiness.</p>
 householders in spiritual benefit (including the supreme benefit) which
 help to regulate people’s relationship to sense pleasure. The chief of
 these terms is <em>ariyā vaḍḍhi</em>: ’noble growth’. There are five such
-factors:<sup class="footnote-reference"><a href="#fn40">40</a></sup></p>
+factors:<sup class="footnote-reference" id="fr-fn40-1"><a href="#fn-fn40">40</a></sup></p>
 <ol>
 <li>
 <p>Faith (<em>saddhā</em>): firm confidence in the blessings of the Triple
@@ -2175,12 +2156,12 @@ describes a system for conducting one’s life as a householder, in
 reference to one’s immediate family, to one’s community, and to society
 in general. The commentators say that this sutta constitutes a
 ’discipline for laypeople’ (<em>gihi-vinaya</em>) or a ’code of living for
-noble beings’.<sup class="footnote-reference"><a href="#fn41">41</a></sup> {1042}</p>
+noble beings’.<sup class="footnote-reference" id="fr-fn41-1"><a href="#fn-fn41">41</a></sup> {1042}</p>
 <p>At the start of the Siṅgālaka Sutta the Buddha refers to this code of
 living as a ’noble discipline’ (<em>ariya-vinaya</em>). And at the end of the
 sutta he speaks a verse describing the principles for building social
 stability and harmony, which are called the four ’bases of social
-solidarity’ (<em>saṅgaha-vatthu</em>):<sup class="footnote-reference"><a href="#fn42">42</a></sup></p>
+solidarity’ (<em>saṅgaha-vatthu</em>):<sup class="footnote-reference" id="fr-fn42-1"><a href="#fn-fn42">42</a></sup></p>
 <div class="sutta">
 <blockquote>
 <p><em>Giving gifts, kindly speech,<br />
@@ -2295,7 +2276,7 @@ One sees clearly the happiness of material wealth (bhoga-sukha).<br />
 When seeing things clearly, the wise one<br />
 Knows both kinds of happiness, [and sees that]<br />
 The other three are not worth a sixteenth part<br />
-Of the bliss of blamelessness.’<sup class="footnote-reference"><a href="#fn43">43</a></sup> {1044}</strong></p>
+Of the bliss of blamelessness.’<sup class="footnote-reference" id="fr-fn43-1"><a href="#fn-fn43">43</a></sup> {1044}</strong></p>
 </blockquote>
 <p><em>A. II. 69.</em></p>
 </blockquote>
@@ -2305,7 +2286,7 @@ and spiritual benefit, the latter acting as both a support and a
 constraint for the former:</p>
 <div class="sutta">
 <blockquote>
-<p>On one occasion the Blessed One was dwelling among the Koliyans<sup class="footnote-reference"><a href="#fn44">44</a></sup>
+<p>On one occasion the Blessed One was dwelling among the Koliyans<sup class="footnote-reference" id="fr-fn44-1"><a href="#fn-fn44">44</a></sup>
 near the Koliyan town named Kakkarapatta. There the young Koliyan
 Dīghajāṇu approached the Blessed One, paid homage to him, sat down to
 one side, and said:</p>
@@ -2314,7 +2295,7 @@ home in a house full of children. We use sandalwood from Kāsi; we wear
 garlands, scents, and unguents; we welcome gold and silver. Let the
 Blessed One teach us the Dhamma in a way that will lead to our welfare
 and happiness in this present life and in the future.’</p>
-<p>’There are, Byagghapajja,<sup class="footnote-reference"><a href="#fn45">45</a></sup> these four things that lead to the
+<p>’There are, Byagghapajja,<sup class="footnote-reference" id="fr-fn45-1"><a href="#fn-fn45">45</a></sup> these four things that lead to the
 welfare and happiness of a clansman in this present life. What four?
 Accomplishment in diligence, accomplishment in protection, good
 friendship, and balanced living.</p>
@@ -2378,7 +2359,7 @@ generosity, and accomplishment in wisdom.</p>
 <p>’And what is accomplishment in faith? Here, a clansman is endowed with
 faith. He places faith in the awakening of the Tathāgata thus: “The
 Blessed One is an arahant … the Enlightened One, the Exalted
-One.’<sup class="footnote-reference"><a href="#fn46">46</a></sup> This is called accomplishment in faith.</p>
+One.’<sup class="footnote-reference" id="fr-fn46-1"><a href="#fn-fn46">46</a></sup> This is called accomplishment in faith.</p>
 <p>’And what is accomplishment in virtuous conduct? Here, a clansman
 abstains from the destruction of life … from intoxicants, that is,
 spirits and alcoholic beverages, which are the basis for heedlessness.
@@ -2410,7 +2391,7 @@ To lead to happiness in both ways:<br />
 To good and welfare in this very life,<br />
 And to happiness in the future.<br />
 Thus for those dwelling at home,<br />
-Their generosity and merit increase.<sup class="footnote-reference"><a href="#fn47">47</a></sup></p>
+Their generosity and merit increase.<sup class="footnote-reference" id="fr-fn47-1"><a href="#fn-fn47">47</a></sup></p>
 </blockquote>
 <p><em>A. IV. 281.</em></p>
 </blockquote>
@@ -2441,7 +2422,7 @@ chapter 17.</p>
 sense pleasure will be reduced in value. In comparison to the happiness
 of jhāna, for example, sense pleasure is described as: ’ordinary
 happiness’ (<em>puthujjana-sukha</em>; the happiness of unawakened people);
-’contaminated (or festering) happiness’ (<em>mīḷha-sukha</em>);<sup class="footnote-reference"><a href="#fn48">48</a></sup> and
+’contaminated (or festering) happiness’ (<em>mīḷha-sukha</em>);<sup class="footnote-reference" id="fr-fn48-1"><a href="#fn-fn48">48</a></sup> and
 ’inferior happiness’ (<em>anariya-sukha</em>). Furthermore, it is described as
 consisting of suffering, affliction, and obstruction, and constituting
 the wrong way of practice (<em>micchā-paṭipadā</em>).</p>
@@ -2452,7 +2433,7 @@ the wrong way of practice (<em>micchā-paṭipadā</em>).</p>
 (<em>upasama-sukha</em>); and ’happiness conducive to awakening’
 (<em>sambodhi-sukha</em>). It is free from suffering, distress and affliction,
 and it constitutes correct spiritual practice (<em>sammā-paṭipadā</em>), which
-leads to liberation, to Nibbāna.<sup class="footnote-reference"><a href="#fn49">49</a></sup></p>
+leads to liberation, to Nibbāna.<sup class="footnote-reference" id="fr-fn49-1"><a href="#fn-fn49">49</a></sup></p>
 <p>Although the Buddha frequently denigrates and points out the dangers of
 sense pleasure, this does not mean that he was set on condemning or
 despising it. {1035} From one perspective, the Buddha was simply trying
@@ -2502,7 +2483,7 @@ and thus no longer see pleasurable sense objects as worthy of
 involvement.</p>
 <p>This is similar to some people’s speculation that arahants, having
 clearly discerned the characteristic of nonself – the truth that human
-beings are comprised simply of a convergence of elements and possess no
+beings simply exist as a convergence of elements and possess no
 fixed, lasting identity – may be able to kill others blamelessly. But
 this clear knowledge and vision of nonself only occurs when the
 defilement of hatred prompting one to kill has been eradicated. It is
@@ -2589,7 +2570,7 @@ long. If the experience becomes too prolonged, it becomes a form of
 endurance and the happiness transforms into suffering. Sense pleasure
 thus relies on a continual change and variation of sense objects, and
 for this reason the scriptures state that movement (<em>iriyāpatha</em>)
-conceals suffering.<sup class="footnote-reference"><a href="#fn50">50</a></sup> Those who have accessed more refined forms of
+conceals suffering.<sup class="footnote-reference" id="fr-fn50-1"><a href="#fn-fn50">50</a></sup> Those who have accessed more refined forms of
 happiness are not tormented by the fever of yearning. They are able to
 abide in a particular state of happiness for long periods of time,
 according to their wishes, as illustrated in the story of the Buddha and
@@ -2599,7 +2580,7 @@ is related to one’s habitually accumulated likes and dislikes,
 preferences and aversions. These likes and dislikes can fluctuate and
 are erratic. The same object or action may be liked by one person and
 disliked by another; one person may see it as a source of pleasure,
-another as a source of displeasure.<sup class="footnote-reference"><a href="#fn51">51</a></sup></p>
+another as a source of displeasure.<sup class="footnote-reference" id="fr-fn51-1"><a href="#fn-fn51">51</a></sup></p>
 <p>This fluctuation is true even for a single individual – on one occasion
 one sees or hears something and is pleased, while on another occasion
 the same thing causes displeasure. And in the case that two people
@@ -2844,7 +2825,7 @@ of friendship; the joy of living with others with a heart of kindness
 and compassion; and the joy in families and communities of living
 together with mutual goodwill, care, and love, of rejoicing in harmony,
 and of being united in the virtues conducive to communal life
-(<em>sārāṇīya-dhamma</em>).<sup class="footnote-reference"><a href="#fn52">52</a></sup> {1094}</p>
+(<em>sārāṇīya-dhamma</em>).<sup class="footnote-reference" id="fr-fn52-1"><a href="#fn-fn52">52</a></sup> {1094}</p>
 <p>There is also the happiness related to nature: the joy of living in
 nature; the contact with the peace and beauty of nature, including the
 trees, the wind, mountains, bodies of water, and the sky; the delight
@@ -3037,7 +3018,7 @@ be discussed at more length below.</p>
 <h3 id="ideal-happiness"><a class="header" href="#ideal-happiness">Ideal Happiness</a></h3>
 <p>Happiness can be grouped or classified in many different ways. Let us
 examine the Buddha’s classification of happiness into thirteen
-pairs.<sup class="footnote-reference"><a href="#fn53">53</a></sup></p>
+pairs.<sup class="footnote-reference" id="fr-fn53-1"><a href="#fn-fn53">53</a></sup></p>
 <p>Here are some simple examples from this classification:</p>
 <ul>
 <li>
@@ -3194,13 +3175,13 @@ or speaking and experience uninterrupted happiness. The answer was ’no’.
 The Buddha went on to say that he himself is able to sit still and
 experience such uninterrupted happiness for two, three, even seven days.
 The Nigaṇṭhā thus conceded that the Buddha has more happiness than King
-Bimbisāra.<sup class="footnote-reference"><a href="#fn54">54</a></sup></p>
+Bimbisāra.<sup class="footnote-reference" id="fr-fn54-1"><a href="#fn-fn54">54</a></sup></p>
 <p>The Buddha compared the pleasure derived from the five sense objects to
 a fire made from straw and twigs. Although it is bright, it is not
 resplendent because it is clouded by smoke. The happiness and bliss
 independent of material sense objects and free from unwholesome states,
 on the other hand, is like a fire burning without using grass and twigs
-as fuel. Its light is pure and brilliant, devoid of any stain.<sup class="footnote-reference"><a href="#fn55">55</a></sup></p>
+as fuel. Its light is pure and brilliant, devoid of any stain.<sup class="footnote-reference" id="fr-fn55-1"><a href="#fn-fn55">55</a></sup></p>
 <h2 id="path-to-supreme-happiness"><a class="header" href="#path-to-supreme-happiness">Path to Supreme Happiness</a></h2>
 <h3 id="developing-more-refined-forms-of-happiness"><a class="header" href="#developing-more-refined-forms-of-happiness">Developing More Refined Forms of Happiness</a></h3>
 <p>Before describing more refined forms of happiness, it is helpful here to
@@ -3291,7 +3272,7 @@ its roots.</p>
 <p>In the fourth jhāna, which is accompanied by equanimity (<em>upekkhā</em>) and
 one-pointedness, a practitioner pervades the entire body with a pure
 bright mind. This is similar to a person who is completely covered from
-the head down with an immaculate white cloth.<sup class="footnote-reference"><a href="#fn56">56</a></sup></p>
+the head down with an immaculate white cloth.<sup class="footnote-reference" id="fr-fn56-1"><a href="#fn-fn56">56</a></sup></p>
 <p>Following on from the happiness of the four fine-material jhānas is the
 happiness of the four formless jhānas, which similarly becomes
 increasingly more refined.</p>
@@ -3309,7 +3290,7 @@ not yet escaped or transcended it.</p>
 cessation of perception and feeling (<em>saññāvedayita-nirodha</em>), and is
 free from the mental taints through discerning the truth with wisdom, is
 described as one who has reached the end of the world and has
-transcended the bonds that bind beings to the world.<sup class="footnote-reference"><a href="#fn57">57</a></sup></p>
+transcended the bonds that bind beings to the world.<sup class="footnote-reference" id="fr-fn57-1"><a href="#fn-fn57">57</a></sup></p>
 <p>The ultimate and complete form of happiness belongs to someone whose
 mind is liberated – the happiness of one who has realized Nibbāna. This
 happiness includes the happiness associated with the cessation of
@@ -3321,33 +3302,33 @@ happiness).</p>
 <li>
 <p>The happiness of jhāna is still not completely free; it is still
 restricted and constrained by perception and other mental factors
-present in jhāna.<sup class="footnote-reference"><a href="#fn58">58</a></sup></p>
+present in jhāna.<sup class="footnote-reference" id="fr-fn58-1"><a href="#fn-fn58">58</a></sup></p>
 </li>
 <li>
 <p>In a specific state of jhāna, it is still possible for mental
 application connected to perceptions of inferior states of jhāna to
 well up in the mind; the happiness of jhāna is thus still prone to
-disturbance or agitation.<sup class="footnote-reference"><a href="#fn59">59</a></sup></p>
+disturbance or agitation.<sup class="footnote-reference" id="fr-fn59-1"><a href="#fn-fn59">59</a></sup></p>
 </li>
 <li>
 <p>Although the happiness of jhāna is a form of non-material happiness,
 it is still subject to attachment and it may give rise to grasping
 (<em>upādāna</em>). It can be an impediment for realizing Nibbāna and
-perfect happiness.<sup class="footnote-reference"><a href="#fn60">60</a></sup></p>
+perfect happiness.<sup class="footnote-reference" id="fr-fn60-1"><a href="#fn-fn60">60</a></sup></p>
 </li>
 <li>
-<p>It is inadequate; it must be transcended or abandoned.<sup class="footnote-reference"><a href="#fn61">61</a></sup></p>
+<p>It is inadequate; it must be transcended or abandoned.<sup class="footnote-reference" id="fr-fn61-1"><a href="#fn-fn61">61</a></sup></p>
 </li>
 <li>
 <p>It is a conditioned phenomenon; it is fashioned by other mental
 causes and conditions; it is unstable, its very nature is subject to
-decline and cessation.<sup class="footnote-reference"><a href="#fn62">62</a></sup> {1048}</p>
+decline and cessation.<sup class="footnote-reference" id="fr-fn62-1"><a href="#fn-fn62">62</a></sup> {1048}</p>
 </li>
 </ul>
 <p>Another important attribute of the happiness of jhāna is that exists on
 the level of feeling or sensation (<em>vedanā</em>). It arises as a result of
 cognizing sense objects or of experiencing the pleasure of sense
-objects.<sup class="footnote-reference"><a href="#fn63">63</a></sup> From this perspective, the happiness of jhāna shares some
+objects.<sup class="footnote-reference" id="fr-fn63-1"><a href="#fn-fn63">63</a></sup> From this perspective, the happiness of jhāna shares some
 attributes with sense pleasure, i.e. it is a form of pleasurable
 sensation (<em>sukha-vedanā</em>). For this reason, the first nine forms of
 happiness can all be classified as happiness dependent on the cognition
@@ -3385,10 +3366,10 @@ Tathāgata describes that state as included in happiness.’</p>
 <p>The cessation of perception and feeling (<em>saññāvedayita-nirodha</em>) is
 comparable to Nibbāna, and the happiness independent of the enjoyment of
 sense objects – or happiness free from sensation – in this state is
-similar to the happiness of Nibbāna (<em>nibbāna-sukha</em>).<sup class="footnote-reference"><a href="#fn64">64</a></sup></p>
+similar to the happiness of Nibbāna (<em>nibbāna-sukha</em>).<sup class="footnote-reference" id="fr-fn64-1"><a href="#fn-fn64">64</a></sup></p>
 <p>Ven. Sāriputta explains this matter in the Nibbāna Sutta, beginning with
 the statement: <em>Friends, this Nibbāna is happiness, this Nibbāna is
-happiness.</em><sup class="footnote-reference"><a href="#fn65">65</a></sup> Ven. Udāyī asks him how it is possible to have
+happiness.</em><sup class="footnote-reference" id="fr-fn65-1"><a href="#fn-fn65">65</a></sup> Ven. Udāyī asks him how it is possible to have
 happiness in a state devoid of an enjoyment of sense objects. Sāriputta
 replies that Nibbāna, in which there is no enjoyment of sense objects
 (i.e. there is no sensation – <em>vedanā</em>), is itself happiness. He then
@@ -3451,7 +3432,7 @@ health and freedom from affliction – is genuine happiness, so too, a
 mind free from blemish, from latent anxiety, and from attachment to
 sense objects exists in a state of true happiness. It is spacious and
 expansive; having realized this happiness, one dwells with a ’boundless
-mind’.<sup class="footnote-reference"><a href="#fn66">66</a></sup></p>
+mind’.<sup class="footnote-reference" id="fr-fn66-1"><a href="#fn-fn66">66</a></sup></p>
 <p>The happiness, delight, clarity, and spaciousness of a liberated mind is
 the exclusive and exceptional province of awakened beings. It is
 difficult for unawakened beings, who have never shared this experience,
@@ -3464,7 +3445,7 @@ sense objects, is in fact a form of <em>dukkha</em> (’stress’, ’suffering�
 This is because pleasurable sensation (<em>sukha-vedanā</em>) is the same as
 other forms of sensation – i.e. painful and neutral sensations
 (<em>dukkha-vedanā</em> and <em>adukkhamasukha-vedanā</em>): they are all conditioned
-phenomena (<em>saṅkhāra-dhammā</em>).<sup class="footnote-reference"><a href="#fn67">67</a></sup> All conditioned phenomena are
+phenomena (<em>saṅkhāra-dhammā</em>).<sup class="footnote-reference" id="fr-fn67-1"><a href="#fn-fn67">67</a></sup> All conditioned phenomena are
 subject to stress (<em>dukkha</em>; this refers to ’dukkha’ in the context of
 the Three Characteristics), as illustrated in this discussion between
 the Buddha and one of the bhikkhus:</p>
@@ -3485,7 +3466,7 @@ neither-painful-nor-pleasant feeling…. And I have also said:
 impermanence of formations. That has been stated by me with reference
 to formations being subject to destruction … subject to dissolution
 … subject to fading away … subject to cessation … subject to
-change.<sup class="footnote-reference"><a href="#fn68">68</a></sup></p>
+change.<sup class="footnote-reference" id="fr-fn68-1"><a href="#fn-fn68">68</a></sup></p>
 <p><em>S. IV. 216-17.</em></p>
 </blockquote>
 </div>
@@ -3493,7 +3474,7 @@ change.<sup class="footnote-reference"><a href="#fn68">68</a></sup></p>
 impermanent, shaped by causes and conditions, interdependent, and of the
 nature to decay and cease, and one abandons craving for these feelings,
 to the extent where the heart is liberated, one is independent of the
-enjoyment of sense objects.<sup class="footnote-reference"><a href="#fn69">69</a></sup> One experiences supreme happiness,
+enjoyment of sense objects.<sup class="footnote-reference" id="fr-fn69-1"><a href="#fn-fn69">69</a></sup> One experiences supreme happiness,
 which is beyond sensation.</p>
 <p>Feeling (<em>vedanā</em>) relies on contact (<em>phassa</em>) – on cognition – which
 arises from the coming together of a sense base (<em>āyatana</em>), e.g. the
@@ -3557,7 +3538,7 @@ escape (<em>nissaraṇa</em>) – a freedom independent of sense pleasure. They
 know of a more expansive form of happiness and they have insight into
 the true nature of happiness and unhappiness. They know of a happiness
 free from sensation; they must not always rely on the enjoyment of sense
-objects.<sup class="footnote-reference"><a href="#fn70">70</a></sup></p>
+objects.<sup class="footnote-reference" id="fr-fn70-1"><a href="#fn-fn70">70</a></sup></p>
 <p>It is difficult for ordinary people to understand this happiness
 independent of sensation, because they have no experience of it and know
 of nothing comparable to it. Having said this, to get an inkling of it
@@ -3689,7 +3670,7 @@ feeling (<em>saññāvedayita-nirodha</em>).</li>
 happiness described earlier.</p>
 <p>Following is an alternative, threefold classification of happiness,
 which is similar to the preceding one yet is slightly more flexible or
-non-specific:<sup class="footnote-reference"><a href="#fn71">71</a></sup></p>
+non-specific:<sup class="footnote-reference" id="fr-fn71-1"><a href="#fn-fn71">71</a></sup></p>
 <ol>
 <li>
 <p>Sense pleasure (<em>kāma-sukha</em>).</p>
@@ -3707,13 +3688,13 @@ follows: {1058}</p>
 <li>
 <p>Sense pleasure is enjoyed by unawakened human beings and by awakened
 beings belonging to the stage of stream-enterers and
-once-returners.<sup class="footnote-reference"><a href="#fn72">72</a></sup></p>
+once-returners.<sup class="footnote-reference" id="fr-fn72-1"><a href="#fn-fn72">72</a></sup></p>
 </li>
 <li>
 <p>Happiness of jhāna is accessed by unawakened human beings and by
 awakened beings of every stage, from stream-enterers up to arahants,
 especially those who have previously developed that specific level
-of jhāna.<sup class="footnote-reference"><a href="#fn73">73</a></sup></p>
+of jhāna.<sup class="footnote-reference" id="fr-fn73-1"><a href="#fn-fn73">73</a></sup></p>
 </li>
 <li>
 <p>Happiness of Nibbāna is accessed by awakened beings of every stage,
@@ -3847,7 +3828,7 @@ training correctly. {1081}</p>
 <p>When people engage in spiritual training, their lives undergo
 development and increase in virtue and wholesomeness. This life of
 virtue and rectitude is referred to as ’ethical conduct’
-(<em>cariya-dhamma</em>).<sup class="footnote-reference"><a href="#fn74">74</a></sup> Ethics and spiritual training thus must go
+(<em>cariya-dhamma</em>).<sup class="footnote-reference" id="fr-fn74-1"><a href="#fn-fn74">74</a></sup> Ethics and spiritual training thus must go
 hand-in-hand. In fact, one need not use the term ’must’ here, because
 when people practise correctly these two elements naturally proceed in
 unison. When people engage in correct spiritual training, their lives
@@ -4245,8 +4226,7 @@ and cooperation? All such activities are opportunities for training.</p>
 <p>Work may be defined as those tasks necessary to accomplish. Wholesome
 enthusiasm is the desire to perform these tasks, along with a desire to
 understand the details of this work. The desire to act is thus
-inherently an aspect of training and of study. True training is
-comprised of the desire to know and the desire to act. By generating
+inherently an aspect of training and of study. True training involves the desire to know and the desire to act. By generating
 this desire to know and act, the essence of training has been reached.
 The desire to train, to learn, and to act is the same as the desire to
 understand. When willingly engaged in a task, one trains oneself and is
@@ -4478,7 +4458,7 @@ practitioner to be truly happy.</p>
 qualities, which are present in those people who are accomplished. I
 have written several books on this subject of happiness as the goal of
 education or of spiritual training; let us review some of the material
-in these books.<sup class="footnote-reference"><a href="#fn75">75</a></sup></p>
+in these books.<sup class="footnote-reference" id="fr-fn75-1"><a href="#fn-fn75">75</a></sup></p>
 <p>The true purpose of education is to provide people with happiness. It is
 not enough for people to enjoy their studies; education also needs to
 lead people to happiness. People then dwell in a normal state of
@@ -4744,7 +4724,7 @@ directly benefits one’s practice. This principle has to do with how one
 relates to happiness, and it also pertains inherently to one’s
 relationship to suffering.</p>
 <p>In the Devadaha Sutta the Buddha outlines this method of practice in
-regard to happiness. It contains four factors:<sup class="footnote-reference"><a href="#fn76">76</a></sup></p>
+regard to happiness. It contains four factors:<sup class="footnote-reference" id="fr-fn76-1"><a href="#fn-fn76">76</a></sup></p>
 <ol>
 <li>
 <p>To refrain from creating extra suffering for oneself.</p>
@@ -4909,7 +4889,7 @@ As a result there is learning, training, and development. When one
 acts appropriately in response to suffering, one grows and reaches
 great success.</p>
 <p>The Pali term <em>sukha</em> (’happiness’) can also be translated as
-’fluent’, ’smooth’, ’convenient’, or ’easy’.<sup class="footnote-reference"><a href="#fn77">77</a></sup> When things are
+’fluent’, ’smooth’, ’convenient’, or ’easy’.<sup class="footnote-reference" id="fr-fn77-1"><a href="#fn-fn77">77</a></sup> When things are
 convenient, smooth, and easy, one should hasten to accomplish
 necessary deeds. When one experiences happiness, one should use this
 valuable opportunity for getting things done. {1108}</p>
@@ -5509,7 +5489,7 @@ these wholesome mind states?’ This is connected to a related question:
 householders?’ The answer is ’giving’ (<em>dāna</em>), that is, generosity.</p>
 <p>Buddhism begins with generosity. The Buddha presented a threefold
 practice for laypeople called the three bases of meritorious action
-(<em>puññakiriyā-vatthu</em>),<sup class="footnote-reference"><a href="#fn78">78</a></sup> which is paired with the threefold training
+(<em>puññakiriyā-vatthu</em>),<sup class="footnote-reference" id="fr-fn78-1"><a href="#fn-fn78">78</a></sup> which is paired with the threefold training
 of the monastic community. Simply speaking, the threefold training
 (<em>tisso sikkhā</em>) is the practice for the monks and nuns, while the three
 bases of meritorious action – of generosity (<em>dāna</em>), moral conduct
@@ -5624,7 +5604,7 @@ insight meditation to bear fruit.</p>
 <p>So far the emphasis has been on the lay community; let us turn our
 attention to the monastic community. Do not believe that the life of the
 monastic community, of the monks, revolves only around formal meditation
-practice.<sup class="footnote-reference"><a href="#fn79">79</a></sup> The terms ’meditation’ or ’Dhamma practice’ can either be
+practice.<sup class="footnote-reference" id="fr-fn79-1"><a href="#fn-fn79">79</a></sup> The terms ’meditation’ or ’Dhamma practice’ can either be
 given a too narrow definition, or else their definitions are vague and
 ambiguous, to the point that one sometimes needs to avoid these terms or
 to use them with care. In fact, every valid activity of a monk can be
@@ -5895,7 +5875,7 @@ bases of social solidarity (<em>saṅgaha-vatthu</em>).</p>
 <p>Of all the Buddha’s male lay disciples who were praised as being
 preeminent (<em>etadagga</em>), there are two who stand out as supreme: the
 householder Citta, who was foremost at preaching the Dhamma, and
-Hatthaka,<sup class="footnote-reference"><a href="#fn80">80</a></sup> who was foremost at uniting other people.</p>
+Hatthaka,<sup class="footnote-reference" id="fr-fn80-1"><a href="#fn-fn80">80</a></sup> who was foremost at uniting other people.</p>
 <p>Hatthaka was proficient at creating communal harmony by way of the four
 bases of social solidarity. As a leader he was able to use these four
 factors to bring about a firm and stable harmony amongst his community.
@@ -5906,7 +5886,7 @@ Khujjuttarā, who was foremost in great knowledge, and Nandamātā,
 foremost in meditative proficiency.)</p>
 <p>The reason why I am emphasizing this subject is that contemporary
 Buddhists seem to view Buddhism as a matter dealing almost exclusively
-with the individual.<sup class="footnote-reference"><a href="#fn81">81</a></sup> They do not seem to realize the importance the
+with the individual.<sup class="footnote-reference" id="fr-fn81-1"><a href="#fn-fn81">81</a></sup> They do not seem to realize the importance the
 Buddha gave to communal and social issues. I believe Buddhists need to
 establish a more balanced perspective.</p>
 <p>In sum, in relation to the monastic community, the Buddha emphasized the
@@ -6150,7 +6130,7 @@ and fasting, until his body was emaciated:</p>
 <p>Because of eating so little my limbs became like the jointed segments
 of eighty-stem vines or black-stem vines … my haunches became like a
 camel’s hoof … the projections on my spine stood forth like corded
-beads<sup class="footnote-reference"><a href="#fn82">82</a></sup> … my ribs jutted out as gaunt as the rafters of an old
+beads<sup class="footnote-reference" id="fr-fn82-1"><a href="#fn-fn82">82</a></sup> … my ribs jutted out as gaunt as the rafters of an old
 roofless barn … my eyes sank far down in their sockets, looking like
 the reflection of stars in a deep well … my scalp shrivelled and
 withered as a freshly cut bitter gourd shrivels and withers in the
@@ -6187,14 +6167,14 @@ with sensual pleasures and unwholesome states.’</p>
 </div>
 <p>The Bodhisatta then ate solid food, restoring his strength. He practised
 the jhānas up to the fourth jhāna and subsequently was fully
-awakened.<sup class="footnote-reference"><a href="#fn83">83</a></sup></p>
+awakened.<sup class="footnote-reference" id="fr-fn83-1"><a href="#fn-fn83">83</a></sup></p>
 <p>The Buddhist practice for reaching the highest goal incorporates
 happiness. The caveat here, however, is that a practitioner must not get
 caught up in the happiness, nor allow it to overwhelm the mind. The mind
 remains independent, allowing the person to progress to higher states
 and to eventually realize complete deliverance. Having reached this
 liberation, one is able to enjoy all levels of happiness without it
-dominating the mind or leading to infatuation and difficulty.<sup class="footnote-reference"><a href="#fn84">84</a></sup></p>
+dominating the mind or leading to infatuation and difficulty.<sup class="footnote-reference" id="fr-fn84-1"><a href="#fn-fn84">84</a></sup></p>
 <p>On some occasions, when drawing a comparison or when playing on words,
 the Buddha referred to the assiduous practice of the four jhānas as an
 ’indulgence’ in happiness (<em>sukhallikānuyoga</em>), but it is a beneficial
@@ -6246,7 +6226,7 @@ suffering.</p>
 </li>
 <li>
 <p>Does not become infatuated with that happiness (i.e. even with
-genuine happiness).<sup class="footnote-reference"><a href="#fn85">85</a></sup></p>
+genuine happiness).<sup class="footnote-reference" id="fr-fn85-1"><a href="#fn-fn85">85</a></sup></p>
 </li>
 </ol>
 <p><em>M. II. 222-3.</em></p>
@@ -6361,7 +6341,7 @@ sexual relations, married people are content with their spouse
 (<em>sadāra-santosa</em>) and live together righteously, by being faithful to
 one another and encouraging each other to grow in virtue and reach
 higher forms of happiness, as is seen in the case of the awakened
-disciples Nakulapitā and Nakulamātā.<sup class="footnote-reference"><a href="#fn86">86</a></sup></p>
+disciples Nakulapitā and Nakulamātā.<sup class="footnote-reference" id="fr-fn86-1"><a href="#fn-fn86">86</a></sup></p>
 <p><strong>B. Wholesome stage:</strong> although one enjoys sense pleasure in a morally
 upright way, one is still cut off from more refined forms of happiness.
 This enjoyment resembles the stage of excellence above: one sees the
@@ -6444,7 +6424,7 @@ they may experience pleasure, it is likely to be detrimental to their
 mental health.</p>
 <p>Furthermore, relating to other people in order to obtain a personal
 advantage, working not for the sake of the work but in order to get a
-reward,<sup class="footnote-reference"><a href="#fn87">87</a></sup> and struggling to compete with others leads to
+reward,<sup class="footnote-reference" id="fr-fn87-1"><a href="#fn-fn87">87</a></sup> and struggling to compete with others leads to
 disappointment, mistrust, vexation, and enmity, all of which blight the
 heart and damage mental health. Although a society may be materially
 prosperous, if it has fallen into such a state of indulgence its
@@ -6495,7 +6475,7 @@ someone does this with sincerity it can still help to foster spiritual
 preparedness, and can be considered a valid part of training, as is seen
 in the example of Ven. Cittahatthisāriputta, who was ordained and
 disrobed seven times before he finally reached the fruit of
-arahantship.<sup class="footnote-reference"><a href="#fn88">88</a></sup></p>
+arahantship.<sup class="footnote-reference" id="fr-fn88-1"><a href="#fn-fn88">88</a></sup></p>
 <p><strong>C. Inferior stage:</strong> to abandon sense pleasure out of reactivity and
 resistance, and to subsequently fall into an opposite extreme. Here one
 undertakes severe and punishing ascetic practices, piling up suffering
@@ -6505,7 +6485,7 @@ understanding and self-awareness described in the previous stage (B),
 creates additional forms of mental problems. {1066}</p>
 <p>Bear in mind that Buddhism considers the non-harming of oneself to be a
 vital principle, and equally a form of Dhamma practice as refraining
-from harming others.<sup class="footnote-reference"><a href="#fn89">89</a></sup> Those people who have been overly forceful in
+from harming others.<sup class="footnote-reference" id="fr-fn89-1"><a href="#fn-fn89">89</a></sup> Those people who have been overly forceful in
 practice or who have reacted to sense pleasure by extreme forms of
 behaviour should switch to the training described in the previous stage
 (B).</p>
@@ -6706,7 +6686,7 @@ manyfolk’ (<em>bahujana-sukha</em>). In sum, Buddhism is a system of developin
 happiness; it is a religion of happiness.</p>
 <h2 id="appendix-1-paired-sets-of-happiness"><a class="header" href="#appendix-1-paired-sets-of-happiness">Appendix 1: Paired Sets of Happiness</a></h2>
 <p>These paired sets of happiness are presented in the Aṅguttara
-Nikāya:<sup class="footnote-reference"><a href="#fn90">90</a></sup></p>
+Nikāya:<sup class="footnote-reference" id="fr-fn90-1"><a href="#fn-fn90">90</a></sup></p>
 <ol>
 <li>
 <p>Happiness of householders (<em>gihi-sukha</em>; happiness of laypeople) and
@@ -6755,7 +6735,7 @@ resulting from equanimity (<em>upekkhā-sukha</em>; happiness when the mind
 is in a complete state of balance, is neutral and objective, ready
 to discern the truth, and discriminates correctly, just as a wise
 person would observe events from a distance; the commentaries state
-that this refers to the happiness in the fourth jhāna).<sup class="footnote-reference"><a href="#fn91">91</a></sup></p>
+that this refers to the happiness in the fourth jhāna).<sup class="footnote-reference" id="fr-fn91-1"><a href="#fn-fn91">91</a></sup></p>
 </li>
 <li>
 <p>Happiness resulting from concentration (<em>samādhi-sukha</em>; either
@@ -6764,14 +6744,14 @@ concentration (<em>asamādhi-sukha</em>).</p>
 </li>
 <li>
 <p>Happiness arising for one who contemplates the first two jhānas
-comprised of bliss (<em>sappītikārammaṇa-sukha</em>) and happiness arising
+consisting of bliss (<em>sappītikārammaṇa-sukha</em>) and happiness arising
 for one who contemplates the third and fourth jhānas divested of
 bliss (<em>nippītikārammaṇa-sukha</em>).</p>
 </li>
 <li>
 <p>Happiness arising for one who contemplates the first three jhānas
-comprised of pleasure (<em>sātārammaṇa-sukha</em>) and happiness arising for
-one who contemplates the fourth jhāna comprised of equanimity
+consisting of pleasure (<em>sātārammaṇa-sukha</em>) and happiness arising for
+one who contemplates the fourth jhāna consisting of equanimity
 (<em>upekkhārammaṇa-sukha</em>).</p>
 </li>
 <li>
@@ -6788,7 +6768,7 @@ happiness is superior or more excellent than the former.</p>
 <p>The Saṁyutta Nikāya contains another classification of happiness that is
 very similar to the one discussed at the beginning of this chapter
 (<em>kāma-sukha</em>, <em>jhāna-sukha</em>, and <em>nirodhasamāpatti-sukha</em>). This is
-likewise a threefold division:<sup class="footnote-reference"><a href="#fn92">92</a></sup></p>
+likewise a threefold division:<sup class="footnote-reference" id="fr-fn92-1"><a href="#fn-fn92">92</a></sup></p>
 <ol>
 <li>
 <p>Happiness dependent on material things (<em>sāmisa-sukha</em>); this is
@@ -6811,7 +6791,7 @@ technically mundane (<em>lokiya</em>) – it can be described as the happiness
 resulting from an arahant’s knowledge of reviewing
 (<em>paccavekkhaṇa-ñāṇa</em>) – it is superior to the second kind of
 happiness, which may be either mundane or transcendent (<em>lokuttara</em>; it
-is transcendent when it refers to the jhāna of an awakened person).<sup class="footnote-reference"><a href="#fn93">93</a></sup>
+is transcendent when it refers to the jhāna of an awakened person).<sup class="footnote-reference" id="fr-fn93-1"><a href="#fn-fn93">93</a></sup>
 {1068}</p>
 <p>These two classifications of happiness are almost the same because they
 have a similarity in scope:</p>
@@ -6854,11 +6834,11 @@ happiness.</p>
 <p>Sense pleasure has already been described at length. Divine happiness is
 defined in the commentaries as the happiness of jhāna (specifically the
 happiness of mundane concentrative absorption –
-<em>lokiyajhāna-sukha</em>).<sup class="footnote-reference"><a href="#fn94">94</a></sup> The commentaries equate divine happiness with
+<em>lokiyajhāna-sukha</em>).<sup class="footnote-reference" id="fr-fn94-1"><a href="#fn-fn94">94</a></sup> The commentaries equate divine happiness with
 jhānic happiness, because they determine jhāna to be a ’divine abiding’
-(<em>dibba-vihāra</em>), in accord with a teaching in the Dīgha Nikāya.<sup class="footnote-reference"><a href="#fn95">95</a></sup>
+(<em>dibba-vihāra</em>), in accord with a teaching in the Dīgha Nikāya.<sup class="footnote-reference" id="fr-fn95-1"><a href="#fn-fn95">95</a></sup>
 The commentary to the Dīgha Nikāya states that divine happiness refers
-to the eight concentrative attainments.<sup class="footnote-reference"><a href="#fn96">96</a></sup> The ordinary celestial
+to the eight concentrative attainments.<sup class="footnote-reference" id="fr-fn96-1"><a href="#fn-fn96">96</a></sup> The ordinary celestial
 pleasures of divine beings is already included in the factor of sense
 pleasure. Happiness of the destruction of craving (<em>taṇhakkhaya-sukha</em>)
 refers to the happiness of Nibbāna (<em>nibbāna-sukha</em>) – as the term
@@ -6873,7 +6853,7 @@ cessation (<em>nirodha-samāpatti</em>, a state resembling Nibbāna), and the
 happiness of liberation (<em>vimutti-sukha</em>) which is frequently referred
 to in the scriptures (<em>vimutti-sukha</em> refers to the highest fruition
 attainment – <em>phala-samāpatti</em> – which is the domain of
-arahants).<sup class="footnote-reference"><a href="#fn97">97</a></sup></p>
+arahants).<sup class="footnote-reference" id="fr-fn97-1"><a href="#fn-fn97">97</a></sup></p>
 <p>This classification is similar to the tenfold classification of
 happiness above.</p>
 <p>The most detailed classification of happiness in the commentaries is
@@ -6881,7 +6861,7 @@ found in the commentary to the Aṅguttara Nikāya, which divides happiness
 into seven levels: human happiness (<em>manussa-sukha</em>), divine happiness
 (<em>divya-sukha</em>), jhānic happiness, the happiness of insight
 (<em>vipassanā-sukha</em>), the happiness of the Path (<em>magga-sukha</em>), fruition
-happiness (<em>phala-sukha</em>), and the happiness of Nibbāna.<sup class="footnote-reference"><a href="#fn98">98</a></sup> These
+happiness (<em>phala-sukha</em>), and the happiness of Nibbāna.<sup class="footnote-reference" id="fr-fn98-1"><a href="#fn-fn98">98</a></sup> These
 seven kinds of happiness can be condensed into four:</p>
 <ul>
 <li>
@@ -6899,14 +6879,14 @@ abiding (<em>dibba-vihāra</em>).</p>
 <li>
 <p>Happiness of insight meditation (<em>vipassanā-sukha</em>). This appears
 clearly as one of the ten imperfections of insight
-(<em>vipassanūpakilesa</em>).<sup class="footnote-reference"><a href="#fn99">99</a></sup></p>
+(<em>vipassanūpakilesa</em>).<sup class="footnote-reference" id="fr-fn99-1"><a href="#fn-fn99">99</a></sup></p>
 </li>
 <li>
 <p>Transcendent happiness (<em>lokuttara-sukha</em>): Path happiness
 (<em>magga-sukha</em>), fruition happiness (<em>phala-sukha</em>), and the
-happiness of Nibbāna.<sup class="footnote-reference"><a href="#fn100">100</a></sup> The term <em>phala-sukha</em> includes
+happiness of Nibbāna.<sup class="footnote-reference" id="fr-fn100-1"><a href="#fn-fn100">100</a></sup> The term <em>phala-sukha</em> includes
 <em>phalasamāpatti-sukha</em>, which itself incorporates <em>vimutti-sukha</em> as
-well.<sup class="footnote-reference"><a href="#fn101">101</a></sup></p>
+well.<sup class="footnote-reference" id="fr-fn101-1"><a href="#fn-fn101">101</a></sup></p>
 </li>
 </ul>
 <h2 id="appendix-4-temporary-ordination"><a class="header" href="#appendix-4-temporary-ordination">Appendix 4: Temporary Ordination</a></h2>
@@ -6947,27 +6927,28 @@ society.</p>
   </a>
 </p>
 </div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
-<p>It. 15; A. IV. 89.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
-<p>E.g.: D. III. 288; S. V. 69, 332; Ps. I. 86.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
-<p>E.g.: D. III. 222; M. 40-41.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
-<p>This subject will be discussed at more length below.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
+<p>It. 15; A. IV. 89. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
+<p>E.g.: D. III. 288; S. V. 69, 332; Ps. I. 86. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
+<p>E.g.: D. III. 222; M. 40-41. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
+<p>This subject will be discussed at more length below. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
 <p>M. I. 508-509; Dh. verse 204. This subject was discussed in the
 section on the state of mind of those who have realized Nibbāna; see
-chapter 7.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
-<p>Trans.: see Chapter 7.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
+chapter 7. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
+<p>Trans.: see Chapter 7. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
 <p>See: M. I. 246-7; M. II. 93. These are references by the Buddha
 pertaining to his own practice. The word <em>dukkha</em> in this context
 refers to suffering as a result of self-mortification
@@ -6979,44 +6960,44 @@ happiness; it can only be reached by pain.’ For this reason they
 practised severe austerities and self-mortification
 (<em>atta-kilamathānuyoga</em>) – M. I. 93-4. Before the Buddha’s
 awakening he had the same understanding and thus practised extreme
-austerities in vain for a long time (M. II. 93).</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
-<p><em>Eseva maggo bodhiyā</em>. E.g.: M. II. 93.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
-<p>DhsA. [166].</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
+austerities in vain for a long time (M. II. 93). <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
+<p><em>Eseva maggo bodhiyā</em>. E.g.: M. II. 93. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
+<p>DhsA. [166]. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
 <p>In Pali this happiness is represented by the term <em>santi-sukha</em>
-(’the happiness of peace’).</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
+(’the happiness of peace’). <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
 <p>It was mentioned earlier how <em>chanda</em> can be translated as
 ’desire’, but in relation to Dhamma it is valid to use the term
 ’love’. <em>Chanda</em> is love of truth, love of the good. In regard to
 lovingkindness (<em>mettā</em>) and compassion (<em>karuṇā</em>), <em>chanda</em> is the
 love of fellow living beings. Love of Dhamma, love of truth, love of
 justice, and love of righteousness then invokes wisdom, and one
-reaches the stage of equanimity (<em>upekkhā</em>).</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
-<p>M. I. 91-92.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
-<p>M. I. 463-4.</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
+reaches the stage of equanimity (<em>upekkhā</em>). <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
+<p>M. I. 91-92. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
+<p>M. I. 463-4. <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
 <p>Trans.: note that the Pali word <em>sukha</em> can be translated as both
-’happiness’ and ’pleasure’, according to the context.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
-<p>For more on these pairs, see Appendix 1.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
-<p>Cf.: M. I. 398; S. IV. 225.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
+’happiness’ and ’pleasure’, according to the context. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
+<p>For more on these pairs, see Appendix 1. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
+<p>Cf.: M. I. 398; S. IV. 225. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
 <p>Note that the word <em>kāma</em> is not restricted to the narrow,
 commonly understood definition of sexual desire. Objects of
 sensuality (<em>kāma-guṇa</em>) refer to all beautiful sights, melodious
@@ -7024,46 +7005,46 @@ sounds, fragrant odours, delicious tastes, and delightful tangible
 objects (e.g. a soft, silky bed), without exception. They include
 all things providing material pleasure (<em>āmisa-sukha</em>). Therefore,
 even renunciants may be caught up in enjoying objects of sensual
-pleasure.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+pleasure. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
 <p>For another classification of stages of happiness, see: Appendix
-2.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+2. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
 <p>There are many examples of people who have obtained the happiness
 of jhāna returning to seek out sensual pleasures, and likewise there
 are many householders who have obtained the happiness of jhāna and
 who thus enjoy both kinds of happiness. Whatever the case may be,
 both of these kinds of individuals are better prepared than others
-to relinquish sense pleasures and progress in Dhamma practice.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
+to relinquish sense pleasures and progress in Dhamma practice. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
 <p>A being to be reborn = <em>gandhabba</em> (the commentaries give a
-strange explanation for this term: MA. II. 310).</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
-<p>Similar in part to M. I. 266.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
+strange explanation for this term: MA. II. 310). <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
+<p>Similar in part to M. I. 266. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
 <p>M. III. 172-7. For more on the glory of a universal monarch, see:
 Mahāsudassana Sutta, D. II. 169-99; Mandhāturāja Jātaka, JA.
-[4/47].</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
+[4/47]. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
 <p>Here, the terms <em>kāma</em>, <em>kāma-guṇa</em>, and <em>kāma-sukha</em> need to be
 understood in their broad definitions according to the Pali
-language.</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
+language. <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
 <p>Note the Buddha’s words: ’The pretty things in the world are not
 sense desire (<em>kāma</em>); rather, a person’s lustful intent is sense
 desire. The pretty things in the world exist just as they are
 [according to their nature]; therefore the wise remove [only]
 the craving (<em>taṇhā-chanda</em>) for them.’ (I.e. the wise do not
-eliminate the pretty things in the world); A. III. 411.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
+eliminate the pretty things in the world); A. III. 411. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
 <p>Another way of interpreting this analogy is as follows: sense
 objects are like the fruit of a tree, the trunk of which is being
 cut by impermanence and instability. Decay and death, for instance,
@@ -7072,26 +7053,26 @@ to its eventual collapse. A person indulging in sense desire is
 constantly threatened by fear and apprehension resulting from this
 instability and uncertainty. The more a person is obsessed with
 sensuality and is unable to renounce it, the greater the risk there
-is of being severely injured by the falling tree.</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
+is of being severely injured by the falling tree. <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
 <p>There is a description of the first seven of these analogies at:
 M. I. 364-7; other references simply give a list of the ten
 analogies, e.g.: Vin. II. 25-6; Vin. IV. 134; M. I. 130; A. III.
 96-7. Brief explanations of these analogies are provided at: Nd. I.
 6-7, 19; Nd. II. 67; VinA. IV. 869; AA. III. 269; NdA. I. 32; VinṬ.:
 Sappāṇakavaggo, Ariṭṭhasikkhāpadavaṇṇanā; some aspects of these
-analogies are described at: S. IV. 189.</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
-<p>Cf.: M. I. 85-6.</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
+analogies are described at: S. IV. 189. <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
+<p>Cf.: M. I. 85-6. <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
 <p>It is worthy to consider the degree and frequency of pleasure and
 pain resulting from contact by way of the eye, ear, nose, tongue,
-and body.</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
+and body. <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
 <p>This is a summary and explanation of a section contained in the
 Māgandiya Sutta: M. I. 506-509. In this sutta the focus on different
 forms of happiness begins with sense pleasure and moves directly to
@@ -7099,58 +7080,58 @@ the state of Nibbāna; there is no explicit mention of the happiness
 of jhāna (<em>jhāna-sukha</em>). The state of jhāna, however, is described
 as Nibbāna ’indirectly’ or ’in some respects’ (<em>pariyāya</em>), i.e. it
 has some similar characteristics. For more on this subject see
-chapter 6 on Nibbāna.</p>
-</div>
-<div class="footnote-definition" id="fn30"><sup class="footnote-definition-label">30</sup>
-<p>A. V. 83-4.</p>
-</div>
-<div class="footnote-definition" id="fn31"><sup class="footnote-definition-label">31</sup>
+chapter 6 on Nibbāna. <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn30"><sup class="footnote-definition-label">30</sup>
+<p>A. V. 83-4. <a href="#fr-fn30-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn31"><sup class="footnote-definition-label">31</sup>
 <p>The Pali word <em>roga</em> (’illness’, ’disease’) literally means to
 ’break’, ’crush’, or ’pierce’; the word <em>ābādha</em> (’affliction’,
-’illness’, ’disease’) literally means ’oppression’.</p>
-</div>
-<div class="footnote-definition" id="fn32"><sup class="footnote-definition-label">32</sup>
-<p>M. I. 173-4.</p>
-</div>
-<div class="footnote-definition" id="fn33"><sup class="footnote-definition-label">33</sup>
+’illness’, ’disease’) literally means ’oppression’. <a href="#fr-fn31-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn32"><sup class="footnote-definition-label">32</sup>
+<p>M. I. 173-4. <a href="#fr-fn32-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn33"><sup class="footnote-definition-label">33</sup>
 <p>E.g.: DA. III. 1013; MA. III. 50; SA. II. 163; AA. II. 373;
 AA. III. 52; NdA. 464; NdA. II. 123. ’An ability to reflect’
 corresponds to the terms <em>paṭisaṅkhā yoniso</em> and <em>yoniso paṭisaṅkhā</em>,
-which are synonyms for <em>yoniso-manasikāra</em>.</p>
-</div>
-<div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
+which are synonyms for <em>yoniso-manasikāra</em>. <a href="#fr-fn33-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn34"><sup class="footnote-definition-label">34</sup>
 <p>See: Nd. I. 495; in some passages <em>nissaraṇa-paññā</em> is described
 as the elimination of mental taints by way of using (the requisites)
 – see: M. I. 10; D. III. 130. Knowing moderation in eating is
 called <em>bhojane-mattaññutā</em> (mentioned frequently, e.g.: M. I. 355;
 M. III. 2. These references were cited earlier in chapter 10 on
-desire and motivation.</p>
-</div>
-<div class="footnote-definition" id="fn35"><sup class="footnote-definition-label">35</sup>
+desire and motivation. <a href="#fr-fn34-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn35"><sup class="footnote-definition-label">35</sup>
 <p>Trans.: as mentioned in chapter 7 on awakened beings, the term
 ’learned noble disciple’ (<em>sutavā ariya-sāvaka</em>) can in some cases
 refer to an ’unawakened virtuous person’ (<em>kalyāṇa-puthujjana</em>);
 moreover the term ’noble disciple’ (<em>ariya-sāvaka</em>) refers in some
 cases to a ’disciple of the Buddha, the Noble One’, rather than to a
-’disciple who is a noble one’.</p>
-</div>
-<div class="footnote-definition" id="fn36"><sup class="footnote-definition-label">36</sup>
+’disciple who is a noble one’. <a href="#fr-fn35-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn36"><sup class="footnote-definition-label">36</sup>
 <p>There are many Pali terms for householders or laypeople,
 including: <em>gahaṭṭha</em>, <em>gihi</em>, <em>kāma-bhogī</em>, <em>sāgāra</em>, <em>āgārika</em>,
-<em>agārika</em>, <em>gehavāsī</em>, <em>gharamesī</em>, <em>gharavāsī</em>.</p>
-</div>
-<div class="footnote-definition" id="fn37"><sup class="footnote-definition-label">37</sup>
+<em>agārika</em>, <em>gehavāsī</em>, <em>gharamesī</em>, <em>gharavāsī</em>. <a href="#fr-fn36-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn37"><sup class="footnote-definition-label">37</sup>
 <p>For an example of how awakened beings live the lay life and
-safely enjoy sense pleasures, see: Vin. I. 180-81.</p>
-</div>
-<div class="footnote-definition" id="fn38"><sup class="footnote-definition-label">38</sup>
+safely enjoy sense pleasures, see: Vin. I. 180-81. <a href="#fr-fn37-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn38"><sup class="footnote-definition-label">38</sup>
 <p>The division into three kinds is found at: Nd. I. 168-9, 178,
-357; Nd. II. 57.</p>
-</div>
-<div class="footnote-definition" id="fn39"><sup class="footnote-definition-label">39</sup>
-<p>E.g.: S. II. 29; S. V. 121-2; A. I. 9; A. III. 63-4.</p>
-</div>
-<div class="footnote-definition" id="fn40"><sup class="footnote-definition-label">40</sup>
+357; Nd. II. 57. <a href="#fr-fn38-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn39"><sup class="footnote-definition-label">39</sup>
+<p>E.g.: S. II. 29; S. V. 121-2; A. I. 9; A. III. 63-4. <a href="#fr-fn39-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn40"><sup class="footnote-definition-label">40</sup>
 <p>A. III. 80; A. IV. 220-21. The literal translation for <em>vaḍḍhi</em>
 is ’profit’, ’gain’. A. V. 137 describes noble disciples who grow in
 ten kinds of <em>ariyā vaḍḍhi</em>; five of these factors are material
@@ -7158,164 +7139,164 @@ benefits (<em>diṭṭhadhammikattha</em>; i.e. they grow in cultivated land,
 in wealth and grain, in wives and children, in servants, workers and
 labourers, and in livestock), which are protected by five factors
 classified as spiritual benefits (<em>samparāyikattha</em>; i.e. faith,
-moral conduct, learning, generosity, and wisdom).</p>
-</div>
-<div class="footnote-definition" id="fn41"><sup class="footnote-definition-label">41</sup>
+moral conduct, learning, generosity, and wisdom). <a href="#fr-fn40-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn41"><sup class="footnote-definition-label">41</sup>
 <p>D. III. 180-93. The commentarial reference to this sutta as a
 discipline for laypeople: DA. [3/151]. For a systematized analysis
 of the Siṅgālaka Sutta, see the book ’The Buddhist’s Discipline’
 (P. A. Payutto, © 2000, trans. by Dr. Somseen Chanawangsa).
 [Trans.: note that this sutta is also referred to as the Sigālaka
-Sutta.]</p>
-</div>
-<div class="footnote-definition" id="fn42"><sup class="footnote-definition-label">42</sup>
+Sutta.] <a href="#fr-fn41-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn42"><sup class="footnote-definition-label">42</sup>
 <p>Trans.: also known as the ’principles of service’: generosity
 (<em>dāna</em>), kindly speech (<em>piya-vācā</em>), acts of service
 (<em>atthacariyā</em>), and even and equal treatment of others
-(<em>samānattatā</em>).</p>
-</div>
-<div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
+(<em>samānattatā</em>). <a href="#fr-fn42-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn43"><sup class="footnote-definition-label">43</sup>
 <p>Examples of blameless action (<em>anavajja</em>) include keeping the
 Uposatha observances, assisting and serving others, establishing
 public parks, planting woodlands, and building bridges (KhA.
-[123]; SnA. [2/96]).</p>
-</div>
-<div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
-<p>Trans.: the author uses the spelling ’Koḷiyans’.</p>
-</div>
-<div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
-<p>This was Dīghajāṇu’s traditional name.</p>
-</div>
-<div class="footnote-definition" id="fn46"><sup class="footnote-definition-label">46</sup>
+[123]; SnA. [2/96]). <a href="#fr-fn43-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn44"><sup class="footnote-definition-label">44</sup>
+<p>Trans.: the author uses the spelling ’Koḷiyans’. <a href="#fr-fn44-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn45"><sup class="footnote-definition-label">45</sup>
+<p>This was Dīghajāṇu’s traditional name. <a href="#fr-fn45-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn46"><sup class="footnote-definition-label">46</sup>
 <p>Trans. the author uses the alternative meaning of <em>bhagavā</em> here,
 as one who ’analyzes the Dhamma’. Another epithet for the Buddha is
-thus the ’Analyst’.</p>
-</div>
-<div class="footnote-definition" id="fn47"><sup class="footnote-definition-label">47</sup>
-<p>There are similar teachings at: A. IV. 285-6, 322-3.</p>
-</div>
-<div class="footnote-definition" id="fn48"><sup class="footnote-definition-label">48</sup>
-<p>Trans.: the author uses the spelling <em>miḷha-sukha</em>.</p>
-</div>
-<div class="footnote-definition" id="fn49"><sup class="footnote-definition-label">49</sup>
+thus the ’Analyst’. <a href="#fr-fn46-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn47"><sup class="footnote-definition-label">47</sup>
+<p>There are similar teachings at: A. IV. 285-6, 322-3. <a href="#fr-fn47-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn48"><sup class="footnote-definition-label">48</sup>
+<p>Trans.: the author uses the spelling <em>miḷha-sukha</em>. <a href="#fr-fn48-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn49"><sup class="footnote-definition-label">49</sup>
 <p>M. III. 233, 236. These descriptions are also found at: M. I.
 454; M. III. 110-11 = Nd. II. 64; A. III. 30-31, 342; A. IV. 341-2.
 ’Internal happiness’ (<em>ajjhatta-sukha</em>), also called ’blameless
 happiness’ (<em>anavajja-sukha</em>), in fact refers to any form of
 happiness beginning with the joy derived from virtuous conduct
 upwards; it is mentioned in many passages, including: D. I. 70;
-M. I. 180-81, 268-9, 346; M. III. 34-5; A. II. 210; A. V. 205-206.</p>
-</div>
-<div class="footnote-definition" id="fn50"><sup class="footnote-definition-label">50</sup>
+M. I. 180-81, 268-9, 346; M. III. 34-5; A. II. 210; A. V. 205-206. <a href="#fr-fn49-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn50"><sup class="footnote-definition-label">50</sup>
 <p>Continuity (<em>santati</em>) conceals the characteristic of
 impermanence (<em>anicca</em>), movement (<em>iriyāpatha</em>) conceals the
 characteristic of <em>dukkha</em> (’suffering’, ’pressure’), and solidity
 (<em>ghana</em>) conceals the characteristic of nonself (<em>anattā</em>): Vism.
-640.</p>
-</div>
-<div class="footnote-definition" id="fn51"><sup class="footnote-definition-label">51</sup>
+640. <a href="#fr-fn50-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn51"><sup class="footnote-definition-label">51</sup>
 <p>There was once a debate over which of the five cords of
 sensuality is the best; the Buddha replied that it depends on one’s
-likes and preferences (S. I. 79-80).</p>
-</div>
-<div class="footnote-definition" id="fn52"><sup class="footnote-definition-label">52</sup>
+likes and preferences (S. I. 79-80). <a href="#fr-fn51-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn52"><sup class="footnote-definition-label">52</sup>
 <p>Also spelled: <em>sāraṇīya-dhammā</em> (see the section below: ’Sharing
-of Material Gains within the Monastic Community’.)</p>
-</div>
-<div class="footnote-definition" id="fn53"><sup class="footnote-definition-label">53</sup>
-<p>Occasionally this classification is into ten pairs.</p>
-</div>
-<div class="footnote-definition" id="fn54"><sup class="footnote-definition-label">54</sup>
-<p>M. I. 93-4.</p>
-</div>
-<div class="footnote-definition" id="fn55"><sup class="footnote-definition-label">55</sup>
+of Material Gains within the Monastic Community’.) <a href="#fr-fn52-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn53"><sup class="footnote-definition-label">53</sup>
+<p>Occasionally this classification is into ten pairs. <a href="#fr-fn53-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn54"><sup class="footnote-definition-label">54</sup>
+<p>M. I. 93-4. <a href="#fr-fn54-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn55"><sup class="footnote-definition-label">55</sup>
 <p>M. II. 203-204. In this sutta a fire not created from straw or
 wood (i.e. a fire without any smoke) is hypothetical; it could not
 be created at that time in history unless someone did so by way of
 psychic powers. These days, however, there are modern scientific
-achievements enabling such a fire.</p>
-</div>
-<div class="footnote-definition" id="fn56"><sup class="footnote-definition-label">56</sup>
-<p>D. I. 71-6, 207; M. I. 275; M. II. 15; M. III. 92-3; A. III. 25.</p>
-</div>
-<div class="footnote-definition" id="fn57"><sup class="footnote-definition-label">57</sup>
+achievements enabling such a fire. <a href="#fr-fn55-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn56"><sup class="footnote-definition-label">56</sup>
+<p>D. I. 71-6, 207; M. I. 275; M. II. 15; M. III. 92-3; A. III. 25. <a href="#fr-fn56-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn57"><sup class="footnote-definition-label">57</sup>
 <p>See: A. IV. 430. ’The bonds that bind one to the world’ is a
 translation of <em>visattikā</em>, which is usually equated with <em>taṇhā</em>
-(’craving’); it is sometimes translated as the ’shackle of craving’.</p>
-</div>
-<div class="footnote-definition" id="fn58"><sup class="footnote-definition-label">58</sup>
+(’craving’); it is sometimes translated as the ’shackle of craving’. <a href="#fr-fn57-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn58"><sup class="footnote-definition-label">58</sup>
 <p>It contains <em>sambādha</em> (’limitation’, ’confinement’); see: A. IV.
-449-50.</p>
-</div>
-<div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
-<p>It contains <em>ābādha</em> (’affliction’); see: A. IV. 439-40.</p>
-</div>
-<div class="footnote-definition" id="fn60"><sup class="footnote-definition-label">60</sup>
-<p>See: M. II. 237, 265.</p>
-</div>
-<div class="footnote-definition" id="fn61"><sup class="footnote-definition-label">61</sup>
-<p>See: M. I. 455-6; M. II. 255-6.</p>
-</div>
-<div class="footnote-definition" id="fn62"><sup class="footnote-definition-label">62</sup>
-<p>See: M. I. 352; A. V. 343.</p>
-</div>
-<div class="footnote-definition" id="fn63"><sup class="footnote-definition-label">63</sup>
+449-50. <a href="#fr-fn58-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn59"><sup class="footnote-definition-label">59</sup>
+<p>It contains <em>ābādha</em> (’affliction’); see: A. IV. 439-40. <a href="#fr-fn59-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn60"><sup class="footnote-definition-label">60</sup>
+<p>See: M. II. 237, 265. <a href="#fr-fn60-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn61"><sup class="footnote-definition-label">61</sup>
+<p>See: M. I. 455-6; M. II. 255-6. <a href="#fr-fn61-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn62"><sup class="footnote-definition-label">62</sup>
+<p>See: M. I. 352; A. V. 343. <a href="#fr-fn62-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn63"><sup class="footnote-definition-label">63</sup>
 <p>Sensations (<em>vedanā</em>) in jhāna are free from stress and are thus
 considered to be the most positive or favourable forms of sensation
-(M. I. 89-90).</p>
-</div>
-<div class="footnote-definition" id="fn64"><sup class="footnote-definition-label">64</sup>
+(M. I. 89-90). <a href="#fr-fn63-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn64"><sup class="footnote-definition-label">64</sup>
 <p>See: Vism. 705; VismṬ.: Paññābhāvanānisaṁsaniddesavaṇṇanā,
 Nirodhasamāpattikathāvaṇṇanā; see also the Burmese edition of the
-sub-commentary to the Majjhima Nikāya: [2/184].</p>
-</div>
-<div class="footnote-definition" id="fn65"><sup class="footnote-definition-label">65</sup>
-<p>A. IV. 415.</p>
-</div>
-<div class="footnote-definition" id="fn66"><sup class="footnote-definition-label">66</sup>
+sub-commentary to the Majjhima Nikāya: [2/184]. <a href="#fr-fn64-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn65"><sup class="footnote-definition-label">65</sup>
+<p>A. IV. 415. <a href="#fr-fn65-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn66"><sup class="footnote-definition-label">66</sup>
 <p>A ’boundless mind’ (<em>vimariyādikatena cetasā</em>); this term occurs
-in many passages, e.g.: M. III. 26; S. II. 173; A. I. 260.</p>
-</div>
-<div class="footnote-definition" id="fn67"><sup class="footnote-definition-label">67</sup>
+in many passages, e.g.: M. III. 26; S. II. 173; A. I. 260. <a href="#fr-fn66-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn67"><sup class="footnote-definition-label">67</sup>
 <p>’Conditioned phenomena’ here refers to ’compounded things’
 (<em>saṅkhata-dhammā</em>), which encompasses all five aggregates
 (<em>khandha</em>); it does not exclusively refer to ’volitional
-formations’ (<em>saṅkhāra</em>), the fourth aggregate.</p>
-</div>
-<div class="footnote-definition" id="fn68"><sup class="footnote-definition-label">68</sup>
+formations’ (<em>saṅkhāra</em>), the fourth aggregate. <a href="#fr-fn67-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn68"><sup class="footnote-definition-label">68</sup>
 <p>The classification of <em>sukha-vedanā</em> (along with <em>dukkha-vedanā</em>
 and <em>adukkhamasukha-vedanā</em>) as <em>dukkha</em> is also discussed at:
-S. IV. 205; It. 47; Sn. 143-4.</p>
-</div>
-<div class="footnote-definition" id="fn69"><sup class="footnote-definition-label">69</sup>
+S. IV. 205; It. 47; Sn. 143-4. <a href="#fr-fn68-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn69"><sup class="footnote-definition-label">69</sup>
 <p>M. I. 500. <em>Feelings are impermanent, dukkha, and subject to
 change. This is the disadvantage</em> (<em>ādīnava</em>) <em>of feelings</em> (M. I.
-90).</p>
-</div>
-<div class="footnote-definition" id="fn70"><sup class="footnote-definition-label">70</sup>
-<p>See: S. IV. 205-209.</p>
-</div>
-<div class="footnote-definition" id="fn71"><sup class="footnote-definition-label">71</sup>
+90). <a href="#fr-fn69-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn70"><sup class="footnote-definition-label">70</sup>
+<p>See: S. IV. 205-209. <a href="#fr-fn70-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn71"><sup class="footnote-definition-label">71</sup>
 <p>This classification accords with the Buddha’s words at Ud. 11,
 where he describes three kinds of happiness: sense pleasure
 (<em>kāma-sukha</em>), divine happiness (<em>divya-sukha</em>), and happiness of
 the destruction of craving (<em>taṇhakkhaya-sukha</em>). For more on this
-threefold happiness see Appendix 3.</p>
-</div>
-<div class="footnote-definition" id="fn72"><sup class="footnote-definition-label">72</sup>
+threefold happiness see Appendix 3. <a href="#fr-fn71-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn72"><sup class="footnote-definition-label">72</sup>
 <p>And including the devas of the six sense-sphere celestial abodes
-(<em>kāmāvacara-sagga</em>).</p>
-</div>
-<div class="footnote-definition" id="fn73"><sup class="footnote-definition-label">73</sup>
+(<em>kāmāvacara-sagga</em>). <a href="#fr-fn72-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn73"><sup class="footnote-definition-label">73</sup>
 <p>And including all Brahma gods (the sixteen kinds of fine-material
-Brahmas and the four kinds of immaterial Brahmas).</p>
-</div>
-<div class="footnote-definition" id="fn74"><sup class="footnote-definition-label">74</sup>
+Brahmas and the four kinds of immaterial Brahmas). <a href="#fr-fn73-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn74"><sup class="footnote-definition-label">74</sup>
 <p>Trans. the term <em>cariya-dhamma</em> is only found in the Thai
 language. For more on this term, see the section ’The Path as the
-Holy Life’ in chapter 12 on the Middle Way.</p>
-</div>
-<div class="footnote-definition" id="fn75"><sup class="footnote-definition-label">75</sup>
+Holy Life’ in chapter 12 on the Middle Way. <a href="#fr-fn74-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn75"><sup class="footnote-definition-label">75</sup>
 <p>Some of these books were written as long as twenty-five years
 ago, and in some cases I can no longer find a copy; all that remains
 is the title along with a basic outline of the text. These texts
@@ -7323,111 +7304,112 @@ include: ’Education: a Tool for Development’ (การศึกษา:
 เครื่องมือพัฒนาที่ยังต้องพัฒนา; 2530 BE); ’Reflections on Reforming
 Education’ (a talk given on the 44th anniversary of the
 establishment of the Department of Curriculum and Instruction
-Development); and ’Peace Comes from Freedom and Happiness’ (2537 BE).</p>
-</div>
-<div class="footnote-definition" id="fn76"><sup class="footnote-definition-label">76</sup>
-<p>M. II. 226-28.</p>
-</div>
-<div class="footnote-definition" id="fn77"><sup class="footnote-definition-label">77</sup>
+Development); and ’Peace Comes from Freedom and Happiness’ (2537 BE). <a href="#fr-fn75-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn76"><sup class="footnote-definition-label">76</sup>
+<p>M. II. 226-28. <a href="#fr-fn76-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn77"><sup class="footnote-definition-label">77</sup>
 <p>Trans.: note Sir Monier Monier-Williams’s definition of <em>sukha</em>
 in ’A Sanskrit-English Dictionary’: ’Said to be from <em>su</em> + <em>kha</em>
 and to mean originally “having a good axle-hole”; running swiftly
-and easily….’</p>
-</div>
-<div class="footnote-definition" id="fn78"><sup class="footnote-definition-label">78</sup>
+and easily….’ <a href="#fr-fn77-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn78"><sup class="footnote-definition-label">78</sup>
 <p>They are sometimes referred to as the ten bases of meritorious
-action.</p>
-</div>
-<div class="footnote-definition" id="fn79"><sup class="footnote-definition-label">79</sup>
+action. <a href="#fr-fn78-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn79"><sup class="footnote-definition-label">79</sup>
 <p>Trans.: note that the term ’monk’ here can be interpreted as
-genderless, referring to both monks and nuns.</p>
-</div>
-<div class="footnote-definition" id="fn80"><sup class="footnote-definition-label">80</sup>
-<p>Trans.: the author spells his name as Hatthakāḷavaka.</p>
-</div>
-<div class="footnote-definition" id="fn81"><sup class="footnote-definition-label">81</sup>
+genderless, referring to both monks and nuns. <a href="#fr-fn79-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn80"><sup class="footnote-definition-label">80</sup>
+<p>Trans.: the author spells his name as Hatthakāḷavaka. <a href="#fr-fn80-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn81"><sup class="footnote-definition-label">81</sup>
 <p>Trans.: the author is making this observation in relation to Thai
 Buddhists, but I think it is a valid observation in relation to
-Buddhists worldwide.</p>
-</div>
-<div class="footnote-definition" id="fn82"><sup class="footnote-definition-label">82</sup>
+Buddhists worldwide. <a href="#fr-fn81-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn82"><sup class="footnote-definition-label">82</sup>
 <p>Trans.: I use Bhikkhu Bodhi’s translation here; the author simply
 presents the Pali: <em>vaṭṭanāvallī</em> (although the spelling in Thai is
-rendered <em>vaṭṭanāvaḷī</em>).</p>
-</div>
-<div class="footnote-definition" id="fn83"><sup class="footnote-definition-label">83</sup>
+rendered <em>vaṭṭanāvaḷī</em>). <a href="#fr-fn82-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn83"><sup class="footnote-definition-label">83</sup>
 <p>Members of the Nigaṇṭhā order believed that happiness can only be
 attained by way of pain and therefore undertook various forms of
-extreme ascetic practices; see: M. I. 94.</p>
-</div>
-<div class="footnote-definition" id="fn84"><sup class="footnote-definition-label">84</sup>
-<p>See: M. I. 246-9.</p>
-</div>
-<div class="footnote-definition" id="fn85"><sup class="footnote-definition-label">85</sup>
+extreme ascetic practices; see: M. I. 94. <a href="#fr-fn83-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn84"><sup class="footnote-definition-label">84</sup>
+<p>See: M. I. 246-9. <a href="#fr-fn84-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn85"><sup class="footnote-definition-label">85</sup>
 <p>The Buddha gave this teaching in order to show the distinction
 between Buddhism and the Nigaṇṭhā doctrine, which taught extreme
-asceticism (<em>atta-kilamathānuyoga</em>).</p>
-</div>
-<div class="footnote-definition" id="fn86"><sup class="footnote-definition-label">86</sup>
-<p>A. II. 61-2.</p>
-</div>
-<div class="footnote-definition" id="fn87"><sup class="footnote-definition-label">87</sup>
+asceticism (<em>atta-kilamathānuyoga</em>). <a href="#fr-fn85-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn86"><sup class="footnote-definition-label">86</sup>
+<p>A. II. 61-2. <a href="#fr-fn86-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn87"><sup class="footnote-definition-label">87</sup>
 <p>To work for the sake of the work here is not the same as ’working
 for work’s sake’, but rather to aim for the benefit and welfare of
 all human beings and to strive for the merit and excellence which is
-the true purpose of that specific activity.</p>
-</div>
-<div class="footnote-definition" id="fn88"><sup class="footnote-definition-label">88</sup>
+the true purpose of that specific activity. <a href="#fr-fn87-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn88"><sup class="footnote-definition-label">88</sup>
 <p>A. III. 392-99; although he had attained the higher abidings of
 concentrative attainment (<em>vihāra-samāpatti</em>) he still disrobed.
 This matter is referred to at: AA. III. 402; DhA. I. 305; JA. I.
 310. [Trans.: the author uses the spelling Cittahatthasārīputta.]
-On the custom of temporary ordination in Thailand see Appendix 4.</p>
-</div>
-<div class="footnote-definition" id="fn89"><sup class="footnote-definition-label">89</sup>
+On the custom of temporary ordination in Thailand see Appendix 4. <a href="#fr-fn88-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn89"><sup class="footnote-definition-label">89</sup>
 <p>E.g.: D. III. 232-2; M. III. 23; A. II. 179. Note, however, that
 ’not harming oneself’ here is not the same as well-warranted
 self-surrender or renunciation, which is another form of Dhamma
-practice.</p>
-</div>
-<div class="footnote-definition" id="fn90"><sup class="footnote-definition-label">90</sup>
-<p>A. I. 80-82. The explanations here accord with AA. II. 152.</p>
-</div>
-<div class="footnote-definition" id="fn91"><sup class="footnote-definition-label">91</sup>
+practice. <a href="#fr-fn89-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn90"><sup class="footnote-definition-label">90</sup>
+<p>A. I. 80-82. The explanations here accord with AA. II. 152. <a href="#fr-fn90-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn91"><sup class="footnote-definition-label">91</sup>
 <p>Note that ’equanimity’ (<em>upekkhā</em>) in these paired sets of
-happiness is not the same as ’neutral sensation’ (<em>upekkhā-vedanā</em>).</p>
-</div>
-<div class="footnote-definition" id="fn92"><sup class="footnote-definition-label">92</sup>
-<p>S. IV. 236.</p>
-</div>
-<div class="footnote-definition" id="fn93"><sup class="footnote-definition-label">93</sup>
-<p>SA. III. 84.</p>
-</div>
-<div class="footnote-definition" id="fn94"><sup class="footnote-definition-label">94</sup>
-<p>UdA. 107.</p>
-</div>
-<div class="footnote-definition" id="fn95"><sup class="footnote-definition-label">95</sup>
-<p>D. III. 220.</p>
-</div>
-<div class="footnote-definition" id="fn96"><sup class="footnote-definition-label">96</sup>
-<p>DA. 1006.</p>
-</div>
-<div class="footnote-definition" id="fn97"><sup class="footnote-definition-label">97</sup>
-<p>See: VinA. V. 953; UdA. 32, [46]; VinT. [4/421].</p>
-</div>
-<div class="footnote-definition" id="fn98"><sup class="footnote-definition-label">98</sup>
-<p>AA. I. 53 = AA. III. 2.</p>
-</div>
-<div class="footnote-definition" id="fn99"><sup class="footnote-definition-label">99</sup>
+happiness is not the same as ’neutral sensation’ (<em>upekkhā-vedanā</em>). <a href="#fr-fn91-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn92"><sup class="footnote-definition-label">92</sup>
+<p>S. IV. 236. <a href="#fr-fn92-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn93"><sup class="footnote-definition-label">93</sup>
+<p>SA. III. 84. <a href="#fr-fn93-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn94"><sup class="footnote-definition-label">94</sup>
+<p>UdA. 107. <a href="#fr-fn94-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn95"><sup class="footnote-definition-label">95</sup>
+<p>D. III. 220. <a href="#fr-fn95-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn96"><sup class="footnote-definition-label">96</sup>
+<p>DA. 1006. <a href="#fr-fn96-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn97"><sup class="footnote-definition-label">97</sup>
+<p>See: VinA. V. 953; UdA. 32, [46]; VinT. [4/421]. <a href="#fr-fn97-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn98"><sup class="footnote-definition-label">98</sup>
+<p>AA. I. 53 = AA. III. 2. <a href="#fr-fn98-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn99"><sup class="footnote-definition-label">99</sup>
 <p>See: Cūḷaniddesa Aṭṭhakathā 106; Vism. 636-7; VinṬ.:
-Tatiyapārājikaṁ, Ānāpānassatisamādhikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn100"><sup class="footnote-definition-label">100</sup>
-<p>SnA. I. 331.</p>
-</div>
-<div class="footnote-definition" id="fn101"><sup class="footnote-definition-label">101</sup>
+Tatiyapārājikaṁ, Ānāpānassatisamādhikathāvaṇṇanā. <a href="#fr-fn99-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn100"><sup class="footnote-definition-label">100</sup>
+<p>SnA. I. 331. <a href="#fr-fn100-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn101"><sup class="footnote-definition-label">101</sup>
 <p>According to UdA. 34, PsA. 268, and Vism. 700,
-<em>phalasamāpatti-sukha</em> is a form of transcendent happiness.</p>
+<em>phalasamāpatti-sukha</em> is a form of transcendent happiness. <a href="#fr-fn101-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

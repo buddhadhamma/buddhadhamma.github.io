@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html" class="active">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -210,7 +191,7 @@ solely to explaining Dependent Origination. It is much more common to
 find texts that explain other divisions or principles of the Dhamma,
 which are part of the teaching on Dependent Origination.</p>
 <p>Of these subsidiary teachings, perhaps the most frequently explained is
-that on kamma.<sup class="footnote-reference"><a href="#fn1">1</a></sup> The reason for this is twofold: first, this is a
+that on kamma.<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup> The reason for this is twofold: first, this is a
 subject that is of vital interest to people, and second, an
 understanding of kamma acts as a bridge to understanding Dependent
 Origination. Indeed, a thorough explanation of kamma is one method for
@@ -236,7 +217,7 @@ From this perspective, one can say that kamma is the chief factor or
 theme in Dependent Origination, and that the other factors simply
 support investigation.</p>
 <p>If one chooses this approach of analysis, Dependent Origination appears
-in the form known as the ’law of kamma’.<sup class="footnote-reference"><a href="#fn2">2</a></sup> And because there are many
+in the form known as the ’law of kamma’.<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup> And because there are many
 other crucial factors related to this subject, in later texts the law of
 kamma became the focus of study more than Dependent Origination. The
 discussion of kamma deals with human behaviour, which is relatively
@@ -266,7 +247,7 @@ mutual conditionality, it can be divided according to distinct
 attributes, which express various patterns or aspects of
 interrelationship and facilitate understanding. Based on a Buddhist line
 of thinking, the commentaries describe five distinct laws of nature
-(<em>niyāma</em>):<sup class="footnote-reference"><a href="#fn3">3</a></sup> {236}</p>
+(<em>niyāma</em>):<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup> {236}</p>
 <ol>
 <li>
 <p><em>Utu-niyāma</em>: law of energy; law of physical phenomena; physical
@@ -431,12 +412,12 @@ and destructive activities. It is the basis on which people engage with
 other laws, in order to control the natural world. For this reason,
 great emphasis is given in Buddhism to the principle of kamma. The
 Buddha said: ’The world exists according to kamma’ (<em>kammunā vattatī
-loko</em>).<sup class="footnote-reference"><a href="#fn4">4</a></sup> Kamma is thus a vital teaching in Buddhism.</p>
+loko</em>).<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup> Kamma is thus a vital teaching in Buddhism.</p>
 <p>The inclusion of <em>kamma-niyāma</em> in the group of five laws also indicates
 that the law of kamma is simply one of several laws of nature.
 Therefore, when a phenomenon occurs, or when someone experiences some
 form of affliction, do not wrongly presume that it is solely due to
-kamma.<sup class="footnote-reference"><a href="#fn5">5</a></sup> {239}</p>
+kamma.<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup> {239}</p>
 <p>The Buddha’s quote (above), ’The world exists according to kamma,’
 refers to the world of living beings, or to the world of human beings.
 In other words, kamma governs and determines human society.</p>
@@ -456,7 +437,7 @@ needs to be aware that this so-called ’sixth law’ lies outside and apart
 from the group of five natural laws. There are many such headings to
 choose from, including: <em>saṅgama-niyāma</em> (’social law’),
 <em>saṅgama-niyamana</em> (’social practice’), <em>sammati-niyāma</em> (’conventional
-law’), and <em>paññatti-niyāma</em> (’prescribed law’).<sup class="footnote-reference"><a href="#fn6">6</a></sup></p>
+law’), and <em>paññatti-niyāma</em> (’prescribed law’).<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup></p>
 <p>All four of these example headings make it clear that they are referring
 to human laws rather than to natural laws. The first two terms refer to
 social prescriptions. The third term refers to human conventions, to
@@ -490,7 +471,7 @@ concerning the reaping of results stemming from intentional actions.
 <h3 id="definition-of-kamma"><a class="header" href="#definition-of-kamma">Definition of Kamma</a></h3>
 <p>The term ’kamma’ literally means ’action’ or ’work’. In the context of
 Dhamma teachings, however, the definition is restricted to mean ’actions
-accompanied by intention’ or ’volitional actions’.<sup class="footnote-reference"><a href="#fn7">7</a></sup> Actions that
+accompanied by intention’ or ’volitional actions’.<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup> Actions that
 occur without intention are not classified as kamma in this context.</p>
 <p>This definition of kamma, however, is very broad. To truly understand
 the meaning of this term, its definition should be examined from
@@ -507,7 +488,7 @@ conceptual and creative activity. It thus lies at the heart of
 kamma. This is confirmed by the Buddha’s words: ’It is intention,
 bhikkhus, that I call kamma’ (<em>cetanāhaṁ bhikkhave kammaṁ vadāmi</em>).
 With intention, people then act by way of body, speech, and
-mind.<sup class="footnote-reference"><a href="#fn8">8</a></sup></p>
+mind.<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup></p>
 </li>
 <li>
 <p><strong>B.</strong> A broader perspective, taking into account other factors within the
@@ -524,7 +505,7 @@ thoughts, speech, and physical actions, resulting in various kinds
 of intentional action. In brief, <em>saṅkhāra</em> may be described as
 ’mental conceptualization’, yet even here intention is considered
 the principal factor. Indeed, the Buddha occasionally defined
-<em>saṅkhāra</em> simply as intention (<em>cetanā</em>).<sup class="footnote-reference"><a href="#fn9">9</a></sup></p>
+<em>saṅkhāra</em> simply as intention (<em>cetanā</em>).<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup></p>
 </li>
 <li>
 <p><strong>C.</strong> An even wider perspective examines human beings as a whole,
@@ -601,7 +582,7 @@ banishment. And in return we would grant him a share of the grain.’</p>
 most attractive, the most charismatic and awe-inspiring, and asked him
 to do this for them in return for a share of the grain, and he
 agreed…. {242} Because he was chosen by the people, the first
-regular title of Mahā Sammata (’Great Authority’) came to be.<sup class="footnote-reference"><a href="#fn10">10</a></sup></p>
+regular title of Mahā Sammata (’Great Authority’) came to be.<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup></p>
 <p><em>D. III. 92-3.</em></p>
 </blockquote>
 </div>
@@ -614,7 +595,7 @@ increase of theft, the use of weapons increased; from the increased
 use of weapons, the taking of life increased – and from the increase
 of killing, lying increased … divisive speech … adultery …
 offensive speech and trivial talk … covetousness and ill-will …
-wrong view increased.<sup class="footnote-reference"><a href="#fn11">11</a></sup></p>
+wrong view increased.<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup></p>
 <p><em>D. III. 70-71.</em></p>
 </blockquote>
 </div>
@@ -634,7 +615,7 @@ laws (<em>utu-niyāma</em>). They are seen as equivalent to landslides or to a
 branch falling from a tree.</p>
 <h3 id="kinds-of-kamma"><a class="header" href="#kinds-of-kamma">Kinds of Kamma</a></h3>
 <p>From the perspective of its quality or source, kamma is divided into two
-factors:<sup class="footnote-reference"><a href="#fn12">12</a></sup></p>
+factors:<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup></p>
 <ol>
 <li>
 <p>Unwholesome actions (<em>akusala-kamma</em>): unskilful actions; bad
@@ -650,7 +631,7 @@ non-greed (<em>alobha</em>), non-hatred (<em>adosa</em>), and non-delusion
 </ol>
 <p>If one divides kamma according to the ’doorway’ (<em>dvāra</em>) by which
 actions are performed – the pathways of expression – the
-classification is threefold:<sup class="footnote-reference"><a href="#fn13">13</a></sup></p>
+classification is threefold:<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup></p>
 <ol>
 <li>
 <p>Physical actions (<em>kāya-kamma</em>): actions by way of the body.</p>
@@ -664,9 +645,9 @@ classification is threefold:<sup class="footnote-reference"><a href="#fn13">13</
 </ol>
 <p>Combining the two aforementioned classifications results in six kinds of
 kamma: unwholesome physical, verbal, and mental actions, and wholesome
-physical, verbal, and mental actions.<sup class="footnote-reference"><a href="#fn14">14</a></sup></p>
+physical, verbal, and mental actions.<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup></p>
 <p>Another classification divides kamma into four factors according to the
-relationship actions have to their results (<em>vipāka</em>):<sup class="footnote-reference"><a href="#fn15">15</a></sup></p>
+relationship actions have to their results (<em>vipāka</em>):<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup></p>
 <ol>
 <li>
 <p>Dark actions with dark results: this refers to physical, verbal, and
@@ -701,7 +682,7 @@ Noble Eightfold Path.</p>
 factors, i.e. into three groups of four factors. This classification was
 favoured by later generations of Buddhist scholars, as is seen by the
 description in the Visuddhimagga. To prevent confusion, however, it will
-not be presented here.<sup class="footnote-reference"><a href="#fn16">16</a></sup></p>
+not be presented here.<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup></p>
 <p>Of the three kinds of kamma mentioned above, i.e. physical, verbal, and
 mental kamma, mental kamma is of the greatest importance and has the
 most widespread and major consequences, as confirmed by the Buddha:</p>
@@ -726,7 +707,7 @@ instructions, actions, etc. all spring from their beliefs, viewpoints,
 and values. {244} If people harbour wrong view (<em>micchā-diṭṭhi</em>), their
 thoughts, speech, and actions will also be incorrect (<em>micchā</em>); if they
 harbour right view (<em>sammā-diṭṭhi</em>), their thoughts, speech, and actions
-will be correct (<em>sammā</em>).<sup class="footnote-reference"><a href="#fn17">17</a></sup> For example, if a society believes that
+will be correct (<em>sammā</em>).<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup> For example, if a society believes that
 material affluence is of utmost value and truly desirable, people will
 pursue material wealth, and they will use wealth as the yardstick for
 measuring progress, prestige, and dignity. People’s lifestyles and the
@@ -777,7 +758,7 @@ one person? It is one who holds right view and has a correct
 perspective. He draws many people away from an untrue Dhamma and
 establishes them in the true Dhamma….</p>
 <p>Monks, I do not see even a single thing so harmful as wrong view.
-Wrong view is the worst of things that are harmful.<sup class="footnote-reference"><a href="#fn18">18</a></sup></p>
+Wrong view is the worst of things that are harmful.<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup></p>
 <p><em>A. I. 33.</em></p>
 </blockquote>
 </div>
@@ -787,7 +768,7 @@ Wrong view is the worst of things that are harmful.<sup class="footnote-referenc
 way of mind. If one speaks or acts with an impure mind, suffering will
 follow, even as the wheel of the cart follows the draught-ox…. If
 one speaks or acts with a pure mind, happiness will follow, even as
-one’s radiance that never leaves.<sup class="footnote-reference"><a href="#fn19">19</a></sup></p>
+one’s radiance that never leaves.<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup></p>
 <p><em>Dh. verses 1 and 2.</em></p>
 </blockquote>
 </div>
@@ -798,7 +779,7 @@ evil. To understand kamma more clearly it is thus important to touch
 upon the subject of good and evil.</p>
 <p>The concept of good and evil (or good and bad) poses a difficulty on
 account of the meanings of these words in English and the criteria for
-evaluation.<sup class="footnote-reference"><a href="#fn20">20</a></sup> What determines something to be ’good’ or ’evil’?</p>
+evaluation.<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup> What determines something to be ’good’ or ’evil’?</p>
 <p>This dilemma, however, is primarily confined to English. The Pali terms
 dealing with these concepts are clearly defined, as will be discussed
 below.</p>
@@ -844,7 +825,7 @@ for evaluation.</p>
 kamma (<em>kamma-niyāma</em>). In the study of Buddhist ethics, the
 concepts of wholesomeness and unwholesomeness are thus viewed as
 natural phenomena (<em>sabhāva</em>). They are not viewed in light of a
-relative sense of value.<sup class="footnote-reference"><a href="#fn21">21</a></sup> The study of relative value pertains
+relative sense of value.<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup> The study of relative value pertains
 to the level of conventional truth (<em>sammati-niyāma</em>) or of social
 prescriptions (<em>saṅgama-paññatti</em>), whose perimeters are clearly
 distinguished from the law of kamma (<em>kamma-niyāma</em>).</p>
@@ -918,7 +899,7 @@ is inherently happy and at ease.</p>
 <p>Some texts mention three more definitions for <em>kusala</em>: ’intelligent’
 (<em>cheka</em>; ’clever’); ’safe’ (<em>khema</em>; ’secure’); and ’free from anxiety’
 (<em>niddaratha</em>). These three definitions, however, are already included
-in the four definitions mentioned above.<sup class="footnote-reference"><a href="#fn22">22</a></sup> Note also that the third
+in the four definitions mentioned above.<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup> Note also that the third
 definition above – <em>kosalla-sambhūta</em> – is the primary definition for
 <em>kusala</em>.</p>
 <p>The meaning of <em>akusala</em> can be interpreted as opposite to those
@@ -941,21 +922,21 @@ fully awakened beings – the arahants.</p>
 <p><em><strong>Group #1:</strong> <em>passaddha</em>: relaxed, tranquil, calm; <em>lahu</em>:
 lightness of mind; <em>mudu</em>: gentle, tender, mild; <em>kamañña</em>: wieldy,
 ready for work; <em>paguṇa</em>: adroit; <em>uju</em>: upright, not crooked, not
-distorted.<sup class="footnote-reference"><a href="#fn23">23</a></sup></em></p>
+distorted.<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup></em></p>
 <p><strong>Group #2:</strong> <em>mudu</em>: gentle, mild; <em>kammanīya</em>: wieldy, suitable for
 work; <em>pabhas-sara</em>: brilliant, clear; <em>apabhaṅgu</em>: robust, not frail;
 <em>samāhita</em>: steadfast; <em>anāvaraṇa</em>: unimpeded, unconfined;
 <em>anivaraṇa</em>: unhindered, unobstructed, unconstrained;
 <em>anupakkiliṭṭha</em>: untarnished, unmuddied; <em>anajjhārūḷha</em>:
-unconstricted, unoppressed; <em>avighāta</em>: untroubled, unafflicted.<sup class="footnote-reference"><a href="#fn24">24</a></sup>
+unconstricted, unoppressed; <em>avighāta</em>: untroubled, unafflicted.<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup>
 {248}</p>
 <p><strong>Group #3:</strong> <em>samāhita</em>: steadfast, balanced, even; <em>parisuddha</em>:
 pure, impeccable; <em>pariyodāta</em>: pristine, bright; <em>anaṅgaṇa</em>:
 unblemished, clear; <em>vigatūpakkilesa</em>: unstained; <em>mudubhūta</em>: gentle,
 tender; <em>kammanīya</em>: wieldy; <em>ṭhita</em> and <em>āneñjappatta</em>: steady,
-grounded, composed, stable, unshakeable, non-wavering.<sup class="footnote-reference"><a href="#fn25">25</a></sup></p>
+grounded, composed, stable, unshakeable, non-wavering.<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup></p>
 </blockquote>
-<p>The next two groups are primarily comprised of attributes belonging to
+<p>The next two groups  primarily consist of attributes belonging to
 arahants:</p>
 <blockquote>
 <p><em><strong>Group #4:</strong> <em>akiñcana</em>: nothing lingering in the mind, free from
@@ -963,12 +944,12 @@ latent anxiety; <em>santa</em>: peaceful, satisfied; <em>asoka</em>: sorrowless;
 <em>viraja</em>: free from dust; <em>khema</em>: safe, secure, free from danger;
 <em>nicchāta</em>: sated, free from hankering; <em>sītabhūta</em>: cooled, deeply at
 peace; <em>nibbuta</em>: cooled, calmed; <em>serī</em>: released, able to wander
-freely; <em>sayaṁvasī</em>: self-mastery, self-reliant; <em>sukhī</em>: happy.<sup class="footnote-reference"><a href="#fn26">26</a></sup></em></p>
+freely; <em>sayaṁvasī</em>: self-mastery, self-reliant; <em>sukhī</em>: happy.<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup></em></p>
 <p><strong>Group #5:</strong> <em>anallīna</em>: unentangled, unobsessed; <em>anajjhosita</em>:
 unintimidated; <em>anūpalitta</em>: unsoiled, unpolluted; <em>anissita</em>:
 independent, not dependent on anything; <em>visaññuta</em>: unfettered;
 <em>vippamutta</em>: liberated; <em>vimariyādikata-citta</em>: with an unbounded,
-limitless mind.<sup class="footnote-reference"><a href="#fn27">27</a></sup></p>
+limitless mind.<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup></p>
 </blockquote>
 <p>For ease of memory, these attributes may be divided into various main
 headings:</p>
@@ -1086,7 +1067,7 @@ virtuously. Some yearn for peace and thus practise concentration until
 they reach the concentrative attainments. Some children wish to be
 admired by adults and thus try to behave in a well-disciplined way. Some
 students desire good grades and thus strive to study and seek
-knowledge.<sup class="footnote-reference"><a href="#fn28">28</a></sup> Some people feel the burning influence of anger, which
+knowledge.<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup> Some people feel the burning influence of anger, which
 then leads them to clearly understand the harmful effects of anger. Some
 people become offended by an adversary, yet this experience leads them
 to feel compassion for others. Others may feel anxious or depressed and
@@ -1120,7 +1101,7 @@ suffering (<em>vaṭṭa-dukkha</em>), or factors leading to a bad destination
 ’wicked’, ’evil’, and ’base’. Occasionally, <em>pāpa</em> is used as a
 qualifying adjective for the fruit of volitional action (<em>vipāka</em>); in
 this context it means ’miserable’ (<em>dukkha</em>) or ’undesirable’
-(<em>aniṭṭha</em>).<sup class="footnote-reference"><a href="#fn29">29</a></sup></p>
+(<em>aniṭṭha</em>).<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup></p>
 <p>Note that these definitions have been established by linguists and only
 reveal certain aspects of the meanings of these terms. It is essential
 to also understand their true meanings within the context of Dhamma
@@ -1142,7 +1123,7 @@ unwholesome qualities already arisen. In the third and fourth factors,
 however, <em>puñña</em> is not used together with <em>kusala</em>. Here only <em>kusala</em>
 is mentioned: one strives to cultivate those wholesome qualities not yet
 arisen, and one strives to preserve those arisen wholesome factors and
-bring them to perfection.<sup class="footnote-reference"><a href="#fn30">30</a></sup></p>
+bring them to perfection.<sup class="footnote-reference" id="fr-fn30-1"><a href="#fn-fn30">30</a></sup></p>
 <p>In brief, the definitions of <em>puñña</em> and <em>kusala</em> are not identical. If
 one divides <em>kusala</em> into two levels, as mundane wholesomeness
 (<em>lokiya-kusala</em>) and transcendent wholesomeness (<em>lokuttara-kusala</em>),
@@ -1150,13 +1131,13 @@ the term <em>puñña</em> applies to the former. In the case that <em>puñña</e
 to transcendent wholesomeness, a modifier is added, for example:
 <em>lokuttara-puñña</em> (’transcendent goodness’). This term, however, is
 uncommon (it is only found in one passage of the commentaries, along
-with the corresponding passage in the sub-commentaries.)<sup class="footnote-reference"><a href="#fn31">31</a></sup></p>
+with the corresponding passage in the sub-commentaries.)<sup class="footnote-reference" id="fr-fn31-1"><a href="#fn-fn31">31</a></sup></p>
 <p>In the Pali Canon, the Buddha frequently mentions the term
 <em>opadhika-puñña</em>: ’merit yielding fruit as the five aggregates’, which
 is a form of mundane goodness. This implies that the term
 <em>anopadhika-puñña</em> (or <em>nirūpadhi-puñña</em>) – ’transcendent goodness’ –
 should appear as a pair, but these two terms do not appear anywhere in
-the scriptures.<sup class="footnote-reference"><a href="#fn32">32</a></sup></p>
+the scriptures.<sup class="footnote-reference" id="fr-fn32-1"><a href="#fn-fn32">32</a></sup></p>
 <p>Instead, in one sutta of the Pali Canon one finds the term
 <em>nirūpadhi-kusala</em> (’transcendent wholesomeness’) paired with
 <em>opadhika-puñña</em> (’mundane goodness’):</p>
@@ -1174,34 +1155,34 @@ mundane goodness (<em>opadhika-puñña</em>). Although the term <em>opadhika</em
 added, it is implied. The meaning is thus equivalent to mundane
 wholesomeness (<em>lokiya-kusala</em>). <em>Puñña</em> is thus only one part of
 <em>kusala</em>, which also encompasses the transcendent. Only very few
-commentarial passages fully equate <em>puñña</em> and <em>kusala</em>.<sup class="footnote-reference"><a href="#fn33">33</a></sup></p>
+commentarial passages fully equate <em>puñña</em> and <em>kusala</em>.<sup class="footnote-reference" id="fr-fn33-1"><a href="#fn-fn33">33</a></sup></p>
 <p>The commentaries explain the various nuances of the term <em>puñña</em>. The
 Paramatthadīpanī (the commentary to the Itivuttaka) for instance,
-provides five definitions for this term:<sup class="footnote-reference"><a href="#fn34">34</a></sup></p>
+provides five definitions for this term:<sup class="footnote-reference" id="fr-fn34-1"><a href="#fn-fn34">34</a></sup></p>
 <ol>
 <li>
 <p>The fruit derived from wholesome actions, for example in the
 passage: ’Due to undertaking various wholesome things, merit
-increases.’<sup class="footnote-reference"><a href="#fn35">35</a></sup></p>
+increases.’<sup class="footnote-reference" id="fr-fn35-1"><a href="#fn-fn35">35</a></sup></p>
 </li>
 <li>
 <p>Virtuous behaviour in the sense sphere (<em>kāmāvacara</em>) and the
 fine-material sphere (<em>rūpāvacara</em>), e.g.: ’One is subject to
 ignorance if one proliferates over meritorious activities
-(<em>puññābhisaṅkhāra</em>).’<sup class="footnote-reference"><a href="#fn36">36</a></sup></p>
+(<em>puññābhisaṅkhāra</em>).’<sup class="footnote-reference" id="fr-fn36-1"><a href="#fn-fn36">36</a></sup></p>
 </li>
 <li>
 <p>Distinctively happy destinations of birth, e.g.: ’Consciousness
-arriving at a state of goodness (<em>puñña</em>).’<sup class="footnote-reference"><a href="#fn37">37</a></sup></p>
+arriving at a state of goodness (<em>puñña</em>).’<sup class="footnote-reference" id="fr-fn37-1"><a href="#fn-fn37">37</a></sup></p>
 </li>
 <li>
 <p>Wholesome intention, for example in the term <em>puññakiriyā-vatthu</em>
 (’bases of meritorious action’; this is equivalent to wholesome
-action – <em>kusala-kamma</em>).<sup class="footnote-reference"><a href="#fn38">38</a></sup></p>
+action – <em>kusala-kamma</em>).<sup class="footnote-reference" id="fr-fn38-1"><a href="#fn-fn38">38</a></sup></p>
 </li>
 <li>
 <p>Wholesome actions in the three planes of existence, e.g.: ’Bhikkhus,
-do not fear goodness (<em>puñña</em>).’<sup class="footnote-reference"><a href="#fn39">39</a></sup> (This is equivalent to mundane
+do not fear goodness (<em>puñña</em>).’<sup class="footnote-reference" id="fr-fn39-1"><a href="#fn-fn39">39</a></sup> (This is equivalent to mundane
 wholesomeness.)</p>
 </li>
 </ol>
@@ -1221,36 +1202,36 @@ Dh. verses 39, 267, 412.</em></p>
 ’evil’ (<em>pāpa</em>) refers to all unwholesomeness (<em>akusala</em>). <em>Kusala</em> is
 divided into mundane and transcendent wholesomeness, while <em>akusala</em> is
 exclusively mundane. Both goodness (<em>puñña</em>) and evil (<em>pāpa</em>) refer to
-mundane phenomena.<sup class="footnote-reference"><a href="#fn40">40</a></sup></p>
+mundane phenomena.<sup class="footnote-reference" id="fr-fn40-1"><a href="#fn-fn40">40</a></sup></p>
 <p>These definitions help to understand such phrases as ’free from good and
 evil’, ’abandoning good and evil’, and ’rising above good and evil’,
-which refer to attributes of an arahant’s mind.<sup class="footnote-reference"><a href="#fn41">41</a></sup></p>
+which refer to attributes of an arahant’s mind.<sup class="footnote-reference" id="fr-fn41-1"><a href="#fn-fn41">41</a></sup></p>
 <p>Note that such freedom from good and evil implies a freedom from or an
 abandonment of mundane wholesomeness; it does not mean that arahants
 have abandoned transcendent wholesomeness. {253}</p>
 <p>When the terms <em>puñña</em> and <em>kusala</em> appear in tandem, <em>kusala</em> takes on
 the definition of <em>puñña</em>; its meaning is thus narrowed, referring to
-mundane wholesomeness.<sup class="footnote-reference"><a href="#fn42">42</a></sup> An important attribute of mundane goodness,
+mundane wholesomeness.<sup class="footnote-reference" id="fr-fn42-1"><a href="#fn-fn42">42</a></sup> An important attribute of mundane goodness,
 or mundane wholesomeness, is that a person is still concerned with
 material or sensual results. The focus here is not deliverance of mind
 or on the complete removal of mental defilement.</p>
 <p>Here are two examples in the Pali Canon of how these terms are applied:
 when a bhikkhu is thinking of giving up the training, he often says that
-he will disrobe in order to spend wealth and make merit;<sup class="footnote-reference"><a href="#fn43">43</a></sup> and a
+he will disrobe in order to spend wealth and make merit;<sup class="footnote-reference" id="fr-fn43-1"><a href="#fn-fn43">43</a></sup> and a
 virtuous householder’s life is marked by spending wealth and making
-merit.<sup class="footnote-reference"><a href="#fn44">44</a></sup> The term ’merit’ here refers to various virtuous actions,
+merit.<sup class="footnote-reference" id="fr-fn44-1"><a href="#fn-fn44">44</a></sup> The term ’merit’ here refers to various virtuous actions,
 like being charitable, offering gifts, upholding moral standards, etc.,
-corresponding to the term ’wholesome action’ (<em>kusala-kamma</em>).<sup class="footnote-reference"><a href="#fn45">45</a></sup> The
+corresponding to the term ’wholesome action’ (<em>kusala-kamma</em>).<sup class="footnote-reference" id="fr-fn45-1"><a href="#fn-fn45">45</a></sup> The
 same meaning applies in the passage: ’Merit is favourable for devas, for
-human beings, and for renunciants.’<sup class="footnote-reference"><a href="#fn46">46</a></sup> In the Buddha’s statement that
+human beings, and for renunciants.’<sup class="footnote-reference" id="fr-fn46-1"><a href="#fn-fn46">46</a></sup> In the Buddha’s statement that
 ’merit is a name for happiness’, <em>puñña</em> here refers to the desirable
-fruits of wholesome actions.<sup class="footnote-reference"><a href="#fn47">47</a></sup> The expression ’death due to the end
+fruits of wholesome actions.<sup class="footnote-reference" id="fr-fn47-1"><a href="#fn-fn47">47</a></sup> The expression ’death due to the end
 of merit’ (<em>puññakhaya-maraṇa</em>) refers to having used up the fruits of
-meritorious actions which conditioned that particular birth.<sup class="footnote-reference"><a href="#fn48">48</a></sup></p>
+meritorious actions which conditioned that particular birth.<sup class="footnote-reference" id="fr-fn48-1"><a href="#fn-fn48">48</a></sup></p>
 <p>In a similar vein, the definition of the term <em>dhamma</em>, whereby it
 corresponds to the term <em>puñña</em>, is related to going to heaven, just
 like the term <em>adhamma</em>, corresponding to <em>pāpa</em>, is related to going to
-hell.<sup class="footnote-reference"><a href="#fn49">49</a></sup></p>
+hell.<sup class="footnote-reference" id="fr-fn49-1"><a href="#fn-fn49">49</a></sup></p>
 <p>Although <em>puñña</em> and <em>kusala</em> are synonyms, in the general application
 of these terms, the meaning of <em>kusala</em> is broader than the meaning of
 <em>puñña</em>. These terms can be used interchangeably in some contexts, but
@@ -1303,7 +1284,7 @@ correspond with desired nuances of meaning.</p>
 <p>For this reason, the terms <em>kusala</em> and <em>akusala</em> have truly
 Buddhist connotations, and are used in a technical sense. In
 contrast, the Buddha tended to use the terms <em>puñña</em> and <em>pāpa</em> when
-teaching householders and when referring to everyday life.<sup class="footnote-reference"><a href="#fn50">50</a></sup></p>
+teaching householders and when referring to everyday life.<sup class="footnote-reference" id="fr-fn50-1"><a href="#fn-fn50">50</a></sup></p>
 </li>
 </ul>
 <h3 id="criteria-for-good-and-bad-action"><a class="header" href="#criteria-for-good-and-bad-action">Criteria for Good and Bad Action</a></h3>
@@ -1320,7 +1301,7 @@ other laws, or it provides people with a role independent of other laws.
 Intention enables a personal sphere of deliberation and design, to the
 extent that people claim to be equal to or to compete with nature, and
 distinguish their own world of creations from the domain of nature.</p>
-<p>Intention relies on the mechanisms of psychological laws<sup class="footnote-reference"><a href="#fn51">51</a></sup> in order
+<p>Intention relies on the mechanisms of psychological laws<sup class="footnote-reference" id="fr-fn51-1"><a href="#fn-fn51">51</a></sup> in order
 to function, and when a person performs intentional actions, the
 fruition of these actions rely on psychological laws in order to be
 maintained. This is similar to someone driving a motorboat. The driver
@@ -1396,7 +1377,7 @@ kamma. {256}</p>
 the law of kamma. When someone accepts these prescriptions, regardless
 of whether these prescriptions are virtuous and beneficial or not, yet
 he or she decides to disobey them, at that moment there is an intention
-to disobey or to transgress them.<sup class="footnote-reference"><a href="#fn52">52</a></sup> Moreover, the person will be
+to disobey or to transgress them.<sup class="footnote-reference" id="fr-fn52-1"><a href="#fn-fn52">52</a></sup> Moreover, the person will be
 aware of these intentions, without being able to ignore or deny them.</p>
 <p>Intention here is connected directly to the law of kamma. Some societies
 may try to include the factor of intention when passing judgement on
@@ -1574,7 +1555,7 @@ sayings:</p>
 <div class="sutta">
 <blockquote>
 <p>All accumulated deeds, both good and bad, bear fruit. Actions marked
-as kamma, even trifling ones, are not void of result.<sup class="footnote-reference"><a href="#fn53">53</a></sup></p>
+as kamma, even trifling ones, are not void of result.<sup class="footnote-reference" id="fr-fn53-1"><a href="#fn-fn53">53</a></sup></p>
 <p><em>J. IV. 394.</em></p>
 <p>Neither good nor bad deeds are performed in vain.</p>
 <p><em>J. VI. 239.</em></p>
@@ -1761,7 +1742,7 @@ is the responsibility of wise individuals in society to regularly
 investigate these matters. In reference to this process, the Buddha used
 the term ’investigated by the wise’ (<em>anuvicca viññū</em>); the wise first
 investigate a specific matter and then express their approval or
-disapproval.<sup class="footnote-reference"><a href="#fn54">54</a></sup> Having investigated these matters, they amend those
+disapproval.<sup class="footnote-reference" id="fr-fn54-1"><a href="#fn-fn54">54</a></sup> Having investigated these matters, they amend those
 things wrongly practised or prescribed, or those things that have
 deviated from their original and correct purpose. The Buddha, for
 example, rejected the caste system and the tradition of animal
@@ -1787,7 +1768,7 @@ person’s personality.</p>
 <p>A reference to advantages and disadvantages on the level of the
 individual: one considers whether an action causes distress or harm
 to oneself, and whether it damages or promotes true inner
-wellbeing.<sup class="footnote-reference"><a href="#fn55">55</a></sup></p>
+wellbeing.<sup class="footnote-reference" id="fr-fn55-1"><a href="#fn-fn55">55</a></sup></p>
 </li>
 <li>
 <p>A reference to advantages and disadvantages on the level of society:
@@ -1830,7 +1811,7 @@ perception aggregate, the volitional formation aggregate, and the
 consciousness aggregate, which are accompanied by these unwholesome
 roots; physical actions, verbal actions, and mental actions, which
 originate from these unwholesome roots: these are unwholesome
-phenomena.<sup class="footnote-reference"><a href="#fn56">56</a></sup></p>
+phenomena.<sup class="footnote-reference" id="fr-fn56-1"><a href="#fn-fn56">56</a></sup></p>
 <p><em>Dhs. 180.</em></p>
 </blockquote>
 </div>
@@ -1861,12 +1842,12 @@ that person….</p>
 decline? Those dangers lead to the decline of wholesome qualities….</p>
 <p>On account of what are things called a danger due to being a dwelling
 place? Those evil unwholesome states arise internally, dependent on
-one’s individuality (atta-bhāva),<sup class="footnote-reference"><a href="#fn57">57</a></sup> in the same way as a creature
+one’s individuality (atta-bhāva),<sup class="footnote-reference" id="fr-fn57-1"><a href="#fn-fn57">57</a></sup> in the same way as a creature
 dependent on a hole lives in a hole, a creature dependent on water
 lives in water, a creature dependent on the forest lives in the
 forest, a creature dependent on a tree lives in a tree…. {264}</p>
 <p>This accords with what the Blessed One said: ’Monks, a monk who has
-both students and a teacher dwells in suffering, not in comfort.’<sup class="footnote-reference"><a href="#fn58">58</a></sup></p>
+both students and a teacher dwells in suffering, not in comfort.’<sup class="footnote-reference" id="fr-fn58-1"><a href="#fn-fn58">58</a></sup></p>
 <p>And how does a monk who has both students and a teacher dwell in
 suffering, not in comfort? When the eye sees a form … the ear hears
 a sound … the nose smells an odour … the tongue tastes a flavour
@@ -1889,7 +1870,7 @@ three things which, when they arise within a person, arise for his
 harm, suffering, and discomfort. What three? Greed, hatred, and
 delusion….</p>
 <p>Just as bamboo seeds destroy the bamboo tree, so too greed, hatred,
-and delusion arising within destroy an evil-minded person.<sup class="footnote-reference"><a href="#fn59">59</a></sup></p>
+and delusion arising within destroy an evil-minded person.<sup class="footnote-reference" id="fr-fn59-1"><a href="#fn-fn59">59</a></sup></p>
 <p><em>Nd. I. 12-15, 360-64, 467-70; Nd. II. 59.</em></p>
 <p>There are, great king, three things in the world which, when they
 arise, arise for one’s harm, suffering, and discomfort. What are the
@@ -1935,7 +1916,7 @@ suffering in this very life … and with the breakup of the body,
 after death, a bad destination can be expected for him….</p>
 <p>There are, monks, these three wholesome roots. What three? The
 wholesome root, non-greed; the wholesome root, non-hatred, the
-wholesome root, non-delusion….<sup class="footnote-reference"><a href="#fn60">60</a></sup></p>
+wholesome root, non-delusion….<sup class="footnote-reference" id="fr-fn60-1"><a href="#fn-fn60">60</a></sup></p>
 <p><em>A. I. 201-205.</em></p>
 </blockquote>
 </div>
@@ -1989,7 +1970,7 @@ guru’.” When you know for yourselves: “These things are unwholesome;
 these things are harmful; these things are censured by the wise; these
 things, if accepted and undertaken, lead to harm and suffering”, then
 you should abandon them. It was because of this that this was
-said.’<sup class="footnote-reference"><a href="#fn61">61</a></sup></p>
+said.’<sup class="footnote-reference" id="fr-fn61-1"><a href="#fn-fn61">61</a></sup></p>
 <p><em>A. I. 189.</em></p>
 </blockquote>
 </div>
@@ -2013,7 +1994,7 @@ king.’</p>
 unwholesome?’</p>
 <p>’Any bodily … verbal … mental behaviour that is harmful.’ {267}</p>
 <p>’Now what kind of bodily … verbal … mental behaviour is harmful?’</p>
-<p>’Any bodily … verbal … mental behaviour that is oppressive.’<sup class="footnote-reference"><a href="#fn62">62</a></sup></p>
+<p>’Any bodily … verbal … mental behaviour that is oppressive.’<sup class="footnote-reference" id="fr-fn62-1"><a href="#fn-fn62">62</a></sup></p>
 <p>’Now what kind of bodily … verbal … mental behaviour is
 oppressive?’</p>
 <p>’Any bodily … verbal … mental behaviour that leads to suffering.’</p>
@@ -2049,7 +2030,7 @@ really is one’s own good, the good of others, and the good of both.</p>
 <p>One full of hate, overcome by hate…. One deluded, overcome by
 delusion … experiences mental anguish and suffering…. But when
 delusion is abandoned one understands as it really is one’s own good,
-the good of others, and the good of both.<sup class="footnote-reference"><a href="#fn63">63</a></sup></p>
+the good of others, and the good of both.<sup class="footnote-reference" id="fr-fn63-1"><a href="#fn-fn63">63</a></sup></p>
 <p><em>A. I. 216-17.</em></p>
 </blockquote>
 </div>
@@ -2074,7 +2055,7 @@ future.</p>
 <p><em>S. I. 37.</em></p>
 <p>Ānanda, I have declared definitively that deeds of bodily misconduct,
 verbal misconduct, and mental misconduct are not to be done because in
-acting thus these dangers are to be expected: one blames oneself;<sup class="footnote-reference"><a href="#fn64">64</a></sup>
+acting thus these dangers are to be expected: one blames oneself;<sup class="footnote-reference" id="fr-fn64-1"><a href="#fn-fn64">64</a></sup>
 the wise, having investigated, censure one; a bad report circulates
 about one; one dies confused; and with the breakup of the body, after
 death, one is reborn in the plane of misery, in a bad destination, in
@@ -2181,7 +2162,7 @@ satisfactory and unsatisfactory experiences, to various rewards and
 compensations from outside, to progress and decline, to success and
 failure, to various forms of gain like material possessions,
 prestige, praise, and pleasure, and to corresponding forms of
-loss.<sup class="footnote-reference"><a href="#fn65">65</a></sup> These results can be subdivided into two kinds:</p>
+loss.<sup class="footnote-reference" id="fr-fn65-1"><a href="#fn-fn65">65</a></sup> These results can be subdivided into two kinds:</p>
 <ul>
 <li>
 <p>Results from non-human factors in one’s environment.</p>
@@ -2236,7 +2217,7 @@ conditions in one’s social environment that are linked to the law of
 kamma and determine one’s state of wellbeing. Here in this chapter,
 however, the focus is on kamma as it pertains to a person’s inner life.
 A wider perspective is outlined in the following chapters on external
-influences and virtuous friendship.<sup class="footnote-reference"><a href="#fn66">66</a></sup> {271}</p>
+influences and virtuous friendship.<sup class="footnote-reference" id="fr-fn66-1"><a href="#fn-fn66">66</a></sup> {271}</p>
 <p>The preceding teachings on the law of kamma aim to help people improve
 themselves within the domain of personal actions. Moreover, besides
 improving oneself, one can guide other people to aspire towards
@@ -2277,7 +2258,7 @@ reflecting in this way, one gains an understanding that no volitional
 actions are fruitless, and many of them produce profound effects on
 one’s state of mind and personality.</p>
 <p>The common expression, ’Do good, receive good; do bad, receive bad’, is
-derived from the following Buddhist proverb:<sup class="footnote-reference"><a href="#fn67">67</a></sup></p>
+derived from the following Buddhist proverb:<sup class="footnote-reference" id="fr-fn67-1"><a href="#fn-fn67">67</a></sup></p>
 <div class="sutta">
 <blockquote>
 <p>Whatever sort of seed is sown,<br />
@@ -2328,7 +2309,7 @@ sequence.</p>
 <p>The way in which the law of kamma manifests in people’s lives,
 determines various circumstances, and triggers responses from outside,
 is outlined in the Pali Canon as relying on four pairs of factors: the
-four accomplishments (<em>sampatti</em>) and the four defects (<em>vipatti</em>):<sup class="footnote-reference"><a href="#fn68">68</a></sup></p>
+four accomplishments (<em>sampatti</em>) and the four defects (<em>vipatti</em>):<sup class="footnote-reference" id="fr-fn68-1"><a href="#fn-fn68">68</a></sup></p>
 <p><em>Sampatti</em> may be translated as ’accomplishment’ or ’advantage’. It
 refers to the fulfilment of those factors affording an opportunity for
 good kamma to come to fruition, and preventing the effects of bad kamma
@@ -2404,7 +2385,7 @@ receives a good education. Although one’s inherent intelligence or
 degree of effort is low, one still gets more education and gains a
 higher position in society than someone with more intelligence and
 diligence who is born in the countryside. Or one may be born as a
-deva<sup class="footnote-reference"><a href="#fn69">69</a></sup>; however bad one’s character may be, one lives untroubled
+deva<sup class="footnote-reference" id="fr-fn69-1"><a href="#fn-fn69">69</a></sup>; however bad one’s character may be, one lives untroubled
 and in comfort.</p>
 </li>
 <li>
@@ -2419,7 +2400,7 @@ fit in, and one is looked down on or persecuted; a virtuous and
 skilled person is in a position of work that does not complement his
 skills – he is thus a burden for others and is unhappy (this final
 example may also be accompanied by a defect as regards
-undertaking).<sup class="footnote-reference"><a href="#fn70">70</a></sup></p>
+undertaking).<sup class="footnote-reference" id="fr-fn70-1"><a href="#fn-fn70">70</a></sup></p>
 </li>
 </ol>
 <h4 id="pair-2"><a class="header" href="#pair-2">Pair #2</a></h4>
@@ -2550,7 +2531,7 @@ act with wisdom, in order to deepen an understanding of the truth, to
 realize awakening, and to establish the Dhamma as the guiding force for
 themselves and for society. This can be classified as the highest form
 of kamma; it is kamma performed in order to bring about the end of
-kamma, as referred to earlier.<sup class="footnote-reference"><a href="#fn71">71</a></sup></p>
+kamma, as referred to earlier.<sup class="footnote-reference" id="fr-fn71-1"><a href="#fn-fn71">71</a></sup></p>
 <h3 id="longterm-effects-of-kamma"><a class="header" href="#longterm-effects-of-kamma">Longterm Effects of Kamma</a></h3>
 <p>The following material, on how kamma bears fruit in the longterm, for
 instance over many lifetimes, is one part of the description on how the
@@ -2603,7 +2584,7 @@ volitional actions bear fruit is an extremely complex matter, beyond the
 power of thinking. People are unable to fathom the truth of this matter
 by way of thought. In the Pali Canon, this matter is classified as
 <em>acinteyya</em> (’imponderable’): a matter which shouldn’t be thought
-about.<sup class="footnote-reference"><a href="#fn72">72</a></sup> If one does not heed this warning and tries to unravel this
+about.<sup class="footnote-reference" id="fr-fn72-1"><a href="#fn-fn72">72</a></sup> If one does not heed this warning and tries to unravel this
 complexity by thinking, there is a chance of going crazy. This does not
 mean that the Buddha forbids us to think about the fruits of kamma. It
 simply explains that this complexity is ’inconceivable’; it cannot be
@@ -2669,7 +2650,7 @@ aspiration and love for truth and goodness, say by wishing for one’s
 life to be pure and virtuous, desiring a virtuous society, wishing for
 all of those things one engages with to exist in a state of excellence
 and integrity, or for them to reach an optimal state, and wishing for
-the truth to pervade in all directions.<sup class="footnote-reference"><a href="#fn73">73</a></sup></p>
+the truth to pervade in all directions.<sup class="footnote-reference" id="fr-fn73-1"><a href="#fn-fn73">73</a></sup></p>
 <p>As long as people fail to have a love of truth and goodness, and are
 simply infatuated by the delightful things in the world, they will try
 to fool about with the law of kamma or to deceive the laws of nature.
@@ -2687,9 +2668,9 @@ rebirth.</p>
 interested individuals have tried to explain the teaching of kamma and
 rebirth, by citing scientific principles like the law of conservation of
 energy, connecting them to the mental activity of volition, or they have
-cited various psychological doctrines.<sup class="footnote-reference"><a href="#fn74">74</a></sup> Alternatively, they have
+cited various psychological doctrines.<sup class="footnote-reference" id="fr-fn74-1"><a href="#fn-fn74">74</a></sup> Alternatively, they have
 sought evidence to prove the validity of recollection of past lives, or
-even engaged in ceremonies invoking the spirits of the deceased.<sup class="footnote-reference"><a href="#fn75">75</a></sup>
+even engaged in ceremonies invoking the spirits of the deceased.<sup class="footnote-reference" id="fr-fn75-1"><a href="#fn-fn75">75</a></sup>
 {278}</p>
 <p>It is beyond the scope of this book to describe these explanations in
 detail. Those readers interested in these matters can look into the
@@ -2848,7 +2829,7 @@ confident that one’s goodness and virtue carries over into the future.</p>
 one’s spiritual practice:</p>
 <p>In the original Pali Canon, i.e. in the suttas, there are very few
 descriptions of past and future lives, and of heaven and hell, and in
-most cases these subjects are mentioned or referred to in brief.<sup class="footnote-reference"><a href="#fn76">76</a></sup> If
+most cases these subjects are mentioned or referred to in brief.<sup class="footnote-reference" id="fr-fn76-1"><a href="#fn-fn76">76</a></sup> If
 one compares these to the teachings pertaining to the present life, say
 to the development of morality, concentration, and wisdom, one sees that
 the percentage is very small.</p>
@@ -2860,7 +2841,7 @@ in this lifetime. These present lifetime results may be followed by the
 phrase: ’With the breakup of the body, after death, one is reborn in the
 plane of misery, in a bad destination, in the lower world, in hell’, or
 by the phrase: ’One is reborn in a good destination, in a heavenly
-world.’<sup class="footnote-reference"><a href="#fn77">77</a></sup> {281}</p>
+world.’<sup class="footnote-reference" id="fr-fn77-1"><a href="#fn-fn77">77</a></sup> {281}</p>
 <p>Note how the results in this life are given prime significance and are
 clearly distinguished; the results after death are merely tagged on to
 the end to complete the account. Moreover, the presentation of positive
@@ -2912,7 +2893,7 @@ in the following ways:</p>
 <p>One develops a genuine love of truth (<em>dhamma-chanda</em>) or a love of
 goodness (<em>kusala-chanda</em>). One cultivates an aspiration for truth,
 a love of virtue, a wish for refinement and purity, and a desire for
-things to reach their optimal state.<sup class="footnote-reference"><a href="#fn78">78</a></sup></p>
+things to reach their optimal state.<sup class="footnote-reference" id="fr-fn78-1"><a href="#fn-fn78">78</a></sup></p>
 </li>
 <li>
 <p>One develops an interest in profound internal bliss. An experience
@@ -2925,7 +2906,7 @@ of infatuation with sense pleasure by which one is prone to
 performing wicked or unskilful acts. Having said this, in regard to
 profound mundane bliss, one still needs to exercise caution so that
 one does not indulge in it to the extent of undermining one’s
-efforts or of impeding one’s spiritual progress.<sup class="footnote-reference"><a href="#fn79">79</a></sup> {282}</p>
+efforts or of impeding one’s spiritual progress.<sup class="footnote-reference" id="fr-fn79-1"><a href="#fn-fn79">79</a></sup> {282}</p>
 </li>
 <li>
 <p>One develops wisdom and lives one’s life in accord with wisdom. One
@@ -2948,7 +2929,7 @@ This faith is accompanied by understanding and is conducive to
 wisdom. Here, one believes in the path of wisdom and trusts in a
 life of freedom based on wisdom. Through one’s own efforts one
 gradually incorporates these principles of wisdom and
-compassion.<sup class="footnote-reference"><a href="#fn80">80</a></sup></p>
+compassion.<sup class="footnote-reference" id="fr-fn80-1"><a href="#fn-fn80">80</a></sup></p>
 </li>
 </ol>
 <p>These three factors are interconnected and mutually supportive. In
@@ -3139,11 +3120,11 @@ example: ’Conditioned by ignorance, a person produces volitional acts of
 the body (<em>kāya-saṅkhāra</em>) … volitional acts of speech
 (<em>vacī-saṅkhāra</em>) … volitional acts of mind (<em>mano-saṅkhāra</em>), either
 self-generated … or owing to other agents … either knowingly … or
-unknowingly.’<sup class="footnote-reference"><a href="#fn81">81</a></sup> Similarly, the Buddha refuted the doctrine of karmic
+unknowingly.’<sup class="footnote-reference" id="fr-fn81-1"><a href="#fn-fn81">81</a></sup> Similarly, the Buddha refuted the doctrine of karmic
 autogenesism (<em>attakāra-vāda</em>), which states that happiness and
 suffering are entirely self-determined, and the doctrine of karmic
 heterogenesism (<em>parakāra-vāda</em>), which states that happiness and
-suffering are entirely caused by external factors.<sup class="footnote-reference"><a href="#fn82">82</a></sup> One must
+suffering are entirely caused by external factors.<sup class="footnote-reference" id="fr-fn82-1"><a href="#fn-fn82">82</a></sup> One must
 investigate each distinctive process in order to determine the degree of
 involvement by oneself and/or by external factors. One should not make a
 definitive judgement based on a simple glance or analysis.</p>
@@ -3348,7 +3329,7 @@ significant aspects.</p>
 Here, some person is undeveloped in body, morality, mind, and wisdom;
 his mind is limited, he is of inferior character, and he is afflicted
 by petty concerns. When such a person creates minor bad kamma, it
-leads him to hell.<sup class="footnote-reference"><a href="#fn83">83</a></sup> {289}</p>
+leads him to hell.<sup class="footnote-reference" id="fr-fn83-1"><a href="#fn-fn83">83</a></sup> {289}</p>
 <p>What kind of person creates exactly the same minor bad kamma and yet
 it produces results in this very life, with none of the insignificant
 aspects manifest, only [its] significant aspects? Here, some person
@@ -3356,7 +3337,7 @@ is developed in body, morality, mind, and wisdom. He is high-minded
 and of lofty character, and he dwells without measure. When such a
 person creates exactly the same minor bad kamma, it produces results
 in this very life, with none of the insignificant aspects manifest,
-only [its] significant aspects.<sup class="footnote-reference"><a href="#fn84">84</a></sup></p>
+only [its] significant aspects.<sup class="footnote-reference" id="fr-fn84-1"><a href="#fn-fn84">84</a></sup></p>
 <p>Here, headman, some teacher holds such a doctrine and view as this:
 ’Anyone at all who destroys life … takes what is not given …
 engages in sexual misconduct … speaks falsehood is bound for a state
@@ -3427,7 +3408,7 @@ performing redress accompanied by an awareness and confession of one’s
 wrongdoing (referred to as confession of one’s transgressions –
 <em>accaya-desanā</em>), which is considered a practice corresponding to the
 code of the noble ones (<em>ariya-vinaya</em>).</p>
-<p>In the Dhammavinaya<sup class="footnote-reference"><a href="#fn85">85</a></sup> there are thus three basic procedures for
+<p>In the Dhammavinaya<sup class="footnote-reference" id="fr-fn85-1"><a href="#fn-fn85">85</a></sup> there are thus three basic procedures for
 rectifying one’s faults within a social context:</p>
 <ol>
 <li>
@@ -3443,7 +3424,7 @@ on the Uposatha Day (’observance day’ – the full and new-moon
 days), if a bhikkhu suspects that he may have incurred an offence,
 he informs another bhikkhu in this way: ’Venerable sir, I have
 doubts in regard to an offence of such-and-such a name. When these
-doubts vanish, the offence will have been atoned for.’<sup class="footnote-reference"><a href="#fn86">86</a></sup></p>
+doubts vanish, the offence will have been atoned for.’<sup class="footnote-reference" id="fr-fn86-1"><a href="#fn-fn86">86</a></sup></p>
 </li>
 <li>
 <p>Formal invitation for admonishment (<em>pavāraṇā-kamma</em>). This too is a
@@ -3457,7 +3438,7 @@ senior member of the community, each individual states: ’Venerable
 friends, I make a formal invitation to the sangha. If you have seen,
 heard, or suspected (that I have made any mistakes or acted in any
 harmful ways), may you admonish me out of compassion. Having
-recognized (these mistakes), I will rectify them.’<sup class="footnote-reference"><a href="#fn87">87</a></sup> {291}</p>
+recognized (these mistakes), I will rectify them.’<sup class="footnote-reference" id="fr-fn87-1"><a href="#fn-fn87">87</a></sup> {291}</p>
 </li>
 <li>
 <p>Confession of one’s transgressions (<em>accaya-desanā</em>). This is a
@@ -3483,7 +3464,7 @@ He went to express his remorse to the Buddha, who stated: ’Because
 you see the harm in that which is harmful, and make genuine amends,
 I accept and acknowledge your mistake. For anyone, to discern the
 harm in the harmful and to make righteous amends by afterwards
-showing caution, is growth in the noble discipline.’<sup class="footnote-reference"><a href="#fn88">88</a></sup></p>
+showing caution, is growth in the noble discipline.’<sup class="footnote-reference" id="fr-fn88-1"><a href="#fn-fn88">88</a></sup></p>
 </li>
 </ol>
 <p>This principle of rectification (<em>paṭikamma</em>) is a way of applying the
@@ -3513,14 +3494,14 @@ Ven. Aṅgulimāla while enjoying the bliss of liberation after he was
 <p>Whoever was heedless before and afterwards is not; such a one
 illumines this world like the moon freed from clouds.</p>
 <p>Whoever cancels out evil deeds by way of wholesome deeds; such a one
-illumines this world like the moon freed from clouds.<sup class="footnote-reference"><a href="#fn89">89</a></sup> {292}</p>
+illumines this world like the moon freed from clouds.<sup class="footnote-reference" id="fr-fn89-1"><a href="#fn-fn89">89</a></sup> {292}</p>
 <p><em>Dh. verses: 172-3.</em></p>
 </blockquote>
 </div>
 <h3 id="kamma-leading-to-the-end-of-kamma"><a class="header" href="#kamma-leading-to-the-end-of-kamma">Kamma Leading to the End of Kamma</a></h3>
 <p>One of the earlier classifications of kamma (see above) divides kamma
 into four kinds, according to the relationship between actions and their
-results:<sup class="footnote-reference"><a href="#fn90">90</a></sup></p>
+results:<sup class="footnote-reference" id="fr-fn90-1"><a href="#fn-fn90">90</a></sup></p>
 <ol>
 <li>
 <p>Dark actions with dark results.</p>
@@ -3894,7 +3875,7 @@ abandoning action that is bright with bright result, and the volition
 in abandoning action that is dark and bright with dark-and-bright
 result: this is called action that is neither dark nor bright with
 neither-dark-nor-bright result, action that leads to the destruction
-of action.<sup class="footnote-reference"><a href="#fn91">91</a></sup></p>
+of action.<sup class="footnote-reference" id="fr-fn91-1"><a href="#fn-fn91">91</a></sup></p>
 <p><em>M. I. 389-90.</em></p>
 </blockquote>
 </div>
@@ -3920,7 +3901,7 @@ neither-dark-nor-bright result, kamma that leads to the destruction of
 kamma? In regard to those three kinds of kamma, the volition in
 abandoning [these three kinds of kamma]: this is called kamma that
 is neither dark nor bright with neither-dark-nor-bright result, kamma
-that leads to the destruction of kamma.<sup class="footnote-reference"><a href="#fn92">92</a></sup></p>
+that leads to the destruction of kamma.<sup class="footnote-reference" id="fr-fn92-1"><a href="#fn-fn92">92</a></sup></p>
 <p><em>A. II. 234.</em></p>
 <p>Monks, there are four kinds of kamma … And what, monks, is dark
 kamma with dark result?….</p>
@@ -4148,7 +4129,7 @@ the fruits of their actions, using the standard found in the Buddha’s
 description of the attributes of a ’great man’ (<em>mahā-purisa</em>): ’He is
 practising for the welfare and happiness of many people; he is one who
 has established many people in the noble way, of being endowed with
-wholesome and virtuous qualities.’<sup class="footnote-reference"><a href="#fn93">93</a></sup> This corresponds with the
+wholesome and virtuous qualities.’<sup class="footnote-reference" id="fr-fn93-1"><a href="#fn-fn93">93</a></sup> This corresponds with the
 frequently cited Buddhist maxim: ’act for the welfare and happiness of
 the manyfolk, for the compassionate assistance of the world’
 (<em>bahujanahitāya bahujanasukhāya lokānukampāya</em>).</p>
@@ -4369,7 +4350,7 @@ for the stability of their community or society. This is the case, for
 instance, in the monastic community. Besides supporting the monastic
 community and strengthening communal harmony, monks also honour the
 community and give priority to communal wellbeing. Indeed, the Buddha
-himself honoured the sangha.<sup class="footnote-reference"><a href="#fn94">94</a></sup></p>
+himself honoured the sangha.<sup class="footnote-reference" id="fr-fn94-1"><a href="#fn-fn94">94</a></sup></p>
 <p>The effort to strengthen one’s community is not made to boost some form
 of collective identity, but rather to generate a supportive environment
 for each individual to mature and flourish. {307} If the monastic
@@ -4835,7 +4816,7 @@ one describes the causes and conditions that bring about particular
 results in a body-mind dynamic), one should be clear about this too. If
 one is aware of one’s goals and objectives while using speech, and one
 does not mix up these various levels of truth, then there is no
-problem.<sup class="footnote-reference"><a href="#fn95">95</a></sup></p>
+problem.<sup class="footnote-reference" id="fr-fn95-1"><a href="#fn-fn95">95</a></sup></p>
 <p>One’s examinations need not focus on human beings, who are made up of an
 extremely intricate and complex convergence of causes and conditions, on
 account of the addition of various mental factors. Even in the case of
@@ -4867,7 +4848,7 @@ detailed glimpse of the causal process, because it does not explain the
 continual stream of relevant causes and conditions. A detailed study of
 phenomena, however, helps to discern the uninterrupted, interconnected
 stream of events, and reveals the true connection between actions and
-their fruit.<sup class="footnote-reference"><a href="#fn96">96</a></sup> {315}</p>
+their fruit.<sup class="footnote-reference" id="fr-fn96-1"><a href="#fn-fn96">96</a></sup> {315}</p>
 <p>Chris may get into an argument with one of his neighbours and becomes so
 incensed that he murders him. Fearing capture by the authorities and the
 vengeance of the man’s relatives and companions, he goes into hiding.
@@ -4901,8 +4882,7 @@ accumulated until they become fixed personality traits. These negative
 mind states create suffering within the individual, and in this case
 even lead to physical pain and suffering.’</p>
 <p>Such a discussion of phenomena is complete, without needing to refer to
-a man named Chris or to some conventional identity. The dynamic here is
-comprised of various factors which arise and act as interrelated causes
+a man named Chris or to some conventional identity. The dynamic here comprises various factors which arise and act as interrelated causes
 and conditions. There is action and the fruition of action, without the
 need for an ’actor’ or ’recipient’.</p>
 <p>Regardless of which kind of language one uses, the essential truth of
@@ -4911,7 +4891,7 @@ discussion of the absolute nature of things mentions only pure aspects
 of reality, without adding conventional concepts on top of reality.</p>
 <p>The following story may help to clarify this matter:</p>
 <p>A man named Pong visited one of the senior monks in the monastery.</p>
-<p>He asked: ’Luang Por,<sup class="footnote-reference"><a href="#fn97">97</a></sup> the Buddha taught that everything is nonself
+<p>He asked: ’Luang Por,<sup class="footnote-reference" id="fr-fn97-1"><a href="#fn-fn97">97</a></sup> the Buddha taught that everything is nonself
 (<em>anattā</em>); everything is selfless and insubstantial; everything exists
 without a true owner. There is no actor and there is no recipient of
 action. In that case, I can go and hit someone or kill someone, because
@@ -5032,8 +5012,8 @@ one’s own welfare.</p>
 <h3 id="kamma-grounded-in-rational-belief"><a class="header" href="#kamma-grounded-in-rational-belief">Kamma Grounded in Rational Belief</a></h3>
 <div class="sutta">
 <blockquote>
-<p>The rivers Bāhukā and Adhikakkā,<sup class="footnote-reference"><a href="#fn98">98</a></sup> Gayā and Sundarikā too, Payāga
-and Sarassatī,<sup class="footnote-reference"><a href="#fn99">99</a></sup> and the river Bahumatī – a fool may there forever
+<p>The rivers Bāhukā and Adhikakkā,<sup class="footnote-reference" id="fr-fn98-1"><a href="#fn-fn98">98</a></sup> Gayā and Sundarikā too, Payāga
+and Sarassatī,<sup class="footnote-reference" id="fr-fn99-1"><a href="#fn-fn99">99</a></sup> and the river Bahumatī – a fool may there forever
 bathe, yet will not purify dark deeds. What can the Sundarikā bring to
 pass? What the Payāga? What the Bāhukā? They cannot purify an
 evil-doer, a man who has done vile and brutal deeds. [On the
@@ -5133,14 +5113,14 @@ stealing is called a thief; he is not a brahmin … whoever governs
 among men the town and realm is called a king; he is not a brahmin….</p>
 <p>I call him not a brahmin because of the descent from his mother’s
 womb. If impurities still lurk in him, he is just one who addresses
-others as ’Sir’.<sup class="footnote-reference"><a href="#fn100">100</a></sup> One who has no mental impurities lingering in
+others as ’Sir’.<sup class="footnote-reference" id="fr-fn100-1"><a href="#fn-fn100">100</a></sup> One who has no mental impurities lingering in
 the mind, who clings no more, he is the one I call a brahmin….</p>
 <p>Name and clan are assigned as mere designations in the world,
 originating as forms of address determined by the occasion. Those who
 do not know this fact, in whose hearts wrong view has remained buried
 for ages, declare: ’One is a brahmin by birth.’ One is not a brahmin
 by birth, nor by birth a non-brahmin. By one’s occupation (kamma) is
-one a brahmin, by one’s occupation is one a non-brahmin.<sup class="footnote-reference"><a href="#fn101">101</a></sup> By
+one a brahmin, by one’s occupation is one a non-brahmin.<sup class="footnote-reference" id="fr-fn101-1"><a href="#fn-fn101">101</a></sup> By
 their occupations are men farmers, craftsmen, merchants, servants,
 robbers, soldiers, chaplains, and even kings.</p>
 <p>The wise, seers of Dependent Origination, skilled in action and its
@@ -5156,7 +5136,7 @@ bound by action, like the chariot wheel by the pin.</p>
 aristocratic family, nor do I say that one is worse because one is
 from an aristocratic family. I do not say that one is better because
 one possesses an influential social standing, nor do I say that one is
-worse because one possesses an influential social standing.<sup class="footnote-reference"><a href="#fn102">102</a></sup> I do
+worse because one possesses an influential social standing.<sup class="footnote-reference" id="fr-fn102-1"><a href="#fn-fn102">102</a></sup> I do
 not say that one is better because one is of great wealth, nor do I
 say that one is worse because one is of great wealth.</p>
 <p>For here, one from an aristocratic family … one possessing an
@@ -5292,7 +5272,7 @@ bears fruit. (The term <em>ahosi-kamm</em>a was originally used in Pali to
 denote ’previously performed kamma’, rather than ’kamma ceasing to
 bear fruit’ or ’kamma having already borne fruit’. The commentators,
 however, use it with the specific meaning of ’existing kamma devoid
-of fruit (<em>vipāka</em>)’.)<sup class="footnote-reference"><a href="#fn103">103</a></sup></p>
+of fruit (<em>vipāka</em>)’.)<sup class="footnote-reference" id="fr-fn103-1"><a href="#fn-fn103">103</a></sup></p>
 </li>
 </ol>
 <h3 id="group-no-2"><a class="header" href="#group-no-2">Group no. 2</a></h3>
@@ -5378,7 +5358,7 @@ exist, this reserve kamma bears fruit.</p>
 </ul>
 </div>
 <p>The Abhidhammatthasaṅgaha contains another set of four kinds of kamma,
-for a total of sixteen kinds:<sup class="footnote-reference"><a href="#fn104">104</a></sup></p>
+for a total of sixteen kinds:<sup class="footnote-reference" id="fr-fn104-1"><a href="#fn-fn104">104</a></sup></p>
 <h3 id="group-no-4"><a class="header" href="#group-no-4">Group no. 4</a></h3>
 <p>Classified according to location (i.e. sphere of existence – <em>bhava</em>)
 of effect (<em>pākaṭṭhāna</em>):</p>
@@ -5404,7 +5384,7 @@ realms (<em>sagga</em>).</p>
 <p>Wholesome kamma on the level of the fine-material plane
 (<em>rūpāvacara</em>); this refers to the four fine-material jhānas of
 those individuals who have not yet realized the fruit of
-arahantship.<sup class="footnote-reference"><a href="#fn105">105</a></sup> Such action is likely to lead to birth in the
+arahantship.<sup class="footnote-reference" id="fr-fn105-1"><a href="#fn-fn105">105</a></sup> Such action is likely to lead to birth in the
 fine-material sphere (<em>rūpa-bhava</em>).</p>
 </li>
 <li>
@@ -5425,14 +5405,14 @@ Group 2 = group 3<br />
 Group 3 = group 1<br />
 Group 4 = group 4</em></p>
 </blockquote>
-<p>The Visuddhimagga arranges the groups as follows:<sup class="footnote-reference"><a href="#fn106">106</a></sup></p>
+<p>The Visuddhimagga arranges the groups as follows:<sup class="footnote-reference" id="fr-fn106-1"><a href="#fn-fn106">106</a></sup></p>
 <blockquote>
 <p><em>Group 1 = group 1<br />
 Group 2 = group 3<br />
 Group 3 = group 2</em></p>
 </blockquote>
 <p>The Manorathapūraṇī explains the twelve kinds of kamma in more detail
-than in any other texts.<sup class="footnote-reference"><a href="#fn107">107</a></sup> It defines this classification of kamma
+than in any other texts.<sup class="footnote-reference" id="fr-fn107-1"><a href="#fn-fn107">107</a></sup> It defines this classification of kamma
 as an exposition by sutta specialists (<em>suttantika-pariyāya</em>). It only
 counts eleven distinct kinds of kamma, as it considers <em>ahosi-kamma</em> as
 simply the condition in which various forms of kamma do not bear fruit.
@@ -5442,10 +5422,10 @@ of kamma in itself.</p>
 <p>It goes on to explain that an exposition in accord with the Abhidhamma
 (<em>abhidhamma-pariyāya</em>) refers to sixteen kinds of kamma based on the
 four accomplishments (<em>sampatti</em>) and the four defects
-(<em>vipatti</em>).<sup class="footnote-reference"><a href="#fn108">108</a></sup> {323}</p>
+(<em>vipatti</em>).<sup class="footnote-reference" id="fr-fn108-1"><a href="#fn-fn108">108</a></sup> {323}</p>
 <p>There are several other commentarial texts which present an incomplete
 description of these various kinds of kamma, most notably the
-Papañcasūdanī, which only explains the first and second groups.<sup class="footnote-reference"><a href="#fn109">109</a></sup></p>
+Papañcasūdanī, which only explains the first and second groups.<sup class="footnote-reference" id="fr-fn109-1"><a href="#fn-fn109">109</a></sup></p>
 <p>It is fair to say that these twelve kinds of kamma represent a
 commentarial interpretation, although some of these factors have a clear
 basis in the Pali Canon. This is true in particular with the first three
@@ -5473,7 +5453,7 @@ some subsequent occasion.</p>
 which presents the most detailed description of the twelve kinds of
 kamma, as cited above.</p>
 <p>In the Mahākammavibhaṅga Sutta, the Buddha divides people into four
-kinds, related to the fruition of kamma, as follows:<sup class="footnote-reference"><a href="#fn110">110</a></sup></p>
+kinds, related to the fruition of kamma, as follows:<sup class="footnote-reference" id="fr-fn110-1"><a href="#fn-fn110">110</a></sup></p>
 <p>The first kind of person performs the ten unwholesome courses of action.
 On the dissolution of the body, after death, he reappears in a state of
 deprivation, in an unhappy destination, in perdition, even in hell. This
@@ -5512,11 +5492,11 @@ action, he will experience the result of that either here and now, or in
 his next rebirth, or in some subsequent existence.</p>
 <p>The commentaries explain this passage by using the terms
 <em>diṭṭhadhamma-vedanīya</em>, <em>uppajja-vedanīya</em>, and
-<em>aparāpariya-vedanīya</em>.<sup class="footnote-reference"><a href="#fn111">111</a></sup> Furthermore, one is able here to see the
+<em>aparāpariya-vedanīya</em>.<sup class="footnote-reference" id="fr-fn111-1"><a href="#fn-fn111">111</a></sup> Furthermore, one is able here to see the
 suggestion or source of the concept of <em>āsanna-kamma</em> (actions performed
 or reflected upon immediately before death). {323}</p>
 <p>The Apadāna, which recounts the past lives of various disciples,
-mentions proximate kamma (<em>āsanna-kamma</em>) in numerous passages.<sup class="footnote-reference"><a href="#fn112">112</a></sup>
+mentions proximate kamma (<em>āsanna-kamma</em>) in numerous passages.<sup class="footnote-reference" id="fr-fn112-1"><a href="#fn-fn112">112</a></sup>
 One example is the story of an elder who was a hunter in a past life.
 One day he encountered the Buddha Tissa. Out of faith he offered a
 handful of grass for the Buddha Tissa to sit on, and consequently his
@@ -5527,7 +5507,7 @@ These passages reveal that the consideration of actions close to death
 and the use of the term <em>āsanna-kamma</em> in this context was prevalent at
 the time that this early text was composed.</p>
 <p>The term <em>diṭṭhadhamma-vedanīya-(kamma)</em> is mentioned in several other
-passages of the Pali Canon,<sup class="footnote-reference"><a href="#fn113">113</a></sup> but it is paired with the term
+passages of the Pali Canon,<sup class="footnote-reference" id="fr-fn113-1"><a href="#fn-fn113">113</a></sup> but it is paired with the term
 <em>samparāya-vedanīya</em> (’bearing fruit in the future’) in a group of ten
 factors. The remaining eight factors are: <em>sukha-vedanīya</em> (’bearing
 fruit as pleasure’); <em>dukkha-vedanīya</em> (’bearing fruit as pain’);
@@ -5540,9 +5520,9 @@ bearing fruit’); and <em>avedanīya</em> (’not necessarily bearing fruit’)
 <p>The terms <em>diṭṭhadhammavedanīya-kamma</em>, <em>uppajjavedanīya-kamma</em>, and
 <em>aparāpariyavedanīya-kamma</em> appear clearly in their complete form in the
 Kathāvatthu, which Ven. Moggalliputta-Tissa Thera composed at the time
-of the Third Recitation, in about 218 B.E. (325 BC).<sup class="footnote-reference"><a href="#fn114">114</a></sup> The term
+of the Third Recitation, in about 218 B.E. (325 BC).<sup class="footnote-reference" id="fr-fn114-1"><a href="#fn-fn114">114</a></sup> The term
 <em>ahosi-kamma</em> also appears clearly from early on, in the
-Paṭisambhidāmagga.<sup class="footnote-reference"><a href="#fn115">115</a></sup></p>
+Paṭisambhidāmagga.<sup class="footnote-reference" id="fr-fn115-1"><a href="#fn-fn115">115</a></sup></p>
 <p>The commentaries present an additional group of twelve kinds of kamma:</p>
 <ol>
 <li>
@@ -5590,7 +5570,7 @@ the future.</p>
 </li>
 </ol>
 <p>The commentaries explain this group in conformity with the previous
-group of twelve kinds of kamma.<sup class="footnote-reference"><a href="#fn116">116</a></sup> The gist of this teaching is that
+group of twelve kinds of kamma.<sup class="footnote-reference" id="fr-fn116-1"><a href="#fn-fn116">116</a></sup> The gist of this teaching is that
 there are six kinds of kamma that bear fruit and six kinds of kamma that
 do not bear fruit. Note how the term <em>ahosi-kamma</em> here refers to
 ’previously performed action’.</p>
@@ -5605,7 +5585,8 @@ distinct kinds of kamma.</p>
   </a>
 </p>
 </div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
 <p>Trans.: I hesitate to use the terms ’karma’ or ’karmic’ in this
 text, as there are many misunderstandings of the Buddhist concept of
 karma/kamma. As a case in point, note the first two definitions of
@@ -5614,61 +5595,61 @@ Hinduism, Buddhism. the principle of retributive justice determining
 a person’s state of life and state of his reincarnations as the
 effect of his past deeds; 2. destiny or fate. Hopefully, this text
 will demonstrate and explain just how remote these definitions are
-from the original Buddhist connotations.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
+from the original Buddhist connotations. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
 <p>The Buddha described the close link between Dependent Origination
 and the law of kamma: ’The wise, those who discern Dependent
 Origination and are skilled in action and its results, recognize
 volitional action according to the truth, thus…’ (M. II. 196; Sn.
-123).</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+123). <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>E.g.: DA. II. 439; DhsA. 272. <em>Niyāma</em> in English has been
 translated in various ways by scholars, including ’orderliness of
 nature’ and ’five aspects of natural law’. See also the footnote at
-the beginning of chapter 3 on the Three Characteristics.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+the beginning of chapter 3 on the Three Characteristics. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
 <p>M. II. 196; Sn. 123. Alternatively: ’The world exists because of
 kamma’. [Trans.: Bhikkhu Bodhi’s translation: ’Action makes the
-world go round’.]</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
-<p>Abhidhamma scholars would state that, although human beings who
-are comprised of the five aggregates are subject to all of the
+world go round’.] <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
+<p>Abhidhamma scholars would state that, although human beings, who
+are made up of the five aggregates, are subject to all of the
 natural laws, only some parts of the five aggregates arise as a
 consequence of and are directly governed by kamma. The Abhidhamma
 makes the distinction, for example, that the material form
 (<em>rūpa-dhamma</em>) of our bodies may arise as a consequence of kamma,
-of mind (<em>citta</em>), of physical laws (<em>utu</em>), or of food (<em>āhāra</em>).</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+of mind (<em>citta</em>), of physical laws (<em>utu</em>), or of food (<em>āhāra</em>). <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
 <p>Trans.: note that the term <em>niyamana</em> is linked etymologically to
-<em>niyāma</em>.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
-<p>A. III. 413-14.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
-<p>Ibid.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
-<p>S. III. 63-4; cf.: Vism. 526-7, 530-31.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
+<em>niyāma</em>. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
+<p>A. III. 413-14. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
+<p>Ibid. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
+<p>S. III. 63-4; cf.: Vism. 526-7, 530-31. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
 <p>The Pali term <em>satta</em> (’being’) usually refers to human beings.
 The Buddha before his awakening is referred to as the <em>bodhisatta</em>
 or the <em>mahāsatta</em>. Even after his awakening he was sometimes
 referred to as the ’being beyond all delusion’ (see, e.g.: M. I. 21,
-83).</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
+83). <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
 <p>The term ’furnish’ is a translation from <em>anupadāna</em>, which can
 also be translated as ’administer’, ’share’, ’distribute’, or
-’give’.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
+’give’. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
 <p>See: A. I. 104, 263; It. 25-6, 54-5. On the subject of
 unwholesome and wholesome roots, see: D. III. 275; A. I. 201-202;
 Dhs. 180. In regard to the three wholesome roots, non-greed refers
@@ -5678,45 +5659,45 @@ ill-will’) refers to those qualities, in particular lovingkindness
 (<em>mettā</em>), that are adversaries to hatred; and non-delusion refers
 to those qualities, in particular wisdom (<em>paññā</em>), that are
 adversaries to delusion (see: Dhs. 188-9; Majjhimanikāya Ṭīkā
-[Burmese edition 1/56]).</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
-<p>M. I. 373; A. I. 104; Dhs. 180.</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
-<p>A. I. 104, 292.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
+[Burmese edition 1/56]). <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
+<p>M. I. 373; A. I. 104; Dhs. 180. <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
+<p>A. I. 104, 292. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
 <p>These four are figurative definitions of kamma, with many nuances
-of meaning. See: D. III. 230; M. I. 389-90; A. II. 230-37.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
-<p>For more detail on this twelvefold division, see the appendix.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
+of meaning. See: D. III. 230; M. I. 389-90; A. II. 230-37. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
+<p>For more detail on this twelvefold division, see the appendix. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
 <p>On wrong view (<em>micchā-diṭṭhi</em>) and right view (<em>sammā-diṭṭhi</em>)
-as forms of mental kamma (<em>mano-kamma</em>), see: A. V. 296-8.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+as forms of mental kamma (<em>mano-kamma</em>), see: A. V. 296-8. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
 <p>On the importance of right and wrong view in relation to one’s
-ability to be awakened, see: S. V. 10-11, 48-9.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+ability to be awakened, see: S. V. 10-11, 48-9. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
 <p>[Trans.: the standard translation for <em>chāyā</em> here is ’shadow’,
 but this term can also mean ’radiance’, ’reflection’, ’beauty’,
-’light’.]</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
+’light’.] <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
 <p>Trans.: the author here is of course speaking about the
 equivalent words in Thai – ’dee’ (ดี) and ’chua’ (ชั่ว) – but the
-same analysis applies to English.</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
+same analysis applies to English. <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
 <p>If one wishes to use the term ’value’ in this context, then it is
 a value connected to natural truth, not to value assigned by human
-beings.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
+beings. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
 <p>See: DhsA. 38, 62; PsA. I. 129, 206; VismṬ.:
 Khandhaniddesavaṇṇanā, Viññāṇakkhandhakathāvaṇṇanā; Saṅganī-anuṭīkā
 201; DA. II. 645; DA. III. 883; AA. III. 161. Some texts, besides
@@ -5724,255 +5705,255 @@ presenting these aforementioned definitions, also present literal
 definitions for the term <em>kusala</em>. See the references for more
 detail. Note that the above definitions include expanded
 explanations by the author; they are not copied word by word from
-the scriptures.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
+the scriptures. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
 <p>See: Dhs. 66-7. These factors are extracted from the list of
-beautiful mental factors (<em>sobhaṇa-cetasika</em>) in the Abhidhamma.</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
+beautiful mental factors (<em>sobhaṇa-cetasika</em>) in the Abhidhamma. <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
 <p>These factors are presented in reference to the five hindrances
 (<em>nīvaraṇa</em>) and the seven factors of enlightenment (<em>bojjhaṅga</em>);
-they are compiled from: S. V. 92-8.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
+they are compiled from: S. V. 92-8. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
 <p>These are the attributes of a well-concentrated mind; see, e.g.:
-M. II. 93.</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
+M. II. 93. <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
 <p>These attributes are mentioned in different passages of the
 Tipiṭaka; see the section in chapter 7 on the attributes of awakened
-beings.</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
+beings. <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
 <p>This group emphasizes the freedom of arahants. It can be found in
 many places in the Tipiṭaka, with slight variation. See: M. III. 25,
 30; S. III. 30-31; S. IV. 11-12; A. I. 260; A. V. 152; and it is
 found not less than fifteen times in the Mahāniddesa, e.g.: Nd. I.
-55-6, 71, 90, 133.</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
+55-6, 71, 90, 133. <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
 <p>The terms ’longing’, ’yearning’, ’wish’, and ’desire’ here are
 translations of the Pali term <em>rāga</em>, which is synonymous with the
 term <em>lobha</em>. The translation of <em>rāga</em> is sometimes limited to the
 definition of ’lust’, but it has a wider range of meaning. See: Paṭ:
-154-5, 168-9.</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
+154-5, 168-9. <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
 <p>In regard to these definitions, see: ItA. I. 78, 152-3; AA. II.
 42, 91; UdA. 220; VinA. II. 404; VbhA. 142; VinT. [2/142]; VinṬ.:
 Tatiyapārājikaṁ, Paṭhamapaññatinidānavaṇṇanā; VismṬ.:
 Khandhaniddesavaṇṇanā, Viññāṇakkhandhakathāvaṇṇanā; VismṬ.:
-Paññābhūminiddesavaṇṇanā, Avijjāpaccayāsaṅkhārapadakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn30"><sup class="footnote-definition-label">30</sup>
-<p>E.g.: S. V. 244; A. II. 15; SA. I. 266; SnA. [1/109, 226].</p>
-</div>
-<div class="footnote-definition" id="fn31"><sup class="footnote-definition-label">31</sup>
-<p>DA. III. 858.</p>
-</div>
-<div class="footnote-definition" id="fn32"><sup class="footnote-definition-label">32</sup>
-<p>See: S. I. 233; A. IV. 293; It. 19-20, 77-8.</p>
-</div>
-<div class="footnote-definition" id="fn33"><sup class="footnote-definition-label">33</sup>
-<p>See: ItA. I. 78.</p>
-</div>
-<div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
-<p>ItA. I. 73.</p>
-</div>
-<div class="footnote-definition" id="fn35"><sup class="footnote-definition-label">35</sup>
+Paññābhūminiddesavaṇṇanā, Avijjāpaccayāsaṅkhārapadakathāvaṇṇanā. <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn30"><sup class="footnote-definition-label">30</sup>
+<p>E.g.: S. V. 244; A. II. 15; SA. I. 266; SnA. [1/109, 226]. <a href="#fr-fn30-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn31"><sup class="footnote-definition-label">31</sup>
+<p>DA. III. 858. <a href="#fr-fn31-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn32"><sup class="footnote-definition-label">32</sup>
+<p>See: S. I. 233; A. IV. 293; It. 19-20, 77-8. <a href="#fr-fn32-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn33"><sup class="footnote-definition-label">33</sup>
+<p>See: ItA. I. 78. <a href="#fr-fn33-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn34"><sup class="footnote-definition-label">34</sup>
+<p>ItA. I. 73. <a href="#fr-fn34-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn35"><sup class="footnote-definition-label">35</sup>
 <p>D. III. 78-9. Note that the commentarial explanation of this
-passage uses the term <em>lokuttara-puñña</em> (DA. III. 858).</p>
-</div>
-<div class="footnote-definition" id="fn36"><sup class="footnote-definition-label">36</sup>
-<p>E.g.: S. II. 82.</p>
-</div>
-<div class="footnote-definition" id="fn37"><sup class="footnote-definition-label">37</sup>
-<p>Ibid.</p>
-</div>
-<div class="footnote-definition" id="fn38"><sup class="footnote-definition-label">38</sup>
-<p>It. 51-52.</p>
-</div>
-<div class="footnote-definition" id="fn39"><sup class="footnote-definition-label">39</sup>
+passage uses the term <em>lokuttara-puñña</em> (DA. III. 858). <a href="#fr-fn35-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn36"><sup class="footnote-definition-label">36</sup>
+<p>E.g.: S. II. 82. <a href="#fr-fn36-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn37"><sup class="footnote-definition-label">37</sup>
+<p>Ibid. <a href="#fr-fn37-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn38"><sup class="footnote-definition-label">38</sup>
+<p>It. 51-52. <a href="#fr-fn38-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn39"><sup class="footnote-definition-label">39</sup>
 <p>It. 15. As mentioned earlier, if <em>puñña</em> is meant to refer to the
-transcendent, then a modifier is added (e.g.: <em>lokuttara-puñña</em>).</p>
-</div>
-<div class="footnote-definition" id="fn40"><sup class="footnote-definition-label">40</sup>
-<p>See fn. 46.</p>
-</div>
-<div class="footnote-definition" id="fn41"><sup class="footnote-definition-label">41</sup>
-<p>See fn. 47.</p>
-</div>
-<div class="footnote-definition" id="fn42"><sup class="footnote-definition-label">42</sup>
+transcendent, then a modifier is added (e.g.: <em>lokuttara-puñña</em>). <a href="#fr-fn39-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn40"><sup class="footnote-definition-label">40</sup>
+<p>See fn. 46. <a href="#fr-fn40-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn41"><sup class="footnote-definition-label">41</sup>
+<p>See fn. 47. <a href="#fr-fn41-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn42"><sup class="footnote-definition-label">42</sup>
 <p><em>Kusala</em> appears in tandem with <em>puñña</em>, and has the same meaning
 as <em>puñña</em>, in the following passages: <em>puññābhisanda
 kusalābhisanda</em> (A. III. 51-2; A. IV. 245-6; cf.: S. V. 391);
 ’Though he thinks: “Let me do merit,” he does demerit. Though he
 thinks: “Let me do what is wholesome,” he does what is unwholesome’
 (A. IV. 42-3). Note also the pairing referred to above of
-<em>nirūpadhi-kusala</em> with <em>opadhika-puñña</em> at It. 77-8.</p>
-</div>
-<div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
-<p>E.g.: Vin. I. 182; M. I. 461; A. II. 125; A. III. 374-5.</p>
-</div>
-<div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
-<p>M. II. 57; A. IV. 209-210.</p>
-</div>
-<div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
-<p>See the meaning of <em>puñña</em> at, e.g.: VinA. I. 205; MA. III. 292.</p>
-</div>
-<div class="footnote-definition" id="fn46"><sup class="footnote-definition-label">46</sup>
-<p>A. III. 34.</p>
-</div>
-<div class="footnote-definition" id="fn47"><sup class="footnote-definition-label">47</sup>
-<p>It. 15; ItA. I. 75.</p>
-</div>
-<div class="footnote-definition" id="fn48"><sup class="footnote-definition-label">48</sup>
-<p>E.g.: Vism. 229.</p>
-</div>
-<div class="footnote-definition" id="fn49"><sup class="footnote-definition-label">49</sup>
-<p>E.g.: PsA. I. 18.</p>
-</div>
-<div class="footnote-definition" id="fn50"><sup class="footnote-definition-label">50</sup>
+<em>nirūpadhi-kusala</em> with <em>opadhika-puñña</em> at It. 77-8. <a href="#fr-fn42-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn43"><sup class="footnote-definition-label">43</sup>
+<p>E.g.: Vin. I. 182; M. I. 461; A. II. 125; A. III. 374-5. <a href="#fr-fn43-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn44"><sup class="footnote-definition-label">44</sup>
+<p>M. II. 57; A. IV. 209-210. <a href="#fr-fn44-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn45"><sup class="footnote-definition-label">45</sup>
+<p>See the meaning of <em>puñña</em> at, e.g.: VinA. I. 205; MA. III. 292. <a href="#fr-fn45-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn46"><sup class="footnote-definition-label">46</sup>
+<p>A. III. 34. <a href="#fr-fn46-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn47"><sup class="footnote-definition-label">47</sup>
+<p>It. 15; ItA. I. 75. <a href="#fr-fn47-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn48"><sup class="footnote-definition-label">48</sup>
+<p>E.g.: Vism. 229. <a href="#fr-fn48-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn49"><sup class="footnote-definition-label">49</sup>
+<p>E.g.: PsA. I. 18. <a href="#fr-fn49-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn50"><sup class="footnote-definition-label">50</sup>
 <p>Note that the Abhidhamma generally does not use the terms <em>puñña</em>
 and <em>pāpa</em>. Exceptions are when <em>pāpa</em> is used as a modifier for the
 term <em>akusala</em>, and when <em>puñña</em> appears in the term
 <em>puññābhisaṅkhāra</em>, which has a specially designated meaning. The
 Abhidhamma commentaries refer to the ten bases of meritorious action
 (<em>puññakiriyā-vatthu</em>) to explain the wholesome mind of the sense
-sphere (<em>kāmāvacara-kusalacitta</em>); see: DhsA. 157.</p>
-</div>
-<div class="footnote-definition" id="fn51"><sup class="footnote-definition-label">51</sup>
-<p>Trans.: see p. 312.</p>
-</div>
-<div class="footnote-definition" id="fn52"><sup class="footnote-definition-label">52</sup>
+sphere (<em>kāmāvacara-kusalacitta</em>); see: DhsA. 157. <a href="#fr-fn50-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn51"><sup class="footnote-definition-label">51</sup>
+<p>Trans.: see p. 312. <a href="#fr-fn51-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn52"><sup class="footnote-definition-label">52</sup>
 <p>Here, the examination is only at one level. In some circumstances
 things may be more complex, with other factors coming into play. One
 may have to consider, for example, the quality of wisdom behind
 accepting these prescriptions in the first place, which will have a
 bearing on the person’s intentions. In any case, at the moment of
 thinking and acting, intention plays a role and immediately has an
-effect on the person’s mind and life in general.</p>
-</div>
-<div class="footnote-definition" id="fn53"><sup class="footnote-definition-label">53</sup>
+effect on the person’s mind and life in general. <a href="#fr-fn52-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn53"><sup class="footnote-definition-label">53</sup>
 <p>This should not be confused with volitional actions that do not
-produce results in a person’s external life.</p>
-</div>
-<div class="footnote-definition" id="fn54"><sup class="footnote-definition-label">54</sup>
+produce results in a person’s external life. <a href="#fr-fn53-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn54"><sup class="footnote-definition-label">54</sup>
 <p>See: M. I. 361-4; M. II. 114; A. I. 57-8, 89 = A. II. 3, 84;
-A. III. 255, 267-8; A. V. 39; Dh. verse: 229.</p>
-</div>
-<div class="footnote-definition" id="fn55"><sup class="footnote-definition-label">55</sup>
+A. III. 255, 267-8; A. V. 39; Dh. verse: 229. <a href="#fr-fn54-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn55"><sup class="footnote-definition-label">55</sup>
 <p>The second criterion differs from the first in that it focuses on
 those visible effects which people experience in their everyday
 lives, in particular an encounter with happiness and suffering and
 manifestations of progress and decline, prosperity and loss. Many
 people are not aware of or do not understand the inner dynamics of
-their minds.</p>
-</div>
-<div class="footnote-definition" id="fn56"><sup class="footnote-definition-label">56</sup>
+their minds. <a href="#fr-fn55-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn56"><sup class="footnote-definition-label">56</sup>
 <p>This sutta passage goes on to describe ’neither-good-nor-bad
-phenomena’ – <em>abyākata-dhamma</em>.</p>
-</div>
-<div class="footnote-definition" id="fn57"><sup class="footnote-definition-label">57</sup>
+phenomena’ – <em>abyākata-dhamma</em>. <a href="#fr-fn56-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn57"><sup class="footnote-definition-label">57</sup>
 <p>Trans.: the author here uses this Pali term <em>atta-bhāva</em>
 untranslated. In his ’Dictionary of Buddhist Terminology’, he
 provides three definitions for this term: ’individuality’, ’life’,
-and the ’five aggregates’.</p>
-</div>
-<div class="footnote-definition" id="fn58"><sup class="footnote-definition-label">58</sup>
-<p>This passage is a play on words (see below).</p>
-</div>
-<div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
+and the ’five aggregates’. <a href="#fr-fn57-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn58"><sup class="footnote-definition-label">58</sup>
+<p>This passage is a play on words (see below). <a href="#fr-fn58-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn59"><sup class="footnote-definition-label">59</sup>
 <p>The reference to having students and a teacher is a quote from
 S. IV. 136; the reference to inner stains is a quote from It. 83-4;
 the reference to three things arising within a person is a quote
 from S. I. 70; the final passage (in verse form) is also found at
-It. 45.</p>
-</div>
-<div class="footnote-definition" id="fn60"><sup class="footnote-definition-label">60</sup>
+It. 45. <a href="#fr-fn59-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn60"><sup class="footnote-definition-label">60</sup>
 <p>The following passages of this sutta describe the wholesome
-roots, in a way opposite to the unwholesome roots.</p>
-</div>
-<div class="footnote-definition" id="fn61"><sup class="footnote-definition-label">61</sup>
+roots, in a way opposite to the unwholesome roots. <a href="#fr-fn60-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn61"><sup class="footnote-definition-label">61</sup>
 <p>In this sutta the Buddha goes on to describe the wholesome, in a
 way opposite to the description of the unwholesome. Similar suttas
-are found at: A. I. 193-4 and A. II. 190-191.</p>
-</div>
-<div class="footnote-definition" id="fn62"><sup class="footnote-definition-label">62</sup>
+are found at: A. I. 193-4 and A. II. 190-191. <a href="#fr-fn61-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn62"><sup class="footnote-definition-label">62</sup>
 <p>The term <em>sabyāpajjha</em> is often translated as ’oppressive’ or
 ’accompanied by oppression’. The commentaries, however, almost
 always define this term as ’causing suffering’ or ’accompanied by
 suffering’. ’Causing affliction’ or ’accompanied by affliction’ are
 apt translations. Similar translations (’non-oppressive’, etc.)
 apply to the opposite term <em>abyāpajjha</em>. See, e.g.: MA. III. 104,
-347, 360, [508].</p>
-</div>
-<div class="footnote-definition" id="fn63"><sup class="footnote-definition-label">63</sup>
-<p>The beginning passages are also found at A. I. 156-8.</p>
-</div>
-<div class="footnote-definition" id="fn64"><sup class="footnote-definition-label">64</sup>
+347, 360, [508]. <a href="#fr-fn62-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn63"><sup class="footnote-definition-label">63</sup>
+<p>The beginning passages are also found at A. I. 156-8. <a href="#fr-fn63-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn64"><sup class="footnote-definition-label">64</sup>
 <p>’One blames oneself’ is a translation of the term <em>upavadati</em>; it
-can also be translated as ’self-criticism’ or ’self-inquiry’.</p>
-</div>
-<div class="footnote-definition" id="fn65"><sup class="footnote-definition-label">65</sup>
+can also be translated as ’self-criticism’ or ’self-inquiry’. <a href="#fr-fn64-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn65"><sup class="footnote-definition-label">65</sup>
 <p>Gain and loss, fame and disrepute, praise and blame, and pleasure and
 displeasure are known as the eight ’worldly phenomena’
-(<em>loka-dhamma</em>; ’worldly winds’).</p>
-</div>
-<div class="footnote-definition" id="fn66"><sup class="footnote-definition-label">66</sup>
-<p>See chapter 13 on virtuous friendship.</p>
-</div>
-<div class="footnote-definition" id="fn67"><sup class="footnote-definition-label">67</sup>
+(<em>loka-dhamma</em>; ’worldly winds’). <a href="#fr-fn65-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn66"><sup class="footnote-definition-label">66</sup>
+<p>See chapter 13 on virtuous friendship. <a href="#fr-fn66-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn67"><sup class="footnote-definition-label">67</sup>
 <p>Related passages at: JA. II. 202; JA. III. 158. Each of these
 sources contains expanded material. The related stories in the
 Jātaka texts seem to emphasize results manifesting as clearly
 visible incidents and circumstances. The second verse in the Jātaka
 texts is occasionally <em>tādisaṁ ruhate phalaṁ</em> or <em>tādisaṁ harate
 phalaṁ</em>, which translate as ’that is the sort of fruit that grows’
-and ’that is the sort of fruit borne’, respectively.</p>
-</div>
-<div class="footnote-definition" id="fn68"><sup class="footnote-definition-label">68</sup>
+and ’that is the sort of fruit borne’, respectively. <a href="#fr-fn67-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn68"><sup class="footnote-definition-label">68</sup>
 <p>Vbh. 338-9; commentarial explanations are found at: AA. II.
-218-21; VbhA. 439-54.</p>
-</div>
-<div class="footnote-definition" id="fn69"><sup class="footnote-definition-label">69</sup>
-<p>Trans.: <em>deva</em>: celestial being.</p>
-</div>
-<div class="footnote-definition" id="fn70"><sup class="footnote-definition-label">70</sup>
+218-21; VbhA. 439-54. <a href="#fr-fn68-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn69"><sup class="footnote-definition-label">69</sup>
+<p>Trans.: <em>deva</em>: celestial being. <a href="#fr-fn69-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn70"><sup class="footnote-definition-label">70</sup>
 <p>The commentaries explain <em>gati-sampatti</em> and <em>gati-vipatti</em> only in
-the context of the realm of existence where one is born.</p>
-</div>
-<div class="footnote-definition" id="fn71"><sup class="footnote-definition-label">71</sup>
+the context of the realm of existence where one is born. <a href="#fr-fn70-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn71"><sup class="footnote-definition-label">71</sup>
 <p>See also the teachings on bringing an end to kamma, or
 eliminating kamma, through ’deliverance of mind by way of
-lovingkindness’ (<em>mettā-cetovimutti</em>), described below.</p>
-</div>
-<div class="footnote-definition" id="fn72"><sup class="footnote-definition-label">72</sup>
+lovingkindness’ (<em>mettā-cetovimutti</em>), described below. <a href="#fr-fn71-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn72"><sup class="footnote-definition-label">72</sup>
 <p>There are four such imponderables: the scope of a Buddha
 (<em>buddha-visaya</em>), the scope of jhāna, the fruits of kamma
 (<em>kamma-vipāka</em>), and speculation about the origin or creation of
-the world (<em>loka-cintā</em>). See: A. II. 80.</p>
-</div>
-<div class="footnote-definition" id="fn73"><sup class="footnote-definition-label">73</sup>
-<p>See chapter 10 on desire.</p>
-</div>
-<div class="footnote-definition" id="fn74"><sup class="footnote-definition-label">74</sup>
+the world (<em>loka-cintā</em>). See: A. II. 80. <a href="#fr-fn72-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn73"><sup class="footnote-definition-label">73</sup>
+<p>See chapter 10 on desire. <a href="#fr-fn73-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn74"><sup class="footnote-definition-label">74</sup>
 <p><em>E.g.:</em> Egerton C. Baptist, <em>A Glimpse into the Supreme Science
 of the Buddha</em> (Colombo: the Colombo Apothecaries’ Co., Ltd., 1958),
 pp. 44ff.<br />
 K.N. Jayatilleke, <em>Survival and Karma in Buddhist Perspective</em>
-(Kandy: Buddhist Publication Society, 1969) pp. 35-93.</p>
-</div>
-<div class="footnote-definition" id="fn75"><sup class="footnote-definition-label">75</sup>
+(Kandy: Buddhist Publication Society, 1969) pp. 35-93. <a href="#fr-fn74-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn75"><sup class="footnote-definition-label">75</sup>
 <p><em>E.g.:</em> Ian Stevenson, <em>Twenty Cases Suggestive of Reincarnation</em>
 (New York, 1966), passim.<br />
 A.R. Martin, <em>Researches in Reincarnation and Beyond</em> (Pennsylvania,
 1942), passim.<br />
 C.J. Ducasse, <em>A Critical Examination of the Belief in a Life After
-Death</em> (Springfield, Illinois, 1961), passim.</p>
-</div>
-<div class="footnote-definition" id="fn76"><sup class="footnote-definition-label">76</sup>
+Death</em> (Springfield, Illinois, 1961), passim. <a href="#fr-fn75-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn76"><sup class="footnote-definition-label">76</sup>
 <p>There are two adjoining suttas (Bālapaṇḍita Sutta and Devadūta
 Sutta) which are important sources of later literary works on heaven
 and hell (M. III. 163-78 and M. III. 178-87); three hells are named
@@ -5981,36 +5962,36 @@ on the lifespans of devas, see, e.g.: A. I. 209-210, 212-13; A. II.
 126-7; A. IV. 62, 65, 239-43, 252-61; Vbh. 421-6; and see the seven
 ’abodes of consciousness’ (<em>viññāṇaṭṭhiti</em>) and the nine ’abodes of
 beings’ (<em>sattāvāsa</em>) at, e.g.: D. III. 253, 263, 282, 289; A. IV.
-39-40, 401.</p>
-</div>
-<div class="footnote-definition" id="fn77"><sup class="footnote-definition-label">77</sup>
-<p>E.g.: A. III. 38-9, 252-6; A. V. 342.</p>
-</div>
-<div class="footnote-definition" id="fn78"><sup class="footnote-definition-label">78</sup>
-<p>See chapter 10 on desire and motivation.</p>
-</div>
-<div class="footnote-definition" id="fn79"><sup class="footnote-definition-label">79</sup>
-<p>See chapter 11 on happiness.</p>
-</div>
-<div class="footnote-definition" id="fn80"><sup class="footnote-definition-label">80</sup>
+39-40, 401. <a href="#fr-fn76-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn77"><sup class="footnote-definition-label">77</sup>
+<p>E.g.: A. III. 38-9, 252-6; A. V. 342. <a href="#fr-fn77-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn78"><sup class="footnote-definition-label">78</sup>
+<p>See chapter 10 on desire and motivation. <a href="#fr-fn78-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn79"><sup class="footnote-definition-label">79</sup>
+<p>See chapter 11 on happiness. <a href="#fr-fn79-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn80"><sup class="footnote-definition-label">80</sup>
 <p>This conducive and fruitful form of faith is based on a firm
 confidence in: the Buddha, the pioneer for living a life of freedom
 based on wisdom; the Dhamma, the teachings of the Buddha; and the
 Sangha, the community of individuals who practise in accord with
 these teachings and who have consequently realized the same kind of
 freedom of the heart. In sum, this is called steadfast faith in the
-Triple Gem. See chapter 7 on awakened beings.</p>
-</div>
-<div class="footnote-definition" id="fn81"><sup class="footnote-definition-label">81</sup>
-<p>S. II. 40-41.</p>
-</div>
-<div class="footnote-definition" id="fn82"><sup class="footnote-definition-label">82</sup>
-<p>For more on this subject, see chapter 4 on Dependent Origination.</p>
-</div>
-<div class="footnote-definition" id="fn83"><sup class="footnote-definition-label">83</sup>
-<p>Similar to placing a lump of salt in a small bowl.</p>
-</div>
-<div class="footnote-definition" id="fn84"><sup class="footnote-definition-label">84</sup>
+Triple Gem. See chapter 7 on awakened beings. <a href="#fr-fn80-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn81"><sup class="footnote-definition-label">81</sup>
+<p>S. II. 40-41. <a href="#fr-fn81-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn82"><sup class="footnote-definition-label">82</sup>
+<p>For more on this subject, see chapter 4 on Dependent Origination. <a href="#fr-fn82-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn83"><sup class="footnote-definition-label">83</sup>
+<p>Similar to placing a lump of salt in a small bowl. <a href="#fr-fn83-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn84"><sup class="footnote-definition-label">84</sup>
 <p>Similar to placing a lump of salt into a river. A. I. 249. The
 translation ’with none of the insignificant aspects [of this
 kamma] manifest, only [its] significant aspects’ is derived from
@@ -6019,133 +6000,134 @@ translated as ’with none of the insignificant aspects manifesting in
 a major way’. And if one translates this passage according to the
 commentaries, it renders as ’none of the minor kamma comes to later
 fruition, only the major kamma comes to later fruition’ (see:
-AA. II. 361).</p>
-</div>
-<div class="footnote-definition" id="fn85"><sup class="footnote-definition-label">85</sup>
-<p>Trans.: the Dhamma and the Discipline.</p>
-</div>
-<div class="footnote-definition" id="fn86"><sup class="footnote-definition-label">86</sup>
+AA. II. 361). <a href="#fr-fn84-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn85"><sup class="footnote-definition-label">85</sup>
+<p>Trans.: the Dhamma and the Discipline. <a href="#fr-fn85-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn86"><sup class="footnote-definition-label">86</sup>
 <p>Vin. I. 126. <em>Ahaṁ āvuso itthannāmāya āpattiyā vematiko yadā
 nibbematiko bhavissāmi tadā taṁ āpattiṁ paṭikarissāmi</em>. Note how the
-verb (past participle) form of <em>paṭikamma</em> is <em>paṭikara</em>.</p>
-</div>
-<div class="footnote-definition" id="fn87"><sup class="footnote-definition-label">87</sup>
+verb (past participle) form of <em>paṭikamma</em> is <em>paṭikara</em>. <a href="#fr-fn86-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn87"><sup class="footnote-definition-label">87</sup>
 <p>Vin. I. 159-60. <em>Saṅghaṁ āvuso pavāremi diṭṭhena vā sutena vā
 parisaṅkāya vā vadantu maṁ āyasmanto anukampaṁ upādāya passanto
-paṭikarissāmi</em>.</p>
-</div>
-<div class="footnote-definition" id="fn88"><sup class="footnote-definition-label">88</sup>
+paṭikarissāmi</em>. <a href="#fr-fn87-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn88"><sup class="footnote-definition-label">88</sup>
 <p>Vin. II. 192. <em>Yato ca kho tvaṁ āvuso accayaṁ accayato disvā
 yathādhammaṁ paṭikarosi tante mayaṁ paṭiggaṇhāma vuddhi hesā āvuso
 ariyassa vinaye yo accayaṁ accayato disvā yathādhammaṁ paṭikaroti
-āyatiṁ saṁvaraṁ āpajjati</em>.</p>
-</div>
-<div class="footnote-definition" id="fn89"><sup class="footnote-definition-label">89</sup>
+āyatiṁ saṁvaraṁ āpajjati</em>. <a href="#fr-fn88-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn89"><sup class="footnote-definition-label">89</sup>
 <p>Spoken by Ven. Aṅgulimāla at: M. II. 104-105; Thag. verses
-871-72.</p>
-</div>
-<div class="footnote-definition" id="fn90"><sup class="footnote-definition-label">90</sup>
-<p>See: D. III. 230; M. I. 389-90; A. II. 230-37.</p>
-</div>
-<div class="footnote-definition" id="fn91"><sup class="footnote-definition-label">91</sup>
+871-72. <a href="#fr-fn89-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn90"><sup class="footnote-definition-label">90</sup>
+<p>See: D. III. 230; M. I. 389-90; A. II. 230-37. <a href="#fr-fn90-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn91"><sup class="footnote-definition-label">91</sup>
 <p>Cf.: A. II. 231-4; a list of these factors, without explanatory
-passages, is found at: D. III. 230; A. II. 230-31.</p>
-</div>
-<div class="footnote-definition" id="fn92"><sup class="footnote-definition-label">92</sup>
-<p>Cf. the following sutta: A. 234-5.</p>
-</div>
-<div class="footnote-definition" id="fn93"><sup class="footnote-definition-label">93</sup>
-<p>A. II. 35-6.</p>
-</div>
-<div class="footnote-definition" id="fn94"><sup class="footnote-definition-label">94</sup>
-<p>A. II. 21.</p>
-</div>
-<div class="footnote-definition" id="fn95"><sup class="footnote-definition-label">95</sup>
+passages, is found at: D. III. 230; A. II. 230-31. <a href="#fr-fn91-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn92"><sup class="footnote-definition-label">92</sup>
+<p>Cf. the following sutta: A. 234-5. <a href="#fr-fn92-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn93"><sup class="footnote-definition-label">93</sup>
+<p>A. II. 35-6. <a href="#fr-fn93-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn94"><sup class="footnote-definition-label">94</sup>
+<p>A. II. 21. <a href="#fr-fn94-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn95"><sup class="footnote-definition-label">95</sup>
 <p>The Visuddhimagga states eloquently: ’There is no doer of an
 action; no recipient reaping its fruit; only pure, natural phenomena
 exist. Discernment of this [truth] is right vision
-(<em>sammā-dassana</em>); Vism. 602.</p>
-</div>
-<div class="footnote-definition" id="fn96"><sup class="footnote-definition-label">96</sup>
+(<em>sammā-dassana</em>); Vism. 602. <a href="#fr-fn95-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn96"><sup class="footnote-definition-label">96</sup>
 <p>The sub-commentaries of the Abhidhamma explain that designations
 (<em>paññatti</em>; ’concept’, ’name’) are timeless (<em>kāla-vinimutta</em>;
 independent of time), because they are indestructible and not
 subject to decay; ultimately, however, they do not exist. The
 designation of ’time’ arises due to the appearance and passing away
 of various phenomena. (DhsA. 59; CompṬ.: Pakiṇṇakaparicchedavaṇṇanā,
-Ālambaṇasaṅgahavaṇṇanā.)</p>
-</div>
-<div class="footnote-definition" id="fn97"><sup class="footnote-definition-label">97</sup>
-<p>Trans.: <em>Luang Por</em>: honorific titled meaning ’venerable father’.</p>
-</div>
-<div class="footnote-definition" id="fn98"><sup class="footnote-definition-label">98</sup>
-<p>Trans.: the author uses the spelling Adhikakka.</p>
-</div>
-<div class="footnote-definition" id="fn99"><sup class="footnote-definition-label">99</sup>
-<p>Trans.: also known as the Sarasvatī.</p>
-</div>
-<div class="footnote-definition" id="fn100"><sup class="footnote-definition-label">100</sup>
+Ālambaṇasaṅgahavaṇṇanā.) <a href="#fr-fn96-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn97"><sup class="footnote-definition-label">97</sup>
+<p>Trans.: <em>Luang Por</em>: honorific titled meaning ’venerable father’. <a href="#fr-fn97-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn98"><sup class="footnote-definition-label">98</sup>
+<p>Trans.: the author uses the spelling Adhikakka. <a href="#fr-fn98-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn99"><sup class="footnote-definition-label">99</sup>
+<p>Trans.: also known as the Sarasvatī. <a href="#fr-fn99-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn100"><sup class="footnote-definition-label">100</sup>
 <p><em>Bhovādī</em>. [Trans.: it was the custom of the brahmins to
 address others with the word <em>bho</em> (’sir’, ’my dear’), implying some
-superiority of the speaker.]</p>
-</div>
-<div class="footnote-definition" id="fn101"><sup class="footnote-definition-label">101</sup>
+superiority of the speaker.] <a href="#fr-fn100-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn101"><sup class="footnote-definition-label">101</sup>
 <p>As mentioned earlier, the term <em>kamma</em> literally means ’action’,
 but in some cases, like in this passage, it has a broader meaning,
 referring to one’s occupation (’work’, ’profession’) related to
-earning a living.</p>
-</div>
-<div class="footnote-definition" id="fn102"><sup class="footnote-definition-label">102</sup>
+earning a living. <a href="#fr-fn101-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn102"><sup class="footnote-definition-label">102</sup>
 <p>The commentaries (MA. III. 428) define one of an ’influential
 social standing’ as someone belonging to the first three castes:
 <em>khattiya</em>, <em>brāhmaṇa</em> and <em>vessa</em>. The Pali term <em>uḷāra-vaṇṇa</em> can
-also mean: ’dignified’, ’eminent’, ’imposing’.</p>
-</div>
-<div class="footnote-definition" id="fn103"><sup class="footnote-definition-label">103</sup>
-<p>See: Vism. 601; an abstract from Ps. II. 78.</p>
-</div>
-<div class="footnote-definition" id="fn104"><sup class="footnote-definition-label">104</sup>
+also mean: ’dignified’, ’eminent’, ’imposing’. <a href="#fr-fn102-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn103"><sup class="footnote-definition-label">103</sup>
+<p>See: Vism. 601; an abstract from Ps. II. 78. <a href="#fr-fn103-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn104"><sup class="footnote-definition-label">104</sup>
 <p>Comp.: Vīthimuttaparicchedo, Kammacatukkaṁ; explained at:
-CompṬ.: Vīthimuttaparicchedavaṇṇanā, Kammacatukkavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn105"><sup class="footnote-definition-label">105</sup>
+CompṬ.: Vīthimuttaparicchedavaṇṇanā, Kammacatukkavaṇṇanā. <a href="#fr-fn104-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn105"><sup class="footnote-definition-label">105</sup>
 <p>Note that in the Abhidhamma, the fine material jhānas are
-usually divided into five levels.</p>
-</div>
-<div class="footnote-definition" id="fn106"><sup class="footnote-definition-label">106</sup>
-<p>Vism. 601-602.</p>
-</div>
-<div class="footnote-definition" id="fn107"><sup class="footnote-definition-label">107</sup>
-<p>AA. II. 210-18.</p>
-</div>
-<div class="footnote-definition" id="fn108"><sup class="footnote-definition-label">108</sup>
-<p>See the earlier section: ’Fruition of Kamma’.</p>
-</div>
-<div class="footnote-definition" id="fn109"><sup class="footnote-definition-label">109</sup>
-<p>MA. III. 339; MA. V. 11.</p>
-</div>
-<div class="footnote-definition" id="fn110"><sup class="footnote-definition-label">110</sup>
-<p>M. III. 214-15.</p>
-</div>
-<div class="footnote-definition" id="fn111"><sup class="footnote-definition-label">111</sup>
-<p>MA. V. 19.</p>
-</div>
-<div class="footnote-definition" id="fn112"><sup class="footnote-definition-label">112</sup>
-<p>Ap. 280, 378-9, 391, 454.</p>
-</div>
-<div class="footnote-definition" id="fn113"><sup class="footnote-definition-label">113</sup>
-<p>Notably, at: M. II. 220-21; A. IV. 383-4.</p>
-</div>
-<div class="footnote-definition" id="fn114"><sup class="footnote-definition-label">114</sup>
+usually divided into five levels. <a href="#fr-fn105-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn106"><sup class="footnote-definition-label">106</sup>
+<p>Vism. 601-602. <a href="#fr-fn106-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn107"><sup class="footnote-definition-label">107</sup>
+<p>AA. II. 210-18. <a href="#fr-fn107-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn108"><sup class="footnote-definition-label">108</sup>
+<p>See the earlier section: ’Fruition of Kamma’. <a href="#fr-fn108-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn109"><sup class="footnote-definition-label">109</sup>
+<p>MA. III. 339; MA. V. 11. <a href="#fr-fn109-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn110"><sup class="footnote-definition-label">110</sup>
+<p>M. III. 214-15. <a href="#fr-fn110-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn111"><sup class="footnote-definition-label">111</sup>
+<p>MA. V. 19. <a href="#fr-fn111-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn112"><sup class="footnote-definition-label">112</sup>
+<p>Ap. 280, 378-9, 391, 454. <a href="#fr-fn112-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn113"><sup class="footnote-definition-label">113</sup>
+<p>Notably, at: M. II. 220-21; A. IV. 383-4. <a href="#fr-fn113-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn114"><sup class="footnote-definition-label">114</sup>
 <p>Kvu. 611-12. [Trans.: the Third Recitation is also known as the
 Third Council. The author uses the spelling Moggallīputta-Tissa
-Thera.]</p>
-</div>
-<div class="footnote-definition" id="fn115"><sup class="footnote-definition-label">115</sup>
-<p>Ps. II. 78.</p>
-</div>
-<div class="footnote-definition" id="fn116"><sup class="footnote-definition-label">116</sup>
-<p>AA. II. 220-22.</p>
+Thera.] <a href="#fr-fn114-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn115"><sup class="footnote-definition-label">115</sup>
+<p>Ps. II. 78. <a href="#fr-fn115-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn116"><sup class="footnote-definition-label">116</sup>
+<p>AA. II. 220-22. <a href="#fr-fn116-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

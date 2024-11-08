@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html" class="active">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -554,7 +535,7 @@ aspects of Buddhism with good reason and justifiably.</p>
 <p>Whatever the reasons are behind these criticisms, if rather than naively
 acquiescing or becoming indignant, we remain open-minded and consider
 these words of criticism carefully – according to the Buddha’s teaching
-on responding to praise and blame<sup class="footnote-reference"><a href="#fn1">1</a></sup> – we can benefit from any kind of
+on responding to praise and blame<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup> – we can benefit from any kind of
 criticism or slander. In fact, criticism is more useful than praise,
 because people praise us for things we do or have already done, whereas
 they criticize us for things that we are unable to do or have not yet
@@ -580,9 +561,9 @@ excellence and brilliance of the Dhamma.</p>
 <p>At the time of the Buddha one of his disciples uttered the following
 verse: <em>Aho buddho aho dhammo aho dhammassa svākkhātatā</em> (’Oh, the
 excellence of the Buddha! Oh, the excellence of the Dhamma! Oh, how
-supremely expounded is the Dhamma!’).<sup class="footnote-reference"><a href="#fn2">2</a></sup> Similarly, some of the
+supremely expounded is the Dhamma!’).<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup> Similarly, some of the
 venerable elders exclaimed: <em>Aho dhammasudhammatā</em> (’Indeed, the Dhamma
-is supreme!’).<sup class="footnote-reference"><a href="#fn3">3</a></sup></p>
+is supreme!’).<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup></p>
 <p>When this enthusiasm arises, there is a powerful wholesome desire to
 proclaim the merits of the Dhamma to others or to encourage others to
 witness and appreciate the excellence and nobility of the Dhamma, as can
@@ -595,7 +576,7 @@ be seen in the utterances by faithful disciples in the Pali Canon:</p>
 <em>dhammassa ca sudhammataṁ</em></p>
 <p>’I myself shall travel about from village to village, town to town,
 tirelessly paying homage to the Awakened One and to the supreme
-Dhamma.’<sup class="footnote-reference"><a href="#fn4">4</a></sup></p>
+Dhamma.’<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup></p>
 <p><em>S. I. 215; Sn. 33, 31; Ap. 48, 376; cf.: D. II. 208, 221, 227.</em></p>
 <p><em>Passa dhammasudhammataṁ</em></p>
 <p>’Come and admire the righteousness of the Dhamma,’ or ’Come and
@@ -639,9 +620,9 @@ distinction.</p>
 <em>sikkhā</em>) which is paired with the word <em>patibat</em> (= <em>paṭipatti</em>).
 Originally, the term <em>sikkhā</em> referred to the essence of spiritual
 practice (<em>paṭipatti</em>), or it referred to spiritual practice itself.
-<em>Sikkhā</em> is comprised of moral conduct (<em>sīla</em>), concentration
+<em>Sikkhā</em> consists of moral conduct (<em>sīla</em>), concentration
 (<em>samādhi</em>) and wisdom (<em>paññā</em>), which pertain directly to spiritual
-training and practice.<sup class="footnote-reference"><a href="#fn5">5</a></sup> The development of wisdom in particular is
+training and practice.<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup> The development of wisdom in particular is
 the supreme form of practice, leading to realization (<em>paṭivedha</em>). In
 Thai the word <em>seuksah</em> was later used to refer to study or education,
 even to rote or abstract learning, which can lead to incoherent or
@@ -651,11 +632,11 @@ be equivalent to the term <em>pariyatti</em> (’formal learning’).</p>
 word whose meaning has become blurred or obscured, is between ’Pali’ and
 the Pali language. ’Pali’ on its own refers exclusively to the content
 of the Tipiṭaka, to be distinguished from later scriptures, e.g. the
-commentaries, sub-commentaries, etc.<sup class="footnote-reference"><a href="#fn6">6</a></sup> The Pali language refers to
+commentaries, sub-commentaries, etc.<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup> The Pali language refers to
 the language used to record and preserve the content of the Tipiṭaka; it
 is also referred to as Magadhi Prakrit (language of Magadha). The
 Tipiṭaka and the later scriptures, e.g. the commentaries, are recorded
-in the Pali language.<sup class="footnote-reference"><a href="#fn7">7</a></sup></p>
+in the Pali language.<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup></p>
 <p>In the original edition of <em>Buddhadhamma</em>, some topics are discussed
 only very briefly, to simply familiarize the readers with the basic
 concepts. I did not explain them in depth or point out relevant methods
@@ -675,7 +656,7 @@ principles and methods of practice. The sections dealing with these
 topics have in turn become more detailed and expansive.</p>
 <p>There are many other similar principles, e.g.: aspiration for truth
 (<em>dhamma-chanda</em>), or wholesome desire (<em>kusala-chanda</em>), which is
-opposite to craving (<em>taṇhā</em>);<sup class="footnote-reference"><a href="#fn8">8</a></sup> mundane and transcendent right view;
+opposite to craving (<em>taṇhā</em>);<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup> mundane and transcendent right view;
 the middle teaching (<em>majjhena-dhammadesanā</em>) which is paired with the
 middle way (<em>majjhimā-paṭipadā</em>); and the three doctrines professing
 wrong view which run counter to the teaching on kamma.</p>
@@ -754,7 +735,7 @@ the name and word cards alphabetically to prepare them for indexing.</p>
 the publication of <em>Buddhadhamma</em>, which is intended as a gift of
 knowledge and truth for the benefit of all. On this occasion, I give my
 heartfelt thanks for everyone’s united spirit and support.</p>
-<p>Phra Rajavaramuni (Prayut)<sup class="footnote-reference"><a href="#fn9">9</a></sup><br />
+<p>Phra Rajavaramuni (Prayut)<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup><br />
 29 December 1981</p>
 <div class="illustration">
 <p><a href="https://buddhadhamma.github.io/includes/images/illustrations/bells-large-decor.pdf"><img src="./includes/images/illustrations/bells-large-decor.jpg" alt="image" /></a></p>
@@ -764,38 +745,40 @@ heartfelt thanks for everyone’s united spirit and support.</p>
   </a>
 </p>
 </div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
-<p>D. I. 2-3.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
-<p>M. II. 96; cf.: Ap. 392.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
-<p>Thag. verses 479 and 486; Ap. 399.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
+<p>D. I. 2-3. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
+<p>M. II. 96; cf.: Ap. 392. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
+<p>Thag. verses 479 and 486; Ap. 399. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
 <p>See the related phrase <em>buddhasubodhiṁ dhammasudhammataṁ
-saṅghasupaṭipattiṁ</em> at: Nd. I. 359-60, 453; Nd. II. 42.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
-<p>See: VinA. I. 225; MA. [3/147, 3/523]; AA. V. 33.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+saṅghasupaṭipattiṁ</em> at: Nd. I. 359-60, 453; Nd. II. 42. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
+<p>See: VinA. I. 225; MA. [3/147, 3/523]; AA. V. 33. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
 <p>See the use of this word ’Pali’ in e.g. the Visuddhimagga: Vism.
-107, 450.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
+107, 450. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
 <p>Trans.: in this English translation I have used the term ’Pali
 Canon’ to refer to the former meaning, as the content of the
-Tipiṭaka.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
+Tipiṭaka. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
 <p>I began to discuss <em>dhamma-chanda</em> and <em>kusala-chanda</em> in earlier
 works, on education and the philosophy of education, between the
-years 1973-75.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
-<p>Now known as Somdet Phra Buddhaghosacariya (P. A. Payutto).</p>
+years 1973-75. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
+<p>Now known as Somdet Phra Buddhaghosacariya (P. A. Payutto). <a href="#fr-fn9-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html" class="active">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -252,7 +233,7 @@ veramaṇī</em>).</p>
 <li>
 <p><em>And what, monks, is right livelihood? This is called right
 livelihood: here a noble disciple, having abandoned wrong
-livelihood,</em><sup class="footnote-reference"><a href="#fn1">1</a></sup> <em>earns his living by right livelihood.</em><sup class="footnote-reference"><a href="#fn2">2</a></sup></p>
+livelihood,</em><sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup> <em>earns his living by right livelihood.</em><sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup></p>
 </li>
 </ol>
 <p>There are also definitions for these three factors distinguishing
@@ -276,7 +257,7 @@ the noble path.</p>
 <li>
 <p><em>Transcendent right livelihood:</em> the refraining, the avoidance, the
 abstinence from, the intention to desist from wrong livelihood in
-one whose mind is noble … and is developing the noble path.<sup class="footnote-reference"><a href="#fn3">3</a></sup>
+one whose mind is noble … and is developing the noble path.<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup>
 {711}</p>
 </li>
 </ol>
@@ -290,7 +271,7 @@ all of society. This practical outline of moral conduct begins with a
 teaching on behaviour – the ten wholesome courses of action
 (<em>kusala-kammapatha</em>) – corresponding to the three factors of the Noble
 Path mentioned above, and with a teaching on the most basic form of
-moral conduct: the five precepts.<sup class="footnote-reference"><a href="#fn4">4</a></sup></p>
+moral conduct: the five precepts.<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup></p>
 <p>There is, however, no limit to the expansion and details of such a
 practical outline of moral conduct: teachings are presented in the texts
 according to specific individuals, time periods, locations, and other
@@ -447,7 +428,7 @@ early morning on rising from his bed, if he touches the earth he is
 pure, if he does not touch the earth he is pure … if he pays
 reverence to the sun he is pure, if he does not pay reverence to the
 sun he is pure … because these ten wholesome courses of action are
-inherently pure and they lead to purification.<sup class="footnote-reference"><a href="#fn5">5</a></sup></p>
+inherently pure and they lead to purification.<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup></p>
 <p><em>A. V. 263.</em></p>
 </blockquote>
 </div>
@@ -506,7 +487,7 @@ by Ven. Sāriputta:</p>
 <blockquote>
 <p>And what, friends, is right action? Abstaining from killing living
 beings, abstaining from taking what is not given, and abstaining from
-misconduct in sensual pleasures – this is called right action.<sup class="footnote-reference"><a href="#fn6">6</a></sup></p>
+misconduct in sensual pleasures – this is called right action.<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup></p>
 <p><em>M. III. 251-2.</em></p>
 </blockquote>
 </div>
@@ -675,7 +656,7 @@ divine will.</p>
 Buddha-Dhamma is a principle of self-discipline and self-training,
 and therefore the prescribed precepts are referred to as ’training
 rules’ (<em>sikkhā-pada</em>). As for moral conduct in theistic religions,
-it is comprised of prohibitions – of commandments laid down from a
+it consists of prohibitions – of commandments laid down from a
 power above. {717}</p>
 </li>
 <li>
@@ -729,7 +710,7 @@ promotes mental prosperity and mental health; it is a skilful
 action, it conforms to wisdom, and it leads to liberation; thus it
 is called <em>kusala</em> (’wholesome’, ’skilful’). Wicked, immoral
 behaviour on the other hand impairs or decreases the quality of the
-mind, and thus it is called <em>pāpa</em> (’evil’).<sup class="footnote-reference"><a href="#fn7">7</a></sup> It damages a
+mind, and thus it is called <em>pāpa</em> (’evil’).<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup> It damages a
 person’s life, it is unskilful, and it is conducive neither to
 mental wellbeing nor to liberation; thus it is called <em>akusala</em>
 (’unskilful’, ’unwholesome’). In theistic religions, good and evil
@@ -744,7 +725,7 @@ based on reason, for Dhamma practitioners only conduct themselves
 correctly when they understand how the system of ethics is connected
 to the law of causality. The prevailing morality of theistic
 religions is based on divine proclamations and divine decree which
-is comprised of disparate rules and precepts. Although these rules
+consist of disparate rules and precepts. Although these rules
 may be compiled into an ethical code, they are not part of an
 integrated system, because a follower of such a religion requires
 only enough understanding to determine what rules have been laid
@@ -754,7 +735,7 @@ in God’s all-knowing wisdom; followers ought not to doubt, but
 rather they should surrender themselves and follow obediently.</p>
 </li>
 <li>
-<p>The Buddhist system of ethics is comprised of objective and
+<p>The Buddhist system of ethics consists of objective and
 universal principles; it is determined according to laws of nature.
 (Here ethics refers to the essence of <em>sīla</em>, as the aspects of
 truth dealing with good and evil; it is not referring to <em>sīla</em> as a
@@ -778,7 +759,7 @@ a sin; only virtuous people of this religion can go to heaven, while
 people of other religions, regardless how they behave, are infidels
 and are destined for hell; killing animals is not a sin, because
 animals are intended as food for humans (are we not food for lions
-and tigers?).<sup class="footnote-reference"><a href="#fn8">8</a></sup></p>
+and tigers?).<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup></p>
 <p>Having said this, it is valid, however, to distinguish between
 different kinds of volitional actions, for instance by observing how
 various degrees of unskilful behaviour effect the functioning of the
@@ -858,7 +839,7 @@ they describe the necessary guidelines of moral conduct required for a
 virtuous life. Teachers from ancient times later compiled the eight
 subsidiary factors of moral conduct (derived from these three Path
 factors), and called them by the name ’the set of eight precepts of
-which pure livelihood is the eighth’ (<em>ājīvaṭṭhamaka-sīla</em>).<sup class="footnote-reference"><a href="#fn9">9</a></sup> {720}</p>
+which pure livelihood is the eighth’ (<em>ājīvaṭṭhamaka-sīla</em>).<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup> {720}</p>
 <p>These are the essential factors of moral conduct. From here, the
 analysis of moral conduct branches out. For example, when one describes
 a training for a specific group of people with a distinctive way of
@@ -937,7 +918,7 @@ a teaching specifically for householders and it usually contains four
 factors: faith, virtuous conduct, generosity, and wisdom (occasionally
 the fifth factor of learning is added). This group of factors is
 mentioned very frequently in the Tipiṭaka; here is a concise summary of
-this teaching:<sup class="footnote-reference"><a href="#fn10">10</a></sup></p>
+this teaching:<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup></p>
 <p>After mentioning the means by which one gains victory in this world (by
 properly managing one’s home, domestic help, financial earnings, etc.,
 which are matters pertaining to immediate benefits –
@@ -1076,7 +1057,7 @@ suitable for human beings to live together happily and to lead wholesome
 lives, free from excessive conflict. These principles are referred to in
 the Pali Canon as the five ’training rules’ (<em>sikkhā-pada</em>), which were
 later commonly referred to as the five precepts (<em>pañca-sīla</em>). Let us
-review these precepts:<sup class="footnote-reference"><a href="#fn11">11</a></sup> {724}</p>
+review these precepts:<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup> {724}</p>
 <ol>
 <li>
 <p>To abstain from killing living creatures (<em>pāṇātipāta</em>);
@@ -1095,7 +1076,7 @@ this refers to conduct that is free from harming others in the
 context of married partners and cherished individuals, from
 transgressing sexual mores and traditions, from adultery, and from
 sexual behaviour that damages a family’s reputation and
-lineage.<sup class="footnote-reference"><a href="#fn12">12</a></sup></p>
+lineage.<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup></p>
 </li>
 <li>
 <p>To abstain from speaking falsehoods (<em>musā-vāda</em>); essentially, this
@@ -1289,7 +1270,7 @@ determining what actions constitute a transgression of each of the five
 precepts, establishing the ’necessary conditions’ (<em>sambhāra</em>) or
 ’factors’ (<em>aṅga</em>) of transgression. One has transgressed (or ’broken’)
 a precept when one fulfils all the necessary conditions, as
-follows:<sup class="footnote-reference"><a href="#fn13">13</a></sup></p>
+follows:<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup></p>
 <ul>
 <li>
 <p>Transgression of the first precept, killing living creatures,
@@ -1309,7 +1290,7 @@ through that effort.</p>
 <li>
 <p>Transgression of the third precept, sexual misconduct, contains four
 factors: (1) there is a man or a woman who should not be violated
-(<em>agamanīya-vatthu</em>);<sup class="footnote-reference"><a href="#fn14">14</a></sup> (2) there is an intention to have sexual
+(<em>agamanīya-vatthu</em>);<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup> (2) there is an intention to have sexual
 intercourse; (3) there is an effort to have intercourse; (4) ’there
 is a way through’: there is contact of the sexual organs. {727}</p>
 </li>
@@ -1334,11 +1315,11 @@ animals too cherish life, delight in happiness, are averse to pain, and
 are companions in this world of birth, old-age, sickness, and death, and
 they too should not be oppressed. The first precept thus includes
 animals in the definition of living creatures. Granted, the scriptures
-claim that, kammically,<sup class="footnote-reference"><a href="#fn15">15</a></sup> killing animals is of a less serious
+claim that, kammically,<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup> killing animals is of a less serious
 consequence than killing human beings.</p>
 <p>In regard to this matter, the commentaries offer principles for judging
 the severity of ill-effects resulting from transgressing the five
-precepts, based on various criteria.<sup class="footnote-reference"><a href="#fn16">16</a></sup></p>
+precepts, based on various criteria.<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup></p>
 <p>Later generations of Buddhist monastic scholars compiled a group of
 factors paired with the five precepts to be applied by Buddhist
 laypeople in tandem with the precepts. These factors are known as the
@@ -1396,7 +1377,7 @@ when I was still young, I have never been aware of acting unfaithfully
 towards her even in my thoughts, still less in my deeds. Lord, our wish
 is to be together so long as this life lasts and in the future life as
 well.</p>
-<p>Nakulamātā uttered the same words.<sup class="footnote-reference"><a href="#fn17">17</a></sup></p>
+<p>Nakulamātā uttered the same words.<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup></p>
 <p>The texts classify contentment with one’s spouse as a form of ’divine
 conduct’ (<em>brahmacariya</em>), which shows how highly praised this quality
 is in the Buddhist teachings. The commentators state that such pure
@@ -1406,7 +1387,7 @@ conduct is a cause for not dying young, as in this passage:</p>
 <p>We are not unfaithful to our wives and our wives are not unfaithful to
 us. We practise chastity (<em>brahmacariya</em>) in regards to other women
 apart from our wives. Therefore, none of us has died while still
-young.<sup class="footnote-reference"><a href="#fn18">18</a></sup> {729}</p>
+young.<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup> {729}</p>
 <p><em>DA. I. 178; MA. II. 42; ItA. I. 108; SnA. I. 43.</em></p>
 </blockquote>
 </div>
@@ -1422,14 +1403,14 @@ speech, such a one is called a virtuous person.</p>
 </div>
 <div class="sutta">
 <blockquote>
-<p>Make yourself a refuge for all beings.<sup class="footnote-reference"><a href="#fn19">19</a></sup></p>
+<p>Make yourself a refuge for all beings.<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup></p>
 <p><em>M. I. 39.</em></p>
 </blockquote>
 </div>
 <h2 id="virtuous-conduct-for-enhancing-ones-life-and-society"><a class="header" href="#virtuous-conduct-for-enhancing-ones-life-and-society">Virtuous Conduct for Enhancing One’s Life and Society</a></h2>
 <p>The commentaries claim that the entire teaching by the Buddha in the
 Siṅgālaka Sutta is intended as a layperson’s discipline or as a general
-ethical code.<sup class="footnote-reference"><a href="#fn20">20</a></sup> This teaching can be summarized as follows:</p>
+ethical code.<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup> This teaching can be summarized as follows:</p>
 <h3 id="first-section-freedom-from-the-fourteen-vices"><a class="header" href="#first-section-freedom-from-the-fourteen-vices">First Section: freedom from the fourteen vices</a></h3>
 <p><strong>A.</strong> To abandon four vices of conduct (<em>kamma-kilesa</em>; defiling
 actions):</p>
@@ -1464,7 +1445,7 @@ out of:</p>
 </li>
 </ol>
 <p><strong>C.</strong> To refrain from the six indulgences leading to ruin
-(<em>apāya-mukha</em>; ’paths to ruin’, ’ways of squandering wealth’):<sup class="footnote-reference"><a href="#fn21">21</a></sup></p>
+(<em>apāya-mukha</em>; ’paths to ruin’, ’ways of squandering wealth’):<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup></p>
 <ol>
 <li>
 <p>Addiction to alcoholic drinks and intoxicants.</p>
@@ -1487,7 +1468,7 @@ out of:</p>
 </ol>
 <h3 id="second-section-preparing-two-assets-for-ones-life"><a class="header" href="#second-section-preparing-two-assets-for-ones-life">Second Section: preparing two assets for one’s life</a></h3>
 <p><strong>A.</strong> To recognize true and false friends, who should be associated
-with or not:<sup class="footnote-reference"><a href="#fn22">22</a></sup></p>
+with or not:<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup></p>
 <ol>
 <li>
 <p>Four false friends:</p>
@@ -1496,7 +1477,7 @@ with or not:<sup class="footnote-reference"><a href="#fn22">22</a></sup></p>
 <p>Swindlers.</p>
 </li>
 <li>
-<p>’Great talkers’.<sup class="footnote-reference"><a href="#fn23">23</a></sup></p>
+<p>’Great talkers’.<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup></p>
 </li>
 <li>
 <p>Flatterers.</p>
@@ -1513,7 +1494,7 @@ with or not:<sup class="footnote-reference"><a href="#fn22">22</a></sup></p>
 <p>Supportive friends.</p>
 </li>
 <li>
-<p>Friends who are loyal in both happy and unhappy times.<sup class="footnote-reference"><a href="#fn24">24</a></sup></p>
+<p>Friends who are loyal in both happy and unhappy times.<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup></p>
 </li>
 <li>
 <p>Friends who point out what is beneficial.</p>
@@ -1808,7 +1789,7 @@ which would be to give precedence to material possessions.</p>
 <p>This principle of sufficiency is included in the Buddhist teachings on
 proper governance. One of the responsibilities of a king, for example,
 is to distribute wealth to the poor, to ensure that there are no
-impoverished, destitute people in the land.<sup class="footnote-reference"><a href="#fn25">25</a></sup> The success of a
+impoverished, destitute people in the land.<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup> The success of a
 ruler’s work or of a government’s economic policies should thus be
 measured not by a full treasury or abundant wealth but rather by the
 absence of poverty in society.</p>
@@ -1874,18 +1855,18 @@ donor, this is considered an impure livelihood.</p>
 </li>
 </ul>
 <p>Apart from obvious examples of wrong livelihood – of deception,
-flattery, hinting, intimidation, and pursuing gain with gain<sup class="footnote-reference"><a href="#fn26">26</a></sup> –
+flattery, hinting, intimidation, and pursuing gain with gain<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup> –
 making a living by serving others, say by running errands, engaging in
 various arts like choosing auspicious occasions, making prophesies, and
 practising medicine, are also classified as ’wrong livelihood’ for
-bhikkhus.<sup class="footnote-reference"><a href="#fn27">27</a></sup></p>
+bhikkhus.<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup></p>
 <p>If a monk who is not ill asks for food – fine food, hard food, or even
 boiled rice – for himself and eats it, this behaviour is faulty as
-regards the vocation of a monk.<sup class="footnote-reference"><a href="#fn28">28</a></sup> To make the Dhamma into some form
-of commodity is wrong according to the renunciant’s code of ethics.<sup class="footnote-reference"><a href="#fn29">29</a></sup>
+regards the vocation of a monk.<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup> To make the Dhamma into some form
+of commodity is wrong according to the renunciant’s code of ethics.<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup>
 Giving a Dhamma talk with the thought that the listeners may be pleased
 and one may thus receive some form of reward is an ’impure’ Dhamma
-talk.<sup class="footnote-reference"><a href="#fn30">30</a></sup> Even an act of giving that resembles a payment or recompense
+talk.<sup class="footnote-reference" id="fr-fn30-1"><a href="#fn-fn30">30</a></sup> Even an act of giving that resembles a payment or recompense
 is inappropriate, as is evident in the following occasion involving the
 Buddha:</p>
 <p>At one time the Buddha was walking for alms and stopped at the edge of a
@@ -1897,7 +1878,7 @@ verse; the Buddha concluded by saying that his ploughing and sowing
 bears the fruit of ’immortality’ (<em>amata</em>: the ’deathless’). The brahmin
 applauded this reply and with faith offered some food to the Buddha. The
 Buddha refused this food saying it would be inappropriate to eat food
-acquired through chanting verses.<sup class="footnote-reference"><a href="#fn31">31</a></sup></p>
+acquired through chanting verses.<sup class="footnote-reference" id="fr-fn31-1"><a href="#fn-fn31">31</a></sup></p>
 <p>A pure and righteous acquisition of the four requisites for bhikkhus
 occurs when laypeople recognize the value of the Dhamma and see the
 necessity of assisting those individuals whose duty it is to uphold the
@@ -2007,7 +1988,7 @@ people.</p>
 ’those who enjoy sensual pleasures’), the tenth of which he described as
 supreme. Among the characteristics of these most excellent laypeople,
 one can see the way of dealing with money that accords with Dhamma,
-which can be summarized as follows:<sup class="footnote-reference"><a href="#fn32">32</a></sup></p>
+which can be summarized as follows:<sup class="footnote-reference" id="fr-fn32-1"><a href="#fn-fn32">32</a></sup></p>
 <ol>
 <li>
 <p>Acquisition: to seek wealth in righteous ways, without abusing or
@@ -2129,7 +2110,7 @@ He neither enjoys it nor shares it.<br />
 But when the wise man obtains wealth<br />
 He utilizes it and does his duty.<br />
 Having supported his kin, free from blame,<br />
-That noble man goes to a heavenly state.<sup class="footnote-reference"><a href="#fn33">33</a></sup></em></p>
+That noble man goes to a heavenly state.<sup class="footnote-reference" id="fr-fn33-1"><a href="#fn-fn33">33</a></sup></em></p>
 </blockquote>
 <p><em>S. I. 89-91.</em></p>
 </blockquote>
@@ -2150,16 +2131,16 @@ pleasures, and mistreat other beings.</p>
 compared to the <em>mayhaka</em> bird, which sits in a fig tree full of ripe
 fruit and cries, <em>mayhaṁ, mayhaṁ</em> (from the Pali meaning ’mine, mine’).
 When flocks of other birds come to peck at the fruit and fly off again,
-the <em>mayhaka</em> bird remains babbling away.<sup class="footnote-reference"><a href="#fn34">34</a></sup></p>
+the <em>mayhaka</em> bird remains babbling away.<sup class="footnote-reference" id="fr-fn34-1"><a href="#fn-fn34">34</a></sup></p>
 <p>There are many stories in the scriptures criticizing stingy people who
 keep money to themselves and do not use it to help others. These stories
 often recount a change of mind for wealthy, miserly merchants. They
 provide insightful teachings on the Buddhist view on proper ownership
-and the use of wealth.<sup class="footnote-reference"><a href="#fn35">35</a></sup> {739}</p>
+and the use of wealth.<sup class="footnote-reference" id="fr-fn35-1"><a href="#fn-fn35">35</a></sup> {739}</p>
 <h2 id="moral-rectitude-and-a-healthy-economy"><a class="header" href="#moral-rectitude-and-a-healthy-economy">Moral Rectitude and a Healthy Economy</a></h2>
 <h3 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h3>
 <p>There is a common custom in Thailand of the laity asking for and
-receiving the five precepts.<sup class="footnote-reference"><a href="#fn36">36</a></sup> When the laypeople have undertaken and
+receiving the five precepts.<sup class="footnote-reference" id="fr-fn36-1"><a href="#fn-fn36">36</a></sup> When the laypeople have undertaken and
 determined these precepts, the monk who gives them concludes by pointing
 out the blessings of moral conduct, chanting: <em>Sīlena sugatiṁ yanti,
 sīlena bhogasampadā, sīlena nibbutiṁ</em>…. This verse can be translated
@@ -2201,7 +2182,7 @@ should I proceed to achieve my goal?’ ’What obstacles am I likely to
 face?’ ’How should I solve these problems?’ ’With whom should I
 associate?’ ’Whom should I consult?’ This is how moral conduct affects
 the mind; concentration and wisdom then take over as the guiding
-factors. The four paths to success (<em>iddhipāda</em>)<sup class="footnote-reference"><a href="#fn37">37</a></sup> arise in turn and
+factors. The four paths to success (<em>iddhipāda</em>)<sup class="footnote-reference" id="fr-fn37-1"><a href="#fn-fn37">37</a></sup> arise in turn and
 one can be assured of accomplishment and success.</p>
 <p>Bear in mind that the function of moral conduct is to establish a stable
 foundation for people to confidently engage in further spiritual
@@ -2218,7 +2199,7 @@ this subject of moral conduct:</p>
 <blockquote>
 <p>Diligent in one’s work, heedful, clever at managing one’s affairs.
 {740}</p>
-<p><em>Uṭṭhātā kammadheyyesu appamatto vidhānavā.</em><sup class="footnote-reference"><a href="#fn38">38</a></sup></p>
+<p><em>Uṭṭhātā kammadheyyesu appamatto vidhānavā.</em><sup class="footnote-reference" id="fr-fn38-1"><a href="#fn-fn38">38</a></sup></p>
 <p><em>A. IV. 284, 289, 322, 324-5.</em></p>
 </blockquote>
 </div>
@@ -2233,7 +2214,7 @@ but also as a recollection for self-esteem and joy in regard to one’s
 work. A frequent teaching he gave to householders in this context is:
 ’One has acquired wealth by perseverance, amassed by the strength of
 one’s arms, earned by the sweat of one’s brow, righteous wealth
-righteously gained.’<sup class="footnote-reference"><a href="#fn39">39</a></sup></p>
+righteously gained.’<sup class="footnote-reference" id="fr-fn39-1"><a href="#fn-fn39">39</a></sup></p>
 <p>Diligence also leads to self-development and to self-improvement,
 because an engagement with work compel’s one to grow in many areas of
 one’s life, to pass beyond obstacles, and to reach success.</p>
@@ -2250,7 +2231,7 @@ protect what is valuable and to deal with unfinished business. One does
 not miss a suitable opportunity when the time is ripe. One is not
 negligent; one keeps to the principle: ’Prepare well for the future; do
 not allow unfinished business to cause distress in times of
-crisis.’<sup class="footnote-reference"><a href="#fn40">40</a></sup></p>
+crisis.’<sup class="footnote-reference" id="fr-fn40-1"><a href="#fn-fn40">40</a></sup></p>
 <p>When supported by heedfulness, effort (<em>viriya</em>) is fully equipped and
 functions in the following ways: (a) it prevents damage and loss; (2) it
 solves problems and eliminates negative or dangerous situations; (3) it
@@ -2268,14 +2249,14 @@ and cause of things; to know the objective and results of things; to
 know oneself; to know moderation; to know the proper time; and to know
 other people, to know one’s community, and to know one’s society, e.g.:
 to be able to select the right people for a specific job, to know the
-needs and desires of specific groups of people, etc.<sup class="footnote-reference"><a href="#fn41">41</a></sup></p>
+needs and desires of specific groups of people, etc.<sup class="footnote-reference" id="fr-fn41-1"><a href="#fn-fn41">41</a></sup></p>
 <p>The Buddha frequently emphasized this clever management of affairs, both
 in teachings to the monastic community (using the expression: <em>alaṁ
 saṁvidhātuṁ</em> – ’able at managing one’s affairs’), and in particular to
 householders, who are responsible for activities within the wider
 society. In regard to looking after a household, the Buddha taught this
 principle: ’A householder … should be charitable and clever at
-managing his affairs (<em>vidhānavanta</em>).’<sup class="footnote-reference"><a href="#fn42">42</a></sup></p>
+managing his affairs (<em>vidhānavanta</em>).’<sup class="footnote-reference" id="fr-fn42-1"><a href="#fn-fn42">42</a></sup></p>
 <p>In this context, there are many guiding principles in the scriptures for
 people who work in government service, for example:</p>
 <div class="sutta">
@@ -2345,7 +2326,7 @@ scales or whose apprentice knows on holding up the balance that this
 much [weight] is deficient and this much is excessive…. If this
 clansman earns a small income but lives lavishly, it will be rumoured
 of him: ’This clansman uses his wealth like a “fig-tree
-glutton”.’<sup class="footnote-reference"><a href="#fn43">43</a></sup> If this clansman earns a great income but lives hard
+glutton”.’<sup class="footnote-reference" id="fr-fn43-1"><a href="#fn-fn43">43</a></sup> If this clansman earns a great income but lives hard
 up, it will be rumoured of him: ’This clansman will die like a
 pauper.’ But because this clansman earns his living with moderation
 … this is called a balanced livelihood. {742}</p>
@@ -2366,7 +2347,7 @@ open the inlets and close the outlets, and if rain were to fall
 according to the season, an increase of that reservoir is to be
 expected, not a decrease….</p>
 <p>Brahmin, these four things lead to a clansman’s happiness and
-wellbeing in the present.<sup class="footnote-reference"><a href="#fn44">44</a></sup></p>
+wellbeing in the present.<sup class="footnote-reference" id="fr-fn44-1"><a href="#fn-fn44">44</a></sup></p>
 <p><em>A. IV. 285-9.</em></p>
 </blockquote>
 </div>
@@ -2419,7 +2400,7 @@ Discerning with wisdom, the wise one knows<br />
 Dual corresponding shares of his happiness,<br />
 the first three kinds of happiness<br />
 are not worth a sixteenth part<br />
-Of the bliss that comes from blamelessness.<sup class="footnote-reference"><a href="#fn45">45</a></sup></em></p>
+Of the bliss that comes from blamelessness.<sup class="footnote-reference" id="fr-fn45-1"><a href="#fn-fn45">45</a></sup></em></p>
 </blockquote>
 <p><em>A. II. 69.</em></p>
 </blockquote>
@@ -2452,7 +2433,7 @@ righteously gained, a noble disciple makes five kinds of offerings:
 aid for relatives (ñāti-bali), welcoming gifts to guests
 (atithi-bali), making of merit in honour of the departed
 (pubbapeta-bali), support to the government (rāja-bali), and offerings
-to devas (devatā-bali).<sup class="footnote-reference"><a href="#fn46">46</a></sup> This is the fourth benefit to be obtained
+to devas (devatā-bali).<sup class="footnote-reference" id="fr-fn46-1"><a href="#fn-fn46">46</a></sup> This is the fourth benefit to be obtained
 from wealth.</p>
 <p>Here, with the wealth acquired by energetic striving … wealth
 righteously gained, a noble disciple establishes an offering bearing
@@ -2472,7 +2453,7 @@ disciple is not distressed.</p>
 be obtained from wealth, his wealth increases, he considers thus:
 ’Whatever benefit should be obtained from wealth, I have obtained such
 benefit and my wealth has increased.’ Thus that noble disciple is not
-distressed. In both circumstances he experiences no distress.<sup class="footnote-reference"><a href="#fn47">47</a></sup></p>
+distressed. In both circumstances he experiences no distress.<sup class="footnote-reference" id="fr-fn47-1"><a href="#fn-fn47">47</a></sup></p>
 <p><em>A. III. 45.</em></p>
 </blockquote>
 </div>
@@ -2515,7 +2496,7 @@ following passages:</p>
 <p>Action, knowledge, righteousness,<br />
 Moral conduct, an excellent life –<br />
 By these are beings purified,<br />
-Not by family lineage or wealth.<sup class="footnote-reference"><a href="#fn48">48</a></sup></p>
+Not by family lineage or wealth.<sup class="footnote-reference" id="fr-fn48-1"><a href="#fn-fn48">48</a></sup></p>
 <p><em>M. III. 262; S. I. 33-4, 55.</em></p>
 <p>I see wealthy men in the world<br />
 Who through greed share not their wealth.<br />
@@ -2555,7 +2536,7 @@ Since by wisdom one gains the final goal.</p>
 </blockquote>
 </div>
 <p>A vital part of engaging in right livelihood is <em>sippa</em>: vocational
-knowledge, expertise, and skill.<sup class="footnote-reference"><a href="#fn49">49</a></sup> The scriptures emphasize the study
+knowledge, expertise, and skill.<sup class="footnote-reference" id="fr-fn49-1"><a href="#fn-fn49">49</a></sup> The scriptures emphasize the study
 of arts, crafts, and sciences, and maintain that one duty of parents is
 to provide a practical education for their children.</p>
 <p>Vocational knowledge on its own, however, is limited. The scriptures
@@ -2577,7 +2558,7 @@ the Buddha:</p>
 <p>Great learning, expertise, a highly-trained moral discipline, and
 well-spoken speech: these are supreme blessings…. Work not piled up
 and unattended to: this is a supreme blessing…. Blameless activity:
-this is a supreme blessing.<sup class="footnote-reference"><a href="#fn50">50</a></sup></p>
+this is a supreme blessing.<sup class="footnote-reference" id="fr-fn50-1"><a href="#fn-fn50">50</a></sup></p>
 <p><em>Kh. 2; Sn. 46.</em></p>
 </blockquote>
 </div>
@@ -2623,14 +2604,14 @@ Buddha encouraged them to consider their responsibilities to other
 people: to further develop virtue and participate in upholding the
 righteousness of all human beings. The Buddha thus included three more
 blessings at the end of the passage: of supporting one’s relatives
-(<em>ñāti-saṅgaha</em>),<sup class="footnote-reference"><a href="#fn51">51</a></sup> of widespread giving (<em>dāna</em>), and of righteous
+(<em>ñāti-saṅgaha</em>),<sup class="footnote-reference" id="fr-fn51-1"><a href="#fn-fn51">51</a></sup> of widespread giving (<em>dāna</em>), and of righteous
 conduct (<em>dhamma-cariyā</em>).</p>
 <p>To conduct oneself in line with these principles is to earn one’s
 livelihood with rectitude.</p>
 <p>Buddhism admits to and confirms the necessity of material things,
 especially the four requisites of life, as is seen for example in the
 Buddha’s frequent exhortation: ’All beings exist by way of food’ (<em>sabbe
-sattā āhāraṭṭhitikā</em>).<sup class="footnote-reference"><a href="#fn52">52</a></sup> {747}</p>
+sattā āhāraṭṭhitikā</em>).<sup class="footnote-reference" id="fr-fn52-1"><a href="#fn-fn52">52</a></sup> {747}</p>
 <p>The true value of material things, however, is connected to moderation
 and determined by how they foster a healthy and natural physical state
 – of physical strength and ease, freedom from illness, and an absence
@@ -2700,7 +2681,7 @@ true happiness, not to increase our suffering.</p>
 wealth, the greater is one’s affliction.</p>
 <p>When one recognizes the above truths, one derives the true value from
 material wealth, spends money to benefit oneself and others, and
-cultivates the four ’favourable qualities’ (<em>saṅgaha-vatthu</em>),<sup class="footnote-reference"><a href="#fn53">53</a></sup> for
+cultivates the four ’favourable qualities’ (<em>saṅgaha-vatthu</em>),<sup class="footnote-reference" id="fr-fn53-1"><a href="#fn-fn53">53</a></sup> for
 example by giving, by establishing a society that guards against
 wrongdoing, promotes virtue, and encourages spiritual development, and
 by supporting those people who uphold the truth. One does not possess
@@ -2710,12 +2691,12 @@ consume more and to seek self-gratification.</p>
 obtain wealth through honest means, are charitable and take
 responsibility for others, and spend their money on wholesome causes;
 such people are referred to as ’victors in this world and the
-next’.<sup class="footnote-reference"><a href="#fn54">54</a></sup></p>
+next’.<sup class="footnote-reference" id="fr-fn54-1"><a href="#fn-fn54">54</a></sup></p>
 <p>Even more excellent are those people freed through wisdom from mental
 defilement, who do not fall victim to wealth or to personal possessions,
 who do not allow the acquisition of wealth to be a source of woe, who
 are able to live with a joyful heart, who come into contact with worldly
-things but are not stained by them,<sup class="footnote-reference"><a href="#fn55">55</a></sup> and who are able to disengage
+things but are not stained by them,<sup class="footnote-reference" id="fr-fn55-1"><a href="#fn-fn55">55</a></sup> and who are able to disengage
 from suffering when it arises in various circumstances. These are the
 true masters (<em>issara-jana</em>), the true liberated ones (<em>serī-puggala</em>).</p>
 <p>Such laypeople may be awakened up to the stage of non-returner, yet they
@@ -2728,7 +2709,7 @@ duties, which can be a form of attachment to non-attachment.</p>
 life relying in the least degree on material things, or for a life with
 the greatest degree of freedom from material things. This life is
 connected to the wider society in the following ways: first, the
-monastic life provides an opportunity for monks<sup class="footnote-reference"><a href="#fn56">56</a></sup> to live a life of
+monastic life provides an opportunity for monks<sup class="footnote-reference" id="fr-fn56-1"><a href="#fn-fn56">56</a></sup> to live a life of
 simplicity; second, this life allows monks to fully devote their time
 and energy to Dhamma-related activities without needing to get caught up
 in seeking material possessions; third, this life urges monks to be easy
@@ -2758,7 +2739,7 @@ were prepared for such freedom.</p>
 independent community as a physical entity is the bhikkhu sangha –
 sometimes referred to as the conventional sangha (<em>sammati-saṅgha</em>) –
 which exists alongside and is yet free from the wider lay
-community.<sup class="footnote-reference"><a href="#fn57">57</a></sup> The independent community as an ideal is the ’community
+community.<sup class="footnote-reference" id="fr-fn57-1"><a href="#fn-fn57">57</a></sup> The independent community as an ideal is the ’community
 of true disciples’ (<em>sāvaka-saṅgha</em>) – sometimes referred to as the
 ’noble community’ (<em>ariya-saṅgha</em>) – which exists alongside yet apart
 from the wider community of unawakened beings.</p>
@@ -2819,7 +2800,7 @@ delighted with the abandoning of unwholesome qualities. Yet, because
 of this, he does not extol himself or disparage others. Any monk who
 is skilled in this development (bhāvanā) and abandonment (pahāna),
 energetic, not remiss, clearly comprehending and mindful, is said to
-be dwelling in an ancient, pristine, noble lineage.<sup class="footnote-reference"><a href="#fn58">58</a></sup></p>
+be dwelling in an ancient, pristine, noble lineage.<sup class="footnote-reference" id="fr-fn58-1"><a href="#fn-fn58">58</a></sup></p>
 </li>
 </ol>
 <p>Qualities like contentment correspond to the discipline and moral
@@ -2830,7 +2811,7 @@ abandoning unwholesome qualities.</p>
 <p>The commentaries classify four aspects of moral conduct of the monastic
 sangha, which are collectively referred to as <em>pārisuddhi-sīla</em> (’moral
 conduct leading to purity’ or ’pure behaviour designated as moral
-conduct’), as follows:<sup class="footnote-reference"><a href="#fn59">59</a></sup></p>
+conduct’), as follows:<sup class="footnote-reference" id="fr-fn59-1"><a href="#fn-fn59">59</a></sup></p>
 <ol>
 <li>
 <p><em>Pāṭimokkhasaṁvara-sīla</em>: morality as restraint in regard to the
@@ -2853,7 +2834,7 @@ way of mindfulness (<em>sati</em>).</p>
 <p><em>Ājīvapārisuddhi-sīla</em>: morality as purity of livelihood: to earn
 one’s living righteously and in a pure manner; to avoid seeking gain
 by incorrect means, e.g.: to not falsely claim supernormal states,
-like concentrative attainments or stages of enlightenment,<sup class="footnote-reference"><a href="#fn60">60</a></sup> and
+like concentrative attainments or stages of enlightenment,<sup class="footnote-reference" id="fr-fn60-1"><a href="#fn-fn60">60</a></sup> and
 to not verbally appeal for food for oneself if one is not ill; to
 abstain from deception (<em>kuhanā</em>), for example by affecting a severe
 manner or countenance in order to instil faith in laypeople and
@@ -2891,7 +2872,7 @@ through effort and honest means and to determine to use that wealth for
 doing good deeds.</p>
 <p>Praising people simply because they are wealthy, by considering that
 they have accumulated merit from good deeds in the past (in previous
-lifetimes)<sup class="footnote-reference"><a href="#fn61">61</a></sup> and by failing to consider the causes for that wealth in
+lifetimes)<sup class="footnote-reference" id="fr-fn61-1"><a href="#fn-fn61">61</a></sup> and by failing to consider the causes for that wealth in
 this lifetime, is incorrect from the perspective of Buddhism in two
 ways: first, it does not accord with the praise bestowed by the Buddha
 on those wealthy persons as mentioned above. And second, it does not
@@ -2931,11 +2912,11 @@ human beings and be conducive to their wellbeing. {752}</p>
 are enriched and the entire society prospers; when a good person
 acquires wealth, his or her community also acquires wealth. Such a
 person is like a fertile field in which rice flourishes for the benefit
-of all.<sup class="footnote-reference"><a href="#fn62">62</a></sup></p>
+of all.<sup class="footnote-reference" id="fr-fn62-1"><a href="#fn-fn62">62</a></sup></p>
 <p>A wealthy person can feel satisfied and honoured to receive society’s
 trust and to act as a delegate for society in the sharing of wealth to
 support and nourish fellow human beings and to provide them with an
-opportunity for true growth.<sup class="footnote-reference"><a href="#fn63">63</a></sup></p>
+opportunity for true growth.<sup class="footnote-reference" id="fr-fn63-1"><a href="#fn-fn63">63</a></sup></p>
 <p>On the contrary, if some individuals become more wealthy but society as
 a whole deteriorates and the suffering of other people increases, this
 indicates that there is an improper conduct in regard to material
@@ -2953,17 +2934,17 @@ of all, wealth ends up harming and destroying human nature, human
 beings, and human society.</p>
 <p><strong>C.</strong> In terms of a state or a nation, Buddhism recognizes these
 important aspects of material wealth: poverty is a form of
-suffering,<sup class="footnote-reference"><a href="#fn64">64</a></sup> poverty and deprivation are crucial causes for crime and
-wrongdoing in society (as is the related factor of greed),<sup class="footnote-reference"><a href="#fn65">65</a></sup> and it
+suffering,<sup class="footnote-reference" id="fr-fn64-1"><a href="#fn-fn64">64</a></sup> poverty and deprivation are crucial causes for crime and
+wrongdoing in society (as is the related factor of greed),<sup class="footnote-reference" id="fr-fn65-1"><a href="#fn-fn65">65</a></sup> and it
 is the responsibility of the state or of political leaders to care for
 and allocate funds to the poor and to ensure that there are no destitute
-people in the country.<sup class="footnote-reference"><a href="#fn66">66</a></sup></p>
+people in the country.<sup class="footnote-reference" id="fr-fn66-1"><a href="#fn-fn66">66</a></sup></p>
 <p>To address these issues various measures are required which are often
 specific to the circumstances, e.g.: to provide citizens with
 opportunities for making an honest living; to create jobs; to allocate
 funds and other means of assistance, according to the teaching on the
 four virtues making for national integration
-(<em>rāja-saṅgahavatthu</em>);<sup class="footnote-reference"><a href="#fn67">67</a></sup> and to prevent immoral or unrighteous
+(<em>rāja-saṅgahavatthu</em>);<sup class="footnote-reference" id="fr-fn67-1"><a href="#fn-fn67">67</a></sup> and to prevent immoral or unrighteous
 activities, like exploitation. In this sense, the state should consider
 the reduction and absence of poverty as a better measurement for its
 success than the increase of wealthy individuals in that society. The
@@ -2989,9 +2970,9 @@ wholesome outcome is in harmony with Buddhism.</p>
 temporal and regional factors are the following: when the Buddha
 established the monastic community with its distinct task and objective,
 he set down a discipline limiting the monks’ personal possessions to the
-eight requisites;<sup class="footnote-reference"><a href="#fn68">68</a></sup> other possessions belong to the community as a
+eight requisites;<sup class="footnote-reference" id="fr-fn68-1"><a href="#fn-fn68">68</a></sup> other possessions belong to the community as a
 whole. In relation to the lay community, who at that time in India
-(Jambudīpa)<sup class="footnote-reference"><a href="#fn69">69</a></sup> observed two forms of governance, the Buddha taught the
+(Jambudīpa)<sup class="footnote-reference" id="fr-fn69-1"><a href="#fn-fn69">69</a></sup> observed two forms of governance, the Buddha taught the
 ’conditions of prosperity’ (<em>aparihāniya-dhamma</em>) for those republican
 states (or those states governed by a quorum), and he taught the
 ’imperial observances’ (<em>cakkavatti-vatta</em>) for those states governed by
@@ -3023,7 +3004,7 @@ world, loved by the gods, does not assign great value to [his own]
 honour and prestige, unless he desires these with this objective in
 mind: ’Both in the present and in the future may people listen to my
 instructions with devotion and practise in accord with the righteous
-way.’<sup class="footnote-reference"><a href="#fn70">70</a></sup></p>
+way.’<sup class="footnote-reference" id="fr-fn70-1"><a href="#fn-fn70">70</a></sup></p>
 </blockquote>
 </div>
 <p>When people have understood the gist and objective of the Buddhist
@@ -3044,7 +3025,7 @@ according to their belief system and to support them in spreading their
 beliefs, activities and virtues among other groups of people. In
 Buddhism, the teachings which address society directly and express the
 spirit of Buddhist social relationships are the teachings on <em>sīla</em>
-(’ethics’, ’moral conduct’, ’virtuous conduct’).<sup class="footnote-reference"><a href="#fn71">71</a></sup></p>
+(’ethics’, ’moral conduct’, ’virtuous conduct’).<sup class="footnote-reference" id="fr-fn71-1"><a href="#fn-fn71">71</a></sup></p>
 <p>The most basic moral code is to not harm other people, either physically
 or verbally, and to not impair mindfulness and clear comprehension,
 which protect a person’s moral integrity. In Buddha-Dhamma this basic
@@ -3102,7 +3083,7 @@ comprising 311 training rules.</p>
 precepts (<em>pañca-sikkhāpada</em>), beginning with abstaining from killing
 living creatures. Laypeople who uphold these five precepts are
 considered established in morality (such moral conduct is occasionally
-referred to as <em>pañcasikkhāpada-sīla</em>).<sup class="footnote-reference"><a href="#fn72">72</a></sup></p>
+referred to as <em>pañcasikkhāpada-sīla</em>).<sup class="footnote-reference" id="fr-fn72-1"><a href="#fn-fn72">72</a></sup></p>
 <p>These are the strict definitions. As mentioned above, however, these
 three terms are sometimes used in a broad sense, in which case they may
 be used interchangeably. A common example of this is to refer to the
@@ -3166,7 +3147,7 @@ material things, eating, earning a livelihood, governance, etc. All of
 these activities pertain to the concept of <em>vinaya</em>.</p>
 <p>Although <em>vinaya</em> is grouped alongside <em>sīla</em>, it has a distinct scope
 or boundary. These terms cannot be used interchangeably and should not
-be confused for one another.<sup class="footnote-reference"><a href="#fn73">73</a></sup> {917}</p>
+be confused for one another.<sup class="footnote-reference" id="fr-fn73-1"><a href="#fn-fn73">73</a></sup> {917}</p>
 <p>These explanations are intended to act as a foundation for this
 discussion of moral conduct. A clear understanding of these relevant
 terms will assist in this matter and will help to avoid confusion.</p>
@@ -3175,7 +3156,7 @@ terms will assist in this matter and will help to avoid confusion.</p>
 <ul>
 <li>
 <p>First, is the universal level or the level of absolute truth
-(Dhamma).<sup class="footnote-reference"><a href="#fn74">74</a></sup> This includes teachings or principles of conduct that
+(Dhamma).<sup class="footnote-reference" id="fr-fn74-1"><a href="#fn-fn74">74</a></sup> This includes teachings or principles of conduct that
 are taught (<em>desita</em>) to show how people who perform good or bad
 actions, or who observe or violate moral precepts, will receive the
 fruits of these good and bad actions automatically and in accord
@@ -3184,14 +3165,14 @@ with cause and effect, or in accord with the law of kamma.</p>
 <li>
 <p>Second, is the conventional level, which refers to a specific code
 of ethics (<em>vinaya</em>) containing rules and regulations that have been
-laid down and prescribed (<em>paññatta</em>).<sup class="footnote-reference"><a href="#fn75">75</a></sup> These formal codes are
+laid down and prescribed (<em>paññatta</em>).<sup class="footnote-reference" id="fr-fn75-1"><a href="#fn-fn75">75</a></sup> These formal codes are
 used to govern and direct individuals in a particular community or
 group, conforming to the group’s aims and objectives. A person who
 transgresses the rules defined by a specific code of ethics is
 accountable to the authority of that particular group, and his or
 her transgression is distinct from the negative consequences of
 unwholesome intention that inevitably follow according to the
-natural law of kamma.<sup class="footnote-reference"><a href="#fn76">76</a></sup></p>
+natural law of kamma.<sup class="footnote-reference" id="fr-fn76-1"><a href="#fn-fn76">76</a></sup></p>
 </li>
 </ul>
 <p>From the perspective of the entire human race, people live under
@@ -3208,7 +3189,7 @@ moral behaviour. Beyond these, there are the moral precepts contained in
 the ’ten wholesome courses of action’ (<em>kusala-kammapatha</em>;
 specifically, the first seven of the ten factors), and the moral
 components of the Eightfold Path – right speech, right action, and
-right livelihood<sup class="footnote-reference"><a href="#fn77">77</a></sup> – which are comprehensive moral principles. {918}</p>
+right livelihood<sup class="footnote-reference" id="fr-fn77-1"><a href="#fn-fn77">77</a></sup> – which are comprehensive moral principles. {918}</p>
 <p>The Buddha presented these moral principles as aspects of absolute
 truth: a person who observes these or fails to observe them will receive
 good or bad results according to the laws of nature. If a person decides
@@ -3248,7 +3229,7 @@ These terms are the origin of the term ’eight precepts’
 Tipiṭaka.</p>
 </blockquote>
 </div>
-<p>Let us explore this twofold division of <em>sīla</em>:<sup class="footnote-reference"><a href="#fn78">78</a></sup></p>
+<p>Let us explore this twofold division of <em>sīla</em>:<sup class="footnote-reference" id="fr-fn78-1"><a href="#fn-fn78">78</a></sup></p>
 <ol>
 <li>
 <p>Moral conduct as Dhamma. This refers to those principles of
@@ -3325,7 +3306,7 @@ the term <em>sīla</em> means non-transgression and non-harming.</p>
 the refraining from and prevention of evil actions. And in the most
 profound sense <em>sīla</em> can be defined as the state of mind of a person
 who is free from all thoughts of transgression and all thoughts of
-maltreatment.<sup class="footnote-reference"><a href="#fn79">79</a></sup></p>
+maltreatment.<sup class="footnote-reference" id="fr-fn79-1"><a href="#fn-fn79">79</a></sup></p>
 <p>The general rules of training (<em>sikkhāpada</em>) in Buddhism are the link
 between morality on the level of Dhamma and morality on the level of
 discipline, because these rules are based on universal moral principles
@@ -3336,12 +3317,12 @@ formulate by consensus as is suited to their circumstances and
 objectives, by choosing from various moral principles, and then to
 adhere to this code. For example, the commentators formulated the
 ’householder’s discipline’ (<em>āgāriya-vinaya</em>) based on abstaining from
-the ten unwholesome courses of action.<sup class="footnote-reference"><a href="#fn80">80</a></sup> Similarly, they formulated
+the ten unwholesome courses of action.<sup class="footnote-reference" id="fr-fn80-1"><a href="#fn-fn80">80</a></sup> Similarly, they formulated
 the ’layman’s discipline’ (<em>gihi-vinaya</em>) based on the Buddha’s
 teachings on conduct found in the Siṅgālaka Sutta, for example to
 abstain from the four biases (<em>agati</em>), to not indulge in the six ’paths
 to ruin’ (<em>apāya-mukha</em>), and to uphold a proper relationship to the
-’six directions’.<sup class="footnote-reference"><a href="#fn81">81</a></sup> (See
+’six directions’.<sup class="footnote-reference" id="fr-fn81-1"><a href="#fn-fn81">81</a></sup> (See
 Note <a href="#note-layman">The Layman’s Discipline</a>)</p>
 <p>Here is a review of the five precepts and the ten wholesome courses of
 action:</p>
@@ -3400,12 +3381,12 @@ veramaṇī</em>).</p>
 </ol>
 <p>In the older Pali texts, when referring to the general moral conduct of
 people, the Buddha uses the term ’five virtues’ (<em>pañca-dhamma</em>) for the
-five precepts.<sup class="footnote-reference"><a href="#fn82">82</a></sup> In reference to rules of training for lay Buddhists
+five precepts.<sup class="footnote-reference" id="fr-fn82-1"><a href="#fn-fn82">82</a></sup> In reference to rules of training for lay Buddhists
 or to rules of conduct for lay ’noble disciples’, the term ’five rules
-of training’ (<em>pañca-sikkhāpada</em>) is used.<sup class="footnote-reference"><a href="#fn83">83</a></sup> The term ’five precepts’
-(<em>pañca-sīla</em>) occurs once in the Vinaya-Piṭaka<sup class="footnote-reference"><a href="#fn84">84</a></sup> and occasionally in
-verse passages in the secondary texts of the Tipiṭaka;<sup class="footnote-reference"><a href="#fn85">85</a></sup> in the
-commentaries it is frequently used.<sup class="footnote-reference"><a href="#fn86">86</a></sup></p>
+of training’ (<em>pañca-sikkhāpada</em>) is used.<sup class="footnote-reference" id="fr-fn83-1"><a href="#fn-fn83">83</a></sup> The term ’five precepts’
+(<em>pañca-sīla</em>) occurs once in the Vinaya-Piṭaka<sup class="footnote-reference" id="fr-fn84-1"><a href="#fn-fn84">84</a></sup> and occasionally in
+verse passages in the secondary texts of the Tipiṭaka;<sup class="footnote-reference" id="fr-fn85-1"><a href="#fn-fn85">85</a></sup> in the
+commentaries it is frequently used.<sup class="footnote-reference" id="fr-fn86-1"><a href="#fn-fn86">86</a></sup></p>
 <p>The following question may be posed: between the five precepts and the
 ten wholesome courses of action, which should be given more emphasis in
 teaching? Alternatively, if one begins by teaching the five precepts,
@@ -3473,7 +3454,7 @@ according to these principles and objectives. {919}</p>
 <p>The members of this community – those individuals who are ordained as
 monks – enter voluntarily and thus they all accept to practise
 according to these rules. This moral code is the Vinaya of the bhikkhu
-sangha.<sup class="footnote-reference"><a href="#fn87">87</a></sup></p>
+sangha.<sup class="footnote-reference" id="fr-fn87-1"><a href="#fn-fn87">87</a></sup></p>
 <p>The Vinaya is composed of numerous training rules, including rules on
 how monks should behave while alone, how they should behave amongst each
 other, how they should behave in relation to other people, e.g. the lay
@@ -3484,7 +3465,7 @@ nuns’ community (the bhikkhuni Vinaya).</p>
 <p>Those candidates who for some reason are not fully prepared for higher
 ordination may be accepted as novices, having limited status and
 privileges in the monastic community. The Buddha laid down ten training
-rules for novices which are included in the Vinaya.<sup class="footnote-reference"><a href="#fn88">88</a></sup></p>
+rules for novices which are included in the Vinaya.<sup class="footnote-reference" id="fr-fn88-1"><a href="#fn-fn88">88</a></sup></p>
 <p>Virtuous conduct (<em>sīla</em>) in this context is the state of wellbeing or
 the wholesome behaviour that stems from not transgressing the training
 rules contained in the Vinaya: this is morality (<em>sīla</em>) on the level of
@@ -3503,7 +3484,7 @@ and explain the harm of such an action: that it does not generate faith
 in the faithless nor does it increase faith in the faithful, but rather
 it prevents faith from arising in those without faith and it shakes the
 confidence of some of the faithful. Only then did he lay down the new
-training rule and describe its advantages.<sup class="footnote-reference"><a href="#fn89">89</a></sup></p>
+training rule and describe its advantages.<sup class="footnote-reference" id="fr-fn89-1"><a href="#fn-fn89">89</a></sup></p>
 <p>The concern here over people’s faith is a concern for the wellbeing and
 happiness of the greater public. The wellbeing of society affects the
 wellbeing of both the monastic community and of Buddhism as a whole,
@@ -3513,13 +3494,13 @@ religion is dependent on the faith of the laity.</p>
 joy, ease of heart, and a delight and enthusiasm for goodness. {920}
 This quality is conducive to happiness, supports concentration, and is
 favourable to wisdom, providing people with the necessary strength of
-heart to understand a subject under investigation.<sup class="footnote-reference"><a href="#fn90">90</a></sup> This joy and
+heart to understand a subject under investigation.<sup class="footnote-reference" id="fr-fn90-1"><a href="#fn-fn90">90</a></sup> This joy and
 confidence is a fundamental source of wellbeing, enabling people to
 progress in mental and wisdom development.</p>
 <p>Before offering a teaching on the Four Noble Truths, the Buddha would
 gradually prepare the listener’s state of mind and degree of
 understanding, until the person’s mind was at ease, malleable, free from
-the hindrances, delighted, and bright.<sup class="footnote-reference"><a href="#fn91">91</a></sup></p>
+the hindrances, delighted, and bright.<sup class="footnote-reference" id="fr-fn91-1"><a href="#fn-fn91">91</a></sup></p>
 <p>A monk should behave virtuously, not to seek personal gain from the
 resulting devotion of the lay supporters, which would be reprehensible,
 but rather for the wellbeing and happiness of the monastic community as
@@ -3533,10 +3514,10 @@ of the monastic community and of all human beings. This is consistent
 with the vital principle vis-à-vis the conduct and activity by the
 Buddha and his disciples: <em>To practise for the welfare and happiness of
 the manyfolk, out of compassion for the world, for the benefit, welfare
-and happiness of gods and humans</em>,<sup class="footnote-reference"><a href="#fn92">92</a></sup> as well as the principle of
+and happiness of gods and humans</em>,<sup class="footnote-reference" id="fr-fn92-1"><a href="#fn-fn92">92</a></sup> as well as the principle of
 being considerate of later generations, of setting a good example, and
 of promoting goodness in the world by honouring the Dhamma and the
-Vinaya.<sup class="footnote-reference"><a href="#fn93">93</a></sup></p>
+Vinaya.<sup class="footnote-reference" id="fr-fn93-1"><a href="#fn-fn93">93</a></sup></p>
 <p>For this reason, awakened persons observe moral precepts strictly. It is
 not in their nature to claim that they are free from defilement,
 carefree and detached, and therefore do not need to keep particular
@@ -3545,7 +3526,7 @@ training rules and can act in any manner they please.</p>
 observances (<em>vatta</em>) associated with specific ascetic practices
 (<em>dhutaṅga vata</em>), which are not required by the Vinaya, in order to
 abide happily in the present and to assist later generations by acting
-as a good example.<sup class="footnote-reference"><a href="#fn94">94</a></sup> {921}</p>
+as a good example.<sup class="footnote-reference" id="fr-fn94-1"><a href="#fn-fn94">94</a></sup> {921}</p>
 <p>When one investigates the mental fetter of ’adherence to rules and
 religious practices’ (<em>sīlabbata-parāmāsa</em>) one should not overlook a
 person’s reasons and intentions that are connected to virtue and to
@@ -3562,7 +3543,7 @@ gullible way and simply imitating others, without recognizing their
 purpose, to the point that one mistakenly believes that purity or the
 final spiritual goal is reached by simply keeping precepts or observing
 customs and traditions. Such behaviour leads to a distortion of these
-precepts and practices, deviating from the Buddhist path.<sup class="footnote-reference"><a href="#fn95">95</a></sup></p>
+precepts and practices, deviating from the Buddhist path.<sup class="footnote-reference" id="fr-fn95-1"><a href="#fn-fn95">95</a></sup></p>
 <p>Similarly, people may uphold moral precepts and religious practices with
 concealed craving and fixed views, by seeking a reward of material gain,
 fame, praise, delight, or rebirth in heaven, and by reinforcing a sense
@@ -3618,7 +3599,7 @@ There are ten such benefits:</p>
 <p><strong>9.</strong> For the stability of the True Dhamma.</p>
 </li>
 <li>
-<p><strong>10.</strong> To promote discipline and to support the Vinaya.<sup class="footnote-reference"><a href="#fn96">96</a></sup></p>
+<p><strong>10.</strong> To promote discipline and to support the Vinaya.<sup class="footnote-reference" id="fr-fn96-1"><a href="#fn-fn96">96</a></sup></p>
 </li>
 </ul>
 </div>
@@ -3631,7 +3612,7 @@ factors:</p>
 </li>
 <li>
 <p>To sever relations with those factions of bhikkhus who are evilly
-disposed.<sup class="footnote-reference"><a href="#fn97">97</a></sup></p>
+disposed.<sup class="footnote-reference" id="fr-fn97-1"><a href="#fn-fn97">97</a></sup></p>
 </li>
 </ol>
 <div class="note">
@@ -3660,7 +3641,7 @@ is in harmony and undivided. This is a principal reason why the Buddha
 reiterated the significance of sangha harmony as opposed to sangha
 discord, by stating that the arising of harmony in the sangha is
 conducive to the welfare and happiness of all people, whereas schisms in
-the sangha have the opposite effect.<sup class="footnote-reference"><a href="#fn98">98</a></sup></p>
+the sangha have the opposite effect.<sup class="footnote-reference" id="fr-fn98-1"><a href="#fn-fn98">98</a></sup></p>
 <p>The various rules and regulations laid down by the Buddha in the Vinaya
 express a spirit of communal wellbeing and dignity which is applicable
 to all human relationships, an example of which is the common practice
@@ -3671,7 +3652,7 @@ of monks paying respects to one another.</p>
 pay respects to the bhikkhus. Within the community of monks itself,
 gestures of respect are made according to the number of years an
 individual has been ordained. A monk who has been ordained for fewer
-years pays respects to a monk who has been ordained longer.<sup class="footnote-reference"><a href="#fn99">99</a></sup> {923}</p>
+years pays respects to a monk who has been ordained longer.<sup class="footnote-reference" id="fr-fn99-1"><a href="#fn-fn99">99</a></sup> {923}</p>
 <p>In terms of internal spiritual qualities, a lay person who is a ’noble
 being’ (<em>ariya-puggala</em>) and has attained to a level of awakening still
 bows to a monk who is unenlightened. (See
@@ -3752,7 +3733,7 @@ the benefit of that person or of the community, not because of mental
 defilement and conceit. {924}</p>
 <p>Awakened laypersons pay respects to monks – even those who are
 unenlightened – for reasons connected to the truth or as a way to
-venerate the truth, as can be summarized as follows:<sup class="footnote-reference"><a href="#fn100">100</a></sup></p>
+venerate the truth, as can be summarized as follows:<sup class="footnote-reference" id="fr-fn100-1"><a href="#fn-fn100">100</a></sup></p>
 <ul>
 <li>
 <p>Monks relinquish the householder’s life, which is normally a life of
@@ -3796,7 +3777,7 @@ happiness to the world.</p>
 mind of lovingkindness. They wish for the monks’ welfare, happiness,
 and prosperity in the Dhamma, by helping them to remember and take
 into account their individual position and their responsibilities,
-which need to be attended to with diligent, sustained effort.<sup class="footnote-reference"><a href="#fn101">101</a></sup></p>
+which need to be attended to with diligent, sustained effort.<sup class="footnote-reference" id="fr-fn101-1"><a href="#fn-fn101">101</a></sup></p>
 </li>
 </ul>
 <p>A monk or novice who makes effort and trains himself, although he is
@@ -3811,7 +3792,7 @@ are accomplished by a formal resolution among community members and
 conducted by an astute and able bhikkhu. (See
 Note <a href="#note-astute">Astute and Able Monks</a>) {925} For such formal acts, the monks should
 unanimously designate a leader who possesses trustworthy and admirable
-personal qualities (<em>pasādanīya-dhamma</em>).<sup class="footnote-reference"><a href="#fn102">102</a></sup> A monk who has been
+personal qualities (<em>pasādanīya-dhamma</em>).<sup class="footnote-reference" id="fr-fn102-1"><a href="#fn-fn102">102</a></sup> A monk who has been
 ordained for a long time and has much experience is a more suitable
 candidate for this position than a monk who has been ordained more
 recently, because the elder monk has had more time to study, train, and
@@ -3848,11 +3829,11 @@ from claiming to have realized superhuman states
 concentrative attainments (<em>samāpatti</em>), or stages of enlightenment. If
 a person falsely claims to possess these qualities with the intention to
 deceive, he commits a <em>pārājika</em> offence and automatically falls away
-from the state of being a bhikkhu.<sup class="footnote-reference"><a href="#fn103">103</a></sup> Even if he has realized one of
+from the state of being a bhikkhu.<sup class="footnote-reference" id="fr-fn103-1"><a href="#fn-fn103">103</a></sup> Even if he has realized one of
 these exceptional states, if he mentions this attainment to a layperson
 or to someone else who is not a bhikkhu or bhikkhuni, he is still at
 fault and transgresses a less serious rule requiring expiation
-(<em>pācittiya</em>).<sup class="footnote-reference"><a href="#fn104">104</a></sup></p>
+(<em>pācittiya</em>).<sup class="footnote-reference" id="fr-fn104-1"><a href="#fn-fn104">104</a></sup></p>
 <p>The former rule originated during a time of famine, when a group of
 monks who were looking for ways to obtain food without difficulty
 decided to praise one another’s personal qualities, sometimes based on
@@ -3866,7 +3847,7 @@ one’s stomach, and he severely criticized those monks who made false
 claims, calling them the most contemptible thieves in the world.</p>
 <p>A similar rule forbids monks from displaying psychic powers to
 laypeople. A monk who transgresses this rule commits an offence of
-wrongdoing (<em>dukkaṭa</em>).<sup class="footnote-reference"><a href="#fn105">105</a></sup> This rule originated when a wealthy
+wrongdoing (<em>dukkaṭa</em>).<sup class="footnote-reference" id="fr-fn105-1"><a href="#fn-fn105">105</a></sup> This rule originated when a wealthy
 merchant hung a sandalwood bowl from the end of a long bamboo pole and
 declared a challenge: he would give this bowl to anyone who is an
 arahant and possesses true psychic powers, but this person must levitate
@@ -3887,7 +3868,7 @@ any reason, not limited to seeking personal profit and veneration.</p>
 example, the Buddha did not wish for people to become overly excited or
 captivated by things they believe to be beyond their own reach, or to
 entrust their hope to someone or something else to the point of
-abandoning their own efforts within the range of their ability.<sup class="footnote-reference"><a href="#fn106">106</a></sup></p>
+abandoning their own efforts within the range of their ability.<sup class="footnote-reference" id="fr-fn106-1"><a href="#fn-fn106">106</a></sup></p>
 <p>The objective to discuss here is connected to the monastic sangha.
 According to the Buddhist teachings, the survival of the Dhammavinaya is
 dependent on the monastic sangha as a whole. The transmission of the
@@ -3918,7 +3899,7 @@ their exceptional abilities became known publicly so that people became
 attached to them as an individual and gave them personal donations, and
 they became a focus of attention to the extent that the importance of
 the monastic community as a whole waned, would quickly leave that
-locality.<sup class="footnote-reference"><a href="#fn107">107</a></sup> {927}</p>
+locality.<sup class="footnote-reference" id="fr-fn107-1"><a href="#fn-fn107">107</a></sup> {927}</p>
 <p>For monks to boast about or proclaim their exceptional spiritual
 qualities to laypeople, regardless of whether these claims are true or
 false, have the following harmful consequences:</p>
@@ -3962,7 +3943,7 @@ of awakening but have an unattractive physical appearance. Ven.
 Lakuṇṭaka-Bhaddiya, for example, was an arahant but was both dwarfed
 and hunch-backed; the young monks and novices would tease and
 ridicule him so much that the Buddha needed to come to his
-aid.<sup class="footnote-reference"><a href="#fn108">108</a></sup> If such a person proclaims his spiritual achievements he
+aid.<sup class="footnote-reference" id="fr-fn108-1"><a href="#fn-fn108">108</a></sup> If such a person proclaims his spiritual achievements he
 may lead people to refute these achievements or to view Buddhism in
 a negative light. A deceptive, unawakened person, however, may lead
 a great number of people down an incorrect path due to his being
@@ -4004,7 +3985,7 @@ proclaiming their spiritual attainments. A person who boasts of being an
 awakened person, reveals precisely the opposite: of not being awakened.
 The only people who proclaim exceptional spiritual qualities that they
 truly possesses are unawakened people with mundane spiritual attainments
-like concentrative attainments (<em>jhāna-samāpatti</em>).<sup class="footnote-reference"><a href="#fn109">109</a></sup></p>
+like concentrative attainments (<em>jhāna-samāpatti</em>).<sup class="footnote-reference" id="fr-fn109-1"><a href="#fn-fn109">109</a></sup></p>
 <h3 id="offerings-to-the-monastic-community"><a class="header" href="#offerings-to-the-monastic-community">Offerings to the Monastic Community</a></h3>
 <p>This subject of revealing one’s personal attainments is connected to the
 tradition of making offerings to the monastic community (<em>saṅgha-dāna</em>).
@@ -4041,7 +4022,7 @@ fruit. The Buddha concluded:</p>
 <div class="sutta">
 <blockquote>
 <p>I say that in no way does a gift to an individual person ever have
-greater fruit than an offering made to the sangha.<sup class="footnote-reference"><a href="#fn110">110</a></sup></p>
+greater fruit than an offering made to the sangha.<sup class="footnote-reference" id="fr-fn110-1"><a href="#fn-fn110">110</a></sup></p>
 <p><em>M. III. 254-6.</em></p>
 </blockquote>
 </div>
@@ -4072,7 +4053,7 @@ is praiseworthy.</p>
 <p>The Buddha then encouraged the householder to make offerings to the
 wider monastic community, saying that by making such offerings the mind
 is joyful and bright, and when the mind is bright, at death one goes to
-a happy abode.<sup class="footnote-reference"><a href="#fn111">111</a></sup></p>
+a happy abode.<sup class="footnote-reference" id="fr-fn111-1"><a href="#fn-fn111">111</a></sup></p>
 <p>Apart from focusing on self-training and self-development, the practice
 and behaviour of the bhikkhus should take into consideration the
 wellbeing of the monastic community and of all human beings. At the very
@@ -4103,7 +4084,7 @@ and acted as paragons of virtue.</p>
 <p>Responsible and supportive actions in regard to the sangha are correct
 according to Dhamma and consistent with the Vinaya. Respect for the
 sangha is thus connected to respect for both the Dhamma and the
-Vinaya.<sup class="footnote-reference"><a href="#fn112">112</a></sup></p>
+Vinaya.<sup class="footnote-reference" id="fr-fn112-1"><a href="#fn-fn112">112</a></sup></p>
 <p>A sense of responsibility for the sangha is also connected to the
 practice for benefiting all human beings, because the term ’sangha’
 literally means ’community’ or ’multitude’, and the monastic community
@@ -4133,12 +4114,12 @@ acts of the sangha (<em>saṅghakamma</em>), by giving prominence and entrusting
 authority to the collective community. In regard to ordinations, for
 example, he ceased giving ordinations by himself or permitting
 individual disciples to give ordinations, and rather had the sangha
-perform this duty.<sup class="footnote-reference"><a href="#fn113">113</a></sup></p>
+perform this duty.<sup class="footnote-reference" id="fr-fn113-1"><a href="#fn-fn113">113</a></sup></p>
 <p>When Mahāpajāpatī Gotamī (the Buddha’s aunt and stepmother) brought a
 set of new robes that she had sewn herself to offer to the Buddha, the
 Buddha said to her: <em>Give to the sangha, Gotamī. When you give an
 offering to the sangha, it will be made both to me and to the
-sangha.</em><sup class="footnote-reference"><a href="#fn114">114</a></sup></p>
+sangha.</em><sup class="footnote-reference" id="fr-fn114-1"><a href="#fn-fn114">114</a></sup></p>
 <p>Before the Buddha’s final passing away, he spoke thus to Ven. Ānanda:</p>
 <div class="sutta">
 <blockquote>
@@ -4184,22 +4165,22 @@ as leaders and as a mainstay:</p>
 declared by the Blessed One who knows and sees, who is accomplished
 and fully enlightened. When these qualities are found in anyone among
 us, we honour, respect, revere, and venerate him, and live in
-dependence on him, honouring and respecting him.<sup class="footnote-reference"><a href="#fn115">115</a></sup></p>
+dependence on him, honouring and respecting him.<sup class="footnote-reference" id="fr-fn115-1"><a href="#fn-fn115">115</a></sup></p>
 <p><em>M. III. 9-12.</em></p>
 </blockquote>
 </div>
 <p>A monk who is appointed to adjudicate legal disputes must be one who
 defers to the sangha rather than deferring to an individual, one who
-honours the truth rather than honouring material objects.<sup class="footnote-reference"><a href="#fn116">116</a></sup></p>
+honours the truth rather than honouring material objects.<sup class="footnote-reference" id="fr-fn116-1"><a href="#fn-fn116">116</a></sup></p>
 <p>It is incumbent on leading arahant disciples to act as role models in
 giving importance to community activities. For example, there is the
 story of the Buddha exhorting Ven. Mahākappina to attend the observance
 day ceremony, in order for the monks to review their conduct in light of
 the Vinaya, even though Mahākappina was an arahant and perfectly pure at
-heart.<sup class="footnote-reference"><a href="#fn117">117</a></sup> Similarly, although Ven. Mahākassapa lived in a remote
+heart.<sup class="footnote-reference" id="fr-fn117-1"><a href="#fn-fn117">117</a></sup> Similarly, although Ven. Mahākassapa lived in a remote
 place about four kilometres from the place where the observance day
 ceremony was held, he would walk on foot each fortnight to attend this
-ceremony, even though it meant passing across a river.<sup class="footnote-reference"><a href="#fn118">118</a></sup></p>
+ceremony, even though it meant passing across a river.<sup class="footnote-reference" id="fr-fn118-1"><a href="#fn-fn118">118</a></sup></p>
 <p>Those monks who are arahants and non-returners, and who are able to
 enter the ’attainment of cessation’ (<em>nirodha-samāpatti</em>), make the
 following determination before entering that state: ’If during the seven
@@ -4207,7 +4188,7 @@ days that I enter the state of cessation the sangha requires to perform
 a formal act, for example a formal resolution (<em>ñatti-kamma</em>), I will
 exit this state immediately, before another monk needs to invite me.’
 This is because the authority of the community is vital and worthy of
-respect.<sup class="footnote-reference"><a href="#fn119">119</a></sup></p>
+respect.<sup class="footnote-reference" id="fr-fn119-1"><a href="#fn-fn119">119</a></sup></p>
 <p>When events or circumstances occur that affect the welfare of the
 monastic community or have an impact on the growth or decline of the
 Buddhist religion, the monks, especially the arahants, have an
@@ -4216,15 +4197,15 @@ organize councils (or ’recitations’: <em>saṅgāyanā</em>) to purify the s
 protect the teachings from deviation or from disrespectful, slanderous
 people or ideologies, help the Buddhist religion survive in times of
 danger, and to cultivate and support those individuals who are skilled
-at safeguarding and promoting Buddhism.<sup class="footnote-reference"><a href="#fn120">120</a></sup></p>
+at safeguarding and promoting Buddhism.<sup class="footnote-reference" id="fr-fn120-1"><a href="#fn-fn120">120</a></sup></p>
 <p>If an individual neglects to participate in these sangha activities, the
 sangha will impose a penalty on him even if he is an arahant and even if
 the reason for neglect was to pursue a wholesome, blameless action like
-dwelling in a concentrative attainment.<sup class="footnote-reference"><a href="#fn121">121</a></sup> When the community imposes
+dwelling in a concentrative attainment.<sup class="footnote-reference" id="fr-fn121-1"><a href="#fn-fn121">121</a></sup> When the community imposes
 a penalty, the person penalized has the opportunity to explain the
 reasons for his actions, but if the sangha makes a final decision, the
 person will honour this, as is seen in the case of Ven. Ānanda, who was
-rebuked during the First Council.<sup class="footnote-reference"><a href="#fn122">122</a></sup> {932}</p>
+rebuked during the First Council.<sup class="footnote-reference" id="fr-fn122-1"><a href="#fn-fn122">122</a></sup> {932}</p>
 <p>It is also the tradition for members of the monastic community to pay
 attention to minor activities requiring collective effort, like sewing
 robes. Such collective effort is particularly important in matters
@@ -4232,7 +4213,7 @@ pertaining to formal acts of the sangha, for example in regard to the
 Kaṭhina ceremony, during which the community agrees to offer a robe sewn
 from donated cloth to an individual monk. Every monk in the community,
 irrespective of a monk’s seniority or spiritual accomplishments, should
-participate in sewing this cloth into a robe.<sup class="footnote-reference"><a href="#fn123">123</a></sup></p>
+participate in sewing this cloth into a robe.<sup class="footnote-reference" id="fr-fn123-1"><a href="#fn-fn123">123</a></sup></p>
 <p>Communal responsibilities can be separated into two layers of
 importance:</p>
 <ol>
@@ -4245,7 +4226,7 @@ and support (<em>mettā-kāyakamma</em>), for example by nursing each other
 in times of illness, and the factor found in an alternative
 presentation of this teaching, of a willingness to give a helping
 hand (<em>kiṅkaraṇīyesu-dakkhatā</em>) – a diligence to help out in all
-communal matters, big and small.<sup class="footnote-reference"><a href="#fn124">124</a></sup></p>
+communal matters, big and small.<sup class="footnote-reference" id="fr-fn124-1"><a href="#fn-fn124">124</a></sup></p>
 </li>
 <li>
 <p>Communal activities that have a bearing on the wellbeing and
@@ -4254,7 +4235,7 @@ consideration and decision making, which accord with the ’factors
 leading to prosperity’ (<em>aparihāniya-dhamma</em>), especially the first
 two factors: to hold regular and frequent meetings, and to meet in
 harmony, adjourn in harmony, and conduct sangha business in
-harmony.<sup class="footnote-reference"><a href="#fn125">125</a></sup></p>
+harmony.<sup class="footnote-reference" id="fr-fn125-1"><a href="#fn-fn125">125</a></sup></p>
 </li>
 </ol>
 <p>In relation to the first matters (A), if a monk takes no heed and makes
@@ -4266,27 +4247,27 @@ may already be someone else specifically assigned to a task, there may
 be sufficient people helping out, or the individual monk may have
 important personal duties to attend to.</p>
 <p>There is a story of a newly ordained monk who spent the afternoon
-quietly in his kuti<sup class="footnote-reference"><a href="#fn126">126</a></sup> while the other monks were sewing robes. The
+quietly in his kuti<sup class="footnote-reference" id="fr-fn126-1"><a href="#fn-fn126">126</a></sup> while the other monks were sewing robes. The
 monks went to the Buddha and accused this monk of negligence. The Buddha
 called this monk for questioning and when he found out that the monk had
 been developing jhāna, he told the other monks to cease their
-protest.<sup class="footnote-reference"><a href="#fn127">127</a></sup> Similarly, there are occasions when the majority of the
+protest.<sup class="footnote-reference" id="fr-fn127-1"><a href="#fn-fn127">127</a></sup> Similarly, there are occasions when the majority of the
 community is caught up and disturbed about a communal issue, but respond
 to it in a confused and fruitless fashion. Those monks who remain quiet
 and detached in order to cultivate the Dhamma are considered to be
-acting appropriately.<sup class="footnote-reference"><a href="#fn128">128</a></sup></p>
+acting appropriately.<sup class="footnote-reference" id="fr-fn128-1"><a href="#fn-fn128">128</a></sup></p>
 <p>In relation to the second matters (B), there are no exceptions. When the
 community gathers to conduct a formal activity (<em>saṅghakamma</em>), all
 members of the community must be present. If a monk is ill or there is
 another reason preventing him from attending, then he must give his
-formal consent to the sangha.<sup class="footnote-reference"><a href="#fn129">129</a></sup> {933}</p>
+formal consent to the sangha.<sup class="footnote-reference" id="fr-fn129-1"><a href="#fn-fn129">129</a></sup> {933}</p>
 <p>In sorting out the details of these formal activities, however, the
 monks should first consider and look to those individuals who are
 directly involved or responsible for the matters at hand. The Buddha
 stated that for one who is still in training it is a way of decline to
 not acknowledge and defer to those experienced elders and instead to be
 obstructive and troublesome when there is formal communal business to
-attend to.<sup class="footnote-reference"><a href="#fn130">130</a></sup></p>
+attend to.<sup class="footnote-reference" id="fr-fn130-1"><a href="#fn-fn130">130</a></sup></p>
 <p>The guidelines of social ethics which are a part of the Vinaya consist
 of a complete code of social conduct, designed to make communal
 activities, the relationship to the outside world, and the whole
@@ -4410,7 +4391,7 @@ these systems of regulation arise out of necessity. When people live
 together in large numbers, with each person seeking the four requisites
 and consumable objects, it is natural that there arise quarrels,
 conflict, and competition. As a result, someone is required to settle
-these disputes, giving rise to supervision and governance.<sup class="footnote-reference"><a href="#fn131">131</a></sup> For the
+these disputes, giving rise to supervision and governance.<sup class="footnote-reference" id="fr-fn131-1"><a href="#fn-fn131">131</a></sup> For the
 wellbeing of society, the chosen ruler or governor must establish rules
 and guidelines for resolving any problems and regulating people’s
 behaviour. A set of rules and laws are thus prescribed and legislation
@@ -4556,7 +4537,7 @@ ordained as a rite of passage before he gets married and starts a family
 of his own – are examples of establishing a moral code (<em>vinaya</em>) and a
 Buddhist social system, which helped greatly for Buddhism to thrive and
 become widespread in Thai society. The deterioration of these traditions
-has had obvious adverse effects on Buddhism in Thailand.<sup class="footnote-reference"><a href="#fn132">132</a></sup></p>
+has had obvious adverse effects on Buddhism in Thailand.<sup class="footnote-reference" id="fr-fn132-1"><a href="#fn-fn132">132</a></sup></p>
 <p>If Buddhists do not understand the essence of the term <em>vinaya</em> and the
 true objective of Buddhist social ethics, not only will the spirit of
 moral training not extend out and be integrated into the practice of lay
@@ -4577,7 +4558,7 @@ Generally, the Pali term <em>dhamma-desanā</em> is used in this context,
 meaning ’exposition of the Dhamma’ or ’Dhamma teaching’. (The term
 <em>dhamma-paññatti</em> appears once in the Tipiṭaka, but its meaning is the
 same as <em>dhamma-desanā</em>, or it refers to presenting or arranging the
-Dhamma in order to make it more easily understood.)<sup class="footnote-reference"><a href="#fn133">133</a></sup></p>
+Dhamma in order to make it more easily understood.)<sup class="footnote-reference" id="fr-fn133-1"><a href="#fn-fn133">133</a></sup></p>
 <p>The Vinaya is a code of regulations formulated and laid down by the
 Buddha for the specific purpose of assisting the monastic order
 (<em>saṅgha</em>) which he had established. (The Vinaya is directly connected
@@ -4587,16 +4568,16 @@ context, the term <em>vinaya-paññatti</em> is used, meaning to lay down the
 Vinaya, or it refers to the regulations that comprise the Vinaya. (The
 term <em>vinaya-desanā</em> is used occasionally in the scriptures,
 increasingly in the later texts, and has the specific meaning of Vinaya
-terminology or the method of formulating the Vinaya.)<sup class="footnote-reference"><a href="#fn134">134</a></sup></p>
+terminology or the method of formulating the Vinaya.)<sup class="footnote-reference" id="fr-fn134-1"><a href="#fn-fn134">134</a></sup></p>
 <p>Although the term <em>paññatti</em> is occasionally used in the context of the
-Dhamma,<sup class="footnote-reference"><a href="#fn135">135</a></sup> it refers simply to formulating, arranging, classifying,
+Dhamma,<sup class="footnote-reference" id="fr-fn135-1"><a href="#fn-fn135">135</a></sup> it refers simply to formulating, arranging, classifying,
 and grouping the truth in order to clarify it – to make it easier to
 understand and to practise; it is not a matter of laying down new
 clauses as in the context of the Vinaya.</p>
 <p>Note that in regard to the Buddha’s utterance in the Mahāparinibbāna
 Sutta: <em>Mayā dhammo ca vinayo desito paññatto</em>, the commentators
 translate this passage as: ’The Dhamma that has been taught and
-formulated and the Vinaya that has been taught and formulated.’<sup class="footnote-reference"><a href="#fn136">136</a></sup>
+formulated and the Vinaya that has been taught and formulated.’<sup class="footnote-reference" id="fr-fn136-1"><a href="#fn-fn136">136</a></sup>
 The terms ’taught’ and ’formulated’ here should be understood and
 distinguished according to the explanations above.</p>
 <h2 id="appendix-2-sīla-vinaya-and-sīla-dhamma"><a class="header" href="#appendix-2-sīla-vinaya-and-sīla-dhamma">Appendix 2: Sīla, Vinaya, and Sīla-dhamma</a></h2>
@@ -4648,7 +4629,7 @@ prohibitions and directives for ’positive’ action: to gather for formal
 community meetings, to undertake communal responsibilities (e.g. the
 duties of a monk in charge of food distribution), to act with humility
 and respect, to endeavour to be of service to others, etc.; these are
-all matters of <em>sīla</em>.<sup class="footnote-reference"><a href="#fn137">137</a></sup></p>
+all matters of <em>sīla</em>.<sup class="footnote-reference" id="fr-fn137-1"><a href="#fn-fn137">137</a></sup></p>
 <p>Furthermore, the discussion of virtuous conduct often overlooks the
 matter of earning a livelihood, which is a vital part of <em>sīla</em>. To
 avoid an overly narrow understanding of <em>sīla</em>, one should develop a
@@ -4672,15 +4653,15 @@ the terms ’five virtues’ (<em>pañca-dhamma</em>) and five ’training rules
 (<em>sikkhāpada</em>), or else the five precepts are mentioned without a
 heading. Further references to the five precepts include: ’bright
 qualities’ (<em>sukka-dhamma</em>), ’an absence of fearful retribution’, and a
-defining quality of a layperson’s morality.<sup class="footnote-reference"><a href="#fn138">138</a></sup> The five precepts are
+defining quality of a layperson’s morality.<sup class="footnote-reference" id="fr-fn138-1"><a href="#fn-fn138">138</a></sup> The five precepts are
 also included as part of the ’householder’s observances’ (<em>gihi-vatta</em>
-or <em>gahaṭṭa-vatta</em>).<sup class="footnote-reference"><a href="#fn139">139</a></sup></p>
+or <em>gahaṭṭa-vatta</em>).<sup class="footnote-reference" id="fr-fn139-1"><a href="#fn-fn139">139</a></sup></p>
 <p>Regarding the ten wholesome courses of action, or the ten ways of
 righteous conduct, there are many alternative names for these qualities,
 and there are also many passages where these ten qualities are listed
 without a heading. The section in the Pali Canon that contains the
 longest description of these qualities is at A. V. 249-308 (running to
-fifty-nine pages).<sup class="footnote-reference"><a href="#fn140">140</a></sup></p>
+fifty-nine pages).<sup class="footnote-reference" id="fr-fn140-1"><a href="#fn-fn140">140</a></sup></p>
 <p>It appears that in general contemporary Buddhist teachings there is more
 emphasis on the negative aspects of the ten wholesome courses of action
 (or ’ways of righteous conduct’) – an emphasis on avoidance and
@@ -4689,9 +4670,9 @@ practised – even though the Pali Canon describes both positive and
 negative aspects. {561}</p>
 <p>Apart from the five precepts and the ten ways of righteous conduct,
 morality (<em>sīla</em>) is also presented according to the factors of the
-Eightfold Path (= the first seven factors of <em>dhamma-cariyā</em>),<sup class="footnote-reference"><a href="#fn141">141</a></sup> or
+Eightfold Path (= the first seven factors of <em>dhamma-cariyā</em>),<sup class="footnote-reference" id="fr-fn141-1"><a href="#fn-fn141">141</a></sup> or
 according to the teaching on the four vices of conduct
-(<em>kamma-kilesa</em>).<sup class="footnote-reference"><a href="#fn142">142</a></sup></p>
+(<em>kamma-kilesa</em>).<sup class="footnote-reference" id="fr-fn142-1"><a href="#fn-fn142">142</a></sup></p>
 <h2 id="appendix-4-classifying-the-ten-ways-of-righteous-conduct-into-the-three-trainings"><a class="header" href="#appendix-4-classifying-the-ten-ways-of-righteous-conduct-into-the-three-trainings">Appendix 4: Classifying the Ten Ways of Righteous Conduct into the Three Trainings</a></h2>
 <blockquote>
 <p><strong>(Trans.: note that this appendix is attached to chapter 11 of the
@@ -4709,9 +4690,9 @@ first seven factors of the righteous ways of conduct are classified as
 classified as <em>diṭṭhi-sampadā</em> – accomplishment of view.) This is
 because the eighth and ninth factors are devoid of the first two
 hindrances (<em>nīvaraṇa</em>): covetousness (<em>abhijjhā</em>) and ill-will
-(<em>byāpāda</em>).<sup class="footnote-reference"><a href="#fn143">143</a></sup> The abandonment of the five hindrances is the initial
+(<em>byāpāda</em>).<sup class="footnote-reference" id="fr-fn143-1"><a href="#fn-fn143">143</a></sup> The abandonment of the five hindrances is the initial
 step in reaching ’attainment concentration’ (<em>appanā-samādhi</em>) and
-accessing jhāna.<sup class="footnote-reference"><a href="#fn144">144</a></sup> Non-covetousness and non-ill-will are states
+accessing jhāna.<sup class="footnote-reference" id="fr-fn144-1"><a href="#fn-fn144">144</a></sup> Non-covetousness and non-ill-will are states
 devoid of the first two hindrances; the absence of the hindrances in
 itself equals concentration (<em>samādhi</em>).</p>
 <p>There are other passages, however, in which these two factors are
@@ -4724,14 +4705,14 @@ consisting of these two factors is classified as ’right intention’
 (<em>sammā-saṅkappa</em>) – as training in higher wisdom. In the presentation
 of the wholesome courses of action at M. I. 287-8, the emphasis is on
 thoughts and intentions consisting of these two factors and therefore
-they are classified under right intention.<sup class="footnote-reference"><a href="#fn145">145</a></sup> When viewed as pure
+they are classified under right intention.<sup class="footnote-reference" id="fr-fn145-1"><a href="#fn-fn145">145</a></sup> When viewed as pure
 mental factors, however, they are classified under mental cultivation as
 explained above.</p>
 <p>Note also in this context that if one covets the belonging of someone
 else, but one is not yet intent on acquiring it for oneself, then one is
 not corrupted; the same is true if one becomes angry but has not yet
 begun to harbour evil thoughts and to wish for someone else to be
-harmed.<sup class="footnote-reference"><a href="#fn146">146</a></sup></p>
+harmed.<sup class="footnote-reference" id="fr-fn146-1"><a href="#fn-fn146">146</a></sup></p>
 <h2 id="appendix-5-ill-effects-resulting-from-transgression-of-the-five-precepts"><a class="header" href="#appendix-5-ill-effects-resulting-from-transgression-of-the-five-precepts">Appendix 5: Ill-Effects Resulting from Transgression of the Five Precepts</a></h2>
 <p>The commentaries present principles for judging the severity of
 ill-effects resulting from killing various sorts of creatures, based on
@@ -4786,7 +4767,7 @@ a spiritual realization.</p>
 <p>The ill-effects of consuming intoxicants depend on the defilements
 or unwholesome mind states occurring at the time of drinking, on the
 amount consumed, and on the effects of drinking that lead to evil
-and unskilful behaviour.<sup class="footnote-reference"><a href="#fn147">147</a></sup></p>
+and unskilful behaviour.<sup class="footnote-reference" id="fr-fn147-1"><a href="#fn-fn147">147</a></sup></p>
 </li>
 </ul>
 <h2 id="appendix-6-variant-meanings-of-vinaya"><a class="header" href="#appendix-6-variant-meanings-of-vinaya">Appendix 6: Variant Meanings of ’Vinaya’</a></h2>
@@ -4800,32 +4781,32 @@ system of training of noble beings. This term corresponds to the term
 <em>sugata-vinaya</em>, which the Buddha defined as <em>brahmacariya</em>: the ’holy
 life’ or the way of leading a supreme life. {939} This is consistent
 with the commentaries, which define <em>ariya-vinaya</em> as the Buddhist
-religion;<sup class="footnote-reference"><a href="#fn148">148</a></sup> this definition is broader than that of <em>vinaya</em> in the
-context of virtuous conduct (<em>sīla</em>).<sup class="footnote-reference"><a href="#fn149">149</a></sup></p>
+religion;<sup class="footnote-reference" id="fr-fn148-1"><a href="#fn-fn148">148</a></sup> this definition is broader than that of <em>vinaya</em> in the
+context of virtuous conduct (<em>sīla</em>).<sup class="footnote-reference" id="fr-fn149-1"><a href="#fn-fn149">149</a></sup></p>
 <h2 id="appendix-7-practice-for-the-welfare-of-the-manyfolk"><a class="header" href="#appendix-7-practice-for-the-welfare-of-the-manyfolk">Appendix 7: Practice for the Welfare of the Manyfolk</a></h2>
 <p>Apart from those passages cited in the main text above, there are many
 more examples in the Pali Canon of the teaching on practising for the
 wellbeing and happiness of all beings, for example: the sending forth of
-the disciples to proclaim the teachings was for this purpose;<sup class="footnote-reference"><a href="#fn150">150</a></sup> the
+the disciples to proclaim the teachings was for this purpose;<sup class="footnote-reference" id="fr-fn150-1"><a href="#fn-fn150">150</a></sup> the
 Well-Farer and the Well-Farer’s discipline (<em>sugata-vinaya</em>) exist for
-this purpose;<sup class="footnote-reference"><a href="#fn151">151</a></sup> the Buddha recommended studying, practising, and
+this purpose;<sup class="footnote-reference" id="fr-fn151-1"><a href="#fn-fn151">151</a></sup> the Buddha recommended studying, practising, and
 rehearsing the Dhamma so that the holy life – the Buddhist religion –
-will last for a long time, in order to benefit all beings;<sup class="footnote-reference"><a href="#fn152">152</a></sup> the
+will last for a long time, in order to benefit all beings;<sup class="footnote-reference" id="fr-fn152-1"><a href="#fn-fn152">152</a></sup> the
 Buddha emphasized sangha harmony and warned against sangha schism,
 interpersonal quarrels, incorrect teachings on the Dhammavinaya, and
 leaders in the sangha who possess wrong view, out of consideration for
-the wellbeing of the multitudes.<sup class="footnote-reference"><a href="#fn153">153</a></sup></p>
+the wellbeing of the multitudes.<sup class="footnote-reference" id="fr-fn153-1"><a href="#fn-fn153">153</a></sup></p>
 <p>The essential principle of practising for the wellbeing of the manyfolk
 is to establish people in the ’noble path’ (<em>ariyañāya-dhamma</em>), so that
 they possess virtuous qualities (<em>kalyāṇa-dhamma</em>) and wholesome
-qualities (<em>kusala-dhamma</em>).<sup class="footnote-reference"><a href="#fn154">154</a></sup></p>
+qualities (<em>kusala-dhamma</em>).<sup class="footnote-reference" id="fr-fn154-1"><a href="#fn-fn154">154</a></sup></p>
 <h2 id="appendix-8-honouring-the-dhamma-honouring-the-vinaya"><a class="header" href="#appendix-8-honouring-the-dhamma-honouring-the-vinaya">Appendix 8: Honouring the Dhamma, Honouring the Vinaya</a></h2>
 <p>The Buddha honoured the Dhamma, and he said that whenever the sangha is
-possessed of greatness then he also honours the sangha.<sup class="footnote-reference"><a href="#fn155">155</a></sup> This
+possessed of greatness then he also honours the sangha.<sup class="footnote-reference" id="fr-fn155-1"><a href="#fn-fn155">155</a></sup> This
 practice of veneration accords in principle with both the six and the
 seven kinds of respect, which include respect for the Master (the
 Buddha), respect for the Dhamma, respect for the Sangha, and respect for
-the training (Vinaya).<sup class="footnote-reference"><a href="#fn156">156</a></sup></p>
+the training (Vinaya).<sup class="footnote-reference" id="fr-fn156-1"><a href="#fn-fn156">156</a></sup></p>
 <p>There is one noteworthy point to make here about the term ’belief’ in
 reference to arahants. On one level the term ’belief’ can be used in
 relation to the Dhamma. The Buddhist teachings classify this belief as
@@ -4839,19 +4820,19 @@ discipline (corresponding to the term ’obedience’). In this context
 arahants are obedient or highly disciplined, as confirmed by a passage
 in the scriptures stating that if the Buddha commanded an arahant (or
 other awakened person) to walk into a bog, the arahant would obey
-without hesitation.<sup class="footnote-reference"><a href="#fn157">157</a></sup> {940}</p>
+without hesitation.<sup class="footnote-reference" id="fr-fn157-1"><a href="#fn-fn157">157</a></sup> {940}</p>
 <h2 id="appendix-9-showing-respect-according-to-seniority"><a class="header" href="#appendix-9-showing-respect-according-to-seniority">Appendix 9: Showing Respect According to Seniority</a></h2>
 <p>The use of seniority (i.e. the number of years that a monk has been
 ordained) as the standard for showing respect is the most appropriate,
 convenient, and practical method of conduct, and it accords with the
 Buddha’s aim for the sangha to be an example for others – of not using
-ancestry, social standing, or caste as the criterion for respect.<sup class="footnote-reference"><a href="#fn158">158</a></sup></p>
+ancestry, social standing, or caste as the criterion for respect.<sup class="footnote-reference" id="fr-fn158-1"><a href="#fn-fn158">158</a></sup></p>
 <p>An alternative criterion is to use the level of spiritual realization as
 the standard, but this method would be confusing and ultimately
 ineffective, because realization is not obvious and is difficult to
 prove, and realized persons do not go around boasting about their
 achievements. There were monks who proposed this standard but the Buddha
-refused to adopt it.<sup class="footnote-reference"><a href="#fn159">159</a></sup></p>
+refused to adopt it.<sup class="footnote-reference" id="fr-fn159-1"><a href="#fn-fn159">159</a></sup></p>
 <p>What is particularly worthy of attention here is that while the Buddha
 chose seniority as the criterion for showing respect in the context of
 social relationships, which relates to external conditions, in the
@@ -4864,7 +4845,7 @@ or according to rules of social interaction should be aware of the truth
 that it is the spiritual qualities that a person has realized, or
 righteous conduct (for example to be ’one who has practised well’ –
 <em>supaṭipanno</em> – as mentioned in the nine attributes of the
-Sangha),<sup class="footnote-reference"><a href="#fn160">160</a></sup> that truly make a person worthy of respect, and that
+Sangha),<sup class="footnote-reference" id="fr-fn160-1"><a href="#fn-fn160">160</a></sup> that truly make a person worthy of respect, and that
 these spiritual qualities must be cultivated within oneself.</p>
 <p>The Buddha gave many reminders of this truth to the elders in the
 sangha, for example in this Dhammapada verse:</p>
@@ -4882,14 +4863,14 @@ Is indeed called an elder.</p>
 <p>One passage in the Pali Canon divides elders into three kinds: elders by
 ’birth’ (i.e. by seniority – <em>jāti-thera</em>), elders by truth
 (<em>dhamma-thera</em>), and elders by convention (elders simply by name –
-<em>sammati-thera</em>).<sup class="footnote-reference"><a href="#fn161">161</a></sup> Elders designated according to the Vinaya may be
+<em>sammati-thera</em>).<sup class="footnote-reference" id="fr-fn161-1"><a href="#fn-fn161">161</a></sup> Elders designated according to the Vinaya may be
 classified as elders by convention. Another passage mentions four
-qualities that make a person an elder.<sup class="footnote-reference"><a href="#fn162">162</a></sup></p>
+qualities that make a person an elder.<sup class="footnote-reference" id="fr-fn162-1"><a href="#fn-fn162">162</a></sup></p>
 <h2 id="appendix-10-is-buddhism-a-pessimistic-religion"><a class="header" href="#appendix-10-is-buddhism-a-pessimistic-religion">Appendix 10: Is Buddhism a Pessimistic Religion?</a></h2>
 <p>The passage by Ven. Sāriputta quoted under the section ’Theistic
 Morality vs a Doctrine of Natural Truth’ is cited in Albert Schweitzer’s
-’Indian Thought and Its Development’.<sup class="footnote-reference"><a href="#fn163">163</a></sup> It is re-cited in Joseph L.
-Sutton’s ’Problems of Politics and Administration in Thailand’.<sup class="footnote-reference"><a href="#fn164">164</a></sup></p>
+’Indian Thought and Its Development’.<sup class="footnote-reference" id="fr-fn163-1"><a href="#fn-fn163">163</a></sup> It is re-cited in Joseph L.
+Sutton’s ’Problems of Politics and Administration in Thailand’.<sup class="footnote-reference" id="fr-fn164-1"><a href="#fn-fn164">164</a></sup></p>
 <p>In this latter book (pp. 2-8), Prof. Sutton refers to other Dhamma
 teachings, for example the teachings on kamma, rebirth, and the retreat
 or escape from the world, to corroborate his critical viewpoint. I have
@@ -4905,7 +4886,7 @@ baptism or through confession of one’s sins.</p>
 <p>As for the issue of withdrawing from worldly matters, Prof. Sutton
 refers to the following quote: ’Those who love nothing in this world are
 rich in joy and free from pain.’ This quotation is found in the Udāna:
-<em>Tasmā hi te sukhino vītasokā yesaṁ piyaṁ natthi kuhiñci loke</em>.<sup class="footnote-reference"><a href="#fn165">165</a></sup>
+<em>Tasmā hi te sukhino vītasokā yesaṁ piyaṁ natthi kuhiñci loke</em>.<sup class="footnote-reference" id="fr-fn165-1"><a href="#fn-fn165">165</a></sup>
 The Pali word for love here is <em>piya</em>, which refers to a form of
 infatuation leading to personal attachment. This passage describes the
 attributes of an awakened being; it emphasizes liberation and the
@@ -4933,7 +4914,7 @@ According to the Mahāniddesa, <em>sīla</em> refers to self-restraint,
 self-control, and the non-transgression of precepts, while <em>vata</em> refers
 to undertaking religious practices or vows. The rules in the bhikkhu
 Vinaya contain both moral precepts and religious practices. The ascetic
-practices (<em>dhutaṅga</em>) are <em>vata</em>, not moral precepts – <em>sīla</em>.<sup class="footnote-reference"><a href="#fn166">166</a></sup>
+practices (<em>dhutaṅga</em>) are <em>vata</em>, not moral precepts – <em>sīla</em>.<sup class="footnote-reference" id="fr-fn166-1"><a href="#fn-fn166">166</a></sup>
 Rules of practice that are <em>vata</em> but not <em>sīla</em>, like the ascetic
 practices, are extra: they are means to practise strictly in order to
 enhance self-discipline and self-development, and they emphasize
@@ -4950,12 +4931,12 @@ by removing or decreasing the opportunity to transgress them. In any
 case, some religious practices (<em>vata</em>), although they may appear
 austere and strict, are incompatible with Buddhist principles; the
 Buddha forbade them and in some cases they are incorrect according to
-the Vinaya. Examples include the vow of silence (<em>mūga-vata</em>;<sup class="footnote-reference"><a href="#fn167">167</a></sup> this
+the Vinaya. Examples include the vow of silence (<em>mūga-vata</em>;<sup class="footnote-reference" id="fr-fn167-1"><a href="#fn-fn167">167</a></sup> this
 vow prevents wrong speech, for example lying; the Buddha criticized this
 practice and called it ’behaving like cattle’) and the vow to eat only
 fruit that falls naturally from a tree (this vow prevents a person from
 harming animals and plants; it is considered an overly austere practice
-kept by members of non-Buddhist sects who hide from society).<sup class="footnote-reference"><a href="#fn168">168</a></sup></p>
+kept by members of non-Buddhist sects who hide from society).<sup class="footnote-reference" id="fr-fn168-1"><a href="#fn-fn168">168</a></sup></p>
 <p>Note that there are also secondary or minor observances, called <em>vatta</em>,
 that complement moral precepts (<em>sīla</em>). In some Pali editions of the
 Tipiṭaka in Thai script, there is some mix up and confusion between the
@@ -4973,68 +4954,69 @@ terms <em>vata</em> (religious practice/austere practice) and <em>vatta</em>
 and monastery buildings</p>
 </div>
 </div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
 <p>Wrong livelihood is to earn one’s living by ’cheating (deception),
 currying favour, hinting, force, and intimidation, or by pursuing
-gain with gain’ (M. III. 75).</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
-<p>D. II. 311-12; M. I. 62; M. III. 251; Vbh. 105, 235.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
-<p>M. III. 74-5; cf.: Vbh. 106-07, 237.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+gain with gain’ (M. III. 75). <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
+<p>D. II. 311-12; M. I. 62; M. III. 251; Vbh. 105, 235. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
+<p>M. III. 74-5; cf.: Vbh. 106-07, 237. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
 <p>On classifying the ten wholesome courses of action into the three
 trainings (<em>tisso sikkhā</em>) or into the Eightfold Path, see Appendix
-4.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+4. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
 <p>Similar explanations for these ten factors occur in numerous
-passages, e.g.: A. V. 283, 288-9, 292, 297-8, 301-02.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+passages, e.g.: A. V. 283, 288-9, 292, 297-8, 301-02. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
 <p>This is the same condensed definition of right action as presented
 earlier; it does not expand this Path factor as is found say in the
 ten wholesome courses of action (<em>kusala-kammapatha</em>). For more on
-the view that Buddhism is a pessimistic religion see Appendix 10.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
+the view that Buddhism is a pessimistic religion see Appendix 10. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
 <p>Trans: the Oxford Dictionary of Etymology states that the word
 ’evil’ probably stems from the Indo-European base *<em>up-</em> (connected
 to the English words ’up’ and ’over’; and see the Pali prefix
-<em>upa-</em>), the primary sense being ’exceeding due limits’.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
+<em>upa-</em>), the primary sense being ’exceeding due limits’. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
 <p>A proper relationship to food involves an acceptance that while we
 are still walking on the Path and have not yet reached the goal we
 must occasionally do what is undesirable, as we have no alternative.
 The Buddha taught to consider food in a similar way to a mother and
 father who are forced to eat the flesh of their deceased child, who
-has died along a desert track (see: S. II. 98-9).</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
+has died along a desert track (see: S. II. 98-9). <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
 <p>Trans.: <em>ājīvaṭṭhamaka-sīla</em>: factors 1-7 are identical to the
 first seven factors of the wholesome courses of action –
 <em>kusala-kammapatha</em>; the eighth factor is right livelihood –
-<em>sammā-ājīva</em>.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
+<em>sammā-ājīva</em>. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
 <p>This group is referred to as the factors of noble growth (<em>ariyā
 vaḍḍhi</em>); for more on these factors see chapter 7 on awakened
-beings.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
+beings. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
 <p>See Appendix 3; the commentaries occasionally refer to the five
 precepts as <em>nicca-sīla</em>: ’regular conduct’ or ’conduct to be
-maintained constantly’ (e.g.: SnA. I. 377, 379; Vism. 15).</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
+maintained constantly’ (e.g.: SnA. I. 377, 379; Vism. 15). <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
 <p>Trans.: ’damaging a family’s lineage’ refers to the birth of a
 non-marital child, i.e. the case in which a married woman gives
-birth to a child whose biological father is not her husband.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
+birth to a child whose biological father is not her husband. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
 <p>Specifically the five precepts, see: ItA. II. 49-54. An
 explanation of the first four precepts and a further explanation of
 the remaining ’wholesome courses of action’, see: MA. I. 200-201;
@@ -5044,147 +5026,147 @@ necessary conditions here to the five precepts; please see the above
 references for the factors related to divisive speech, etc.) As
 regards the fifth precept, today there are intoxicating substances
 that can be taken in other ways apart from drinking; the gist of
-this precept should be applied accordingly.</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
-<p>Trans.: literally: ’an object to which one ought not go’.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
-<p>Trans: ’karmically’.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
-<p>For more on this subject see Appendix 5.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
-<p>A. II. 61-2.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+this precept should be applied accordingly. <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
+<p>Trans.: literally: ’an object to which one ought not go’. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
+<p>Trans: ’karmically’. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
+<p>For more on this subject see Appendix 5. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
+<p>A. II. 61-2. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
 <p>Referred to at J. IV. 53; explained at JA. IV. 53. Even
 Vessantara (the Bodhisatta) asked for the blessing of being one who
-is contented with his wife (see: J. VI. 572; JA. VI. 572).</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+is contented with his wife (see: J. VI. 572; JA. VI. 572). <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
 <p>The commentaries define <em>khema</em> as ’safety’, ’assistance’, and
 ’lovingkindness’, and state that this passage refers to purity by
-way of the mind door (<em>mano-dvāra</em>) – MA. I. 178.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
-<p>D. III. 180-93; DA. III. 943.</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
+way of the mind door (<em>mano-dvāra</em>) – MA. I. 178. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
+<p>D. III. 180-93; DA. III. 943. <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
 <p>In this sutta the Buddha also describes the harm of each of these
-’paths to ruin’ (<em>apāya-mukha</em>).</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
-<p>See the section of chapter 13 on virtuous friendship.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
-<p>Trans.: as in ’great talkers are little doers’.</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
-<p>Trans.: unlike fair-weather friends.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
+’paths to ruin’ (<em>apāya-mukha</em>). <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
+<p>See the section of chapter 13 on virtuous friendship. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
+<p>Trans.: as in ’great talkers are little doers’. <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
+<p>Trans.: unlike fair-weather friends. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
 <p><em>Adhanānaṁ dhanānupadānaṁ</em>; or in full: <em>ye ca te tāta vijite
-adhanā tesañca dhanaṁ anuppadajjeyyāsi</em> (D. III. 61).</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
-<p>M. III. 75.</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
+adhanā tesañca dhanaṁ anuppadajjeyyāsi</em> (D. III. 61). <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
+<p>M. III. 75. <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
 <p>E.g.: S. III. 240; Nd. I. 372, 495; Nd. II. 61; a fairly
 comprehensive list of activities deemed ’wrong livelihood’ is found
 in the short, middle, and large sections on morality in the suttas,
-e.g.: D. I. 8, 67.</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
-<p>Vin. V. 99.</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
-<p>Ud. 66.</p>
-</div>
-<div class="footnote-definition" id="fn30"><sup class="footnote-definition-label">30</sup>
-<p>S. II. 199.</p>
-</div>
-<div class="footnote-definition" id="fn31"><sup class="footnote-definition-label">31</sup>
-<p>Sn. 13.</p>
-</div>
-<div class="footnote-definition" id="fn32"><sup class="footnote-definition-label">32</sup>
-<p>A. V. 181-2.</p>
-</div>
-<div class="footnote-definition" id="fn33"><sup class="footnote-definition-label">33</sup>
-<p>’Does his duty’: attends to his work and helps others.</p>
-</div>
-<div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
-<p>J. III. 301.</p>
-</div>
-<div class="footnote-definition" id="fn35"><sup class="footnote-definition-label">35</sup>
+e.g.: D. I. 8, 67. <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
+<p>Vin. V. 99. <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
+<p>Ud. 66. <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn30"><sup class="footnote-definition-label">30</sup>
+<p>S. II. 199. <a href="#fr-fn30-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn31"><sup class="footnote-definition-label">31</sup>
+<p>Sn. 13. <a href="#fr-fn31-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn32"><sup class="footnote-definition-label">32</sup>
+<p>A. V. 181-2. <a href="#fr-fn32-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn33"><sup class="footnote-definition-label">33</sup>
+<p>’Does his duty’: attends to his work and helps others. <a href="#fr-fn33-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn34"><sup class="footnote-definition-label">34</sup>
+<p>J. III. 301. <a href="#fr-fn34-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn35"><sup class="footnote-definition-label">35</sup>
 <p>There is another story of appropriating the wealth of a deceased
 wealthy merchant at S. I. 89-91; this story is continued and
 expanded upon in the Mayhakasakuṇa Jātaka (JA. III. 298). See also:
 the Sudhābhojana Jātaka (JA. V. 382); the story of the wealthy
 merchant Macchariyakosiya (DhA. I. 366); the Illīsa Jātaka (JA. I.
 345); and the story of the wealthy merchant Biḷārapādaka (DhA. III.
-16).</p>
-</div>
-<div class="footnote-definition" id="fn36"><sup class="footnote-definition-label">36</sup>
+16). <a href="#fr-fn35-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn36"><sup class="footnote-definition-label">36</sup>
 <p>Trans.: of course this is true in all Theravada Buddhist
-countries.</p>
-</div>
-<div class="footnote-definition" id="fn37"><sup class="footnote-definition-label">37</sup>
+countries. <a href="#fr-fn36-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn37"><sup class="footnote-definition-label">37</sup>
 <p>Trans.: the four paths to success: wholesome desire (<em>chanda</em>;
 ’aspiration’), energy (<em>viriya</em>; ’effort’), focused attention
-(<em>citta</em>; ’dedication’), and ’investigation’ (<em>vimaṁsā</em>).</p>
-</div>
-<div class="footnote-definition" id="fn38"><sup class="footnote-definition-label">38</sup>
+(<em>citta</em>; ’dedication’), and ’investigation’ (<em>vīmaṁsā</em>). <a href="#fr-fn37-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn38"><sup class="footnote-definition-label">38</sup>
 <p>In these four suttas, two of them were given to householders,
-while the remaining two were given to bhikkhus.</p>
-</div>
-<div class="footnote-definition" id="fn39"><sup class="footnote-definition-label">39</sup>
+while the remaining two were given to bhikkhus. <a href="#fr-fn38-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn39"><sup class="footnote-definition-label">39</sup>
 <p>This verse is a common idiomatic expression found in the
-Tipiṭaka, e.g.: A. II. 69; A. III. 45.</p>
-</div>
-<div class="footnote-definition" id="fn40"><sup class="footnote-definition-label">40</sup>
-<p>See: J. IV. 166.</p>
-</div>
-<div class="footnote-definition" id="fn41"><sup class="footnote-definition-label">41</sup>
+Tipiṭaka, e.g.: A. II. 69; A. III. 45. <a href="#fr-fn39-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn40"><sup class="footnote-definition-label">40</sup>
+<p>See: J. IV. 166. <a href="#fr-fn40-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn41"><sup class="footnote-definition-label">41</sup>
 <p>For more on the seven qualities of a virtuous person
-(<em>sappurisa-dhamma</em>), see chapter 13 on virtuous friendship.</p>
-</div>
-<div class="footnote-definition" id="fn42"><sup class="footnote-definition-label">42</sup>
-<p>J. VI. 287.</p>
-</div>
-<div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
+(<em>sappurisa-dhamma</em>), see chapter 13 on virtuous friendship. <a href="#fr-fn41-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn42"><sup class="footnote-definition-label">42</sup>
+<p>J. VI. 287. <a href="#fr-fn42-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn43"><sup class="footnote-definition-label">43</sup>
 <p>Trans.: E.M. Hare in ’The Book of Gradual Sayings’ (Pali Text
 Society; © 1955; p. 189) states: ’The commentaries explain that when
 one shakes the fig-tree, wishing to eat the fruit thereof, much
-fruit falls, a large amount of which is wasted.’</p>
-</div>
-<div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
+fruit falls, a large amount of which is wasted.’ <a href="#fr-fn43-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn44"><sup class="footnote-definition-label">44</sup>
 <p>Similar passages at: A. IV. 281, 322, 323. For more on the four
 qualities leading to future welfare, see the section on
 stream-enterers in chapter 7 on awakened beings. These four
 qualities are part of the five factors pertaining to noble growth
-(<em>ariyā vaḍḍhi</em>).</p>
-</div>
-<div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
+(<em>ariyā vaḍḍhi</em>). <a href="#fr-fn44-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn45"><sup class="footnote-definition-label">45</sup>
 <p>Trans.: AA: ’He divides the types of happiness into two shares –
 the first three types make up one share, the happiness of
 blamelessness is a share on its own. Then he sees with wisdom and
 knows that the former three types of happiness combined are not
 worth a sixteenth part of the happiness of blamelessness.’ Numerical
 Discourses of the Buddha, translated by Nyanaponika Thera and Bhikkhu
-Bodhi; Altamira Press; © 1999; p. 292.</p>
-</div>
-<div class="footnote-definition" id="fn46"><sup class="footnote-definition-label">46</sup>
-<p>Or: ’support to one’s religion’.</p>
-</div>
-<div class="footnote-definition" id="fn47"><sup class="footnote-definition-label">47</sup>
+Bodhi; Altamira Press; © 1999; p. 292. <a href="#fr-fn45-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn46"><sup class="footnote-definition-label">46</sup>
+<p>Or: ’support to one’s religion’. <a href="#fr-fn46-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn47"><sup class="footnote-definition-label">47</sup>
 <p>A similar passage exists at A. II. 67. This teaching was
 particularly suited to the social situation of the Buddha’s time;
-modern readers may distil the essence of this teaching.</p>
-</div>
-<div class="footnote-definition" id="fn48"><sup class="footnote-definition-label">48</sup>
+modern readers may distil the essence of this teaching. <a href="#fr-fn47-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn48"><sup class="footnote-definition-label">48</sup>
 <p>The commentaries explain that action = right action; knowledge =
 right view and right intention; righteousness = the three factors
 comprising the section on <em>samādhi</em> (right effort, right
@@ -5192,121 +5174,121 @@ mindfulness, and right concentration; cultivating the quality of
 mind); moral conduct = right speech and right livelihood; and an
 excellent life = the Noble Eightfold Path or right livelihood (see
 other explanations at MA. V. 81; SA. I. 88; VismṬ.: Paṭhamo Bhāgo,
-Nidānādikathāvaṇṇanā).</p>
-</div>
-<div class="footnote-definition" id="fn49"><sup class="footnote-definition-label">49</sup>
+Nidānādikathāvaṇṇanā). <a href="#fr-fn48-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn49"><sup class="footnote-definition-label">49</sup>
 <p>Trans.: the Thai ’silapa-vitayah’ (ศิลปวิทยา; ’arts and sciences’)
-stems from the Sanskrit <em>ṡilpa-vidyā</em>.</p>
-</div>
-<div class="footnote-definition" id="fn50"><sup class="footnote-definition-label">50</sup>
+stems from the Sanskrit <em>ṡilpa-vidyā</em>. <a href="#fr-fn49-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn50"><sup class="footnote-definition-label">50</sup>
 <p>Blameless activity refers to virtuous, non-harmful acts,
 especially beneficial actions like offering one’s service to others,
 establishing public parks, planting woodland, building bridges, and
-undertaking the observance day precepts (see: KhA. 141).</p>
-</div>
-<div class="footnote-definition" id="fn51"><sup class="footnote-definition-label">51</sup>
+undertaking the observance day precepts (see: KhA. 141). <a href="#fr-fn50-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn51"><sup class="footnote-definition-label">51</sup>
 <p>Originally, support of one’s relatives is the final factor, but
 as this passage occurs in verse, the sequence of the factors need
 not be held too strictly; I have thus placed it next to support for
 wife and children. In the commentaries to this sutta (KhA. 141;
 SnA. I. 299) the term ’relatives’ (<em>ñāti</em>) is given a very narrow
 definition, but the Nettivibhāvinī (p. 185 of the Burmese edition)
-defines <em>ñāti</em> to include friends and acquaintances (Nett. 108).</p>
-</div>
-<div class="footnote-definition" id="fn52"><sup class="footnote-definition-label">52</sup>
-<p>D. III. 211, 273; S. V. 64; A. V. 55-6; Ps. I. 5, 122.</p>
-</div>
-<div class="footnote-definition" id="fn53"><sup class="footnote-definition-label">53</sup>
+defines <em>ñāti</em> to include friends and acquaintances (Nett. 108). <a href="#fr-fn51-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn52"><sup class="footnote-definition-label">52</sup>
+<p>D. III. 211, 273; S. V. 64; A. V. 55-6; Ps. I. 5, 122. <a href="#fr-fn52-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn53"><sup class="footnote-definition-label">53</sup>
 <p>See the above section ’Virtuous Conduct for Enhancing One’s Life
-and Society’.</p>
-</div>
-<div class="footnote-definition" id="fn54"><sup class="footnote-definition-label">54</sup>
-<p>E.g.: D. III. 181.</p>
-</div>
-<div class="footnote-definition" id="fn55"><sup class="footnote-definition-label">55</sup>
+and Society’. <a href="#fr-fn53-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn54"><sup class="footnote-definition-label">54</sup>
+<p>E.g.: D. III. 181. <a href="#fr-fn54-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn55"><sup class="footnote-definition-label">55</sup>
 <p>Trans.: ’worldly things’ here is used to cover two expressions
-used by the author: <em>loka-dhamma</em> and <em>loka-āmisa</em>.</p>
-</div>
-<div class="footnote-definition" id="fn56"><sup class="footnote-definition-label">56</sup>
+used by the author: <em>loka-dhamma</em> and <em>loka-āmisa</em>. <a href="#fr-fn55-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn56"><sup class="footnote-definition-label">56</sup>
 <p>Trans: the author focuses here on the bhikkhu sangha. It is valid
 here to substitute ’monks and nuns’ or ’monastics’ for the term
-’monks’.</p>
-</div>
-<div class="footnote-definition" id="fn57"><sup class="footnote-definition-label">57</sup>
+’monks’. <a href="#fr-fn56-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn57"><sup class="footnote-definition-label">57</sup>
 <p>Trans: again, it is valid to include the bhikkhuni sangha within
 this classification of an independent community as a separate
 entity. For more on this subject of bhikkhus and bhikkhunis, see:
 ’The Buddhist Discipline in Relation to Bhikkhunis’ by Ven. Phra
-Payutto; translated by Robin Moore © 2015.</p>
-</div>
-<div class="footnote-definition" id="fn58"><sup class="footnote-definition-label">58</sup>
+Payutto; translated by Robin Moore © 2015. <a href="#fr-fn57-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn58"><sup class="footnote-definition-label">58</sup>
 <p>A. II. 27-8 (for the unwholesome qualities to be abandoned,
 compare with the first principle, i.e. to abandon infatuation,
 obsession, etc.). Similar passages are found at: D. III. 224-5;
-Nd. II. 59.</p>
-</div>
-<div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
+Nd. II. 59. <a href="#fr-fn58-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn59"><sup class="footnote-definition-label">59</sup>
 <p>Vism. 15-46; Comp.: Kammaṭṭhānaparicchedo, Vipassanākammaṭṭhānaṁ,
 Visuddhibhedo. Note that in the Pali Canon <em>indriya-saṁvara</em> is
-classified under <em>samādhi</em> (e.g.: D. I. 207).</p>
-</div>
-<div class="footnote-definition" id="fn60"><sup class="footnote-definition-label">60</sup>
+classified under <em>samādhi</em> (e.g.: D. I. 207). <a href="#fr-fn59-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn60"><sup class="footnote-definition-label">60</sup>
 <p>Concentrative attainments: <em>samādhi</em>, <em>jhāna</em>, <em>vimokkha</em>, and
-<em>samāpatti</em>; stages of enlightenment: <em>magga</em>, <em>phala</em>, and Nibbāna.</p>
-</div>
-<div class="footnote-definition" id="fn61"><sup class="footnote-definition-label">61</sup>
-<p>Trans.: colloquially referred to as ’good karma’.</p>
-</div>
-<div class="footnote-definition" id="fn62"><sup class="footnote-definition-label">62</sup>
+<em>samāpatti</em>; stages of enlightenment: <em>magga</em>, <em>phala</em>, and Nibbāna. <a href="#fr-fn60-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn61"><sup class="footnote-definition-label">61</sup>
+<p>Trans.: colloquially referred to as ’good karma’. <a href="#fr-fn61-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn62"><sup class="footnote-definition-label">62</sup>
 <p>The Buddha said that a righteous person arises in the world for
 the wellbeing of all (A. IV. 244-5). Similarly, when a righteous
 person gains wealth he or she is like a lotus pond in a sheltered
 location – everyone can make use of the water and be refreshed; but
 an unrighteous person who gains wealth is like a pond in a deserted
 area; although the water may be clear and clean, it is useless
-(S. I. 90-91).</p>
-</div>
-<div class="footnote-definition" id="fn63"><sup class="footnote-definition-label">63</sup>
+(S. I. 90-91). <a href="#fr-fn62-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn63"><sup class="footnote-definition-label">63</sup>
 <p>Compare this with the Buddhist teachings on the origin of power
 and on the origin of kings (e.g. in the Aggañña Sutta – D. III.
 92-3). Some wealthy Buddhist merchants like Anāthapiṇḍaka adhered to
 this principle, relinquishing their wealth for the benefit of the
 monastic community and for the poor, until they themselves were left
-penniless, but without regret.</p>
-</div>
-<div class="footnote-definition" id="fn64"><sup class="footnote-definition-label">64</sup>
-<p>A. III. 352.</p>
-</div>
-<div class="footnote-definition" id="fn65"><sup class="footnote-definition-label">65</sup>
-<p>D. III. 65-6, 70-71.</p>
-</div>
-<div class="footnote-definition" id="fn66"><sup class="footnote-definition-label">66</sup>
+penniless, but without regret. <a href="#fr-fn63-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn64"><sup class="footnote-definition-label">64</sup>
+<p>A. III. 352. <a href="#fr-fn64-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn65"><sup class="footnote-definition-label">65</sup>
+<p>D. III. 65-6, 70-71. <a href="#fr-fn65-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn66"><sup class="footnote-definition-label">66</sup>
 <p>E.g.: D. I. 135; D. III. 61. The teachings emphasize assistance
 along with promoting diligence, i.e. one should also prevent poverty
-resulting from indolence.</p>
-</div>
-<div class="footnote-definition" id="fn67"><sup class="footnote-definition-label">67</sup>
-<p>E.g.: A. IV. 151; It. 22.</p>
-</div>
-<div class="footnote-definition" id="fn68"><sup class="footnote-definition-label">68</sup>
+resulting from indolence. <a href="#fr-fn66-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn67"><sup class="footnote-definition-label">67</sup>
+<p>E.g.: A. IV. 151; It. 22. <a href="#fr-fn67-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn68"><sup class="footnote-definition-label">68</sup>
 <p>Trans.: an outer robe, an inner robe, an under robe, a bowl, a
-razor, a needle and thread, a belt, and a water-strainer.</p>
-</div>
-<div class="footnote-definition" id="fn69"><sup class="footnote-definition-label">69</sup>
-<p>Trans.: ’land of the rose-apple trees’.</p>
-</div>
-<div class="footnote-definition" id="fn70"><sup class="footnote-definition-label">70</sup>
-<p>See the tenth inscription of the Asokan Stone Edicts.</p>
-</div>
-<div class="footnote-definition" id="fn71"><sup class="footnote-definition-label">71</sup>
+razor, a needle and thread, a belt, and a water-strainer. <a href="#fr-fn68-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn69"><sup class="footnote-definition-label">69</sup>
+<p>Trans.: ’land of the rose-apple trees’. <a href="#fr-fn69-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn70"><sup class="footnote-definition-label">70</sup>
+<p>See the tenth inscription of the Asokan Stone Edicts. <a href="#fr-fn70-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn71"><sup class="footnote-definition-label">71</sup>
 <p>Academic books and other works by contemporary scholars (most of
 them Western scholars) who research Buddhism and its connection to
 society tend to overlook the Buddhist teachings on morality,
 especially the code of moral disciple (Vinaya) of the bhikkhu
 sangha. Their work is thus often incorrect or at least significantly
-lacking.</p>
-</div>
-<div class="footnote-definition" id="fn72"><sup class="footnote-definition-label">72</sup>
+lacking. <a href="#fr-fn71-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn72"><sup class="footnote-definition-label">72</sup>
 <p>The five precepts have been upheld and practised since ancient
 times. They were acknowledged by and incorporated into Buddhism from
 the beginning. Generally speaking, there is not a large body of
@@ -5318,139 +5300,139 @@ for householders, e.g.: the Sumaṅgalavilāsinī states that the
 Siṅgālaka Sutta is a ’discipline for laity’ (<em>gihi-vinaya</em>) – [DA.
 3/151]; and the Paramatthajotikā states that abstaining from the
 ten unwholesome ways of action (<em>akusala-kammapatha</em>) is a
-’discipline for householders’ (<em>āgāriya-vinaya</em>) – [KhA. 117].</p>
-</div>
-<div class="footnote-definition" id="fn73"><sup class="footnote-definition-label">73</sup>
+’discipline for householders’ (<em>āgāriya-vinaya</em>) – [KhA. 117]. <a href="#fr-fn72-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn73"><sup class="footnote-definition-label">73</sup>
 <p>For more about the term <em>vinaya</em> in relation to society in
-general, see chapter 5 on kamma.</p>
-</div>
-<div class="footnote-definition" id="fn74"><sup class="footnote-definition-label">74</sup>
+general, see chapter 5 on kamma. <a href="#fr-fn73-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn74"><sup class="footnote-definition-label">74</sup>
 <p>Trans.: note that I am translating Dhamma here as ’absolute
 truth’, thus referring to <em>paramattha-sacca</em>, as a contrast to
 conventional truth (<em>sammati-sacca</em>). For more on the subject of
-<em>paramattha-sacca</em> (absolute truth) see chapter 2.</p>
-</div>
-<div class="footnote-definition" id="fn75"><sup class="footnote-definition-label">75</sup>
+<em>paramattha-sacca</em> (absolute truth) see chapter 2. <a href="#fr-fn74-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn75"><sup class="footnote-definition-label">75</sup>
 <p>On the revelation of truth (’teaching the Dhamma’) and the
 prescription of moral codes (’laying down the Vinaya’), see Appendix
-1.</p>
-</div>
-<div class="footnote-definition" id="fn76"><sup class="footnote-definition-label">76</sup>
+1. <a href="#fr-fn75-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn76"><sup class="footnote-definition-label">76</sup>
 <p>Trans: this corresponds to the Latin terms <em>malum in se</em> (’wrong
 or evil in itself’; inherently wrong by nature) and <em>malum
 prohibitum</em> (’wrong as or because prohibited’; conduct that
-constitutes an unlawful act only by virtue of a statute).</p>
-</div>
-<div class="footnote-definition" id="fn77"><sup class="footnote-definition-label">77</sup>
+constitutes an unlawful act only by virtue of a statute). <a href="#fr-fn76-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn77"><sup class="footnote-definition-label">77</sup>
 <p>The commentaries refer to this group of moral principles as
 <em>ājīvaṭṭhamaka-sīla</em>: ’morality with livelihood as the eighth
 factor’ or ’eightfold morality including livelihood’. Eight factors:
 <em>sammā-vācā</em> = 4 kinds of virtuous speech (<em>vacī-sucarita</em>) +
 <em>sammā-kammanta</em> = 3 kinds of virtuous physical actions
-(<em>kāya-sucarita</em>) + (1) <em>sammā-ājīva</em>. See: Vism. 11-12.</p>
-</div>
-<div class="footnote-definition" id="fn78"><sup class="footnote-definition-label">78</sup>
-<p>On the terms <em>sīla</em>, <em>vinaya</em>, and <em>sīla-dhamma</em>, see Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn79"><sup class="footnote-definition-label">79</sup>
+(<em>kāya-sucarita</em>) + (1) <em>sammā-ājīva</em>. See: Vism. 11-12. <a href="#fr-fn77-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn78"><sup class="footnote-definition-label">78</sup>
+<p>On the terms <em>sīla</em>, <em>vinaya</em>, and <em>sīla-dhamma</em>, see Appendix 2. <a href="#fr-fn78-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn79"><sup class="footnote-definition-label">79</sup>
 <p><em>Sīla</em> as volition, as a mental concomitant (<em>cetasika</em>), as
 restraint, and as non-transgression (<em>avītikkama</em>): Ps. I. 44-5;
 explained at Vism. 6-7. [Trans: the preceding paragraphs come from
-pp. 722-3 of <em>Buddhadhamma</em>.]</p>
-</div>
-<div class="footnote-definition" id="fn80"><sup class="footnote-definition-label">80</sup>
-<p>KhA. 135; SnA. I. 299.</p>
-</div>
-<div class="footnote-definition" id="fn81"><sup class="footnote-definition-label">81</sup>
-<p>DA. III. 943.</p>
-</div>
-<div class="footnote-definition" id="fn82"><sup class="footnote-definition-label">82</sup>
+pp. 722-3 of <em>Buddhadhamma</em>.] <a href="#fr-fn79-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn80"><sup class="footnote-definition-label">80</sup>
+<p>KhA. 135; SnA. I. 299. <a href="#fr-fn80-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn81"><sup class="footnote-definition-label">81</sup>
+<p>DA. III. 943. <a href="#fr-fn81-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn82"><sup class="footnote-definition-label">82</sup>
 <p>E.g.: S. IV. 245; A. III. 170-71, 203-4, 275-7; and see: A. V.
-257-61.</p>
-</div>
-<div class="footnote-definition" id="fn83"><sup class="footnote-definition-label">83</sup>
-<p>E.g.: D. III. 235; Pv. 591; Vbh. 285.</p>
-</div>
-<div class="footnote-definition" id="fn84"><sup class="footnote-definition-label">84</sup>
-<p>Vin. II. 162.</p>
-</div>
-<div class="footnote-definition" id="fn85"><sup class="footnote-definition-label">85</sup>
-<p>E.g.: Bu. 21.</p>
-</div>
-<div class="footnote-definition" id="fn86"><sup class="footnote-definition-label">86</sup>
+257-61. <a href="#fr-fn82-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn83"><sup class="footnote-definition-label">83</sup>
+<p>E.g.: D. III. 235; Pv. 591; Vbh. 285. <a href="#fr-fn83-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn84"><sup class="footnote-definition-label">84</sup>
+<p>Vin. II. 162. <a href="#fr-fn84-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn85"><sup class="footnote-definition-label">85</sup>
+<p>E.g.: Bu. 21. <a href="#fr-fn85-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn86"><sup class="footnote-definition-label">86</sup>
 <p>Trans: on the terminology of the five precepts and the ten
-wholesome courses of action see Appendix 3.</p>
-</div>
-<div class="footnote-definition" id="fn87"><sup class="footnote-definition-label">87</sup>
+wholesome courses of action see Appendix 3. <a href="#fr-fn86-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn87"><sup class="footnote-definition-label">87</sup>
 <p>For a further examination on the meaning of the term <em>vinaya</em>,
-see: Appendix 6.</p>
-</div>
-<div class="footnote-definition" id="fn88"><sup class="footnote-definition-label">88</sup>
+see: Appendix 6. <a href="#fr-fn87-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn88"><sup class="footnote-definition-label">88</sup>
 <p>Male novice: <em>sāmaṇera</em>; female novice: <em>sāmaṇerī</em>. Vin. I. 83-4;
 Vin. V. 138; Kh. 1. These ten training rules for novices are later
 referred to colloquially as the ten precepts. In the Vinaya Piṭaka a
 male or female novice is defined simply as ’one who maintains the
 ten training rules’ (<em>dasasikkhā-padika</em> and <em>dasasikkhā-padikā</em>):
-V. IV. 122.</p>
-</div>
-<div class="footnote-definition" id="fn89"><sup class="footnote-definition-label">89</sup>
+V. IV. 122. <a href="#fr-fn88-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn89"><sup class="footnote-definition-label">89</sup>
 <p>This is true for almost every training rule that the Buddha laid
 down: see volumes III and IV of the Vinaya Piṭaka, beginning at
-Vin. III. 20.</p>
-</div>
-<div class="footnote-definition" id="fn90"><sup class="footnote-definition-label">90</sup>
+Vin. III. 20. <a href="#fr-fn89-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn90"><sup class="footnote-definition-label">90</sup>
 <p>For example: <em>Once there is joyful confidence a person either
 attains to the imperturbable now or else he is devoted to wisdom</em>
 (M. II. 262); <em>When a person recollects the Tathāgata, his mind is
 bright, delight arises, the mental impurities are abandoned</em> (A. I.
 206-7). Cf.: D. I. 110; D. II. 142, 161; A. I. 8-9; A. III. 244-5,
-256, 336-7, 392; It. 13-4; Sn. 75-6.</p>
-</div>
-<div class="footnote-definition" id="fn91"><sup class="footnote-definition-label">91</sup>
+256, 336-7, 392; It. 13-4; Sn. 75-6. <a href="#fr-fn90-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn91"><sup class="footnote-definition-label">91</sup>
 <p>See: Vin. I. 15-6, 18, 23, 36-7, 181, 225-6; Vin. II. 156-7;
 D. I. 109-10, 148; D. II. 41, 44-5; M. I. 379-80; M. II. 145; A. IV.
 186-7, 209-10, 213-4; Ud. 49 (all of these passage are identical
-except for the names of the listeners).</p>
-</div>
-<div class="footnote-definition" id="fn92"><sup class="footnote-definition-label">92</sup>
+except for the names of the listeners). <a href="#fr-fn91-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn92"><sup class="footnote-definition-label">92</sup>
 <p>E.g.: D. II. 222, 331-2; A. I. 22. See chapter 7 on awakened
 beings. For further examples of this vital principle, see Appendix
-7.</p>
-</div>
-<div class="footnote-definition" id="fn93"><sup class="footnote-definition-label">93</sup>
-<p>See Appendix 8.</p>
-</div>
-<div class="footnote-definition" id="fn94"><sup class="footnote-definition-label">94</sup>
+7. <a href="#fr-fn92-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn93"><sup class="footnote-definition-label">93</sup>
+<p>See Appendix 8. <a href="#fr-fn93-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn94"><sup class="footnote-definition-label">94</sup>
 <p>For instance the practice of Ven. Mahākassapa (S. II. 203). On
 the difference between moral precepts (<em>sīla</em>) and religious
-practices (<em>vata</em>) see Appendix 11.</p>
-</div>
-<div class="footnote-definition" id="fn95"><sup class="footnote-definition-label">95</sup>
+practices (<em>vata</em>) see Appendix 11. <a href="#fr-fn94-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn95"><sup class="footnote-definition-label">95</sup>
 <p>On the subject of <em>sīlabbata-parāmāsa</em> see chapter 7 on awakened
 beings, including a description of the different stages of
-enlightenment.</p>
-</div>
-<div class="footnote-definition" id="fn96"><sup class="footnote-definition-label">96</sup>
-<p>Vin. III. 21; A. V. 70-71.</p>
-</div>
-<div class="footnote-definition" id="fn97"><sup class="footnote-definition-label">97</sup>
-<p>A. I. 98-9; this list contains ten pairs of factors.</p>
-</div>
-<div class="footnote-definition" id="fn98"><sup class="footnote-definition-label">98</sup>
-<p>It. 11-12; cf.: Vin. I. 358.</p>
-</div>
-<div class="footnote-definition" id="fn99"><sup class="footnote-definition-label">99</sup>
+enlightenment. <a href="#fr-fn95-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn96"><sup class="footnote-definition-label">96</sup>
+<p>Vin. III. 21; A. V. 70-71. <a href="#fr-fn96-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn97"><sup class="footnote-definition-label">97</sup>
+<p>A. I. 98-9; this list contains ten pairs of factors. <a href="#fr-fn97-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn98"><sup class="footnote-definition-label">98</sup>
+<p>It. 11-12; cf.: Vin. I. 358. <a href="#fr-fn98-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn99"><sup class="footnote-definition-label">99</sup>
 <p>[Trans.: this hierarchy is calculated by the day and time of
 one’s ordination or by the number of years – literally, ’rainy
 seasons’ (<em>vassa</em>) – that one has been a monk.] For more
 information on the paying of respects according to seniority see
-Appendix 9.</p>
-</div>
-<div class="footnote-definition" id="fn100"><sup class="footnote-definition-label">100</sup>
+Appendix 9. <a href="#fr-fn99-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn100"><sup class="footnote-definition-label">100</sup>
 <p>Compare with the teaching at Miln.: Dutiyavaggo,
-Seṭṭhadhammapañho sattamo.</p>
-</div>
-<div class="footnote-definition" id="fn101"><sup class="footnote-definition-label">101</sup>
+Seṭṭhadhammapañho sattamo. <a href="#fr-fn100-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn101"><sup class="footnote-definition-label">101</sup>
 <p>Even in the case when they do not pay respects, they do so with
 lovingkindness and after having considered that by abstaining from
 showing respect they will be benefitting the monk in question. Note
@@ -5459,9 +5441,9 @@ however that in regard to the method of imposing a punishment
 (Vin. II. 290) or the decision by the bhikkhuni sangha to abstain
 from paying respects to an individual bhikkhu (Vin. II. 262), these
 actions should only be done with the consensus of the respective
-communities.</p>
-</div>
-<div class="footnote-definition" id="fn102"><sup class="footnote-definition-label">102</sup>
+communities. <a href="#fr-fn101-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn102"><sup class="footnote-definition-label">102</sup>
 <p>M. III. 11; and see the Uruvela Sutta at A. II. 22. This
 original system of sangha administration relies on a basic system of
 training (the training and discipline that begins at ordination).
@@ -5473,182 +5455,182 @@ received a genuine and effective training. Moreover, at times when
 the system of sangha administration has gone into decline and there
 are efforts to restore it, occasionally people merely make a
 perfunctory appeal for restoration without considering the true
-causes for it to prosper.</p>
-</div>
-<div class="footnote-definition" id="fn103"><sup class="footnote-definition-label">103</sup>
-<p>Vin. III. 87-91.</p>
-</div>
-<div class="footnote-definition" id="fn104"><sup class="footnote-definition-label">104</sup>
-<p>Vin. IV. 23-5.</p>
-</div>
-<div class="footnote-definition" id="fn105"><sup class="footnote-definition-label">105</sup>
-<p>Vin. II. 110-12.</p>
-</div>
-<div class="footnote-definition" id="fn106"><sup class="footnote-definition-label">106</sup>
-<p>See chapter 9 on the supernatural and the divine.</p>
-</div>
-<div class="footnote-definition" id="fn107"><sup class="footnote-definition-label">107</sup>
+causes for it to prosper. <a href="#fr-fn102-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn103"><sup class="footnote-definition-label">103</sup>
+<p>Vin. III. 87-91. <a href="#fr-fn103-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn104"><sup class="footnote-definition-label">104</sup>
+<p>Vin. IV. 23-5. <a href="#fr-fn104-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn105"><sup class="footnote-definition-label">105</sup>
+<p>Vin. II. 110-12. <a href="#fr-fn105-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn106"><sup class="footnote-definition-label">106</sup>
+<p>See chapter 9 on the supernatural and the divine. <a href="#fr-fn106-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn107"><sup class="footnote-definition-label">107</sup>
 <p>See the stories of Ven. Isidatta and Ven. Mahaka at: S. IV.
-283-91; AA. I. 387.</p>
-</div>
-<div class="footnote-definition" id="fn108"><sup class="footnote-definition-label">108</sup>
-<p>S. II. 279; Ud. 76; DhA. II. 147; DhA. III. 386; JA. II. 141.</p>
-</div>
-<div class="footnote-definition" id="fn109"><sup class="footnote-definition-label">109</sup>
-<p>See: VinA. IV. 751.</p>
-</div>
-<div class="footnote-definition" id="fn110"><sup class="footnote-definition-label">110</sup>
-<p>Cf.: A. IV. 394-5.</p>
-</div>
-<div class="footnote-definition" id="fn111"><sup class="footnote-definition-label">111</sup>
+283-91; AA. I. 387. <a href="#fr-fn107-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn108"><sup class="footnote-definition-label">108</sup>
+<p>S. II. 279; Ud. 76; DhA. II. 147; DhA. III. 386; JA. II. 141. <a href="#fr-fn108-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn109"><sup class="footnote-definition-label">109</sup>
+<p>See: VinA. IV. 751. <a href="#fr-fn109-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn110"><sup class="footnote-definition-label">110</sup>
+<p>Cf.: A. IV. 394-5. <a href="#fr-fn110-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn111"><sup class="footnote-definition-label">111</sup>
 <p>Trans.: this story was also referred to in chapter 15 on wise
-reflection.</p>
-</div>
-<div class="footnote-definition" id="fn112"><sup class="footnote-definition-label">112</sup>
-<p>For example, see the teaching at: VinA. VII. 1377.</p>
-</div>
-<div class="footnote-definition" id="fn113"><sup class="footnote-definition-label">113</sup>
-<p>See: Vin. I. 56.</p>
-</div>
-<div class="footnote-definition" id="fn114"><sup class="footnote-definition-label">114</sup>
-<p>M. III. 253.</p>
-</div>
-<div class="footnote-definition" id="fn115"><sup class="footnote-definition-label">115</sup>
+reflection. <a href="#fr-fn111-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn112"><sup class="footnote-definition-label">112</sup>
+<p>For example, see the teaching at: VinA. VII. 1377. <a href="#fr-fn112-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn113"><sup class="footnote-definition-label">113</sup>
+<p>See: Vin. I. 56. <a href="#fr-fn113-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn114"><sup class="footnote-definition-label">114</sup>
+<p>M. III. 253. <a href="#fr-fn114-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn115"><sup class="footnote-definition-label">115</sup>
 <p>The ten qualities inspiring confidence (<em>pasādanīya-dhamma</em>)
 are: (1) to possess moral conduct, (2) to be one of great learning,
 (3) to have contentment, (4) to have attained the four jhānas, and
-(5-10) to possess the six kinds of supreme knowledge (<em>abhiññā</em>).</p>
-</div>
-<div class="footnote-definition" id="fn116"><sup class="footnote-definition-label">116</sup>
-<p>Vin. V. 163.</p>
-</div>
-<div class="footnote-definition" id="fn117"><sup class="footnote-definition-label">117</sup>
-<p>Vin. I. 105.</p>
-</div>
-<div class="footnote-definition" id="fn118"><sup class="footnote-definition-label">118</sup>
+(5-10) to possess the six kinds of supreme knowledge (<em>abhiññā</em>). <a href="#fr-fn115-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn116"><sup class="footnote-definition-label">116</sup>
+<p>Vin. V. 163. <a href="#fr-fn116-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn117"><sup class="footnote-definition-label">117</sup>
+<p>Vin. I. 105. <a href="#fr-fn117-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn118"><sup class="footnote-definition-label">118</sup>
 <p>Vin. I. 109. (The commentaries at VinA. V. 1049 claim that the
 distance was one <em>gāvuta</em> = 4 km, but some commentators claim the
-distance was three <em>gāvuta</em> = 12 km.)</p>
-</div>
-<div class="footnote-definition" id="fn119"><sup class="footnote-definition-label">119</sup>
-<p>See: Vism. 706-7; PsA. I. 320; [VinṬ. 3/595].</p>
-</div>
-<div class="footnote-definition" id="fn120"><sup class="footnote-definition-label">120</sup>
+distance was three <em>gāvuta</em> = 12 km.) <a href="#fr-fn118-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn119"><sup class="footnote-definition-label">119</sup>
+<p>See: Vism. 706-7; PsA. I. 320; [VinṬ. 3/595]. <a href="#fr-fn119-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn120"><sup class="footnote-definition-label">120</sup>
 <p>For example, the first, second, and third recitations
 (’councils’), and the events surrounding King Milinda (Vin. II.
-284-5, 297-300; VinA. I. 57; Miln.: Bāhirakathā; VbhA. 445).</p>
-</div>
-<div class="footnote-definition" id="fn121"><sup class="footnote-definition-label">121</sup>
-<p>E.g.: VinA. I. 36; Miln.: Bāhirakathā.</p>
-</div>
-<div class="footnote-definition" id="fn122"><sup class="footnote-definition-label">122</sup>
-<p>Vin. II. 289.</p>
-</div>
-<div class="footnote-definition" id="fn123"><sup class="footnote-definition-label">123</sup>
-<p>VinA. 3/212.</p>
-</div>
-<div class="footnote-definition" id="fn124"><sup class="footnote-definition-label">124</sup>
+284-5, 297-300; VinA. I. 57; Miln.: Bāhirakathā; VbhA. 445). <a href="#fr-fn120-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn121"><sup class="footnote-definition-label">121</sup>
+<p>E.g.: VinA. I. 36; Miln.: Bāhirakathā. <a href="#fr-fn121-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn122"><sup class="footnote-definition-label">122</sup>
+<p>Vin. II. 289. <a href="#fr-fn122-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn123"><sup class="footnote-definition-label">123</sup>
+<p>VinA. 3/212. <a href="#fr-fn123-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn124"><sup class="footnote-definition-label">124</sup>
 <p>The first presentation of the <em>sārāṇīya-dhamma</em>, e.g.: A. III.
 288-9; the second presentation of the <em>sārāṇīya-dhamma</em> is found at
 A. V. 89, and is often known as ’virtues making for protection’
 (<em>nāthakaraṇa-dhamma</em>): see, e.g.: A. V. 23-4. The factor of
 <em>kiṅkaraṇīyesu-dakkhatā</em> appears in many other groups of virtues,
-e.g. at: Vin. I. 70; A. III. 113-14; A. V. 338.</p>
-</div>
-<div class="footnote-definition" id="fn125"><sup class="footnote-definition-label">125</sup>
+e.g. at: Vin. I. 70; A. III. 113-14; A. V. 338. <a href="#fr-fn124-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn125"><sup class="footnote-definition-label">125</sup>
 <p>E.g.: D. II. 76; A. IV. 21. ’To adjourn in harmony’ (<em>samaggā
 vuṭṭhahissanti</em>) can also be translated as ’to cooperate in harmony’
-(DA. II. 524).</p>
-</div>
-<div class="footnote-definition" id="fn126"><sup class="footnote-definition-label">126</sup>
-<p>Trans.: <em>kuṭī</em>: meditation hut; monk’s dwelling.</p>
-</div>
-<div class="footnote-definition" id="fn127"><sup class="footnote-definition-label">127</sup>
-<p>S. II. 277-8.</p>
-</div>
-<div class="footnote-definition" id="fn128"><sup class="footnote-definition-label">128</sup>
+(DA. II. 524). <a href="#fr-fn125-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn126"><sup class="footnote-definition-label">126</sup>
+<p>Trans.: <em>kuṭī</em>: meditation hut; monk’s dwelling. <a href="#fr-fn126-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn127"><sup class="footnote-definition-label">127</sup>
+<p>S. II. 277-8. <a href="#fr-fn127-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn128"><sup class="footnote-definition-label">128</sup>
 <p>See the story of Ven. Attadattha Thera at DhA. III. 158 (cf.:
-Dh. verse 166).</p>
-</div>
-<div class="footnote-definition" id="fn129"><sup class="footnote-definition-label">129</sup>
-<p>E.g.: Vin. I. 121-2.</p>
-</div>
-<div class="footnote-definition" id="fn130"><sup class="footnote-definition-label">130</sup>
-<p>See: A. IV. 24-5.</p>
-</div>
-<div class="footnote-definition" id="fn131"><sup class="footnote-definition-label">131</sup>
+Dh. verse 166). <a href="#fr-fn128-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn129"><sup class="footnote-definition-label">129</sup>
+<p>E.g.: Vin. I. 121-2. <a href="#fr-fn129-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn130"><sup class="footnote-definition-label">130</sup>
+<p>See: A. IV. 24-5. <a href="#fr-fn130-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn131"><sup class="footnote-definition-label">131</sup>
 <p>The Buddha discusses this social evolution in the Aggañña Sutta
 (D. III. 92). For more on this topic, see chapter 4 on Dependent
-Origination.</p>
-</div>
-<div class="footnote-definition" id="fn132"><sup class="footnote-definition-label">132</sup>
+Origination. <a href="#fr-fn131-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn132"><sup class="footnote-definition-label">132</sup>
 <p>Whether these traditions are appropriate to the modern era, or
-whether they have disadvantages, I will not examine here.</p>
-</div>
-<div class="footnote-definition" id="fn133"><sup class="footnote-definition-label">133</sup>
-<p>A. III. 87.</p>
-</div>
-<div class="footnote-definition" id="fn134"><sup class="footnote-definition-label">134</sup>
+whether they have disadvantages, I will not examine here. <a href="#fr-fn132-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn133"><sup class="footnote-definition-label">133</sup>
+<p>A. III. 87. <a href="#fr-fn133-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn134"><sup class="footnote-definition-label">134</sup>
 <p>VinṬ. [1/7]; VinṬ.: Paṭhamo Bhāgo,
-Paṭhamamahāsaṅgītikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn135"><sup class="footnote-definition-label">135</sup>
-<p>E.g.: D. I. 192; A. I. 286; S. II. 25-6.</p>
-</div>
-<div class="footnote-definition" id="fn136"><sup class="footnote-definition-label">136</sup>
-<p>D. II. 154; DA. II. 591.</p>
-</div>
-<div class="footnote-definition" id="fn137"><sup class="footnote-definition-label">137</sup>
+Paṭhamamahāsaṅgītikathāvaṇṇanā. <a href="#fr-fn134-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn135"><sup class="footnote-definition-label">135</sup>
+<p>E.g.: D. I. 192; A. I. 286; S. II. 25-6. <a href="#fr-fn135-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn136"><sup class="footnote-definition-label">136</sup>
+<p>D. II. 154; DA. II. 591. <a href="#fr-fn136-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn137"><sup class="footnote-definition-label">137</sup>
 <p>See: DA. III. 998; ItA. II. 25; DhsA. 158; Comp.:
-Vīthimuttaparicchedo, Kammacatukkaṁ.</p>
-</div>
-<div class="footnote-definition" id="fn138"><sup class="footnote-definition-label">138</sup>
+Vīthimuttaparicchedo, Kammacatukkaṁ. <a href="#fr-fn137-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn138"><sup class="footnote-definition-label">138</sup>
 <p>The five precepts referred to as the five training rules
 (<em>sikkhāpada</em>): D. I. 146; D. III. 235; A. III. 211-12; Vbh. 285-91.
 Further references: D. II. 12 (= M. III. 120-21); D. III. 195;
 M. II. 51; S. II. 69; S. IV. 245; S. V. 387-8; A. I. 225; A. II.
 57-8, 99, 217 (= Dhtk. 22), 234; A. III. 35, 170-71, 203-5, 209,
-276; A. IV. 220; It. 63; Nd. I. 388; Vbh. 378.</p>
-</div>
-<div class="footnote-definition" id="fn139"><sup class="footnote-definition-label">139</sup>
-<p>Sn. 69.</p>
-</div>
-<div class="footnote-definition" id="fn140"><sup class="footnote-definition-label">140</sup>
+276; A. IV. 220; It. 63; Nd. I. 388; Vbh. 378. <a href="#fr-fn138-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn139"><sup class="footnote-definition-label">139</sup>
+<p>Sn. 69. <a href="#fr-fn139-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn140"><sup class="footnote-definition-label">140</sup>
 <p>Further references at: D. I. 138; D. II. 322; D. III. 74, 82-3,
 269; M. I. 287-8, 313-4, M. II. 87, 150; M. III. 47-50, 210; S. IV.
 313, 321-2, 350-51; A. I. 269-72, 297; A. II. 59-60, 220, 253-4;
-Nd. I. 37-8, 48 (= 501-2), 218-19; Vbh. 363-4, 391; Pug. 39-41.</p>
-</div>
-<div class="footnote-definition" id="fn141"><sup class="footnote-definition-label">141</sup>
+Nd. I. 37-8, 48 (= 501-2), 218-19; Vbh. 363-4, 391; Pug. 39-41. <a href="#fr-fn140-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn141"><sup class="footnote-definition-label">141</sup>
 <p>D. II. 311-12; M. III. 23, 251-2; S. V. 353-4; A. II. 83-4, 219;
-Vbh. 105, 235, 383.</p>
-</div>
-<div class="footnote-definition" id="fn142"><sup class="footnote-definition-label">142</sup>
-<p>D. III. 182; M. II. 35-6; A. II. 71; A. III. 432-3; Vbh. 376.</p>
-</div>
-<div class="footnote-definition" id="fn143"><sup class="footnote-definition-label">143</sup>
+Vbh. 105, 235, 383. <a href="#fr-fn141-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn142"><sup class="footnote-definition-label">142</sup>
+<p>D. III. 182; M. II. 35-6; A. II. 71; A. III. 432-3; Vbh. 376. <a href="#fr-fn142-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn143"><sup class="footnote-definition-label">143</sup>
 <p><em>Abhijjhā</em> as one of the hindrances is equivalent to the term
 <em>kāma-chanda</em> (’sensual desire’) and is often used as a substitute
-for <em>kāma-chanda</em> (e.g. at: D. I. 207).</p>
-</div>
-<div class="footnote-definition" id="fn144"><sup class="footnote-definition-label">144</sup>
+for <em>kāma-chanda</em> (e.g. at: D. I. 207). <a href="#fr-fn143-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn144"><sup class="footnote-definition-label">144</sup>
 <p>The moment of abandoning the five hindrances is classified as
-’access concentration’ (<em>upacāra-samādhi</em>).</p>
-</div>
-<div class="footnote-definition" id="fn145"><sup class="footnote-definition-label">145</sup>
-<p>Cf.: VbhA. 75.</p>
-</div>
-<div class="footnote-definition" id="fn146"><sup class="footnote-definition-label">146</sup>
+’access concentration’ (<em>upacāra-samādhi</em>). <a href="#fr-fn144-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn145"><sup class="footnote-definition-label">145</sup>
+<p>Cf.: VbhA. 75. <a href="#fr-fn145-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn146"><sup class="footnote-definition-label">146</sup>
 <p>See: DA. III. 1048; MA. I. 201; SA. II. 148; DhsA. 101; NdA. I.
-118.</p>
-</div>
-<div class="footnote-definition" id="fn147"><sup class="footnote-definition-label">147</sup>
-<p>See the references cited at footnote 20; see also: VbhA. 383.</p>
-</div>
-<div class="footnote-definition" id="fn148"><sup class="footnote-definition-label">148</sup>
-<p>DA. I. 236; MA. V. 107; AA. II. 353; AA. IV. 173.</p>
-</div>
-<div class="footnote-definition" id="fn149"><sup class="footnote-definition-label">149</sup>
+118. <a href="#fr-fn146-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn147"><sup class="footnote-definition-label">147</sup>
+<p>See the references cited at footnote 20; see also: VbhA. 383. <a href="#fr-fn147-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn148"><sup class="footnote-definition-label">148</sup>
+<p>DA. I. 236; MA. V. 107; AA. II. 353; AA. IV. 173. <a href="#fr-fn148-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn149"><sup class="footnote-definition-label">149</sup>
 <p>The term <em>ariya-vinaya</em> appears in a verse at A. III. 353-4;
 apart from this, it appears in the phrase <em>ariyassa vinaya</em>: Vin. I.
 315 = Vin. II. 192 = D. I. 85 = M. III. 247 = S. II. 128 = A. I.
@@ -5661,85 +5643,86 @@ The commentators give a comprehensive explanation of the term
 <em>vinaya</em> at VinA. I. 225. The commentaries at AA. V. 33 offer four
 definitions, and of these four definitions other commentaries
 subdivide the first two into another ten definitions: MA. I. 22;
-SA. II. 252; SnA. I. 8; NdA. 77; DhsA. 351.</p>
-</div>
-<div class="footnote-definition" id="fn150"><sup class="footnote-definition-label">150</sup>
-<p>Vin. I. 20-21; S. I. 105-106.</p>
-</div>
-<div class="footnote-definition" id="fn151"><sup class="footnote-definition-label">151</sup>
-<p>A. II. 147.</p>
-</div>
-<div class="footnote-definition" id="fn152"><sup class="footnote-definition-label">152</sup>
-<p>D. II. 119-20; D. III. 127, 210-11.</p>
-</div>
-<div class="footnote-definition" id="fn153"><sup class="footnote-definition-label">153</sup>
+SA. II. 252; SnA. I. 8; NdA. 77; DhsA. 351. <a href="#fr-fn149-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn150"><sup class="footnote-definition-label">150</sup>
+<p>Vin. I. 20-21; S. I. 105-106. <a href="#fr-fn150-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn151"><sup class="footnote-definition-label">151</sup>
+<p>A. II. 147. <a href="#fr-fn151-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn152"><sup class="footnote-definition-label">152</sup>
+<p>D. II. 119-20; D. III. 127, 210-11. <a href="#fr-fn152-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn153"><sup class="footnote-definition-label">153</sup>
 <p>See: D. III. 246; M. II. 245-6; A. I. 18-21; A. III. 114-15,
-334-5; It. 11; Vin. II. 89; Vin. V. 167-8.</p>
-</div>
-<div class="footnote-definition" id="fn154"><sup class="footnote-definition-label">154</sup>
+334-5; It. 11; Vin. II. 89; Vin. V. 167-8. <a href="#fr-fn153-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn154"><sup class="footnote-definition-label">154</sup>
 <p>This practice as an attribute of the Buddha: A. V. 66; as an
 attribute of a ’great man’: A. II. 35-6. Compare with the passage at
 A. III. 115-16, which describes the attributes of an elder monk who
 is called one who practises for the welfare of the manyfolk; one
 important attribute is to lead the manyfolk away from the untrue
-Dhamma and to establish them in the true Dhamma.</p>
-</div>
-<div class="footnote-definition" id="fn155"><sup class="footnote-definition-label">155</sup>
-<p>A. II. 21; and see: A. III. 122.</p>
-</div>
-<div class="footnote-definition" id="fn156"><sup class="footnote-definition-label">156</sup>
-<p>A. III. 330, 424; A. IV. 28.</p>
-</div>
-<div class="footnote-definition" id="fn157"><sup class="footnote-definition-label">157</sup>
-<p>M. I. 439-40.</p>
-</div>
-<div class="footnote-definition" id="fn158"><sup class="footnote-definition-label">158</sup>
+Dhamma and to establish them in the true Dhamma. <a href="#fr-fn154-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn155"><sup class="footnote-definition-label">155</sup>
+<p>A. II. 21; and see: A. III. 122. <a href="#fr-fn155-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn156"><sup class="footnote-definition-label">156</sup>
+<p>A. III. 330, 424; A. IV. 28. <a href="#fr-fn156-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn157"><sup class="footnote-definition-label">157</sup>
+<p>M. I. 439-40. <a href="#fr-fn157-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn158"><sup class="footnote-definition-label">158</sup>
 <p>The Buddha’s prescription for monks to pay respects according to
-seniority appears at Vin. II. 160-62.</p>
-</div>
-<div class="footnote-definition" id="fn159"><sup class="footnote-definition-label">159</sup>
+seniority appears at Vin. II. 160-62. <a href="#fr-fn158-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn159"><sup class="footnote-definition-label">159</sup>
 <p>For an exception to showing respect according to seniority, made
 out of respect for the Dhamma, see: Vin. II. 168-9; and see also:
-S. IV. 122-3.</p>
-</div>
-<div class="footnote-definition" id="fn160"><sup class="footnote-definition-label">160</sup>
+S. IV. 122-3. <a href="#fr-fn159-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn160"><sup class="footnote-definition-label">160</sup>
 <p>Trans.: I have used the lowercase ’sangha’ to refer to the
 monastic community and the uppercase ’Sangha’ for the community of
 awakened disciples. See the earlier section ’The Dual Freedom of the
 Sangha’ discussing the contrast between the conventional sangha
 (<em>sammati-saṅgha</em>) and the ’community of true disciples’
 (<em>sāvaka-saṅgha</em>) – sometimes referred to as the ’noble community’
-(<em>ariya-saṅgha</em>).</p>
-</div>
-<div class="footnote-definition" id="fn161"><sup class="footnote-definition-label">161</sup>
+(<em>ariya-saṅgha</em>). <a href="#fr-fn160-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn161"><sup class="footnote-definition-label">161</sup>
 <p>D. III. 218. The commentators created the division of the three
 conditions of being an elder (<em>vuḍḍhi</em>): elders by birth
 (<em>jāti-vuḍḍhi</em>), elders by age (<em>vaya-vuḍḍhi</em>), and elders by virtue
 (<em>guṇa-vuḍḍhi</em>): JA. I. 220; at [VinṬ. 4/399] and SnA. I. 332
 ’elders by wisdom’ (<em>paññā-vuḍḍhi</em>) is added to make four
-conditions.</p>
-</div>
-<div class="footnote-definition" id="fn162"><sup class="footnote-definition-label">162</sup>
+conditions. <a href="#fr-fn161-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn162"><sup class="footnote-definition-label">162</sup>
 <p><em>Therakaraṇa-dhamma</em>: A. II. 22; and see the ten qualities of an
-elder (<em>thera-dhamma</em>) at A. V. 201.</p>
-</div>
-<div class="footnote-definition" id="fn163"><sup class="footnote-definition-label">163</sup>
-<p>Henry Holt and Co.; New York; 1936, p. 112.</p>
-</div>
-<div class="footnote-definition" id="fn164"><sup class="footnote-definition-label">164</sup>
-<p>Indiana University; Bloomington; 1962, p. 3.</p>
-</div>
-<div class="footnote-definition" id="fn165"><sup class="footnote-definition-label">165</sup>
-<p>Ud. 92.</p>
-</div>
-<div class="footnote-definition" id="fn166"><sup class="footnote-definition-label">166</sup>
-<p>Nd. I. 66, 475-6.</p>
-</div>
-<div class="footnote-definition" id="fn167"><sup class="footnote-definition-label">167</sup>
-<p>Vin. I. 157-9.</p>
-</div>
-<div class="footnote-definition" id="fn168"><sup class="footnote-definition-label">168</sup>
-<p>E.g.: A. I. 295-6.</p>
+elder (<em>thera-dhamma</em>) at A. V. 201. <a href="#fr-fn162-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn163"><sup class="footnote-definition-label">163</sup>
+<p>Henry Holt and Co.; New York; 1936, p. 112. <a href="#fr-fn163-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn164"><sup class="footnote-definition-label">164</sup>
+<p>Indiana University; Bloomington; 1962, p. 3. <a href="#fr-fn164-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn165"><sup class="footnote-definition-label">165</sup>
+<p>Ud. 92. <a href="#fr-fn165-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn166"><sup class="footnote-definition-label">166</sup>
+<p>Nd. I. 66, 475-6. <a href="#fr-fn166-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn167"><sup class="footnote-definition-label">167</sup>
+<p>Vin. I. 157-9. <a href="#fr-fn167-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn168"><sup class="footnote-definition-label">168</sup>
+<p>E.g.: A. I. 295-6. <a href="#fr-fn168-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

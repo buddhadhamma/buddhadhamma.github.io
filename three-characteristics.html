@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html" class="active">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -194,18 +175,18 @@ possible owing to the interdependence and insubstantiality of their
 components.</p>
 <p>This stream of conditioned phenomena is naturally steady (<em>dhātu</em>),
 naturally stable and certain (<em>dhammaṭṭhiti</em>), and it is part of a
-natural order (<em>dhamma-niyāma</em>).<sup class="footnote-reference"><a href="#fn1">1</a></sup> It does not rely for its existence
+natural order (<em>dhamma-niyāma</em>).<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup> It does not rely for its existence
 on a god, religion or prophet. {63} In Buddha-Dhamma the role of a
-Teacher<sup class="footnote-reference"><a href="#fn2">2</a></sup> is that of discovering and explaining this truth to others.</p>
+Teacher<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup> is that of discovering and explaining this truth to others.</p>
 <p>The Buddha presented the teaching of the Three Characteristics
-(<em>tilakkhaṇa</em>)<sup class="footnote-reference"><a href="#fn3">3</a></sup> to describe this natural law of flux (See
+(<em>tilakkhaṇa</em>)<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup> to describe this natural law of flux (See
 Note <a href="#note-flux">Dependent Origination as Law of Flux</a>). The teaching is outlined in this way:</p>
 <div class="sutta">
 <blockquote>
-<p>Whether Tathāgatas<sup class="footnote-reference"><a href="#fn4">4</a></sup> appear or not, this truth (<em>dhātu</em>) exists as
+<p>Whether Tathāgatas<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup> appear or not, this truth (<em>dhātu</em>) exists as
 constant and stable … that is:</p>
 <p>All conditioned phenomena (<em>saṅkhāra</em>) are impermanent….</p>
-<p>All conditioned phenomena are <em>dukkha</em><sup class="footnote-reference"><a href="#fn5">5</a></sup>….</p>
+<p>All conditioned phenomena are <em>dukkha</em><sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup>….</p>
 <p>All things (<em>dhamma</em>) are nonself….</p>
 <p>Having fully awakened to and penetrated to this truth, a Tathāgata
 announces, teaches, clarifies, formulates, reveals, and analyzes it:
@@ -232,7 +213,7 @@ subject to clinging (<em>upādāna</em>).</p>
 <li>
 <p><strong>Anattatā</strong>: the condition of <em>anattā</em> – nonself; the condition of
 things being void of a real abiding self that owns or controls
-phenomena.<sup class="footnote-reference"><a href="#fn6">6</a></sup></p>
+phenomena.<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup></p>
 </li>
 </ul>
 <div class="note">
@@ -255,7 +236,7 @@ signs as attributes of nature, I have not.]</p>
 <em>aniccatā</em>, <em>dukkhatā</em>, and <em>anattatā</em>. As characteristics they are
 known as <em>anicca-lakkhaṇa</em>, <em>dukkha-lakkhaṇa</em>, and <em>anatta-lakkhaṇa</em>.
 The commentaries occasionally refer to the three characteristics as
-’universal characteristics’ (<em>sāmañña-lakkhaṇa</em>).<sup class="footnote-reference"><a href="#fn7">7</a></sup> {64}</p>
+’universal characteristics’ (<em>sāmañña-lakkhaṇa</em>).<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup> {64}</p>
 <p>All conditioned things exist in a state of flux, made up of
 interdependent conditioning factors, which arise and pass away in
 unbroken succession: things are impermanent. Because of their
@@ -264,9 +245,9 @@ stress and friction, revealing an inherent imperfection. And all things,
 both conditioned things and the Unconditioned, exist according to their
 own nature; they possess no self that acts as owner or governor of
 phenomena.</p>
-<p>Human beings too are comprised of constituent elements. The
+<p>Human beings too are made up of constituent elements. The
 ’building-blocks’ for human beings are the five aggregates; nothing else
-exists besides the five aggregates.<sup class="footnote-reference"><a href="#fn8">8</a></sup> When we examine the five
+exists besides the five aggregates.<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup> When we examine the five
 aggregates in turn, we see that each one is impermanent. Being
 impermanent, they are dukkha; they are distressing for one who grasps
 them. Being dukkha, they are selfless. They are selfless because each
@@ -295,7 +276,7 @@ of consciousness: “May my consciousness be this way; may it not be
 that way.”</p>
 <p>’What do you think, monks, is the body permanent or impermanent?’</p>
 <p>’Impermanent, venerable sir.’</p>
-<p>’Is that which is impermanent oppressive or easeful?’<sup class="footnote-reference"><a href="#fn9">9</a></sup></p>
+<p>’Is that which is impermanent oppressive or easeful?’<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup></p>
 <p>’Oppressive, venerable sir.’</p>
 <p>’Is what is impermanent, oppressive and of the nature to change fit to
 be regarded thus: “This is mine, this is I, this is my self?” ’</p>
@@ -319,7 +300,7 @@ my self.” ’ {65}</p>
 <p>Many scholars have tried to prove that the Buddha acknowledged a self
 existing apart from the five aggregates. They claim that he only
 repudiated a self within conditioned phenomena and that he affirmed an
-Ultimate Self. Moreover, they explain that Nibbāna<sup class="footnote-reference"><a href="#fn10">10</a></sup> is the same as
+Ultimate Self. Moreover, they explain that Nibbāna<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup> is the same as
 <em>ātman/attā</em>: Nibbāna <em>is</em> the Self. I will elaborate on this matter in
 Chapter 6, on Nibbāna.</p>
 <p>Here, let it simply suffice to say that all things exist according to
@@ -341,9 +322,9 @@ definition they could not exist as they do. {66}</p>
 <h2 id="understanding-the-terms-dhamma-and-saṅkhāra"><a class="header" href="#understanding-the-terms-dhamma-and-saṅkhāra">Understanding the Terms Dhamma and Saṅkhāra</a></h2>
 <h3 id="all-things-and-all-formations"><a class="header" href="#all-things-and-all-formations">’All Things’ and ’All Formations’</a></h3>
 <p>In the first and second statements of the Three Characteristics the
-Buddha states that all conditioned phenomena (<em>saṅkhāra</em>)<sup class="footnote-reference"><a href="#fn11">11</a></sup> are
+Buddha states that all conditioned phenomena (<em>saṅkhāra</em>)<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup> are
 impermanent and dukkha, respectively, but in the third statement he
-says that all things (<em>dhamma</em>)<sup class="footnote-reference"><a href="#fn12">12</a></sup> are nonself. This indicates a
+says that all things (<em>dhamma</em>)<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup> are nonself. This indicates a
 distinction between the first two characteristics and the third. To understand this distinction one must examine the
 words saṅkhāra and dhamma.</p>
 <p>The Pali word dhamma has an all-encompassing range of meaning,
@@ -383,7 +364,7 @@ this context it is helpful to divide things into categories:</p>
 <p>Each group above incorporates the entire meaning of dhamma, but the
 group that corresponds with the subject to be studied here is that of
 conditioned things and the Unconditioned.</p>
-<p>All things can be divided into two types:<sup class="footnote-reference"><a href="#fn13">13</a></sup></p>
+<p>All things can be divided into two types:<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup></p>
 <ol>
 <li>
 <p><em>Saṅkhata-dhamma</em>: constructed things; things that arise from
@@ -414,7 +395,7 @@ The characteristic of nonself, however, applies to all things, both the
 conditioned and the Unconditioned. The Unconditioned – Nibbāna – is thus
 devoid of the first two characteristics.</p>
 <p>In the Pali Canon the Buddha characterizes the conditioned and the
-Unconditioned in this way:<sup class="footnote-reference"><a href="#fn14">14</a></sup></p>
+Unconditioned in this way:<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup></p>
 <p>Signs of the conditioned world (<em>saṅkhata-lakkhaṇa</em>):</p>
 <ol>
 <li>
@@ -446,13 +427,13 @@ from the Vinaya Piṭaka confirms:</p>
 <div class="sutta">
 <blockquote>
 <p>All formations are impermanent, subject to stress, and nonself;
-Nibbāna and designations are nonself.<sup class="footnote-reference"><a href="#fn15">15</a></sup> {68}</p>
+Nibbāna and designations are nonself.<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup> {68}</p>
 <p><em>Vin. VI. (Parivāra) 86.</em></p>
 </blockquote>
 </div>
 <h3 id="saṅkhāra-of-the-five-aggregates-and-saṅkhāra-of-the-three-characteristics"><a class="header" href="#saṅkhāra-of-the-five-aggregates-and-saṅkhāra-of-the-three-characteristics">Saṅkhāra of the Five Aggregates and Saṅkhāra of the Three Characteristics</a></h3>
 <p>There are many examples in the Thai language of a single word having
-several definitions.<sup class="footnote-reference"><a href="#fn16">16</a></sup> Some definitions vary only slightly while
+several definitions.<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup> Some definitions vary only slightly while
 others vary greatly to the point of appearing unrelated.</p>
 <p>Similarly, in Pali there are many individual terms that have a wide
 range of different meanings. Those people who have studied Pali are able
@@ -465,11 +446,11 @@ different connotations. Such words include:</p>
 an excellent person.</p>
 </li>
 <li>
-<p><em>Nimitta</em>: in the Vinaya<sup class="footnote-reference"><a href="#fn17">17</a></sup> this term refers to a boundary marker,
+<p><em>Nimitta</em>: in the Vinaya<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup> this term refers to a boundary marker,
 while in relation to meditation it means a mental image.</p>
 </li>
 <li>
-<p><em>Nikāya</em>: this term refers to a section of the Suttanta Piṭaka;<sup class="footnote-reference"><a href="#fn18">18</a></sup>
+<p><em>Nikāya</em>: this term refers to a section of the Suttanta Piṭaka;<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup>
 in other contexts it means a religious faction.</p>
 </li>
 <li>
@@ -497,7 +478,7 @@ yoga.</p>
 </blockquote>
 </div>
 <p>The first <em>yoga</em> means ’spiritual effort’: the development of wisdom.
-The second <em>yoga</em> refers to the defilements that bind beings to suffering in worldly existence.<sup class="footnote-reference"><a href="#fn19">19</a></sup></p>
+The second <em>yoga</em> refers to the defilements that bind beings to suffering in worldly existence.<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup></p>
 <div class="sutta">
 <blockquote>
 <p>An ordinary person regards the body, feelings, perceptions, volitional
@@ -538,7 +519,7 @@ the agents behind action (<em>kamma</em>), the ’fashioners’ of the mind, for
 example: faith (<em>saddhā</em>), mindfulness (<em>sati</em>), moral shame (<em>hiri</em>),
 fear of wrongdoing (<em>ottappa</em>), lovingkindness (<em>mettā</em>), compassion
 (<em>karuṇā</em>), wisdom (<em>paññā</em>), delusion (<em>moha</em>), greed (<em>lobha</em>) and
-hatred (<em>dosa</em>).<sup class="footnote-reference"><a href="#fn20">20</a></sup> They are mental qualities (<em>nāma-dhamma</em>),
+hatred (<em>dosa</em>).<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup> They are mental qualities (<em>nāma-dhamma</em>),
 existing in the mind along with feeling (<em>vedanā</em>), perception
 (<em>saññā</em>), and consciousness (<em>viññāṇa</em>).</p>
 <p>Saṅkhāra of the Three Characteristics refers to constructed things:
@@ -585,7 +566,7 @@ more detail, based on scriptural teachings.</p>
 <h3 id="impermanence"><a class="header" href="#impermanence">Impermanence</a></h3>
 <p>The Paṭisambhidāmagga offers a simple definition for <em>aniccatā</em>:
 something is considered impermanent ’in the sense that it perishes’
-(<em>khaya-aṭṭhena</em>).<sup class="footnote-reference"><a href="#fn21">21</a></sup> All conditioned things exist only momentarily,
+(<em>khaya-aṭṭhena</em>).<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup> All conditioned things exist only momentarily,
 at a specific time and place, then cease there and then. An object in
 the past does not exist in the present; an object present now does not
 exist in the future. Things do not endure in any fixed, immutable way.</p>
@@ -602,14 +583,14 @@ law of impermanence.</p>
 <p>The commentaries define <em>aniccatā</em> in many different ways. For example,
 something is considered impermanent ’because it is uncertain and
 unstable’ (<em>aniccantikatāya</em>), and ’because it has a beginning and an
-end’ (<em>ādi-antavantatāya</em>).<sup class="footnote-reference"><a href="#fn22">22</a></sup> A common and frequently used definition
+end’ (<em>ādi-antavantatāya</em>).<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup> A common and frequently used definition
 is: something is considered impermanent in the sense that ’it has
-existed and then ceases to exist’ (<em>hutvā abhāvaṭṭhena</em>).<sup class="footnote-reference"><a href="#fn23">23</a></sup>
+existed and then ceases to exist’ (<em>hutvā abhāvaṭṭhena</em>).<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup>
 Additional wording is sometimes added to this phrase, for example:
 something is considered impermanent ’because it arises, passes away, and
-becomes otherwise’ (<em>uppādavayaññathattabhāvā hutvā abhāvato vā</em>).<sup class="footnote-reference"><a href="#fn24">24</a></sup></p>
+becomes otherwise’ (<em>uppādavayaññathattabhāvā hutvā abhāvato vā</em>).<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup></p>
 <p>A detailed list of definitions is as follows. There are four reasons why
-something is considered impermanent:<sup class="footnote-reference"><a href="#fn25">25</a></sup> {74}</p>
+something is considered impermanent:<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup> {74}</p>
 <ol>
 <li>
 <p><em>Uppādavayappavattito</em>: because it arises and disintegrates; it
@@ -634,7 +615,7 @@ to accommodate that person’s wishes.</p>
 <h4 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h4>
 <p>The Paṭisambhidāmagga offers a concise definition for <em>dukkhatā</em>:
 something is considered dukkha ’in the sense that it is subject to
-danger’ (<em>bhaya-aṭṭhena</em>)<em>.</em><sup class="footnote-reference"><a href="#fn26">26</a></sup> <em>Bhaya</em> can also mean ’dangerous’ or
+danger’ (<em>bhaya-aṭṭhena</em>)<em>.</em><sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup> <em>Bhaya</em> can also mean ’dangerous’ or
 ’frightening’. All conditioned phenomena invariably disintegrate and
 dissolve; they therefore offer no true safety, relief, or assurance. Any
 such phenomenon is threatened by destruction and disintegration. The
@@ -643,16 +624,16 @@ attaches to it.</p>
 <p>The commentaries elaborate the meaning of <em>dukkhatā</em>, including these
 two frequently used definitions: first, something is considered dukkha
 ’in the sense that it is under perpetual pressure through arising and
-disintegration’ (<em>uppādavaya-paṭipīḷanaṭṭhena</em><sup class="footnote-reference"><a href="#fn27">27</a></sup> or
-<em>uppādavaya-paṭipīḷanatāya</em><sup class="footnote-reference"><a href="#fn28">28</a></sup>). There is pressure on everything that
+disintegration’ (<em>uppādavaya-paṭipīḷanaṭṭhena</em><sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup> or
+<em>uppādavaya-paṭipīḷanatāya</em><sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup>). There is pressure on everything that
 interacts with that object, and the object itself is under stress from
-its component elements.<sup class="footnote-reference"><a href="#fn29">29</a></sup> Second, ’because it is a foundation for
-suffering’ (<em>dukkha-vatthutāya</em><sup class="footnote-reference"><a href="#fn30">30</a></sup> or <em>dukkha-vatthuto</em><sup class="footnote-reference"><a href="#fn31">31</a></sup>). An
+its component elements.<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup> Second, ’because it is a foundation for
+suffering’ (<em>dukkha-vatthutāya</em><sup class="footnote-reference" id="fr-fn30-1"><a href="#fn-fn30">30</a></sup> or <em>dukkha-vatthuto</em><sup class="footnote-reference" id="fr-fn31-1"><a href="#fn-fn31">31</a></sup>). An
 object beset by dukkha is a basis for suffering, for example by
 causing pain. Simply speaking, dukkha means to cause pain.</p>
 <p>The most complete compilation of definitions for dukkha in the
 commentaries is as follows. Something is considered to be dukkha for
-these four reasons:<sup class="footnote-reference"><a href="#fn32">32</a></sup></p>
+these four reasons:<sup class="footnote-reference" id="fr-fn32-1"><a href="#fn-fn32">32</a></sup></p>
 <ol>
 <li>
 <p><em>Abhiṇha-sampatipīḷanato</em>: because it is continually oppressed; it
@@ -664,13 +645,13 @@ associated conditions.</p>
 <p><em>Dukkhamato</em>: because it is ’hard to endure’; it is not durable; it
 is unable to be sustained in an original state; it is obliged to
 change, become otherwise, and lose identity as a consequence of
-arising and ceasing.<sup class="footnote-reference"><a href="#fn33">33</a></sup> {75}</p>
+arising and ceasing.<sup class="footnote-reference" id="fr-fn33-1"><a href="#fn-fn33">33</a></sup> {75}</p>
 </li>
 <li>
 <p><em>Dukkha-vatthuto</em>: because it is a foundation for suffering; it is
 foundation for a state of pressure and stress. In relation to human
 beings, this means that it produces various kinds of affliction,
-e.g. pain, discomfort and distress.<sup class="footnote-reference"><a href="#fn34">34</a></sup></p>
+e.g. pain, discomfort and distress.<sup class="footnote-reference" id="fr-fn34-1"><a href="#fn-fn34">34</a></sup></p>
 </li>
 <li>
 <p><em>Sukha-paṭikkhepato</em>: because it opposes pleasure (<em>sukha</em>;
@@ -720,10 +701,10 @@ explaining the Four Noble Truths (<em>ariya-sacca</em>), it defines dukkha –
 the first of the Noble Truths – in four ways. Something is identified
 as dukkha in the sense that it is oppressed (<em>pīḷanaṭṭha</em>),
 constructed (<em>saṅkhataṭṭha</em>), burns (<em>santāpaṭṭha</em>), and changes
-(<em>vipariṇāmaṭṭha</em>).<sup class="footnote-reference"><a href="#fn35">35</a></sup> These four definitions of dukkha can also be
+(<em>vipariṇāmaṭṭha</em>).<sup class="footnote-reference" id="fr-fn35-1"><a href="#fn-fn35">35</a></sup> These four definitions of dukkha can also be
 used in the context of the Three Characteristics. Definitions one and
 four (<em>pīḷanaṭṭha</em> and <em>vipariṇāmaṭṭha</em>) have already been
-described;<sup class="footnote-reference"><a href="#fn36">36</a></sup> here are the other two:</p>
+described;<sup class="footnote-reference" id="fr-fn36-1"><a href="#fn-fn36">36</a></sup> here are the other two:</p>
 <div class="list-none">
 <ul>
 <li>
@@ -735,7 +716,7 @@ it is inconstant.</p>
 <p><strong>6.</strong> <em>Santāpaṭṭha</em>: ’in the sense that it burns’; it burns up, ending in
 decay and destruction; moreover, it burns someone with defilements,
 who grasps and clings to the object, causing torment and
-agitation.<sup class="footnote-reference"><a href="#fn37">37</a></sup></p>
+agitation.<sup class="footnote-reference" id="fr-fn37-1"><a href="#fn-fn37">37</a></sup></p>
 </li>
 </ul>
 </div>
@@ -840,7 +821,7 @@ also dukkha (<em>yad’aniccaṁ taṁ dukkhaṁ</em>).</p>
 consequence of the dukkha of the Three Characteristics, is dukkha as
 feeling, called <em>dukkha-vedanā</em>: a feeling of pain. It is a feeling
 occurring when pressure reaches a certain level in relation to a
-person’s body and mind.<sup class="footnote-reference"><a href="#fn38">38</a></sup> This pain is included in the dukkha of
+person’s body and mind.<sup class="footnote-reference" id="fr-fn38-1"><a href="#fn-fn38">38</a></sup> This pain is included in the dukkha of
 the Three Characteristics, as is all other feeling, both pleasant and
 neutral. All kinds of feeling – painful, pleasurable, and neutral –
 are dukkha as determined by the Three Characteristics. {78}</p>
@@ -857,7 +838,7 @@ themselves are subject to stress, and therefore it is impossible for
 them to provide true satisfaction to people in any constant or
 consistent way.)</p>
 <p><em>Dukkha-ariyasacca</em> refers specifically to matters connected to the five
-aggregates of clinging (<em>upādāna-khandha</em>).<sup class="footnote-reference"><a href="#fn39">39</a></sup> Technically, the
+aggregates of clinging (<em>upādāna-khandha</em>).<sup class="footnote-reference" id="fr-fn39-1"><a href="#fn-fn39">39</a></sup> Technically, the
 dukkha of the Four Noble Truths refers to the suffering
 arising on account of the sense bases (<em>indriya-baddha</em>), that is, suffering pertaining to everyday life. It excludes pressure independent of the
 sense bases (<em>anindriya-baddha</em>), which is classified as dukkha of the
@@ -896,12 +877,12 @@ subject of understanding human suffering.</p>
 <p>It emphasizes the significance of the basis of suffering
 (<em>dukkha-vatthutāya</em>) rather than the pressure, tension and friction
 of arising and falling (<em>udayabbaya-paṭipīḷanaṭṭhena</em>), which is the
-essential meaning of dukkha in the Three Characteristics.<sup class="footnote-reference"><a href="#fn40">40</a></sup></p>
+essential meaning of dukkha in the Three Characteristics.<sup class="footnote-reference" id="fr-fn40-1"><a href="#fn-fn40">40</a></sup></p>
 </li>
 </ul>
 <p>The subject of dukkha in the Four Noble Truths will be explained at
 more length below. Here, let us examine another teaching, on the three
-kinds of dukkha (the 3 <em>dukkhatā</em>).<sup class="footnote-reference"><a href="#fn41">41</a></sup> This is a very important
+kinds of dukkha (the 3 <em>dukkhatā</em>).<sup class="footnote-reference" id="fr-fn41-1"><a href="#fn-fn41">41</a></sup> This is a very important
 teaching located in three different suttas; it also occurs frequently in
 the Mahāniddesa and the Cūḷaniddesa. On one occasion it was taught by
 the Buddha; the remaining passages are by Ven. Sāriputta. In each
@@ -917,7 +898,7 @@ Three Characteristics. It includes dukkha as feeling (<em>vedanā</em>), and
 it also links up with dukkha as found in the Four Noble Truths:</p>
 <ol>
 <li>
-<p><em>Dukkha-dukkhatā</em>:<sup class="footnote-reference"><a href="#fn42">42</a></sup> physical and mental pain, as generally
+<p><em>Dukkha-dukkhatā</em>:<sup class="footnote-reference" id="fr-fn42-1"><a href="#fn-fn42">42</a></sup> physical and mental pain, as generally
 understood, for example aches, discomfort, and fatigue; in other
 words, ’painful feeling’ (<em>dukkha-vedanā</em>).</p>
 </li>
@@ -932,7 +913,7 @@ words, the fundamental inconstancy of pleasure produces pain.
 degree.)</p>
 </li>
 <li>
-<p><em>Saṅkhāra-dukkhatā</em>:<sup class="footnote-reference"><a href="#fn43">43</a></sup> dukkha inherent in conditioned
+<p><em>Saṅkhāra-dukkhatā</em>:<sup class="footnote-reference" id="fr-fn43-1"><a href="#fn-fn43">43</a></sup> dukkha inherent in conditioned
 phenomena, inherent in everything that originates from causes and
 conditions. In other words, the five aggregates are dukkha; they
 are of the nature to be pressured and coerced by the rising and
@@ -950,7 +931,7 @@ experience – are subject to this characteristic. Another way of
 phrasing this is that this pressure and stress is a natural
 characteristic of the five aggregates (<em>khandha</em>).</p>
 <p>Every human being, and everything that ordinary people come into contact
-with, is a conditioned phenomenon and is comprised of the five
+with, is a conditioned phenomenon and is made up of the five
 aggregates. If people lack understanding and deal with things
 unskilfully, a sense of oppression and affliction arises within
 themselves, which we call ’suffering’. This suffering experienced by
@@ -1036,8 +1017,8 @@ formations … consciousness is dukkha….</p>
 <p>Monks, form is not-self … feeling … perception … volitional
 formations … consciousness is not-self…. Seeing this, the
 instructed noble disciple lets go of form … feeling … perception
-… volitional formations … consciousness. Letting go,<sup class="footnote-reference"><a href="#fn44">44</a></sup> he
-extricates himself.<sup class="footnote-reference"><a href="#fn45">45</a></sup> Through dispassion [his mind] is liberated.
+… volitional formations … consciousness. Letting go,<sup class="footnote-reference" id="fr-fn44-1"><a href="#fn-fn44">44</a></sup> he
+extricates himself.<sup class="footnote-reference" id="fr-fn45-1"><a href="#fn-fn45">45</a></sup> Through dispassion [his mind] is liberated.
 When it is liberated there come the knowledge: ’It is liberated’. He
 understands: ’Destroyed is birth, the holy life has been lived, what
 had to be done has been done, there is no more for this state of
@@ -1101,7 +1082,7 @@ it. This is called the cessation of suffering. {82}</p>
 is this Noble Eightfold Path; that is, right view, right thought,
 right speech, right action, right livelihood, right effort, right
 mindfulness, and right concentration. This is called the way leading
-to the cessation of suffering.<sup class="footnote-reference"><a href="#fn46">46</a></sup></p>
+to the cessation of suffering.<sup class="footnote-reference" id="fr-fn46-1"><a href="#fn-fn46">46</a></sup></p>
 <p><em>S. III. 158-9; S. V. 425</em></p>
 </blockquote>
 </div>
@@ -1251,7 +1232,7 @@ Characteristics, it is illustrated just enough for an accurate
 understanding of reality. The chief, most frequently mentioned groups of
 dukkha in the scriptures are listed below:</p>
 <p><strong>The 12 Kinds of Dukkha:</strong> This group elucidates the meaning of
-dukkha in the Four Noble Truths:<sup class="footnote-reference"><a href="#fn47">47</a></sup></p>
+dukkha in the Four Noble Truths:<sup class="footnote-reference" id="fr-fn47-1"><a href="#fn-fn47">47</a></sup></p>
 <ol>
 <li>
 <p>Birth (<em>jāti</em>): birth is suffering because it is a basis for various
@@ -1317,7 +1298,7 @@ relative.</p>
 </li>
 <li>
 <p>Physical pain (<em>dukkha</em>), for example wounds, sprains and
-sickness.<sup class="footnote-reference"><a href="#fn48">48</a></sup></p>
+sickness.<sup class="footnote-reference" id="fr-fn48-1"><a href="#fn-fn48">48</a></sup></p>
 </li>
 <li>
 <p>Distress (<em>domanassa</em>; anguish), which causes crying, beating one’s
@@ -1345,7 +1326,7 @@ the five aggregates as objects of clinging. To sum up, one can say
 that suffering <em>is</em> the five aggregates of clinging. {86}</p>
 </li>
 </ol>
-<p><strong>The Two Dukkha (A):</strong><sup class="footnote-reference"><a href="#fn49">49</a></sup></p>
+<p><strong>The Two Dukkha (A):</strong><sup class="footnote-reference" id="fr-fn49-1"><a href="#fn-fn49">49</a></sup></p>
 <ol>
 <li>
 <p><em>Paṭicchanna-dukkha</em>: concealed, not clearly manifest suffering, for
@@ -1357,7 +1338,7 @@ the ’fires’ of lust and anger.</p>
 by a thorn, whipped, or cut by a knife.</p>
 </li>
 </ol>
-<p><strong>The Two Dukkha (B):</strong><sup class="footnote-reference"><a href="#fn50">50</a></sup></p>
+<p><strong>The Two Dukkha (B):</strong><sup class="footnote-reference" id="fr-fn50-1"><a href="#fn-fn50">50</a></sup></p>
 <ol>
 <li>
 <p><em>Pariyāya-dukkha</em>: indirect or implicit dukkha, i.e. every form of
@@ -1370,7 +1351,7 @@ by a thorn, whipped, or cut by a knife.</p>
 </li>
 </ol>
 <p>The Mahāniddesa and the Cūḷaniddesa offer many additional categories of
-dukkha.<sup class="footnote-reference"><a href="#fn51">51</a></sup> For matter of simplicity, they can be sorted into the
+dukkha.<sup class="footnote-reference" id="fr-fn51-1"><a href="#fn-fn51">51</a></sup> For matter of simplicity, they can be sorted into the
 following groups:</p>
 <ol>
 <li>
@@ -1428,7 +1409,7 @@ and opinions. {87}</p>
 <p>In the Mahādukkhakkhandha and the Cūḷadukkhakkhandha suttas, the Buddha
 describes many examples of the <em>’<em>mass of suffering</em>’</em>
 (<em>dukkha-khandha</em>), the plights afflicting humans because of sense
-desire.<sup class="footnote-reference"><a href="#fn52">52</a></sup> They are summarized as follows:</p>
+desire.<sup class="footnote-reference" id="fr-fn52-1"><a href="#fn-fn52">52</a></sup> They are summarized as follows:</p>
 <ol>
 <li>
 <p>The hardship or even loss of life due to one’s occupation.</p>
@@ -1467,9 +1448,9 @@ after death to states of deprivation, perdition, and hell.</p>
 commentaries. In some places the descriptions have no specific name (as
 in the examples of the Mahā- and the Cūḷadukkhakkhandha suttas mentioned
 above), while in others dukkha is identified by special terms such as
-<em>saṁsāra-dukkha,</em><sup class="footnote-reference"><a href="#fn53">53</a></sup> <em>apāya-dukkha</em> (suffering of the lower realms),
+<em>saṁsāra-dukkha,</em><sup class="footnote-reference" id="fr-fn53-1"><a href="#fn-fn53">53</a></sup> <em>apāya-dukkha</em> (suffering of the lower realms),
 <em>vaṭṭamūlaka-dukkha</em> (suffering through the round of rebirth), or
-<em>āhārapariyeṭṭhi-dukkha,</em><sup class="footnote-reference"><a href="#fn54">54</a></sup> to list just a few.<sup class="footnote-reference"><a href="#fn55">55</a></sup> {88}</p>
+<em>āhārapariyeṭṭhi-dukkha,</em><sup class="footnote-reference" id="fr-fn54-1"><a href="#fn-fn54">54</a></sup> to list just a few.<sup class="footnote-reference" id="fr-fn55-1"><a href="#fn-fn55">55</a></sup> {88}</p>
 <p>It would be possible to elaborate much more on this subject of
 suffering, since human beings encounter so many problems, including the
 afflictions faced by all living creatures, and suffering specific to
@@ -1572,7 +1553,7 @@ nature. The very nature of phenomena reveals this characteristic of
 nonself.</p>
 <p>To elaborate on this definition one must examine the distinction between
 conditioned phenomena and the Unconditioned. The Unconditioned, or
-Nibbāna, on the one hand, is an absolute truth (<em>dhamma-dhātu</em>),<sup class="footnote-reference"><a href="#fn56">56</a></sup>
+Nibbāna, on the one hand, is an absolute truth (<em>dhamma-dhātu</em>),<sup class="footnote-reference" id="fr-fn56-1"><a href="#fn-fn56">56</a></sup>
 existing independent of conditioning factors. It is neither a being, nor
 a consciousness, nor a self (<em>nissatta-nijjīva</em>); it cannot be possessed
 or controlled; nor does it act in any sort of creative role. {91}</p>
@@ -1608,17 +1589,17 @@ stated:</p>
 <div class="sutta">
 <blockquote>
 <p>It is impossible for a person endowed with right view (i.e. a
-stream-enterer) to grasp any thing (<em>dhamma</em>) as self.<sup class="footnote-reference"><a href="#fn57">57</a></sup></p>
+stream-enterer) to grasp any thing (<em>dhamma</em>) as self.<sup class="footnote-reference" id="fr-fn57-1"><a href="#fn-fn57">57</a></sup></p>
 <p><em>A. III. 438.</em></p>
 </blockquote>
 </div>
 <p>With the realization of the supreme state, no reason remains for an
 arahant to contemplate a self. This is substantiated by the Buddha’s
 designation of an arahant as one who has ’abandoned the self’ or
-’discarded the self’ (<em>attañjaho</em>/<em>attañjaha</em>):<sup class="footnote-reference"><a href="#fn58">58</a></sup> an arahant has
+’discarded the self’ (<em>attañjaho</em>/<em>attañjaha</em>):<sup class="footnote-reference" id="fr-fn58-1"><a href="#fn-fn58">58</a></sup> an arahant has
 abandoned the belief in a self, the view of existing as or possessing a
 self. Some passages describe an arahant as ’having abandoned the self,
-not clinging to anything’ (<em>attaṁ pahāya anupādiyāno</em>).<sup class="footnote-reference"><a href="#fn59">59</a></sup></p>
+not clinging to anything’ (<em>attaṁ pahāya anupādiyāno</em>).<sup class="footnote-reference" id="fr-fn59-1"><a href="#fn-fn59">59</a></sup></p>
 <p>The following passage from the Tipiṭaka summarizes this matter: {92}</p>
 <div class="sutta">
 <blockquote>
@@ -1723,7 +1704,7 @@ this is my self.’</p>
 </div>
 <p>At this point let us examine some of the numerous scriptural
 explanations of nonself. The Paṭisambhidāmagga defines something as
-anattā in the sense that it is insubstantial (<em>asārakaṭṭhena</em>).<sup class="footnote-reference"><a href="#fn60">60</a></sup>
+anattā in the sense that it is insubstantial (<em>asārakaṭṭhena</em>).<sup class="footnote-reference" id="fr-fn60-1"><a href="#fn-fn60">60</a></sup>
 Insubstantial means to be without essence, to be without a core, and to
 possess nothing that is truly stable or enduring.</p>
 <div class="sutta">
@@ -1750,16 +1731,16 @@ their opposition to desire.</p>
 <p>Note that Buddha-Dhamma considers even Brahma, God, or whichever supreme creator deity as existing within the conditioned world and confined to the five aggregates, and thus wielding restricted power.</p>
 <p>In this sense, the commentaries prefer to define anattā as ’the
 inability to control’ or ’not subject to control’ (<em>avasavattanaṭṭhena</em>
-or <em>avasavattanato</em>).<sup class="footnote-reference"><a href="#fn61">61</a></sup> Likewise, they explain that no one can force
+or <em>avasavattanato</em>).<sup class="footnote-reference" id="fr-fn61-1"><a href="#fn-fn61">61</a></sup> Likewise, they explain that no one can force
 formations into subservience, in defiance of cause and effect, by
 demanding that arisen phenomena not exist, that existent phenomena not
-age, and that aging phenomena not perish.<sup class="footnote-reference"><a href="#fn62">62</a></sup> They quote the Buddha’s
+age, and that aging phenomena not perish.<sup class="footnote-reference" id="fr-fn62-1"><a href="#fn-fn62">62</a></sup> They quote the Buddha’s
 words:</p>
 <div class="sutta">
 <blockquote>
 <p>A person cannot in regard to physical form obtain [as wished for]:
 ’May form be this way, may form not be that way.’ (Same with the other
-aggregates.)<sup class="footnote-reference"><a href="#fn63">63</a></sup></p>
+aggregates.)<sup class="footnote-reference" id="fr-fn63-1"><a href="#fn-fn63">63</a></sup></p>
 <p><em>VbhA. 49; VinṬ.</em></p>
 </blockquote>
 </div>
@@ -1884,12 +1865,12 @@ a hand into ancillary parts, then it too no longer exists. One can
 continue to subdivide, but one will be unable to find any static units
 or elements. The suttas contain only teachings of materiality and
 mentality (<em>nāma-rūpa</em>); there is no mention of a fixed ’being’ or
-’person’.<sup class="footnote-reference"><a href="#fn64">64</a></sup> {97}</p>
+’person’.<sup class="footnote-reference" id="fr-fn64-1"><a href="#fn-fn64">64</a></sup> {97}</p>
 <p>There are four principal definitions of anattā compiled by the
 commentators. Although these definitions are normally used in reference
 to conditioned phenomena (<em>saṅkhata-dhamma</em>), they also apply to the
 Unconditioned (<em>asaṅkhata-dhamma</em>). Something is considered nonself for
-the following reasons:<sup class="footnote-reference"><a href="#fn65">65</a></sup></p>
+the following reasons:<sup class="footnote-reference" id="fr-fn65-1"><a href="#fn-fn65">65</a></sup></p>
 <ul>
 <li>
 <p><em>Suññato</em>: because it exists in a state of emptiness; it exists
@@ -1978,7 +1959,7 @@ apart from actions.</p>
 were therefore unable to realize the truth and be free from the
 enshrouding influence of self-view. René Descartes, the famous French
 philosopher, is an example, who after much consideration, postulated, ’I
-think, therefore I am.’<sup class="footnote-reference"><a href="#fn66">66</a></sup></p>
+think, therefore I am.’<sup class="footnote-reference" id="fr-fn66-1"><a href="#fn-fn66">66</a></sup></p>
 <p>The belief in a distinct self or soul is common to unenlightened beings
 everywhere. This belief seems true and logical through ordinary
 awareness, but once one thoroughly investigates the premise of self,
@@ -1989,7 +1970,7 @@ The Buddha answered that these are unsuitable questions, which stem from
 a false assumption; they are not consistent with reality. Appropriate
 questions are: ’<em>What is the condition giving rise to contact? What is
 the condition giving rise to feeling? What are the conditions giving
-rise to craving and clinging?</em>’<sup class="footnote-reference"><a href="#fn67">67</a></sup></p>
+rise to craving and clinging?</em>’<sup class="footnote-reference" id="fr-fn67-1"><a href="#fn-fn67">67</a></sup></p>
 <p>Just as thought, intention, desire, and feeling are components of a
 physical and mental process, so too the experience of a ’thinker’ or a
 ’designer’ is a component of this process. All of these components exist
@@ -2184,7 +2165,7 @@ a deed, nor without; nor does a deed still persist [in the fruit it
 has produced]. Kamma of its fruit is void; no fruit exists yet in an
 act. And still the fruit is born of kamma, dependent on kamma. For
 here there is no Creator God, no Creator of the round of births;
-phenomena alone flow on, dependent on the marriage of conditions.<sup class="footnote-reference"><a href="#fn68">68</a></sup></p>
+phenomena alone flow on, dependent on the marriage of conditions.<sup class="footnote-reference" id="fr-fn68-1"><a href="#fn-fn68">68</a></sup></p>
 <p><em>Vism. 602-3</em></p>
 <p>Natural phenomena arise wholly from causes; they are subject to stress,
 impermanent, unstable and inconstant. All things arise from other
@@ -2232,7 +2213,7 @@ frequent teaching: <em>Whatever is impermanent is dukkha; whatever is
 dukkha is nonself</em> (<em>yad’aniccaṁ taṁ dukkhaṁ, yaṁ dukkhaṁ tad’anattā</em>).
 This passage is often followed by the statement: <em>Whatever is nonself
 should be seen with correct wisdom, as it truly is thus: ’This is not
-mine, I am not this, this is not my self.’</em><sup class="footnote-reference"><a href="#fn69">69</a></sup> The relationship is
+mine, I am not this, this is not my self.’</em><sup class="footnote-reference" id="fr-fn69-1"><a href="#fn-fn69">69</a></sup> The relationship is
 also evident in the frequent exchange of questions and answers:</p>
 <div class="sutta">
 <blockquote>
@@ -2298,7 +2279,7 @@ definition described above.</p>
 characteristics to all things and reveal themselves constantly, people
 generally do not notice them. They are obscured. If one does not pay
 attention and investigate correctly, one does not recognize the
-obscuring factors. These factors include:<sup class="footnote-reference"><a href="#fn70">70</a></sup></p>
+obscuring factors. These factors include:<sup class="footnote-reference" id="fr-fn70-1"><a href="#fn-fn70">70</a></sup></p>
 <ul>
 <li>
 <p>Continuity (<em>santati</em>): conceals impermanence.</p>
@@ -2342,7 +2323,7 @@ person from remaining still in one particular position. If one must
 remain in a single posture for long, whether standing, sitting, walking,
 or lying down, the physical strain steadily increases to the point of pain
 and exhaustion, until it is unbearable. One must then move, or change
-posture.<sup class="footnote-reference"><a href="#fn71">71</a></sup></p>
+posture.<sup class="footnote-reference" id="fr-fn71-1"><a href="#fn-fn71">71</a></sup></p>
 <p>Once the pressure (a consequence of the mark of dukkha) in the body
 ceases, the feeling of pain (<em>dukkha-vedanā</em>) also ceases. (When a
 feeling of pain vanishes, there usually arises a feeling of ease in its
@@ -2376,7 +2357,7 @@ nature of nonself becomes clear. One sees things as anattā.</p>
 <h2 id="nonself-and-no-self"><a class="header" href="#nonself-and-no-self">Nonself and No-Self</a></h2>
 <p>Many statements by the Buddha in the Suttanipāta describe arahants –
 those who have realized the goal of the holy life – as being without
-<em>attā</em> and <em>nirattā</em>.<sup class="footnote-reference"><a href="#fn72">72</a></sup> Arahants have neither a ’self’ nor an
+<em>attā</em> and <em>nirattā</em>.<sup class="footnote-reference" id="fr-fn72-1"><a href="#fn-fn72">72</a></sup> Arahants have neither a ’self’ nor an
 ’absence of self’.</p>
 <p>The Mahāniddesa defines the word <em>attā</em> as ’a belief in self’
 (<em>attadiṭṭhi</em>) or ’a belief in an enduring eternal self’ (i.e. an
@@ -2389,7 +2370,7 @@ relinquished’.</p>
 needs to get rid of anything.</p>
 <p>The Mahāniddesa explains further that whoever clings must have something
 to relinquish, and whoever has something to relinquish must be clinging.
-An arahant has transcended both clinging and relinquishing.<sup class="footnote-reference"><a href="#fn73">73</a></sup></p>
+An arahant has transcended both clinging and relinquishing.<sup class="footnote-reference" id="fr-fn73-1"><a href="#fn-fn73">73</a></sup></p>
 <p>These explanations by the Buddha and the commentators elucidate the
 meaning of anattā. {105}</p>
 <p>Generally, people firmly believe in a self. At a coarse level they view
@@ -2554,7 +2535,7 @@ Unconditioned, is absolute; it does not meddle as the Creator of
 phenomena or interfere with conditioned processes. (From this
 perspective, Nibbāna cannot be God, no matter how much some people try
 to equate them, unless one is willing to redefine the meaning of
-’God’).<sup class="footnote-reference"><a href="#fn74">74</a></sup></p>
+’God’).<sup class="footnote-reference" id="fr-fn74-1"><a href="#fn-fn74">74</a></sup></p>
 <p>Under ordinary circumstances, it is natural for people to believe in a
 self and in a Creator of the world, because things ostensibly require an
 agent or creator to come into being. Seeing through this false belief to
@@ -2577,7 +2558,7 @@ to see. The Buddha tended to use the characteristics of impermanence and
 dukkha to signal and explain anattā. The commentators recognized the
 need to explain selflessness by way of impermanence and dukkha, and
 valued this major advance in wisdom as a revelation not found before or
-outside Buddhism, as is illustrated by the following passages:<sup class="footnote-reference"><a href="#fn75">75</a></sup>
+outside Buddhism, as is illustrated by the following passages:<sup class="footnote-reference" id="fr-fn75-1"><a href="#fn-fn75">75</a></sup>
 {109}</p>
 <div class="sutta">
 <blockquote>
@@ -2665,8 +2646,8 @@ mentioned above define <em>attā</em> as ’belief in self’ (<em>atta-diṭṭ
 eternalism (<em>sassata-diṭṭhi</em>). As <em>attā</em> in this case refers to ’wrong
 view’, which is a defilement to be abandoned, there are Pali verses in
 the Suttanipāta describing the relinquishment of self, for example:
-<em>One who has relinquished the self</em> (<em>attañjaho</em>),<sup class="footnote-reference"><a href="#fn76">76</a></sup> and <em>having
-relinquished the self</em> (<em>attaṁ pahāya</em>).<sup class="footnote-reference"><a href="#fn77">77</a></sup></p>
+<em>One who has relinquished the self</em> (<em>attañjaho</em>),<sup class="footnote-reference" id="fr-fn76-1"><a href="#fn-fn76">76</a></sup> and <em>having
+relinquished the self</em> (<em>attaṁ pahāya</em>).<sup class="footnote-reference" id="fr-fn77-1"><a href="#fn-fn77">77</a></sup></p>
 <p>There exists another form of belief concerning self, which differs from holding to a view (<em>diṭṭhi</em>). <em>Diṭṭhi</em> here is the belief that one
 possesses or exists as a self, for example identifying with something or
 viewing the self as permanent. The other form of belief relating to self
@@ -2675,11 +2656,11 @@ the self-evaluations and self-judgements, for example: ’I am this way’,
 ’this is just who I am’, ’I am better’, ’I am worse’, ’we are inferior’,
 or ’we are equal’. The specific term <em>māna</em> is used for such belief,
 which translates as conceit, pride, arrogance, or self-appraisal as
-better, worse or equal in comparison to others.<sup class="footnote-reference"><a href="#fn78">78</a></sup> <em>Māna</em>, like
+better, worse or equal in comparison to others.<sup class="footnote-reference" id="fr-fn78-1"><a href="#fn-fn78">78</a></sup> <em>Māna</em>, like
 <em>diṭṭhi</em>, is a defilement, something that should be relinquished or
 removed.</p>
 <p>In Thailand, some people currently use the word <em>attā</em> in the meaning of
-<em>māna</em>, for example: ’She has much <em>attā</em>’ and ’his <em>attā</em> is big’.<sup class="footnote-reference"><a href="#fn79">79</a></sup>
+<em>māna</em>, for example: ’She has much <em>attā</em>’ and ’his <em>attā</em> is big’.<sup class="footnote-reference" id="fr-fn79-1"><a href="#fn-fn79">79</a></sup>
 {111} One should be aware that using <em>attā</em> in this way is simply a
 current custom, but is technically incorrect. The proper word to use in
 this context is <em>māna</em>, which is the principal defilement causing
@@ -2739,11 +2720,11 @@ show the value of the Three Characteristics for Dhamma practice:</p>
 <blockquote>
 <p>Indeed, all conditioned things are impermanent, prone to arise and
 pass away. Having arisen, they cease; their coming to rest is truest
-bliss.<sup class="footnote-reference"><a href="#fn80">80</a></sup></p>
+bliss.<sup class="footnote-reference" id="fr-fn80-1"><a href="#fn-fn80">80</a></sup></p>
 <p><em>D. II. 199; S. II. 193; spoken by others at D. II. 157; S. I. 6, 158;
 Ap. 385.</em></p>
 <p>Monks, all conditioned things are of a nature to decay; strive to
-attain the goal by diligence.<sup class="footnote-reference"><a href="#fn81">81</a></sup></p>
+attain the goal by diligence.<sup class="footnote-reference" id="fr-fn81-1"><a href="#fn-fn81">81</a></sup></p>
 <p><em>D. II. 120</em></p>
 </blockquote>
 </div>
@@ -2796,10 +2777,10 @@ care.</p>
 present (visible) welfare, and future (subtle) welfare…. This
 quality is heedfulness (<em>appamāda</em>)…. A wise person who is heedful
 secures dual welfare, both present and future. The steadfast one, by
-securing [these two] benefits, is called a sage.<sup class="footnote-reference"><a href="#fn82">82</a></sup></p>
+securing [these two] benefits, is called a sage.<sup class="footnote-reference" id="fr-fn82-1"><a href="#fn-fn82">82</a></sup></p>
 <p><em>S. I. 86-7</em></p>
 <p>Monks, a person of good moral conduct, perfect in moral conduct,
-through careful attention to his affairs, gains much wealth.<sup class="footnote-reference"><a href="#fn83">83</a></sup></p>
+through careful attention to his affairs, gains much wealth.<sup class="footnote-reference" id="fr-fn83-1"><a href="#fn-fn83">83</a></sup></p>
 <p><em>A. III. 253</em></p>
 <p>By earnest endeavour (<em>appamāda</em>), monks, I attained enlightenment.
 And you too, monks, if you put forth undeterred effort … in no long
@@ -2860,7 +2841,7 @@ is complete (in stage 2):</p>
 all harm resulting from clinging. Their happiness exists independent
 of alluring material objects. The mind is unrestricted, joyous,
 fearless, and sorrowless. It is not stricken by the vacillations of
-worldly conditions (<em>lokadhamma</em>).<sup class="footnote-reference"><a href="#fn84">84</a></sup> {115} This feature affects
+worldly conditions (<em>lokadhamma</em>).<sup class="footnote-reference" id="fr-fn84-1"><a href="#fn-fn84">84</a></sup> {115} This feature affects
 ethics as well since these people do not create problems by venting
 unhappiness on others, which is a significant cause for social
 conflict. They develop spiritual qualities, notably lovingkindness
@@ -2882,7 +2863,7 @@ impede and disturb.</p>
 <p>Nevertheless, when still not fully developed and existing in isolation
 (that is, when not supported by the practice of heedfulness), spiritual
 practice can still be harmful since the good can be a cause for
-unskilfulness.<sup class="footnote-reference"><a href="#fn85">85</a></sup> Having attained some spiritual advances and found
+unskilfulness.<sup class="footnote-reference" id="fr-fn85-1"><a href="#fn-fn85">85</a></sup> Having attained some spiritual advances and found
 peace and happiness, people are likely to revel in this happiness. They
 are likely to rest on their laurels, abandon effort, or neglect
 unfinished responsibilities. In short, they fall into heedlessness, as
@@ -2919,7 +2900,7 @@ the course of events or are destroyed in their attempt to escape.</p>
 variously translated as negligence, heedlessness, laxness, disregard,
 lack of effort, and lethargy. It tends to go hand in hand with laziness.</p>
 <p>The opposite quality is referred to as <em>appamāda</em> (’diligence’;
-’heedfulness’),<sup class="footnote-reference"><a href="#fn86">86</a></sup> which is roused and guided by mindfulness. Diligent
+’heedfulness’),<sup class="footnote-reference" id="fr-fn86-1"><a href="#fn-fn86">86</a></sup> which is roused and guided by mindfulness. Diligent
 persons are continually aware of what must be avoided and what must be
 pursued, and commit themselves to these tasks. They recognize the
 importance of time, of work, and of the slightest responsibility. They
@@ -3174,12 +3155,12 @@ abide in unison.</p>
 <p>One sees the evidence of this clearly in the Buddha and the arahants.
 Perfectly free, they represent the human ideal; and they attain this
 freedom by way of heedfulness. Arahants alone are described as ’those
-who have perfected heedfulness’;<sup class="footnote-reference"><a href="#fn87">87</a></sup> they are persons who have finished
+who have perfected heedfulness’;<sup class="footnote-reference" id="fr-fn87-1"><a href="#fn-fn87">87</a></sup> they are persons who have finished
 their business by way of careful attention. Having attained arahantship
 they continue to persevere for the welfare of the monastic community
 (<em>saṅgha</em>) and of all beings. {122} One should follow the example of
 these awakened ones, by realizing mental freedom and acting with
-care.<sup class="footnote-reference"><a href="#fn88">88</a></sup></p>
+care.<sup class="footnote-reference" id="fr-fn88-1"><a href="#fn-fn88">88</a></sup></p>
 <p>The practical benefits associated with the three characteristics ensure perfect moral
 conduct, with definite consequences. There are two things which
 guarantee infallible moral conduct:</p>
@@ -3204,7 +3185,7 @@ wrongdoing, cease. In other words, moral conduct arises automatically
 since no impulse exists to act immorally.</p>
 <p>Furthermore, liberation generates a profound happiness. Awakened beings
 experience expansiveness and joy and some of them experience exalted
-states of bliss in jhāna.<sup class="footnote-reference"><a href="#fn89">89</a></sup> Experiencing such bliss, it is natural
+states of bliss in jhāna.<sup class="footnote-reference" id="fr-fn89-1"><a href="#fn-fn89">89</a></sup> Experiencing such bliss, it is natural
 that they are of no mind to act dishonourably for another sort of
 happiness.</p>
 <p>In any case, one must understand that the second guarantee of refined
@@ -3218,7 +3199,7 @@ automatically arises with the first guarantee. {123}</p>
 are impeccable in moral conduct and are incapable of moral
 transgression. The scriptures refer to enlightened beings
 (<em>ariya-puggala</em>), from stream-enterers upwards, as ’perfect in moral
-conduct’.<sup class="footnote-reference"><a href="#fn90">90</a></sup> Therefore, if we wish for ethical standards to be firmly
+conduct’.<sup class="footnote-reference" id="fr-fn90-1"><a href="#fn-fn90">90</a></sup> Therefore, if we wish for ethical standards to be firmly
 established in society, we must promote the realization of stream-entry;
 we will thereby meet with true success.</p>
 <p>If one is unable to establish these two guarantees, one’s chances for a
@@ -3486,7 +3467,7 @@ as decline. Regardless of which direction it goes, change depends on
 causes: whatever declines can improve or can decline further; and
 whatever improves can decline or can blossom further. Humans themselves
 are a primary factor in this growth or decline, and are able to create
-many supporting conditions.<sup class="footnote-reference"><a href="#fn91">91</a></sup></p>
+many supporting conditions.<sup class="footnote-reference" id="fr-fn91-1"><a href="#fn-fn91">91</a></sup></p>
 <p>Growth and decline therefore do not occur at random but are subject to
 human participation according to people’s deeds (<em>yathā-kamma</em>). They
 are subject to human actions. To prosper, one should not wait for the
@@ -3537,8 +3518,7 @@ oneself to worldly tides, or to not taking full advantage of the
 teaching on impermanence. Such action is incorrect in the light of the
 law of kamma; it contradicts the self-improvement necessary for reaching
 the goal of Buddha-Dhamma.</p>
-<p>In brief, the advantages of the teaching on impermanence are comprised
-of two stages. First, people who comprehend this natural law are able to
+<p>In brief, the advantages of the teaching on impermanence comprise two stages. First, people who comprehend this natural law are able to
 diminish or eliminate grief when confronted with undesirable change, and
 do not get carried away by desired change. Second, they diligently
 attend to necessary tasks, knowing that all alterations are due to
@@ -3551,7 +3531,7 @@ final teaching:</p>
 <div class="sutta">
 <blockquote>
 <p>All conditioned things are of a nature to decay; strive diligently to
-reach the goal.<sup class="footnote-reference"><a href="#fn92">92</a></sup> {129}</p>
+reach the goal.<sup class="footnote-reference" id="fr-fn92-1"><a href="#fn-fn92">92</a></sup> {130}</p>
 <p><em>D. II. 156.</em></p>
 </blockquote>
 </div>
@@ -3635,7 +3615,7 @@ profound kinds of happiness and acting as a link to the second kind of
 happiness (of a spacious heart). This wholesome desire, however, is
 often overlooked by people, as if it is concealed or hidden behind the
 desire of craving. It will be discussed at more length in another
-chapter.<sup class="footnote-reference"><a href="#fn93">93</a></sup></p>
+chapter.<sup class="footnote-reference" id="fr-fn93-1"><a href="#fn-fn93">93</a></sup></p>
 <p>Here, the discussion is limited to sense pleasure, which the majority of
 people get caught up with and obsess over. Sense pleasure is almost an
 opposite to the second kind of happiness, which is spacious and
@@ -3677,7 +3657,7 @@ health.</p>
 wisdom. Together they manifest in the mind as equanimity (<em>upekkhā</em>): an
 evenness and balance of mind, which engages with things in an unbiased
 way. This profound happiness (<em>nirāmisa-sukha</em>) is of supreme benefit to
-human conduct.<sup class="footnote-reference"><a href="#fn94">94</a></sup> It is untroubled and is instrumental in solving
+human conduct.<sup class="footnote-reference" id="fr-fn94-1"><a href="#fn-fn94">94</a></sup> It is untroubled and is instrumental in solving
 problems. One can say that it is beyond happiness, and is thus referred
 to as freedom from suffering. It signals the end of defect and
 insecurity.</p>
@@ -3789,7 +3769,7 @@ which is the most effective way to succeed in one’s aspirations and
 to avoid suffering.</p>
 </li>
 <li>
-<p>Concerning ’view’ (<em>diṭṭhi</em>),<sup class="footnote-reference"><a href="#fn95">95</a></sup> this understanding broadens the
+<p>Concerning ’view’ (<em>diṭṭhi</em>),<sup class="footnote-reference" id="fr-fn95-1"><a href="#fn-fn95">95</a></sup> this understanding broadens the
 mind, enabling it to manage problems without interference from
 selfish desires and attachments. Instead, the mind engages with an
 object in accord with its true nature and potential. The mind is
@@ -3805,7 +3785,7 @@ utter removal of clinging and the realization of perfect freedom,
 which is the goal of Buddha-Dhamma. A lucid understanding of
 nonself, however, relies on an understanding of Dependent
 Origination, and on a practice consistent with the Eightfold Path,
-as will be discussed later.<sup class="footnote-reference"><a href="#fn96">96</a></sup></p>
+as will be discussed later.<sup class="footnote-reference" id="fr-fn96-1"><a href="#fn-fn96">96</a></sup></p>
 </li>
 <li>
 <p>The teaching on the Three Characteristics verifies other Buddhist
@@ -3874,7 +3854,7 @@ consciousness as ’debilitating consciousness’. {137}</p>
 assume feeling … perception … volitional formations …
 consciousness; he does not grasp or determine it as ’my self’. Not
 grasped or attached to, these five aggregates of clinging lead to his
-long-lasting welfare and happiness.<sup class="footnote-reference"><a href="#fn97">97</a></sup></p>
+long-lasting welfare and happiness.<sup class="footnote-reference" id="fr-fn97-1"><a href="#fn-fn97">97</a></sup></p>
 <p><em>S. III 114-15</em></p>
 </blockquote>
 </div>
@@ -3906,7 +3886,7 @@ consciousness’. As he lives unobsessed by these notions, that form …
 consciousness of his changes and alters. With the change and
 alteration of form, feeling, perception, volitional formations, and
 consciousness, there do not arise in him sorrow, lamentation, pain,
-grief and despair.<sup class="footnote-reference"><a href="#fn98">98</a></sup></p>
+grief and despair.<sup class="footnote-reference" id="fr-fn98-1"><a href="#fn-fn98">98</a></sup></p>
 <p><em>S. III. 3-5</em></p>
 </blockquote>
 </div>
@@ -3978,7 +3958,7 @@ cessation of suffering … this is the way to the cessation of
 suffering.’ When he reflects wisely in this way, three fetters are
 abandoned in him: personality-view (<em>sakkāyadiṭṭhi</em>), doubt
 (<em>vicikicchā</em>), and adherence to rules and observances
-(<em>sīlabbataparāmāsa</em>).<sup class="footnote-reference"><a href="#fn99">99</a></sup></p>
+(<em>sīlabbataparāmāsa</em>).<sup class="footnote-reference" id="fr-fn99-1"><a href="#fn-fn99">99</a></sup></p>
 <p><em>M. I. 7-9.</em></p>
 </blockquote>
 </div>
@@ -3991,14 +3971,14 @@ Feeling like a water bubble;<br />
 Perception is like a mirage,<br />
 Volitions like a plantain trunk,<br />
 And consciousness like an illusion,<br />
-So explained the Kinsman of the Sun.<sup class="footnote-reference"><a href="#fn100">100</a></sup></p>
+So explained the Kinsman of the Sun.<sup class="footnote-reference" id="fr-fn100-1"><a href="#fn-fn100">100</a></sup></p>
 <p>However one may consider [these five aggregates],<br />
 And carefully investigate,<br />
 They are but void and empty,<br />
 When one discerns them thoroughly.</p>
 <p>With reference to this body<br />
-The One of Broad Wisdom<sup class="footnote-reference"><a href="#fn101">101</a></sup> has taught<br />
-The abandonment of three things.<sup class="footnote-reference"><a href="#fn102">102</a></sup></p>
+The One of Broad Wisdom<sup class="footnote-reference" id="fr-fn101-1"><a href="#fn-fn101">101</a></sup> has taught<br />
+The abandonment of three things.<sup class="footnote-reference" id="fr-fn102-1"><a href="#fn-fn102">102</a></sup></p>
 <p>Behold the body thrown aside;<br />
 When vitality, heat, and consciousness<br />
 Depart from this physical body,<br />
@@ -4015,7 +3995,7 @@ Comprehending, ever mindful.</p>
 <p>He should discard all the fetters<br />
 And make a refuge for himself;<br />
 Let him fare as with head ablaze,<br />
-Aiming for the imperishable state.<sup class="footnote-reference"><a href="#fn103">103</a></sup></p>
+Aiming for the imperishable state.<sup class="footnote-reference" id="fr-fn103-1"><a href="#fn-fn103">103</a></sup></p>
 <p><em>S. III. 142-3.</em></p>
 <p>Monks, this lifespan of human beings is short; one must pass on to the
 future life. You should reflect wisely, do good, and live a pure life
@@ -4029,7 +4009,7 @@ No one can avoid Death’s arrival.</em></p>
 <p>Days and nights pass by;<br />
 Life is brought to a halt.<br />
 The life of mortals is exhausted<br />
-Like the water of small streams.<sup class="footnote-reference"><a href="#fn104">104</a></sup></p>
+Like the water of small streams.<sup class="footnote-reference" id="fr-fn104-1"><a href="#fn-fn104">104</a></sup></p>
 </blockquote>
 <p><em>Nd. I. 44, 119-20.</em></p>
 </blockquote>
@@ -4074,7 +4054,7 @@ like dousing a fire, or like the wind blowing away a tuft of cotton.</p>
 <p>A person wishing for happiness should allay bereavement, pining, and
 distress; he should pull out this piercing arrow. Having pulled out
 the arrow he is free and discovers peace of mind. He passes beyond all
-grief, sorrowless and quenched.<sup class="footnote-reference"><a href="#fn105">105</a></sup> {141}</p>
+grief, sorrowless and quenched.<sup class="footnote-reference" id="fr-fn105-1"><a href="#fn-fn105">105</a></sup> {141}</p>
 <p><em>Sn. 112-114</em></p>
 <p>Once conceived in the womb at day or night, human beings go onwards
 without return. Despite abundant vigour, their battles against aging
@@ -4131,7 +4111,7 @@ exists to withstand them, no speed to run away.</p>
 little.</p>
 <p>With the passing of each day and night, life’s opportunities dwindle.</p>
 <p>Your last moment approaches: whether walking, standing, sitting or
-lying, there is no time for you to be negligent.<sup class="footnote-reference"><a href="#fn106">106</a></sup></p>
+lying, there is no time for you to be negligent.<sup class="footnote-reference" id="fr-fn106-1"><a href="#fn-fn106">106</a></sup></p>
 <p><em>Thag. 447-52.</em></p>
 <p>I see your young sons crying ’Mommy, Daddy’; they are adorable and
 hard to come by. Alas, even before reaching old age they succumb to
@@ -4273,17 +4253,17 @@ is left only reciting their names.</p>
 <p>A person greedy for possessions cannot renounce grief, lamentation,
 and stinginess. Hence the sage discerning true safety abandons guarded
 possessions and wanders forth.</p>
-<p>The wise declare that he who escapes the cycle of births<sup class="footnote-reference"><a href="#fn107">107</a></sup> is a
+<p>The wise declare that he who escapes the cycle of births<sup class="footnote-reference" id="fr-fn107-1"><a href="#fn-fn107">107</a></sup> is a
 suitable companion for a monk cultivating seclusion and dwelling in
-solitude.<sup class="footnote-reference"><a href="#fn108">108</a></sup> Free from attachment, a sage creates no objects of
+solitude.<sup class="footnote-reference" id="fr-fn108-1"><a href="#fn-fn108">108</a></sup> Free from attachment, a sage creates no objects of
 lust or loathing.</p>
 <p>Sorrow and selfishness do not stain the sage, as water does not
 permeate a lotus leaf. Just as water does not adhere to a lotus leaf,
 as a lotus is not tainted by water, a sage does not cling to what is
 seen, heard or perceived.</p>
 <p>A wise person does not give undue import to what is seen, heard or
-perceived, nor does he wish for purity by other means.<sup class="footnote-reference"><a href="#fn109">109</a></sup> He is
-neither impassioned nor disaffected.<sup class="footnote-reference"><a href="#fn110">110</a></sup></p>
+perceived, nor does he wish for purity by other means.<sup class="footnote-reference" id="fr-fn109-1"><a href="#fn-fn109">109</a></sup> He is
+neither impassioned nor disaffected.<sup class="footnote-reference" id="fr-fn110-1"><a href="#fn-fn110">110</a></sup></p>
 <p><em>Sn. 158-160.</em></p>
 <p>At times wealth parts from its owner; at other times, a person departs
 from his wealth. See here, you pursuer of pleasure: mortals do not
@@ -4365,7 +4345,7 @@ named Gotama, the refuge for all beings…. My lifespan in this era
 is a mere one hundred years. Despite living so briefly, I have aided
 many people in crossing beyond the round of rebirth, and have set up
 the Torch of Righteousness to awaken future generations. Soon, I along
-with my disciples will attain parinibbāna,<sup class="footnote-reference"><a href="#fn111">111</a></sup> like a fire is
+with my disciples will attain parinibbāna,<sup class="footnote-reference" id="fr-fn111-1"><a href="#fn-fn111">111</a></sup> like a fire is
 extinguished for lack of fuel. This abode of the body possessed of
 superior qualities, graced with the thirty-two characteristics and
 peerless splendour, along with the perfections, the ten powers, and
@@ -4462,7 +4442,7 @@ Lie bemoaning the past<br />
 Like spent, wasted arrows.</p>
 <p><em>Dh. verses 155-6.</em></p>
 <p>All profit is founded on two things:<br />
-Obtaining the unacquired and protecting the acquired.<sup class="footnote-reference"><a href="#fn112">112</a></sup></p>
+Obtaining the unacquired and protecting the acquired.<sup class="footnote-reference" id="fr-fn112-1"><a href="#fn-fn112">112</a></sup></p>
 <p><em>J. V. 116.</em></p>
 <p>Whatsoever families, Monks, attain great wealth and last a long time,
 all of them do so because of these four reasons or one or other of
@@ -4513,7 +4493,7 @@ through diligence have I won the unsurpassed security from bondage.</p>
 great learning, nor by deep concentration, nor by a secluded life, nor
 even by thinking: ’I enjoy the bliss of renunciation not experienced
 by an ordinary person.’ O Monks, you should not rest content until
-reaching the utter destruction of the taints.<sup class="footnote-reference"><a href="#fn113">113</a></sup></p>
+reaching the utter destruction of the taints.<sup class="footnote-reference" id="fr-fn113-1"><a href="#fn-fn113">113</a></sup></p>
 <p><em>Dh. verses 271-2.</em></p>
 <p>Carry out your responsibilities in preparation for the future;<br />
 Let not those tasks oppress you when they no longer can be postponed.</p>
@@ -4548,7 +4528,7 @@ prevent them. {151}</p>
 diligent in teaching the Dhamma in detail to their disciples, and they
 had many discourses in prose, in prose and verse … and catechetical
 discourses. They prescribed the training rules for their disciples,
-and laid down the Pāṭimokkha.<sup class="footnote-reference"><a href="#fn114">114</a></sup> When these Buddhas, these Blessed
+and laid down the Pāṭimokkha.<sup class="footnote-reference" id="fr-fn114-1"><a href="#fn-fn114">114</a></sup> When these Buddhas, these Blessed
 Ones, and their awakened disciples passed away, disciples of later
 generations of various names, families and clans went forth and
 preserved the teaching for a very long time.</p>
@@ -4639,7 +4619,7 @@ behaviour, i.e. the law of actions (kamma) and their results.</p>
 <li>
 <p><em>Dhamma-niyāma</em>: general laws of nature, especially those of cause
 and effect; laws concerning the interrelationship of all
-things.<sup class="footnote-reference"><a href="#fn115">115</a></sup></p>
+things.<sup class="footnote-reference" id="fr-fn115-1"><a href="#fn-fn115">115</a></sup></p>
 </li>
 </ol>
 <p><em>DA. II. 432; DhsA. 272.</em></p>
@@ -4668,7 +4648,7 @@ Nibbāna and designations are selfless.</p>
 <p>Somdet Phra Mahāsamaṇa Chao Krom Phraya Vajirañāṇavarorasa, in the
 Dhammavicāraṇa (Mahāmakuta University Press, 1958), pp 14-19, lists
 various kinds of dukkha, from different sources, into ten
-groups.<sup class="footnote-reference"><a href="#fn116">116</a></sup> Some of the groups are given new names by the author. They
+groups.<sup class="footnote-reference" id="fr-fn116-1"><a href="#fn-fn116">116</a></sup> Some of the groups are given new names by the author. They
 are as follows:</p>
 <ol>
 <li>
@@ -4732,19 +4712,20 @@ outright condemn them).</p>
 Quinn. London: Collins, 1980, pp. 594-602) tried to compare God with
 Nibbāna, he realized the difference, as Nibbāna is not involved in the
 creation of the world.</p>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
-<p>For the Abhidhamma classification of natural laws see Appendix 1.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
-<p>Trans.: the Buddha.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
-<p>Also known as ’signs’ or ’marks’.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
-<p>Trans: <em>tathāgata</em>: a Buddha; here used in the plural.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
+<p>For the Abhidhamma classification of natural laws see Appendix 1. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
+<p>Trans.: the Buddha. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
+<p>Also known as ’signs’ or ’marks’. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
+<p>Trans: <em>tathāgata</em>: a Buddha; here used in the plural. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
 <p>Trans: the word <em>dukkha</em> is notoriously difficult to translate.
 The most common translations include: suffering, unsatisfactoriness,
 stress, pain, and misery. Many misunderstandings have arisen by
@@ -4752,202 +4733,202 @@ translating the second characteristic as: ’everything is suffering’
 or ’life is suffering’. For the different contexts in which the term
 dukkha is used, see below. Please note that when I use the terms
 ’stressful’ and ’under stress’ in this context I am referring to the
-pressure and tension inherent in all things.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+pressure and tension inherent in all things. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
 <p>Trans: note that I have translated <em>anattā</em> as ’nonself’,
 ’not-self’, or ’selfless’, according to the context. The Pali <em>attā</em>
 (Sanskrit <em>ātman</em>) is most often translated as ’self’ or ’soul’; I
 have used both, again according to the context. The words ’selfless’
 and ’selflessness’ here should not be confused with the standard
 English definition of being altruistic. The author here has used the
-English translation ’soullessness’.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
+English translation ’soullessness’. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
 <p>That is, all conditioned things (<em>saṅkhāra</em>) are universally
 impermanent and unenduring; all things (<em>dhamma</em>), both conditioned
-things and the Unconditioned, are universally not-self.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
+things and the Unconditioned, are universally not-self. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
 <p>On the five aggregates (<em>khandha</em>) see Chapter 1. The five
 aggregates constitute all worldly things, and as a group they are
 synonymous with saṅkhāra – conditioned phenomena – of the Three
-Characteristics.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
+Characteristics. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
 <p>Trans: here, <em>dukkha</em> is contrasted with <em>sukha</em>, which is usually
 translated as happiness or pleasure. The term <em>sukha</em> has other
 definitions, including: ’fluent’, ’smooth’, ’convenient’, ’easy’,
 and ’easeful’. Bhikkhu Bodhi translates this passage as: ’Is that
 which is impermanent painful or pleasant?’ See Chapter 11 on
-Happiness.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
-<p>Sanskrit: <em>nirvāṇa</em>.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
+Happiness. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
+<p>Sanskrit: <em>nirvāṇa</em>. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
 <p>Trans: when referring to saṅkhāra of the Three Characteristics,
-I use the term ’conditioned phenomena’ or the simpler ’formations’.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
+I use the term ’conditioned phenomena’ or the simpler ’formations’. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
 <p>Trans.: Sanskrit: <em>dharma</em>. The word <em>dhamma</em> has many
 definitions; the most common are: Ultimate Truth, teaching,
-doctrine, nature, law, phenomenon, and thing.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
+doctrine, nature, law, phenomenon, and thing. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
 <p>See, e.g.: Dhs 2, 193, 244; DhA. III. 128. (One manner of
 defining <em>saṅkhata-dhamma</em> in the Abhidhamma, as in this reference,
 is as follows: wholesomeness in the four planes (<em>bhūmi</em>); all unwholesomeness;
 results (<em>vipāka</em>) in the four planes; neutral actions
-(<em>kiriyā-abyākata</em>) in the three planes; and all materiality.)</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
-<p>A. I. 152.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
+(<em>kiriyā-abyākata</em>) in the three planes; and all materiality.) <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
+<p>A. I. 152. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
 <p>Substantiating passages from the commentaries include: <em>The
 Deathless is void of self</em> (<em>attasuññamatapadaṁ</em>; Vism. 513); and:
 <em>Indeed, Nibbāna is empty of self because it is without self</em>
 (<em>nibbānadhammo attasseva abhāvato attasuñño</em>; PsA. III. 638-39).
-For the commentarial analysis of this verse see Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
-<p>Trans.: of course this is also true in English.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
-<p>Trans.: the discipline, particularly the monastic discipline.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
-<p>Trans.: collection of discourses.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+For the commentarial analysis of this verse see Appendix 2. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
+<p>Trans.: of course this is also true in English. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
+<p>Trans.: the discipline, particularly the monastic discipline. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
+<p>Trans.: collection of discourses. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
 <p>Trans.: in Hinduism <em>yoga</em> (to ’yoke’ or ’join’) refers to the
-union of the individual soul with the Supreme Spirit.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
+union of the individual soul with the Supreme Spirit. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
 <p>The Abhidhamma divides saṅkhāra into fifty kinds, comprising
-fifty of the fifty-two mental concomitants (<em>cetasika</em>).</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
-<p>Ps. I. 37; referred to at Vism. 610.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
-<p>Vism. 611.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
+fifty of the fifty-two mental concomitants (<em>cetasika</em>). <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
+<p>Ps. I. 37; referred to at Vism. 610. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
+<p>Vism. 611. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
 <p>Alternatively, ’it has appeared and then disappears’ (e.g.: Vism.
-628).</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
+628). <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
 <p>Alternatively, ’it has existed and then ceases to exist’ (Vism.
-640).</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
+640). <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
 <p>Vism. 618; MA. II. 113; VbhA. 48; The VismṬ.
 Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā,
 Rūpasattakasammasanakathāvaṇṇanā states that these four definitions
 refer only to material phenomena, but the Vibhaṅga Aṭṭhakathā shows
 that they can be used in regard to all conditioned phenomena. See
-also: VinṬ. Mahākhandhakaṁ, Anattalakkhaṇasuttavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
-<p>Ps1. 37; referred to at Vism. 610.</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
-<p>Vism. 628.</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
-<p>Vism. 611.</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
+also: VinṬ. Mahākhandhakaṁ, Anattalakkhaṇasuttavaṇṇanā. <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
+<p>Ps1. 37; referred to at Vism. 610. <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
+<p>Vism. 628. <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
+<p>Vism. 611. <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
 <p>VismṬ. Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā,
-Cattārīsākāra-anupassanakathāvaṇṇanā.[Trans.: in the first two editions of <em>Buddhadhamma</em>, I translated dukkha in the context of the three characteristics as ‘subject to pressure’. Having done more research on the terminology used in the field of physics, it seems more accurate to say: ‘subject to stress’. I have therefore replaced the former translation with the latter throughout this third edition.]</p>
-</div>
-<div class="footnote-definition" id="fn30"><sup class="footnote-definition-label">30</sup>
-<p>Vism. 611.</p>
-</div>
-<div class="footnote-definition" id="fn31"><sup class="footnote-definition-label">31</sup>
-<p>E.g.: Vism. 502.</p>
-</div>
-<div class="footnote-definition" id="fn32"><sup class="footnote-definition-label">32</sup>
+Cattārīsākāra-anupassanakathāvaṇṇanā.[Trans.: in the first two editions of <em>Buddhadhamma</em>, I translated dukkha in the context of the three characteristics as ‘subject to pressure’. Having done more research on the terminology used in the field of physics, it seems more accurate to say: ‘subject to stress’. I have therefore replaced the former translation with the latter throughout this third edition.] <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn30"><sup class="footnote-definition-label">30</sup>
+<p>Vism. 611. <a href="#fr-fn30-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn31"><sup class="footnote-definition-label">31</sup>
+<p>E.g.: Vism. 502. <a href="#fr-fn31-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn32"><sup class="footnote-definition-label">32</sup>
 <p>Vism. 618; MA. II. 113 (in this reference the first definition is
-<em>santāpa</em> – see below); VbhA. 48.</p>
-</div>
-<div class="footnote-definition" id="fn33"><sup class="footnote-definition-label">33</sup>
+<em>santāpa</em> – see below); VbhA. 48. <a href="#fr-fn32-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn33"><sup class="footnote-definition-label">33</sup>
 <p>The literal translation ’hard to endure’ appears to refer to
 feelings (<em>dukkha-vedanā</em>), for example pain or suffering, which can
 be defined as ’something that is hard for humans to endure’.
 Actually, this Pali idiom meaning non-durable or unsustainable is a
-characteristic of all formations, as explained above.</p>
-</div>
-<div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
+characteristic of all formations, as explained above. <a href="#fr-fn33-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn34"><sup class="footnote-definition-label">34</sup>
 <p>The commentaries and sub-commentaries describe an object marked
 by dukkha as a basis for the 3 <em>dukkhatā</em> (see below) and for
 <em>saṁsāra-dukkha</em>; e.g. VinṬ. Mahākhandhakaṁ,
 Anattalakkhaṇasuttavaṇṇanā; VismṬ.
 Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā
 (Cattārīsākāra-anupassanakathāvaṇṇanā and
-Rūpasattakasammasanakathāvaṇṇanā).</p>
-</div>
-<div class="footnote-definition" id="fn35"><sup class="footnote-definition-label">35</sup>
+Rūpasattakasammasanakathāvaṇṇanā). <a href="#fr-fn34-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn35"><sup class="footnote-definition-label">35</sup>
 <p>Ps. I. 19; Ps. II. 104; referred to at Vism. 494; VbhA. 83.
 MA. II. 113 classifies <em>santāpa</em> as the first of the four meanings
-above.</p>
-</div>
-<div class="footnote-definition" id="fn36"><sup class="footnote-definition-label">36</sup>
+above. <a href="#fr-fn35-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn36"><sup class="footnote-definition-label">36</sup>
 <p>Trans: definition 1 of dukkha and definition 2 of impermanence
-above, respectively.</p>
-</div>
-<div class="footnote-definition" id="fn37"><sup class="footnote-definition-label">37</sup>
+above, respectively. <a href="#fr-fn36-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn37"><sup class="footnote-definition-label">37</sup>
 <p>This is the author’s definition; for the commentarial and
 sub-commentarial explanation see: PsA. I. 100, 102; VismṬ.
-Indriyasaccaniddesavaṇṇanā, Saccavitthārakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn38"><sup class="footnote-definition-label">38</sup>
-<p>See item four above: <em>sukhapaṭikkhepato</em>.</p>
-</div>
-<div class="footnote-definition" id="fn39"><sup class="footnote-definition-label">39</sup>
+Indriyasaccaniddesavaṇṇanā, Saccavitthārakathāvaṇṇanā. <a href="#fr-fn37-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn38"><sup class="footnote-definition-label">38</sup>
+<p>See item four above: <em>sukhapaṭikkhepato</em>. <a href="#fr-fn38-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn39"><sup class="footnote-definition-label">39</sup>
 <p>Trans.: <em>upādāna-khandha</em>, the five groups of clinging, are
 identical to the five aggregates (<em>khandha</em>) mentioned earlier, but
 this term highlights the aggregates as the objects identified with
 and clung to by human beings, and which consequently give rise to
-suffering. See chapter 1.</p>
-</div>
-<div class="footnote-definition" id="fn40"><sup class="footnote-definition-label">40</sup>
+suffering. See chapter 1. <a href="#fr-fn39-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn40"><sup class="footnote-definition-label">40</sup>
 <p>The important sources for research in this matter are: Yam. I.
 174-5; PañcA 167; Vism. 510-13; VismṬ. Indriyasaccaniddesavaṇṇanā,
-Magganiddesakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn41"><sup class="footnote-definition-label">41</sup>
+Magganiddesakathāvaṇṇanā. <a href="#fr-fn40-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn41"><sup class="footnote-definition-label">41</sup>
 <p>Also known as the ’3 dukkha’; D. III. 216; S. IV. 259; S. V.
 56; Vism. 499; VbhA. 93; VinṬ. Dhammacakkappavattanasuttavaṇṇanā;
-VismṬ. Indriyasaccaniddesavaṇṇanā, Dukkhaniddesakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn42"><sup class="footnote-definition-label">42</sup>
-<p>Also known as <em>dukkha-dukkha</em>.</p>
-</div>
-<div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
-<p>Also known as <em>saṅkhāra-dukkha</em>.</p>
-</div>
-<div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
+VismṬ. Indriyasaccaniddesavaṇṇanā, Dukkhaniddesakathāvaṇṇanā. <a href="#fr-fn41-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn42"><sup class="footnote-definition-label">42</sup>
+<p>Also known as <em>dukkha-dukkha</em>. <a href="#fr-fn42-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn43"><sup class="footnote-definition-label">43</sup>
+<p>Also known as <em>saṅkhāra-dukkha</em>. <a href="#fr-fn43-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn44"><sup class="footnote-definition-label">44</sup>
 <p><em>Nibbidā</em>: ’(maintaining) disenchantment’, ’letting go of
-attachment’.</p>
-</div>
-<div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
-<p><em>Virāga</em>: ’(experiences) dispassion’.</p>
-</div>
-<div class="footnote-definition" id="fn46"><sup class="footnote-definition-label">46</sup>
+attachment’. <a href="#fr-fn44-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn45"><sup class="footnote-definition-label">45</sup>
+<p><em>Virāga</em>: ’(experiences) dispassion’. <a href="#fr-fn45-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn46"><sup class="footnote-definition-label">46</sup>
 <p>Here, the term <em>ariya-sacca</em> is found at the end of each passage;
 In S. V. 426 the sutta states that the noble truth of suffering
-should be defined as the six internal sense bases.</p>
-</div>
-<div class="footnote-definition" id="fn47"><sup class="footnote-definition-label">47</sup>
+should be defined as the six internal sense bases. <a href="#fr-fn46-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn47"><sup class="footnote-definition-label">47</sup>
 <p>E.g.: D. II. 305; S. V. 421; Vism. 498-501; VismṬ.
 Indriyasaccaniddesavaṇṇanā (from Saccavitthārakathāvaṇṇanā to
 Pañcupādānakkhandaniddesavaṇṇanā). The divisions of birth’s
-afflictions, #1 a-g, are from the commentaries.</p>
-</div>
-<div class="footnote-definition" id="fn48"><sup class="footnote-definition-label">48</sup>
+afflictions, #1 a-g, are from the commentaries. <a href="#fr-fn47-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn48"><sup class="footnote-definition-label">48</sup>
 <p>Note that this group of dukkha does not include illness
 (<em>byādhi</em>), which normally would follow aging. The commentaries
 explain that illness is not an inevitable form of suffering: many
@@ -4956,195 +4937,195 @@ this factor (#6) of physical suffering (VismṬ.
 Indriyasaccaniddesavaṇṇanā, Saccavitthārakathāvaṇṇanā). In some
 places of the Canon, however, illness is listed separately in this
 group of dukkha; for such cases see the explanation at VinṬ.
-Dhammacakkappavattanasuttavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn49"><sup class="footnote-definition-label">49</sup>
+Dhammacakkappavattanasuttavaṇṇanā. <a href="#fr-fn48-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn49"><sup class="footnote-definition-label">49</sup>
 <p>Vism. 499; VbhA. 93; PañcA. 167; VinṬ.
 Dhammacakkappavattanasuttavaṇṇanā; VismṬ.
-Indriyasaccaniddesavaṇṇanā, Dukkhaniddesakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn50"><sup class="footnote-definition-label">50</sup>
-<p>Ibid.</p>
-</div>
-<div class="footnote-definition" id="fn51"><sup class="footnote-definition-label">51</sup>
-<p>Nd. I. 17-18, 45-47; Nd. II. 7, 14, 54.</p>
-</div>
-<div class="footnote-definition" id="fn52"><sup class="footnote-definition-label">52</sup>
-<p>M. I. 83-90, 91-5.</p>
-</div>
-<div class="footnote-definition" id="fn53"><sup class="footnote-definition-label">53</sup>
+Indriyasaccaniddesavaṇṇanā, Dukkhaniddesakathāvaṇṇanā. <a href="#fr-fn49-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn50"><sup class="footnote-definition-label">50</sup>
+<p>Ibid. <a href="#fr-fn50-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn51"><sup class="footnote-definition-label">51</sup>
+<p>Nd. I. 17-18, 45-47; Nd. II. 7, 14, 54. <a href="#fr-fn51-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn52"><sup class="footnote-definition-label">52</sup>
+<p>M. I. 83-90, 91-5. <a href="#fr-fn52-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn53"><sup class="footnote-definition-label">53</sup>
 <p>E.g.: Vism. 531; VbhA. 145, 149; in some places of the
 Cūḷaniddesa printed in Thai script, e.g. Nd. II. 7, one finds this
 term <em>saṁsāra-dukkha</em>, but these are misprints; it should read
-<em>saṅkhāra-dukkha</em>.</p>
-</div>
-<div class="footnote-definition" id="fn54"><sup class="footnote-definition-label">54</sup>
+<em>saṅkhāra-dukkha</em>. <a href="#fr-fn53-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn54"><sup class="footnote-definition-label">54</sup>
 <p>These last three kinds of suffering are mentioned frequently in
 the eight subjects that prompt a sense of urgency
 (<em>saṁvega-vatthu</em>), e.g. at Vism. 135; DA. III. 795; MA. I. 298;
 SA. III. 163; etc.; <em>āhārapariyeṭṭhi-dukkha</em> (suffering resulting
 from the search for food) corresponds to item (A) above. The other
 two terms are included in the descriptions above, if not directly
-then indirectly.</p>
-</div>
-<div class="footnote-definition" id="fn55"><sup class="footnote-definition-label">55</sup>
-<p>On various other forms of dukkha see Appendix 3.</p>
-</div>
-<div class="footnote-definition" id="fn56"><sup class="footnote-definition-label">56</sup>
-<p>Literally ’elemental truth’.</p>
-</div>
-<div class="footnote-definition" id="fn57"><sup class="footnote-definition-label">57</sup>
-<p>’One endowed with right view’: <em>diṭṭhisampanno</em>.</p>
-</div>
-<div class="footnote-definition" id="fn58"><sup class="footnote-definition-label">58</sup>
-<p>Sn. 155.</p>
-</div>
-<div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
-<p>Sn. 157.</p>
-</div>
-<div class="footnote-definition" id="fn60"><sup class="footnote-definition-label">60</sup>
-<p>Ps. I. 37, 53; Ps. II. 200; referred to at Vism. 610.</p>
-</div>
-<div class="footnote-definition" id="fn61"><sup class="footnote-definition-label">61</sup>
-<p>Vism. 628, 640; occasionally one finds <em>avasavattito</em>.</p>
-</div>
-<div class="footnote-definition" id="fn62"><sup class="footnote-definition-label">62</sup>
-<p>Vism. 618; VinṬ. Mahākhandhakaṁ Anattalakkhaṇasuttavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn63"><sup class="footnote-definition-label">63</sup>
+then indirectly. <a href="#fr-fn54-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn55"><sup class="footnote-definition-label">55</sup>
+<p>On various other forms of dukkha see Appendix 3. <a href="#fr-fn55-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn56"><sup class="footnote-definition-label">56</sup>
+<p>Literally ’elemental truth’. <a href="#fr-fn56-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn57"><sup class="footnote-definition-label">57</sup>
+<p>’One endowed with right view’: <em>diṭṭhisampanno</em>. <a href="#fr-fn57-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn58"><sup class="footnote-definition-label">58</sup>
+<p>Sn. 155. <a href="#fr-fn58-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn59"><sup class="footnote-definition-label">59</sup>
+<p>Sn. 157. <a href="#fr-fn59-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn60"><sup class="footnote-definition-label">60</sup>
+<p>Ps. I. 37, 53; Ps. II. 200; referred to at Vism. 610. <a href="#fr-fn60-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn61"><sup class="footnote-definition-label">61</sup>
+<p>Vism. 628, 640; occasionally one finds <em>avasavattito</em>. <a href="#fr-fn61-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn62"><sup class="footnote-definition-label">62</sup>
+<p>Vism. 618; VinṬ. Mahākhandhakaṁ Anattalakkhaṇasuttavaṇṇanā. <a href="#fr-fn62-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn63"><sup class="footnote-definition-label">63</sup>
 <p>Mahākhandhakaṁ Anattalakkhaṇasuttavaṇṇanā refers to the Buddha’s
-sermon in the Anattalakkhaṇa Sutta (S. III. 66).</p>
-</div>
-<div class="footnote-definition" id="fn64"><sup class="footnote-definition-label">64</sup>
-<p>See Vism. 593-5.</p>
-</div>
-<div class="footnote-definition" id="fn65"><sup class="footnote-definition-label">65</sup>
+sermon in the Anattalakkhaṇa Sutta (S. III. 66). <a href="#fr-fn63-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn64"><sup class="footnote-definition-label">64</sup>
+<p>See Vism. 593-5. <a href="#fr-fn64-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn65"><sup class="footnote-definition-label">65</sup>
 <p>Vism. 618; MA. II. 113; VbhA. 48; See also VinṬ. Mahākhandhakaṁ
 Anattalakkhaṇasuttavaṇṇanā; VismṬ.
 Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā,
-Rūpasattakasammasanakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn66"><sup class="footnote-definition-label">66</sup>
-<p><em>Cogito, ergo sum</em> (R. Descartes, 1596-1650).</p>
-</div>
-<div class="footnote-definition" id="fn67"><sup class="footnote-definition-label">67</sup>
-<p>S. II. 13-14.</p>
-</div>
-<div class="footnote-definition" id="fn68"><sup class="footnote-definition-label">68</sup>
-<p>Trans.: based on Bhikkhu Ñāṇamoli’s translation.</p>
-</div>
-<div class="footnote-definition" id="fn69"><sup class="footnote-definition-label">69</sup>
-<p>E.g.: S. IV. 1.</p>
-</div>
-<div class="footnote-definition" id="fn70"><sup class="footnote-definition-label">70</sup>
+Rūpasattakasammasanakathāvaṇṇanā. <a href="#fr-fn65-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn66"><sup class="footnote-definition-label">66</sup>
+<p><em>Cogito, ergo sum</em> (R. Descartes, 1596-1650). <a href="#fr-fn66-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn67"><sup class="footnote-definition-label">67</sup>
+<p>S. II. 13-14. <a href="#fr-fn67-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn68"><sup class="footnote-definition-label">68</sup>
+<p>Trans.: based on Bhikkhu Ñāṇamoli’s translation. <a href="#fr-fn68-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn69"><sup class="footnote-definition-label">69</sup>
+<p>E.g.: S. IV. 1. <a href="#fr-fn69-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn70"><sup class="footnote-definition-label">70</sup>
 <p>Vism. 640; VbhA. 50; VismṬ.
-Paṭipadāñāṇadassanavisuddhiniddesavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn71"><sup class="footnote-definition-label">71</sup>
+Paṭipadāñāṇadassanavisuddhiniddesavaṇṇanā. <a href="#fr-fn70-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn71"><sup class="footnote-definition-label">71</sup>
 <p>Trans.: <em>iriyāpatha</em> (’posture’) literally means ’mode of
-movement’.</p>
-</div>
-<div class="footnote-definition" id="fn72"><sup class="footnote-definition-label">72</sup>
+movement’. <a href="#fr-fn71-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn72"><sup class="footnote-definition-label">72</sup>
 <p>Alternatively, <em>attaṁ</em> and <em>nirattaṁ</em>. The Siam Raṭṭha edition of
 the Tipiṭaka in Thai script has <em>attā</em> and <em>nirattaṁ</em> in some
 places, <em>attaṁ</em> and <em>nirattaṁ</em> in others (see Sn. 154, 168, 180, and
 related passages at Sn. 157, 213.) In other editions, however,
-I have found only <em>attā</em> and <em>nirattā</em>.</p>
-</div>
-<div class="footnote-definition" id="fn73"><sup class="footnote-definition-label">73</sup>
+I have found only <em>attā</em> and <em>nirattā</em>. <a href="#fr-fn72-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn73"><sup class="footnote-definition-label">73</sup>
 <p>Nd. I. 82, 247, 352-53, and see related passages at Nd. I. 90-91,
-107-8; Nd. II. 35.</p>
-</div>
-<div class="footnote-definition" id="fn74"><sup class="footnote-definition-label">74</sup>
-<p>On the subject of God see Appendix 4.</p>
-</div>
-<div class="footnote-definition" id="fn75"><sup class="footnote-definition-label">75</sup>
+107-8; Nd. II. 35. <a href="#fr-fn73-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn74"><sup class="footnote-definition-label">74</sup>
+<p>On the subject of God see Appendix 4. <a href="#fr-fn74-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn75"><sup class="footnote-definition-label">75</sup>
 <p>VbhA. 48-9; and in some sections of MA. II. 113; VinṬ.
-Mahākhandhakaṁ, Anattalakkhaṇasuttavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn76"><sup class="footnote-definition-label">76</sup>
-<p>Sn. 155 (see related passages at Nd. I. 90-91).</p>
-</div>
-<div class="footnote-definition" id="fn77"><sup class="footnote-definition-label">77</sup>
-<p>Sn. 157 (see related passages at Nd. I. 107-108).</p>
-</div>
-<div class="footnote-definition" id="fn78"><sup class="footnote-definition-label">78</sup>
+Mahākhandhakaṁ, Anattalakkhaṇasuttavaṇṇanā. <a href="#fr-fn75-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn76"><sup class="footnote-definition-label">76</sup>
+<p>Sn. 155 (see related passages at Nd. I. 90-91). <a href="#fr-fn76-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn77"><sup class="footnote-definition-label">77</sup>
+<p>Sn. 157 (see related passages at Nd. I. 107-108). <a href="#fr-fn77-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn78"><sup class="footnote-definition-label">78</sup>
 <p>The current meaning of <em>māna</em> in the Thai language, which has
 deviated far from the original – now denoting effort/diligence –
 will not be discussed here, as that would branch out too far into
-the subject of linguistics.</p>
-</div>
-<div class="footnote-definition" id="fn79"><sup class="footnote-definition-label">79</sup>
+the subject of linguistics. <a href="#fr-fn78-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn79"><sup class="footnote-definition-label">79</sup>
 <p>Trans.: in English the word ’ego’ is used in this way, for
-example: ’He has a big ego.’</p>
-</div>
-<div class="footnote-definition" id="fn80"><sup class="footnote-definition-label">80</sup>
+example: ’He has a big ego.’ <a href="#fr-fn79-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn80"><sup class="footnote-definition-label">80</sup>
 <p>This verse is known as ’the maxim of the arahants’ (S. I. 6). The
 ’coming to rest’ and equally the ’bliss’ refers to Nibbāna. The
-verse is commonly chanted at funerals: <em>Aniccā vata saṅkhārā….</em></p>
-</div>
-<div class="footnote-definition" id="fn81"><sup class="footnote-definition-label">81</sup>
+verse is commonly chanted at funerals: <em>Aniccā vata saṅkhārā….</em> <a href="#fr-fn80-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn81"><sup class="footnote-definition-label">81</sup>
 <p>Alternative second clause: <em>bring heedfulness to perfection</em>.
 This verse is the Buddha’s final utterance and is considered to be
 of great import. It is found at D. II. 120, 156; S. I. 157-8;
 Venerables Revata and Sāriputta spoke similar verses at Thag. 67,
-91.</p>
-</div>
-<div class="footnote-definition" id="fn82"><sup class="footnote-definition-label">82</sup>
-<p>See S. I. 89; A. III. 48-9; It. 16-17.</p>
-</div>
-<div class="footnote-definition" id="fn83"><sup class="footnote-definition-label">83</sup>
+91. <a href="#fr-fn81-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn82"><sup class="footnote-definition-label">82</sup>
+<p>See S. I. 89; A. III. 48-9; It. 16-17. <a href="#fr-fn82-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn83"><sup class="footnote-definition-label">83</sup>
 <p>See D. II. 86; D. III. 236; Ud. 87; in addition, see the
 beginning (not quoted) of the passage cited in the previous
-footnote.</p>
-</div>
-<div class="footnote-definition" id="fn84"><sup class="footnote-definition-label">84</sup>
+footnote. <a href="#fr-fn83-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn84"><sup class="footnote-definition-label">84</sup>
 <p>Trans.: the eight ’worldly winds’: gain and loss, praise and
-blame, happiness and suffering, fame and obscurity.</p>
-</div>
-<div class="footnote-definition" id="fn85"><sup class="footnote-definition-label">85</sup>
+blame, happiness and suffering, fame and obscurity. <a href="#fr-fn84-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn85"><sup class="footnote-definition-label">85</sup>
 <p><em>Kusalo dhammo akusalassa dhammassa ārammaṇapaccayena paccayo</em>
 (Paṭ. 154); <em>adhipatipaccena</em> (Paṭ. 158); <em>upanissayapaccena</em> (Paṭ.
-166).</p>
-</div>
-<div class="footnote-definition" id="fn86"><sup class="footnote-definition-label">86</sup>
+166). <a href="#fr-fn85-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn86"><sup class="footnote-definition-label">86</sup>
 <p>Trans.: other translations include: earnestness, perseverance,
-carefulness, uninterrupted mindfulness, vigilance, and zeal.</p>
-</div>
-<div class="footnote-definition" id="fn87"><sup class="footnote-definition-label">87</sup>
+carefulness, uninterrupted mindfulness, vigilance, and zeal. <a href="#fr-fn86-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn87"><sup class="footnote-definition-label">87</sup>
 <p>The Buddha sometimes characterized an arahant as ’incapable of
 negligence’ (M. II. 478; S. IV. 125). He explained that arahants
 have completed all tasks that must be accomplished through
-heedfulness.</p>
-</div>
-<div class="footnote-definition" id="fn88"><sup class="footnote-definition-label">88</sup>
+heedfulness. <a href="#fr-fn87-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn88"><sup class="footnote-definition-label">88</sup>
 <p>The Abhidhamma states that arahants, those who have attained the
 ultimate transcendent state, act with ’an eminent operative mind’
 (<em>mahākiriya-citta</em>), which is mundane and belongs to the sense
-sphere.</p>
-</div>
-<div class="footnote-definition" id="fn89"><sup class="footnote-definition-label">89</sup>
+sphere. <a href="#fr-fn88-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn89"><sup class="footnote-definition-label">89</sup>
 <p>In contrast, being confronted with the three characteristics but
 not truly understanding them is a cause for suffering (e.g.: S. III.
-3, 16, 42-3).</p>
-</div>
-<div class="footnote-definition" id="fn90"><sup class="footnote-definition-label">90</sup>
-<p>E.g.: A. IV. 380-81; Pug. 37.</p>
-</div>
-<div class="footnote-definition" id="fn91"><sup class="footnote-definition-label">91</sup>
+3, 16, 42-3). <a href="#fr-fn89-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn90"><sup class="footnote-definition-label">90</sup>
+<p>E.g.: A. IV. 380-81; Pug. 37. <a href="#fr-fn90-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn91"><sup class="footnote-definition-label">91</sup>
 <p>The term ’create’ here is used tongue-in-cheek; speaking
 accurately, human beings are one condition affecting other
-conditions in an interconnected process.</p>
-</div>
-<div class="footnote-definition" id="fn92"><sup class="footnote-definition-label">92</sup>
+conditions in an interconnected process. <a href="#fr-fn91-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn92"><sup class="footnote-definition-label">92</sup>
 <p>Alternate translations for the second clause are: <em>… fulfil
 your own and others’ welfare by way of heedfulness</em>, and: <em>…bring
-heedfulness to perfection</em>.</p>
-</div>
-<div class="footnote-definition" id="fn93"><sup class="footnote-definition-label">93</sup>
-<p>Trans.: see Chapter 10.</p>
-</div>
-<div class="footnote-definition" id="fn94"><sup class="footnote-definition-label">94</sup>
+heedfulness to perfection</em>. <a href="#fr-fn92-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn93"><sup class="footnote-definition-label">93</sup>
+<p>Trans.: see Chapter 10. <a href="#fr-fn93-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn94"><sup class="footnote-definition-label">94</sup>
 <p>Strictly speaking, one must use the term <em>nirāmisatara-sukha</em>,
 according to the threefold division of happiness: <em>sāmisa-sukha</em> (=
 <em>kāma-sukha</em>; sense pleasure), <em>nirāmisa-sukha</em> (the happiness of
@@ -5152,17 +5133,17 @@ jhāna), and <em>nirāmisatara-sukha</em> (the happiness of liberation). It
 is possible for unawakened beings to become attached to the
 happiness of jhāna; true safety thus occurs with
 <em>nirāmisatara-sukha</em>. On the threefold division of happiness, see:
-S. IV. 235.</p>
-</div>
-<div class="footnote-definition" id="fn95"><sup class="footnote-definition-label">95</sup>
+S. IV. 235. <a href="#fr-fn94-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn95"><sup class="footnote-definition-label">95</sup>
 <p>Trans.: <em>diṭṭhi</em> here is used in a neutral sense, referring to a
-person’s perspective or comprehension of the world.</p>
-</div>
-<div class="footnote-definition" id="fn96"><sup class="footnote-definition-label">96</sup>
+person’s perspective or comprehension of the world. <a href="#fr-fn95-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn96"><sup class="footnote-definition-label">96</sup>
 <p>Trans.: see the following chapter on Dependent Origination. The
-Eightfold Path is discussed in later chapters.</p>
-</div>
-<div class="footnote-definition" id="fn97"><sup class="footnote-definition-label">97</sup>
+Eightfold Path is discussed in later chapters. <a href="#fr-fn96-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn97"><sup class="footnote-definition-label">97</sup>
 <p>A verse by Ven. Sāriputta; an abbreviated translation. The
 section, <em>does not regard physical form as self, or self as
 possessing form, or form as in self, or self as in form</em>, is
@@ -5172,72 +5153,73 @@ attavatī</em> (not possessing self); see Vism. 578. The Visuddhimagga
 uses numerous explanations for perceiving selflessness, for example
 by regarding physical form as not a being, a spirit, a person, a
 youth, a woman, a man, a self or of self, us or ours, or belonging
-to anyone (Vism. 653-6).</p>
-</div>
-<div class="footnote-definition" id="fn98"><sup class="footnote-definition-label">98</sup>
-<p>A verse by Ven. Sāriputta; an abbreviated translation.</p>
-</div>
-<div class="footnote-definition" id="fn99"><sup class="footnote-definition-label">99</sup>
+to anyone (Vism. 653-6). <a href="#fr-fn97-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn98"><sup class="footnote-definition-label">98</sup>
+<p>A verse by Ven. Sāriputta; an abbreviated translation. <a href="#fr-fn98-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn99"><sup class="footnote-definition-label">99</sup>
 <p>A similar but slightly more detailed passage, concerning the six
-views, is found at Vbh. 382.</p>
-</div>
-<div class="footnote-definition" id="fn100"><sup class="footnote-definition-label">100</sup>
-<p>Trans.: the Buddha.</p>
-</div>
-<div class="footnote-definition" id="fn101"><sup class="footnote-definition-label">101</sup>
-<p>Ibid.</p>
-</div>
-<div class="footnote-definition" id="fn102"><sup class="footnote-definition-label">102</sup>
-<p><em>Lobha</em>, <em>dosa</em> and <em>moha</em>, or <em>taṇhā</em>, <em>māna</em> and <em>diṭṭhi</em>.</p>
-</div>
-<div class="footnote-definition" id="fn103"><sup class="footnote-definition-label">103</sup>
-<p>The imperishable state: Nibbāna.</p>
-</div>
-<div class="footnote-definition" id="fn104"><sup class="footnote-definition-label">104</sup>
+views, is found at Vbh. 382. <a href="#fr-fn99-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn100"><sup class="footnote-definition-label">100</sup>
+<p>Trans.: the Buddha. <a href="#fr-fn100-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn101"><sup class="footnote-definition-label">101</sup>
+<p>Ibid. <a href="#fr-fn101-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn102"><sup class="footnote-definition-label">102</sup>
+<p><em>Lobha</em>, <em>dosa</em> and <em>moha</em>, or <em>taṇhā</em>, <em>māna</em> and <em>diṭṭhi</em>. <a href="#fr-fn102-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn103"><sup class="footnote-definition-label">103</sup>
+<p>The imperishable state: Nibbāna. <a href="#fr-fn103-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn104"><sup class="footnote-definition-label">104</sup>
 <p>Some of these verses occur at D. II. 246; S. I. 108-109; Thag.
-20.</p>
-</div>
-<div class="footnote-definition" id="fn105"><sup class="footnote-definition-label">105</sup>
-<p>Some verses are repeated at J. IV. 127; Nd. I. 120-21.</p>
-</div>
-<div class="footnote-definition" id="fn106"><sup class="footnote-definition-label">106</sup>
-<p>Spoken by Ven. Sirimaṇḍa Thera.</p>
-</div>
-<div class="footnote-definition" id="fn107"><sup class="footnote-definition-label">107</sup>
-<p>Trans.: an arahant.</p>
-</div>
-<div class="footnote-definition" id="fn108"><sup class="footnote-definition-label">108</sup>
+20. <a href="#fr-fn104-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn105"><sup class="footnote-definition-label">105</sup>
+<p>Some verses are repeated at J. IV. 127; Nd. I. 120-21. <a href="#fr-fn105-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn106"><sup class="footnote-definition-label">106</sup>
+<p>Spoken by Ven. Sirimaṇḍa Thera. <a href="#fr-fn106-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn107"><sup class="footnote-definition-label">107</sup>
+<p>Trans.: an arahant. <a href="#fr-fn107-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn108"><sup class="footnote-definition-label">108</sup>
 <p>A monk who is still in training: a <em>sekha</em> or a virtuous
-unenlightened person (<em>puthujjana-kalyāṇaka</em>).</p>
-</div>
-<div class="footnote-definition" id="fn109"><sup class="footnote-definition-label">109</sup>
+unenlightened person (<em>puthujjana-kalyāṇaka</em>). <a href="#fr-fn108-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn109"><sup class="footnote-definition-label">109</sup>
 <p>For example, by other means apart from the Eightfold Path or the
-Four Foundations of Mindfulness.</p>
-</div>
-<div class="footnote-definition" id="fn110"><sup class="footnote-definition-label">110</sup>
+Four Foundations of Mindfulness. <a href="#fr-fn109-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn110"><sup class="footnote-definition-label">110</sup>
 <p>He is neither impassioned like a misguided person nor
-disaffected like a <em>sekha</em> or a virtuous unenlightened person.</p>
-</div>
-<div class="footnote-definition" id="fn111"><sup class="footnote-definition-label">111</sup>
-<p>Trans.: final Nibbāna; final release from rebirth.</p>
-</div>
-<div class="footnote-definition" id="fn112"><sup class="footnote-definition-label">112</sup>
-<p>The two aspects of heedfulness are establishment and protection.</p>
-</div>
-<div class="footnote-definition" id="fn113"><sup class="footnote-definition-label">113</sup>
+disaffected like a <em>sekha</em> or a virtuous unenlightened person. <a href="#fr-fn110-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn111"><sup class="footnote-definition-label">111</sup>
+<p>Trans.: final Nibbāna; final release from rebirth. <a href="#fr-fn111-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn112"><sup class="footnote-definition-label">112</sup>
+<p>The two aspects of heedfulness are establishment and protection. <a href="#fr-fn112-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn113"><sup class="footnote-definition-label">113</sup>
 <p>The commentaries define the bliss of renunciation
-(<em>nekkhamma-sukha</em>) as the happiness of a non-returner (<em>anāgāmī</em>).</p>
-</div>
-<div class="footnote-definition" id="fn114"><sup class="footnote-definition-label">114</sup>
-<p>Trans.: the monastic code of discipline.</p>
-</div>
-<div class="footnote-definition" id="fn115"><sup class="footnote-definition-label">115</sup>
+(<em>nekkhamma-sukha</em>) as the happiness of a non-returner (<em>anāgāmī</em>). <a href="#fr-fn113-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn114"><sup class="footnote-definition-label">114</sup>
+<p>Trans.: the monastic code of discipline. <a href="#fr-fn114-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn115"><sup class="footnote-definition-label">115</sup>
 <p>Trans.: the author here adds the English translation: ’general
-law of the suchness of natural states’.</p>
-</div>
-<div class="footnote-definition" id="fn116"><sup class="footnote-definition-label">116</sup>
+law of the suchness of natural states’. <a href="#fr-fn115-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn116"><sup class="footnote-definition-label">116</sup>
 <p>This appendix comprises material found on page 87 of the Thai
-edition of <em>Buddhadhamma</em>: footnote 156.</p>
+edition of <em>Buddhadhamma</em>: footnote 156. <a href="#fr-fn116-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

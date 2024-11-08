@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html" class="active">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -182,7 +163,7 @@
 </p>
 </div>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>The meaning, role, and importance of faith (<em>saddhā</em>)<sup class="footnote-reference"><a href="#fn1">1</a></sup> in the
+<p>The meaning, role, and importance of faith (<em>saddhā</em>)<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup> in the
 Buddhist teachings is as follows:</p>
 <p>Faith here does not mean handing over complete responsibility to
 something or someone without applying reasoned judgement. On the
@@ -361,7 +342,7 @@ sense impression that does not overwhelm the mind (does not exceed the
 power of the principles instilled by faith), the course of their
 thinking follows the path prepared by faith; thoughts do not stray in
 unwholesome directions. For people who are still subject to mental
-defilements, faith thus sustains virtuous conduct.<sup class="footnote-reference"><a href="#fn2">2</a></sup></p>
+defilements, faith thus sustains virtuous conduct.<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup></p>
 <p>Although faith has many benefits, if it is not accompanied by wisdom
 then it can be harmful and it can even hinder the development of wisdom.</p>
 <p>In reference to wisdom development, it is possible to give a rough
@@ -403,7 +384,7 @@ arguments. In this way the purpose of faith is fulfilled. {590}</p>
 <h2 id="the-buddhas-words-on-faith"><a class="header" href="#the-buddhas-words-on-faith">The Buddha’s Words on Faith</a></h2>
 <p>The Kālāma Sutta offers a principle for establishing a viewpoint founded
 on reasoned analysis for all people, regardless of whether they already
-hold to a particular theory, teaching, or doctrine:<sup class="footnote-reference"><a href="#fn3">3</a></sup></p>
+hold to a particular theory, teaching, or doctrine:<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup></p>
 <div class="sutta">
 <blockquote>
 <p>At one time the Buddha was wandering and arrived at the township of
@@ -495,7 +476,7 @@ evil-doer. Then, as I do not intend evil for anyone, how can suffering
 afflict me, one who does no evil deed?’</p>
 <p>The fourth assurance he has won is this: ’Suppose evil does not befall
 the evil-doer. Then right here I see myself purified in both
-respects.’<sup class="footnote-reference"><a href="#fn4">4</a></sup></p>
+respects.’<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup></p>
 <p><em>A. I. 188.</em></p>
 </blockquote>
 </div>
@@ -558,7 +539,7 @@ firsthand, we shall not simply follow this logic or conjecture. What we
 know for certain is the water we are now carrying in our oxcarts. When
 we meet this alleged water source ahead, we can fill up our jars.’ By
 applying wisdom and relying on that which is directly discernible, this
-caravan was able to reach safety.<sup class="footnote-reference"><a href="#fn5">5</a></sup> {592}</p>
+caravan was able to reach safety.<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup> {592}</p>
 <p>This principle of choosing a definite and certain course of action may
 also be applied to Dhamma practice and in regard to subtle aspects of
 the mind (<em>nāma-dhamma</em>), as described in the Apaṇṇaka Sutta:</p>
@@ -579,7 +560,7 @@ long time. And what is this infallible and certain teaching?</p>
 <p>’Householders, there are some recluses and brahmins whose doctrine and
 view is this: “Gifts bear no fruit, offerings bear no fruit, sacrifice
 bears no fruit; no fruit or result of good and bad actions; no this
-world, no other world;<sup class="footnote-reference"><a href="#fn6">6</a></sup> no mother, no father….” Now there are
+world, no other world;<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup> no mother, no father….” Now there are
 some recluses and brahmins whose doctrine is directly opposed to that
 of those recluses and brahmins, and they say thus: “Gifts, offerings,
 and sacrifices bear fruit; there is fruit and result of good and bad
@@ -611,7 +592,7 @@ by the wise here and now, and since on the dissolution of the body,
 after death, he will reappear in a state of deprivation, in an unhappy
 destination, in perdition, even in hell….” ’</p>
 <p>’Householders, there are some recluses and brahmins whose doctrine and
-view is this: “There is no final cessation of being.”<sup class="footnote-reference"><a href="#fn7">7</a></sup> Now there
+view is this: “There is no final cessation of being.”<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup> Now there
 are some recluses and brahmins whose doctrine is directly opposed to
 that of those recluses and brahmins, and they say thus: “There is a
 final cessation of being….” {593}</p>
@@ -625,7 +606,7 @@ wrong’, that would not be fitting for me.</p>
 <p>Now as to the recluses and brahmins who hold the doctrine and view
 ’there is no final cessation of being’, if their word is true, then it
 is certainly still possible that I might reappear [after death]
-among the gods of the immaterial realms who consist of perception.<sup class="footnote-reference"><a href="#fn8">8</a></sup>
+among the gods of the immaterial realms who consist of perception.<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup>
 But as to the recluses and brahmins who hold the doctrine and view
 ’there is a final cessation of being’, if their word is true then it
 is possible that I might here and now attain final Nibbāna.</p>
@@ -790,7 +771,7 @@ one finally arrive at truth?’</p>
 <p>’The final arrival of truth (saccānupatti) lies in the repetition,
 development, and cultivation of those same things. In this way there
 is the final arrival at truth; in this way one finally arrives at
-truth.’<sup class="footnote-reference"><a href="#fn9">9</a></sup> {596}</p>
+truth.’<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup> {596}</p>
 <p><em>M. II. 171-4.</em></p>
 </blockquote>
 </div>
@@ -799,7 +780,7 @@ to spiritual growth and when applied correctly it accelerates spiritual
 development.</p>
 <p>For this reason, a person with superior wisdom but who lacks strong
 faith may attain to a spiritual goal slower than someone who has
-inferior wisdom but has ardent faith.<sup class="footnote-reference"><a href="#fn10">10</a></sup> When faith is placed on a
+inferior wisdom but has ardent faith.<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup> When faith is placed on a
 righteous object, a person saves both time and labour, but when faith is
 placed on something unrighteous, it misleads and hinders a person.</p>
 <p>In any case, faith as taught in Buddha-Dhamma is based on reasoned
@@ -843,7 +824,7 @@ uncommitted in regard to the Teacher … the Dhamma … the Sangha …
 the training … who is angry with his companions in the holy life …
 is not inclined towards effort, diligent practice, persistence, and
 endeavour. A monk who is not inclined towards effort … is one who
-has not yet removed the stakes in the heart….<sup class="footnote-reference"><a href="#fn11">11</a></sup></p>
+has not yet removed the stakes in the heart….<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup></p>
 <p><em>D. III. 238; M. I. 101.</em></p>
 </blockquote>
 </div>
@@ -952,7 +933,7 @@ thus: ’The Blessed one is fully enlightened, the Dhamma is well
 proclaimed by the Blessed One, the Sangha is practising well.”</p>
 <p>Monks, when someone’s faith has been planted, rooted, and established
 in the Tathāgata through these reasons, terms, and phrases, his faith
-is said to be supported by reason, rooted in vision,<sup class="footnote-reference"><a href="#fn12">12</a></sup> firm, and it
+is said to be supported by reason, rooted in vision,<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup> firm, and it
 is unable to be shaken by any recluse or brahmin or god or Māra or
 Brahma or by anyone in the world. That is how there is an
 investigation of the Tathāgata’s qualities, and that is how the
@@ -973,7 +954,7 @@ following discussion between Ven. Sāriputta and the Buddha:</p>
 <p>’Lord, I have confidence in the Blessed One thus: “There has never
 been, will be or is now another ascetic or brahmin who possesses
 knowledge of perfect awakening superior to that of the Blessed One.” ’</p>
-<p>’You have spoken valiantly,<sup class="footnote-reference"><a href="#fn13">13</a></sup> Sāriputta, you have roared the lion’s
+<p>’You have spoken valiantly,<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup> Sāriputta, you have roared the lion’s
 roar of certainty! How is this? Were you able to perceive the minds of
 all the perfectly enlightened noble Buddhas of the past, so as to say:
 “These Lords were of such virtue, such was their teaching, such their
@@ -993,7 +974,7 @@ present, how is it that you have spoken valiantly and roared the
 lion’s roar of certainty?’</p>
 <p>’Lord, although I do not have the power to read the minds of the
 perfectly enlightened noble Buddhas of the past, future, and present,
-yet I know the way to realize the Dhamma.<sup class="footnote-reference"><a href="#fn14">14</a></sup></p>
+yet I know the way to realize the Dhamma.<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup></p>
 <p>’Lord, it is as if there were a royal frontier city, with mighty
 bastions and a massive encircling wall with fortifications in which is
 a single gate, at which is a gatekeeper, wise, skilled and clever, who
@@ -1012,7 +993,7 @@ perfectly enlightened noble Buddhas of the future will do likewise,
 and you, Lord, who are now the perfectly enlightened noble Buddha of
 the present, have attained to supreme enlightenment by abandoning the
 five hindrances … developed the seven factors of enlightenment
-according to the truth.’<sup class="footnote-reference"><a href="#fn15">15</a></sup></p>
+according to the truth.’<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup></p>
 <p><em>D. II. 81-2; D. III. 99-101.</em></p>
 </blockquote>
 </div>
@@ -1144,7 +1125,7 @@ aging-and-death comes to be”?’</p>
 <p><em>Ven. Musīla:</em> ’Friend Saviṭṭha, apart from faith, apart from personal
 preference, apart from oral tradition, apart from reasoned reflection,
 apart from conformity with doctrinal analysis, I know this, I see
-this: “With birth as condition, aging-and-death comes to be.” ’<sup class="footnote-reference"><a href="#fn16">16</a></sup>
+this: “With birth as condition, aging-and-death comes to be.” ’<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup>
 {602}</p>
 <p><em>S. II. 115-18.</em></p>
 </blockquote>
@@ -1171,7 +1152,7 @@ or by conformity with doctrinal analysis?’</p>
 <p>’Yes, venerable sir.’</p>
 <p>’This, monks, is [one] method of exposition by means of which a monk
 – apart from faith … apart from conformity with doctrinal analysis
-– can declare final knowledge….’<sup class="footnote-reference"><a href="#fn17">17</a></sup></p>
+– can declare final knowledge….’<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup></p>
 <p><em>S. IV. 138-40.</em></p>
 </blockquote>
 </div>
@@ -1194,7 +1175,7 @@ thought and sustained thought; there is a cessation of applied thought
 and sustained thought”….</p>
 <p>’To whatever extent I wish … I enter and dwell in the first jhāna
 … I enter and dwell in the second jhāna … I enter and dwell in the
-third jhāna … I enter and dwell in the fourth jhāna.<sup class="footnote-reference"><a href="#fn18">18</a></sup> Since I
+third jhāna … I enter and dwell in the fourth jhāna.<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup> Since I
 know and see thus, I do not believe with faith in any ascetic or
 brahmin regarding the claim that there is a concentration without
 applied and sustained thought, there is a cessation of applied and
@@ -1203,7 +1184,7 @@ sustained thought.’</p>
 </blockquote>
 </div>
 <p>Arahants, who have reached the highest degree of knowledge and vision,
-possess the attribute of ’faithlessness’ (<em>assaddha</em>):<sup class="footnote-reference"><a href="#fn19">19</a></sup> they do not
+possess the attribute of ’faithlessness’ (<em>assaddha</em>):<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup> they do not
 need to believe anyone else on matters that they clearly see for
 themselves, as confirmed by this discussion between the Buddha and Ven.
 Sāriputta: {603}</p>
@@ -1257,7 +1238,7 @@ cannot bring about enlightenment:</p>
 footprint of the elephant, and the elephant’s footprint is declared to
 be their chief by reason of its size, so too, among the steps that
 lead to awakening, the faculty of wisdom is declared to be their
-chief, that is, for the realization of awakening.<sup class="footnote-reference"><a href="#fn20">20</a></sup> {604}</p>
+chief, that is, for the realization of awakening.<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup> {604}</p>
 <p><em>S. V. 231-2, 237-9.</em></p>
 </blockquote>
 </div>
@@ -1359,7 +1340,7 @@ reasoned thinking. One’s faith is not of the kind that forces one to
 believe; the object of faith does not need to be accepted according to
 rigid stipulations or followed without giving an opportunity to reasoned
 discernment. One’s faith neither obstructs nor coerces one’s thinking,
-nor does it lead to an unwillingness to listen to others.<sup class="footnote-reference"><a href="#fn21">21</a></sup> Instead,
+nor does it lead to an unwillingness to listen to others.<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup> Instead,
 it supports reasoned analysis and contributes to wisdom development.</p>
 <p>Second, one’s behaviour is marked by <em>saccānurakkha</em>: a guarding or love
 of the truth. One is devoted to truth and one expresses one’s faith
@@ -1437,13 +1418,13 @@ realization of the fruit of stream-entry … to the realization of the
 fruit of once-returning … to the realization of the fruit of
 non-returning … to the realization of the fruit of arahantship. What
 four? Association with superior persons, hearing the true Dhamma, wise
-reflection, practice in accord with the Dhamma.<sup class="footnote-reference"><a href="#fn22">22</a></sup> {683}</p>
+reflection, practice in accord with the Dhamma.<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup> {683}</p>
 <p><em>S. V. 410-11.</em></p>
 </blockquote>
 </div>
 <p>Association with superior persons (<em>sappurisa-saṁseva</em>) is equivalent to
 having virtuous friends (<em>kalyāṇamitta</em>). The Buddha is the supreme
-superior person and virtuous friend.<sup class="footnote-reference"><a href="#fn23">23</a></sup> Associating with wise people
+superior person and virtuous friend.<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup> Associating with wise people
 and having virtuous friends leads to beneficial instruction by others
 (<em>paratoghosa</em>), that is, hearing or learning the Dhamma – true,
 wholesome teachings.</p>
@@ -1466,7 +1447,7 @@ friendship and wise reflection – which are the prerequisites for right
 view.</p>
 <p>When one sees things correctly according to the truth, one practices the
 Dhamma correctly (<em>dhammānudhamma-paṭipatti</em>) – one follows the middle
-path of practice (<em>majjhimā-paṭipadā</em>).<sup class="footnote-reference"><a href="#fn24">24</a></sup> One completes this path
+path of practice (<em>majjhimā-paṭipadā</em>).<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup> One completes this path
 with the attainment of arahantship, and is consequently a ’noble being’
 (<em>ariya-puggala</em>) and a member of the noble Sangha. As a noble being one
 is able to assist others and to act as a virtuous friend one step down
@@ -1574,11 +1555,11 @@ Buddhism, 2500 BE., which translates this phrase as <em>yah yeut theu….</em>
 <p>Questioning the accuracy of this translation, I examined the
 commentarial explanation for this phrase. In this context, the
 commentaries add the verb <em>gaṇhittha</em>, rendering the phrase similarly as
-’do not grasp’, ’do not assume’.<sup class="footnote-reference"><a href="#fn25">25</a></sup> {605} This interpretation is
+’do not grasp’, ’do not assume’.<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup> {605} This interpretation is
 consistent with other commentarial texts (these ten factors are found in
-other suttas, e.g.: the Sāḷha Sutta and the Bhaddiya Sutta).<sup class="footnote-reference"><a href="#fn26">26</a></sup> The
+other suttas, e.g.: the Sāḷha Sutta and the Bhaddiya Sutta).<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup> The
 commentaries to the Bhaddiya Sutta, for example, provide the same
-interpretation as <em>mā gaṇhittha</em>.<sup class="footnote-reference"><a href="#fn27">27</a></sup></p>
+interpretation as <em>mā gaṇhittha</em>.<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup></p>
 <p>This indicates that the translators of the ’Thai Tipiṭaka: A Tribute to
 25 Centuries of Buddhism, 2500 BE’. translated this passage
 corresponding to the commentarial explanations. Still not fully
@@ -1672,7 +1653,7 @@ commentarial interpretation <em>mā gaṇhittha</em>. {606}</p>
 </li>
 <li>
 <p>Be not led by the idea: ’This is our teacher’ (samaṇo no
-garūti).<sup class="footnote-reference"><a href="#fn28">28</a></sup></p>
+garūti).<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup></p>
 </li>
 </ul>
 <p>(In 1996 the Thai Tipiṭaka ’Mahachulalongkornrajavidyalaya University
@@ -1709,150 +1690,193 @@ they are the most suitable translations. Students of Buddhism can refer
 to the information and source material presented here in order to
 increase their own understanding on this matter. In the same vein, if
 one encounters a more suitable translation for this phrase one should
-accept it with satisfaction.<sup class="footnote-reference"><a href="#fn29">29</a></sup></p>
+accept it with satisfaction.<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup></p>
 <p>Apart from learning about this specific subject matter, readers may gain
 an appreciation here for how complicated and difficult in can be to
 translate Pali terms and phrases contained in the Buddhist scriptures.</p>
-<div class="illustration" style="width: 30%;">
-<p><a href="https://buddhadhamma.github.io/includes/images/illustrations/temple-bell.pdf"><img src="./includes/images/illustrations/temple-bell.jpg" alt="image" /></a></p>
-<p class="caption">
-  <a href="https://buddhadhamma.github.io/includes/images/illustrations/temple-bell.pdf" target="_blank">
-    (Open large size)
-  </a>
-</p>
-<div class="caption">
-<p>Ancient Bell</p>
-</div>
-</div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
+<h2 id="appendix-2-four-kinds-of-faith"><a class="header" href="#appendix-2-four-kinds-of-faith">Appendix 2: Four Kinds of Faith</a></h2>
+<p>There is a group of factors established in a later period of time
+dividing faith / belief into four kinds:</p>
+<ol>
+<li>
+<p><em>kamma-saddhā:</em> belief in kamma;</p>
+</li>
+<li>
+<p><em>vipāka-saddhā:</em> belief in the fruits of kamma;</p>
+</li>
+<li>
+<p><em>kammassakatā-saddhā:</em> belief that beings are the owners of their
+kamma;</p>
+</li>
+<li>
+<p><em>tathāgatabodhi-saddhā:</em> faith in the Buddha’s awakening.</p>
+</li>
+</ol>
+<p>Apart from <em>tathāgatabodhi-saddhā</em> (a term formed from the Pali
+<em>saddahati tathāgatassa bodhiṁ</em>), this group of four is not found in the
+Pali Canon or even in the commentaries. This collection of four is a
+compilation of teachings found in different locations, but they are not
+found in the Pali Canon as these specific terms.</p>
+<p>For example, <em>kammassakatā-saddhā</em> is only found in the Pali Canon as
+<em>kammassakatā-ñāṇa</em>;<sup class="footnote-reference" id="fr-fn313-1"><a href="#fn-fn313">30</a></sup> in the earlier suttas there is only
+<em>kammassakatā</em>.<sup class="footnote-reference" id="fr-fn314-1"><a href="#fn-fn314">31</a></sup> In the commentaries one finds
+<em>kammassakatā-paññā</em><sup class="footnote-reference" id="fr-fn315-1"><a href="#fn-fn315">32</a></sup> and <em>kammassakata-diṭṭhi</em>,<sup class="footnote-reference" id="fr-fn316-1"><a href="#fn-fn316">33</a></sup> but these
+concern matters of wisdom.</p>
+<p><em>Kamma-saddhā</em> and <em>vipāka-saddhā</em> are derived from teachings concerning
+kamma, which are usually associated with wrong view (<em>micchā-diṭṭhi</em>)
+and right view (<em>sammā-diṭṭhi</em>),<sup class="footnote-reference" id="fr-fn317-1"><a href="#fn-fn317">34</a></sup> but these specific terms are not
+found in the Pali Canon. Even the expression ’believing in kamma’, which
+is one of the five qualities of a lay-disciple (<em>upāsaka-dhamma</em>), is
+translated from <em>kammaṁ pacceti</em>, which means focusing on achievement
+through action rather than relying on luck. This subject reflects the
+development of Buddhist thought and tradition later, post-canonical
+times.</p>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
 <p>Trans.: <em>saddhā</em>: from the Pali verb <em>saddahati</em>: ’to entrust the
 heart’ (from the Sanskrit roots <em>ṡrad</em> – deemed to be linked to the
 root <em>hṛid</em> – ’heart’ – and dhā – ’to place’. The English words
 ’heart’ and ’cardiac’ are related etymologically to the root
 <em>ṡrad</em>). Note that in the Thai edition of <em>Buddhadhamma</em>, this
-chapter is incorporated in the chapter on Virtuous Friends.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
+chapter is incorporated in the chapter on Virtuous Friends. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
 <p>For the dependence of virtuous conduct on faith, see: Vism. 511;
-VismṬ.: Indriyasaccaniddesavaṇṇanā, Magganiddesakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+VismṬ.: Indriyasaccaniddesavaṇṇanā, Magganiddesakathāvaṇṇanā. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>In different editions of the Pali Canon this sutta is variously
 called the Kesaputta Sutta, the Kesaputti Sutta, the Kesaputtiya
 Sutta, or the Kesamutti Sutta. The sutta following on from this
-sutta contains similar material; see also: A. II. 190-91.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+sutta contains similar material; see also: A. II. 190-91. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
 <p>Trans.: the commentaries explain ’in both respects’ thus: ’Because
 he does no evil and because no evil will befall him.’ (’Numerical
 Discourses of the Buddha’ by Nyanaponika Thera and Bhikkhu Bodhi;
-AltaMira Press, © 1999; note 51.)</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
-<p>JA. I. 94.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+AltaMira Press, © 1999; note 51.) <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
+<p>JA. I. 94. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
 <p>Trans.: ’another world’ (<em>paraloka</em>): i.e. other realms or future
-realms of existence.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
+realms of existence. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
 <p>Trans.: the Majjhima Nikāya Aṭṭhakathā states that ’cessation of
-being’ (<em>bhava-nirodha</em>) here refers to Nibbāna.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
-<p><em>Devā arūpino saññāmayā</em>.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
+being’ (<em>bhava-nirodha</em>) here refers to Nibbāna. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
+<p><em>Devā arūpino saññāmayā</em>. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
 <p>See also the Kīṭāgīri Sutta, which describes the realization of
-arahantship as the result of gradual study and practice: M. I. 480.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
+arahantship as the result of gradual study and practice: M. I. 480. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
 <p>Take for example the case of Ven. Sāriputta, who attained to the
 Dhamma more slowly than many other disciples, despite his
-outstanding wisdom.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
+outstanding wisdom. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
 <p>The five mental bonds are separate qualities; I have not listed
 them here because they are not directly related to the subject at
-hand.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
+hand. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
 <p><em>Dassana-mūlikā</em>; the commentaries state that a person is rooted
-in the path of stream-entry.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
-<p><em>Āsabhi-vācā</em>: literally, ’with a great bull’s voice’.</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
-<p>’Measure of the Dhamma’: <em>dhammanvaya</em>.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
-<p>And for an extended account, see: D. III. 102-116.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
+in the path of stream-entry. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
+<p><em>Āsabhi-vācā</em>: literally, ’with a great bull’s voice’. <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
+<p>’Measure of the Dhamma’: <em>dhammanvaya</em>. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
+<p>And for an extended account, see: D. III. 102-116. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
 <p>From here there are questions and answers about each link of
 Dependent Origination, both in the forward sequence and the reverse
 sequence, until the process reaches the cessation of becoming:
-Nibbāna.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
+Nibbāna. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
 <p>From here the questions and answers cover all of the sense
-faculties in the same manner.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+faculties in the same manner. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
 <p>From the second jhāna upwards, concentration is without applied
-and sustained thought (<em>vitakka</em> and <em>vicāra</em>).</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
-<p>Dh. verse 97.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
+and sustained thought (<em>vitakka</em> and <em>vicāra</em>). <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
+<p>Dh. verse 97. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
 <p>Trans.: ’steps leading to enlightenment’ (<em>padāni bodhāya
 saṁvattanti</em>) = <em>dhamma-padāni</em>: ’Dhamma-steps’ or ’sections of
-Dhamma’.</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
+Dhamma’. <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
 <p>Note the distinction between faith and belief following on from
 reasoned discernment, and faith and belief that is established
-first, followed by rational justifications for one’s beliefs.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
+first, followed by rational justifications for one’s beliefs. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
 <p>These factors are referred to as ’factors of stream-entry’
 (<em>sotāpattiyaṅga</em>; ’qualities of a stream-enterer’) at, e.g.: S. V.
 347. They are referred to as ’virtues conducive to growth in wisdom’
-(<em>paññāvuḍḍhi-dhamma</em>) at, e.g.: S. V. 411; A. II. 245-6.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
-<p>See the preceding chapter on virtuous friends.</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
+(<em>paññāvuḍḍhi-dhamma</em>) at, e.g.: S. V. 411; A. II. 245-6. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
+<p>See the preceding chapter on virtuous friends. <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
 <p><em>Dhammānudhamma-paṭipatti</em> is equivalent to
 <em>dhammānudhamma-paṭipadā</em> – the Path (<em>magga</em>) or the practice
 leading to Nibbāna (<em>nibbāna-gāminī-paṭipadā</em>) – a term which
-occurs frequently in the scriptures, e.g.: Nd. I. 365.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
-<p>AA. II. 305.</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
-<p>A. I. 193-4; A. II. 190-91.</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
+occurs frequently in the scriptures, e.g.: Nd. I. 365. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
+<p>AA. II. 305. <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
+<p>A. I. 193-4; A. II. 190-91. <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
 <p>AA. III. 173. This is the same volume containing the commentary
-to the Kālāma Sutta.</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
+to the Kālāma Sutta. <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
 <p>Trans.: these are the English translations contained within ’A
 Dictionary of Buddhist Teachings’ (พจนานุกรมพุทธศาสน์
-ฉบับประมวลธรรม).</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
+ฉบับประมวลธรรม). <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
 <p>Trans.: perhaps, in English, a valid translation here would be:
 ’remain skeptical about…’ or ’sustain a healthy dose of skepticism
 about….’ The approach here seems to be consistent with a blend of
 religious skepticism (allowing room for doubt, even of religious
 beliefs and claims) and scientific skepticism (subjecting all claims
-to systematic investigation).</p>
+to systematic investigation). <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn313"><sup class="footnote-definition-label">30</sup>
+<p>See: Nd. I. 188-9; Dhs. 233; Vbh. 328. <a href="#fr-fn313-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn314"><sup class="footnote-definition-label">31</sup>
+<p>A. III. 185-6. <a href="#fr-fn314-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn315"><sup class="footnote-definition-label">32</sup>
+<p>E.g.: DA. II. 359; DA. III. 936; SA. I. 87. <a href="#fr-fn315-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn316"><sup class="footnote-definition-label">33</sup>
+<p>E.g.: MA. I. 188; SA. III. 199. <a href="#fr-fn316-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn317"><sup class="footnote-definition-label">34</sup>
+<p>E.g.: M. I. 288 <a href="#fr-fn317-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

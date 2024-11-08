@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html" class="active">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -188,12 +169,12 @@ their own nature. They do not exist as separate fixed entities, and in
 the case of living creatures, they are not distinct and immutable
 ’beings’ or ’persons’, which one could validly take to be a legitimate
 owner of things or which are able to govern things according to their
-wishes.<sup class="footnote-reference"><a href="#fn1">1</a></sup></p>
+wishes.<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup></p>
 <p>Everything that exists in the world exists as a collection of convergent
 parts. There exists no inherent self or substantial essence within
 things. When one separates the constituent parts from each other, no
 self or core remains. A frequent scriptural analogy for this is of a
-vehicle.<sup class="footnote-reference"><a href="#fn2">2</a></sup> When one assembles the various parts according to one’s
+vehicle.<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup> When one assembles the various parts according to one’s
 chosen design, one assigns the conventional term ’wagon’ to the end
 product. Yet if one disassembles the parts, no essence of a wagon can be
 found. All that remains are the various parts, each of which is given
@@ -213,12 +194,12 @@ mind and matter, both mentality (<em>nāma-dhamma</em>) and corporeality
 (<em>rūpa-dhamma</em>). Here, special emphasis is given to the analysis of the
 mind.</p>
 <p>There are many ways to present this division into separate constituents
-of life, depending on the objective of the specific analysis.<sup class="footnote-reference"><a href="#fn3">3</a></sup> This
+of life, depending on the objective of the specific analysis.<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup> This
 chapter presents the division into the ’five aggregates’
 (<em>pañca-khandha</em>), which is the preferred analysis in the suttas.</p>
 <p>In Buddha-Dhamma, the human living entity – what is referred to as a
 ’person’ or ’living being’ – is divided into five groups or
-categories:<sup class="footnote-reference"><a href="#fn4">4</a></sup> {14}<sup class="footnote-reference"><a href="#fn5">5</a></sup></p>
+categories:<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup> {14}<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup></p>
 <ol>
 <li>
 <p><em>Rūpa</em> (corporeality; body; material form): all material
@@ -235,7 +216,7 @@ by way of the mind.</p>
 <p><em>Saññā</em> (perception): the ability to recognize and to designate; the
 perception and discernment of various signs, characteristics, and
 distinguishing features, enabling one to remember a specific object
-of attention (<em>ārammaṇa</em>).<sup class="footnote-reference"><a href="#fn6">6</a></sup></p>
+of attention (<em>ārammaṇa</em>).<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup></p>
 </li>
 <li>
 <p><em>Saṅkhāra</em> (mental formations; volitional activities): those mental
@@ -246,7 +227,7 @@ behaviour. They are the source of <em>kamma</em> (’karma’; intentional
 action). Examples of such mental formations include: faith
 (<em>saddhā</em>), mindfulness (<em>sati</em>), moral shame (<em>hiri</em>), fear of
 wrongdoing (<em>ottappa</em>), lovingkindness (<em>mettā</em>), compassion
-(<em>karuṇā</em>), appreciative joy (<em>muditā</em>), equanimity (<em>upekkhā</em>),<sup class="footnote-reference"><a href="#fn7">7</a></sup>
+(<em>karuṇā</em>), appreciative joy (<em>muditā</em>), equanimity (<em>upekkhā</em>),<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup>
 wisdom (<em>paññā</em>), delusion (<em>moha</em>), greed (<em>lobha</em>), hatred
 (<em>dosa</em>), conceit (<em>māna</em>), views (<em>diṭṭhi</em>), jealousy (<em>issā</em>), and
 stinginess (<em>macchariya</em>). They are the agents or fashioners of the
@@ -259,8 +240,8 @@ feeling tangible objects – and awareness of mind objects.</p>
 </li>
 </ol>
 <p>There are several points to bear in mind in reference to the final four
-aggregates, comprising the mental aggregates (<em>nāma-khandhā</em>):<sup class="footnote-reference"><a href="#fn8">8</a></sup></p>
-<p><strong>Perception</strong> (<em>saññā</em>) is a form of knowledge.<sup class="footnote-reference"><a href="#fn9">9</a></sup> It refers to the
+aggregates, comprising the mental aggregates (<em>nāma-khandhā</em>):<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup></p>
+<p><strong>Perception</strong> (<em>saññā</em>) is a form of knowledge.<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup> It refers to the
 perception or discernment of an object’s attributes and properties,
 including its shape, appearance, colour, etc., as well as its name and
 conventional designations. For example, one knows that an object is
@@ -336,7 +317,7 @@ conjunction with the other aggregates. When one feels happy (=
 feeling of happiness is not the same as knowing that one is happy.) When
 one suffers (= <em>vedanā</em>), one knows that one is suffering (= <em>viññāṇa</em>).
 Perceiving something as pleasurable or painful (= <em>saññā</em>), one knows
-accordingly.<sup class="footnote-reference"><a href="#fn10">10</a></sup> And when one engages in various thoughts and
+accordingly.<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup> And when one engages in various thoughts and
 intentions (= <em>saṅkhāra</em>), there is a continual concomitant awareness of
 this activity. {16} This prevailing stream of awareness, which is in a
 continual process of arising and ceasing, and which accompanies the
@@ -367,7 +348,7 @@ object, in fact, one is seeing only specific attributes or facets of
 that object in question. In other words, one sees only those aspects or
 angles that one gives importance to, depending on the mental formations
 (<em>saṅkhāra</em>) which condition the arising of consciousness
-(<em>viññāṇa</em>).<sup class="footnote-reference"><a href="#fn11">11</a></sup></p>
+(<em>viññāṇa</em>).<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup></p>
 <p>For example, in a wide expanse of countryside grows one sole mango tree.
 It is a large tree, yet it bears only a few pieces of fruit and in this
 season is almost barren of leaves, providing very little shade. On
@@ -396,7 +377,7 @@ or neutral. {17}</p>
 <p>To avoid confusion with the aggregate of mental formations (<em>saṅkhāra</em>),
 it is important to note that feeling (<em>vedanā</em>) is an activity at the
 level of reception – it pertains exclusively to the immediate effect an
-object has on the mind.<sup class="footnote-reference"><a href="#fn12">12</a></sup> It does not pertain to the stage of
+object has on the mind.<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup> It does not pertain to the stage of
 intention or of acting in response to sense impressions, which is the
 function of mental formations (<em>saṅkhāra</em>). For this reason, such terms
 as ’like’, ’dislike’, ’delight’, and ’aversion’ usually refer to the
@@ -478,7 +459,7 @@ other hand operate or function with sense impressions that are
 immediately manifesting in the mind. They are associated with and attend
 to these sense impressions, and they rely on the reception of them in
 order to function. Mental formations, however, both deliberate over
-sense impressions and act in response to them.<sup class="footnote-reference"><a href="#fn13">13</a></sup></p>
+sense impressions and act in response to them.<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup></p>
 <p>These explanations may clarify the following questions: Why are feelings
 of ease and dis-ease classified as sensations (<em>vedanā</em>), while the
 subsequent factors of liking and disliking are classified as mental
@@ -492,12 +473,12 @@ is included among the mental formations – <em>saṅkhāra</em>)? Why is wisdom
 <p>There tends to be confusion among Buddhist scholars as to which mental
 factor in the Pali vocabulary corresponds to ’memory’. <em>Saññā</em> is often
 translated as ’recollection’, whereas <em>sati</em> may be translated as
-’mindfulness’, ’recollection’, ’recall’, or ’memory’.<sup class="footnote-reference"><a href="#fn14">14</a></sup> In regard to
+’mindfulness’, ’recollection’, ’recall’, or ’memory’.<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup> In regard to
 the latter term, there are some prominent sutta examples, for example
 the passage praising Ven. Ānanda as foremost among the bhikkhu disciples
 in ’remembering the Buddha’s words’. In this context the Buddha uses the
 term <em>sati</em>: ’Of all my disciples, Ānanda is supreme in memory
-(<em>sati</em>).’<sup class="footnote-reference"><a href="#fn15">15</a></sup></p>
+(<em>sati</em>).’<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup></p>
 <p>In the formal teachings, there is no confusion about this matter. Memory
 is not the exclusive function of just one mental factor, but rather it
 is part of a mental process, within which perception (<em>saññā</em>) and
@@ -624,8 +605,8 @@ inseparable. Having said this, there is a distinction in that wisdom is
 a ’quality to be trained and developed’ (<em>bhāvetabba-dhamma</em>), in order
 to increase and strengthen it. In contrast, consciousness is a ’quality
 to be fully understood’ (<em>pariññeyya-dhamma</em>); its nature and its
-attributes should be truly recognized and understood.<sup class="footnote-reference"><a href="#fn16">16</a></sup> {21}</p>
-<p>The commentarial texts, including the Visuddhimagga,<sup class="footnote-reference"><a href="#fn17">17</a></sup> explain the
+attributes should be truly recognized and understood.<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup> {21}</p>
+<p>The commentarial texts, including the Visuddhimagga,<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup> explain the
 distinction between perception (<em>saññā</em>), consciousness (<em>viññāṇa</em>), and
 wisdom (<em>paññā</em>) in this way: perception (<em>saññā</em>) simply recognizes the
 properties of a sense object, say that it is ’green’ or ’yellow’; it is
@@ -656,7 +637,7 @@ made.</p>
 perception and consciousness arise, devoid of wisdom. Yet when wisdom
 arises alongside these other two qualities, it is difficult to
 distinguish one from the other.</p>
-<p>When Jāli and Kaṇhā<sup class="footnote-reference"><a href="#fn18">18</a></sup> sought a hiding place, they walked backwards
+<p>When Jāli and Kaṇhā<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup> sought a hiding place, they walked backwards
 into the lotus pond, convinced that their pursuer would think that they
 had only recently come out of the pond. This line of thinking on their
 part may be referred to as wisdom (<em>paññā</em>). Later, Vessantara saw their
@@ -709,7 +690,7 @@ meaning to life, and it is directly connected to the teachings by the
 Buddha presented in this book.</p>
 <p>The four aggregates of mentality are intimately related, influencing and
 conditioning one another. The arising of these four aggregates is
-ordinarily outlined in the following way:<sup class="footnote-reference"><a href="#fn19">19</a></sup></p>
+ordinarily outlined in the following way:<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup></p>
 <div class="sutta">
 <blockquote>
 <p>Dependent on the eye and forms, eye-consciousness arises (similarly
@@ -741,7 +722,7 @@ or raw material. Mental formations (<em>saṅkhāra</em>) resemble a person who
 takes this raw material and shapes it in preparation for work.
 Consciousness (<em>viññāṇa</em>) is similar to the director of the work, aware
 of everyone else’s activities; it both opens the way for the work to be
-performed and it receives the results of the work.<sup class="footnote-reference"><a href="#fn20">20</a></sup></p>
+performed and it receives the results of the work.<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup></p>
 <p>One complex aspect of this process is that feeling (<em>vedanā</em>) does not
 act as a catalyst for the other aggregates in a one-sided way. The other
 aggregates, too, have an influence over feeling. Take the example of a
@@ -801,8 +782,8 @@ this context <em>saṅkhāra</em> is the technical name for volitional action
 formations, representing them when they are actively operative. It is
 the term used when referring to the crucial role that volitional
 formations play, e.g.: ’It is kamma that distinguishes beings as
-inferior and superior’;<sup class="footnote-reference"><a href="#fn21">21</a></sup> ’beings exist according to their
-kamma.’<sup class="footnote-reference"><a href="#fn22">22</a></sup> {24}</p>
+inferior and superior’;<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup> ’beings exist according to their
+kamma.’<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup> {24}</p>
 <h2 id="the-five-aggregates-and-clinging-to-the-five-aggregates"><a class="header" href="#the-five-aggregates-and-clinging-to-the-five-aggregates">The Five Aggregates and Clinging to the Five Aggregates</a></h2>
 <p>In the Buddha’s elucidation of the Four Noble Truths, encapsulating the
 essence of Buddhism, there is a noteworthy reference to the five
@@ -859,12 +840,12 @@ Buddha-Dhamma. {25}</p>
 <h2 id="practical-application"><a class="header" href="#practical-application">Practical Application</a></h2>
 <p>Ordinarily, human beings are inclined to believe that they possess a
 true and lasting self, in some form or another. Some people attach to
-their mind as the ’self’;<sup class="footnote-reference"><a href="#fn23">23</a></sup> some believe that something exists
+their mind as the ’self’;<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup> some believe that something exists
 separate and yet somehow connected to the mind, which acts on another
 level to be responsible for and to control the body and mind. The
 exposition of the five aggregates is intended to reveal how that which
 is called a ’being’, ’person’, or ’self’ – when it is closely examined
-and analyzed – is simply comprised of these five components. There is
+and analyzed – consists simply of these five components. There is
 no residual essence or substance existing separate from these five. And
 even these five aggregates exist within an interdependent relationship.
 They do not exist independently; they are not autonomous. Therefore,
@@ -875,10 +856,10 @@ selflessness (<em>anattā</em>; ’nonself’, ’not-self’). Human life consi
 convergence of various elements or parts; there exists no substantial
 ’self’ as unifying principle or centre-point of these parts. None of the
 aggregates (components, etc.) exist as a stable, lasting ’self’, and no
-such self exists apart from them.<sup class="footnote-reference"><a href="#fn24">24</a></sup> When one gains insight into this
+such self exists apart from them.<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup> When one gains insight into this
 truth, one lets go of one’s attachments to self. This principle of
 nonself is clarified in the teaching on Dependent Origination in
-relation to the five aggregates.<sup class="footnote-reference"><a href="#fn25">25</a></sup></p>
+relation to the five aggregates.<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup></p>
 <p>Furthermore, when one understands that the five aggregates exist in an
 interrelated and interdependent manner, one does not develop the wrong
 views of either annihilationism (<em>uccheda-diṭṭhi</em>) or eternalism
@@ -1119,7 +1100,7 @@ the two boundless states (<em>appamaññā-cetasika</em>); and wisdom
 as the six kinds of volition (<em>sañcetanā</em>; ’intention’, ’thought’),
 pertaining to: form (<em>rūpa-sañcetanā</em>), sounds (<em>sadda-sañcetanā</em>),
 smells (<em>gandha-sañcetanā</em>), tastes (<em>rasa-sañcetanā</em>), tangible objects
-(<em>phoṭṭhabba-sañcetanā</em>), and mental objects (<em>dhamma-sañcetanā</em>).<sup class="footnote-reference"><a href="#fn26">26</a></sup></p>
+(<em>phoṭṭhabba-sañcetanā</em>), and mental objects (<em>dhamma-sañcetanā</em>).<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup></p>
 <h3 id="viññāṇa-consciousness"><a class="header" href="#viññāṇa-consciousness">Viññāṇa: consciousness</a></h3>
 <p>It is divided into six factors, according to the pathway by which it
 originates: awareness of objects by way of the eye (<em>cakkhu-viññāṇa</em>),
@@ -1127,7 +1108,7 @@ the ear (<em>sota-viññāṇa</em>), the nose (<em>ghāna-viññāṇa</em>), t
 (<em>jivhā-viññāṇa</em>), the body (<em>kāya-viññāṇa</em>), and the mind
 (<em>mano-viññāṇa</em>).</p>
 <p>The Abhidhamma refers to the consciousness aggregate as <em>citta</em>, and it
-divides the <em>citta</em> into either 89 or 121 types of consciousness:<sup class="footnote-reference"><a href="#fn27">27</a></sup></p>
+divides the <em>citta</em> into either 89 or 121 types of consciousness:<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup></p>
 <ul>
 <li>
 <p>Divided according to the state or level of consciousness: fifty-four
@@ -1177,70 +1158,70 @@ comparison to Western psychological terms, <em>saññā</em> encompasses
 The Buddha was born under a Sāla tree.</p>
 </div>
 </div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
 <p>In Pali, one may refer to ’things’ as phenomena (<em>dhamma</em>),
 elements (<em>dhātu</em>), or aspects of reality (<em>sabhāva</em>). The complete
-spelling of this third term is <em>sabhāva-dhammā</em> (from <em>sa</em> + <em>bhāva</em>
-+ <em>dhamma</em>), which literally means ’things that exist according to
-their own nature’.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
+spelling of this third term is <em>sabhāva-dhammā</em> (from <em>sa</em> + <em>bhāva</em> + <em>dhamma</em>),
+which literally means ’things that exist according to their own nature’. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
 <p>S. I. 135. [Trans.: in ancient India this referred to a wagon; in
-modern parlance we may refer to this as a ’car’.]</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+modern parlance we may refer to this as a ’car’.] <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>The broadest division is into mind (<em>nāma</em>) and body (<em>rūpa</em>), or
 mentality and corporeality. The Abhidhamma texts prefer the
 threefold division of the mind (<em>citta</em>), mental constituents
 (<em>cetasika</em>), and the body (<em>rūpa</em>). If one compares this analysis
 to the five aggregates, one may equate the following: <em>citta</em> =
 <em>viññāṇa-khandha</em>; <em>cetasika</em> = <em>vedanā-khandha</em>, <em>saññā-khandha</em>, and
-<em>saṅkhāra-khandha</em>; <em>rūpa</em> = <em>rūpa-khandha</em>.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
-<p>See more details on the five aggregates see Appendix 1.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+<em>saṅkhāra-khandha</em>; <em>rūpa</em> = <em>rūpa-khandha</em>. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
+<p>See more details on the five aggregates see Appendix 1. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
 <p>The numbers in curly brackets refer to the page number of the Thai
-edition of <em>Buddhadhamma</em>.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+edition of <em>Buddhadhamma</em>. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
 <p>The term <em>ārammaṇa</em> (’object of attention’) refers to those things
 cognized by the mind by means of the six ’doorways’ (<em>dvāra</em>), i.e.:
 visual forms, sounds, smells, tastes, tangible objects, and mind
-objects (thoughts).</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
+objects (thoughts). <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
 <p>The meaning of this important term <em>upekkhā</em> is often
 misunderstood. This term appears in the group of mental formations
 (<em>saṅkhāra</em>), where it is equivalent to specific neutrality
 (<em>tatramajjhattatā</em>), and also in the group of feelings (<em>vedanā</em>),
 where it is equivalent to neutrality (<em>adukkhamasukha</em>), i.e. to
-neither-painful-nor-pleasant sensations.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
+neither-painful-nor-pleasant sensations. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
 <p>The following explanations are based on references from the Pali
 Canon as well as comparative references from the commentaries, in
 particular: M. I. 292-3; S. III. 87; [MA. II. 462]; SA. II. 291;
-Vism. 436, 452-3.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
-<p>For the commentarial analysis of perception see Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
+Vism. 436, 452-3. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
+<p>For the commentarial analysis of perception see Appendix 2. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
 <p>Trans.: one sometimes encounters the term ’apperception’ as a
 definition for <em>saññā</em>. According to the ’Collins Concise
 Dictionary’ (© 1999), apperception is defined as: ’the awareness of
-perceiving’, which is closer to this function of consciousness.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
-<p>For more on this subject, see chapter 4 on Dependent Origination.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
+perceiving’, which is closer to this function of consciousness. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
+<p>For more on this subject, see chapter 4 on Dependent Origination. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
 <p><em>Vedanā</em> is classified as an ’effect’ (<em>vipāka</em>; fruit of kamma).
-By itself, it is neither wholesome nor unwholesome.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
+By itself, it is neither wholesome nor unwholesome. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
 <p>In the doctrine of the threefold life-cycle (<em>tivaṭṭa</em>) in
 relation to Dependent Origination, <em>vedanā</em>, <em>saññā</em>, and <em>viññāṇa</em>
 are classified as ’fruits of <em>kamma</em>’ (<em>vipāka</em>), whereas <em>saṅkhāra</em>
@@ -1248,30 +1229,30 @@ is classified as <em>kamma</em> itself. This classification of <em>saṅkhāra</
 as kamma refers exclusively to those times when intention (<em>cetanā</em>)
 is operative. The various mental determinants (within the round of
 rebirth – <em>saṁsāra-vaṭṭa</em>) are classified as mental impurities
-(<em>kilesa</em>).</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
+(<em>kilesa</em>). <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
 <p>One aspect of <em>sati</em> is recollection – the ability to recall;
-another aspect is mindfulness.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
-<p>A. I. 24-5.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
-<p>M. I. 292-3.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
-<p>Vism. 436.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+another aspect is mindfulness. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
+<p>A. I. 24-5. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
+<p>M. I. 292-3. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
+<p>Vism. 436. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
 <p>Trans.: the children of the bodhisatta Vessantara and his wife
-Maddī.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+Maddī. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
 <p>For the complete sequence of this process, see the following
-chapter on the six sense spheres.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
+chapter on the six sense spheres. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
 <p>The commentaries, including the Visuddhimagga, provide the
 following analogies: the body is like a bowl, feeling is like staple
 food, perception is like the side dishes of food, mental formations
@@ -1280,15 +1261,15 @@ food. Similarly: the body is like a prison; feeling is like the
 punishment; perception is like the offence; volitional formations
 are like the magistrate inflicting the penalty; and consciousness is
 like the prisoner. See: Vism. 479; CompṬ.:
-Samuccayaparicchedavaṇṇanā, Sabbasaṅgahavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
-<p>M. III. 203.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
-<p>Sn. 118-19.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
+Samuccayaparicchedavaṇṇanā, Sabbasaṅgahavaṇṇanā. <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
+<p>M. III. 203. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
+<p>Sn. 118-19. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
 <p>Note the Buddha’s words: ’It would be better, monks, for the
 uninstructed worldling to take as self this body composed of the
 four great elements rather than the mind. This is because this body
@@ -1297,20 +1278,21 @@ for two years, for three, four, five years, for ten, twenty, thirty,
 forty, fifty years, for a hundred years, or even longer. But that
 which is called ’mind’ (<em>citta</em>), ’mentality’ (<em>mano</em>), or
 ’consciousness’ (<em>viññāṇa</em>) arises and ceases perpetually, by day
-and by night’ (S. II. 94-5).</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
-<p>See: S. III. 3-5, 16-18, 110-15.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
-<p>See chapter 4 on Dependent Origination*.*</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
-<p>E.g.: S. III. 60-61.</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
+and by night’ (S. II. 94-5). <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
+<p>See: S. III. 3-5, 16-18, 110-15. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
+<p>See chapter 4 on Dependent Origination. <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
+<p>E.g.: S. III. 60-61. <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
 <p>Trans.: for more information on the terms <em>citta</em>, <em>viññāṇa</em>, and
-<em>mano</em> see the Special Appendix at the end of this book.</p>
+<em>mano</em> see the Special Appendix at the end of this book. <a href="#fr-fn27-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

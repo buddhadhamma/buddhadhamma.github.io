@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html" class="active">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -186,7 +167,7 @@
 <p>In Pali, the word <em>samatha</em> means ’calm’ or ’tranquil’, but the term
 generally refers to the actual methods of generating tranquillity and of
 developing a deeply concentrated mind. The purpose of <em>samatha</em> is to
-attain the meditative absorptions (<em>jhāna</em>).<sup class="footnote-reference"><a href="#fn1">1</a></sup> In <em>samatha</em> practice
+attain the meditative absorptions (<em>jhāna</em>).<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup> In <em>samatha</em> practice
 one fixes one’s mind on an object (<em>ārammaṇa</em>) until the mind is
 one-pointed, which is called <em>samādhi</em> (concentration). When
 concentration is properly established the mind enters one of the jhānas.
@@ -196,7 +177,7 @@ than these are the four formless jhānas (<em>arūpa-jhāna</em>), in which one
 uses immaterial objects as the object of attention. Together these
 jhānas are called the eight ’attainments’ (<em>samāpatti</em>).</p>
 <p>In jhāna the mind is happy, peaceful and bright; there is no dullness or
-disturbance; the mind is free from the hindrances (<em>nīvaraṇa</em>).<sup class="footnote-reference"><a href="#fn2">2</a></sup> For
+disturbance; the mind is free from the hindrances (<em>nīvaraṇa</em>).<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup> For
 the duration of jhāna, one is said to be free from the mental
 defilements (<em>kilesa</em>). The defilements return, however, when one exits
 jhāna. The terms ’cessation as suppression’ (<em>vikkhambhana-nirodha</em>) and
@@ -209,7 +190,7 @@ Note <a href="#note-higher-knowledge">Higher Knowledge</a>)</p>
 (<em>samādhi</em>). Equating <em>samatha</em> with <em>samādhi</em> is in accord with both
 the Abhidhamma and the suttas, for no matter which special powers or
 attainments a person reaches, the essence of tranquillity meditation is
-concentration.<sup class="footnote-reference"><a href="#fn3">3</a></sup> {427}</p>
+concentration.<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup> {427}</p>
 <p><em>Vipassanā</em> means ’clear insight’. The term also refers to methods of
 cultivating wisdom in order to see the truth, to see things clearly as
 they are, not as one imagines them to be with a vision distorted by
@@ -225,7 +206,7 @@ actions. An awakened person is not afflicted by defilements and need not
 struggle against them. This knowledge is the aim of insight meditation
 (<em>vipassanā</em>) and it leads to true and lasting liberation. This absolute
 liberation is called ’cessation as severance’ (<em>samuccheda-nirodha</em>) or
-’liberation as severance’ (<em>samuccheda-vimutti</em>).<sup class="footnote-reference"><a href="#fn4">4</a></sup></p>
+’liberation as severance’ (<em>samuccheda-vimutti</em>).<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup></p>
 <div class="note">
 <p><span class="caption">Higher Knowledge</span><a id="note-higher-knowledge"></a></p>
 <blockquote>
@@ -241,7 +222,7 @@ in reference to all six kinds I use the terms ’supreme knowledge’,
 </blockquote>
 </div>
 <p>The goal of tranquillity meditation is jhāna; the goal of insight
-meditation is <em>ñāṇa</em>.<sup class="footnote-reference"><a href="#fn5">5</a></sup> People can practise solely <em>samatha</em>
+meditation is <em>ñāṇa</em>.<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup> People can practise solely <em>samatha</em>
 meditation, wishing to enjoy the fruits of such practice: the jhānas and
 the supreme powers (<em>abhiññā</em>). They may stop here, not concerning
 themselves with insight meditation and the development of wisdom. But a
@@ -259,20 +240,20 @@ initial concentration of someone practising insight may be ’temporary’
 concentration’ – <em>appanā-samādhi</em>), reaching at least the first jhāna.</p>
 <p>However extraordinary the jhānas or psychic powers may be, if they
 result exclusively from tranquillity meditation they are still
-’mundane’: they lie within the domain of unawakened beings.<sup class="footnote-reference"><a href="#fn6">6</a></sup> Examples
-of such accomplishments are the psychic powers of Ven. Devadatta,<sup class="footnote-reference"><a href="#fn7">7</a></sup>
-the temporary emancipation of Ven. Godhika,<sup class="footnote-reference"><a href="#fn8">8</a></sup> and the stories in the
-texts of monks, rishis and laypeople who attained jhāna.<sup class="footnote-reference"><a href="#fn9">9</a></sup> {428}</p>
+’mundane’: they lie within the domain of unawakened beings.<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup> Examples
+of such accomplishments are the psychic powers of Ven. Devadatta,<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup>
+the temporary emancipation of Ven. Godhika,<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup> and the stories in the
+texts of monks, rishis and laypeople who attained jhāna.<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup> {428}</p>
 <p>Concentrative attainments and supernormal powers resulting from
-tranquillity meditation were accessible before the Buddha’s time.<sup class="footnote-reference"><a href="#fn10">10</a></sup>
+tranquillity meditation were accessible before the Buddha’s time.<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup>
 Those individuals who achieved these attainments came from other
 religious traditions and preceded the Buddha, for example Āḷāra Kālāma
 who reached the third formless jhāna and Uddaka Rāmaputta who attained
-the fourth formless jhāna.<sup class="footnote-reference"><a href="#fn11">11</a></sup> These attainments are not the goal of
+the fourth formless jhāna.<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup> These attainments are not the goal of
 Buddhism since they do not bring about true deliverance from suffering
 and defilement. There were monks of other traditions who having attained
 the four jhānas maintained wrong view and claimed that abiding in these
-jhānas is equivalent to Nibbāna, a claim the Buddha repudiated.<sup class="footnote-reference"><a href="#fn12">12</a></sup></p>
+jhānas is equivalent to Nibbāna, a claim the Buddha repudiated.<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup></p>
 <p>The true purpose of tranquillity meditation in Buddhism is to generate
 concentration to use as a basis for insight. (See
 Note <a href="#note-tranquillity-for-insight">Tranquillity for Insight</a>) A cultivation of this
@@ -291,7 +272,7 @@ concentration may be exceptional, there is no guarantee of its
 stability. They are still susceptible to being overwhelmed by
 defilement. Even the concentration of stream-enterers and once-returners
 can be disturbed and weakened by sensual lust. Their <em>samādhi</em> is
-therefore still considered ’incomplete’.<sup class="footnote-reference"><a href="#fn13">13</a></sup></p>
+therefore still considered ’incomplete’.<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup></p>
 <p>This subject of calm and insight is connected to the deliverance by
 wisdom and deliverance of mind discussed below. {429}</p>
 <div class="note">
@@ -336,7 +317,7 @@ liberation; the result of being a liberated person.</p>
 the nature of freedom reached and experienced by a liberated person,
 providing such blessings as happiness, ease, contentment and peace;
 the liberation unawakened people determine as an object of
-contemplation and set as a goal.<sup class="footnote-reference"><a href="#fn14">14</a></sup></p>
+contemplation and set as a goal.<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup></p>
 </li>
 </ol>
 <p>Of these three definitions, the second one of <em>vimutti</em> as fruition is
@@ -375,7 +356,7 @@ divided into two kinds: <em>cetovimutti</em> and <em>paññāvimutti</em>. <em>C
 is translated as ’liberation of the mind’. It is the liberation made
 possible through the strength of concentration. It is the state of a
 concentrated mind, which quells passion and is free from the bonds of
-defilement.<sup class="footnote-reference"><a href="#fn15">15</a></sup> {430} <em>Paññāvimutti</em> is translated as ’liberation
+defilement.<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup> {430} <em>Paññāvimutti</em> is translated as ’liberation
 through wisdom’, but can equally be translated as ’liberation of wisdom’
 since it refers to the wisdom of an arahant that is purified and
 perfected. This wisdom dispels ignorance and frees a person from
@@ -389,7 +370,7 @@ wisdom is achieved by abandoning ignorance.</p>
 </div>
 <p>The commentaries define <em>cetovimutti</em> as the concentration (<em>samādhi</em>)
 which is the fruit of arahantship, and they define <em>paññāvimutti</em> as the
-wisdom and knowledge which is the fruit of arahantship.<sup class="footnote-reference"><a href="#fn16">16</a></sup> All persons
+wisdom and knowledge which is the fruit of arahantship.<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup> All persons
 who have attained arahantship have completed these two kinds of
 liberation. In passages referring to the attainment of arahantship these
 two terms therefore always exist as a pair, for example:</p>
@@ -404,16 +385,16 @@ S. IV. 267, 289; A. I. 220; A. III. 29, 425-6.&gt;</p>
 </blockquote>
 </div>
 <p><em>Cetovimutti</em> is the fruit of tranquillity; <em>paññāvimutti</em> is the fruit
-of insight.<sup class="footnote-reference"><a href="#fn17">17</a></sup> The commentaries assert that the appearance of these
+of insight.<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup> The commentaries assert that the appearance of these
 two terms as a pair indicates that tranquillity and insight must be
 combined, both at the level of ’fruit’ (<em>phala</em>) and ’path’
-(<em>magga</em>).<sup class="footnote-reference"><a href="#fn18">18</a></sup> Tranquillity (<em>samatha</em>) here can be taken in a broad
+(<em>magga</em>).<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup> Tranquillity (<em>samatha</em>) here can be taken in a broad
 sense as a required level of concentration; it need not refer to the
 deeper levels of concentration resulting in the higher psychic
 attainments.</p>
 <div class="sutta">
 <blockquote>
-<p>Two things pertain to supreme knowledge.<sup class="footnote-reference"><a href="#fn19">19</a></sup> What two? Serenity and
+<p>Two things pertain to supreme knowledge.<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup> What two? Serenity and
 insight.</p>
 <p>When serenity is developed, what benefit does it bring? The mind is
 developed. When the mind is developed, what benefit does it bring?
@@ -493,7 +474,7 @@ that are not yet transcendent, is most often used on its own; in this
 case it suggests a liberation that is not absolute. Inferior kinds of
 liberation generally occur through the power of concentration. {432}
 Later texts also use the term <em>vimokkha</em> when referring to
-non-transcendent liberation.<sup class="footnote-reference"><a href="#fn20">20</a></sup> The original texts reserved a unique
+non-transcendent liberation.<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup> The original texts reserved a unique
 definition for <em>vimokkha</em> as explained in the chapter on awakened
 beings. Whichever term is used – <em>vimutti</em>, <em>cetovimutti</em> or <em>vimokkha</em>
 – it is usually accompanied by a qualifying adjective to clarify the
@@ -509,11 +490,11 @@ absolute and not-absolute. When referring to its highest meaning, the
 word <em>vimutti</em> is preceded by one of the following qualifying adjectives
 to make it clear that the reference is to absolute, transcendent
 liberation: <em>akuppā</em> (<em>akuppā-vimutti</em> and <em>akuppā-cetovimutti</em>:
-’unshakeable liberation’; ’non-degenerative liberation’);<sup class="footnote-reference"><a href="#fn21">21</a></sup> or
-<em>asamaya</em> (<em>asamaya-vimutti</em><sup class="footnote-reference"><a href="#fn22">22</a></sup> and <em>asāmāyika-cetovimutti</em>:<sup class="footnote-reference"><a href="#fn23">23</a></sup>
+’unshakeable liberation’; ’non-degenerative liberation’);<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup> or
+<em>asamaya</em> (<em>asamaya-vimutti</em><sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup> and <em>asāmāyika-cetovimutti</em>:<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup>
 ’lasting liberation’; ’timeless liberation’). All these terms refer to
 ’noble fruition’ (<em>ariya-phala</em>), especially to the fruit of
-arahantship.<sup class="footnote-reference"><a href="#fn24">24</a></sup> And since the term <em>cetovimutti</em> on its own never
+arahantship.<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup> And since the term <em>cetovimutti</em> on its own never
 refers to absolute liberation, the terms <em>akuppā</em> and <em>asāmāyika</em> are
 added to indicate a liberation of mind that is absolute, not subject to
 decay, and necessarily accompanied by liberation by wisdom. {433}</p>
@@ -529,15 +510,15 @@ liberation is an ’abiding at ease in the present’
 because it is a freedom of mind wherein the person takes no notice of
 signs and features belonging to conditioned phenomena (i.e. to form,
 feeling, perception, volitional formations, and consciousness), and only
-focuses on Nibbāna (has Nibbāna as the object of awareness).<sup class="footnote-reference"><a href="#fn25">25</a></sup></p>
+focuses on Nibbāna (has Nibbāna as the object of awareness).<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup></p>
 <p>The many lesser, mundane levels of liberation are included in the term
 <em>cetovimutti</em> when this term occurs on its own. Alternatively, the term
 <em>sāmāyika-cetovimutti</em> (equivalent to <em>sāmāyika-vimutti</em> and
-<em>samaya-vimutti</em>, all meaning ’temporary liberation’) is used.<sup class="footnote-reference"><a href="#fn26">26</a></sup> The
+<em>samaya-vimutti</em>, all meaning ’temporary liberation’) is used.<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup> The
 word <em>adhimutti</em> (’intent upon’; ’absorbed in’) is often used to
 describe these lesser levels of liberation, or else <em>adhimutti</em> is used
 as a synonym for the above terms (see
-Note <a href="#note-reflecting-nibbana">Reflecting on Nibbāna</a>).<sup class="footnote-reference"><a href="#fn27">27</a></sup> <em>Adhimutti</em> refers to being
+Note <a href="#note-reflecting-nibbana">Reflecting on Nibbāna</a>).<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup> <em>Adhimutti</em> refers to being
 absorbed in an object to the extent that one is freed from disturbances
 and defilements for as long as one abides in that state, for example one
 is freed from the hindrances (<em>nīvaraṇa</em>) when absorbed in jhāna.</p>
@@ -564,11 +545,11 @@ description of <em>vimutti</em> at Ps. II. 145-6.</p>
 <p>The standard definition for ’temporary liberation’
 (<em>sāmāyika-cetovimutti</em>) equates this liberation with the eight mundane
 attainments (<em>samāpatti</em>): the four fine-material and the four
-immaterial jhānas.<sup class="footnote-reference"><a href="#fn28">28</a></sup> The concentrative attainments of unawakened
+immaterial jhānas.<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup> The concentrative attainments of unawakened
 persons are confined to these eight. In order to specify that the
 deliverance of mind here refers to the eight attainments, the word
 <em>santa</em> (’peaceful’; ’refined’) is occasionally added, as
-<em>santa-cetovimutti</em>.<sup class="footnote-reference"><a href="#fn29">29</a></sup></p>
+<em>santa-cetovimutti</em>.<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup></p>
 <p>’Temporary liberation’ (<em>cetovimutti</em>, <em>sāmāyika-cetovimutti</em>,
 <em>vimutti</em>, or <em>sāmāyika-vimutti</em>) can also have a very broad definition,
 referring to absorption into any object of faith, inspiration, or
@@ -583,15 +564,15 @@ discouragement, mental sluggishness, and fear. These mental qualities
 are suppressed as long as the conditions supporting liberation are
 maintained, as long as the mental strength generated by inspiration
 remains. The texts even classify the aspiration to live in the
-forest,<sup class="footnote-reference"><a href="#fn30">30</a></sup> or the joy that arises when listening to a Dhamma
-talk,<sup class="footnote-reference"><a href="#fn31">31</a></sup> as this kind of liberation of mind. Aspects of this kind of
+forest,<sup class="footnote-reference" id="fr-fn30-1"><a href="#fn-fn30">30</a></sup> or the joy that arises when listening to a Dhamma
+talk,<sup class="footnote-reference" id="fr-fn31-1"><a href="#fn-fn31">31</a></sup> as this kind of liberation of mind. Aspects of this kind of
 liberation, however, can also give rise to unwholesome mental
-states.<sup class="footnote-reference"><a href="#fn32">32</a></sup></p>
+states.<sup class="footnote-reference" id="fr-fn32-1"><a href="#fn-fn32">32</a></sup></p>
 <p>There are names for specific kinds of temporary liberation
 (<em>sāmāyika-cetovimutti</em>), depending on the object on which the mind is
 focused. The temporary liberation of mind that is most often mentioned
 and encouraged is called ’boundless liberation’ (<em>appamāṇā-cetovimutti</em>
-or <em>appamaññā-cetovimutti</em>).<sup class="footnote-reference"><a href="#fn33">33</a></sup> Here, one develops concentration by
+or <em>appamaññā-cetovimutti</em>).<sup class="footnote-reference" id="fr-fn33-1"><a href="#fn-fn33">33</a></sup> Here, one develops concentration by
 radiating the qualities of lovingkindness (<em>mettā</em>), compassion
 (<em>karuṇā</em>), appreciative joy (<em>muditā</em>), and equanimity (<em>upekkhā</em>) in
 all directions with a mind that is unbounded and immeasurable, until the
@@ -606,11 +587,11 @@ free from lust.</p>
 <p>Other kinds of temporary liberation of mind, which occur in the
 scriptures only rarely, include: <em>suññatā-cetovimutti</em> (liberation of
 mind stemming from the insight that all conditioned phenomena are empty
-of self and empty of anything related to self – <em>attaniya</em>);<sup class="footnote-reference"><a href="#fn34">34</a></sup>
+of self and empty of anything related to self – <em>attaniya</em>);<sup class="footnote-reference" id="fr-fn34-1"><a href="#fn-fn34">34</a></sup>
 <em>ākiñcaññā-cetovimutti</em> (the immaterial jhāna directed upon the sphere
-of nothingness);<sup class="footnote-reference"><a href="#fn35">35</a></sup> and <em>mahaggatā-cetovimutti</em> (while in jhāna,
+of nothingness);<sup class="footnote-reference" id="fr-fn35-1"><a href="#fn-fn35">35</a></sup> and <em>mahaggatā-cetovimutti</em> (while in jhāna,
 radiating the mind engaged with a <em>kasiṇa</em> meditation object over
-however large an area or domain as one chooses).<sup class="footnote-reference"><a href="#fn36">36</a></sup></p>
+however large an area or domain as one chooses).<sup class="footnote-reference" id="fr-fn36-1"><a href="#fn-fn36">36</a></sup></p>
 <p>Drawing upon the above material, it is fair to say that any devotion to
 an ideal or object of faith, for example to a supreme deity, is a kind
 of absorption and can be included in the broad definition of
@@ -623,19 +604,19 @@ to attain arahantship. They prepare the mind and make it suitable for
 awakening. These attainments, along with their material and immaterial
 properties, are conditioned phenomena, which are reflected upon by
 Dhamma practitioners with insight and wisdom to give rise to true
-knowledge (<em>vijjā</em>).<sup class="footnote-reference"><a href="#fn37">37</a></sup></p>
+knowledge (<em>vijjā</em>).<sup class="footnote-reference" id="fr-fn37-1"><a href="#fn-fn37">37</a></sup></p>
 <p>Arahants use these concentrative attainments for rest and to experience
 happiness, and these attainments are thus called ’abiding at ease in the
-present’ (<em>diṭṭhadhamma-sukhavihāra</em>),<sup class="footnote-reference"><a href="#fn38">38</a></sup> ’divine abidings’
-(<em>dibba-vihāra</em>),<sup class="footnote-reference"><a href="#fn39">39</a></sup> and ’gradually ascending abidings’
-(<em>anupubba-vihāra</em>).<sup class="footnote-reference"><a href="#fn40">40</a></sup> These states, however, are not Nibbāna. They
+present’ (<em>diṭṭhadhamma-sukhavihāra</em>),<sup class="footnote-reference" id="fr-fn38-1"><a href="#fn-fn38">38</a></sup> ’divine abidings’
+(<em>dibba-vihāra</em>),<sup class="footnote-reference" id="fr-fn39-1"><a href="#fn-fn39">39</a></sup> and ’gradually ascending abidings’
+(<em>anupubba-vihāra</em>).<sup class="footnote-reference" id="fr-fn40-1"><a href="#fn-fn40">40</a></sup> These states, however, are not Nibbāna. They
 are means by which Nibbāna can be realized and they are easeful abidings
 for those who have already realized Nibbāna. Indeed, the realization of
 Nibbāna facilitates the attainment of these concentrative states and
 allows a person to benefit greatly from them. For example, a person who
 has attained the eight jhānas will have the necessary concentration and
 wisdom to reach the attainment of cessation (<em>nirodha-samāpatti</em>) when
-they realize the state of non-returner or arahantship.<sup class="footnote-reference"><a href="#fn41">41</a></sup></p>
+they realize the state of non-returner or arahantship.<sup class="footnote-reference" id="fr-fn41-1"><a href="#fn-fn41">41</a></sup></p>
 <p>A person who has not yet realized arahantship still has a degree of
 attachment to fine-material and immaterial existence, and they may still
 be fascinated or attached to concentrative attainments. {436} Although
@@ -658,7 +639,7 @@ Buddha told Ven. Sāriputta:</p>
 <div class="sutta">
 <blockquote>
 <p>Of these five hundred bhikkhus, Sāriputta, sixty bhikkhus are
-triple-knowledge bearers (tevijja),<sup class="footnote-reference"><a href="#fn42">42</a></sup> sixty bhikkhus are bearers of
+triple-knowledge bearers (tevijja),<sup class="footnote-reference" id="fr-fn42-1"><a href="#fn-fn42">42</a></sup> sixty bhikkhus are bearers of
 the six direct knowledges (chaḷabhiñña), sixty bhikkhus are liberated
 in both ways, while the rest [three hundred and twenty] are
 liberated by wisdom.</p>
@@ -688,7 +669,7 @@ intimidate others.</p>
 attaining Nibbāna. This kind of liberation transforms liberation of mind
 (<em>cetovimutti</em>), which may have been achieved long before and repeatedly
 accessed in the past – or else it arises simultaneously with
-<em>paññāvimutti</em><sup class="footnote-reference"><a href="#fn43">43</a></sup> – into unshakeable liberation of mind
+<em>paññāvimutti</em><sup class="footnote-reference" id="fr-fn43-1"><a href="#fn-fn43">43</a></sup> – into unshakeable liberation of mind
 (<em>akuppā-cetovimutti</em>), since the taints have now been eliminated.</p>
 <p>Awakened persons derive the maximum benefit from <em>cetovimutti</em>, without
 harming themselves or others. They do not indulge in these attainments
@@ -697,7 +678,7 @@ powers – in a misguided way for self-gratification. Here, liberation of
 mind and liberation by wisdom exist as a pair, as is frequently
 mentioned in the texts: <em>The deliverance of mind and deliverance by
 wisdom wherein those evil unwholesome states cease without
-remainder</em>.<sup class="footnote-reference"><a href="#fn44">44</a></sup> {437} The Buddha said that this unshakeable liberation
+remainder</em>.<sup class="footnote-reference" id="fr-fn44-1"><a href="#fn-fn44">44</a></sup> {437} The Buddha said that this unshakeable liberation
 of mind (<em>cetovimutti</em> combined with <em>paññāvimutti</em>) is the essence and
 goal of Buddhism:</p>
 <div class="sutta">
@@ -709,7 +690,7 @@ from that permanent liberation.</p>
 its benefit, or the attainment of virtue for its benefit, or the
 attainment of concentration for its benefit, or knowledge and vision
 for its benefit. But it is this unshakeable deliverance of mind that
-is the goal of this holy life, its heartwood, and its end.<sup class="footnote-reference"><a href="#fn45">45</a></sup></p>
+is the goal of this holy life, its heartwood, and its end.<sup class="footnote-reference" id="fr-fn45-1"><a href="#fn-fn45">45</a></sup></p>
 <p><em>M. I. 197.</em></p>
 </blockquote>
 </div>
@@ -742,18 +723,18 @@ of liberation than die after falling away from it. He thus used a knife
 to kill himself, but as he was lying on his bed in pain he established
 mindfulness and reflected on the feelings (<em>vedanā</em>) arising. While
 meditating in this way he achieved arahantship before attaining final
-Nibbāna.<sup class="footnote-reference"><a href="#fn46">46</a></sup></p>
+Nibbāna.<sup class="footnote-reference" id="fr-fn46-1"><a href="#fn-fn46">46</a></sup></p>
 <p>Another passage describes the ascetics and brahmins who went into the
 forest, living on fruits and berries, thinking that if they were to get
 caught up in sensuality they would become intoxicated and fall under the
 spell of Māra. When food was scarce and they became thin and weak, their
 determination and enthusiasm slackened, and they returned to the wider
-world to enjoy sense pleasures.<sup class="footnote-reference"><a href="#fn47">47</a></sup></p>
+world to enjoy sense pleasures.<sup class="footnote-reference" id="fr-fn47-1"><a href="#fn-fn47">47</a></sup></p>
 <p>The commentaries sorted the many definitions of <em>vimutti</em> into five
 groups, following the same model that they used for sorting the
-definitions of ’cessation’ (<em>nirodha</em>).<sup class="footnote-reference"><a href="#fn48">48</a></sup> These five groups act as a
+definitions of ’cessation’ (<em>nirodha</em>).<sup class="footnote-reference" id="fr-fn48-1"><a href="#fn-fn48">48</a></sup> These five groups act as a
 useful summary, as they contain the essence of all the definitions
-presented so far:<sup class="footnote-reference"><a href="#fn49">49</a></sup></p>
+presented so far:<sup class="footnote-reference" id="fr-fn49-1"><a href="#fn-fn49">49</a></sup></p>
 <div class="list-none">
 <ul>
 <li>
@@ -848,11 +829,11 @@ dependence on the first jhāna, or the second jhāna, or the third
 jhāna, or the fourth jhāna; in dependence on the base of the infinity
 of space, or the base of the infinity of consciousness, or the base of
 nothingness, or the base of neither-perception-nor-non-perception, (or
-in dependence on the cessation of perception and feeling).<sup class="footnote-reference"><a href="#fn50">50</a></sup></p>
+in dependence on the cessation of perception and feeling).<sup class="footnote-reference" id="fr-fn50-1"><a href="#fn-fn50">50</a></sup></p>
 <p><em>Jhāna Sutta at A. IV. 422-3.</em></p>
 </blockquote>
 </div>
-<p>This sutta and three other suttas<sup class="footnote-reference"><a href="#fn51">51</a></sup> describe the way to use each
+<p>This sutta and three other suttas<sup class="footnote-reference" id="fr-fn51-1"><a href="#fn-fn51">51</a></sup> describe the way to use each
 stage of concentrative attainment for reflection and to gain insight
 into the true nature of conditioned phenomena. The above sutta
 continues: {443}</p>
@@ -864,19 +845,19 @@ this said? Here … a monk enters and dwells in the first jhāna….
 Whatever states are included there comprised by form, feeling,
 perception, volitional formations or consciousness: he views those
 states as impermanent, as subject to stress … as empty, as
-nonself.<sup class="footnote-reference"><a href="#fn52">52</a></sup> Having viewed them thus, his mind then turns away from
+nonself.<sup class="footnote-reference" id="fr-fn52-1"><a href="#fn-fn52">52</a></sup> Having viewed them thus, his mind then turns away from
 those states and focuses upon the deathless element: ’This is
 peaceful, this is sublime: that is … Nibbāna.’ If he sustains (the
-first jhāna),<sup class="footnote-reference"><a href="#fn53">53</a></sup> he attains the destruction of the taints; but if he
+first jhāna),<sup class="footnote-reference" id="fr-fn53-1"><a href="#fn-fn53">53</a></sup> he attains the destruction of the taints; but if he
 does not attain the destruction of the taints because of delight in
 the Dhamma, then … he is due to be spontaneously reborn [in the
 celestial realm Suddhāvāsā] and there attain final Nibbāna, without
-ever returning from that world.<sup class="footnote-reference"><a href="#fn54">54</a></sup></p>
+ever returning from that world.<sup class="footnote-reference" id="fr-fn54-1"><a href="#fn-fn54">54</a></sup></p>
 </blockquote>
 </div>
 <p>From here the sutta describes a similar process of cultivating insight
 to reach the destruction of the taints for each of the concentrative
-levels all the way up to the sphere of nothingness.<sup class="footnote-reference"><a href="#fn55">55</a></sup></p>
+levels all the way up to the sphere of nothingness.<sup class="footnote-reference" id="fr-fn55-1"><a href="#fn-fn55">55</a></sup></p>
 <p>The Mahāmāluṅkya Sutta has less detail but describes the contemplation
 of the three characteristics in reference to the five aggregates, in
 each of the jhānas up to the sphere of nothingness, resulting in the
@@ -979,16 +960,16 @@ this attainment, a person contemplates the fine-material qualities of
 this state, contemplates the qualities in the preceding state of
 neither-perception-nor-non-perception, or contemplates all conditioned
 phenomena, to understand the truth and reach the destruction of the
-taints.<sup class="footnote-reference"><a href="#fn56">56</a></sup></p>
+taints.<sup class="footnote-reference" id="fr-fn56-1"><a href="#fn-fn56">56</a></sup></p>
 <p>In a similar fashion, one can contemplate conditioned phenomena or the
 mental constituents of jhāna after emerging from each of the jhānas,
-from the sphere of nothingness down to the first jhāna.<sup class="footnote-reference"><a href="#fn57">57</a></sup> The
+from the sphere of nothingness down to the first jhāna.<sup class="footnote-reference" id="fr-fn57-1"><a href="#fn-fn57">57</a></sup> The
 passages above are provided, however, to prove that it is also possible
 to develop insight while abiding in these states of jhāna, without first
 emerging from them. Only with the two highest concentrative attainments
 – of neither-perception-nor-non-perception and the extinction of
 perception and feeling – must one first exit in order to develop
-insight.<sup class="footnote-reference"><a href="#fn58">58</a></sup> {445}</p>
+insight.<sup class="footnote-reference" id="fr-fn58-1"><a href="#fn-fn58">58</a></sup> {445}</p>
 <p>The commentaries refer to one who practises in this way as ’one who uses
 tranquillity as a vehicle’ (<em>samatha-yānika</em>): such a practitioner
 practises tranquillity until reaching jhāna, at which point he or she
@@ -1012,7 +993,7 @@ which is mentioned in the scriptures:</p>
 excitement or agitation in regard to the Dhamma<br />
 (<em>dhammuddhaccaviggahita-mānasa</em>).</p>
 <p>Here one has the misapprehension that the intermediate results of
-one’s practice constitute path, fruit, and Nibbāna.<sup class="footnote-reference"><a href="#fn59">59</a></sup></p>
+one’s practice constitute path, fruit, and Nibbāna.<sup class="footnote-reference" id="fr-fn59-1"><a href="#fn-fn59">59</a></sup></p>
 </li>
 </ol>
 <p>These four ways of practice are a summary of the four pathways (<em>magga</em>)
@@ -1048,20 +1029,20 @@ Vipassanupakkilesakathāvaṇṇanā.&gt;</p>
 </blockquote>
 </div>
 <p><strong>Insight preceded by tranquillity</strong>: the Paṭisambhidāmagga defines this
-thus: initially, the mind is one-pointed, steady and concentrated.<sup class="footnote-reference"><a href="#fn60">60</a></sup>
+thus: initially, the mind is one-pointed, steady and concentrated.<sup class="footnote-reference" id="fr-fn60-1"><a href="#fn-fn60">60</a></sup>
 {446} This concentration can arise from any of these causes: the power
 of renunciation (<em>nekkhamma</em>); the power of a freedom from ill-will
 (<em>abyāpāda</em>); the perception of light (<em>āloka-saññā</em>), which combats
 drowsiness; an absence of restlessness (<em>avikkhepa</em>); reflection on
 aspects of Dhamma (<em>dhamma-vavatthāna</em>), which dispels doubt; knowledge
-(<em>ñāṇa</em>); joy (<em>pāmojja</em>);<sup class="footnote-reference"><a href="#fn61">61</a></sup> the first jhāna; the second jhāna; the
+(<em>ñāṇa</em>); joy (<em>pāmojja</em>);<sup class="footnote-reference" id="fr-fn61-1"><a href="#fn-fn61">61</a></sup> the first jhāna; the second jhāna; the
 third jhāna; the fourth jhāna; the sphere of infinity of space
 (<em>ākāsānañcāyatana</em>); the sphere of infinity of consciousness
 (<em>viññāṇañcāyatana</em>); the sphere of nothingness; the sphere of
 neither-perception-nor-non-perception; the ten <em>kasiṇa</em> meditations;
 meditation on the ten reflections (<em>anussati</em>); meditation on the ten
 stages of decay (<em>asubha</em>); and meditation on the thirty-two aspects of
-mindfulness of breathing.<sup class="footnote-reference"><a href="#fn62">62</a></sup> Concentration is followed by wisdom,
+mindfulness of breathing.<sup class="footnote-reference" id="fr-fn62-1"><a href="#fn-fn62">62</a></sup> Concentration is followed by wisdom,
 which discerns all the attributes of the different stages of
 concentration as impermanent, subject to stress (<em>dukkha</em>), and nonself.</p>
 <p>The commentaries present a simpler explanation for this first way of
@@ -1069,9 +1050,9 @@ practice: a person first develops concentration (either access
 concentration or attainment concentration). He then reflects on that
 level of concentration, along with accompanying mental factors, as
 impermanent, etc., until there is noble path-attainment
-(<em>ariya-magga</em>).<sup class="footnote-reference"><a href="#fn63">63</a></sup></p>
+(<em>ariya-magga</em>).<sup class="footnote-reference" id="fr-fn63-1"><a href="#fn-fn63">63</a></sup></p>
 <p><strong>Tranquillity preceded by insight</strong>: the Paṭisambhidāmagga
-explains:<sup class="footnote-reference"><a href="#fn64">64</a></sup> initially, a person uses insight to see things as
+explains:<sup class="footnote-reference" id="fr-fn64-1"><a href="#fn-fn64">64</a></sup> initially, a person uses insight to see things as
 impermanent, subject to stress, and nonself. Then, he ’lets go’ of all
 the qualities manifest during insight meditation, and this ’letting go’
 becomes the new object of meditation. The mind then becomes one-pointed
@@ -1120,7 +1101,7 @@ neither is an ordinary, unawakened person.</p>
 <p>The commentaries say that whichever of these two ways of practice a
 person follows (tranquillity preceded by insight or insight preceded by
 tranquillity), tranquillity and insight must always arise side by side
-at the moment of noble path attainment.<sup class="footnote-reference"><a href="#fn65">65</a></sup> This is so because
+at the moment of noble path attainment.<sup class="footnote-reference" id="fr-fn65-1"><a href="#fn-fn65">65</a></sup> This is so because
 <em>samatha</em> and <em>vipassanā</em> are essentially equivalent to the eight
 factors of the Noble Path: <em>vipassanā</em> equals right view
 (<em>sammā-diṭṭhi</em>) and right intention (<em>sammā-saṅkappa</em>), and <em>samatha</em>
@@ -1151,7 +1132,7 @@ Cittaparicchedavaṇṇanā, Vitthāragaṇanavaṇṇanā).</p>
 </blockquote>
 </div>
 <p><strong>Tranquillity and insight in tandem</strong>: the Paṭisambhidāmagga
-explains:<sup class="footnote-reference"><a href="#fn66">66</a></sup> a person develops tranquillity and insight in tandem, in
+explains:<sup class="footnote-reference" id="fr-fn66-1"><a href="#fn-fn66">66</a></sup> a person develops tranquillity and insight in tandem, in
 sixteen ways. One of these ways is that the practice of <em>samatha</em> and
 the practice of <em>vipassanā</em> lead to an identical object of meditation
 (<em>ārammaṇa</em>). For example, when one abandons restlessness (<em>uddhacca</em>),
@@ -1163,7 +1144,7 @@ way, tranquillity and insight work together on an equal basis.</p>
 between tranquillity and insight, this does not mean that <em>samatha</em> and
 <em>vipassanā</em> arise simultaneously, since it is not possible to
 contemplate conditioned phenomena while the mind is one-pointed in
-jhāna.<sup class="footnote-reference"><a href="#fn67">67</a></sup> These passages state that these two ways of meditation act
+jhāna.<sup class="footnote-reference" id="fr-fn67-1"><a href="#fn-fn67">67</a></sup> These passages state that these two ways of meditation act
 as a pair in so far that insight follows on from a person’s level of
 concentrative attainment, and equally the next level of concentrative
 attainment relies on one’s previous level of insight. A person enters
@@ -1171,12 +1152,12 @@ first jhāna, exits first jhāna, contemplates the conditioned nature of
 first jhāna, enters second jhāna, exits second jhāna, contemplates the
 conditioned nature of second jhāna, enters third jhāna, etc., until he
 exits from and contemplates the conditioned nature of the sphere of
-neither-perception-nor-non-perception.<sup class="footnote-reference"><a href="#fn68">68</a></sup> An important example of this
+neither-perception-nor-non-perception.<sup class="footnote-reference" id="fr-fn68-1"><a href="#fn-fn68">68</a></sup> An important example of this
 explanation is the account of Ven. Sāriputta, who developed tranquillity
 and insight in tandem, from the first jhāna to the attainment of path
-and fruit (of arahantship).<sup class="footnote-reference"><a href="#fn69">69</a></sup></p>
+and fruit (of arahantship).<sup class="footnote-reference" id="fr-fn69-1"><a href="#fn-fn69">69</a></sup></p>
 <p><strong>The way of practice when the mind is misled by higher states of
-mind</strong>: the Paṭisambhidāmagga explains:<sup class="footnote-reference"><a href="#fn70">70</a></sup> when a person reflects on
+mind</strong>: the Paṭisambhidāmagga explains:<sup class="footnote-reference" id="fr-fn70-1"><a href="#fn-fn70">70</a></sup> when a person reflects on
 the three characteristics in reference to the five aggregates, the
 following mind states may arise: radiance (<em>obhāsa</em>), knowledge
 (<em>ñāṇa</em>), bliss (<em>pīti</em>), serenity (<em>passaddhi</em>), joy (<em>sukha</em>),
@@ -1205,7 +1186,7 @@ conditioned, dependently arisen (<em>paṭicca-samuppanna</em>), and subject to
 decline. They do not belong to us; they are not who we are (’I am not
 this; this is not mine’). By not being overly excited by these mental
 states, attachment to them wanes. A person is then able to practise
-correctly until reaching path and fruit.<sup class="footnote-reference"><a href="#fn71">71</a></sup></p>
+correctly until reaching path and fruit.<sup class="footnote-reference" id="fr-fn71-1"><a href="#fn-fn71">71</a></sup></p>
 <div class="note">
 <p><span class="caption">The Ten Impurities of Insight</span><a id="note-impurities"></a></p>
 <blockquote>
@@ -1271,9 +1252,9 @@ tranquillity as a vehicle’) and the ’vehicle of insight’
 vehicle’). The <em>samatha-yānika</em> practises tranquillity first and insight
 later. Generally speaking, this tranquillity can simply be ’access
 concentration’ (<em>upacāra-samādhi</em>) or it can refer to ’attainment
-concentration’ (<em>appanā-samādhi</em>) of the jhānas.<sup class="footnote-reference"><a href="#fn72">72</a></sup> The commentaries
+concentration’ (<em>appanā-samādhi</em>) of the jhānas.<sup class="footnote-reference" id="fr-fn72-1"><a href="#fn-fn72">72</a></sup> The commentaries
 prefer the more restricted meaning, for someone who has attained the
-jhānas.<sup class="footnote-reference"><a href="#fn73">73</a></sup> They claim that the way of practice described by the
+jhānas.<sup class="footnote-reference" id="fr-fn73-1"><a href="#fn-fn73">73</a></sup> They claim that the way of practice described by the
 Buddha, quoted at the beginning of this section (i.e. that the
 destruction of the taints occurs in dependence on the first jhāna,
 etc.), belongs to the <em>samatha-yānika</em>.</p>
@@ -1287,7 +1268,7 @@ lowest level of concentration required for subsequent insight practice,
 as confirmed by this passage:</p>
 <div class="sutta">
 <blockquote>
-<p>Without momentary concentration, insight cannot function.<sup class="footnote-reference"><a href="#fn74">74</a></sup></p>
+<p>Without momentary concentration, insight cannot function.<sup class="footnote-reference" id="fr-fn74-1"><a href="#fn-fn74">74</a></sup></p>
 <p><em>VismṬ.: Paṭhamo Bhāgo, Nidānādikathāvaṇṇanā</em></p>
 </blockquote>
 </div>
@@ -1302,7 +1283,7 @@ Note <a href="#note-insight-without-jhana">Insight Without Jhāna</a>) Finally,
 realizing path and fruit, concentration is well-established as
 ’attainment concentration’ (See
 Note <a href="#note-kinds-concentration">Kinds of Concentration</a>), and one reaches at least the
-first jhāna.<sup class="footnote-reference"><a href="#fn75">75</a></sup> This accords with the principle mentioned earlier,
+first jhāna.<sup class="footnote-reference" id="fr-fn75-1"><a href="#fn-fn75">75</a></sup> This accords with the principle mentioned earlier,
 that a person realizing the ’noble realm’ must be accomplished in both
 tranquillity and insight. {450}</p>
 <p>When those who use tranquillity as a vehicle attain arahantship, they
@@ -1315,7 +1296,7 @@ and who attain arahantship are all classified as <em>paññā-vimutta</em>, and
 the commentaries assign a special name for them: <em>sukkha-vipassaka</em>
 (’dry insight practitioners’, see
 Note <a href="#note-dry-insight">Dry Insight Practitioners</a>). The commentaries divide the arahants
-into ten kinds, listed from the highest to the lowest:<sup class="footnote-reference"><a href="#fn76">76</a></sup></p>
+into ten kinds, listed from the highest to the lowest:<sup class="footnote-reference" id="fr-fn76-1"><a href="#fn-fn76">76</a></sup></p>
 <div class="note">
 <p><span class="caption">Insight Without Jhāna</span><a id="note-insight-without-jhana"></a></p>
 <blockquote>
@@ -1485,16 +1466,16 @@ liberated.’ I directly knew: ’Birth is destroyed, the holy life has
 been lived, what had to be done has been done, there is no more coming
 to any state of being.’</p>
 <p>[This was the third true knowledge attained by me in the third watch
-of the night. Ignorance was banished … light arose.]<sup class="footnote-reference"><a href="#fn77">77</a></sup></p>
+of the night. Ignorance was banished … light arose.]<sup class="footnote-reference" id="fr-fn77-1"><a href="#fn-fn77">77</a></sup></p>
 <p><em>M. I. 247-9.</em></p>
 </blockquote>
 </div>
 <p>When this description is used to describe the practice of realization
 for disciples of the Buddha, the terminology is usually the same except
-for the passages in brackets.<sup class="footnote-reference"><a href="#fn78">78</a></sup> {452} Some passages describe
+for the passages in brackets.<sup class="footnote-reference" id="fr-fn78-1"><a href="#fn-fn78">78</a></sup> {452} Some passages describe
 directing the mind to the eight kinds of knowledge rather than just the
-three mentioned above,<sup class="footnote-reference"><a href="#fn79">79</a></sup> while other passages only mention directing
-the mind to the final knowledge, of destruction of the taints.<sup class="footnote-reference"><a href="#fn80">80</a></sup></p>
+three mentioned above,<sup class="footnote-reference" id="fr-fn79-1"><a href="#fn-fn79">79</a></sup> while other passages only mention directing
+the mind to the final knowledge, of destruction of the taints.<sup class="footnote-reference" id="fr-fn80-1"><a href="#fn-fn80">80</a></sup></p>
 <h3 id="outline-2"><a class="header" href="#outline-2">Outline #2</a></h3>
 <p>A less common description describes the eight concentrative attainments
 (<em>samāpatti</em>) in addition to the ’attainment of cessation’
@@ -1580,7 +1561,7 @@ fourth jhāna … the base of infinite space … the base of infinite
 consciousness … the base of nothingness … the base of
 neither-perception-nor-non-perception … enters and abides in the
 extinction of perception and feeling. And having seen with wisdom, his
-taints are utterly destroyed.<sup class="footnote-reference"><a href="#fn81">81</a></sup></p>
+taints are utterly destroyed.<sup class="footnote-reference" id="fr-fn81-1"><a href="#fn-fn81">81</a></sup></p>
 <p><em>A. IV. 437-8.</em></p>
 </blockquote>
 </div>
@@ -1615,7 +1596,7 @@ practice to awakening.</p>
 </li>
 <li>
 <p>The belief that the gradual attainments described in these outlines
-occur in a single period of time.<sup class="footnote-reference"><a href="#fn82">82</a></sup></p>
+occur in a single period of time.<sup class="footnote-reference" id="fr-fn82-1"><a href="#fn-fn82">82</a></sup></p>
 </li>
 </ol>
 <p>Let us look more closely at these misunderstandings:</p>
@@ -1627,7 +1608,7 @@ order to attain arahantship or realize Nibbāna is clear:</p>
 <p>In some examples of the first outline there is no mention of the
 first two kinds of knowledge: a person attains the fourth jhāna and
 directs the concentrated mind directly to the destruction of the
-taints.<sup class="footnote-reference"><a href="#fn83">83</a></sup> These examples show that the two former kinds of
+taints.<sup class="footnote-reference" id="fr-fn83-1"><a href="#fn-fn83">83</a></sup> These examples show that the two former kinds of
 knowledge are optional.</p>
 </li>
 <li>
@@ -1640,7 +1621,7 @@ do they dwell in ’peaceful deliverances’ (<em>santa-vimokkha</em> =
 formless attainments). They only possess the knowledge of the
 destruction of the taints; they do not possess the five mundane
 kinds of ’supreme knowledge’ (<em>abhiññā</em>) nor have they accessed the
-formless jhānas.<sup class="footnote-reference"><a href="#fn84">84</a></sup></p>
+formless jhānas.<sup class="footnote-reference" id="fr-fn84-1"><a href="#fn-fn84">84</a></sup></p>
 </li>
 <li>
 <p>The attainment of the six <em>abhiññā</em> (including the three <em>vijjā</em>)
@@ -1671,21 +1652,21 @@ knowledge, whenever the necessary conditions obtain. {455}</p>
 follows:</p>
 <p><strong>B.</strong> The concentration (<em>samādhi</em>) of the fourth jhāna is the highest
 form of concentration. Even the concentration of the formless jhānas is
-classified as the concentration of the fourth jhāna,<sup class="footnote-reference"><a href="#fn85">85</a></sup> since the
+classified as the concentration of the fourth jhāna,<sup class="footnote-reference" id="fr-fn85-1"><a href="#fn-fn85">85</a></sup> since the
 mental factors of the formless jhānas consist of the same two factors of
 the fourth jhāna: equanimity (<em>upekkhā</em>) and one-pointedness
-(<em>ekaggatā</em>).<sup class="footnote-reference"><a href="#fn86">86</a></sup> The concentration of the fourth jhāna is universally
+(<em>ekaggatā</em>).<sup class="footnote-reference" id="fr-fn86-1"><a href="#fn-fn86">86</a></sup> The concentration of the fourth jhāna is universally
 applicable: it can be used, for example, as a basis for insight, for
 ’supreme knowledge’ (<em>abhiññā</em>), or for the ’attainment of
-extinction’.<sup class="footnote-reference"><a href="#fn87">87</a></sup> There is, however, a special clause: the concentration
+extinction’.<sup class="footnote-reference" id="fr-fn87-1"><a href="#fn-fn87">87</a></sup> There is, however, a special clause: the concentration
 of the formless jhānas is more refined and further from adverse
 conditions (<em>paccanīka-dhamma</em>) than the concentration of the fourth
-jhāna.<sup class="footnote-reference"><a href="#fn88">88</a></sup> Even the different formless jhānas become progressively more
-refined.<sup class="footnote-reference"><a href="#fn89">89</a></sup> It is for this reason that those who attain arahantship
+jhāna.<sup class="footnote-reference" id="fr-fn88-1"><a href="#fn-fn88">88</a></sup> Even the different formless jhānas become progressively more
+refined.<sup class="footnote-reference" id="fr-fn89-1"><a href="#fn-fn89">89</a></sup> It is for this reason that those who attain arahantship
 after attaining the fourth jhāna are classified as ’liberated by wisdom’
 (<em>paññāvimutta</em>), not as ’liberated in both ways’
 (<em>ubhatobhāga-vimutta</em>). To be classified as ’liberated in both ways’
-one must have previously attained one of the formless jhānas.<sup class="footnote-reference"><a href="#fn90">90</a></sup>
+one must have previously attained one of the formless jhānas.<sup class="footnote-reference" id="fr-fn90-1"><a href="#fn-fn90">90</a></sup>
 Therefore, there is a proviso to the commentarial statement that the
 fourth jhāna is used as a basis for other attainments: in some cases the
 concentration of ordinary fourth jhāna is used, while in other cases the
@@ -1697,16 +1678,16 @@ the taints; they have not attained other forms of knowledge (<em>vijjā</em> or
 <em>abhiññā</em>), nor have they attained the formless jhānas. Attainment of
 the three <em>vijjā</em> or the six <em>abhiññā</em> is the domain of ’one liberated
 in both ways’ (<em>ubhatobhāga-vimutta</em>), who has also attained formless
-jhāna.<sup class="footnote-reference"><a href="#fn91">91</a></sup> This is the standard definition as found in the Pali Canon.</p>
+jhāna.<sup class="footnote-reference" id="fr-fn91-1"><a href="#fn-fn91">91</a></sup> This is the standard definition as found in the Pali Canon.</p>
 <p>The commentaries offer a more elaborate definition, which can be
 summarized as follows: at first, a person practises tranquillity
 meditation until attaining the fourth jhāna; this is followed by the
 attainments of all eight jhānas. These attainments, however, must be a
 result of practising the eight <em>kasiṇa</em> meditations (excluding the
-meditations on light and space).<sup class="footnote-reference"><a href="#fn92">92</a></sup> Having gained fluency in the eight
-attainments, the mind becomes receptive.<sup class="footnote-reference"><a href="#fn93">93</a></sup> At this point a person
+meditations on light and space).<sup class="footnote-reference" id="fr-fn92-1"><a href="#fn-fn92">92</a></sup> Having gained fluency in the eight
+attainments, the mind becomes receptive.<sup class="footnote-reference" id="fr-fn93-1"><a href="#fn-fn93">93</a></sup> At this point a person
 only needs to enter the fourth jhāna, and then directs the mind to
-generate or apply one of the <em>abhiññā</em>, according to his wishes.<sup class="footnote-reference"><a href="#fn94">94</a></sup>
+generate or apply one of the <em>abhiññā</em>, according to his wishes.<sup class="footnote-reference" id="fr-fn94-1"><a href="#fn-fn94">94</a></sup>
 {456} As preparation a person must access the eight attainments, but at
 the time of achieving a ’supreme attainment’ (<em>abhiññā</em>), accessing the
 fourth jhāna is sufficient. Due to the previous cultivation of the eight
@@ -1719,20 +1700,20 @@ conforms to the statement that the mind possessing eight factors, by
 developing the concentration of the fourth jhāna to the degree of the
 formless attainments, is ’suitable for application’; it is a basis, or
 ’proximate cause’ (<em>padaṭṭhāna</em>), for realizing any state that may be
-realized by direct knowledge.<sup class="footnote-reference"><a href="#fn95">95</a></sup> Exceptions to this rule are those who
+realized by direct knowledge.<sup class="footnote-reference" id="fr-fn95-1"><a href="#fn-fn95">95</a></sup> Exceptions to this rule are those who
 have a strong ’previous connection’ (<em>pubba-yoga</em>): those who have made
 effort and accumulated virtue in the past, for instance the Buddha, the
 ’silent’ Buddhas (<em>pacceka-buddha</em>) and the chief disciples. They need
 not follow this procedure and become proficient in the formless jhānas;
 they simply need to be skilled in the fourth jhāna to achieve
-<em>abhiññā</em>.<sup class="footnote-reference"><a href="#fn96">96</a></sup></p>
+<em>abhiññā</em>.<sup class="footnote-reference" id="fr-fn96-1"><a href="#fn-fn96">96</a></sup></p>
 <p>The two passages above describing the Buddha’s awakening are compatible
 with this interpretation, even if they do not mention a ’previous
 connection’. In the first passage the Buddha accesses the fourth jhāna
 and then directs the mind to realize the three <em>vijjā</em>. Earlier in his
 life he had established a strong foundation in <em>samatha</em> and attained
 the eight jhānas while living with the teachers Āḷāra Kālāma and Uddaka
-Rāmaputta.<sup class="footnote-reference"><a href="#fn97">97</a></sup> The second passage reveals that the Buddha developed
+Rāmaputta.<sup class="footnote-reference" id="fr-fn97-1"><a href="#fn-fn97">97</a></sup> The second passage reveals that the Buddha developed
 proficiency in all levels of concentrative absorptions before his
 enlightenment.</p>
 <p><strong>C.</strong> Passages describing the extinction of perception and feeling
@@ -1795,18 +1776,18 @@ time in reference to practice and realization. In the first outline, the
 Buddha’s gradual attainment of the three <em>vijjā</em> occurs in the three
 ’watches’ of a single night. But in the case of other practitioners, the
 attainment of each <em>vijjā</em> or each <em>abhiññā</em> can happen either in quick
-succession or separated by months or years.<sup class="footnote-reference"><a href="#fn98">98</a></sup></p>
+succession or separated by months or years.<sup class="footnote-reference" id="fr-fn98-1"><a href="#fn-fn98">98</a></sup></p>
 <p>The second outline describing the Buddha’s concentrative attainments
 clearly indicates that a period of time elapses between each attainment.
 Examples of the same outline describing the attainments of other
 practitioners, however, do not mention time, which can give the
 impression that these attainments occur during a single time period. In
 fact, there is no uniform period of time that these attainments occur –
-it will vary from person to person.<sup class="footnote-reference"><a href="#fn99">99</a></sup> The two outlines merely
+it will vary from person to person.<sup class="footnote-reference" id="fr-fn99-1"><a href="#fn-fn99">99</a></sup> The two outlines merely
 describe the different levels of attainment – they do not necessarily
 define the time involved. {458}</p>
 <p>There are passages in the scriptures that confirm this fact, for example
-the story of Ven. Sāriputta in the Dīghanakha Sutta.<sup class="footnote-reference"><a href="#fn100">100</a></sup> While the
+the story of Ven. Sāriputta in the Dīghanakha Sutta.<sup class="footnote-reference" id="fr-fn100-1"><a href="#fn-fn100">100</a></sup> While the
 Buddha was giving a discourse on feeling (<em>vedanā</em>) and other topics in
 the Boar’s Cave on Mount Vulture Peak to the wanderer Dīghanakha,
 Sāriputta was standing behind the Buddha, fanning him. Reflecting on
@@ -1821,7 +1802,7 @@ developing insight in conjunction with jhānas
 (<em>yuganaddha-samatha-vipassanā</em> – tranquillity and insight in unison)
 without interruption, from the first jhāna to the extinction of
 perception and feeling. This reveals that he had realized the fruit of
-non-returning before listening to the Dīghanakha Sutta.<sup class="footnote-reference"><a href="#fn101">101</a></sup></p>
+non-returning before listening to the Dīghanakha Sutta.<sup class="footnote-reference" id="fr-fn101-1"><a href="#fn-fn101">101</a></sup></p>
 <p>One last question that should be addressed is: can arahants develop
 tranquillity meditation and increase concentrative attainments or
 psychic powers after being enlightened? Those who use insight as a
@@ -1868,7 +1849,7 @@ develop them, as described in the Visuddhimagga. (See
 Note <a href="#note-difficulty">Difficulty of Psychic Powers</a>) {459} Arahants are more likely to use the
 time and effort to teach others, which is called the ’miracle of
 teaching’ (<em>anusāsanī-pāṭihāriya</em>) and which the Buddha praised as the
-greatest of all miracles.<sup class="footnote-reference"><a href="#fn102">102</a></sup> This is superior to concerning oneself
+greatest of all miracles.<sup class="footnote-reference" id="fr-fn102-1"><a href="#fn-fn102">102</a></sup> This is superior to concerning oneself
 with mundane psychic powers, which are potentially harmful and lead
 ordinary people to be fascinated in a mysterious and obscure world that
 lies beyond their ability to understand and causes them to neglect more
@@ -1903,7 +1884,7 @@ they can see attractive, alluring people and things as impermanent,
 conditioned, and unworthy of attachment. This is a greater power than
 walking on water, diving into the ground, or flying through the air,
 which the Buddha said are not ’noble’, carry risks, and do not lead to
-liberation.<sup class="footnote-reference"><a href="#fn103">103</a></sup></p>
+liberation.<sup class="footnote-reference" id="fr-fn103-1"><a href="#fn-fn103">103</a></sup></p>
 <p>These mundane psychic powers are not the essence of Buddhism and they
 are not an indication of a person’s value. One can find evidence of
 these powers before the time of the Buddha and in other traditions. They
@@ -1997,7 +1978,7 @@ developed’…. ’This is the contemplation of feelings in feelings’….
 ’This is the contemplation of mind in mind’…. ’This is the
 contemplation of phenomena (dhamma) in phenomena’…. ’That
 contemplation of phenomena in phenomena has been developed’: thus
-monks … light.<sup class="footnote-reference"><a href="#fn104">104</a></sup></p>
+monks … light.<sup class="footnote-reference" id="fr-fn104-1"><a href="#fn-fn104">104</a></sup></p>
 <p><em>S. V. 178-9.</em></p>
 <p>’This is the basis for spiritual power (iddhi-pāda) of enthusiasm.’
 Thus, monks, in regard to things unheard before, there arose in me
@@ -2007,7 +1988,7 @@ for spiritual power of enthusiasm has been developed’…. ’This is the
 basis for spiritual power of energy’…. ’This is the basis for
 spiritual power of dedicated application of mind (citta)’…. ’This is
 the basis for spiritual power of investigation’…. There arose in me
-vision, knowledge, wisdom, true knowledge, and light.<sup class="footnote-reference"><a href="#fn105">105</a></sup> {462}</p>
+vision, knowledge, wisdom, true knowledge, and light.<sup class="footnote-reference" id="fr-fn105-1"><a href="#fn-fn105">105</a></sup> {462}</p>
 <p><em>S. V. 258.</em></p>
 </blockquote>
 </div>
@@ -2084,7 +2065,7 @@ Having directly known them, I have explained them to the bhikkhus, the
 bhikkhunīs, the male lay followers, and the female lay followers. This
 holy life, monks, has become successful and prosperous, popular,
 widespread, firmly established, well-proclaimed among devas and
-humans.<sup class="footnote-reference"><a href="#fn106">106</a></sup></p>
+humans.<sup class="footnote-reference" id="fr-fn106-1"><a href="#fn-fn106">106</a></sup></p>
 <p><em>S. II. 104-107.</em></p>
 </blockquote>
 </div>
@@ -2099,13 +2080,13 @@ focus on the belief in self and emphasize the characteristic of
 not-self. Some passages trace the relationship between conditions in the
 context of Dependent Origination. From the angle of Dhamma practice,
 these passages all refer to one or more of the groups found in the
-thirty-seven factors of enlightenment (<em>bodhipakkhiya-dhamma</em>).<sup class="footnote-reference"><a href="#fn107">107</a></sup>
+thirty-seven factors of enlightenment (<em>bodhipakkhiya-dhamma</em>).<sup class="footnote-reference" id="fr-fn107-1"><a href="#fn-fn107">107</a></sup>
 The outlines explaining particular ways of contemplation can be
 extremely helpful for insight practice if one can capture their meaning
 and not get confused by the technical language. Below are some examples
 of these outlines; the commentaries say the Buddha gave these teachings
 on different occasions depending on the disposition of the
-listener.<sup class="footnote-reference"><a href="#fn108">108</a></sup></p>
+listener.<sup class="footnote-reference" id="fr-fn108-1"><a href="#fn-fn108">108</a></sup></p>
 <h3 id="contemplations-on-the-five-aggregates"><a class="header" href="#contemplations-on-the-five-aggregates">Contemplations on the Five Aggregates</a></h3>
 <div class="sutta">
 <blockquote>
@@ -2125,14 +2106,14 @@ stress…. Seeing thus, the instructed noble disciple experiences
 disenchantment….</p>
 <p>Monks, form is not-self (anattā)…. Feeling…. Perception….
 Volitional formations…. Consciousness is not-self…. Seeing thus,
-the instructed noble disciple experiences disenchantment.<sup class="footnote-reference"><a href="#fn109">109</a></sup></p>
+the instructed noble disciple experiences disenchantment.<sup class="footnote-reference" id="fr-fn109-1"><a href="#fn-fn109">109</a></sup></p>
 <p><em>E.g.: S. III. 21.</em></p>
 </blockquote>
 </div>
 <p>The contemplation in this passage on the three characteristics is
 sometimes changed to similar contemplations, for example: ’Form is
-Māra’,<sup class="footnote-reference"><a href="#fn110">110</a></sup> ’feelings are hot embers’, ’form is subject to arising and
-cessation’, etc.<sup class="footnote-reference"><a href="#fn111">111</a></sup> {464}</p>
+Māra’,<sup class="footnote-reference" id="fr-fn110-1"><a href="#fn-fn110">110</a></sup> ’feelings are hot embers’, ’form is subject to arising and
+cessation’, etc.<sup class="footnote-reference" id="fr-fn111-1"><a href="#fn-fn111">111</a></sup> {464}</p>
 <div class="sutta">
 <blockquote>
 <p>Monks, form … feeling … perception … volitional formations …
@@ -2222,7 +2203,7 @@ experiences disenchantment.</p>
 <p>The contemplation in this passage on the three characteristics is
 sometimes changed to similar contemplations, for example: ’The eye is
 obscured’, ’the eye is burning’, and ’the eye is subject to
-destruction’.<sup class="footnote-reference"><a href="#fn112">112</a></sup></p>
+destruction’.<sup class="footnote-reference" id="fr-fn112-1"><a href="#fn-fn112">112</a></sup></p>
 <div class="sutta">
 <blockquote>
 <p>Monks, the eye … ear … nose … tongue … body … mind is
@@ -2236,7 +2217,7 @@ phenomena are impermanent. What is impermanent is subject to stress.
 What is subject to stress is not-self. What is not-self should be seen
 as it really is with correct wisdom thus: ’This is not mine, this I am
 not, this is not my self.’ Seeing thus the instructed noble disciple
-experiences disenchantment.<sup class="footnote-reference"><a href="#fn113">113</a></sup></p>
+experiences disenchantment.<sup class="footnote-reference" id="fr-fn113-1"><a href="#fn-fn113">113</a></sup></p>
 <p><em>S. IV. 1-3.</em></p>
 <p>’What do you think, monks, is the body permanent or impermanent?’</p>
 <p>’Impermanent, venerable sir.’</p>
@@ -2250,13 +2231,13 @@ mind … eye-consciousness … ear consciousness … mind
 consciousness … eye-contact … mind-contact … whatever feeling
 arises with eye-contact as condition … whatever feeling arises with
 mind-contact as condition – whether pleasant or painful or
-neither-painful-nor-pleasant<sup class="footnote-reference"><a href="#fn114">114</a></sup> – permanent or impermanent?’</p>
+neither-painful-nor-pleasant<sup class="footnote-reference" id="fr-fn114-1"><a href="#fn-fn114">114</a></sup> – permanent or impermanent?’</p>
 <p>’Impermanent, venerable sir’….</p>
 <p>’Is what is impermanent, stressful, and of the nature to change fit to
 be regarded thus: “This is mine, this is I, this is my self?” ’</p>
 <p>’No, venerable sir’….</p>
 <p>’Seeing thus the instructed noble disciple experiences
-disenchantment.’<sup class="footnote-reference"><a href="#fn115">115</a></sup></p>
+disenchantment.’<sup class="footnote-reference" id="fr-fn115-1"><a href="#fn-fn115">115</a></sup></p>
 <p><em>S. IV. 48.</em></p>
 </blockquote>
 </div>
@@ -2298,21 +2279,21 @@ forms … the ear … sounds … the mind … mental objects … mind
 consciousness … mind-contact … whatever feeling arises with
 mind-contact as condition – whether pleasant or pain-ful or neutral
 – as impermanent, ignorance is abandoned by him and true knowledge
-arises.’<sup class="footnote-reference"><a href="#fn116">116</a></sup></p>
+arises.’<sup class="footnote-reference" id="fr-fn116-1"><a href="#fn-fn116">116</a></sup></p>
 <p><em>S. IV. 49-50.</em></p>
 <p>A certain bhikkhu approached the Blessed One … [The Buddha
-replied]: ’Here, bhikkhu, a bhikkhu has heard,<sup class="footnote-reference"><a href="#fn117">117</a></sup> “Nothing is
-worth adhering to.”<sup class="footnote-reference"><a href="#fn118">118</a></sup> The concept “nothing is worth adhering to”
+replied]: ’Here, bhikkhu, a bhikkhu has heard,<sup class="footnote-reference" id="fr-fn117-1"><a href="#fn-fn117">117</a></sup> “Nothing is
+worth adhering to.”<sup class="footnote-reference" id="fr-fn118-1"><a href="#fn-fn118">118</a></sup> The concept “nothing is worth adhering to”
 is [merely] his acquired knowledge. He studies (abhiññā – ’directly
 knows’; ’pays attention to’) everything; having studied everything, he
 fully understands (pariññā) everything. Having fully understood
-everything, he sees all signs differently.<sup class="footnote-reference"><a href="#fn119">119</a></sup> He sees the eye
+everything, he sees all signs differently.<sup class="footnote-reference" id="fr-fn119-1"><a href="#fn-fn119">119</a></sup> He sees the eye
 differently, he sees forms differently … whatever feeling arises
 with eye-contact as condition … that too he sees differently. When a
 bhikkhu knows and sees thus, ignorance is abandoned by him and true
 knowledge arises.’ (Same for the remaining sense spheres, the six
 kinds of consciousness, the six contacts, and the three kinds of
-feeling.)<sup class="footnote-reference"><a href="#fn120">120</a></sup> {467}</p>
+feeling.)<sup class="footnote-reference" id="fr-fn120-1"><a href="#fn-fn120">120</a></sup> {467}</p>
 <p><em>S. IV. 50.</em></p>
 </blockquote>
 </div>
@@ -2340,7 +2321,7 @@ disenchantment.’</p>
 <p>There are many variations to this passage above, indicating that
 self-identity, personality view (<em>sakkāya-diṭṭhi</em>), and other wrong
 views (<em>micchā-diṭṭhi</em>) stem from attaching to and misunderstanding the
-five aggregates.<sup class="footnote-reference"><a href="#fn121">121</a></sup></p>
+five aggregates.<sup class="footnote-reference" id="fr-fn121-1"><a href="#fn-fn121">121</a></sup></p>
 <div class="sutta">
 <blockquote>
 <p>Bhikkhus, this Dhamma has been taught by me discriminately. The Four
@@ -2362,10 +2343,10 @@ formation is born.</p>
 dependently arisen; that craving … feeling … contact … that
 ignorance is impermanent, conditioned, dependently arisen. When one
 knows and see thus, bhikkhus, the immediate destruction of the taints
-occurs.<sup class="footnote-reference"><a href="#fn122">122</a></sup></p>
+occurs.<sup class="footnote-reference" id="fr-fn122-1"><a href="#fn-fn122">122</a></sup></p>
 <p><em>S. III. 96-7.</em></p>
 <p>Bhikkhus, while a bhikkhu dwells mindful and clearly
-comprehending,<sup class="footnote-reference"><a href="#fn123">123</a></sup> diligent, ardent, and resolute, if there arises
+comprehending,<sup class="footnote-reference" id="fr-fn123-1"><a href="#fn-fn123">123</a></sup> diligent, ardent, and resolute, if there arises
 in him a pleasant feeling, he understands thus: ’There has arisen in
 me a pleasant feeling. Now that is dependent, not independent.
 Dependent on what? Dependent on this very body. But this body is
@@ -2430,7 +2411,7 @@ not-self. For the arahant, friend, there is nothing further that has
 to be done and no repetition of what he has already done. However,
 when these things are developed and cultivated, they lead to a
 pleasant dwelling in this very life and to mindfulness and clear
-comprehension.’<sup class="footnote-reference"><a href="#fn124">124</a></sup> {469}</p>
+comprehension.’<sup class="footnote-reference" id="fr-fn124-1"><a href="#fn-fn124">124</a></sup> {469}</p>
 <p><em>S. III. 167-9.</em></p>
 </blockquote>
 </div>
@@ -2441,11 +2422,11 @@ these teachings are presented systematically, then the stages of
 practice are usually presented in a broad, general sense. The most
 detailed and frequent systematic teaching outlines the ’holy life’ or
 way of practice of a bhikkhu from the time of ordination up to the
-cessation of the taints.<sup class="footnote-reference"><a href="#fn125">125</a></sup> A similar teaching given occasionally by
+cessation of the taints.<sup class="footnote-reference" id="fr-fn125-1"><a href="#fn-fn125">125</a></sup> A similar teaching given occasionally by
 the Buddha and his disciples is that of the fifteen ways of practice
-(<em>caraṇa</em>) and the three kinds of knowledge (<em>vijjā</em>).<sup class="footnote-reference"><a href="#fn126">126</a></sup>
+(<em>caraṇa</em>) and the three kinds of knowledge (<em>vijjā</em>).<sup class="footnote-reference" id="fr-fn126-1"><a href="#fn-fn126">126</a></sup>
 Alternatively, one finds a group of gradual attainments, for example the
-seven purifications<sup class="footnote-reference"><a href="#fn127">127</a></sup> or the nine purifications.<sup class="footnote-reference"><a href="#fn128">128</a></sup> We can assume
+seven purifications<sup class="footnote-reference" id="fr-fn127-1"><a href="#fn-fn127">127</a></sup> or the nine purifications.<sup class="footnote-reference" id="fr-fn128-1"><a href="#fn-fn128">128</a></sup> We can assume
 that the reason these teachings are presented in a general way is that
 the specific details of practice were transmitted through direct
 application, according to the methods particular teachers used to train
@@ -2460,8 +2441,8 @@ general framework follows the teaching on the three ’trainings’
 (<em>sikkhā</em>) and then expands these in terms of the seven purifications
 (<em>visuddhi</em>). The gradual development of insight (<em>vipassanā-ñāṇa</em>)
 found in the Visuddhimagga is an expansion from material found in the
-Paṭisambhidāmagga.<sup class="footnote-reference"><a href="#fn129">129</a></sup> Below is a summary of the systematic teaching
-found in the Visuddhimagga.<sup class="footnote-reference"><a href="#fn130">130</a></sup></p>
+Paṭisambhidāmagga.<sup class="footnote-reference" id="fr-fn129-1"><a href="#fn-fn129">129</a></sup> Below is a summary of the systematic teaching
+found in the Visuddhimagga.<sup class="footnote-reference" id="fr-fn130-1"><a href="#fn-fn130">130</a></sup></p>
 <p>First, let us look at the meaning of some important terms:</p>
 <ul>
 <li>
@@ -2472,7 +2453,7 @@ discussed below.</p>
 </li>
 <li>
 <p><em>Pariññā:</em> comprehensive knowledge, of which there are three
-kinds:<sup class="footnote-reference"><a href="#fn131">131</a></sup></p>
+kinds:<sup class="footnote-reference" id="fr-fn131-1"><a href="#fn-fn131">131</a></sup></p>
 </li>
 </ul>
 <ol>
@@ -2508,7 +2489,7 @@ phenomena and to the end of suffering. It is divided into nine kinds
 <p>The different kinds of knowledge (<em>ñāṇa</em>) below that are followed by
 numbers in parentheses are part of the more recently formed group of
 sixteen kinds of knowledge (<em>soḷasa-ñāṇa</em>). They are used to verify a
-person’s level of attainment.<sup class="footnote-reference"><a href="#fn132">132</a></sup></p>
+person’s level of attainment.<sup class="footnote-reference" id="fr-fn132-1"><a href="#fn-fn132">132</a></sup></p>
 <h3 id="principles-of-practice-according-to-the-visuddhimagga"><a class="header" href="#principles-of-practice-according-to-the-visuddhimagga">Principles of Practice According to the Visuddhimagga</a></h3>
 <h4 id="training-in-higher-morality-adhisīla-sikkhā"><a class="header" href="#training-in-higher-morality-adhisīla-sikkhā">Training in Higher Morality (adhisīla-sikkhā)</a></h4>
 <div class="list-none">
@@ -2528,7 +2509,7 @@ mental states from possessing the mind.</p>
 <p><em>Ājīvapārisuddhi-sīla</em>: right livelihood.</p>
 <p><em>Paccayasannissita-sīla</em>: pure conduct in regard to the four
 requisites of life; using these requisites with wise reflection,
-not with greed.<sup class="footnote-reference"><a href="#fn133">133</a></sup></p>
+not with greed.<sup class="footnote-reference" id="fr-fn133-1"><a href="#fn-fn133">133</a></sup></p>
 </li>
 </ul>
 </li>
@@ -2560,7 +2541,7 @@ the attainment of the five mundane supernormal powers (<em>abhiññā</em>).
 <li><strong>3.</strong> Purification of views (<em>diṭṭhi-visuddhi</em>): knowledge of the true
 nature of the body and mind which removes the misapprehension of
 self-view. This level of purification is also called the ’definitive
-knowledge of mind and body’ (<em>nāmarūpapariccheda-ñāṇa</em>) (1).<sup class="footnote-reference"><a href="#fn134">134</a></sup>
+knowledge of mind and body’ (<em>nāmarūpapariccheda-ñāṇa</em>) (1).<sup class="footnote-reference" id="fr-fn134-1"><a href="#fn-fn134">134</a></sup>
 Here, one knows that all existing things fall under the category of
 either mind (<em>nāma</em>) or matter (<em>rūpa</em>; ’body’), and one is able to
 distinguish through one’s own experience what is mind and what is
@@ -2574,13 +2555,13 @@ seeing is an aspect of mentality.</li>
 <li><strong>4.</strong> Purification of knowledge leading to the end of doubt
 (<em>kaṅkhāvitaraṇa-visuddhi</em>): one accurately knows the conditionality
 of mind and body in line with Dependent Origination, the law of
-kamma, the process of cognition, the three ’cycles’ (<em>vaṭṭa</em>),<sup class="footnote-reference"><a href="#fn135">135</a></sup>
+kamma, the process of cognition, the three ’cycles’ (<em>vaṭṭa</em>),<sup class="footnote-reference" id="fr-fn135-1"><a href="#fn-fn135">135</a></sup>
 or any other perspective revealing that all conditioned things
 originate from conditioning factors and are interdependent. This
 knowledge brings to an end doubt about the three periods of time:
 the past, the present, and the future. It is also called the
 ’knowledge of conditioning factors of mind and body’
-(<em>nāmarūpapaccayapariggaha-ñāṇa</em>) (2).<sup class="footnote-reference"><a href="#fn136">136</a></sup> The commentaries refer
+(<em>nāmarūpapaccayapariggaha-ñāṇa</em>) (2).<sup class="footnote-reference" id="fr-fn136-1"><a href="#fn-fn136">136</a></sup> The commentaries refer
 to someone with this knowledge as a ’little stream-enterer’
 (<em>cūḷa-sotāpanna</em>): his or her destiny is assured as one progressing
 in the Buddha’s teaching.</li>
@@ -2620,7 +2601,7 @@ a person contemplates by using a method of investigation described
 in the Pali Canon. For example, one may reflect that a particular
 form (<em>rūpa</em>), past, present or future, internal or external, etc.,
 is impermanent without exception. It is also called ’contemplation
-by groups’ (<em>kalāpa-sammasana</em>).<sup class="footnote-reference"><a href="#fn137">137</a></sup> The knowledge arising at this
+by groups’ (<em>kalāpa-sammasana</em>).<sup class="footnote-reference" id="fr-fn137-1"><a href="#fn-fn137">137</a></sup> The knowledge arising at this
 stage of purification is sometimes called ’investigative knowledge’
 (of mind and body in light of the three characteristics):
 <em>sammasana-ñāṇa</em> (3).</p>
@@ -2757,7 +2738,7 @@ stage of enlightenment.</p>
 </div>
 <h2 id="appendix-1-jhāna"><a class="header" href="#appendix-1-jhāna">Appendix 1: Jhāna</a></h2>
 <p>The jhānas will be discussed in more detail in the section on right
-concentration,<sup class="footnote-reference"><a href="#fn138">138</a></sup> but since they have been mentioned here I will
+concentration,<sup class="footnote-reference" id="fr-fn138-1"><a href="#fn-fn138">138</a></sup> but since they have been mentioned here I will
 provide some basic information.</p>
 <p>The four jhānas – the standard group found in the suttas – are the
 four fine-material jhānas. In the Abhidhamma these four jhānas are
@@ -2791,22 +2772,22 @@ one-pointedness.</p>
 The formless jhānas have the qualities of equanimity and
 one-pointedness, but are increasingly more refined depending on the
 objects of concentration. For more detail, see the section on <em>vimokkha</em>
-(levels 4-7).<sup class="footnote-reference"><a href="#fn139">139</a></sup> {425}</p>
+(levels 4-7).<sup class="footnote-reference" id="fr-fn139-1"><a href="#fn-fn139">139</a></sup> {425}</p>
 <p>The term jhāna can be used in a broad sense for ’focus’, ’examination’,
 or ’pondering’. Sometimes it is used in a negative sense for an activity
 criticized by the Buddha. For example, it can be a way of harbouring the
 five hindrances – lust, malice, despondency, agitation and doubt – in
 the heart. To allow these hindrances to gnaw away at the mind in a state
-of brooding is also called jhāna.<sup class="footnote-reference"><a href="#fn140">140</a></sup> Jhāna is also used in the verb
+of brooding is also called jhāna.<sup class="footnote-reference" id="fr-fn140-1"><a href="#fn-fn140">140</a></sup> Jhāna is also used in the verb
 form for animals, for example an owl staring at a mouse or a fox hunting
-for fish.<sup class="footnote-reference"><a href="#fn141">141</a></sup> Sometimes it is used in the context of <em>vipassanā</em>
+for fish.<sup class="footnote-reference" id="fr-fn141-1"><a href="#fn-fn141">141</a></sup> Sometimes it is used in the context of <em>vipassanā</em>
 meditation meaning ’investigation’ or ’reflection’. The commentaries
 occasionally divide jhāna into two types: the focusing of an object in
 <em>samatha</em> meditation (<em>ārammaṇūpanijjhāna</em> = 8 <em>jhāna-samāpatti</em>), and
 the reflection giving rise to insight into the three characteristics
 (<em>lakkhaṇūpanijjhāna</em> = <em>vipassanā</em>). Even path and fruit can be called
 jhāna since these are referred to as ’eradicating defilements’ and
-’focusing on the unsubstantiality (<em>suññatā</em>) of Nibbāna’.<sup class="footnote-reference"><a href="#fn142">142</a></sup></p>
+’focusing on the unsubstantiality (<em>suññatā</em>) of Nibbāna’.<sup class="footnote-reference" id="fr-fn142-1"><a href="#fn-fn142">142</a></sup></p>
 <h2 id="appendix-2-is-it-possible-to-develop-insight-or-to-become-enlightened-in-jhāna"><a class="header" href="#appendix-2-is-it-possible-to-develop-insight-or-to-become-enlightened-in-jhāna">Appendix 2: Is It Possible To Develop Insight or to Become Enlightened in Jhāna?</a></h2>
 <p>{481} There is much debate as to whether it is possible to develop
 insight or to apply wise reflection while in jhāna. Those people who
@@ -2826,10 +2807,10 @@ including: enthusiasm (<em>chanda</em>), determination (<em>adhimokkha</em>), en
 (<em>viriya</em>), mindfulness (<em>sati</em>), equanimity (<em>upekkhā</em>), and attention
 (<em>manasikāra</em>). Similarly, Dhs. 31 and 75 describe the numerous qualities
 present at each level of jhāna, especially in ’transcendent’
-jhāna,<sup class="footnote-reference"><a href="#fn143">143</a></sup> including: the five spiritual faculties of faith, energy,
+jhāna,<sup class="footnote-reference" id="fr-fn143-1"><a href="#fn-fn143">143</a></sup> including: the five spiritual faculties of faith, energy,
 mindfulness, concentration and wisdom, the complete set of eight factors
 of the Noble Path, and both tranquillity and insight. Some later
-commentaries<sup class="footnote-reference"><a href="#fn144">144</a></sup> expand upon the passages at PsA. I. 132, Vism. 148-9
+commentaries<sup class="footnote-reference" id="fr-fn144-1"><a href="#fn-fn144">144</a></sup> expand upon the passages at PsA. I. 132, Vism. 148-9
 and NdA. I. 133, and make it clear that concentration and wisdom act in
 unison in ’the mind of jhāna’ (<em>jhāna-citta</em>). {482}</p>
 <p>The reason that applied and sustained thought are absent in higher
@@ -2861,7 +2842,7 @@ insight meditation.</p>
 </div>
 <p>There is disagreement among the sub-commentaries as to whether it is
 possible to develop insight in jhāna or whether one must first exit from
-jhāna. Apart from AA. IV. 195 and the VismṬ.,<sup class="footnote-reference"><a href="#fn145">145</a></sup> the only other
+jhāna. Apart from AA. IV. 195 and the VismṬ.,<sup class="footnote-reference" id="fr-fn145-1"><a href="#fn-fn145">145</a></sup> the only other
 passage giving evidence of developing insight while in jhāna is DA. II.
 512, which refers to arahants who are liberated by wisdom
 (<em>paññā-vimutta</em>):</p>
@@ -2882,7 +2863,7 @@ of jhāna and associated qualities; Having dwelled in jhāna and emerged
 from this attainment, one investigates all conditioned phenomena;
 Having emerged from the attainment, one reflects on the factors of
 attainment; Having emerged from jhāna, one reflects on the qualities
-of jhāna.<sup class="footnote-reference"><a href="#fn146">146</a></sup></p>
+of jhāna.<sup class="footnote-reference" id="fr-fn146-1"><a href="#fn-fn146">146</a></sup></p>
 <p><em>VinA. II. 430, 433.</em></p>
 </blockquote>
 </div>
@@ -2900,7 +2881,7 @@ Suttanipāta:</p>
 <blockquote>
 <p>When a person knows the factors giving rise to the sphere of
 nothingness and knows the binding power of delight, then he clearly
-discerns the sphere of nothingness.<sup class="footnote-reference"><a href="#fn147">147</a></sup></p>
+discerns the sphere of nothingness.<sup class="footnote-reference" id="fr-fn147-1"><a href="#fn-fn147">147</a></sup></p>
 <p><em>Sn. 216.</em></p>
 </blockquote>
 </div>
@@ -2908,8 +2889,8 @@ discerns the sphere of nothingness.<sup class="footnote-reference"><a href="#fn1
 discerns the sphere of nothingness’ as: <em>He enters and emerges from the
 sphere of nothingness, and discerns the mind and mental constituents
 arising in that sphere of nothingness as impermanent, subject to stress,
-[etc].</em><sup class="footnote-reference"><a href="#fn148">148</a></sup> The commentaries of both texts offer a similar
-explanation.<sup class="footnote-reference"><a href="#fn149">149</a></sup></p>
+[etc].</em><sup class="footnote-reference" id="fr-fn148-1"><a href="#fn-fn148">148</a></sup> The commentaries of both texts offer a similar
+explanation.<sup class="footnote-reference" id="fr-fn149-1"><a href="#fn-fn149">149</a></sup></p>
 <p>These explanations from secondary texts and sub-commentaries all follow
 the outline of the Abhidhamma. The Abhidhamma presents a detailed
 analysis of things and breaks the mind down into separate mind moments,
@@ -2919,13 +2900,13 @@ is not possible to develop insight in jhāna because at the moment of
 concentrative attainment the mind is one-pointed on the ’object of
 awareness’ (<em>ārammaṇa</em>) pertaining to jhāna. The objects of awareness
 involved in insight practice are separate and therefore one cannot
-develop insight during the same mind moment of jhāna.<sup class="footnote-reference"><a href="#fn150">150</a></sup> One must
+develop insight during the same mind moment of jhāna.<sup class="footnote-reference" id="fr-fn150-1"><a href="#fn-fn150">150</a></sup> One must
 first take attention away from the object of awareness (in jhāna) and
-focus on another object, which means emerging from jhāna.<sup class="footnote-reference"><a href="#fn151">151</a></sup> This is
+focus on another object, which means emerging from jhāna.<sup class="footnote-reference" id="fr-fn151-1"><a href="#fn-fn151">151</a></sup> This is
 not a big step: it simply requires an adjustment or interruption in the
 stream of awareness (of one-pointedness) and an entering into
 ’subliminal consciousness’ (<em>bhavaṅga</em>), which is the equivalent to
-exiting jhāna.<sup class="footnote-reference"><a href="#fn152">152</a></sup> {483}</p>
+exiting jhāna.<sup class="footnote-reference" id="fr-fn152-1"><a href="#fn-fn152">152</a></sup> {483}</p>
 <p>Having emerged from jhāna, the mind immediately resumes the stability of
 ’attainment concentration’ (<em>appanā-samādhi</em>) due to the strength of
 mind developed in jhāna. (People may misunderstand that exiting jhāna
@@ -2933,7 +2914,7 @@ implies returning to a state of mental disturbance or confusion.) A
 person then uses attainment concentration to develop insight, by
 contemplating the factors present at the level of jhāna from which he
 has just emerged and seeing them in light of the three
-characteristics.<sup class="footnote-reference"><a href="#fn153">153</a></sup> These factors become the objects of insight. (To
+characteristics.<sup class="footnote-reference" id="fr-fn153-1"><a href="#fn-fn153">153</a></sup> These factors become the objects of insight. (To
 speak in a comprehensive way, a person contemplates aspects of jhāna
 (<em>jhāna-dhamma</em>), things associated with jhāna
 (<em>jhānasampayutta-dhamma</em>), aspects of attainment (<em>samāpatti-dhamma</em>),
@@ -2943,11 +2924,11 @@ phenomena.)</p>
 <p>The concentration of jhāna (and even more so of the higher psychic
 attainments) makes the practice of insight more effective and
 proficient, which is the special value of insight preceded by
-tranquillity meditation.<sup class="footnote-reference"><a href="#fn154">154</a></sup> The commentaries use the expression
+tranquillity meditation.<sup class="footnote-reference" id="fr-fn154-1"><a href="#fn-fn154">154</a></sup> The commentaries use the expression
 ’developing insight with jhāna as a basis’ for this process of applying
 the strength of concentration derived from jhāna to contemplate
 conditioned reality. Jhāna here is called ’jhāna acting as foundation
-for insight’,<sup class="footnote-reference"><a href="#fn155">155</a></sup> and various terms are used according to the level of
+for insight’,<sup class="footnote-reference" id="fr-fn155-1"><a href="#fn-fn155">155</a></sup> and various terms are used according to the level of
 jhāna reached, e.g.: ’using first jhāna as foundation’, ’using second
 jhāna as foundation’, ’using the sphere of nothingness as foundation’,
 ’insight with first jhāna as a basis’, ’insight with second jhāna as a
@@ -2956,7 +2937,7 @@ level of jhāna, the deeper and stronger the concentration applied for
 insight.</p>
 <p>The wisdom gleaned from this insight practice can also be classified
 according to the level of jhāna, e.g.: ’the insight wisdom of first
-jhāna’ or ’first jhāna insight-wisdom’.<sup class="footnote-reference"><a href="#fn156">156</a></sup> The level of Path
+jhāna’ or ’first jhāna insight-wisdom’.<sup class="footnote-reference" id="fr-fn156-1"><a href="#fn-fn156">156</a></sup> The level of Path
 attainment (<em>magga</em>) is dependent on the level of jhāna used as a basis,
 except in the cases of the ’sphere of
 neither-perception-nor-non-perception’ and the ’extinction of perception
@@ -2971,7 +2952,7 @@ the actual state of jhāna and to the stability of mind generated by the
 power of jhāna. The expression ’developing insight in jhāna’ refers to
 entering jhāna and then using the strength of jhāna to practise insight.
 The second can be called the teaching of the Abhidhamma and is more
-specific.<sup class="footnote-reference"><a href="#fn157">157</a></sup> Here the definition of ’jhāna’ is restricted to the
+specific.<sup class="footnote-reference" id="fr-fn157-1"><a href="#fn-fn157">157</a></sup> Here the definition of ’jhāna’ is restricted to the
 process during which the mind is one-pointed and focused on the
 meditation object, say the ’mental image’ (<em>nimitta</em>) of breathing or of
 a <em>kasiṇa</em> object.</p>
@@ -2994,15 +2975,15 @@ process, since despite exiting jhāna the mind does not revert back to
 the state preceding jhāna. The commentators coined the expression ’using
 jhāna as a foundation’. They also referred to the principle of the
 ’vital continuum’ (<em>bhavaṅga-citta</em>) to define the exit or break from
-the state of jhāna.<sup class="footnote-reference"><a href="#fn158">158</a></sup> From this evidence, we can conclude that the
+the state of jhāna.<sup class="footnote-reference" id="fr-fn158-1"><a href="#fn-fn158">158</a></sup> From this evidence, we can conclude that the
 general statement ’developing insight in jhāna’ is equivalent to the
 more specific statements found in the commentaries: ’Having entered
-jhāna, one exits and contemplates conditioned phenomena’;<sup class="footnote-reference"><a href="#fn159">159</a></sup> ’Exiting
-the foundational jhāna, one contemplates phenomena’;<sup class="footnote-reference"><a href="#fn160">160</a></sup> ’Establishing
-the jhāna as a basis, one develops insight’;<sup class="footnote-reference"><a href="#fn161">161</a></sup> ’Having attained
-jhāna, one develops insight with jhāna as basis’;<sup class="footnote-reference"><a href="#fn162">162</a></sup> and: ’Exiting
+jhāna, one exits and contemplates conditioned phenomena’;<sup class="footnote-reference" id="fr-fn159-1"><a href="#fn-fn159">159</a></sup> ’Exiting
+the foundational jhāna, one contemplates phenomena’;<sup class="footnote-reference" id="fr-fn160-1"><a href="#fn-fn160">160</a></sup> ’Establishing
+the jhāna as a basis, one develops insight’;<sup class="footnote-reference" id="fr-fn161-1"><a href="#fn-fn161">161</a></sup> ’Having attained
+jhāna, one develops insight with jhāna as basis’;<sup class="footnote-reference" id="fr-fn162-1"><a href="#fn-fn162">162</a></sup> and: ’Exiting
 concentrative attainment, one practises insight with a firmly
-established mind’.<sup class="footnote-reference"><a href="#fn163">163</a></sup></p>
+established mind’.<sup class="footnote-reference" id="fr-fn163-1"><a href="#fn-fn163">163</a></sup></p>
 <p>The essential message of the sutta teachings and the Abhidhamma
 teachings is the same: to apply the power of concentration generated in
 jhāna and thus to foster the optimum conditions for wisdom to discern
@@ -3012,11 +2993,11 @@ commentaries call this process ’insight with jhāna as a basis’ or
 ’insight with jhāna as a cause’. This explanation is consonant with the
 frequently mentioned sutta passage: <em>When my concentrated mind was thus
 purified, bright … malleable, wieldy, steady … I directed it to
-knowledge….</em><sup class="footnote-reference"><a href="#fn164">164</a></sup> With jhāna a person thus prepares the mind for
+knowledge….</em><sup class="footnote-reference" id="fr-fn164-1"><a href="#fn-fn164">164</a></sup> With jhāna a person thus prepares the mind for
 engagement. This state of mind is called ’resolute’
 (<em>abhinīhārakkhama</em>), and it leads to ever loftier attainments. Based on
 sutta passages, the commentators attribute nine qualities to this state
-of mind. The mind is:<sup class="footnote-reference"><a href="#fn165">165</a></sup></p>
+of mind. The mind is:<sup class="footnote-reference" id="fr-fn165-1"><a href="#fn-fn165">165</a></sup></p>
 <ol>
 <li>
 <p>composed (<em>samāhita</em>);</p>
@@ -3054,7 +3035,7 @@ jhāna.</p>
 <h2 id="appendix-3-is-it-possible-to-develop-insight-while-dwelling-in-the-realm-of-neither-perception-nor-non-perception"><a class="header" href="#appendix-3-is-it-possible-to-develop-insight-while-dwelling-in-the-realm-of-neither-perception-nor-non-perception">Appendix 3: Is It Possible To Develop Insight While Dwelling In the Realm of Neither-Perception-Nor-Non-Perception?</a></h2>
 <p>The states of neither-perception-nor-non-perception
 (<em>nevasaññānāsaññāyatana</em>) and the extinction of perception and feeling
-(<em>saññāvedayita-nirodha</em>)<sup class="footnote-reference"><a href="#fn166">166</a></sup> are classified as attainments in which
+(<em>saññāvedayita-nirodha</em>)<sup class="footnote-reference" id="fr-fn166-1"><a href="#fn-fn166">166</a></sup> are classified as attainments in which
 one reaps the fruit of meditation practice; they are not used directly
 for the application of insight. The lower concentrative attainments,
 from the realm of nothingness and below, can be used for both
@@ -3062,10 +3043,10 @@ experiencing the fruit of practice and for applying insight and
 reflection. These lower attainments are still clearly accompanied by
 perception and other mental qualities, as testified by the description
 of the realm of nothingness as the pinnacle of perceptual
-attainment.<sup class="footnote-reference"><a href="#fn167">167</a></sup> The realm of nothingness is the highest attainment
+attainment.<sup class="footnote-reference" id="fr-fn167-1"><a href="#fn-fn167">167</a></sup> The realm of nothingness is the highest attainment
 still accompanied by perception. It is called ’the peak of perception’
 (<em>saññagga</em>), because it is the highest mundane attainment that can be
-used for insight practice.<sup class="footnote-reference"><a href="#fn168">168</a></sup> {485}</p>
+used for insight practice.<sup class="footnote-reference" id="fr-fn168-1"><a href="#fn-fn168">168</a></sup> {485}</p>
 <p><em>Nevasaññānāsaññāyatana</em> is exceptionally refined and is therefore
 referred to as possessing neither ’perception’ nor ’non-perception’.
 Another name for this state is the ’attainment of residual formations’
@@ -3077,22 +3058,22 @@ to contemplate the attributes even after exiting. It requires at least
 the level of wisdom of someone like Ven. Sāriputta, and even he was only
 able to contemplate them as a group (<em>kalāpa-vipassanā</em>). Only Buddhas
 are capable of discerning and analyzing each individual attribute
-(<em>anupada-vipassanā</em>).<sup class="footnote-reference"><a href="#fn169">169</a></sup></p>
+(<em>anupada-vipassanā</em>).<sup class="footnote-reference" id="fr-fn169-1"><a href="#fn-fn169">169</a></sup></p>
 <p>The scriptures refer to the eight concentrative attainments
-(<em>samāpatti</em>) as ’bases for insight’,<sup class="footnote-reference"><a href="#fn170">170</a></sup> ’bases for the fruits of
-attainment’,<sup class="footnote-reference"><a href="#fn171">171</a></sup> and collectively as a ’basis for the attainment of
-cessation’.<sup class="footnote-reference"><a href="#fn172">172</a></sup> This is not the case with the realm of
+(<em>samāpatti</em>) as ’bases for insight’,<sup class="footnote-reference" id="fr-fn170-1"><a href="#fn-fn170">170</a></sup> ’bases for the fruits of
+attainment’,<sup class="footnote-reference" id="fr-fn171-1"><a href="#fn-fn171">171</a></sup> and collectively as a ’basis for the attainment of
+cessation’.<sup class="footnote-reference" id="fr-fn172-1"><a href="#fn-fn172">172</a></sup> This is not the case with the realm of
 neither-perception-nor-non-perception, which does not function in an
 active way. This is seen clearly in relation to the attainment of
 cessation, for which the active attainment is the realm of nothingness;
 although the realm of neither-perception-nor-non-perception is an
-essential intermediate stage, it acts more as a corridor.<sup class="footnote-reference"><a href="#fn173">173</a></sup> Even if
+essential intermediate stage, it acts more as a corridor.<sup class="footnote-reference" id="fr-fn173-1"><a href="#fn-fn173">173</a></sup> Even if
 one has attained the gradual stages of concentration up to the realm of
 neither-perception-nor-non-perception, one will be unable to enter the
 attainment of cessation if one has not prepared the mind adequately
 between the realm of nothingness and the realm of
 neither-perception-nor-non-perception. And one will have to return to
-the realm of nothingness to fulfil this prerequisite.<sup class="footnote-reference"><a href="#fn174">174</a></sup></p>
+the realm of nothingness to fulfil this prerequisite.<sup class="footnote-reference" id="fr-fn174-1"><a href="#fn-fn174">174</a></sup></p>
 <p>From this we may conclude that the realm of
 neither-perception-nor-non-perception is limited to experiencing the
 fruits of this particular attainment. When exiting this realm, one exits
@@ -3100,7 +3081,7 @@ definitively: no mind states at this level of consciousness remain. In
 regard to insight practice, unlike other attainments of jhāna, one does
 not exit the realm of neither-perception-nor-non-perception to shift
 one’s focus of attention, but rather one drops to a lower level of
-attainment: the realm of nothingness.<sup class="footnote-reference"><a href="#fn175">175</a></sup> This is an exit from the
+attainment: the realm of nothingness.<sup class="footnote-reference" id="fr-fn175-1"><a href="#fn-fn175">175</a></sup> This is an exit from the
 attainment in all respects.</p>
 <p>As a preliminary to insight practice, the suttas therefore use the
 expression ’exiting the realm of neither-perception-nor-non-perception’.
@@ -3112,7 +3093,7 @@ neither-perception-nor-non-perception, although technically the mind
 applies access-concentration associated with the realm of nothingness.
 Note also that the concentration in all the formless jhānas is of the
 level of the fourth jhāna; it is just increasingly more refined and
-removed from mental disturbances (<em>paccanīka-dhamma</em>).<sup class="footnote-reference"><a href="#fn176">176</a></sup></p>
+removed from mental disturbances (<em>paccanīka-dhamma</em>).<sup class="footnote-reference" id="fr-fn176-1"><a href="#fn-fn176">176</a></sup></p>
 <p>The ’extinction of perception and feeling’ (<em>saññāvedayita-nirodha</em>) is
 clearly confined to experiencing the fruits of this particular
 attainment. It is not possible to develop insight while in this state,
@@ -3121,7 +3102,7 @@ since no perceptions or feelings (along with other aggregates –
 contemplation. A unique characteristic of this state is that it is the
 only attainment (<em>samāpatti</em>) that is not classified as concentration
 (<em>samādhi</em>), a fact that corroborates the assertion that one must first
-exit this state to develop insight.<sup class="footnote-reference"><a href="#fn177">177</a></sup> {486}</p>
+exit this state to develop insight.<sup class="footnote-reference" id="fr-fn177-1"><a href="#fn-fn177">177</a></sup> {486}</p>
 <p>When exiting this state to practise insight one ought to abide in the
 highest level of concentration that can be used for this activity, that
 is, the state of nothingness. (One can use any level of concentration
@@ -3135,16 +3116,16 @@ has tremendous benefits for spiritual practice.</p>
 <p>Several commentarial passages address the teaching that at the moment of
 realizing arahantship the mind must reach ’attainment-concentration’
 (<em>appanā-samādhi</em> = jhāna), even for someone who has never previously
-entered jhāna.<sup class="footnote-reference"><a href="#fn178">178</a></sup> Following the model of the Abhidhamma, these
+entered jhāna.<sup class="footnote-reference" id="fr-fn178-1"><a href="#fn-fn178">178</a></sup> Following the model of the Abhidhamma, these
 passages outline the sequence of the mind’s activity at the moment of
-realizing path and fruit<sup class="footnote-reference"><a href="#fn179">179</a></sup> for one who uses insight as a vehicle
+realizing path and fruit<sup class="footnote-reference" id="fr-fn179-1"><a href="#fn-fn179">179</a></sup> for one who uses insight as a vehicle
 (<em>vipassanā-yānika</em>). This outline can be illustrated thus (the numbers
 in parentheses refer to distinct mind-moments):</p>
 <blockquote>
-<p><em>(<em>Saṅkhārupekkhā-ñāṇa</em><sup class="footnote-reference"><a href="#fn180">180</a></sup> → <em>bhavaṅga</em> →) <em>mano-dvārāvajjana</em>
-(mental apprehension) → (1) <em>parikamma</em> (preparation)<sup class="footnote-reference"><a href="#fn181">181</a></sup> → (2)
+<p><em>(<em>Saṅkhārupekkhā-ñāṇa</em><sup class="footnote-reference" id="fr-fn180-1"><a href="#fn-fn180">180</a></sup> → <em>bhavaṅga</em> →) <em>mano-dvārāvajjana</em>
+(mental apprehension) → (1) <em>parikamma</em> (preparation)<sup class="footnote-reference" id="fr-fn181-1"><a href="#fn-fn181">181</a></sup> → (2)
 <em>upacāra</em> (approach) → (3) <em>anuloma</em> (adaptation) → (4) <em>gotrabhū</em>
-(maturation) → (5) <em>magga-citta</em> → (6-7) <em>phala-citta</em><sup class="footnote-reference"><a href="#fn182">182</a></sup> →
+(maturation) → (5) <em>magga-citta</em> → (6-7) <em>phala-citta</em><sup class="footnote-reference" id="fr-fn182-1"><a href="#fn-fn182">182</a></sup> →
 <em>bhavaṅga</em>.</em></p>
 </blockquote>
 <p>Alternatively:</p>
@@ -3162,7 +3143,7 @@ who uses tranquillity as a vehicle (<em>samatha-yānika</em>):</p>
 <blockquote>
 <p><em><em>Bhavaṅga</em> → <em>ñāṇa-vīthi</em> (consciousness-process of knowledge) →
 <em>bhavaṅga</em> → <em>vipassanā-vīthi</em> (consciousness-process of
-insight)<sup class="footnote-reference"><a href="#fn183">183</a></sup> → <em>bhavaṅga</em> → <em>magga-vīthi</em><sup class="footnote-reference"><a href="#fn184">184</a></sup> → <em>bhavaṅga</em>.</em></p>
+insight)<sup class="footnote-reference" id="fr-fn183-1"><a href="#fn-fn183">183</a></sup> → <em>bhavaṅga</em> → <em>magga-vīthi</em><sup class="footnote-reference" id="fr-fn184-1"><a href="#fn-fn184">184</a></sup> → <em>bhavaṅga</em>.</em></p>
 </blockquote>
 <p>In any case, the knowledge and clear insight arising at the moment of
 awakening, which produces a profound transformation by dispelling mental
@@ -3171,22 +3152,22 @@ permeates the entire heart and mind.</p>
 <h2 id="appendix-5-non-returners-after-death"><a class="header" href="#appendix-5-non-returners-after-death">Appendix 5: Non-returners After Death</a></h2>
 <p>The Abhidhamma states that after death non-returners reappear in the
 Pure Abodes (Suddhāvāsā) and classifies the Pure Abodes as a realm of
-the fourth jhāna.<sup class="footnote-reference"><a href="#fn185">185</a></sup> The Abhidhammatthavibhāvinī, however, explains
+the fourth jhāna.<sup class="footnote-reference" id="fr-fn185-1"><a href="#fn-fn185">185</a></sup> The Abhidhammatthavibhāvinī, however, explains
 that non-returners will appear in a realm corresponding to their
 particular level of jhāna; the only fixed rule is that the Pure Abodes
-are exclusively for non-returners.<sup class="footnote-reference"><a href="#fn186">186</a></sup> This raises the doubt as to how
+are exclusively for non-returners.<sup class="footnote-reference" id="fr-fn186-1"><a href="#fn-fn186">186</a></sup> This raises the doubt as to how
 the non-returners (e.g. those mentioned in the Visuddhimagga and
 Visuddhimagga Mahāṭīkā) who are pure insight practitioners
 (<em>suddhavipassanā-yānika</em> or <em>sukkha-vipassaka</em>) and do not attain the
-fourth jhāna can appear in the Pure Abodes.<sup class="footnote-reference"><a href="#fn187">187</a></sup> The
+fourth jhāna can appear in the Pure Abodes.<sup class="footnote-reference" id="fr-fn187-1"><a href="#fn-fn187">187</a></sup> The
 Abhidhammatthavibhāvinī responds to this doubt by saying: Although those
 non-returners are pure insight practitioners, at the time of death they
 invariably generate the attainments (<em>samāpatti</em>) because they have
-developed concentration completely.<sup class="footnote-reference"><a href="#fn188">188</a></sup> In any case, suttas of the
+developed concentration completely.<sup class="footnote-reference" id="fr-fn188-1"><a href="#fn-fn188">188</a></sup> In any case, suttas of the
 Pali Canon confirm that non-returners who have reached any of the first
-four jhānas all reappear in the Pure Abodes.<sup class="footnote-reference"><a href="#fn189">189</a></sup> Here too the
+four jhānas all reappear in the Pure Abodes.<sup class="footnote-reference" id="fr-fn189-1"><a href="#fn-fn189">189</a></sup> Here too the
 commentaries explain that these non-returners attain the fourth jhāna
-before reappearing in the Pure Abodes.<sup class="footnote-reference"><a href="#fn190">190</a></sup></p>
+before reappearing in the Pure Abodes.<sup class="footnote-reference" id="fr-fn190-1"><a href="#fn-fn190">190</a></sup></p>
 <h2 id="appendix-6-attainment-of-cessation-nirodha-samāpatti"><a class="header" href="#appendix-6-attainment-of-cessation-nirodha-samāpatti">Appendix 6: Attainment of Cessation (nirodha-samāpatti)</a></h2>
 <p>Do not be confused by the passage in the Visuddhimagga referring to
 those monks who are about to enter ’attainment of cessation’
@@ -3201,8 +3182,8 @@ Nibbāna.</p>
 </div>
 <p>The Visuddhimagga Mahāṭīkā explains this passage as: ’Attainment of
 cessation is similar to attaining “Nibbāna with no remaining fuel”
-(<em>anupādisesa-nibbāna</em>).’<sup class="footnote-reference"><a href="#fn191">191</a></sup> A person in this attainment has no
-perception and feeling and resembles someone who has died.<sup class="footnote-reference"><a href="#fn192">192</a></sup> The
+(<em>anupādisesa-nibbāna</em>).’<sup class="footnote-reference" id="fr-fn191-1"><a href="#fn-fn191">191</a></sup> A person in this attainment has no
+perception and feeling and resembles someone who has died.<sup class="footnote-reference" id="fr-fn192-1"><a href="#fn-fn192">192</a></sup> The
 above passage does not imply that ’attainment of cessation’ is the same
 as Nibbāna; rather, one relies on <em>nirodha-samāpatti</em> in order to
 realize Nibbāna; it is one means of coming into contact with Nibbāna. It
@@ -3220,10 +3201,10 @@ with wisdom the taints are destroyed. This is visible Nibbāna
 </div>
 <p>Here, ’extinction of perception and feeling’ (<em>saññāvedayita-nirodha</em>)
 is not Nibbāna but a basis for which to realize Nibbāna. Nibbāna is
-equal to the destruction of the taints.<sup class="footnote-reference"><a href="#fn193">193</a></sup> Additional suttas state
+equal to the destruction of the taints.<sup class="footnote-reference" id="fr-fn193-1"><a href="#fn-fn193">193</a></sup> Additional suttas state
 that the eight <em>vimokkha</em> (note that <em>nirodha-samāpatti</em> is a kind of
-<em>vimokkha</em>) are to be realized with the body,<sup class="footnote-reference"><a href="#fn194">194</a></sup> while the end of the
-<em>āsava</em> (a definition of Nibbāna) is to be realized by wisdom.<sup class="footnote-reference"><a href="#fn195">195</a></sup> A
+<em>vimokkha</em>) are to be realized with the body,<sup class="footnote-reference" id="fr-fn194-1"><a href="#fn-fn194">194</a></sup> while the end of the
+<em>āsava</em> (a definition of Nibbāna) is to be realized by wisdom.<sup class="footnote-reference" id="fr-fn195-1"><a href="#fn-fn195">195</a></sup> A
 passage in the Saṁyutta Nikāya states:</p>
 <div class="sutta">
 <blockquote>
@@ -3236,7 +3217,7 @@ destroyed, lust, hatred and delusion have ceased.</p>
 <p>Note also that at the Buddha’s Parinibbāna he entered the progressive
 abidings of concentrative attainment (<em>anupubbavihāra-samāpatti</em>), from
 the first jhāna up to the extinction of perception and feeling, but he
-did not enter final Nibbāna in <em>nirodha-samāpatti</em>.<sup class="footnote-reference"><a href="#fn196">196</a></sup> He gradually
+did not enter final Nibbāna in <em>nirodha-samāpatti</em>.<sup class="footnote-reference" id="fr-fn196-1"><a href="#fn-fn196">196</a></sup> He gradually
 returned to the first jhāna and then entered successive jhānas up to the
 fourth jhāna, at which point he attained final Nibbāna.</p>
 <div class="illustration">
@@ -3247,94 +3228,95 @@ fourth jhāna, at which point he attained final Nibbāna.</p>
   </a>
 </p>
 </div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
 <p><em>Jhāna</em>: meditative absorption; concentrative absorption. See
-Appendix 1.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
+Appendix 1. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
 <p>The five hindrances (<em>nīvaraṇa</em>): sensual desire (<em>kāma-chanda</em>),
 ill-will (<em>byāpāda</em>), sloth and torpor (<em>thīna-middha</em>), restlessness
-and worry (<em>uddhacca-kukkucca</em>), and doubt (<em>vicikicchā</em>).</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+and worry (<em>uddhacca-kukkucca</em>), and doubt (<em>vicikicchā</em>). <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>The Abhidhamma, e.g.: Dhs. 61, 64, 68. The suttas, e.g.: A. I. 61
 (explained at AA. II. 119). At A. III. 373, in reference to the five
 spiritual faculties (<em>indriya</em>), <em>samatha</em> replaces <em>samādhi</em>, and
-<em>vipassanā</em> replaces <em>paññā</em>.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
-<p>Trans.: <em>samuccheda</em>: ’cutting off’, ’destroying’.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+<em>vipassanā</em> replaces <em>paññā</em>. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
+<p>Trans.: <em>samuccheda</em>: ’cutting off’, ’destroying’. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
 <p>Although <em>samatha</em> can lead to the five <em>abhiññā</em>, which are
 levels of <em>ñāṇa</em>, this attainment must be preceded by jhāna. The
 mind that is suitably endowed with <em>samādhi</em> then uses the power of
 jhāna to attain this next stage of knowledge. Strictly speaking,
 <em>samatha</em> ends at jhāna; it does not go beyond
 <em>nevasaññānāsaññāyatana-ñāṇa</em> (see: VismṬ.:
-Paññābhāvanānisaṁsaniddesavaṇṇanā, Nirodhasamāpattikathāvaṇṇanā).</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
-<p>E.g.: Vism. 370-72.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
-<p>Vin. II. 184-5; J. IV. 200.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
-<p>S. I. 120-21.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
-<p>E.g.: Vism. 689; J. II. 274; SnA. I. 70; [1/87].</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
-<p>MA. IV 165.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
-<p>M. I. 164-6, 240.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
-<p>D. I. 36-7.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
+Paññābhāvanānisaṁsaniddesavaṇṇanā, Nirodhasamāpattikathāvaṇṇanā). <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
+<p>E.g.: Vism. 370-72. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
+<p>Vin. II. 184-5; J. IV. 200. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
+<p>S. I. 120-21. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
+<p>E.g.: Vism. 689; J. II. 274; SnA. I. 70; [1/87]. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
+<p>MA. IV 165. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
+<p>M. I. 164-6, 240. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
+<p>D. I. 36-7. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
 <p>Non-returners have ’complete’ <em>samādhi</em>, e.g.: A. I. 232; A. IV.
 380; cf.: Vism. 704; VismṬ.: Paññābhāvanānisaṁsaniddesavaṇṇanā,
 Nirodhasamāpattikathāvaṇṇanā. For the destination of non-returners
-after death see Appendix 5.</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
+after death see Appendix 5. <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
 <p>Some commentarial passages assert that Nibbāna is equivalent to
 <em>vimutti</em> because one is free from all conditioned phenomena
 (<em>saṅkhata-dhamma</em>), not merely free from defilement. See: DA. III.
-985.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
+985. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
 <p>Here, and generally in the Pali Canon, <em>rāga</em> (lust) is not
 confined to the narrow meaning it has of ’sexual lust’. It refers
 rather to any desire or infatuation for physical or mental objects.
 It is a synonym of <em>taṇhā</em> (craving) and encompasses the meaning of
 <em>dosa</em> (anger) as well since anger is a reaction directly resulting
-from lust.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
+from lust. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
 <p><em>Cetovimutti</em> = <em>phala-samādhi</em>, <em>arahattaphala-samādhi</em> or
 <em>arahattaphala-citta</em>. <em>Paññāvimutti</em> = <em>phala-ñāṇa</em>, <em>phala-paññā</em>,
 <em>arahattaphala-ñāṇa</em> or <em>arahattaphala-paññā</em>. E.g.: DA. I. 313;
 SA. II. 175, 399; [3/411]; AA. II. 154; [2/93; 3/8, 61, 407];
 UdA. 177; ItA. II. 74; SnA. II. 504; PañcA. 245. When accompanied by
 the word <em>anāsava</em> (’taintless’) these terms refer specifically to
-the concentration and wisdom of an arahant.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
-<p>ItA. II. 74.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
-<p>UdA. 177.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+the concentration and wisdom of an arahant. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
+<p>ItA. II. 74. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
+<p>UdA. 177. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
 <p><em>Vijjābhāgiya</em>: alternatively: ’are constituents of supreme
-knowledge’; ’support the arising of supreme knowledge’.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
+knowledge’; ’support the arising of supreme knowledge’. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
 <p>The Paṭisambhidāmagga uses the term <em>vimokkha</em> along with
 qualifying adjectives to describe the different kinds of liberation
 (see: Ps. II. 35-71, especially pp. 40-41). As for the term
@@ -3343,9 +3325,9 @@ from purity of moral conduct (<em>sīla-visuddhi</em>) to Nibbāna. Even
 feeling (<em>vedanā</em>) can be a form of <em>vimutti</em>, but all these
 definitions fall into two categories: Nibbāna and things that arise
 from having Nibbāna as one’s meditation object (<em>ārammaṇa</em>); Ps. II.
-140-46.</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
+140-46. <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
 <p>In many places the different editions of the Tipiṭaka use
 <em>akuppā-vimutti</em> and <em>akuppā-cetovimutti</em> interchangeably – the
 Thai editions use <em>akuppā-vimutti</em> while the Roman editions use
@@ -3353,30 +3335,30 @@ Thai editions use <em>akuppā-vimutti</em> while the Roman editions use
 204, 423; A. I. 259; A. IV. 56. <em>Akuppā-vimutti</em> is used
 consistently at: M. I. 167; M. III. 163; A. I. 231; A. III. 355; It.
 53; Thag. verse 182. <em>Akuppā-cetovimutti</em> is used consistently at:
-D. III. 273; M. I. 197; A. IV. 305, 448.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
+D. III. 273; M. I. 197; A. IV. 305, 448. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
 <p>M. I. 197 (here, <em>asamaya-vimokkha</em> is used as a synonym for
 <em>asamaya-vimutti</em>). This term is sometimes used for individuals, as
-<em>asamaya-vimutta</em> (e.g.: A. V. 336; Pug. 3, 11).</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
-<p>Timeless, permanent liberation (M. III. 110; Nd. II. 64).</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
+<em>asamaya-vimutta</em> (e.g.: A. V. 336; Pug. 3, 11). <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
+<p>Timeless, permanent liberation (M. III. 110; Nd. II. 64). <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
 <p>E.g.: DA. III. 1057; MA. II. 174; [2/312]. However, MA. IV 158
 states that <em>asāmāyika-vimutti</em> equals <em>asāmāyika-vimokkha</em>, i.e.
-the four paths (<em>magga</em>) and four fruits (<em>phala</em>).</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
+the four paths (<em>magga</em>) and four fruits (<em>phala</em>). <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
 <p>See: D. III. 249; M. I. 296-9; S. IV. 297; A. III. 292; MA. II.
 352; SA. III. 98; Vism. 700; VismṬ.:
 Paññābhāvanānisaṁsaniddesavaṇṇanā, Phalasamāpattikathāvaṇṇanā.
 DA. III. 1036 claims that this term only refers to
 <em>arahattaphala-samāpatti</em>, but AA. III. 347 says that it refers to a
-proficient level of insight.</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
+proficient level of insight. <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
 <p>At M. I. 196 <em>samaya-vimutti</em> is used as a synonym for
 <em>samaya-vimokkha</em> and refers to mundane liberation
 (<em>lokiya-vimutti</em>), i.e. to the eight <em>samāpatti</em> (see: MA. II. 232;
@@ -3385,265 +3367,265 @@ AA. III. 292; and cf.: Ps. II. 40). In the Pali Canon
 term <em>samaya-vimutta</em> (A. III. 173). The Abhidhamma, however,
 reserves this latter term for stream-enterers, once-returners and
 non-returners who have attained the eight <em>samāpatti</em> (see: Pug. 10;
-PañcA. 179).</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
+PañcA. 179). <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
 <p>E.g.: Nd. II. 41; DA. III. 985, 1032; SA. I. 183, 220; AA. III.
-321; AA. V. 64; SnA. II. 601; NdA. 59; PsA. I. 88.</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
+321; AA. V. 64; SnA. II. 601; NdA. 59; PsA. I. 88. <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
 <p>M. III. 110-11; Nd. II. 64; S. I. 120-21; Sn. 9; MA. IV. 158;
 SA. I. 183; SnA. I. 105. For an example of temporary liberation in
-jhāna see: A. II. 214.</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
-<p>A. I. 64; A. II. 165; AA. II. 134, [2/456].</p>
-</div>
-<div class="footnote-definition" id="fn30"><sup class="footnote-definition-label">30</sup>
+jhāna see: A. II. 214. <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
+<p>A. I. 64; A. II. 165; AA. II. 134, [2/456]. <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn30"><sup class="footnote-definition-label">30</sup>
 <p>The intention and desire to live in the forest (see: M. I. 156-7;
-MA. II. 162).</p>
-</div>
-<div class="footnote-definition" id="fn31"><sup class="footnote-definition-label">31</sup>
-<p>A. V. 139; AA. V. 52.</p>
-</div>
-<div class="footnote-definition" id="fn32"><sup class="footnote-definition-label">32</sup>
+MA. II. 162). <a href="#fr-fn30-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn31"><sup class="footnote-definition-label">31</sup>
+<p>A. V. 139; AA. V. 52. <a href="#fr-fn31-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn32"><sup class="footnote-definition-label">32</sup>
 <p>A. V. 192; AA. V. 64. It is most probably this kind of liberation
 that is included as ’wrong liberation’ (<em>micchā-vimutti</em>) in the ten
 wrong qualities (<em>micchatta</em>) at: D. III. 290; M. I. 42; A. V.
-211-12.</p>
-</div>
-<div class="footnote-definition" id="fn33"><sup class="footnote-definition-label">33</sup>
+211-12. <a href="#fr-fn32-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn33"><sup class="footnote-definition-label">33</sup>
 <p>E.g.: M. I. 297; M. II. 207; M. III. 146; D. I. 250; D. III. 248;
 A. I. 38-9; A. III. 290-91; A. IV. 301; A. V. 299; S. II. 264;
-S. IV. 322; ItA. I. 89; PsA. I. 88.</p>
-</div>
-<div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
+S. IV. 322; ItA. I. 89; PsA. I. 88. <a href="#fr-fn33-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn34"><sup class="footnote-definition-label">34</sup>
 <p>A teaching by Ven. Sāriputta; M. I. 297; explained at MA.
-[2/476-7].</p>
-</div>
-<div class="footnote-definition" id="fn35"><sup class="footnote-definition-label">35</sup>
-<p>Ibid.</p>
-</div>
-<div class="footnote-definition" id="fn36"><sup class="footnote-definition-label">36</sup>
+[2/476-7]. <a href="#fr-fn34-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn35"><sup class="footnote-definition-label">35</sup>
+<p>Ibid. <a href="#fr-fn35-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn36"><sup class="footnote-definition-label">36</sup>
 <p>A teaching by Ven. Anuruddha (M. III. 146-7; explained at MA. IV.
 200). [Trans.: the ten <em>kasiṇa</em> meditations: meditation on earth,
 water, fire, air, the colour blue, the colour yellow, the colour
-red, the colour white, space, and consciousness (or light).]</p>
-</div>
-<div class="footnote-definition" id="fn37"><sup class="footnote-definition-label">37</sup>
+red, the colour white, space, and consciousness (or light).] <a href="#fr-fn36-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn37"><sup class="footnote-definition-label">37</sup>
 <p>E.g.: M. I. 350-52, 436; A. V. 343-6. See also: M. I. 159-60;
 M. III. 45; A. IV. 438-48. Note that <em>jhāna-samāpatti</em> is sometimes
 defined as ’visible’ Nibbāna ’indirectly’ (<em>pariyāya</em>), in the sense
 that defilements are suspended for the duration of the jhāna. For
 more on the ’attainment of cessation’ (<em>nirodha-samāpatti</em>) see
-Appendix 6.</p>
-</div>
-<div class="footnote-definition" id="fn38"><sup class="footnote-definition-label">38</sup>
+Appendix 6. <a href="#fr-fn37-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn38"><sup class="footnote-definition-label">38</sup>
 <p>The four material jhānas as states to abide at ease in the
-present, e.g.: M. III. 4; A. IV. 231-2; A. V. 68, 339.</p>
-</div>
-<div class="footnote-definition" id="fn39"><sup class="footnote-definition-label">39</sup>
+present, e.g.: M. III. 4; A. IV. 231-2; A. V. 68, 339. <a href="#fr-fn38-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn39"><sup class="footnote-definition-label">39</sup>
 <p>The four material and four immaterial jhānas as divine abidings:
-D. III. 220; DA. III. 1006.</p>
-</div>
-<div class="footnote-definition" id="fn40"><sup class="footnote-definition-label">40</sup>
+D. III. 220; DA. III. 1006. <a href="#fr-fn39-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn40"><sup class="footnote-definition-label">40</sup>
 <p>The eight <em>samāpatti</em> plus <em>saññāvedayita-nirodha</em>, e.g.: D. III.
 265, 290; M. I. 301-2; S. II. 212; A. I. 41; A. IV. 410-14; Vbh.
-335, 342-3.</p>
-</div>
-<div class="footnote-definition" id="fn41"><sup class="footnote-definition-label">41</sup>
-<p>Vism. 702.</p>
-</div>
-<div class="footnote-definition" id="fn42"><sup class="footnote-definition-label">42</sup>
+335, 342-3. <a href="#fr-fn40-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn41"><sup class="footnote-definition-label">41</sup>
+<p>Vism. 702. <a href="#fr-fn41-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn42"><sup class="footnote-definition-label">42</sup>
 <p>Trans.: ’triple knowledge bearers’ (<em>tevijja</em>) refers to those
 individuals who have realized the threefold knowledge (<em>vijjā</em>):
 recollection of past lives (<em>pubbenivāsānussati-ñāṇa</em>), knowledge of
 the decease and rebirth of beings according to their kamma
 (<em>cutūpapāta-ñāṇa</em>), and knowledge of the truth resulting in the
-destruction of the taints (<em>āsavakkhaya-ñāṇa</em>).</p>
-</div>
-<div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
+destruction of the taints (<em>āsavakkhaya-ñāṇa</em>). <a href="#fr-fn42-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn43"><sup class="footnote-definition-label">43</sup>
 <p><em>Cetovimutti</em> arising simultaneously with <em>paññāvimutti</em> is the
-true and essential kind of liberation of mind.</p>
-</div>
-<div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
+true and essential kind of liberation of mind. <a href="#fr-fn43-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn44"><sup class="footnote-definition-label">44</sup>
 <p>M. I. 266, 270; S. IV. 120, 184, 189, 200; A. III. 165. A
 variation occurs at A. V. 139-43: <em>The deliverance of mind and
 deliverance by wisdom wherein moral practice … a lack of moral
 practice … lust … anger … restlessness cease without
 remainder</em>. The commentaries explain this as referring to the
-liberation of <em>sotāpatti-phala</em> all the way to <em>arahatta-phala</em>.</p>
-</div>
-<div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
+liberation of <em>sotāpatti-phala</em> all the way to <em>arahatta-phala</em>. <a href="#fr-fn44-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn45"><sup class="footnote-definition-label">45</sup>
 <p>This sutta reveals how people can become beguiled by wealth,
 honour, fame, morality, concentration and knowledge, and not
-progress to unshakeable liberation of mind. Cf.: M. I. 200-205.</p>
-</div>
-<div class="footnote-definition" id="fn46"><sup class="footnote-definition-label">46</sup>
+progress to unshakeable liberation of mind. Cf.: M. I. 200-205. <a href="#fr-fn45-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn46"><sup class="footnote-definition-label">46</sup>
 <p>S. I. 120-22; SA. I. 182. The commentaries say that he wanted to
 die while in jhāna so that he would be assured a rebirth in the
-Brahma realms.</p>
-</div>
-<div class="footnote-definition" id="fn47"><sup class="footnote-definition-label">47</sup>
-<p>M. I. 156; MA. II. 162.</p>
-</div>
-<div class="footnote-definition" id="fn48"><sup class="footnote-definition-label">48</sup>
+Brahma realms. <a href="#fr-fn46-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn47"><sup class="footnote-definition-label">47</sup>
+<p>M. I. 156; MA. II. 162. <a href="#fr-fn47-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn48"><sup class="footnote-definition-label">48</sup>
 <p>Trans.: see the section on Jhāna, Nirodha and Nibbāna in chapter 6
-on Nibbāna.</p>
-</div>
-<div class="footnote-definition" id="fn49"><sup class="footnote-definition-label">49</sup>
+on Nibbāna. <a href="#fr-fn48-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn49"><sup class="footnote-definition-label">49</sup>
 <p>See: UdA. 32; DA. III. 879; MA. IV. 168; SA. III. 209; DhA. I.
 158, 434; Vism. 410. Compare with <em>viveka</em> at VbhA. 316 and with
 <em>pahāna</em> at Ps. I. 26-7; Ps. II. 220; Vism. 693-4. UdA. 220 mentions
 the ’ripening factors’ (<em>paripācaniya-dhamma</em>) for <em>vimutti</em>,
 referring, e.g. to: Ud. 36; S. IV. 105; M. III. 277. D. III. 243
 mentions the five things that lead a person to successively greater
-degrees of <em>vimutti</em>.</p>
-</div>
-<div class="footnote-definition" id="fn50"><sup class="footnote-definition-label">50</sup>
+degrees of <em>vimutti</em>. <a href="#fr-fn49-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn50"><sup class="footnote-definition-label">50</sup>
 <p>The passage in parentheses is not found in the Siam Raṭṭha
 edition in Thai, but is found in other editions, for example the
-Burmese edition.</p>
-</div>
-<div class="footnote-definition" id="fn51"><sup class="footnote-definition-label">51</sup>
+Burmese edition. <a href="#fr-fn50-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn51"><sup class="footnote-definition-label">51</sup>
 <p>Mahāmāluṅkya Sutta (M. I. 432-37), Aṭṭhakanāgara Sutta (M. I.
 349-53), and Dasama Sutta (A. V. 343-4); the latter two suttas are
-identical but with different names and origins.</p>
-</div>
-<div class="footnote-definition" id="fn52"><sup class="footnote-definition-label">52</sup>
+identical but with different names and origins. <a href="#fr-fn51-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn52"><sup class="footnote-definition-label">52</sup>
 <p>For the formless jhānas the word ’form’ is removed since in these
 jhānas there is no contemplation of form; there is only
 contemplation of the four <em>nāma-khandha</em>: <em>vedanā</em>, <em>saññā</em>,
-<em>saṅkhāra</em> and <em>viññāṇa</em>.</p>
-</div>
-<div class="footnote-definition" id="fn53"><sup class="footnote-definition-label">53</sup>
+<em>saṅkhāra</em> and <em>viññāṇa</em>. <a href="#fr-fn52-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn53"><sup class="footnote-definition-label">53</sup>
 <p>’If he sustains (the first jhāna)’ is translated from the Pali:
 <em>so tattha ṭhito</em>. AA. IV. 196 explains this as: ’If he sustains the
 first jhāna (or each of the successive jhānas), he develops strong
 insight and realizes arahantship.’ Another definition is: ’He
 sustains insight with the three characteristics (<em>tilakkhaṇa</em>) as
 the objects of meditation’ (MA. III. 188). MA. III. 14 and AA. V. 85
-explain this as: ’He sustains <em>samatha</em> and <em>vipassanā</em>.’</p>
-</div>
-<div class="footnote-definition" id="fn54"><sup class="footnote-definition-label">54</sup>
-<p>I.e.. he or she is a non-returner (<em>anāgāmī</em>).</p>
-</div>
-<div class="footnote-definition" id="fn55"><sup class="footnote-definition-label">55</sup>
+explain this as: ’He sustains <em>samatha</em> and <em>vipassanā</em>.’ <a href="#fr-fn53-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn54"><sup class="footnote-definition-label">54</sup>
+<p>I.e.. he or she is a non-returner (<em>anāgāmī</em>). <a href="#fr-fn54-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn55"><sup class="footnote-definition-label">55</sup>
 <p>Thus including the four fine-material jhānas and the first three
-immaterial jhānas.</p>
-</div>
-<div class="footnote-definition" id="fn56"><sup class="footnote-definition-label">56</sup>
-<p>See: MA. IV. 91. For more information, see Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn57"><sup class="footnote-definition-label">57</sup>
+immaterial jhānas. <a href="#fr-fn55-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn56"><sup class="footnote-definition-label">56</sup>
+<p>See: MA. IV. 91. For more information, see Appendix 2. <a href="#fr-fn56-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn57"><sup class="footnote-definition-label">57</sup>
 <p>’Emerging from the jhānas’ here corresponds with the commentarial
 explanation of exiting the states of mind empowered by that specific
-attainment, i.e. one does not use jhāna as a foundation.</p>
-</div>
-<div class="footnote-definition" id="fn58"><sup class="footnote-definition-label">58</sup>
+attainment, i.e. one does not use jhāna as a foundation. <a href="#fr-fn57-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn58"><sup class="footnote-definition-label">58</sup>
 <p>On whether one can develop insight in the sphere of
-neither-perception-nor-non-perception see Appendix 3.</p>
-</div>
-<div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
+neither-perception-nor-non-perception see Appendix 3. <a href="#fr-fn58-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn59"><sup class="footnote-definition-label">59</sup>
 <p>The commentaries classify <em>dhammuddhacca</em> as ’impurities of
 insight’ (<em>vipassanūpakilesa</em>): AA. III. 143; Vism. 634. The term
 <em>viggahita</em> is here translated as ’excited and agitated’ in line
 with VismṬ.: Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā,
-Vipassanupakkilesakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn60"><sup class="footnote-definition-label">60</sup>
-<p>Ps. II. 93-6; cf.: Ps. I. 95, 175-6.</p>
-</div>
-<div class="footnote-definition" id="fn61"><sup class="footnote-definition-label">61</sup>
+Vipassanupakkilesakathāvaṇṇanā. <a href="#fr-fn59-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn60"><sup class="footnote-definition-label">60</sup>
+<p>Ps. II. 93-6; cf.: Ps. I. 95, 175-6. <a href="#fr-fn60-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn61"><sup class="footnote-definition-label">61</sup>
 <p>The Paṭisambhidāmagga describes how these seven qualities, from
 renunciation to joy, are involved in the arising of access
 concentration (<em>upacāra-samādhi</em>) for pure insight practitioners
-(<em>sukkha-vipassaka</em>): PsA. I. 310; cf.: PsA. I. 68, 103.</p>
-</div>
-<div class="footnote-definition" id="fn62"><sup class="footnote-definition-label">62</sup>
+(<em>sukkha-vipassaka</em>): PsA. I. 310; cf.: PsA. I. 68, 103. <a href="#fr-fn61-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn62"><sup class="footnote-definition-label">62</sup>
 <p>It would be enough to simply mention the sphere of
 neither-perception-nor-non-perception, since this is the highest
 jhāna. This long list is presented to show the distinction between
 states of mind that are attained (from the first jhāna to the sphere
 of neither-perception-nor-non-perception) and ways of practice to
-reach these attainments (cf.: PsA. I. 312).</p>
-</div>
-<div class="footnote-definition" id="fn63"><sup class="footnote-definition-label">63</sup>
-<p>See: MA. I. 108; NdA. II. 313.</p>
-</div>
-<div class="footnote-definition" id="fn64"><sup class="footnote-definition-label">64</sup>
-<p>Ps. II. 96.</p>
-</div>
-<div class="footnote-definition" id="fn65"><sup class="footnote-definition-label">65</sup>
+reach these attainments (cf.: PsA. I. 312). <a href="#fr-fn62-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn63"><sup class="footnote-definition-label">63</sup>
+<p>See: MA. I. 108; NdA. II. 313. <a href="#fr-fn63-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn64"><sup class="footnote-definition-label">64</sup>
+<p>Ps. II. 96. <a href="#fr-fn64-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn65"><sup class="footnote-definition-label">65</sup>
 <p>MA. I. 108; Vism. 682. PsA. I. 281 states that tranquillity and
 insight are mutually supportive both at the time of aspiring to the
 Noble Path and at the moment of attaining the Path. AA. II. 184
 states that tranquillity and insight act as a pair at path
 attainment and at fruition attainment. Cf.: Ps. I. 70; PsA. I. 287;
-UdA. 397; ItA. II. 29.</p>
-</div>
-<div class="footnote-definition" id="fn66"><sup class="footnote-definition-label">66</sup>
-<p>Ps. II. 97-100.</p>
-</div>
-<div class="footnote-definition" id="fn67"><sup class="footnote-definition-label">67</sup>
-<p>For more on this subject see Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn68"><sup class="footnote-definition-label">68</sup>
-<p>AA. III. 143.</p>
-</div>
-<div class="footnote-definition" id="fn69"><sup class="footnote-definition-label">69</sup>
-<p>MA. IV. 90; in reference to: M. III. 25-9.</p>
-</div>
-<div class="footnote-definition" id="fn70"><sup class="footnote-definition-label">70</sup>
-<p>Ps. II. 101-102.</p>
-</div>
-<div class="footnote-definition" id="fn71"><sup class="footnote-definition-label">71</sup>
+UdA. 397; ItA. II. 29. <a href="#fr-fn65-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn66"><sup class="footnote-definition-label">66</sup>
+<p>Ps. II. 97-100. <a href="#fr-fn66-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn67"><sup class="footnote-definition-label">67</sup>
+<p>For more on this subject see Appendix 2. <a href="#fr-fn67-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn68"><sup class="footnote-definition-label">68</sup>
+<p>AA. III. 143. <a href="#fr-fn68-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn69"><sup class="footnote-definition-label">69</sup>
+<p>MA. IV. 90; in reference to: M. III. 25-9. <a href="#fr-fn69-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn70"><sup class="footnote-definition-label">70</sup>
+<p>Ps. II. 101-102. <a href="#fr-fn70-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn71"><sup class="footnote-definition-label">71</sup>
 <p>For more detail, see: Vism. 633-8; AA. III. 143; NdA. 106; VinṬ.:
 Tatiyapārājikaṁ, Ānāpānassatisamādhikathāvaṇṇanā; VismṬ.:
 Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā,
 Vipassanupakkilesakathāvaṇṇanā; see also the second part of the
 Paṭisambhidāmagga Aṭṭhakathā, on the section including the
 <em>yuganaddha-gathā</em> (Burmese or Roman alphabet editions – Thai
-edition has not yet been published).</p>
-</div>
-<div class="footnote-definition" id="fn72"><sup class="footnote-definition-label">72</sup>
+edition has not yet been published). <a href="#fr-fn71-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn72"><sup class="footnote-definition-label">72</sup>
 <p>E.g.: VismṬ.: Diṭṭhivisuddhiniddesavaṇṇanā,
-Nāmarūpapariggahakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn73"><sup class="footnote-definition-label">73</sup>
-<p>E.g.: Vism. 588.</p>
-</div>
-<div class="footnote-definition" id="fn74"><sup class="footnote-definition-label">74</sup>
+Nāmarūpapariggahakathāvaṇṇanā. <a href="#fr-fn72-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn73"><sup class="footnote-definition-label">73</sup>
+<p>E.g.: Vism. 588. <a href="#fr-fn73-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn74"><sup class="footnote-definition-label">74</sup>
 <p>Cf.: VinA. II. 433; Vism. 289; VismṬ.:
-Anussatikammaṭṭhānaniddesavaṇṇanā, Ānāpānassatikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn75"><sup class="footnote-definition-label">75</sup>
+Anussatikammaṭṭhānaniddesavaṇṇanā, Ānāpānassatikathāvaṇṇanā. <a href="#fr-fn74-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn75"><sup class="footnote-definition-label">75</sup>
 <p>PsA. I. 194; DhsA. 213, 228, 230; Vism. 666-7, 699-700. The
 commentaries claim this attainment of jhāna remains for one mind
 moment. Thereafter, an enlightened person can regularly enter
 <em>phala-samāpatti</em> (in that particular jhāna) at will, and enjoy
 ’noble, transcendent bliss’ (<em>ariyalokuttara-sukha</em>), abiding at
 ease in the present (Vism. 700-701). The moment of realizing path
-and fruit: see Appendix 4.</p>
-</div>
-<div class="footnote-definition" id="fn76"><sup class="footnote-definition-label">76</sup>
-<p>DA. II. 512; DA. III. 889; MA. III. 188; PañcA. 190.</p>
-</div>
-<div class="footnote-definition" id="fn77"><sup class="footnote-definition-label">77</sup>
+and fruit: see Appendix 4. <a href="#fr-fn75-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn76"><sup class="footnote-definition-label">76</sup>
+<p>DA. II. 512; DA. III. 889; MA. III. 188; PañcA. 190. <a href="#fr-fn76-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn77"><sup class="footnote-definition-label">77</sup>
 <p>Also found at many other places, e.g.: Vin. III. 3-4; M. I. 21-2;
 M. II. 93, 212; A. IV. 176. The passage in parentheses (’when I had
 eaten solid food and regained my strength’) is sometimes replaced
 with: <em>I was resolute, full of energy, active, with mindfulness
 established, not forgetful, tranquil within the body, unperturbed,
-collected and composed in mind</em>.</p>
-</div>
-<div class="footnote-definition" id="fn78"><sup class="footnote-definition-label">78</sup>
+collected and composed in mind</em>. <a href="#fr-fn77-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn78"><sup class="footnote-definition-label">78</sup>
 <p>E.g.: M. I. 181-2, 276, 347, 412-3, 440-41, 521-2; M. II. 38;
 A. I. 163, 166-7; A. II. 210-1. Most of these passages describe the
 practice from ordination as a monk to the realization of
-arahantship.</p>
-</div>
-<div class="footnote-definition" id="fn79"><sup class="footnote-definition-label">79</sup>
+arahantship. <a href="#fr-fn78-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn79"><sup class="footnote-definition-label">79</sup>
 <p>D. I. 73-85. The eight kinds of knowledge: 1. <em>ñāṇa-dassana</em>
 (DA. I. 220 says this equals <em>vipassanā-ñāṇa</em>); 2.
 <em>manomayābhinimmāna</em> (= <em>manomayiddhi</em> – to create a psychically
@@ -3651,16 +3633,16 @@ formed body); 3. <em>iddhi-vidhā</em> (to perform psychic powers); 4.
 <em>dibba-sota</em> (’divine ear’); 5. <em>cetopariya-ñāṇa</em> (telepathy); 6.
 recollection of past lives; 7. knowledge of the passing away and
 reappearance of beings; 8. knowledge of the destruction of the
-taints.</p>
-</div>
-<div class="footnote-definition" id="fn80"><sup class="footnote-definition-label">80</sup>
-<p>A. III. 91, 100.</p>
-</div>
-<div class="footnote-definition" id="fn81"><sup class="footnote-definition-label">81</sup>
+taints. <a href="#fr-fn79-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn80"><sup class="footnote-definition-label">80</sup>
+<p>A. III. 91, 100. <a href="#fr-fn80-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn81"><sup class="footnote-definition-label">81</sup>
 <p>Also found at A. IV. 409-456; M. I. 159-60, 174, 203-204, 208;
-Nd. II. 44; cf.: M. III. 25.</p>
-</div>
-<div class="footnote-definition" id="fn82"><sup class="footnote-definition-label">82</sup>
+Nd. II. 44; cf.: M. III. 25. <a href="#fr-fn81-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn82"><sup class="footnote-definition-label">82</sup>
 <p>These five misunderstandings occur easily and many scholars are
 guilty of making these mistakes. One remarkable misunderstanding is
 that of Mr. Kalupahana, who claims that these two formulas refer to
@@ -3674,45 +3656,45 @@ ways of practice lead to <em>aññā</em> – enlightenment. (This is an
 example of misunderstanding #4, but also includes the first two
 misunderstandings.) See: David J. Kalupahana, ’Causality: the
 Central Philosophy of Buddhism’ (Honolulu: the University Press of
-Hawaii, 1975), pp. 181-2.</p>
-</div>
-<div class="footnote-definition" id="fn83"><sup class="footnote-definition-label">83</sup>
+Hawaii, 1975), pp. 181-2. <a href="#fr-fn82-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn83"><sup class="footnote-definition-label">83</sup>
 <p>A. III. 89, 93-4 (already referred to); M. III. 36-7; cf.: A. II.
-151.</p>
-</div>
-<div class="footnote-definition" id="fn84"><sup class="footnote-definition-label">84</sup>
-<p>S. II. 120-27.</p>
-</div>
-<div class="footnote-definition" id="fn85"><sup class="footnote-definition-label">85</sup>
+151. <a href="#fr-fn83-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn84"><sup class="footnote-definition-label">84</sup>
+<p>S. II. 120-27. <a href="#fr-fn84-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn85"><sup class="footnote-definition-label">85</sup>
 <p>Dhs. 55-6; DA. II. 387, 514; VinṬ.: Catutthapārājikaṁ,
-Vinītavatthuvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn86"><sup class="footnote-definition-label">86</sup>
+Vinītavatthuvaṇṇanā. <a href="#fr-fn85-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn86"><sup class="footnote-definition-label">86</sup>
 <p>E.g.: Vism. 325, 338-9; VismṬ.: Āruppaniddesavaṇṇanā,
-Paṭhamāruppavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn87"><sup class="footnote-definition-label">87</sup>
-<p>See: AA. II. 100.</p>
-</div>
-<div class="footnote-definition" id="fn88"><sup class="footnote-definition-label">88</sup>
-<p>DA. II. 514; VinṬ.: Catutthapārājikaṁ, Vinītavatthuvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn89"><sup class="footnote-definition-label">89</sup>
-<p>See: Vism. 336-7; VinṬ.: Dutiyapārājikaṁ, Dhaniyavatthuvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn90"><sup class="footnote-definition-label">90</sup>
+Paṭhamāruppavaṇṇanā. <a href="#fr-fn86-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn87"><sup class="footnote-definition-label">87</sup>
+<p>See: AA. II. 100. <a href="#fr-fn87-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn88"><sup class="footnote-definition-label">88</sup>
+<p>DA. II. 514; VinṬ.: Catutthapārājikaṁ, Vinītavatthuvaṇṇanā. <a href="#fr-fn88-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn89"><sup class="footnote-definition-label">89</sup>
+<p>See: Vism. 336-7; VinṬ.: Dutiyapārājikaṁ, Dhaniyavatthuvaṇṇanā. <a href="#fr-fn89-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn90"><sup class="footnote-definition-label">90</sup>
 <p>E.g.: M. I. 477-8; Pug. 72; DA. II. 514; DA. III. 889; MA. III.
 188; PañcA. 190; see the reasons for this at: DA. II. 514 (all of
-these references have been previously referred to).</p>
-</div>
-<div class="footnote-definition" id="fn91"><sup class="footnote-definition-label">91</sup>
+these references have been previously referred to). <a href="#fr-fn90-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn91"><sup class="footnote-definition-label">91</sup>
 <p>Note that there are <em>ubhatobhāga-vimutta</em> who have not attained
 all three <em>vijjā</em> or all six <em>abhiññā</em> (i.e. they have not attained
 the mundane <em>vijjā</em> and <em>abhiññā</em>); see: S. I. 191; VismṬ.:
 Paññābhāvanānisaṁsaniddesavaṇṇanā,
-Āhuneyyabhāvādisiddhikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn92"><sup class="footnote-definition-label">92</sup>
+Āhuneyyabhāvādisiddhikathāvaṇṇanā. <a href="#fr-fn91-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn92"><sup class="footnote-definition-label">92</sup>
 <p>VismṬ.: Iddhividhaniddesavaṇṇanā, Abhiññākathāvaṇṇanā explains
 that formless jhāna cannot be achieved by meditation on space. And
 although meditation on light is conducive to attaining the ’divine
@@ -3720,154 +3702,154 @@ eye’, in this context it is equivalent to meditation on the colour
 white (<em>odāta</em>) and therefore does not need to be distinguished. In
 the commentaries, a person who attains the formless jhānas must
 attain fourth jhāna as a result of meditating on one of nine
-<em>kasiṇa</em>, excluding the meditation on space (see: Vism. 326).</p>
-</div>
-<div class="footnote-definition" id="fn93"><sup class="footnote-definition-label">93</sup>
+<em>kasiṇa</em>, excluding the meditation on space (see: Vism. 326). <a href="#fr-fn92-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn93"><sup class="footnote-definition-label">93</sup>
 <p>Vism. 370-5; VismṬ.: Iddhividhaniddesavaṇṇanā,
-Dasa-iddhikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn94"><sup class="footnote-definition-label">94</sup>
+Dasa-iddhikathāvaṇṇanā. <a href="#fr-fn93-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn94"><sup class="footnote-definition-label">94</sup>
 <p>E.g.: Vism. 382-5, 404-5, 410-11, 427-8; VismṬ.:
-Iddhividhaniddesavaṇṇanā, Dasa-iddhikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn95"><sup class="footnote-definition-label">95</sup>
+Iddhividhaniddesavaṇṇanā, Dasa-iddhikathāvaṇṇanā. <a href="#fr-fn94-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn95"><sup class="footnote-definition-label">95</sup>
 <p>Vism. 376-8. The eight factors: the mind is: (1) concentrated;
 (2) purified; (3) bright; (4) unblemished; (5) rid of defilement;
 (6) malleable; (7) wieldy; and (8) steady; attained to
 imperturbability. [Trans.: see the above quotation describing the
 four jhānas followed by the threefold knowledge (<em>vijjā</em>), under the
 first main outline for the way of practice in which tranquillity
-precedes insight.]</p>
-</div>
-<div class="footnote-definition" id="fn96"><sup class="footnote-definition-label">96</sup>
+precedes insight.] <a href="#fr-fn95-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn96"><sup class="footnote-definition-label">96</sup>
 <p>Vism. 373-6; VismṬ.: Iddhividhaniddesavaṇṇanā,
-Abhiññākathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn97"><sup class="footnote-definition-label">97</sup>
-<p>E.g.: M. I. 163-6, 240.</p>
-</div>
-<div class="footnote-definition" id="fn98"><sup class="footnote-definition-label">98</sup>
+Abhiññākathāvaṇṇanā. <a href="#fr-fn96-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn97"><sup class="footnote-definition-label">97</sup>
+<p>E.g.: M. I. 163-6, 240. <a href="#fr-fn97-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn98"><sup class="footnote-definition-label">98</sup>
 <p>If one follows the outline described in the Visuddhimagga (pp.
 385-428), the attainment of each stage takes a long time. Ven.
 Anuruddha attained arahantship long after attaining the ’divine eye’
 (see: A. I. 281-2; AA. I. 191). Ven. Mahānāga Thera attained
 arahantship sixty years after attaining psychic powers (Vism.
-634-5).</p>
-</div>
-<div class="footnote-definition" id="fn99"><sup class="footnote-definition-label">99</sup>
+634-5). <a href="#fr-fn98-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn99"><sup class="footnote-definition-label">99</sup>
 <p>Once one has accessed a higher concentrative attainment one is
 able to enter previous (lower) attainments up to that higher
 attainment in a sequential, connected way. If one has attained the
 highest concentrative attainment one can enter all attainments, from
 beginning to end, successively: e.g. one enters first jhāna, exits
 first jhāna, enters second jhāna, exits second jhāna, enters third
-jhāna, etc.</p>
-</div>
-<div class="footnote-definition" id="fn100"><sup class="footnote-definition-label">100</sup>
-<p>M. I. 497-8.</p>
-</div>
-<div class="footnote-definition" id="fn101"><sup class="footnote-definition-label">101</sup>
+jhāna, etc. <a href="#fr-fn99-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn100"><sup class="footnote-definition-label">100</sup>
+<p>M. I. 497-8. <a href="#fr-fn100-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn101"><sup class="footnote-definition-label">101</sup>
 <p>M. III. 25; MA. IV. 91 concludes: <em>Having developed tranquillity
 and insight in unison, Sāriputta realized the fruit of non-returning
 and accessed the attainment of extinction</em> (<em>nirodha-samāpatti</em>)<em>;
 having emerged from this state, he realized arahantship</em>. Ven.
 Sāriputta was conversant with the attainment of extinction, which
 prepared his mind for the breakthrough in insight and the
-realization of arahantship; cf.: MA. III. 208.</p>
-</div>
-<div class="footnote-definition" id="fn102"><sup class="footnote-definition-label">102</sup>
-<p>See: D. I. 212-3; DA. II. 390.</p>
-</div>
-<div class="footnote-definition" id="fn103"><sup class="footnote-definition-label">103</sup>
-<p>D. III. 112.</p>
-</div>
-<div class="footnote-definition" id="fn104"><sup class="footnote-definition-label">104</sup>
-<p>These are the Four Foundations of Mindfulness.</p>
-</div>
-<div class="footnote-definition" id="fn105"><sup class="footnote-definition-label">105</sup>
+realization of arahantship; cf.: MA. III. 208. <a href="#fr-fn101-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn102"><sup class="footnote-definition-label">102</sup>
+<p>See: D. I. 212-3; DA. II. 390. <a href="#fr-fn102-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn103"><sup class="footnote-definition-label">103</sup>
+<p>D. III. 112. <a href="#fr-fn103-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn104"><sup class="footnote-definition-label">104</sup>
+<p>These are the Four Foundations of Mindfulness. <a href="#fr-fn104-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn105"><sup class="footnote-definition-label">105</sup>
 <p>Each sentence in this passage contains the phrase ’volitional
 formations of striving’ in conjunction with each spiritual basis in
 question, e.g.: ’This is the basis for spiritual power that
 possesses concentration due to desire and volitional formations of
-striving.’</p>
-</div>
-<div class="footnote-definition" id="fn106"><sup class="footnote-definition-label">106</sup>
+striving.’ <a href="#fr-fn105-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn106"><sup class="footnote-definition-label">106</sup>
 <p>Beginning section also found at S. II. 10; on the difference
-between the Buddha and <em>paññā-vimutta</em> see: S. III. 66.</p>
-</div>
-<div class="footnote-definition" id="fn107"><sup class="footnote-definition-label">107</sup>
+between the Buddha and <em>paññā-vimutta</em> see: S. III. 66. <a href="#fr-fn106-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn107"><sup class="footnote-definition-label">107</sup>
 <p>The thirty-seven <em>bodhipakkhiya-dhamma</em>: four foundations of
 mindfulness, four right efforts, four paths to success, four
 spiritual faculties, four spiritual powers, seven factors of
-enlightenment, and the Eightfold Path.</p>
-</div>
-<div class="footnote-definition" id="fn108"><sup class="footnote-definition-label">108</sup>
-<p>See: SA. II. 262.</p>
-</div>
-<div class="footnote-definition" id="fn109"><sup class="footnote-definition-label">109</sup>
+enlightenment, and the Eightfold Path. <a href="#fr-fn107-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn108"><sup class="footnote-definition-label">108</sup>
+<p>See: SA. II. 262. <a href="#fr-fn108-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn109"><sup class="footnote-definition-label">109</sup>
 <p>An alternative translation for ’disenchantment’ (<em>nibbidā</em>) is
 ’disengagement’; an alternative translation for ’dispassionate’
-(<em>virāga</em>) is ’disentangled’.</p>
-</div>
-<div class="footnote-definition" id="fn110"><sup class="footnote-definition-label">110</sup>
+(<em>virāga</em>) is ’disentangled’. <a href="#fr-fn109-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn110"><sup class="footnote-definition-label">110</sup>
 <p>Trans.: here, Māra is used to mean ’death’ or ’deadly’, in the
-sense of preventing people from reaching a higher goal.</p>
-</div>
-<div class="footnote-definition" id="fn111"><sup class="footnote-definition-label">111</sup>
-<p>See: S. III. 71, 177, 195-8.</p>
-</div>
-<div class="footnote-definition" id="fn112"><sup class="footnote-definition-label">112</sup>
-<p>See: S. IV. 19-21, 26-9.</p>
-</div>
-<div class="footnote-definition" id="fn113"><sup class="footnote-definition-label">113</sup>
+sense of preventing people from reaching a higher goal. <a href="#fr-fn110-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn111"><sup class="footnote-definition-label">111</sup>
+<p>See: S. III. 71, 177, 195-8. <a href="#fr-fn111-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn112"><sup class="footnote-definition-label">112</sup>
+<p>See: S. IV. 19-21, 26-9. <a href="#fr-fn112-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn113"><sup class="footnote-definition-label">113</sup>
 <p>This passage can be found with slight variation in many
 locations; see: S. IV. 151-5. At S. IV. 170 the contemplation is
 extended to cover the six kinds of consciousness (<em>viññāṇa</em>), the
 six contacts (<em>phassa</em>), and the three kinds of feeling (<em>vedanā</em>)
-– pleasurable, painful and neutral.</p>
-</div>
-<div class="footnote-definition" id="fn114"><sup class="footnote-definition-label">114</sup>
+– pleasurable, painful and neutral. <a href="#fr-fn113-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn114"><sup class="footnote-definition-label">114</sup>
 <p>In the instruction to Ven. Rāhula, the section: ’<em>Whatever
 feeling arises with eye-contact as condition … whether pleasant or
 painful or neither-painful-nor-pleasant</em>’ is changed to: <em>Anything
 included in feeling, perception, volitional formations, and
 consciousness arisen with eye-contact as condition</em> (S. IV.
-106-107).</p>
-</div>
-<div class="footnote-definition" id="fn115"><sup class="footnote-definition-label">115</sup>
+106-107). <a href="#fr-fn114-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn115"><sup class="footnote-definition-label">115</sup>
 <p>Slight variations of this passage are found at: S. IV. 24-5, 34,
-43, 44-5, 54-5, 63-4, 135.</p>
-</div>
-<div class="footnote-definition" id="fn116"><sup class="footnote-definition-label">116</sup>
-<p>Slight variations are found at: S. IV. 30-32.</p>
-</div>
-<div class="footnote-definition" id="fn117"><sup class="footnote-definition-label">117</sup>
-<p><em>Suta</em>: ’heard’, ’studied’.</p>
-</div>
-<div class="footnote-definition" id="fn118"><sup class="footnote-definition-label">118</sup>
-<p><em>Sabbe dhammā nālaṁ abhinivesāya</em>.</p>
-</div>
-<div class="footnote-definition" id="fn119"><sup class="footnote-definition-label">119</sup>
+43, 44-5, 54-5, 63-4, 135. <a href="#fr-fn115-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn116"><sup class="footnote-definition-label">116</sup>
+<p>Slight variations are found at: S. IV. 30-32. <a href="#fr-fn116-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn117"><sup class="footnote-definition-label">117</sup>
+<p><em>Suta</em>: ’heard’, ’studied’. <a href="#fr-fn117-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn118"><sup class="footnote-definition-label">118</sup>
+<p><em>Sabbe dhammā nālaṁ abhinivesāya</em>. <a href="#fr-fn118-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn119"><sup class="footnote-definition-label">119</sup>
 <p><em>Nimitta</em>: ’signs’; discernible features of things. He sees
-things differently from when he was still subject to attachment.</p>
-</div>
-<div class="footnote-definition" id="fn120"><sup class="footnote-definition-label">120</sup>
+things differently from when he was still subject to attachment. <a href="#fr-fn119-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn120"><sup class="footnote-definition-label">120</sup>
 <p><em>Abhiññā</em>: ’specific’ knowledge; ’personal’ knowledge; knowledge
 through direct experience; <em>pariññā</em>: comprehensive knowledge;
 knowing the true nature of something; knowing the qualities and
-features of something.</p>
-</div>
-<div class="footnote-definition" id="fn121"><sup class="footnote-definition-label">121</sup>
-<p>S. III. 181-7.</p>
-</div>
-<div class="footnote-definition" id="fn122"><sup class="footnote-definition-label">122</sup>
+features of something. <a href="#fr-fn120-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn121"><sup class="footnote-definition-label">121</sup>
+<p>S. III. 181-7. <a href="#fr-fn121-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn122"><sup class="footnote-definition-label">122</sup>
 <p>There are many variations to the phrase: <em>regards form (feeling,
-perception, etc.) as self</em> (see: S. III. 97-9).</p>
-</div>
-<div class="footnote-definition" id="fn123"><sup class="footnote-definition-label">123</sup>
-<p>One practises the Four Foundations of Mindfulness.</p>
-</div>
-<div class="footnote-definition" id="fn124"><sup class="footnote-definition-label">124</sup>
+perception, etc.) as self</em> (see: S. III. 97-9). <a href="#fr-fn122-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn123"><sup class="footnote-definition-label">123</sup>
+<p>One practises the Four Foundations of Mindfulness. <a href="#fr-fn123-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn124"><sup class="footnote-definition-label">124</sup>
 <p>The following sutta (S. III. 169) is similar but changes the
 term ’virtuous bhikkhu’ to ’well-instructed bhikkhu’. S. V. 298-9
 states that both a trainee (<em>sekha</em>) and one beyond training
@@ -3877,55 +3859,55 @@ Mindfulness. The four jhānas are usually developed by ’trainees’
 for a ’pleasant dwelling in this life’ and for mindfulness and clear
 comprehension (e.g.: M. III. 4; D. III. 222-3; A. II. 44-5; A. III.
 323). Mindfulness of the body is similarly used for a ’pleasant
-dwelling in this life’ (see: A. I. 43).</p>
-</div>
-<div class="footnote-definition" id="fn125"><sup class="footnote-definition-label">125</sup>
+dwelling in this life’ (see: A. I. 43). <a href="#fr-fn124-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn125"><sup class="footnote-definition-label">125</sup>
 <p>This teaching is found dispersed throughout the scriptures
-(e.g.: D. I. 62-84; A. V. 203; Pug. 56-7).</p>
-</div>
-<div class="footnote-definition" id="fn126"><sup class="footnote-definition-label">126</sup>
-<p>D. I. 100; M. I. 354; Nd. II. 47.</p>
-</div>
-<div class="footnote-definition" id="fn127"><sup class="footnote-definition-label">127</sup>
-<p>M. I. 149-50.</p>
-</div>
-<div class="footnote-definition" id="fn128"><sup class="footnote-definition-label">128</sup>
-<p>D. III. 288.</p>
-</div>
-<div class="footnote-definition" id="fn129"><sup class="footnote-definition-label">129</sup>
-<p>Ps. I. 1-2, 50, 75-6.</p>
-</div>
-<div class="footnote-definition" id="fn130"><sup class="footnote-definition-label">130</sup>
-<p>Visuddhimagga: the Path of Purification (710 pages).</p>
-</div>
-<div class="footnote-definition" id="fn131"><sup class="footnote-definition-label">131</sup>
-<p>Nd. I. 52; Vism. 606-607.</p>
-</div>
-<div class="footnote-definition" id="fn132"><sup class="footnote-definition-label">132</sup>
+(e.g.: D. I. 62-84; A. V. 203; Pug. 56-7). <a href="#fr-fn125-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn126"><sup class="footnote-definition-label">126</sup>
+<p>D. I. 100; M. I. 354; Nd. II. 47. <a href="#fr-fn126-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn127"><sup class="footnote-definition-label">127</sup>
+<p>M. I. 149-50. <a href="#fr-fn127-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn128"><sup class="footnote-definition-label">128</sup>
+<p>D. III. 288. <a href="#fr-fn128-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn129"><sup class="footnote-definition-label">129</sup>
+<p>Ps. I. 1-2, 50, 75-6. <a href="#fr-fn129-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn130"><sup class="footnote-definition-label">130</sup>
+<p>Visuddhimagga: the Path of Purification (710 pages). <a href="#fr-fn130-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn131"><sup class="footnote-definition-label">131</sup>
+<p>Nd. I. 52; Vism. 606-607. <a href="#fr-fn131-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn132"><sup class="footnote-definition-label">132</sup>
 <p>Of these sixteen, only path-knowledge and fruit-knowledge are
 transcendent forms of knowledge; the remaining fourteen are mundane.
 Note that the Abhidhammatthasaṅgaha adds ’investigative knowledge’
 (<em>sammasana-ñāṇa</em>) (#3) to the list of insight-knowledge
 (<em>vipassanā-ñāṇa</em>), resulting in a group of ten; see: Comp.:
-Kammaṭṭhānaparicchedo, Vipassanākammaṭṭhānaṁ, Visuddhibhedo.</p>
-</div>
-<div class="footnote-definition" id="fn133"><sup class="footnote-definition-label">133</sup>
-<p>Also known as <em>paccayapaṭisevana-sīla</em>.</p>
-</div>
-<div class="footnote-definition" id="fn134"><sup class="footnote-definition-label">134</sup>
+Kammaṭṭhānaparicchedo, Vipassanākammaṭṭhānaṁ, Visuddhibhedo. <a href="#fr-fn132-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn133"><sup class="footnote-definition-label">133</sup>
+<p>Also known as <em>paccayapaṭisevana-sīla</em>. <a href="#fr-fn133-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn134"><sup class="footnote-definition-label">134</sup>
 <p>It is also called <em>saṅkhāra-pariccheda</em> and
-<em>nāmarūpa-avaṭṭhāna</em>.</p>
-</div>
-<div class="footnote-definition" id="fn135"><sup class="footnote-definition-label">135</sup>
+<em>nāmarūpa-avaṭṭhāna</em>. <a href="#fr-fn134-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn135"><sup class="footnote-definition-label">135</sup>
 <p>The three <em>vaṭṭa</em>: (1) round of defilements (<em>kilesa-vaṭṭa</em>);
 (2) round of kamma (<em>kamma-vaṭṭa</em>); (3) round of results
-(<em>vipāka-vaṭṭa</em>) – Vism. 581.</p>
-</div>
-<div class="footnote-definition" id="fn136"><sup class="footnote-definition-label">136</sup>
+(<em>vipāka-vaṭṭa</em>) – Vism. 581. <a href="#fr-fn135-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn136"><sup class="footnote-definition-label">136</sup>
 <p>It is also known as <em>dhammaṭṭhiti-ñāṇa</em>, <em>yathābhūta-ñāṇa</em> and
-<em>sammādassana</em>.</p>
-</div>
-<div class="footnote-definition" id="fn137"><sup class="footnote-definition-label">137</sup>
+<em>sammādassana</em>. <a href="#fr-fn136-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn137"><sup class="footnote-definition-label">137</sup>
 <p>The sub-commentaries claim that <em>kalāpa-sammasana</em> is an Indian
 term and <em>naya-vipassanā</em> is a Sri Lankan term, but that these two
 terms are synonymous (VismṬ.:
@@ -3934,66 +3916,66 @@ Sammasanañāṇakathāvaṇṇanā). They constitute an opposite method to
 ’contemplation in order (of a list of factors)’:
 <em>anupadadhamma-vipassanā</em>. Ven. Ñāṇamoli translates <em>naya-vipassanā</em>
 as ’inductive insight’ and <em>kalāpa-sammasana</em> as ’comprehension by
-groups’.</p>
-</div>
-<div class="footnote-definition" id="fn138"><sup class="footnote-definition-label">138</sup>
-<p>Chapter 18.</p>
-</div>
-<div class="footnote-definition" id="fn139"><sup class="footnote-definition-label">139</sup>
-<p>See chapter 7.</p>
-</div>
-<div class="footnote-definition" id="fn140"><sup class="footnote-definition-label">140</sup>
-<p>M. III. 13-4.</p>
-</div>
-<div class="footnote-definition" id="fn141"><sup class="footnote-definition-label">141</sup>
-<p>M. I. 334.</p>
-</div>
-<div class="footnote-definition" id="fn142"><sup class="footnote-definition-label">142</sup>
-<p>See: AA. II. 41; PsA. I. 183; DhsA. 167. Cf.: Ps. II. 44-5.</p>
-</div>
-<div class="footnote-definition" id="fn143"><sup class="footnote-definition-label">143</sup>
+groups’. <a href="#fr-fn137-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn138"><sup class="footnote-definition-label">138</sup>
+<p>Chapter 18. <a href="#fr-fn138-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn139"><sup class="footnote-definition-label">139</sup>
+<p>See chapter 7. <a href="#fr-fn139-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn140"><sup class="footnote-definition-label">140</sup>
+<p>M. III. 13-4. <a href="#fr-fn140-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn141"><sup class="footnote-definition-label">141</sup>
+<p>M. I. 334. <a href="#fr-fn141-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn142"><sup class="footnote-definition-label">142</sup>
+<p>See: AA. II. 41; PsA. I. 183; DhsA. 167. Cf.: Ps. II. 44-5. <a href="#fr-fn142-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn143"><sup class="footnote-definition-label">143</sup>
 <p>DhsA. 213 says this refers to momentary
-attainment-concentration.</p>
-</div>
-<div class="footnote-definition" id="fn144"><sup class="footnote-definition-label">144</sup>
+attainment-concentration. <a href="#fr-fn143-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn144"><sup class="footnote-definition-label">144</sup>
 <p>Dhs. 60; VinṬ.: Tatiyapārājikaṁ, Paṭhamapaññatinidānavaṇṇanā;
-VismṬ.: Pathavīkasiṇaniddesavaṇṇanā, Tividhakalyāṇavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn145"><sup class="footnote-definition-label">145</sup>
-<p>Ibid.</p>
-</div>
-<div class="footnote-definition" id="fn146"><sup class="footnote-definition-label">146</sup>
+VismṬ.: Pathavīkasiṇaniddesavaṇṇanā, Tividhakalyāṇavaṇṇanā. <a href="#fr-fn144-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn145"><sup class="footnote-definition-label">145</sup>
+<p>Ibid. <a href="#fr-fn145-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn146"><sup class="footnote-definition-label">146</sup>
 <p>Cf.: DA. II. 512; MA. I. 248; SA. III. 272; AA. II. 100;
-SnA. II. 593; NdA. [2/247]; Nd2A. 102; Vism. 286-7, 667.</p>
-</div>
-<div class="footnote-definition" id="fn147"><sup class="footnote-definition-label">147</sup>
-<p><em>Vipassati</em>: ’discerns’, ’develops insight into’.</p>
-</div>
-<div class="footnote-definition" id="fn148"><sup class="footnote-definition-label">148</sup>
-<p>Nd. II. 42.</p>
-</div>
-<div class="footnote-definition" id="fn149"><sup class="footnote-definition-label">149</sup>
-<p>SnA. II. 601; NdA. 70.</p>
-</div>
-<div class="footnote-definition" id="fn150"><sup class="footnote-definition-label">150</sup>
-<p>AA. III. 143.</p>
-</div>
-<div class="footnote-definition" id="fn151"><sup class="footnote-definition-label">151</sup>
-<p>VinA. I. 229.</p>
-</div>
-<div class="footnote-definition" id="fn152"><sup class="footnote-definition-label">152</sup>
+SnA. II. 593; NdA. [2/247]; Nd2A. 102; Vism. 286-7, 667. <a href="#fr-fn146-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn147"><sup class="footnote-definition-label">147</sup>
+<p><em>Vipassati</em>: ’discerns’, ’develops insight into’. <a href="#fr-fn147-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn148"><sup class="footnote-definition-label">148</sup>
+<p>Nd. II. 42. <a href="#fr-fn148-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn149"><sup class="footnote-definition-label">149</sup>
+<p>SnA. II. 601; NdA. 70. <a href="#fr-fn149-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn150"><sup class="footnote-definition-label">150</sup>
+<p>AA. III. 143. <a href="#fr-fn150-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn151"><sup class="footnote-definition-label">151</sup>
+<p>VinA. I. 229. <a href="#fr-fn151-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn152"><sup class="footnote-definition-label">152</sup>
 <p>MA. II. 30; AA. III. 409; AA. V. 15; VbhA. 463; VinṬ.:
 Tatiyapārājikaṁ, Ānāpānassatisamādhikathāvaṇṇanā; [VinṬ. 4/137];
 VismṬ.: Paññābhāvanānisaṁsaniddesavaṇṇanā,
-Nirodhasamāpattikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn153"><sup class="footnote-definition-label">153</sup>
-<p>Vism. 187-8, 371.</p>
-</div>
-<div class="footnote-definition" id="fn154"><sup class="footnote-definition-label">154</sup>
-<p>Vism. 371.</p>
-</div>
-<div class="footnote-definition" id="fn155"><sup class="footnote-definition-label">155</sup>
+Nirodhasamāpattikathāvaṇṇanā. <a href="#fr-fn152-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn153"><sup class="footnote-definition-label">153</sup>
+<p>Vism. 187-8, 371. <a href="#fr-fn153-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn154"><sup class="footnote-definition-label">154</sup>
+<p>Vism. 371. <a href="#fr-fn154-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn155"><sup class="footnote-definition-label">155</sup>
 <p><em>Vipassanāpādaka-jhāna</em>, <em>vipassanāpāda-samāpatti</em>,
 <em>pādakajjhāna</em>, etc.; e.g.: DA. III. 804; MA. V. 24; PsA. I. 193;
 DhsA. 228; VbhA. 121; Vism. 666-8; VinA. I. 156 = MA. I. 124 =
@@ -4003,167 +3985,168 @@ SA. I. 26 = NdA. I. 120 = VinṬ.: Paṭhamo Bhāgo, Verañjakaṇḍavaṇṇ
 Dibbacakkuñāṇakathā; MA. II. 146 = NdA. II. 332 = VinṬ.:
 Pārājikakaṇḍaṁ, Bhikkhupadabhājanīyavaṇṇanā; MA. [2/468]; MA. IV.
 160; [3/571]; VbhA. 413; MA. IV. 200; AA. I. 223; AA. II. 41;
-MA. I. 142; [1/257]; MA. II. 234.</p>
-</div>
-<div class="footnote-definition" id="fn156"><sup class="footnote-definition-label">156</sup>
-<p>AA. IV. 206.</p>
-</div>
-<div class="footnote-definition" id="fn157"><sup class="footnote-definition-label">157</sup>
+MA. I. 142; [1/257]; MA. II. 234. <a href="#fr-fn155-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn156"><sup class="footnote-definition-label">156</sup>
+<p>AA. IV. 206. <a href="#fr-fn156-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn157"><sup class="footnote-definition-label">157</sup>
 <p>For references to the sutta teachings (<em>suttanta-desanā</em>) as
 being ’general’ (<em>pariyāya</em>) and the Abhidhamma teachings
 (<em>abhidhamma-desanā</em>) as being ’specific’ (<em>nippariyāya</em>), see:
 DhsA. 307; VismṬ.: Āruppaniddesavaṇṇanā,
-Nevasaññānāsaññāyatanakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn158"><sup class="footnote-definition-label">158</sup>
+Nevasaññānāsaññāyatanakathāvaṇṇanā. <a href="#fr-fn157-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn158"><sup class="footnote-definition-label">158</sup>
 <p>In the Tipiṭaka, the term <em>bhavaṅga</em> or <em>bhavaṅga-citta</em> occurs
 only in the Paṭṭhāna of the Abhidhamma, e.g.: Paṭ. 159, 160, 169-70,
-325-6. In the commentaries these terms are frequently used.</p>
-</div>
-<div class="footnote-definition" id="fn159"><sup class="footnote-definition-label">159</sup>
-<p>E.g.: AA. II. 100.</p>
-</div>
-<div class="footnote-definition" id="fn160"><sup class="footnote-definition-label">160</sup>
-<p>E.g.: Vism. 666-7.</p>
-</div>
-<div class="footnote-definition" id="fn161"><sup class="footnote-definition-label">161</sup>
+325-6. In the commentaries these terms are frequently used. <a href="#fr-fn158-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn159"><sup class="footnote-definition-label">159</sup>
+<p>E.g.: AA. II. 100. <a href="#fr-fn159-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn160"><sup class="footnote-definition-label">160</sup>
+<p>E.g.: Vism. 666-7. <a href="#fr-fn160-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn161"><sup class="footnote-definition-label">161</sup>
 <p>E.g.: VismṬ.: Cha-anussatiniddesavaṇṇanā,
-Buddhānussatikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn162"><sup class="footnote-definition-label">162</sup>
+Buddhānussatikathāvaṇṇanā. <a href="#fr-fn161-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn162"><sup class="footnote-definition-label">162</sup>
 <p>E.g.: Vism. 189-90; VismṬ.: Anussatikammaṭṭhānaniddesavaṇṇanā,
-Kāyagatāsatikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn163"><sup class="footnote-definition-label">163</sup>
-<p>E.g.: MA. I. 124; Vism. 371.</p>
-</div>
-<div class="footnote-definition" id="fn164"><sup class="footnote-definition-label">164</sup>
-<p>E.g.: M. II. 93.</p>
-</div>
-<div class="footnote-definition" id="fn165"><sup class="footnote-definition-label">165</sup>
-<p>NdA. II. 357; Vism. 373.</p>
-</div>
-<div class="footnote-definition" id="fn166"><sup class="footnote-definition-label">166</sup>
-<p>Also called the ’attainment of cessation’ (<em>nirodha-samāpatti</em>).</p>
-</div>
-<div class="footnote-definition" id="fn167"><sup class="footnote-definition-label">167</sup>
-<p>Nd. II. 24; cf.: S. II. 150-1; SA. II. 135; AA. IV. 196.</p>
-</div>
-<div class="footnote-definition" id="fn168"><sup class="footnote-definition-label">168</sup>
-<p>DA. II. 372.</p>
-</div>
-<div class="footnote-definition" id="fn169"><sup class="footnote-definition-label">169</sup>
+Kāyagatāsatikathāvaṇṇanā. <a href="#fr-fn162-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn163"><sup class="footnote-definition-label">163</sup>
+<p>E.g.: MA. I. 124; Vism. 371. <a href="#fr-fn163-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn164"><sup class="footnote-definition-label">164</sup>
+<p>E.g.: M. II. 93. <a href="#fr-fn164-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn165"><sup class="footnote-definition-label">165</sup>
+<p>NdA. II. 357; Vism. 373. <a href="#fr-fn165-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn166"><sup class="footnote-definition-label">166</sup>
+<p>Also called the ’attainment of cessation’ (<em>nirodha-samāpatti</em>). <a href="#fr-fn166-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn167"><sup class="footnote-definition-label">167</sup>
+<p>Nd. II. 24; cf.: S. II. 150-1; SA. II. 135; AA. IV. 196. <a href="#fr-fn167-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn168"><sup class="footnote-definition-label">168</sup>
+<p>DA. II. 372. <a href="#fr-fn168-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn169"><sup class="footnote-definition-label">169</sup>
 <p>See: M. II. 231-2; S. II. 150-1; DA. II. 372; MA. IV. 88;
 SA. II. 135; DhsA. 206-11; Vism. 335-7; VismṬ.:
-Āruppaniddesavaṇṇanā, Nevasaññānāsaññāyatanakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn170"><sup class="footnote-definition-label">170</sup>
+Āruppaniddesavaṇṇanā, Nevasaññānāsaññāyatanakathāvaṇṇanā. <a href="#fr-fn169-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn170"><sup class="footnote-definition-label">170</sup>
 <p>E.g.: PsA. I. 194 = DhsA. 228 = Vism. 666-7; MA. II. 146,
 [2/468]; MA. IV. 160, [3/571]; AA. IV. 202; VinA. I. 244; VbhA.
 413; NdA. I. 120; NdA. II. 332; VinṬ.: Pārājikakaṇḍaṁ,
-Sikkhāsājīvapadabhājanīyavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn171"><sup class="footnote-definition-label">171</sup>
-<p>E.g.: UdA. 186.</p>
-</div>
-<div class="footnote-definition" id="fn172"><sup class="footnote-definition-label">172</sup>
-<p>E.g.: MA. II. 234.</p>
-</div>
-<div class="footnote-definition" id="fn173"><sup class="footnote-definition-label">173</sup>
-<p>DA. II. 372.</p>
-</div>
-<div class="footnote-definition" id="fn174"><sup class="footnote-definition-label">174</sup>
+Sikkhāsājīvapadabhājanīyavaṇṇanā. <a href="#fr-fn170-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn171"><sup class="footnote-definition-label">171</sup>
+<p>E.g.: UdA. 186. <a href="#fr-fn171-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn172"><sup class="footnote-definition-label">172</sup>
+<p>E.g.: MA. II. 234. <a href="#fr-fn172-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn173"><sup class="footnote-definition-label">173</sup>
+<p>DA. II. 372. <a href="#fr-fn173-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn174"><sup class="footnote-definition-label">174</sup>
 <p>Vism. 707-708; confer the claim at DhsA. 230 that the Path
 arising for someone investigating the realm of
 neither-perception-nor-non-perception is utterly different from the
-realm of neither-perception-nor-non-perception itself.</p>
-</div>
-<div class="footnote-definition" id="fn175"><sup class="footnote-definition-label">175</sup>
+realm of neither-perception-nor-non-perception itself. <a href="#fr-fn174-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn175"><sup class="footnote-definition-label">175</sup>
 <p>The realm of neither-perception-nor-non-perception does not have
 a focus of attention. Those who enter this state focus on the realm
 of nothingness to advance. By letting go of this focus they enter
 the realm of neither-perception-nor-non-perception. See, e.g.:
-D. III. 265-6; Vbh. 245; DhsA. 208; Vism. 333-8.</p>
-</div>
-<div class="footnote-definition" id="fn176"><sup class="footnote-definition-label">176</sup>
+D. III. 265-6; Vbh. 245; DhsA. 208; Vism. 333-8. <a href="#fr-fn175-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn176"><sup class="footnote-definition-label">176</sup>
 <p>See: Dhs. 55-6; DA. II. 387, 514; VinṬ.: Catutthapārājikaṁ,
-Vinītavatthuvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn177"><sup class="footnote-definition-label">177</sup>
-<p>VbhA. 463.</p>
-</div>
-<div class="footnote-definition" id="fn178"><sup class="footnote-definition-label">178</sup>
+Vinītavatthuvaṇṇanā. <a href="#fr-fn176-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn177"><sup class="footnote-definition-label">177</sup>
+<p>VbhA. 463. <a href="#fr-fn177-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn178"><sup class="footnote-definition-label">178</sup>
 <p>UdA. 33; PsA. I. 29; DhsA. 231; Vism. 669-70 and Comp.:
-Vīthiparicchedo, Appanājavanavāro.</p>
-</div>
-<div class="footnote-definition" id="fn179"><sup class="footnote-definition-label">179</sup>
+Vīthiparicchedo, Appanājavanavāro. <a href="#fr-fn178-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn179"><sup class="footnote-definition-label">179</sup>
 <p>The ’period of attainment apperception’ (<em>appanājavana-vāra</em>) in
-the course of the Path (<em>magga-vīthi</em>).</p>
-</div>
-<div class="footnote-definition" id="fn180"><sup class="footnote-definition-label">180</sup>
+the course of the Path (<em>magga-vīthi</em>). <a href="#fr-fn179-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn180"><sup class="footnote-definition-label">180</sup>
 <p>This is the eighth level of insight-knowledge
-(<em>vipassanā-ñāṇa</em>).</p>
-</div>
-<div class="footnote-definition" id="fn181"><sup class="footnote-definition-label">181</sup>
-<p>This stage is sometimes omitted.</p>
-</div>
-<div class="footnote-definition" id="fn182"><sup class="footnote-definition-label">182</sup>
+(<em>vipassanā-ñāṇa</em>). <a href="#fr-fn180-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn181"><sup class="footnote-definition-label">181</sup>
+<p>This stage is sometimes omitted. <a href="#fr-fn181-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn182"><sup class="footnote-definition-label">182</sup>
 <p>This stage has two mind-moments (unless <em>parikamma</em> is left out,
 in which case it has three mind moments). PsA. 29 and DhsA. 231
 present an alternative outline which has two mind-moments of
 adaptation and a single moment of <em>phala-citta</em>, but this is refuted
-at Vism. 675.</p>
-</div>
-<div class="footnote-definition" id="fn183"><sup class="footnote-definition-label">183</sup>
+at Vism. 675. <a href="#fr-fn182-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn183"><sup class="footnote-definition-label">183</sup>
 <p>This is a very general presentation; in fact, there is a
 repeated dropping into sub-consciousness (<em>bhavaṅga</em>) during this
-process of insight.</p>
-</div>
-<div class="footnote-definition" id="fn184"><sup class="footnote-definition-label">184</sup>
+process of insight. <a href="#fr-fn183-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn184"><sup class="footnote-definition-label">184</sup>
 <p>The course of the Path (<em>magga-vīthi</em>) is identical (steps 1-7)
-to that shown above.</p>
-</div>
-<div class="footnote-definition" id="fn185"><sup class="footnote-definition-label">185</sup>
+to that shown above. <a href="#fr-fn184-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn185"><sup class="footnote-definition-label">185</sup>
 <p>Vbh. 425; Comp.: Vīthimuttaparicchedo, Kammacatukkaṁ; Comp.:
-Vīthimuttaparicchedo, Bhūmicatukkaṁ.</p>
-</div>
-<div class="footnote-definition" id="fn186"><sup class="footnote-definition-label">186</sup>
-<p>CompṬ.: Vīthimuttaparicchedavaṇṇanā, Kammacatukkavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn187"><sup class="footnote-definition-label">187</sup>
+Vīthimuttaparicchedo, Bhūmicatukkaṁ. <a href="#fr-fn185-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn186"><sup class="footnote-definition-label">186</sup>
+<p>CompṬ.: Vīthimuttaparicchedavaṇṇanā, Kammacatukkavaṇṇanā. <a href="#fr-fn186-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn187"><sup class="footnote-definition-label">187</sup>
 <p>See: Vism. 702 and VismṬ.: Paññābhāvanānisaṁsaniddesavaṇṇanā,
-Nirodhasamāpattikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn188"><sup class="footnote-definition-label">188</sup>
-<p>CompṬ.: Vīthimuttaparicchedavaṇṇanā, Kammacatukkavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn189"><sup class="footnote-definition-label">189</sup>
-<p>A. II. 128, 130.</p>
-</div>
-<div class="footnote-definition" id="fn190"><sup class="footnote-definition-label">190</sup>
-<p>AA. III. 126.</p>
-</div>
-<div class="footnote-definition" id="fn191"><sup class="footnote-definition-label">191</sup>
+Nirodhasamāpattikathāvaṇṇanā. <a href="#fr-fn187-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn188"><sup class="footnote-definition-label">188</sup>
+<p>CompṬ.: Vīthimuttaparicchedavaṇṇanā, Kammacatukkavaṇṇanā. <a href="#fr-fn188-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn189"><sup class="footnote-definition-label">189</sup>
+<p>A. II. 128, 130. <a href="#fr-fn189-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn190"><sup class="footnote-definition-label">190</sup>
+<p>AA. III. 126. <a href="#fr-fn190-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn191"><sup class="footnote-definition-label">191</sup>
 <p>VismṬ.: Paññābhāvanānisaṁsaniddesavaṇṇanā,
-Nirodhasamāpattikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn192"><sup class="footnote-definition-label">192</sup>
+Nirodhasamāpattikathāvaṇṇanā. <a href="#fr-fn191-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn192"><sup class="footnote-definition-label">192</sup>
 <p>Trans.: <em>nirodha-samāpatti</em> is also known as the ’cessation of
-perception and feeling’ (<em>saññāvedayita-nirodha</em>).</p>
-</div>
-<div class="footnote-definition" id="fn193"><sup class="footnote-definition-label">193</sup>
+perception and feeling’ (<em>saññāvedayita-nirodha</em>). <a href="#fr-fn192-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn193"><sup class="footnote-definition-label">193</sup>
 <p>AA. IV. 207 claims Nibbāna is the end of the defilements –
-<em>kilesa-nibbāna</em>.</p>
-</div>
-<div class="footnote-definition" id="fn194"><sup class="footnote-definition-label">194</sup>
+<em>kilesa-nibbāna</em>. <a href="#fr-fn193-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn194"><sup class="footnote-definition-label">194</sup>
 <p>DA. III. 1022 and [AA. 2/469] say that the ’mental body’ is
-meant here.</p>
-</div>
-<div class="footnote-definition" id="fn195"><sup class="footnote-definition-label">195</sup>
-<p>D. III. 230; A. III. 221-2.</p>
-</div>
-<div class="footnote-definition" id="fn196"><sup class="footnote-definition-label">196</sup>
-<p>D. II. 156; S. I. 158.</p>
+meant here. <a href="#fr-fn194-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn195"><sup class="footnote-definition-label">195</sup>
+<p>D. III. 230; A. III. 221-2. <a href="#fr-fn195-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn196"><sup class="footnote-definition-label">196</sup>
+<p>D. II. 156; S. I. 158. <a href="#fr-fn196-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

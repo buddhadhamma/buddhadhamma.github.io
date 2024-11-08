@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html" class="active">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -188,7 +169,7 @@ supernatural phenomena (see
 Note <a href="#note-supernatural">The Term ’Supernatural’</a>) and celestial beings, the answer based
 on literal evidence in the Tipiṭaka and other scriptures is
 unequivocally yes. Scriptural confirmation for this reply is extensive
-and abundant.<sup class="footnote-reference"><a href="#fn1">1</a></sup> Having said this, it is difficult for people to reach
+and abundant.<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup> Having said this, it is difficult for people to reach
 an agreement or consensus on whether these things truly exist or not.</p>
 <div class="note">
 <p><span class="caption">The Term ’Supernatural’</span><a id="note-supernatural"></a></p>
@@ -273,7 +254,7 @@ think that people hold foolish or superstitious beliefs, they may force
 the people to abandon their beliefs and to adopt the state ideology (of
 repudiation of supernatural phenomena).</p>
 <p>But this coercion does not solve the problem at its source; it does not
-’clear’ people from doubt;<sup class="footnote-reference"><a href="#fn2">2</a></sup> force merely leads to a suppression of
+’clear’ people from doubt;<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup> force merely leads to a suppression of
 faith. {943} Such control can be maintained as long as the force or
 persuasion is strong, but as soon as these weaken, the suppressed faith
 sprouts, blossoms and spreads. And when this happens, the beliefs and
@@ -315,7 +296,7 @@ constructively.</p>
 attitude and relationship to things that cannot be proven and need not
 be directly realized for spiritual fulfilment – is a unique
 characteristic of Buddhism, distinguishing it from other religions and
-philosophies, including modern ideologies.<sup class="footnote-reference"><a href="#fn3">3</a></sup></p>
+philosophies, including modern ideologies.<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup></p>
 <p>When based on these proper principles, there is no harm in searching for
 proof of supernatural phenomena. If people have this special interest
 and do not cause trouble to others, then we can maintain an open mind to
@@ -350,18 +331,18 @@ destruction of suffering?</p>
 <p><em>Sunakkhatta:</em> Lord, whether the Lord makes known that which is
 considered the origin of the world or not, the Dhamma that the Blessed
 One has taught to reach the goal leads to the total destruction of
-suffering.<sup class="footnote-reference"><a href="#fn4">4</a></sup> {945}</p>
+suffering.<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup> {945}</p>
 <p><em>D. III. 3-4.</em></p>
 </blockquote>
 </div>
 <h2 id="miracles-and-psychic-powers"><a class="header" href="#miracles-and-psychic-powers">Miracles and Psychic Powers</a></h2>
 <h3 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h3>
 <p>Although psychic powers are classified as expressions of ’higher
-knowledge’ (abhiññā),<sup class="footnote-reference"><a href="#fn5">5</a></sup> psychic powers of all kinds, including the
+knowledge’ (abhiññā),<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup> psychic powers of all kinds, including the
 ’divine ear’, clairvoyance, telepathy, and recollection of past lives,
 are mundane forms of higher knowledge. They are connected to mundane
 phenomena, belong to the domain of unawakened beings, and remain under
-the sway of mental defilement.<sup class="footnote-reference"><a href="#fn6">6</a></sup></p>
+the sway of mental defilement.<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup></p>
 <p>People achieved these mundane forms of higher knowledge even before the
 time of the Buddha; they are not dependent on the arising of Buddhism.
 Psychic powers do not comprise the essence of Buddhism and they are not
@@ -381,10 +362,10 @@ higher knowledge, but achieving the mundane forms in addition to
 transcendent supreme knowledge is considered outstanding and a sign of
 perfection. Transcendent supreme knowledge is essential for a truly
 virtuous life; mundane forms of higher knowledge are not essential, but
-rather enhance a person’s personal qualities.<sup class="footnote-reference"><a href="#fn7">7</a></sup></p>
+rather enhance a person’s personal qualities.<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup></p>
 <h3 id="three-kinds-of-miracles"><a class="header" href="#three-kinds-of-miracles">Three Kinds of Miracles</a></h3>
 <p>The Buddha classified psychic powers as one of the three kinds of
-miracles (pāṭihāriya):<sup class="footnote-reference"><a href="#fn8">8</a></sup></p>
+miracles (pāṭihāriya):<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup></p>
 <ol>
 <li>
 <p><em>Iddhi-pāṭihāriya</em>: the miracle of performing psychic powers.</p>
@@ -415,7 +396,7 @@ exercises mastery with his body even as far as the Brahma world.
 <p>The miracle of mind-reading: Here, a monk reads the minds of other
 beings, of other people, reads their mental states, their thoughts
 and considerations, and declares: ’This is how your mind is, this is
-how it inclines, this is in your heart.’<sup class="footnote-reference"><a href="#fn9">9</a></sup></p>
+how it inclines, this is in your heart.’<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup></p>
 </li>
 </ol>
 <div class="sutta">
@@ -483,7 +464,7 @@ sensual desire, ill-will, and other mental defilements. All virtuous
 qualities are <em>ādesanā-pāṭihāriya</em> in the sense that they only arise in
 the presence of a clear heart and unclouded mind. And virtuous qualities
 are <em>anusāsanī-pāṭihāriya</em> because the teachings have emphasized their
-proper application, cultivation, development, and balance.<sup class="footnote-reference"><a href="#fn10">10</a></sup> Although
+proper application, cultivation, development, and balance.<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup> Although
 these are not common explanations for these miracles, they offer a
 thought-provoking perspective.</p>
 <h3 id="psychic-powers-are-not-essential"><a class="header" href="#psychic-powers-are-not-essential">Psychic Powers Are Not Essential</a></h3>
@@ -515,12 +496,12 @@ everyone, until one reaches knowledge of the destruction of the taints,
 which is the goal of Buddhism.</p>
 <p>He gave an example of a monk who was highly skilled in psychic powers
 and who wanted to know where the four great elements cease without
-remainder.<sup class="footnote-reference"><a href="#fn11">11</a></sup> This monk travelled to the celestial realms in search of
+remainder.<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup> This monk travelled to the celestial realms in search of
 an answer to this question, pressing on until he arrived at the Brahma
 realms. But finally, unable to get an answer, he returned to the human
 realm in order to ask the Buddha to explain the true nature of the
 world. This story shows how psychic powers are limited, often
-ineffective, and not the essence of the Buddhist teachings.<sup class="footnote-reference"><a href="#fn12">12</a></sup></p>
+ineffective, and not the essence of the Buddhist teachings.<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup></p>
 <p>On another occasion the brahmin Saṅgārava mentioned to the Buddha a
 conversation occurring among the king’s courtiers in the palace on the
 following subject:</p>
@@ -541,10 +522,10 @@ transferred to others. From the outside, they appear as having the
 nature of a magician’s trick. Therefore, the miracle of instruction is
 superior and more sublime. The recipients of this instruction can
 reflect on, apply, and realize these teachings, leading to the end of
-suffering.<sup class="footnote-reference"><a href="#fn13">13</a></sup></p>
+suffering.<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup></p>
 <h3 id="noble-psychic-powers"><a class="header" href="#noble-psychic-powers">Noble Psychic Powers</a></h3>
 <p>Another passage in the Pali Canon describes two kinds of psychic
-powers:<sup class="footnote-reference"><a href="#fn14">14</a></sup></p>
+powers:<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup></p>
 <ol>
 <li>
 <p>Psychic powers that are not ’noble’: psychic powers accompanied by
@@ -579,17 +560,17 @@ causes no harm to oneself or others.</p>
 exercise the latter, and they occasionally apply their psychic abilities
 to indulge their defilements. The latter kind of psychic powers,
 however, fosters wholesome qualities, eradicates defilement, and keeps
-the mind from being seduced by greed, hatred and delusion.<sup class="footnote-reference"><a href="#fn15">15</a></sup></p>
+the mind from being seduced by greed, hatred and delusion.<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup></p>
 <p>The fact that the Buddha established a training rule forbidding monks
 from revealing psychic powers to laypeople also confirms that he did not
-encourage their use.<sup class="footnote-reference"><a href="#fn16">16</a></sup></p>
+encourage their use.<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup></p>
 <p>As stated above, psychic powers are a form of mundane attainment, which
 enhance the attributes of those who have attained transcendent
 knowledge, helping them to better perform their activities and assist
 other human beings. The Buddha referred to someone who is endowed with
 the three kinds of miraculous gifts as a ’fully accomplished one’, ’one
 who has reached the goal’, ’one who is supreme among gods and
-humans’.<sup class="footnote-reference"><a href="#fn17">17</a></sup> {949}</p>
+humans’.<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup> {949}</p>
 <p>As stated earlier, however, the miracle of instruction is the principal
 and constant factor, while the remaining two miracles are supplementary.
 When there is a good reason to perform the miracles of psychic powers
@@ -599,7 +580,7 @@ goal and consummation, as will be discussed at more length below.</p>
 <h3 id="dangers-of-psychic-powers"><a class="header" href="#dangers-of-psychic-powers">Dangers of Psychic Powers</a></h3>
 <p>Psychic powers can be harmful both for people who possess them and for
 those associating with these people. Unenlightened people who possess
-these powers may be intoxicated by them:<sup class="footnote-reference"><a href="#fn18">18</a></sup> they may become conceited,
+these powers may be intoxicated by them:<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup> they may become conceited,
 feeling superior and denigrating others; they may become obsessed with
 the material gains and honours accruing from such powers; they may
 become dishonest; or they may use these powers for evil purposes, as in
@@ -611,7 +592,7 @@ persons are subject to decline, the anxiety around protecting these
 powers is an obstacle, which interferes with wise reflection and the
 effective application of insight. Psychic powers are thus classified as
 obstacles to insight meditation (<em>iddhi-palibodha</em>), which should be
-removed or eliminated by one who is developing wisdom.<sup class="footnote-reference"><a href="#fn19">19</a></sup></p>
+removed or eliminated by one who is developing wisdom.<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup></p>
 <p>There is a high likelihood that people associating with a person who has
 psychic powers may also be harmed. The primary danger is that these
 people will become victims. Someone possessing (or pretending to
@@ -626,7 +607,7 @@ other than to seek personal fame or material gain?</p>
 accompanied by proper instruction. If someone reveals or claims to have
 psychic powers without these powers being a bridge leading to the
 ’miracle of instruction’, their behaviour can be considered
-incorrect.<sup class="footnote-reference"><a href="#fn20">20</a></sup> {950}</p>
+incorrect.<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup> {950}</p>
 <p>They may have bad or deceitful intentions, they may be seeking personal
 gain, or they may simply have a deluded understanding of psychic powers.
 This same principle can be applied in the case of sacred objects or
@@ -686,9 +667,9 @@ contradicts another basic principle of Buddhism, which teaches
 self-reliance – being a refuge unto oneself. Buddhism teaches the path
 to liberation, which at the end transcends faith and leads to pure
 wisdom. The Path begins with dependence on the wisdom of the
-Teacher,<sup class="footnote-reference"><a href="#fn21">21</a></sup> who is a ’spiritual friend’ (<em>kalyāṇamitta</em>). Eventually,
+Teacher,<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup> who is a ’spiritual friend’ (<em>kalyāṇamitta</em>). Eventually,
 one can abandon even this form of dependence and stand on one’s own two
-feet, without the support from a teacher.<sup class="footnote-reference"><a href="#fn22">22</a></sup> {951}</p>
+feet, without the support from a teacher.<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup> {951}</p>
 <h3 id="proper-relationship-to-psychic-powers"><a class="header" href="#proper-relationship-to-psychic-powers">Proper Relationship to Psychic Powers</a></h3>
 <p>Regarding how the display of psychic powers affects people in general,
 let us look at the conduct of the Buddha and his disciples, who were
@@ -719,7 +700,7 @@ and similar stories of Ven. Mahā Moggallāna exercising psychic powers.</p>
 <p>There are a few stories of monks revealing psychic powers to help
 people, but there is not a single instance in the Pali Canon of monks
 exercising these powers as a consequence of people’s request for
-them.<sup class="footnote-reference"><a href="#fn23">23</a></sup> There were instances when people made this request because
+them.<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup> There were instances when people made this request because
 they wanted to witness these powers, but the Buddha established a
 training rule forbidding monks from displaying such powers to laypeople,
 as mentioned earlier.</p>
@@ -732,7 +713,7 @@ methods and reach success through righteous means. The Buddha defined
 the ability leading to success as a ’power’ (<em>iddhi</em>), which accords
 with the Buddhist teachings. This ability is twofold: material power
 (<em>āmisa-iddhi</em>) and spiritual power (<em>dhamma-iddhi</em>), the latter being
-the leading principle.<sup class="footnote-reference"><a href="#fn24">24</a></sup> {952}</p>
+the leading principle.<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup> {952}</p>
 <p>There are two primary points revealing the limitations of psychic
 powers, along with all forms of sacred or supernormal forces, revealing
 that these powers are not of essential importance to Buddhism, are not
@@ -748,7 +729,7 @@ went in search of an answer throughout all realms of existence until
 he arrived at the realm of Brahma, who claims to have created the
 world, yet this monk’s quest was in vain. A similar story describes
 the rishi who unsuccessfully travelled in search of the end of the
-universe until he died.<sup class="footnote-reference"><a href="#fn25">25</a></sup></p>
+universe until he died.<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup></p>
 </li>
 <li>
 <p>From the perspective of the mind, psychic powers are unable to truly
@@ -760,7 +741,7 @@ this solution is only temporary. Whenever one exits the state of
 concentration and faces ordinary life, the defilements return to
 disturb and harass, and to cause suffering. Even worse, psychic
 powers may be used to serve the defilements, as happened in the case
-of Ven. Devadatta.<sup class="footnote-reference"><a href="#fn26">26</a></sup></p>
+of Ven. Devadatta.<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup></p>
 </li>
 </ol>
 <h2 id="divine-beings"><a class="header" href="#divine-beings">Divine Beings</a></h2>
@@ -819,26 +800,26 @@ Rose-apple Trees’) with the gods of Tāvatiṁsā heaven, and claimed that
 the gods are superior to humans in three aspects: divine age, divine
 beauty, and divine happiness, while humans are superior to the gods in
 three aspects: courage, mindfulness, and the practice of the holy life
-(i.e. the practice of the noble path – <em>ariya-magga</em>).<sup class="footnote-reference"><a href="#fn27">27</a></sup></p>
+(i.e. the practice of the noble path – <em>ariya-magga</em>).<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup></p>
 <p>Normally, humans consider themselves inferior to divine beings and want
 to be reborn in heaven, but divine beings consider rebirth as a human
 being to be a ’happy destination’, as confirmed by the Buddha: <em>The
-human state, monks, is the devas’ reckoning of a good destination</em>.<sup class="footnote-reference"><a href="#fn28">28</a></sup>
+human state, monks, is the devas’ reckoning of a good destination</em>.<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup>
 When a divine being is about to pass away, the other devas invoke a
 blessing so that this being may take birth as a human, since the human
 realm is a place where one can choose to perform wholesome, virtuous
 deeds and give oneself fully to Dhamma practice (of course, one can also
-give oneself fully to unwholesome actions).<sup class="footnote-reference"><a href="#fn29">29</a></sup></p>
+give oneself fully to unwholesome actions).<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup></p>
 <p>The Buddha considered birth as one of the gods, who live an
 exceptionally long time, as a wasted opportunity for practising the holy
-life.<sup class="footnote-reference"><a href="#fn30">30</a></sup> One can even call such a birth bad luck. Divine beings
+life.<sup class="footnote-reference" id="fr-fn30-1"><a href="#fn-fn30">30</a></sup> One can even call such a birth bad luck. Divine beings
 experience undiluted happiness, which tends to lead to heedlessness and
 to weakly established mindfulness. The human realm contains a mixture of
 happiness and suffering, and it offers a wide range of experiences and
 lessons. If a human being knows how to properly direct attention he or
 she will gain understanding, develop mindfulness that is agile and
 alert, develop self-discipline, and progress in the ’noble qualities’
-(<em>ariya-dhamma</em>).<sup class="footnote-reference"><a href="#fn31">31</a></sup></p>
+(<em>ariya-dhamma</em>).<sup class="footnote-reference" id="fr-fn31-1"><a href="#fn-fn31">31</a></sup></p>
 <p>The human realm lies between the heavenly realms and the ’unhappy
 destinations’ (<em>apāya</em>), for instance the hell realms. The unhappy
 destinations are inhabited by beings who are evil or of base spiritual
@@ -858,7 +839,7 @@ themselves, propagate the Dhamma, and find freedom from the cycle of
 birth and death.</p>
 <p>There are four levels of unhappy destinations. Beings in each
 distinctive level possess a similar degree of unwholesome qualities
-(<em>pāpa-dhamma</em>).<sup class="footnote-reference"><a href="#fn32">32</a></sup> The celestial realms contain many different levels
+(<em>pāpa-dhamma</em>).<sup class="footnote-reference" id="fr-fn32-1"><a href="#fn-fn32">32</a></sup> The celestial realms contain many different levels
 with ascending degrees of refinement; beings in each level possess a
 similar degree of virtue. Only the human realm is a centre for both vice
 and virtue of all hues: it contains evil people who resemble the beings
@@ -873,7 +854,7 @@ devas are superior and more proficient than humans, but when humans
 elevate themselves by spiritual cultivation, they are equivalent to or
 even surpass the gods in virtue and ability (although from the
 perspective of Dhamma, it is not encouraged to view this as a
-competition).<sup class="footnote-reference"><a href="#fn33">33</a></sup></p>
+competition).<sup class="footnote-reference" id="fr-fn33-1"><a href="#fn-fn33">33</a></sup></p>
 <h3 id="obsolete-form-of-relating-to-the-divine"><a class="header" href="#obsolete-form-of-relating-to-the-divine">Obsolete Form of Relating to the Divine</a></h3>
 <p>Religions existing in India before the time of the Buddha were
 polytheistic, but their adherents also believed in a chief God, who
@@ -922,9 +903,9 @@ that most of them are unawakened – they still have a degree of mental
 defilement and suffering; they are still spinning in the round of
 rebirth (<em>saṁsāra-vaṭṭa</em>). Examples for this are the god Brahma, who
 despite his elevated spiritual qualities still heedlessly considers
-himself immortal,<sup class="footnote-reference"><a href="#fn34">34</a></sup> and Indra (King of the Tāvatiṁsā heaven), who is
-intoxicated with divine treasures.<sup class="footnote-reference"><a href="#fn35">35</a></sup> People seek help from Indra, but
-Indra himself is not without greed, hatred, delusion, and fear.<sup class="footnote-reference"><a href="#fn36">36</a></sup>
+himself immortal,<sup class="footnote-reference" id="fr-fn34-1"><a href="#fn-fn34">34</a></sup> and Indra (King of the Tāvatiṁsā heaven), who is
+intoxicated with divine treasures.<sup class="footnote-reference" id="fr-fn35-1"><a href="#fn-fn35">35</a></sup> People seek help from Indra, but
+Indra himself is not without greed, hatred, delusion, and fear.<sup class="footnote-reference" id="fr-fn36-1"><a href="#fn-fn36">36</a></sup>
 Apart from the dependence on divine beings conflicting with the
 principles of achievement through perseverance and effort, of
 self-reliance, and of liberation, as mentioned earlier in the section on
@@ -953,7 +934,7 @@ people will feel the need to turn to them.</p>
 <p>When acquisitive devas become obsessed with personal gain, virtuous
 devas who help people without seeking personal advantage become
 weary and stay away (customarily, devas do not wish to trouble
-themselves or intervene in the affairs of human beings).<sup class="footnote-reference"><a href="#fn37">37</a></sup> Good
+themselves or intervene in the affairs of human beings).<sup class="footnote-reference" id="fr-fn37-1"><a href="#fn-fn37">37</a></sup> Good
 people are then deprived of help and encouragement. As devas keen on
 personal gain only help when they receive an entreaty or a
 sacrificial gift, more people are then convinced that good deeds do
@@ -1013,7 +994,7 @@ considered this advice unrighteous and drove the deva away. The deva was
 unable to find a new residence and thus went to Indra for help. Indra
 instructed the deva on how to properly ask forgiveness from
 Anāthapiṇḍika; on following this instruction the deva was given
-permission to return to his original dwelling.<sup class="footnote-reference"><a href="#fn38">38</a></sup></p>
+permission to return to his original dwelling.<sup class="footnote-reference" id="fr-fn38-1"><a href="#fn-fn38">38</a></sup></p>
 <p>The accusations made by devas towards a person should not be taken as
 ultimate criteria for the person’s faults or wrongs, because there are
 many examples of devas disparaging good people. The deva mentioned in
@@ -1023,11 +1004,11 @@ his disciples visited the house, he would have to descend to the ground,
 and so when Anāthapiṇḍika became poor, the deva urged him to stop
 associating with the Buddha, but his plan came to nothing.</p>
 <p>Some devas out of mischief instil a sense of mutual suspicion in
-people.<sup class="footnote-reference"><a href="#fn39">39</a></sup> Some forest devas are unhappy when monks go and live in the
+people.<sup class="footnote-reference" id="fr-fn39-1"><a href="#fn-fn39">39</a></sup> Some forest devas are unhappy when monks go and live in the
 forest to practise the Dhamma, because these virtuous people with
 superior spiritual qualities have entered their domain, which makes them
 feel frustrated and inconvenienced; they therefore look for ways to make
-life uncomfortable for them.<sup class="footnote-reference"><a href="#fn40">40</a></sup> Under these circumstances, the Buddha
+life uncomfortable for them.<sup class="footnote-reference" id="fr-fn40-1"><a href="#fn-fn40">40</a></sup> Under these circumstances, the Buddha
 recommended that the monks solve this problem by responding with
 goodness and spreading lovingkindness. {957}</p>
 <p>In the case that devas made proposals and suggested a person act in a
@@ -1035,28 +1016,28 @@ particular way, if these requests were deemed inappropriate or
 unrighteous, the Buddha’s disciples who had a true understanding of his
 teachings remained resolute and under no circumstances allowed
 themselves to be persuaded by these suggestions, regardless of whether
-the devas threatened them or promised rewards.<sup class="footnote-reference"><a href="#fn41">41</a></sup></p>
+the devas threatened them or promised rewards.<sup class="footnote-reference" id="fr-fn41-1"><a href="#fn-fn41">41</a></sup></p>
 <p>Third, some devas behave badly; they are hostile and repeatedly impede
 the spiritual development of human beings. One should not only refrain
 from soliciting or relying on these devas, but one should outright
 subdue or conquer them with virtue. If people develop themselves well
 they are able to overcome these devas.</p>
-<p>An important example of this kind of deity is Māra.<sup class="footnote-reference"><a href="#fn42">42</a></sup> Māra dwells in
+<p>An important example of this kind of deity is Māra.<sup class="footnote-reference" id="fr-fn42-1"><a href="#fn-fn42">42</a></sup> Māra dwells in
 Paranimmitavasavattī – the sixth and highest heaven of the sense
 sphere. He likes to obstruct and harass others when they perform good
 deeds, especially when someone tries to free himself from sensuality
 (<em>kāma</em>); in such a case Māra fears that the person will transcend his
 domain, and in this case the person must confront Māra to pass
-beyond.<sup class="footnote-reference"><a href="#fn43">43</a></sup></p>
+beyond.<sup class="footnote-reference" id="fr-fn43-1"><a href="#fn-fn43">43</a></sup></p>
 <p>Māra has enormous power; even Indra flees and hides away at the
 outskirts of the universe when Māra appears, and Brahma also avoids
-him.<sup class="footnote-reference"><a href="#fn44">44</a></sup> Occasionally, Māra goes to disturb the Brahma worlds, which
+him.<sup class="footnote-reference" id="fr-fn44-1"><a href="#fn-fn44">44</a></sup> Occasionally, Māra goes to disturb the Brahma worlds, which
 are fine-material spheres and higher than Māra’s normal realm of
-existence.<sup class="footnote-reference"><a href="#fn45">45</a></sup> The Buddha therefore said: <em>Of all powerful beings, Māra
-is the greatest</em>.<sup class="footnote-reference"><a href="#fn46">46</a></sup> Although Māra has such great power, a person who
+existence.<sup class="footnote-reference" id="fr-fn45-1"><a href="#fn-fn45">45</a></sup> The Buddha therefore said: <em>Of all powerful beings, Māra
+is the greatest</em>.<sup class="footnote-reference" id="fr-fn46-1"><a href="#fn-fn46">46</a></sup> Although Māra has such great power, a person who
 is well-trained in moral conduct, concentration and wisdom can conquer
 him with his virtue, and such a person of supreme spiritual qualities is
-revered by the devas all the way to the Brahma realms.<sup class="footnote-reference"><a href="#fn47">47</a></sup></p>
+revered by the devas all the way to the Brahma realms.<sup class="footnote-reference" id="fr-fn47-1"><a href="#fn-fn47">47</a></sup></p>
 <p>These words are not meant to encourage a feeling of contempt or
 insensitivity in regard to divine beings, but rather to increase
 understanding and help establish a proper relationship to them.</p>
@@ -1083,10 +1064,10 @@ they do not expect to be helped and they do not seek such assistance.
 The cause for this assistance is the goodness or good actions of human
 beings; it is not a result of supplication or a form of reward.</p>
 <p>In the scriptures, the chief deity who offers such assistance to human
-beings is Sakka, also known as Indra,<sup class="footnote-reference"><a href="#fn48">48</a></sup> king of the devas. The
+beings is Sakka, also known as Indra,<sup class="footnote-reference" id="fr-fn48-1"><a href="#fn-fn48">48</a></sup> king of the devas. The
 principle of assistance by Sakka, which conforms to the Buddhist
 principle of ’active engagement’ (<em>kamma</em>), evolved from the principle
-of divine power espoused by pre-Buddhist religious doctrines.<sup class="footnote-reference"><a href="#fn49">49</a></sup>
+of divine power espoused by pre-Buddhist religious doctrines.<sup class="footnote-reference" id="fr-fn49-1"><a href="#fn-fn49">49</a></sup>
 Although this principle is not yet purely in accord with the Buddhist
 teachings, it has evolved in a distinctly Buddhist direction and has
 been incorporated into the Buddhist tradition. The core of this
@@ -1115,7 +1096,7 @@ beings, and devas offer assistance without expecting human entreaty.
 Those people who are still concerned with the principle of divine power
 can reflect on this saying: ’The responsibility of human beings is the
 effort to do good; the responsibility of heaven is to assist good
-people; fulfil your responsibility to the best of your ability.’<sup class="footnote-reference"><a href="#fn50">50</a></sup></p>
+people; fulfil your responsibility to the best of your ability.’<sup class="footnote-reference" id="fr-fn50-1"><a href="#fn-fn50">50</a></sup></p>
 <p>If people do not make effort to develop goodness, but are caught up in
 supplicating the devas, and if the devas are not interested in helping
 good people, but rather help only those who make entreaties, both
@@ -1131,13 +1112,13 @@ head, life as a matted-hair ascetic, smearing [the body] with ashes,
 wearing rough leopard skins, fire worship, undertaking religious
 practices in order to become a god, ascetic practices of this world,
 propitiatory offerings, sacrifices, seasonal sacred observances: none
-of these things purify a person who has not overcome doubt.<sup class="footnote-reference"><a href="#fn51">51</a></sup></p>
+of these things purify a person who has not overcome doubt.<sup class="footnote-reference" id="fr-fn51-1"><a href="#fn-fn51">51</a></sup></p>
 <p><em>Sn. 44-5.</em></p>
 </blockquote>
 </div>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <h3 id="three-stages-of-development"><a class="header" href="#three-stages-of-development">Three Stages of Development</a></h3>
-<p>The community of Buddhist disciples is comprised of many individuals who
+<p>The community of Buddhist disciples consists of many individuals who
 begin their spiritual journey from different starting points and are
 walking on different stages of the same path, leading to the same
 destination. These individuals are at different levels of development in
@@ -1200,7 +1181,7 @@ lacks reasoned judgement. This stage can be considered
 powers. These powers are used to support wholesome actions, for example
 by helping people who are in danger, and to assist in the ’miracle of
 instruction’. {960} At this second stage auspicious or sacred objects
-are used to provide encouragement and reassurance.<sup class="footnote-reference"><a href="#fn52">52</a></sup> They act as
+are used to provide encouragement and reassurance.<sup class="footnote-reference" id="fr-fn52-1"><a href="#fn-fn52">52</a></sup> They act as
 reminders, strengthening people’s resolve to perform good actions and
 increasing self-confidence. Although one can say that this stage is the
 beginning of a Buddhist way of life, the Buddha did not promote the
@@ -1305,7 +1286,7 @@ recent times have acquiesced to the requests by laypeople to perform
 auspicious ceremonies, produce amulets, and engage with other sacred
 objects (see
 Note <a href="#note-auspicious">Auspicious Objects</a>), to the extent that in some periods of
-time this involvement seems to have exceeded what is appropriate.<sup class="footnote-reference"><a href="#fn53">53</a></sup>
+time this involvement seems to have exceeded what is appropriate.<sup class="footnote-reference" id="fr-fn53-1"><a href="#fn-fn53">53</a></sup>
 {962} In any case, if monks understand the spirit of the training rule
 mentioned above, of conducting auspicious ceremonies only when
 specifically requested to do so by laypeople, then any harm or
@@ -1340,7 +1321,7 @@ devas, especially in the context of a society in which devas are
 traditionally worshiped. Even oblations to devas are supported in the
 suttas, but with the stipulation that these offerings are given out of
 kindness or with a sense of service, not as supplication or with the
-wish for a reward.<sup class="footnote-reference"><a href="#fn54">54</a></sup></p>
+wish for a reward.<sup class="footnote-reference" id="fr-fn54-1"><a href="#fn-fn54">54</a></sup></p>
 <p>When one goes to live in a new place, one should first offer support to
 those virtuous people in the surrounding area and then establish the
 mind in generosity, sharing whatever merit one has accrued with the
@@ -1352,7 +1333,7 @@ respond with kindness:</p>
 They will respect him in turn.<br />
 Having received honour from him,<br />
 They will likewise honour him.<br />
-They care for him as a mother cares for her child.<sup class="footnote-reference"><a href="#fn55">55</a></sup></em></p>
+They care for him as a mother cares for her child.<sup class="footnote-reference" id="fr-fn55-1"><a href="#fn-fn55">55</a></sup></em></p>
 <p><em>Vin. I. 229-30; D. II. 88-9; Ud. 89.</em></p>
 </blockquote>
 </div>
@@ -1412,7 +1393,7 @@ initial psychic powers that we should develop are perseverance and
 reasoned discernment, which lead to a fulfilment of our
 responsibilities. Similarly, the auspicious powers we should develop are
 those virtues and skills which enhance our lives and lead to peace and
-happiness.<sup class="footnote-reference"><a href="#fn56">56</a></sup></p>
+happiness.<sup class="footnote-reference" id="fr-fn56-1"><a href="#fn-fn56">56</a></sup></p>
 <p>Monks, who are normally the spiritual leaders in a Buddhist community,
 should be very cautious when dealing with supernatural phenomena. Those
 monks who are proficient in teaching may be able to lead people to
@@ -1423,7 +1404,7 @@ ahead. These people then have neither faith nor wisdom, and drift around
 aimlessly – a risk both to themselves and to society.</p>
 <p>Those monks who are not adept at teaching and who use people’s
 attachments to supernatural phenomena as a starting point for
-instruction should be aware of several points.<sup class="footnote-reference"><a href="#fn57">57</a></sup> As for psychic
+instruction should be aware of several points.<sup class="footnote-reference" id="fr-fn57-1"><a href="#fn-fn57">57</a></sup> As for psychic
 powers, the Buddha laid down a clear rule forbidding monks from
 exhibiting such powers to laypeople. And as for sacred objects or
 ceremonies, to begin with, monks should determine not to use these
@@ -1486,10 +1467,10 @@ and reasonable effort.</p>
 </li>
 <li>
 <p>The relationship to divine beings is one of friendly coexistence.
-Concessions are made to allow making offerings (<em>bali</em>)<sup class="footnote-reference"><a href="#fn58">58</a></sup> to
+Concessions are made to allow making offerings (<em>bali</em>)<sup class="footnote-reference" id="fr-fn58-1"><a href="#fn-fn58">58</a></sup> to
 devas in the sense of offering respect or assistance (not as a
 propitiatory offering, a supplication, or a request for
-favours).<sup class="footnote-reference"><a href="#fn59">59</a></sup> {965}</p>
+favours).<sup class="footnote-reference" id="fr-fn59-1"><a href="#fn-fn59">59</a></sup> {965}</p>
 </li>
 </ul>
 <p>The more concessions one makes in this area of supernatural phenomena,
@@ -1506,7 +1487,7 @@ captivated by the subject of devas and blessings, I hope that one day I
 can reach the stage of complete freedom.’ In a nutshell, one should
 reflect: ’I must progress, not stagnate.’</p>
 <p>The word ’progress’ has a special importance for the initial stage of
-Buddhist practice,<sup class="footnote-reference"><a href="#fn60">60</a></sup> because there is always the risk of falling away
+Buddhist practice,<sup class="footnote-reference" id="fr-fn60-1"><a href="#fn-fn60">60</a></sup> because there is always the risk of falling away
 from the Buddhist community and reverting back to ’ignoble’ ways. At
 this initial stage there are many things that are shared between the
 Buddhist way of practice and the teachings of pre-Buddhist religions,
@@ -1519,7 +1500,7 @@ phenomena, one may easily revert back to a contrary position and fall
 away from the true Buddhist community (I fear this is the case for many
 people). For this reason, it is very important that the concept of
 ’progress’ is added to one’s reflections on the proper manner of
-behaviour in relation to the supernatural.<sup class="footnote-reference"><a href="#fn61">61</a></sup></p>
+behaviour in relation to the supernatural.<sup class="footnote-reference" id="fr-fn61-1"><a href="#fn-fn61">61</a></sup></p>
 <p>Whenever people reach stage three (of freedom) then they are truly safe,
 because they enter the ’noble’ community: they have reached the level of
 stream-entry or a higher level of realization. At this stage people do
@@ -1538,7 +1519,7 @@ beings.</p>
 <p>Of all living beings, humans have the greatest aptitude for being
 trained. They are able to train their bodies and their minds, and are
 able to accomplish the most refined, elaborate and astonishing
-things.<sup class="footnote-reference"><a href="#fn62">62</a></sup> To waste time expecting assistance from supernatural or
+things.<sup class="footnote-reference" id="fr-fn62-1"><a href="#fn-fn62">62</a></sup> To waste time expecting assistance from supernatural or
 divine powers is heedless and neglectful behaviour, allowing one’s human
 potential to slip away in vain. As a consequence one will not develop on
 the noble path. On the other hand, people who are diligent and careful,
@@ -1551,158 +1532,158 @@ Buddha displayed psychic powers:</p>
 <ul>
 <li>
 <p>subduing Uruvela-Kassapa, the leader of the matted-hair
-ascetics;<sup class="footnote-reference"><a href="#fn63">63</a></sup></p>
+ascetics;<sup class="footnote-reference" id="fr-fn63-1"><a href="#fn-fn63">63</a></sup></p>
 </li>
 <li>
-<p>subduing Baka Brahma;<sup class="footnote-reference"><a href="#fn64">64</a></sup></p>
+<p>subduing Baka Brahma;<sup class="footnote-reference" id="fr-fn64-1"><a href="#fn-fn64">64</a></sup></p>
 </li>
 <li>
-<p>subduing another Brahma;<sup class="footnote-reference"><a href="#fn65">65</a></sup></p>
+<p>subduing another Brahma;<sup class="footnote-reference" id="fr-fn65-1"><a href="#fn-fn65">65</a></sup></p>
 </li>
 <li>
 <p>correcting the wrong views of Sunakkhatta and refuting the claims of
-the naked ascetic Pāṭikaputta;<sup class="footnote-reference"><a href="#fn66">66</a></sup></p>
+the naked ascetic Pāṭikaputta;<sup class="footnote-reference" id="fr-fn66-1"><a href="#fn-fn66">66</a></sup></p>
 </li>
 <li>
-<p>subduing the bandit Aṅgulimāla;<sup class="footnote-reference"><a href="#fn67">67</a></sup></p>
+<p>subduing the bandit Aṅgulimāla;<sup class="footnote-reference" id="fr-fn67-1"><a href="#fn-fn67">67</a></sup></p>
 </li>
 <li>
 <p>inspiring awe in a group of monks so that they would come to receive
-teachings;<sup class="footnote-reference"><a href="#fn68">68</a></sup></p>
+teachings;<sup class="footnote-reference" id="fr-fn68-1"><a href="#fn-fn68">68</a></sup></p>
 </li>
 <li>
 <p>permitting only certain people to see the ’marks of a Great
-Man’;<sup class="footnote-reference"><a href="#fn69">69</a></sup></p>
+Man’;<sup class="footnote-reference" id="fr-fn69-1"><a href="#fn-fn69">69</a></sup></p>
 </li>
 <li>
 <p>extending lovingkindness and taming the fierce elephant
-Nālāgiri;<sup class="footnote-reference"><a href="#fn70">70</a></sup></p>
+Nālāgiri;<sup class="footnote-reference" id="fr-fn70-1"><a href="#fn-fn70">70</a></sup></p>
 </li>
 <li>
-<p>and confronting the yakkha<sup class="footnote-reference"><a href="#fn71">71</a></sup> Āḷavaka.<sup class="footnote-reference"><a href="#fn72">72</a></sup></p>
+<p>and confronting the yakkha<sup class="footnote-reference" id="fr-fn71-1"><a href="#fn-fn71">71</a></sup> Āḷavaka.<sup class="footnote-reference" id="fr-fn72-1"><a href="#fn-fn72">72</a></sup></p>
 </li>
 </ul>
 <p>Occasions recorded in the commentaries include the ’twin miracles’ and
-refuting the claims of heretical teachers,<sup class="footnote-reference"><a href="#fn73">73</a></sup> and taking five hundred
+refuting the claims of heretical teachers,<sup class="footnote-reference" id="fr-fn73-1"><a href="#fn-fn73">73</a></sup> and taking five hundred
 monks to admire the Himalayas in order to dispel their thoughts of
-former lovers.<sup class="footnote-reference"><a href="#fn74">74</a></sup></p>
+former lovers.<sup class="footnote-reference" id="fr-fn74-1"><a href="#fn-fn74">74</a></sup></p>
 <p>Here is a list of occasions recorded in the Pali Canon in which
 disciples of the Buddha displayed psychic powers:</p>
 <ul>
 <li>
 <p>Ven. Piṇḍola-Bhāradvāja taking up the challenge to rise in the air
-and bring down a sandalwood bowl from a high pole;<sup class="footnote-reference"><a href="#fn75">75</a></sup></p>
+and bring down a sandalwood bowl from a high pole;<sup class="footnote-reference" id="fr-fn75-1"><a href="#fn-fn75">75</a></sup></p>
 </li>
 <li>
-<p>Ven. Mahā Moggallāna subduing Māra;<sup class="footnote-reference"><a href="#fn76">76</a></sup></p>
+<p>Ven. Mahā Moggallāna subduing Māra;<sup class="footnote-reference" id="fr-fn76-1"><a href="#fn-fn76">76</a></sup></p>
 </li>
 <li>
 <p>Ven. Pilinda-Vaccha rescuing two kidnapped daughters belonging to
-his lay-supporters;<sup class="footnote-reference"><a href="#fn77">77</a></sup></p>
+his lay-supporters;<sup class="footnote-reference" id="fr-fn77-1"><a href="#fn-fn77">77</a></sup></p>
 </li>
 <li>
 <p>Ven. Pilinda-Vaccha turning King Bimbisāra’s palace into gold to
-vindicate a falsely accused family;<sup class="footnote-reference"><a href="#fn78">78</a></sup></p>
+vindicate a falsely accused family;<sup class="footnote-reference" id="fr-fn78-1"><a href="#fn-fn78">78</a></sup></p>
 </li>
 <li>
 <p>Ven. Dabba-Mallaputta using his finger as a lamp to shine the way
-when taking monks to their dwellings at night;<sup class="footnote-reference"><a href="#fn79">79</a></sup></p>
+when taking monks to their dwellings at night;<sup class="footnote-reference" id="fr-fn79-1"><a href="#fn-fn79">79</a></sup></p>
 </li>
 <li>
-<p>Ven. Sāgata displaying powers to the laity;<sup class="footnote-reference"><a href="#fn80">80</a></sup></p>
+<p>Ven. Sāgata displaying powers to the laity;<sup class="footnote-reference" id="fr-fn80-1"><a href="#fn-fn80">80</a></sup></p>
 </li>
 <li>
 <p>Ven. Sāgata subduing the nāga (divine serpent) in the hermitage of
-the matted-hair ascetics;<sup class="footnote-reference"><a href="#fn81">81</a></sup></p>
+the matted-hair ascetics;<sup class="footnote-reference" id="fr-fn81-1"><a href="#fn-fn81">81</a></sup></p>
 </li>
 <li>
-<p>Ven. Devadatta inspiring Prince Ajātasattu;<sup class="footnote-reference"><a href="#fn82">82</a></sup></p>
+<p>Ven. Devadatta inspiring Prince Ajātasattu;<sup class="footnote-reference" id="fr-fn82-1"><a href="#fn-fn82">82</a></sup></p>
 </li>
 <li>
 <p>Ven. Sāriputta and Ven. Mahā Moggallāna redeeming Ven. Devadatta’s
 disciples, by using psychic powers and mind-reading combined with
-the miracle of instruction;<sup class="footnote-reference"><a href="#fn83">83</a></sup></p>
+the miracle of instruction;<sup class="footnote-reference" id="fr-fn83-1"><a href="#fn-fn83">83</a></sup></p>
 </li>
 <li>
 <p>Ven. Mahaka causing a cool wind to blow along with gentle rain to
-assist senior monks who were overcome by heat;<sup class="footnote-reference"><a href="#fn84">84</a></sup> {967}</p>
+assist senior monks who were overcome by heat;<sup class="footnote-reference" id="fr-fn84-1"><a href="#fn-fn84">84</a></sup> {967}</p>
 </li>
 <li>
 <p>Ven. Mahā Moggallāna causing the Vejayanta Palace to shake in order
-to stir up a sense of urgency in Indra king of the gods;<sup class="footnote-reference"><a href="#fn85">85</a></sup></p>
+to stir up a sense of urgency in Indra king of the gods;<sup class="footnote-reference" id="fr-fn85-1"><a href="#fn-fn85">85</a></sup></p>
 </li>
 <li>
 <p>Ven. Mahā Moggallāna causing the mansion of Migāra’s mother to shake
-in order to caution arrogant monks;<sup class="footnote-reference"><a href="#fn86">86</a></sup> and</p>
+in order to caution arrogant monks;<sup class="footnote-reference" id="fr-fn86-1"><a href="#fn-fn86">86</a></sup> and</p>
 </li>
 <li>
 <p>Ven. Abhibhū, chief disciple of the Buddha Sikhī, teaching the
 Dhamma while remaining invisible and making his voice heard through
-the thousandfold world system.<sup class="footnote-reference"><a href="#fn87">87</a></sup></p>
+the thousandfold world system.<sup class="footnote-reference" id="fr-fn87-1"><a href="#fn-fn87">87</a></sup></p>
 </li>
 </ul>
 <p>Occasions recorded in the commentaries are numerous, including:</p>
 <ul>
 <li>
 <p>Ven. Cullapanthaka creating one thousand mind-produced images of
-himself;<sup class="footnote-reference"><a href="#fn88">88</a></sup></p>
+himself;<sup class="footnote-reference" id="fr-fn88-1"><a href="#fn-fn88">88</a></sup></p>
 </li>
 <li>
-<p>Ven. Mahā Moggallāna subduing the nāga king Nandopananda;<sup class="footnote-reference"><a href="#fn89">89</a></sup></p>
+<p>Ven. Mahā Moggallāna subduing the nāga king Nandopananda;<sup class="footnote-reference" id="fr-fn89-1"><a href="#fn-fn89">89</a></sup></p>
 </li>
 <li>
 <p>Ven. Puṇṇa saving his brother the naval merchant from destruction by
-angry spirits;<sup class="footnote-reference"><a href="#fn90">90</a></sup></p>
+angry spirits;<sup class="footnote-reference" id="fr-fn90-1"><a href="#fn-fn90">90</a></sup></p>
 </li>
 <li>
 <p>the novice Saṅkicca saving thirty monks by volunteering to be
-sacrificed by bandits;<sup class="footnote-reference"><a href="#fn91">91</a></sup></p>
+sacrificed by bandits;<sup class="footnote-reference" id="fr-fn91-1"><a href="#fn-fn91">91</a></sup></p>
 </li>
 <li>
-<p>the novice Sumana subduing a nāga;<sup class="footnote-reference"><a href="#fn92">92</a></sup> and</p>
+<p>the novice Sumana subduing a nāga;<sup class="footnote-reference" id="fr-fn92-1"><a href="#fn-fn92">92</a></sup> and</p>
 </li>
 <li>
 <p>Ven. Sundarasamudda fleeing through the air to escape a
-courtesan.<sup class="footnote-reference"><a href="#fn93">93</a></sup></p>
+courtesan.<sup class="footnote-reference" id="fr-fn93-1"><a href="#fn-fn93">93</a></sup></p>
 </li>
 </ul>
 <p>There are canonical stories of other individuals performing psychic
 feats, for example:</p>
 <ul>
 <li>
-<p>Brahmas with right view subduing Brahmas with wrong view;<sup class="footnote-reference"><a href="#fn94">94</a></sup></p>
+<p>Brahmas with right view subduing Brahmas with wrong view;<sup class="footnote-reference" id="fr-fn94-1"><a href="#fn-fn94">94</a></sup></p>
 </li>
 <li>
-<p>the rishi Rohitassa crossing the entire ocean in one stride;<sup class="footnote-reference"><a href="#fn95">95</a></sup></p>
+<p>the rishi Rohitassa crossing the entire ocean in one stride;<sup class="footnote-reference" id="fr-fn95-1"><a href="#fn-fn95">95</a></sup></p>
 </li>
 <li>
 <p>and Indra taking upon the likeness of a weaver in order to offer
-almsfood to Ven. Mahā Kassapa.<sup class="footnote-reference"><a href="#fn96">96</a></sup></p>
+almsfood to Ven. Mahā Kassapa.<sup class="footnote-reference" id="fr-fn96-1"><a href="#fn-fn96">96</a></sup></p>
 </li>
 </ul>
 <p>There are many such stories in the commentaries, mostly involving devas,
 yakkhas, <em>vidyādhara</em> (a form of celestial being), and ascetics. Indra
 plays an important role in these stories (especially in the Jātaka
 tales), occasionally disguising himself and often assisting or testing
-virtuous people.<sup class="footnote-reference"><a href="#fn97">97</a></sup></p>
+virtuous people.<sup class="footnote-reference" id="fr-fn97-1"><a href="#fn-fn97">97</a></sup></p>
 <p>Some of the canonical references to psychic powers are general, for
 example:</p>
 <ul>
 <li>
-<p>psychic powers are one cause for earthquakes;<sup class="footnote-reference"><a href="#fn98">98</a></sup></p>
+<p>psychic powers are one cause for earthquakes;<sup class="footnote-reference" id="fr-fn98-1"><a href="#fn-fn98">98</a></sup></p>
 </li>
 <li>
 <p>the use of psychic powers is one way to demonstrate the significance
-of mental volitional actions;<sup class="footnote-reference"><a href="#fn99">99</a></sup></p>
+of mental volitional actions;<sup class="footnote-reference" id="fr-fn99-1"><a href="#fn-fn99">99</a></sup></p>
 </li>
 <li>
 <p>a person with psychic powers can see a log of wood as being earth or
-water;<sup class="footnote-reference"><a href="#fn100">100</a></sup> and</p>
+water;<sup class="footnote-reference" id="fr-fn100-1"><a href="#fn-fn100">100</a></sup> and</p>
 </li>
 <li>
 <p>a person who is governed by public opinion hastens to practise the
 Dhamma, fearing that ascetics, brahmins, and devas with psychic
-powers may read his mind.<sup class="footnote-reference"><a href="#fn101">101</a></sup></p>
+powers may read his mind.<sup class="footnote-reference" id="fr-fn101-1"><a href="#fn-fn101">101</a></sup></p>
 </li>
 </ul>
 <h2 id="appendix-2-assistance-and-provocation-by-indra"><a class="header" href="#appendix-2-assistance-and-provocation-by-indra">Appendix 2: Assistance and Provocation by Indra</a></h2>
@@ -1717,23 +1698,23 @@ is still influenced by coercion through ascetic practices. {968}</p>
 <p>In the scriptural stories describing the way of coercion, Indra’s
 conduct is that of competition and a vying for power, for example his
 attempts to disturb the ascetic practices of people, which obviously
-does not accord with the Buddhist way of practice.<sup class="footnote-reference"><a href="#fn102">102</a></sup> There are,
+does not accord with the Buddhist way of practice.<sup class="footnote-reference" id="fr-fn102-1"><a href="#fn-fn102">102</a></sup> There are,
 however, many stories in which Indra’s conduct accords (to various
-degrees) with a Buddhist way of practice.<sup class="footnote-reference"><a href="#fn103">103</a></sup> Furthermore, as depicted
+degrees) with a Buddhist way of practice.<sup class="footnote-reference" id="fr-fn103-1"><a href="#fn-fn103">103</a></sup> Furthermore, as depicted
 in these Jātaka tales, Indra does not offer assistance easily. Most
 often he begins by testing people to see whether they are truly virtuous
 and upright.</p>
 <p>The Mahājanaka Jātaka in particular describes the Buddhist way of
 practice. This story recounts how, when a ship broke apart in the middle
 of the ocean, almost all the passengers cried out in fear and petitioned
-the gods for help.<sup class="footnote-reference"><a href="#fn104">104</a></sup> The Bodhisatta alone did not cry out or beg for
+the gods for help.<sup class="footnote-reference" id="fr-fn104-1"><a href="#fn-fn104">104</a></sup> The Bodhisatta alone did not cry out or beg for
 help from the devas. Instead, he used sound judgement and made maximum
 effort to escape the danger. In the end, Maṇimekhalā the guardian deva
 of the ocean offered assistance by her own initiative in keeping with
 the devas’ responsibility.</p>
 <p>Besides checking up on people himself, Indra also has an entourage of
 guardian spirits who help to inspect and report back on people’s
-behaviour.<sup class="footnote-reference"><a href="#fn105">105</a></sup></p>
+behaviour.<sup class="footnote-reference" id="fr-fn105-1"><a href="#fn-fn105">105</a></sup></p>
 <h2 id="appendix-3-asseverations-of-truth-a-viable-solution-for-people-dependent-on-supernatural-powers"><a class="header" href="#appendix-3-asseverations-of-truth-a-viable-solution-for-people-dependent-on-supernatural-powers">Appendix 3: Asseverations of Truth: a Viable Solution for People Dependent on Supernatural Powers</a></h2>
 <p>A practical solution for those at beginning stages of spiritual
 development – those who are still fascinated by or dependent on
@@ -1879,7 +1860,7 @@ principles.</p>
 not entreaty) of divine beings, but they should not bestow on these
 divine beings a power that is greater than the human potential inherent
 in every person. However elevated a divine being may be, it is the ideal
-human being – the Teacher<sup class="footnote-reference"><a href="#fn106">106</a></sup> of devas and human beings – who is
+human being – the Teacher<sup class="footnote-reference" id="fr-fn106-1"><a href="#fn-fn106">106</a></sup> of devas and human beings – who is
 supreme. If one feels uneasy with the thought that the divinity that one
 has previously worshipped would venerate a human being, one can look at
 the Buddha from a different perspective: as someone who has developed
@@ -1896,7 +1877,7 @@ followed the footprints and saw the Buddha sitting peacefully at the
 foot of a tree by the side of the road; he went up to him, and asked:</p>
 <p>’Shall your reverence be a deva?’ The Buddha replied:</p>
 <p>’No brahmin, I shall not be a deva.’</p>
-<p>’Then your reverence shall be a gandhabba?’<sup class="footnote-reference"><a href="#fn107">107</a></sup></p>
+<p>’Then your reverence shall be a gandhabba?’<sup class="footnote-reference" id="fr-fn107-1"><a href="#fn-fn107">107</a></sup></p>
 <p>’No, I shall not be a gandhabba.’</p>
 <p>’Then shall your reverence be a yakkha?’</p>
 <p>’No, brahmin, I shall not be a yakkha.’</p>
@@ -1912,7 +1893,7 @@ are no more subject to arise in the future. Just as, brahmin, a blue,
 red, or white lotus, though born and grown in the water, rises up and
 stands unsoiled by the water, so, brahmin, though born and grown in
 the world, I have transcended the world and dwell unsoiled by the
-world. Consider me, O brahmin, a Buddha.’<sup class="footnote-reference"><a href="#fn108">108</a></sup></p>
+world. Consider me, O brahmin, a Buddha.’<sup class="footnote-reference" id="fr-fn108-1"><a href="#fn-fn108">108</a></sup></p>
 <p><em>A. II. 37-8.</em></p>
 </blockquote>
 </div>
@@ -1945,24 +1926,24 @@ according to the fruits of kamma;</p>
 <p>to know the devas’ lifespan; and</p>
 </li>
 <li>
-<p>to know whether he had formerly dwelt among these devas.<sup class="footnote-reference"><a href="#fn109">109</a></sup></p>
+<p>to know whether he had formerly dwelt among these devas.<sup class="footnote-reference" id="fr-fn109-1"><a href="#fn-fn109">109</a></sup></p>
 </li>
 </ol>
 <p><em>Adhideva-ñāṇadassana</em> may also be translated as ’knowledge and vision
 of one who surpasses the devas’ or ’knowledge and vision leading one to
 surpass the devas’, because it leads a person to know the devas better
 than the devas know themselves (e.g. Brahma does not know his own age
-and mistakenly believes he is immortal).<sup class="footnote-reference"><a href="#fn110">110</a></sup> <em>Adhideva-ñāṇadassana</em> is
+and mistakenly believes he is immortal).<sup class="footnote-reference" id="fr-fn110-1"><a href="#fn-fn110">110</a></sup> <em>Adhideva-ñāṇadassana</em> is
 a facet of the divine eye and is a necessary characteristic of the
 perfectly enlightened Buddha, along with the other ’powers and knowledge
 of the Tathāgata’ (<em>tathāgata-balañāṇa</em>), but it is not necessary for
-the attainment of arahantship.<sup class="footnote-reference"><a href="#fn111">111</a></sup> From the ancient times, even before
+the attainment of arahantship.<sup class="footnote-reference" id="fr-fn111-1"><a href="#fn-fn111">111</a></sup> From the ancient times, even before
 the time of the Buddha, people have had a deep-seated respect for divine
 beings. To show the distinction of human beings, it was therefore
 necessary to show how humans can surpass the devas.</p>
 <h2 id="appendix-6-offerings-to-devas"><a class="header" href="#appendix-6-offerings-to-devas">Appendix 6: Offerings to Devas</a></h2>
 <p>Offerings to devas (<em>devatā-bali</em>) are one of five kinds of righteous
-offerings that the Buddha recommended for laypeople.<sup class="footnote-reference"><a href="#fn112">112</a></sup> The other
+offerings that the Buddha recommended for laypeople.<sup class="footnote-reference" id="fr-fn112-1"><a href="#fn-fn112">112</a></sup> The other
 four are: aid for relatives (<em>ñāti-bali</em>), welcome gifts for guests
 (<em>atithi-bali</em>), the making of merit in honour of the departed
 (<em>pubbapeta-bali</em>), and support of the Crown, e.g. the payment of taxes
@@ -1978,69 +1959,70 @@ beings, and even to birds and other animals. The offerings consisted of
 rice, buttermilk, flowers, scented oil, incense, sandalwood, betel,
 spices, etc. There is a passage in the Ratana Sutta urging the devas to
 cultivate lovingkindness towards and protect those people who make
-offerings.<sup class="footnote-reference"><a href="#fn113">113</a></sup> The commentaries explain that the sharing of merit
+offerings.<sup class="footnote-reference" id="fr-fn113-1"><a href="#fn-fn113">113</a></sup> The commentaries explain that the sharing of merit
 (<em>patti-dāna</em>) – to have other beings take part in the act of goodness
 – is one (Buddhist) definition for <em>bali</em>, and the fact that the Canon
 advocates this form of offering demonstrates how people assist the
 devas. The devas who receive these offerings should have gratitude and
-protect people in return.<sup class="footnote-reference"><a href="#fn114">114</a></sup></p>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
-<p>See Appendix 1: Supernatural Phenomena Recorded in the Scriptures.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
-<p><em>Na sodhenti maccaṁ avitiṇṇakaṅkhaṁ</em>; Sn. 45.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+protect people in return.<sup class="footnote-reference" id="fr-fn114-1"><a href="#fn-fn114">114</a></sup></p>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
+<p>See Appendix 1: Supernatural Phenomena Recorded in the Scriptures. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
+<p><em>Na sodhenti maccaṁ avitiṇṇakaṅkhaṁ</em>; Sn. 45. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>This principle is included in the booklet titled ’Criteria for
 Analyzing the Meaning and Value of Buddha-Dhamma’, which I hope to
-include as a separate chapter in future editions of <em>Buddhadhamma</em>.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+include as a separate chapter in future editions of <em>Buddhadhamma</em>. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
 <p>Compare with the Buddha’s teachings at M. I. 428-32 on those
-things to be explained and those things to be left unexplained.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+things to be explained and those things to be left unexplained. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
 <p>Also translated as ’supernormal power’ or ’supreme knowledge’. In
 Pali, psychic powers (<em>iddhi</em>) may be referred to as a ’wonder of
 psychic power’ (<em>iddhi-pāṭihāriya</em>), ’form of psychic power’
-(<em>iddhi-vidhi</em>), or ’manner of psychic power’ (<em>iddhi-vidhā</em>).</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+(<em>iddhi-vidhi</em>), or ’manner of psychic power’ (<em>iddhi-vidhā</em>). <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
 <p>Trans.: there are five forms of mundane supreme knowledge: (1)
 magical powers, including the ability to become invisible, to
 project mind-made images of oneself, to pass through solid things,
 to walk on water, to fly through the air, etc.; (2) divine ear; (3)
-telepathy; (4) recollection of past lives; and (5) clairvoyance.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
+telepathy; (4) recollection of past lives; and (5) clairvoyance. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
 <p>Detailed explanations of the forms of higher knowledge
 (<em>abhiññā</em>), along with scriptural references, are presented in
-chapter 7 on awakened beings.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
-<p>D. I. 212-15; D. III. 220; A. I. 170; Ps. II. 227-8.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
-<p>Kevaddha Sutta: D. I. 213.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
-<p>Ps. II. 227-8.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
+chapter 7 on awakened beings. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
+<p>D. I. 212-15; D. III. 220; A. I. 170; Ps. II. 227-8. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
+<p>Kevaddha Sutta: D. I. 213. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
+<p>Ps. II. 227-8. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
 <p>Trans.: he had the following doubt: Where are the four great
 elements – earth, water, fire and air – extinguished without
-remainder? For more on this story, see chapter 6 on Nibbāna.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
-<p>See the Kevaddha Sutta: D. I. 211-23.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
-<p>See: A. I. 170-72.</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
-<p>D. III. 112-13; explained at Ps. II. 212.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
+remainder? For more on this story, see chapter 6 on Nibbāna. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
+<p>See the Kevaddha Sutta: D. I. 211-23. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
+<p>See: A. I. 170-72. <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
+<p>D. III. 112-13; explained at Ps. II. 212. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
 <p>For the objective of this form of practice, see: A. III. 169.
 This kind of psychic power is a form of ’deliverance of mind by way
 of lovingkindness’ (<em>mettā-cetovimutti</em>), by which the person has
@@ -2049,9 +2031,9 @@ arise by developing the seven factors of enlightenment (<em>bojjhaṅga</em>)
 accompanied by lovingkindness (S. V. 119), by developing the four
 factors of mindfulness (S. V. 294-6), or by developing concentration
 (S. V. 317-8). A person who practises in this way is sometimes
-called a ’noble one with developed faculties’ (M. III. 302).</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
+called a ’noble one with developed faculties’ (M. III. 302). <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
 <p>Vin. II. 112. The commentaries (see: VinA. VI. 1203) claim that
 the Buddha only forbade <em>vikubbanā-iddhi</em> (’powers of
 transformation’, e.g. transfiguring oneself into different forms,
@@ -2059,28 +2041,28 @@ creating mind-created objects for others to see, speaking while
 remaining invisible, or revealing only half of one’s body); he did
 not forbid <em>adhiṭṭhāna-iddhi</em> (’governing powers’, e.g. revealing
 oneself as many, walking on water, or diving into the earth); this
-interpretation, however, seems to not be favoured.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
-<p>A. I. 292; A. V. 326-7.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+interpretation, however, seems to not be favoured. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
+<p>A. I. 292; A. V. 326-7. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
 <p><em>Iddhi-mada</em>. This intoxication falls under the same category as
 being intoxicated by knowledge, moral conduct, jhāna, etc.; see:
-Vbh. 345-6.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
-<p>Vism. 89-90, 97.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
+Vbh. 345-6. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
+<p>Vism. 89-90, 97. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
 <p>In a similar context, the Buddha was highly critical of people
 who use their moral precepts and religious practices to influence
-people while seeking fame, praise, or material gain.</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
-<p>Trans.: the Buddha.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
+people while seeking fame, praise, or material gain. <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
+<p>Trans.: the Buddha. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
 <p>Note that the principle of self-reliance needs to be balanced by
 the principle of respect or veneration for the Dhamma. Note also
 that a truly liberated person heeds the teachings and is highly
@@ -2088,128 +2070,128 @@ disciplined. Heeding the teachings and the principle of faith are
 not identical. Heeding the teachings or a disciplined compliance to
 the teachings can stem from faith or from wisdom; arahants practise
 in accord with the teachings and keep the standards of discipline
-out of wisdom.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
+out of wisdom. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
 <p>For references to the display of psychic powers in the
-scriptures, see Appendix 1.</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
+scriptures, see Appendix 1. <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
 <p><em>Āmisa-iddhi</em> (material success or prosperity; materiality as a
 creative force) and <em>dhamma-iddhi</em> (success or prosperity by way of
 the Dhamma; spiritual prosperity; the Dhamma as a creative force;
 power of righteousness); see: A. I. 93-4. Having a beautiful
 physical appearance, long life, good health, and being attractive
 are also called forms of ’achievement’ (<em>iddhi</em>); see: D. II. 177;
-M. III. 176.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
-<p>D. I. 215-6; S. I. 61-2; A. II. 47-8.</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
+M. III. 176. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
+<p>D. I. 215-6; S. I. 61-2; A. II. 47-8. <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
 <p>Vin. II. 184-5; if people have extremely bad thoughts, their
 psychic powers may degenerate, because these powers rely on jhāna to
 act as a foundation, and to enter jhāna a person’s mind must be
-pure, bright, and free from the hindrances (<em>nīvaraṇa</em>).</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
-<p>A. IV. 396-7.</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
-<p>It. 76-8.</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
-<p>Ibid.</p>
-</div>
-<div class="footnote-definition" id="fn30"><sup class="footnote-definition-label">30</sup>
-<p>A. IV. 225-6.</p>
-</div>
-<div class="footnote-definition" id="fn31"><sup class="footnote-definition-label">31</sup>
-<p>Cf.: AA. IV. 187.</p>
-</div>
-<div class="footnote-definition" id="fn32"><sup class="footnote-definition-label">32</sup>
+pure, bright, and free from the hindrances (<em>nīvaraṇa</em>). <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
+<p>A. IV. 396-7. <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
+<p>It. 76-8. <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
+<p>Ibid. <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn30"><sup class="footnote-definition-label">30</sup>
+<p>A. IV. 225-6. <a href="#fr-fn30-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn31"><sup class="footnote-definition-label">31</sup>
+<p>Cf.: AA. IV. 187. <a href="#fr-fn31-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn32"><sup class="footnote-definition-label">32</sup>
 <p>The four ’states of perdition’ (<em>apāya-bhūmi</em>): hell (<em>niraya</em>),
 the animal realm (<em>tiracchānayoni</em>), the ghost realm
-(<em>pittivisaya</em>), and the realm of demons (<em>asurakāya</em>).</p>
-</div>
-<div class="footnote-definition" id="fn33"><sup class="footnote-definition-label">33</sup>
+(<em>pittivisaya</em>), and the realm of demons (<em>asurakāya</em>). <a href="#fr-fn32-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn33"><sup class="footnote-definition-label">33</sup>
 <p>On the subject of higher knowledge and vision of the devas
-(<em>adhidevañāṇadassana</em>) see Appendix 5.</p>
-</div>
-<div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
-<p>S. I. 146-7.</p>
-</div>
-<div class="footnote-definition" id="fn35"><sup class="footnote-definition-label">35</sup>
-<p>M. I. 253-4.</p>
-</div>
-<div class="footnote-definition" id="fn36"><sup class="footnote-definition-label">36</sup>
-<p>S. I. 219.</p>
-</div>
-<div class="footnote-definition" id="fn37"><sup class="footnote-definition-label">37</sup>
+(<em>adhidevañāṇadassana</em>) see Appendix 5. <a href="#fr-fn33-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn34"><sup class="footnote-definition-label">34</sup>
+<p>S. I. 146-7. <a href="#fr-fn34-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn35"><sup class="footnote-definition-label">35</sup>
+<p>M. I. 253-4. <a href="#fr-fn35-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn36"><sup class="footnote-definition-label">36</sup>
+<p>S. I. 219. <a href="#fr-fn36-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn37"><sup class="footnote-definition-label">37</sup>
 <p>For devas, the world of human beings is dirty and smells
-repulsive; see: D. II. 325-6; KhA. 117; SnA. I. 180.</p>
-</div>
-<div class="footnote-definition" id="fn38"><sup class="footnote-definition-label">38</sup>
-<p>DhA. III. 10; JA. I. 227.</p>
-</div>
-<div class="footnote-definition" id="fn39"><sup class="footnote-definition-label">39</sup>
-<p>See the story of Ven. Koṇḍadhāna at AA. I. 260; DhA. III. 52.</p>
-</div>
-<div class="footnote-definition" id="fn40"><sup class="footnote-definition-label">40</sup>
-<p>E.g.: KhA. 232; SnA. I. 193; DhA. I. 313.</p>
-</div>
-<div class="footnote-definition" id="fn41"><sup class="footnote-definition-label">41</sup>
-<p>E.g.: the story of Pabbhāravāsī-Tissa Thera: DhA. IV. 170.</p>
-</div>
-<div class="footnote-definition" id="fn42"><sup class="footnote-definition-label">42</sup>
+repulsive; see: D. II. 325-6; KhA. 117; SnA. I. 180. <a href="#fr-fn37-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn38"><sup class="footnote-definition-label">38</sup>
+<p>DhA. III. 10; JA. I. 227. <a href="#fr-fn38-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn39"><sup class="footnote-definition-label">39</sup>
+<p>See the story of Ven. Koṇḍadhāna at AA. I. 260; DhA. III. 52. <a href="#fr-fn39-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn40"><sup class="footnote-definition-label">40</sup>
+<p>E.g.: KhA. 232; SnA. I. 193; DhA. I. 313. <a href="#fr-fn40-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn41"><sup class="footnote-definition-label">41</sup>
+<p>E.g.: the story of Pabbhāravāsī-Tissa Thera: DhA. IV. 170. <a href="#fr-fn41-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn42"><sup class="footnote-definition-label">42</sup>
 <p>Here, the discussion of Māra conforms to the scriptural stories
 of Māra as a being, not to the figurative or metaphorical meanings
-of this word.</p>
-</div>
-<div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
+of this word. <a href="#fr-fn42-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn43"><sup class="footnote-definition-label">43</sup>
 <p>Māra’s domain or empire = <em>māra-dheyya</em>; see: MA. I. 34; SnA. I.
-44.</p>
-</div>
-<div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
-<p>See: JA. I. 71; [BvA. 521].</p>
-</div>
-<div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
-<p>See: M. I. 330-31.</p>
-</div>
-<div class="footnote-definition" id="fn46"><sup class="footnote-definition-label">46</sup>
-<p>A. II. 17.</p>
-</div>
-<div class="footnote-definition" id="fn47"><sup class="footnote-definition-label">47</sup>
-<p>See: It. 75; Thag. verse 628; Thig. verse 365.</p>
-</div>
-<div class="footnote-definition" id="fn48"><sup class="footnote-definition-label">48</sup>
-<p>Trans: Pali: Inda.</p>
-</div>
-<div class="footnote-definition" id="fn49"><sup class="footnote-definition-label">49</sup>
-<p>On the assistance and provocation by Indra, see Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn50"><sup class="footnote-definition-label">50</sup>
+44. <a href="#fr-fn43-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn44"><sup class="footnote-definition-label">44</sup>
+<p>See: JA. I. 71; [BvA. 521]. <a href="#fr-fn44-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn45"><sup class="footnote-definition-label">45</sup>
+<p>See: M. I. 330-31. <a href="#fr-fn45-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn46"><sup class="footnote-definition-label">46</sup>
+<p>A. II. 17. <a href="#fr-fn46-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn47"><sup class="footnote-definition-label">47</sup>
+<p>See: It. 75; Thag. verse 628; Thig. verse 365. <a href="#fr-fn47-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn48"><sup class="footnote-definition-label">48</sup>
+<p>Trans: Pali: Inda. <a href="#fr-fn48-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn49"><sup class="footnote-definition-label">49</sup>
+<p>On the assistance and provocation by Indra, see Appendix 2. <a href="#fr-fn49-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn50"><sup class="footnote-definition-label">50</sup>
 <p>The original saying is translated as: ’The effort to do good is
 the virtue of human beings; the assistance of good people is the
 virtue of heaven’, but using the term ’responsibility’ emphasizes
-practical application.</p>
-</div>
-<div class="footnote-definition" id="fn51"><sup class="footnote-definition-label">51</sup>
+practical application. <a href="#fr-fn50-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn51"><sup class="footnote-definition-label">51</sup>
 <p>The phrase ’undertaking religious practices in order to become a
 god’ is based on the interpretation at SnA. I. 291; the Pali term
 used here is <em>amarā</em>, meaning: ’immortality’, i.e. the state of a
-divinity.</p>
-</div>
-<div class="footnote-definition" id="fn52"><sup class="footnote-definition-label">52</sup>
+divinity. <a href="#fr-fn51-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn52"><sup class="footnote-definition-label">52</sup>
 <p>The term ’sacred object’ (Thai: <em>sing sak-sit</em> –
 สิ่งศักดิ์สิทธิ์) is ambiguous, with an overly wide breadth of
 meaning. Of the things that fall under this category, those that are
 permissible by the Buddha are probably the things called <em>maṅgala</em>
 (’auspicious’ or ’blessed’ objects or ceremonies). The use of this
 term <em>maṅgala</em> provides a well-defined boundary and corresponds to
-the practice of Dhamma.</p>
-</div>
-<div class="footnote-definition" id="fn53"><sup class="footnote-definition-label">53</sup>
+the practice of Dhamma. <a href="#fr-fn52-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn53"><sup class="footnote-definition-label">53</sup>
 <p>Some scholars claim that this acquiescence or permissive attitude
 is both a characteristic and a weak point of Buddhism. It is true
 that acquiescence without setting down firm principles and
@@ -2219,12 +2201,12 @@ phenomena. The problem lies with whether we understand the Buddhist
 standpoint correctly. Granted, even with well-defined principles,
 the act of acquiescence has some harmful consequences. In any case,
 the benefits from the Buddhist standpoint on this subject of the
-supernatural have been explained earlier in this chapter.</p>
-</div>
-<div class="footnote-definition" id="fn54"><sup class="footnote-definition-label">54</sup>
-<p>E.g.: A. II. 68; A. III. 45-6.</p>
-</div>
-<div class="footnote-definition" id="fn55"><sup class="footnote-definition-label">55</sup>
+supernatural have been explained earlier in this chapter. <a href="#fr-fn53-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn54"><sup class="footnote-definition-label">54</sup>
+<p>E.g.: A. II. 68; A. III. 45-6. <a href="#fr-fn54-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn55"><sup class="footnote-definition-label">55</sup>
 <p>There are two important points concerning the making of offerings
 (<em>bali</em>) to devas as referred to in these scriptural passages: (1)
 the Buddha gave these teachings to brahmins, whose custom it was to
@@ -2233,12 +2215,12 @@ belief at that time that whenever people built an important house or
 building, devas would on their own accord come and dwell in these
 buildings. People did not build a special place (e.g. a spirit
 house) for these devas and they did not perform a ritual of inviting
-the devas.</p>
-</div>
-<div class="footnote-definition" id="fn56"><sup class="footnote-definition-label">56</sup>
-<p>See the Maṅgala Sutta: Kh. 2; Sn. 46.</p>
-</div>
-<div class="footnote-definition" id="fn57"><sup class="footnote-definition-label">57</sup>
+the devas. <a href="#fr-fn55-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn56"><sup class="footnote-definition-label">56</sup>
+<p>See the Maṅgala Sutta: Kh. 2; Sn. 46. <a href="#fr-fn56-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn57"><sup class="footnote-definition-label">57</sup>
 <p>One problem in the present day is that monks who are skilled at
 teaching do not show much consideration for those monks who still
 rely on special enticements when teaching the laypeople. And these
@@ -2247,195 +2229,195 @@ freedom from defilement, being caught up in the domain of
 supernatural phenomena (not to mention those monks who are caught up
 in seeking material gain). As a result there is no point of contact
 between these different groups of monks, causing confusion,
-disharmony and even contention in the lay community.</p>
-</div>
-<div class="footnote-definition" id="fn58"><sup class="footnote-definition-label">58</sup>
-<p><em>Bali</em> includes the sharing of merit with devas.</p>
-</div>
-<div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
-<p>For more on offerings to devas (<em>devatā-bali</em>) see Appendix 6.</p>
-</div>
-<div class="footnote-definition" id="fn60"><sup class="footnote-definition-label">60</sup>
+disharmony and even contention in the lay community. <a href="#fr-fn57-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn58"><sup class="footnote-definition-label">58</sup>
+<p><em>Bali</em> includes the sharing of merit with devas. <a href="#fr-fn58-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn59"><sup class="footnote-definition-label">59</sup>
+<p>For more on offerings to devas (<em>devatā-bali</em>) see Appendix 6. <a href="#fr-fn59-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn60"><sup class="footnote-definition-label">60</sup>
 <p>Trans.: for ’Buddhist practice’ here the author uses the term
-<em>ariya-dhamma</em>: ’the Dhamma of the noble ones’.</p>
-</div>
-<div class="footnote-definition" id="fn61"><sup class="footnote-definition-label">61</sup>
+<em>ariya-dhamma</em>: ’the Dhamma of the noble ones’. <a href="#fr-fn60-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn61"><sup class="footnote-definition-label">61</sup>
 <p>On an asseveration of truth (<em>sacca-kiriyā</em>) as a positive
 solution for those who still wish for assistance from external
-forces, see Appendix 3.</p>
-</div>
-<div class="footnote-definition" id="fn62"><sup class="footnote-definition-label">62</sup>
+forces, see Appendix 3. <a href="#fr-fn61-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn62"><sup class="footnote-definition-label">62</sup>
 <p>There are many scriptural terms referring to training and
 discipline, e.g. <em>dama</em>, <em>bhāvanā</em>, <em>vinaya</em>, <em>vinīta</em>, and
 <em>sikkhā</em>, but unfortunately in more recent times the meanings of
 some of these words (in the Thai language) have deviated from their
-original connotations.</p>
-</div>
-<div class="footnote-definition" id="fn63"><sup class="footnote-definition-label">63</sup>
+original connotations. <a href="#fr-fn62-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn63"><sup class="footnote-definition-label">63</sup>
 <p>Vin. I. 24-33. <em>Damana</em> (’subduing’, ’taming’) is derived from
 the verb <em>dameti</em>, meaning to ’train’: to dispel pride and to lead a
 person to a correct way of practice; in this context it does not
-mean to punish or chastise.</p>
-</div>
-<div class="footnote-definition" id="fn64"><sup class="footnote-definition-label">64</sup>
-<p>M. I. 326-30; S. I. 142.</p>
-</div>
-<div class="footnote-definition" id="fn65"><sup class="footnote-definition-label">65</sup>
-<p>S. I. 144.</p>
-</div>
-<div class="footnote-definition" id="fn66"><sup class="footnote-definition-label">66</sup>
-<p>D. III. 6-26.</p>
-</div>
-<div class="footnote-definition" id="fn67"><sup class="footnote-definition-label">67</sup>
-<p>M. II. 99.</p>
-</div>
-<div class="footnote-definition" id="fn68"><sup class="footnote-definition-label">68</sup>
-<p>S. III. 92-3.</p>
-</div>
-<div class="footnote-definition" id="fn69"><sup class="footnote-definition-label">69</sup>
-<p>D. I. 105-106, 109; M. II. 135, 147; Sn. 108.</p>
-</div>
-<div class="footnote-definition" id="fn70"><sup class="footnote-definition-label">70</sup>
-<p>Vin. II. 195. This is an indirect display of psychic powers.</p>
-</div>
-<div class="footnote-definition" id="fn71"><sup class="footnote-definition-label">71</sup>
+mean to punish or chastise. <a href="#fr-fn63-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn64"><sup class="footnote-definition-label">64</sup>
+<p>M. I. 326-30; S. I. 142. <a href="#fr-fn64-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn65"><sup class="footnote-definition-label">65</sup>
+<p>S. I. 144. <a href="#fr-fn65-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn66"><sup class="footnote-definition-label">66</sup>
+<p>D. III. 6-26. <a href="#fr-fn66-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn67"><sup class="footnote-definition-label">67</sup>
+<p>M. II. 99. <a href="#fr-fn67-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn68"><sup class="footnote-definition-label">68</sup>
+<p>S. III. 92-3. <a href="#fr-fn68-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn69"><sup class="footnote-definition-label">69</sup>
+<p>D. I. 105-106, 109; M. II. 135, 147; Sn. 108. <a href="#fr-fn69-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn70"><sup class="footnote-definition-label">70</sup>
+<p>Vin. II. 195. This is an indirect display of psychic powers. <a href="#fr-fn70-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn71"><sup class="footnote-definition-label">71</sup>
 <p>Trans.: <em>yakkha</em>: a class of non-human beings. The term can be
-translated as ’spirit’, ’demon’, ’deity’, ’ogre’, etc.</p>
-</div>
-<div class="footnote-definition" id="fn72"><sup class="footnote-definition-label">72</sup>
+translated as ’spirit’, ’demon’, ’deity’, ’ogre’, etc. <a href="#fr-fn71-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn72"><sup class="footnote-definition-label">72</sup>
 <p>S. I. 213-14; Sn. 31-32. This is an indirect display of psychic
-powers.</p>
-</div>
-<div class="footnote-definition" id="fn73"><sup class="footnote-definition-label">73</sup>
+powers. <a href="#fr-fn72-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn73"><sup class="footnote-definition-label">73</sup>
 <p>DA. I. 57; DhA. III. 199; JA. IV. 263. These events refer to
-passages at: Ps. I. 2-3, 125; Vin. II. 111.</p>
-</div>
-<div class="footnote-definition" id="fn74"><sup class="footnote-definition-label">74</sup>
-<p>JA. V. 415.</p>
-</div>
-<div class="footnote-definition" id="fn75"><sup class="footnote-definition-label">75</sup>
+passages at: Ps. I. 2-3, 125; Vin. II. 111. <a href="#fr-fn73-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn74"><sup class="footnote-definition-label">74</sup>
+<p>JA. V. 415. <a href="#fr-fn74-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn75"><sup class="footnote-definition-label">75</sup>
 <p>Vin. II. 111. This is the occasion prompting the Buddha to lay
 down the precept forbidding monks from displaying psychic powers to
-laypeople.</p>
-</div>
-<div class="footnote-definition" id="fn76"><sup class="footnote-definition-label">76</sup>
-<p>M. I. 333.</p>
-</div>
-<div class="footnote-definition" id="fn77"><sup class="footnote-definition-label">77</sup>
-<p>Vin. III. 67.</p>
-</div>
-<div class="footnote-definition" id="fn78"><sup class="footnote-definition-label">78</sup>
-<p>Vin. III. 249-50.</p>
-</div>
-<div class="footnote-definition" id="fn79"><sup class="footnote-definition-label">79</sup>
-<p>Vin. II. 75-6; Vin. III. 158-9.</p>
-</div>
-<div class="footnote-definition" id="fn80"><sup class="footnote-definition-label">80</sup>
+laypeople. <a href="#fr-fn75-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn76"><sup class="footnote-definition-label">76</sup>
+<p>M. I. 333. <a href="#fr-fn76-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn77"><sup class="footnote-definition-label">77</sup>
+<p>Vin. III. 67. <a href="#fr-fn77-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn78"><sup class="footnote-definition-label">78</sup>
+<p>Vin. III. 249-50. <a href="#fr-fn78-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn79"><sup class="footnote-definition-label">79</sup>
+<p>Vin. II. 75-6; Vin. III. 158-9. <a href="#fr-fn79-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn80"><sup class="footnote-definition-label">80</sup>
 <p>Vin. I. 180. His powers were so impressive that he had to perform
 them in front of the Buddha while declaring the Buddha as his
 teacher, so that the laity were prepared to listen to the Buddha’s
-instructions.</p>
-</div>
-<div class="footnote-definition" id="fn81"><sup class="footnote-definition-label">81</sup>
+instructions. <a href="#fr-fn80-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn81"><sup class="footnote-definition-label">81</sup>
 <p>Vin. IV. 109. This story is connected to the precept forbidding
-monks from drinking alcohol.</p>
-</div>
-<div class="footnote-definition" id="fn82"><sup class="footnote-definition-label">82</sup>
-<p>Vin. II. 184-5.</p>
-</div>
-<div class="footnote-definition" id="fn83"><sup class="footnote-definition-label">83</sup>
-<p>Vin. II. 200.</p>
-</div>
-<div class="footnote-definition" id="fn84"><sup class="footnote-definition-label">84</sup>
+monks from drinking alcohol. <a href="#fr-fn81-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn82"><sup class="footnote-definition-label">82</sup>
+<p>Vin. II. 184-5. <a href="#fr-fn82-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn83"><sup class="footnote-definition-label">83</sup>
+<p>Vin. II. 200. <a href="#fr-fn83-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn84"><sup class="footnote-definition-label">84</sup>
 <p>S. IV. 289-90. Upon request, Ven. Mahaka then created a fire for
-the layman Citta to see.</p>
-</div>
-<div class="footnote-definition" id="fn85"><sup class="footnote-definition-label">85</sup>
-<p>M. I. 253-4.</p>
-</div>
-<div class="footnote-definition" id="fn86"><sup class="footnote-definition-label">86</sup>
-<p>S. V. 270.</p>
-</div>
-<div class="footnote-definition" id="fn87"><sup class="footnote-definition-label">87</sup>
-<p>S. I. 155-6; A. I. 226-7; Ps. II. 210.</p>
-</div>
-<div class="footnote-definition" id="fn88"><sup class="footnote-definition-label">88</sup>
+the layman Citta to see. <a href="#fr-fn84-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn85"><sup class="footnote-definition-label">85</sup>
+<p>M. I. 253-4. <a href="#fr-fn85-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn86"><sup class="footnote-definition-label">86</sup>
+<p>S. V. 270. <a href="#fr-fn86-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn87"><sup class="footnote-definition-label">87</sup>
+<p>S. I. 155-6; A. I. 226-7; Ps. II. 210. <a href="#fr-fn87-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn88"><sup class="footnote-definition-label">88</sup>
 <p>AA. I. 209, 216; DhA. I. 239; Vism. 387 (referring to Ps. II.
-207).</p>
-</div>
-<div class="footnote-definition" id="fn89"><sup class="footnote-definition-label">89</sup>
-<p>JA. V. 126; Vism. 398-401.</p>
-</div>
-<div class="footnote-definition" id="fn90"><sup class="footnote-definition-label">90</sup>
+207). <a href="#fr-fn88-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn89"><sup class="footnote-definition-label">89</sup>
+<p>JA. V. 126; Vism. 398-401. <a href="#fr-fn89-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn90"><sup class="footnote-definition-label">90</sup>
 <p>MA. V. 84-92; an addendum to M. III. 270. There is a story of the
 Buddha travelling to the Sunāparanta country, the birthplace of Ven.
 Puṇṇa, where he left two footprints. [The Burmese identify this
-country with an area near Pagan.]</p>
-</div>
-<div class="footnote-definition" id="fn91"><sup class="footnote-definition-label">91</sup>
+country with an area near Pagan.] <a href="#fr-fn90-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn91"><sup class="footnote-definition-label">91</sup>
 <p>DhA. II. 240. The bandits were converted to Buddhism and were
-ordained as monks.</p>
-</div>
-<div class="footnote-definition" id="fn92"><sup class="footnote-definition-label">92</sup>
-<p>DhA. IV. 120.</p>
-</div>
-<div class="footnote-definition" id="fn93"><sup class="footnote-definition-label">93</sup>
-<p>DhA. IV. 194.</p>
-</div>
-<div class="footnote-definition" id="fn94"><sup class="footnote-definition-label">94</sup>
-<p>S. I. 146.</p>
-</div>
-<div class="footnote-definition" id="fn95"><sup class="footnote-definition-label">95</sup>
+ordained as monks. <a href="#fr-fn91-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn92"><sup class="footnote-definition-label">92</sup>
+<p>DhA. IV. 120. <a href="#fr-fn92-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn93"><sup class="footnote-definition-label">93</sup>
+<p>DhA. IV. 194. <a href="#fr-fn93-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn94"><sup class="footnote-definition-label">94</sup>
+<p>S. I. 146. <a href="#fr-fn94-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn95"><sup class="footnote-definition-label">95</sup>
 <p>S. I. 61-62; A. II. 47. At such speed, he travelled for one
-hundred years and died before reaching the world’s end.</p>
-</div>
-<div class="footnote-definition" id="fn96"><sup class="footnote-definition-label">96</sup>
-<p>Ud. 29-30.</p>
-</div>
-<div class="footnote-definition" id="fn97"><sup class="footnote-definition-label">97</sup>
+hundred years and died before reaching the world’s end. <a href="#fr-fn95-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn96"><sup class="footnote-definition-label">96</sup>
+<p>Ud. 29-30. <a href="#fr-fn96-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn97"><sup class="footnote-definition-label">97</sup>
 <p>DhA. III. 178; JA. IV. 186; ItA. I. 85. On one occasion Indra
 transformed himself into a mouse and bit through the rope that
-Ciñcā-māṇavikā was using to simulate pregnancy.</p>
-</div>
-<div class="footnote-definition" id="fn98"><sup class="footnote-definition-label">98</sup>
-<p>D. II. 108.</p>
-</div>
-<div class="footnote-definition" id="fn99"><sup class="footnote-definition-label">99</sup>
-<p>M. I. 377-8.</p>
-</div>
-<div class="footnote-definition" id="fn100"><sup class="footnote-definition-label">100</sup>
-<p>A. III. 340-41.</p>
-</div>
-<div class="footnote-definition" id="fn101"><sup class="footnote-definition-label">101</sup>
-<p>A. I. 148-9.</p>
-</div>
-<div class="footnote-definition" id="fn102"><sup class="footnote-definition-label">102</sup>
+Ciñcā-māṇavikā was using to simulate pregnancy. <a href="#fr-fn97-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn98"><sup class="footnote-definition-label">98</sup>
+<p>D. II. 108. <a href="#fr-fn98-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn99"><sup class="footnote-definition-label">99</sup>
+<p>M. I. 377-8. <a href="#fr-fn99-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn100"><sup class="footnote-definition-label">100</sup>
+<p>A. III. 340-41. <a href="#fr-fn100-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn101"><sup class="footnote-definition-label">101</sup>
+<p>A. I. 148-9. <a href="#fr-fn101-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn102"><sup class="footnote-definition-label">102</sup>
 <p>E.g.: Lomasakassapa Jātaka: JA. III. 514; Alambusā Jātaka:
-JA. V. 152; Naḷinikā Jātaka: JA. V. 193.</p>
-</div>
-<div class="footnote-definition" id="fn103"><sup class="footnote-definition-label">103</sup>
+JA. V. 152; Naḷinikā Jātaka: JA. V. 193. <a href="#fr-fn102-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn103"><sup class="footnote-definition-label">103</sup>
 <p>E.g.: Mahāsuvarāja Jātaka: JA. III. 490; Kaṇha Jātaka: JA. IV.
 7; Akitti Jātaka: JA. IV. 236; Suruci Jātaka: JA. IV. 318; Sīvirāja
 Jātaka: JA. IV. 401; Sambulā Jātaka: JA. V. 88; Kusa Jātaka: JA. V.
 278; Temiya Jātaka: JA. VI. 1; Vessantara Jātaka: JA. VI. 568; the
 story of Ven. Cakkhupāla: DhA. I. 17; the story of a novice:
-DhA. IV. 176.</p>
-</div>
-<div class="footnote-definition" id="fn104"><sup class="footnote-definition-label">104</sup>
+DhA. IV. 176. <a href="#fr-fn103-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn104"><sup class="footnote-definition-label">104</sup>
 <p>JA. VI. 34. This story depicts one of the final ten lifetimes of
-the Bodhisatta.</p>
-</div>
-<div class="footnote-definition" id="fn105"><sup class="footnote-definition-label">105</sup>
-<p>A. I. 142-3; AA. II. 232.</p>
-</div>
-<div class="footnote-definition" id="fn106"><sup class="footnote-definition-label">106</sup>
-<p>Trans.: the Buddha.</p>
-</div>
-<div class="footnote-definition" id="fn107"><sup class="footnote-definition-label">107</sup>
+the Bodhisatta. <a href="#fr-fn104-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn105"><sup class="footnote-definition-label">105</sup>
+<p>A. I. 142-3; AA. II. 232. <a href="#fr-fn105-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn106"><sup class="footnote-definition-label">106</sup>
+<p>Trans.: the Buddha. <a href="#fr-fn106-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn107"><sup class="footnote-definition-label">107</sup>
 <p>Trans.: <em>gandhabba</em>: a class of demi-gods belonging to the
-heaven of the Four Great Kings, described as celestial musicians.</p>
-</div>
-<div class="footnote-definition" id="fn108"><sup class="footnote-definition-label">108</sup>
+heaven of the Four Great Kings, described as celestial musicians. <a href="#fr-fn107-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn108"><sup class="footnote-definition-label">108</sup>
 <p>Trans.: on the play on words, Bhikkhu Bodhi has this to say:
 ’The brahmin’s question uses the future tense <em>bhavissati</em>, but it
 is difficult to tell whether he actually intended the question to
@@ -2444,25 +2426,26 @@ polite mannerism. Possibly there is a word play going on, the
 brahmin using the future in the polite sense, the Buddha
 deliberately speaking as if the future was literally intended.’
 <em>Numerical Discourses of the Buddha</em>, © Buddhist Publication
-Society, p. 291.</p>
-</div>
-<div class="footnote-definition" id="fn109"><sup class="footnote-definition-label">109</sup>
-<p>A. IV. 304-305.</p>
-</div>
-<div class="footnote-definition" id="fn110"><sup class="footnote-definition-label">110</sup>
-<p>Cf.: Nd. II. 55; Nd2A. 94; SnA. II. 607.</p>
-</div>
-<div class="footnote-definition" id="fn111"><sup class="footnote-definition-label">111</sup>
-<p>See: MA. III. 328.</p>
-</div>
-<div class="footnote-definition" id="fn112"><sup class="footnote-definition-label">112</sup>
-<p>A. II. 68; A. III. 45-6.</p>
-</div>
-<div class="footnote-definition" id="fn113"><sup class="footnote-definition-label">113</sup>
-<p>Kh. 3-4; Sn. 39.</p>
-</div>
-<div class="footnote-definition" id="fn114"><sup class="footnote-definition-label">114</sup>
-<p>KhA. 169; SnA. I. 278.</p>
+Society, p. 291. <a href="#fr-fn108-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn109"><sup class="footnote-definition-label">109</sup>
+<p>A. IV. 304-305. <a href="#fr-fn109-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn110"><sup class="footnote-definition-label">110</sup>
+<p>Cf.: Nd. II. 55; Nd2A. 94; SnA. II. 607. <a href="#fr-fn110-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn111"><sup class="footnote-definition-label">111</sup>
+<p>See: MA. III. 328. <a href="#fr-fn111-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn112"><sup class="footnote-definition-label">112</sup>
+<p>A. II. 68; A. III. 45-6. <a href="#fr-fn112-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn113"><sup class="footnote-definition-label">113</sup>
+<p>Kh. 3-4; Sn. 39. <a href="#fr-fn113-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn114"><sup class="footnote-definition-label">114</sup>
+<p>KhA. 169; SnA. I. 278. <a href="#fr-fn114-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

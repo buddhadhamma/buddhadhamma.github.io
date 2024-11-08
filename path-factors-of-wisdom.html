@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html" class="active">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -251,7 +232,7 @@ concentration comes into being; when one possesses right
 concentration, right knowledge comes into being; when one possesses
 right knowledge, right deliverance comes into being. Thus the trainee
 who possesses eight factors becomes an arahant who possesses ten
-factors.<sup class="footnote-reference"><a href="#fn1">1</a></sup></p>
+factors.<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup></p>
 <p><em>M. III. 76.</em></p>
 <p>That a monk with rightly grounded view, with a rightly grounded
 development of the Path, could pierce ignorance, arouse true
@@ -284,7 +265,7 @@ causes:</p>
 <p>When a noble disciple understands the unwholesome and the root of the
 unwholesome, the wholesome and the root of the wholesome, in that way
 he is one of right view, whose view is straight, who has unwavering
-confidence in the Dhamma and has arrived at this true Dhamma.<sup class="footnote-reference"><a href="#fn2">2</a></sup></p>
+confidence in the Dhamma and has arrived at this true Dhamma.<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup></p>
 <p><em>M. I. 46-7.</em></p>
 </blockquote>
 </div>
@@ -306,7 +287,7 @@ this discernment of his is right view.</p>
 <p><em>S. IV. 142.</em></p>
 </blockquote>
 </div>
-<p>To discern Dependent Origination (for examples, see Chapter 4).<sup class="footnote-reference"><a href="#fn3">3</a></sup></p>
+<p>To discern Dependent Origination (for examples, see Chapter 4).<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup></p>
 <p>The Buddha also defined two levels of right view: right view ’connected
 to the taints’ (<em>sāsava</em>) and transcendent right view:</p>
 <div class="sutta">
@@ -342,7 +323,7 @@ conforming with personal understanding’, ’principles deemed acceptable’,
 ’agreeable notions’, ’cherished opinions’, ’preferences’, and ’personal
 values’. The meaning of this term also includes a person’s ideals,
 worldview, outlook on life, and basic attitudes which result from such
-views, knowledge, and preferences.<sup class="footnote-reference"><a href="#fn4">4</a></sup></p>
+views, knowledge, and preferences.<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup></p>
 <p>As mentioned above, there are two levels or kinds of view: first, views
 and understanding connected to a sense of value, say of what is good and
 bad, appropriate and inappropriate; and second, views and understanding
@@ -352,7 +333,7 @@ it originates.</p>
 influence and control over how people live their lives and over society
 as a whole. In the teaching on the ten courses of action
 (<em>kamma-patha</em>), <em>diṭṭhi</em> is classified as mental kamma, which has more
-serious consequences than either physical kamma or verbal kamma.<sup class="footnote-reference"><a href="#fn5">5</a></sup>
+serious consequences than either physical kamma or verbal kamma.<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup>
 This is because mental kamma is the underlying cause for physical and
 verbal actions. Views are able to lead individuals, society, or the
 whole human race to either prosperity and freedom or to decline and
@@ -412,7 +393,7 @@ righteousness, or are in harmony with virtuous behaviour, as described
 in the sutta passages above.</p>
 <p>Generally speaking, this kind of right view is a result of external
 teachings (<em>paratoghosa</em>) or of social factors, and it relies on faith
-as a link or as a guiding force.<sup class="footnote-reference"><a href="#fn6">6</a></sup> In particular it results from the
+as a link or as a guiding force.<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup> In particular it results from the
 instruction one receives from society, say through teachings and
 training in ethics and by cultural transmission. It is related to wise
 reflection; the kind of wise reflection applied here generally
@@ -439,7 +420,7 @@ validates the entirety of human behaviour. {692}</p>
 harmony with this natural truth. For this reason, mundane right view is
 occasionally defined as <em>kammassakatā-ñāṇa</em>: the knowledge that people
 are the owners of their kamma, that they must be held accountable for
-their actions, and that they receive the fruits of their actions.<sup class="footnote-reference"><a href="#fn7">7</a></sup>
+their actions, and that they receive the fruits of their actions.<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup>
 This knowledge is in accord with the law of kamma. In other words, it is
 the knowledge that all human behaviour and the results of such behaviour
 proceed according to the law of interrelated causes and conditions.</p>
@@ -484,7 +465,7 @@ resulting in awakening. {693}</p>
 consequence of the same kind of right view belonging to unawakened
 beings. Therefore, I suggest defining the right view in this second
 classification that still belongs to unawakened beings as ’right view
-conforming to transcendence’.<sup class="footnote-reference"><a href="#fn8">8</a></sup></p>
+conforming to transcendence’.<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup></p>
 <p>The fruits of transcendent right view (or even right view conforming to
 transcendence) are much more profound than those of mundane right view,
 and they are able to utterly transform a person’s personality,
@@ -505,7 +486,7 @@ perform specific kinds of good deeds, according to model teachings,
 instructions, transmissions, edicts, etc. Whenever unawakened persons
 are not governed by such socially instilled values, they are prone to
 falling subject to craving (<em>taṇhā</em>), which in today’s parlance may be
-referred to as ’negative emotions’.<sup class="footnote-reference"><a href="#fn9">9</a></sup> Wise reflection helps to free
+referred to as ’negative emotions’.<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup> Wise reflection helps to free
 people from the influence of social values and from the enslavement by
 mental defilement; it engenders a freedom of behaviour guided by wisdom.</p>
 <p>In sum, at initial stages of spiritual practice, when one thinks or acts
@@ -514,7 +495,7 @@ social values or one falls under the power of one’s own craving. When
 one possesses transcendent right view, however, one is truly liberated
 from the influence and power of society, and from personal craving.</p>
 <p>Whenever ’view’ (<em>diṭṭhi</em>) becomes right view, it is equivalent or
-synonymous to wisdom,<sup class="footnote-reference"><a href="#fn10">10</a></sup> even though at beginning stages right view is
+synonymous to wisdom,<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup> even though at beginning stages right view is
 still just an opinion or a belief. This is because the opinion or belief
 corresponds with truth and is based on an understanding of reality, and
 begins to escape from the clutches of ignorance and craving.</p>
@@ -527,14 +508,14 @@ views and opinions as well as a direct knowledge of the truth. {694}</p>
 <p>Some beginning spiritual practitioners who possess a degree of right
 view may believe that in keeping with the threefold training the
 starting point of spiritual practice is moral conduct (<em>sīla</em>), i.e.
-that spiritual development begins with good behaviour (<em>sucarita</em>).<sup class="footnote-reference"><a href="#fn11">11</a></sup>
+that spiritual development begins with good behaviour (<em>sucarita</em>).<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup>
 This claim, however, misses the core of spiritual practice. The real
 purpose of spiritual practice at the level of morality – of forming a
 wholesome disposition and creating wholesome habits – is to enable
 people who are responsive to training (<em>veneyya</em>) to recognize the true
-value of moral conduct.<sup class="footnote-reference"><a href="#fn12">12</a></sup></p>
+value of moral conduct.<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup></p>
 <p>Only when one develops a deep understanding of moral conduct, i.e. one
-develops right view, will one’s virtuous conduct be secure.<sup class="footnote-reference"><a href="#fn13">13</a></sup> At this
+develops right view, will one’s virtuous conduct be secure.<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup> At this
 stage one’s spiritual practice has truly begun. In other words, the
 reason why the threefold training begins with moral conduct is in order
 to nurture the Path factors, starting with right view. When the Path
@@ -858,7 +839,7 @@ the subjects just mentioned.</p>
 <p>There is an important difference between nature and society which should
 be taught to people from the time they are children. Namely, nature
 follows general laws of nature (<em>dhamma-niyāma</em>), whereas human society
-follows the additional law of volitional action (<em>kamma-niyāma</em>).<sup class="footnote-reference"><a href="#fn14">14</a></sup>
+follows the additional law of volitional action (<em>kamma-niyāma</em>).<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup>
 {700}</p>
 <p>When teaching children, they should be treated with lovingkindness.
 Besides directly showing them kindness in order to foster their
@@ -979,7 +960,7 @@ distraction).</p>
 </li>
 <li>
 <p>Insight (<em>vipassanā</em>: using wisdom in order discern things as they
-truly are).<sup class="footnote-reference"><a href="#fn15">15</a></sup> {702}</p>
+truly are).<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup> {702}</p>
 </li>
 </ol>
 <p><em>A. III. 20-21.</em></p>
@@ -1004,7 +985,7 @@ Path – right thought – is as follows:</p>
 <blockquote>
 <p>Monks, what is right thought? The thought of renunciation, the thought
 of non-ill-will, the thought of non-cruelty: this is called right
-thought.<sup class="footnote-reference"><a href="#fn16">16</a></sup></p>
+thought.<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup></p>
 <p><em>D. II. 311-12; M. III. 251; Vbh. 104, 235.</em></p>
 </blockquote>
 </div>
@@ -1101,7 +1082,7 @@ thinking.</p>
 <p>Systematic reflection fosters right view. When one discerns things
 correctly, right thinking in regard to these things arises naturally,
 without bias, attachment or aversion.</p>
-<p>When one is able to think objectively,<sup class="footnote-reference"><a href="#fn17">17</a></sup> free from likes and
+<p>When one is able to think objectively,<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup> free from likes and
 dislikes, one sees things as they are: right view is enhanced. In this
 way these two factors continue to support one another. {704}</p>
 <p>Right thinking (<em>sammā-saṅkappa</em>) – the opposite of wrong thinking –
@@ -1114,7 +1095,7 @@ There are three kinds of right thought:</p>
 <em>nekkhamma-vitakka</em>): thoughts free from greed; thoughts free from
 sensuality, unpreoccupied with objects gratifying desire;
 nonselfish thoughts; thoughts of relinquishment; the entire range
-of wholesome thinking.<sup class="footnote-reference"><a href="#fn18">18</a></sup> This form of thought is classified as
+of wholesome thinking.<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup> This form of thought is classified as
 thought free from lust (<em>rāga</em>) or greed (<em>lobha</em>).</p>
 </li>
 <li>
@@ -1145,7 +1126,7 @@ but ’right thinking’, rather than being specifically defined as loving
 thoughts, is defined as thoughts of non-ill-will – a negation of wrong
 thinking.</p>
 <p>I will address the misunderstanding that Buddhism is a negative or
-passive teaching at more length below,<sup class="footnote-reference"><a href="#fn19">19</a></sup> but allow me to offer three
+passive teaching at more length below,<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup> but allow me to offer three
 short explanations here refuting these charges:</p>
 <ol>
 <li>
@@ -1224,7 +1205,7 @@ thoughts of conflict, negativity, dissatisfaction, antagonism, rivalry
 as thoughts of cruelty, wishing to oppress, prey on, or destroy others.</p>
 <p>In any case, thinking that panders to craving can be eliminated by
 systematic reflection, which discerns things according to the
-truth.<sup class="footnote-reference"><a href="#fn20">20</a></sup> Thinking accompanied by this form of systematic reflection
+truth.<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup> Thinking accompanied by this form of systematic reflection
 is pure: it is not influenced by sensual desire, ill-will, or cruelty.
 It does not veer off or get stuck on one single aspect of an object and
 thus has an extensive range of engagement.</p>
@@ -1287,7 +1268,7 @@ not true lovingkindness. {707}</p>
 <p>Let us review some basic principles in relation to lovingkindness:</p>
 <p><em>Mettā</em> may be defined as ’friendliness’, ’love’, ’well-wishing’,
 ’sympathy’, ’mutual understanding’, ’a wish for others to be happy’, or
-’a desire to foster wellbeing for for all living creatures’.<sup class="footnote-reference"><a href="#fn21">21</a></sup></p>
+’a desire to foster wellbeing for for all living creatures’.<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup></p>
 <p>Lovingkindness is an impartial quality, both in terms of the person
 expressing the love and of the person who receives the love. Love should
 be mutual between subordinates and superiors, the rich and the poor,
@@ -1319,9 +1300,9 @@ defined as the ’fulfilment’ or ’benefit’ of lovingkindness, whereas
 <em>vipatti</em> can be defined as the ’failure’ or ’shortcoming’ of
 lovingkindness, or an ’incorrect practice’ in relation to it.</p>
 <p>According to the scriptures, the advantage of lovingkindness is that it
-is able to quell ill-will (<em>byāpādupasamo etissā sampatti</em>).<sup class="footnote-reference"><a href="#fn22">22</a></sup> The
+is able to quell ill-will (<em>byāpādupasamo etissā sampatti</em>).<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup> The
 disadvantage is that it may give rise to infatuation (<em>sinehasambhavo
-vipatti</em>).<sup class="footnote-reference"><a href="#fn23">23</a></sup></p>
+vipatti</em>).<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup></p>
 <p>There are some special observations in regard to this disadvantage: the
 term <em>sineha</em> refers to love and affection for an individual – a
 personal form of fondness and attachment, e.g.: <em>putta-sineha</em> refers to
@@ -1345,7 +1326,7 @@ characterized as follows:</p>
 hired to secretly assassinate the Buddha), towards Devadatta (who
 ordered the assassination), towards the bandit Aṅgulimāla, towards the
 elephant Dhanapāla (which was released in order to kill the Buddha),
-and towards Rāhula (the Buddha’s son), without exception.<sup class="footnote-reference"><a href="#fn24">24</a></sup></p>
+and towards Rāhula (the Buddha’s son), without exception.<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup></p>
 <p><em>Ap. 47-8; DhA. I. 145.</em></p>
 </blockquote>
 </div>
@@ -1441,7 +1422,7 @@ the section of concentration (<em>samādhi</em>) or in the training in
 higher mind (<em>adhicitta-sikkhā</em>). For this reason, the four divine
 abidings are classified as one group of meditation (<em>kammaṭṭhāna</em>)
 in the list of forty meditation techniques: they are connected with
-’mental cultivation’ (<em>citta-bhāvanā</em>).<sup class="footnote-reference"><a href="#fn25">25</a></sup></p>
+’mental cultivation’ (<em>citta-bhāvanā</em>).<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup></p>
 <p>On the level of outward conduct, the four favourable qualities take
 over from the divine abidings and function as expressions of these
 abidings in a person’s social environment. If one wishes to describe
@@ -1483,7 +1464,8 @@ at Mueang Fa Daet Song Yang, Kamalasai, Kalasin Province
 Khon Kaen National Museum, Khon Kaen Province, Thailand</p>
 </div>
 </div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
 <p>Similar passages occur at: D. II. 216-17; A. V. 236-7. The
 expression ’comes into being’ is a translation of the Pali term
 <em>pahoti</em>, which can also be translated as ’suitable for application’
@@ -1492,17 +1474,17 @@ analysis, stating that although right view is the leader of all the
 Path factors, knowledge (<em>vijjā</em>) is the leader in the undertaking
 of all wholesome qualities and is the source of right view.
 (Similarly, ignorance – <em>avijjā</em> – is the leader for all
-unwholesome qualities and is the source of wrong view.)</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
+unwholesome qualities and is the source of wrong view.) <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
 <p>The three unwholesome roots: greed, hatred, and delusion; the
-three wholesome roots: non-greed, non-hatred, and non-delusion.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+three wholesome roots: non-greed, non-hatred, and non-delusion. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>See, e.g.: S. II. 17; M. I. 47-55. There are many such
-definitions.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+definitions. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
 <p>In the Pali Canon there are two equivalent terms which often
 accompany <em>diṭṭhi</em> to form the following group: <em>diṭṭhi</em> (view),
 <em>khanti</em> (things conforming with personal understanding), and <em>ruci</em>
@@ -1511,50 +1493,50 @@ Ps. I. 176; Vbh. 245, 324-5. See also the section in chapter 2 on
 the different kinds and stages of knowledge. Although the term
 <em>diṭṭhi</em> corresponds to the English word ’attitude’, this latter
 word also corresponds in part to <em>saṅkappa</em> (thought; intention) –
-the second Path factor.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+the second Path factor. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
 <p><em>Diṭṭhi</em> as mental kamma in the teaching on the courses of action
 (<em>kamma-patha</em>), e.g.: A. V. 264-8, 292. On the critical importance
-of <em>diṭṭhi</em>, see: M. I. 373; A. V. 212.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+of <em>diṭṭhi</em>, see: M. I. 373; A. V. 212. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
 <p><em>Saddhāmūlikā ca sammādiṭṭhi</em> (’right view with faith as root
-cause’): DA. I. 231; MA. I. 132; AA. II. 109; ItA. II. 45.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
-<p>E.g.: Vbh. 328.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
+cause’): DA. I. 231; MA. I. 132; AA. II. 109; ItA. II. 45. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
+<p>E.g.: Vbh. 328. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
 <p>The commentaries refer to this form of right view as ’insight
 right view’ (<em>vipassanā-sammādiṭṭhi</em>); the original Pali term for it
 is ’knowledge conforming to truth’ (<em>saccānulomika-ñāṇa</em>). (In the
 commentaries this latter term is specifically used in reference to
 the final stage of the nine kinds of insight knowledge –
-<em>vipassanā-ñāṇa</em>.)</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
+<em>vipassanā-ñāṇa</em>.) <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
 <p>Both negative values and negative emotions are a result of
 craving. The difference is that the former are a form of embellished
 or modified craving, while the latter are an expression of pure
-craving.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
-<p>E.g.: Nd. I. 44-5; Vbh. 237.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
+craving. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
+<p>E.g.: Nd. I. 44-5; Vbh. 237. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
 <p>The term <em>sucarita</em> here refers to virtuous physical acts,
 speech, and livelihood; it does not include <em>mano-sucarita</em>
-(’virtuous mental acts’), which encompasses right view.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
+(’virtuous mental acts’), which encompasses right view. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
 <p>This is an example of how individual behaviour can shape values,
-in the same way as external social factors can shape values.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
-<p>In this case, values determine behaviour.</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
+in the same way as external social factors can shape values. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
+<p>In this case, values determine behaviour. <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
 <p>This is a very general explanation, focusing on the main
 principles involved. In fact there are also physical laws, genetic
 laws, and psychic laws, but these are not relevant to the present
@@ -1562,56 +1544,57 @@ discussion. (<em>Dhamma-niyāma</em>: general laws of nature, especially
 those of cause and effect; laws concerning the interrelationship of
 all things. <em>Kamma-niyāma</em> (kammic laws): laws concerning intention
 and human behaviour, i.e. the law of actions – <em>kamma</em> – and their
-results.)</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
+results.) <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
 <p>An abridged translation. Add to this the Buddha’s teaching:
 <em>Listening well, inquiry, and investigation is the nutriment for
-wisdom</em> (A. V. 136).</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
+wisdom</em> (A. V. 136). <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
 <p>Trans.: note that <em>sammā-saṅkappa</em> is sometimes translated as
 ’right intention’, ’right attitude’, ’right motive’, or ’right
-aspiration’.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
+aspiration’. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
 <p>When developed to a higher degree this perspective becomes
 equanimity (<em>upekkhā</em>), which is a vital factor for effective
 reasoning. This is not the same as complacency or indifference as
 commonly understood. This matter will be explained at more length
-below.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+below. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
 <p><em>Nekkhamma</em> = <em>alobha</em> (’non-greed’). The ’property of
 renunciation’ (<em>nekkhamma-dhātu</em>) = all wholesome qualities; the
 ’property of non-ill-will’ (<em>abyāpāda-dhātu</em>) = lovingkindness
 (<em>mettā</em>); the ’property of non-cruelty’ (<em>avihiṁsā-dhātu</em>) =
-compassion (<em>karuṇā</em>): Vbh. 86; VbhA. 74; PsA. I. 68.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
-<p>See the appendix.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
-<p>Cf.: VbhA. 91, 115; Vism. 515.</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
+compassion (<em>karuṇā</em>): Vbh. 86; VbhA. 74; PsA. I. 68. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
+<p>See the appendix. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
+<p>Cf.: VbhA. 91, 115; Vism. 515. <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
 <p>The definition for <em>mettā</em> at Nd. I. 488 is: <em>mettāti yā sattesu
 metti mettāyanā mettāyitattaṁ anudā anudāyanā anudāyitattaṁ hitesitā
 anukampā abyāpādo abyāpajjho adoso kusalamūlaṁ</em>; the definition at
-SnA. I. 128 is: <em>hitasukhūpanayanakāmatā mettā</em>.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
-<p>Vism. 318.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
-<p>Ibid.</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
+SnA. I. 128 is: <em>hitasukhūpanayanakāmatā mettā</em>. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
+<p>Vism. 318. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
+<p>Ibid. <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
 <p>See also the examples of how the Buddha radiated lovingkindness,
-at: Vin. II. 195; [JA. 8/215].</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
-<p>See, e.g.: Vism. 295-325.</p>
+at: Vin. II. 195; [JA. 8/215]. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
+<p>See, e.g.: Vism. 295-325. <a href="#fr-fn25-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

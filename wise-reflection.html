@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html" class="active">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -268,7 +249,7 @@ society this refers to knowing how to relate and associate with other
 people. In the context of material things and the natural environment
 this refers to knowing how to use and consume things properly.</p>
 <p>In sum, a correct and successful way of life encompasses several
-subsidiary forms of behaviour and is comprised of various aspects,
+subsidiary forms of behaviour and consists of various aspects,
 notably:</p>
 <ul>
 <li>
@@ -407,7 +388,7 @@ aligned with transcendent understanding and pertains to the level of
 absolute truth.</p>
 </li>
 </ul>
-<p>Wrong view (<em>micchā-diṭṭhi</em>), likewise, is comprised of two kinds: those
+<p>Likewise, there are two kinds of wrong view (<em>micchā-diṭṭhi</em>): those
 views, notions, and values which deny a sense of personal accountability
 – a refusal to admit one’s own responsibility; and an ignorance of the
 world as it really is – the formation of deluded images according to
@@ -603,7 +584,7 @@ others:</p>
 <div class="sutta">
 <blockquote>
 <p>Monks, there are these two conditions giving rise to right view: the
-words of others and wise reflection.<sup class="footnote-reference"><a href="#fn1">1</a></sup> {614}</p>
+words of others and wise reflection.<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup> {614}</p>
 <p><em>A. I. 88.</em></p>
 <p>In reference to external factors, I know not of any other single
 factor so conducive to great benefit as having a virtuous friend.</p>
@@ -693,7 +674,7 @@ sound, or knowing a mental object. When this process is complete it is
 called ’cognition’, or literally, according to the Pali, as ’contact’
 (<em>phassa</em>).</p>
 <p>With cognition there arises some form of sensation (<em>vedanā</em>), say of
-pleasure and ease, suffering and discomfort, or a neutral feeling.<sup class="footnote-reference"><a href="#fn2">2</a></sup>
+pleasure and ease, suffering and discomfort, or a neutral feeling.<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup>
 At the same time, there arises perception (<em>saññā</em>) – the naming,
 designation, or recognition of the sense object. From here there follows
 thinking (<em>vitakka</em>) – thoughts, reflections and deliberations.</p>
@@ -899,7 +880,7 @@ dependence on nutriment, and cannot subsist without nutriment, so too
 the seven factors of enlightenment are sustained by nutriment, subsist
 in dependence on nutriment, and cannot subsist without nutriment. And
 what is [their] nutriment?: … a repeated application of wise
-reflection.<sup class="footnote-reference"><a href="#fn3">3</a></sup></p>
+reflection.<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup></p>
 <p><em>S. V. 64-7.</em></p>
 </blockquote>
 </div>
@@ -913,7 +894,7 @@ realize unsurpassed liberation. {620}</p>
 <p><em>Vin. I. 23; S. I. 105.</em></p>
 <p>Monks, I say that the destruction of the taints is for one who knows
 and sees, not for one who does not know and see. Who knows and sees
-what? Wise attention and unwise attention.<sup class="footnote-reference"><a href="#fn4">4</a></sup> When one attends
+what? Wise attention and unwise attention.<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup> When one attends
 unwisely, unarisen taints arise and arisen taints increase. When one
 attends wisely, unarisen taints do not arise and arisen taints are
 abandoned.</p>
@@ -995,7 +976,7 @@ dispassion one is liberated.</p>
 </blockquote>
 </div>
 <h2 id="definition-of-wise-reflection"><a class="header" href="#definition-of-wise-reflection">Definition of Wise Reflection</a></h2>
-<p>The compound term <em>yoniso-manasikāra</em> is comprised of the two words
+<p>The compound term <em>yoniso-manasikāra</em> is made up of the two words
 <em>yoniso</em> and <em>manasikāra</em>.</p>
 <p><em>Yoniso</em> is derived from the word <em>yoni</em> (’origin’, ’place of birth’,
 ’womb’) and is variously translated as ’cause’, ’root’, ’source’,
@@ -1008,7 +989,7 @@ Note <a href="#note-manasikara-synonyms">Synonyms of Manasikāra</a>)</p>
 <p>As a compound the term <em>yoniso-manasikāra</em> is traditionally defined as
 ’skilfully directing attention’. The commentaries and sub-commentaries
 elaborate on this definition and explain the nuances of this term by
-presenting various synonyms, as follows:<sup class="footnote-reference"><a href="#fn5">5</a></sup></p>
+presenting various synonyms, as follows:<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup></p>
 <ol>
 <li>
 <p><em>Upāya-manasikāra</em>: ’methodical reflection’; to think or reflect by
@@ -1145,7 +1126,7 @@ are unskilled at thinking for themselves and applying wise reflection.</p>
 above, virtuous friends are only able to point out or throw light on
 specific truths, but practitioners must contemplate and gain
 understanding by themselves. When it comes to the stage of true
-understanding, faith is inadequate.<sup class="footnote-reference"><a href="#fn6">6</a></sup> In regard to these three
+understanding, faith is inadequate.<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup> In regard to these three
 attributes, faith is thus extremely limited. {623}</p>
 <p>In respect to the fourth attribute (reflection generating wholesome
 qualities), however, faith plays a powerful role. For example, some
@@ -1169,18 +1150,18 @@ attention will nourish and strengthen such unwholesome states of mind.
 For example, a person who habitually sees things in a negative light
 will begin to see others as adversaries. Similarly, a person who is
 habitually afraid and sees others as thinking ill of him may develop a
-mental disorder of paranoia.<sup class="footnote-reference"><a href="#fn7">7</a></sup></p>
+mental disorder of paranoia.<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup></p>
 <p>Depending on either wise reflection or unwise reflection, the same
 subject matter may result in very different behaviour for different
 people. For example, one person may think of death with improper
 attention and consequently experience fear, depression, apathy, or
 confusion. Another person may think of death with wise reflection and
 thus appreciate the need to abstain from unwholesome actions. He or she
-will be calm, heedful, and ardent, hastening to perform good deeds.<sup class="footnote-reference"><a href="#fn8">8</a></sup></p>
+will be calm, heedful, and ardent, hastening to perform good deeds.<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup></p>
 <p>In terms of insight into reality, wise reflection is not wisdom itself,
 but rather a condition for the arising of wisdom, that is, wise
 reflection generates right view. The Milindapañhā describes the
-difference between reflection and wisdom thus:<sup class="footnote-reference"><a href="#fn9">9</a></sup></p>
+difference between reflection and wisdom thus:<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup></p>
 <ul>
 <li>
 <p>First, animals such as goats, sheep, cows, buffalo, camels, and
@@ -1199,7 +1180,7 @@ successfully harvest it with a sickle held in his right hand.</p>
 </ul>
 <p>Based on this interpretation, <em>yoniso-manasikāra</em> is a kind of mental
 engagement (<em>manasikāra</em>) leading to an application and development of
-wisdom.<sup class="footnote-reference"><a href="#fn10">10</a></sup> {624}</p>
+wisdom.<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup> {624}</p>
 <p>The Papañcasūdanī states that unwise attention (<em>ayoniso-manasikāra</em>) is
 the root source of the round of rebirth (<em>vaṭṭa</em>), causing beings to
 accumulate problems and to swim around in suffering. This text also
@@ -1220,7 +1201,7 @@ with right view as the leading factor. Right view here is equivalent to
 true knowledge (<em>vijjā</em>). With the arising of true knowledge, ignorance
 ceases. With the end of ignorance the cessation cycle (<em>nirodha-vāra</em>)
 of Dependent Origination is set in operation, leading gradually to the
-cessation of suffering.<sup class="footnote-reference"><a href="#fn11">11</a></sup> These processes can be illustrated thus:</p>
+cessation of suffering.<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup> These processes can be illustrated thus:</p>
 <p>Round of rebirth (<em>vaṭṭa</em>):</p>
 <p>Unwise reflection (<em>ayoniso-manasikāra</em>):</p>
 <blockquote>
@@ -1265,7 +1246,7 @@ object or encounters a particular situation, the course of his or her
 thinking is directed by the force of faith, as if faith has already dug
 a channel for thinking to go. {625}</p>
 <p>For this reason the Buddha stated that (correct) faith is the
-nourishment for wise reflection.<sup class="footnote-reference"><a href="#fn12">12</a></sup> External instruction from virtuous
+nourishment for wise reflection.<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup> External instruction from virtuous
 friends, which uses faith as a channel, is able to gradually increase
 understanding and introduce a person to new ideas, for example by way of
 consultation and by asking questions to clear up doubts.</p>
@@ -1273,13 +1254,13 @@ consultation and by asking questions to clear up doubts.</p>
 develops and becomes more agile, deepening wisdom. When one contemplates
 and sees that the teachings one has received are truly correct and
 beneficial, one becomes more confident and faith increases. In this way,
-wise reflection enhances faith.<sup class="footnote-reference"><a href="#fn13">13</a></sup> It urges people to make greater
+wise reflection enhances faith.<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup> It urges people to make greater
 effort in their studies, until eventually their own reflections lead
 them to realization and deliverance.</p>
 <p>Here, a person’s spiritual practice relies on an integration between
 internal and external factors. Wholesome influence from external sources
 is implied in the phrase: ’Be your own refuge, with no one else as your
-refuge.’<sup class="footnote-reference"><a href="#fn14">14</a></sup> The Buddha did not reject external influences. Indeed,
+refuge.’<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup> The Buddha did not reject external influences. Indeed,
 external influences and the quality of faith are extremely important,
 but the key determining factor lies within, that is, wise reflection.</p>
 <p>The more one is able to apply wise reflection, the less one relies on
@@ -1292,7 +1273,7 @@ to sustain it in a consistent, continuous way so that it is not broken
 and does not slip away.</p>
 <p>In this context, there are teachings which explain how wise reflection
 nourishes mindfulness, assisting the establishment and the uninterrupted
-flow of mindfulness.<sup class="footnote-reference"><a href="#fn15">15</a></sup></p>
+flow of mindfulness.<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup></p>
 <p>If one possesses systematic, coherent, and effective reflection, one is
 able to sustain mindfulness consistently. If one is unable to reflect
 properly, however, or if one’s thinking is ineffectual or aimless,
@@ -1360,7 +1341,7 @@ process, because wise reflection constantly nourishes these factors.</p>
 <p>In sum, wise reflection cuts off ignorance and craving. These two
 negative qualities always appear in tandem, although in some cases
 ignorance is prominent and craving unpronounced, while at other times
-craving is dominant and ignorance concealed.<sup class="footnote-reference"><a href="#fn16">16</a></sup> Given this fact, it is
+craving is dominant and ignorance concealed.<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup> Given this fact, it is
 possible to present two definitions for wise reflection, according to
 the dominant role of either ignorance or craving: wise reflection is a
 form of thinking that cuts off ignorance; or it is a form of thinking
@@ -1503,7 +1484,7 @@ of the sticks the resultant heat ceases and subsides; so too in
 dependence on contact acting as a basis for pleasant feeling, a
 pleasant feeling arises, and with the cessation of that contact acting
 as a basis for pleasant feeling, that pleasant feeling arising
-dependent on that contact … ceases and subsides….<sup class="footnote-reference"><a href="#fn17">17</a></sup> {629}</p>
+dependent on that contact … ceases and subsides….<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup> {629}</p>
 <p><em>S. II. 96-7.</em></p>
 </blockquote>
 </div>
@@ -1522,7 +1503,7 @@ clinging has craving as its condition.’</p>
 <p>Then it occurred to me: ’When what exists does craving come to be? By
 what is craving conditioned?’ Then, through careful attention, I knew
 by way of wisdom: ’When there is feeling, craving comes to be; craving
-has feeling as its condition….’<sup class="footnote-reference"><a href="#fn18">18</a></sup></p>
+has feeling as its condition….’<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup></p>
 <p><em>S. II. 10, 104.</em></p>
 </blockquote>
 </div>
@@ -1559,7 +1540,7 @@ contemplation below. In the Pali Canon this second kind of wise
 reflection is mentioned together with the third kind.</p>
 <p>The commentaries, however, which are aligned with later Abhidhamma
 texts, prefer to distinguish this second kind of reflection, and they
-classify it is a mode of detailed analysis (<em>vibhajja-vidhi</em>).<sup class="footnote-reference"><a href="#fn19">19</a></sup>
+classify it is a mode of detailed analysis (<em>vibhajja-vidhi</em>).<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup>
 Furthermore, they tend to begin with a basic analysis by focusing on
 mentality and corporeality (<em>nāma-rūpa</em>), rather than immediately
 analyzing the five aggregates.</p>
@@ -1570,7 +1551,7 @@ thus referred to as <em>vibhajja</em> (’detailed analysis’). {630}</p>
 <p>In the traditional practice of insight meditation as described in the
 commentaries, the basic analysis of mentality and corporeality is
 referred to as ’analysis of mind and body’ (<em>nāmarūpa-vavatthāna</em>) or
-’contemplation of mind and body’ (<em>nāmarūpa-pariggaha</em>).<sup class="footnote-reference"><a href="#fn20">20</a></sup> Here, one
+’contemplation of mind and body’ (<em>nāmarūpa-pariggaha</em>).<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup> Here, one
 does not look at people according to their conventional names and
 designations, of being ’them’ or ’us’, ’Mr. A’ or ’Mrs. B’. Instead one
 sees them as a combination of physical and mental phenomena. One
@@ -1603,7 +1584,7 @@ enclosed by bones and sinews, flesh and skin, it comes to be called a
 <p><em>M. I. 190.</em></p>
 <p>Monks, suppose that this river Ganges was carrying along a great lump
 of foam. A man with good sight would inspect it, examine it, and
-carefully investigate it.<sup class="footnote-reference"><a href="#fn21">21</a></sup> By inspecting it, examining it, and
+carefully investigate it.<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup> By inspecting it, examining it, and
 carefully investigating it, it would appear to him to be void, empty
 and insubstantial. For what substance could there be in a lump of
 foam?</p>
@@ -1612,7 +1593,7 @@ future, or present … far or near: a bhikkhu inspects it, examines
 it, and carefully investigates it. By inspecting it, examining it, and
 carefully investigating it, it would appear to him to be void, empty,
 insubstantial. For what substance could there be in material
-form?<sup class="footnote-reference"><a href="#fn22">22</a></sup></p>
+form?<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup></p>
 <blockquote>
 <p><em>Form is like a lump of foam,<br />
 Feeling like a water bubble;<br />
@@ -1709,16 +1690,16 @@ from the third.</p>
 <p>In the traditional practice of insight development (<em>vipassanā</em>), which
 was developed into a formal system described in the commentaries, the
 teaching on the seven forms of purity (<em>visuddhi</em>) is used as the master
-template.<sup class="footnote-reference"><a href="#fn23">23</a></sup> In this context, the commentaries use the list of
+template.<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup> In this context, the commentaries use the list of
 different forms of knowledge (<em>ñāṇa</em>) described in the Paṭisambhidāmagga
-as a set of criteria,<sup class="footnote-reference"><a href="#fn24">24</a></sup> and maintain the basic contemplation of
+as a set of criteria,<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup> and maintain the basic contemplation of
 phenomena, of separating them into ’mind-and-body’ (<em>nāma-rūpa</em>).</p>
 <p>According to this teaching, the development of insight is set down as a
 system containing clearly defined, progressive steps. The three kinds of
 reflection mentioned so far are included in this system, in which they
 are combined into a distinct group of affiliated methods of reflection.
 The order in which they are presented, however, differs from the order
-presented above:<sup class="footnote-reference"><a href="#fn25">25</a></sup></p>
+presented above:<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup></p>
 <ol>
 <li>
 <p>The first step entails analytical reasoning or an investigation into
@@ -1734,9 +1715,7 @@ name-and-form’ (<em>nāmarūpa-pariccheda</em>), or ’division of formations�
 (<em>diṭṭhi-visuddhi</em>) – the third of the seven kinds of purity.</p>
 <p>The objective here, however, is primarily on understanding and
 distinguishing phenomena or component factors – to know which
-things one encounters are comprised of materiality and which are
-comprised of mentality – rather than emphasizing analysis in
-general.</p>
+things one encounters consist of materiality and which consist of mentality – rather than emphasizing analysis per se.</p>
 </li>
 <li>
 <p>The second step entails an investigation of conditionality (method
@@ -1796,7 +1775,7 @@ impermanence of consciousness as it really is.</p>
 <p><em>S. III. 52.</em></p>
 <p>An instructed bhikkhu should carefully attend to the five aggregates
 subject to clinging as impermanent, as oppressed by conditioning
-factors … as nonself.<sup class="footnote-reference"><a href="#fn26">26</a></sup></p>
+factors … as nonself.<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup></p>
 <p><em>S. III. 169.</em></p>
 </blockquote>
 </div>
@@ -1835,7 +1814,7 @@ impermanent, subject to stress, and of the nature to change’, then he
 abandons sorrow, lamentation, pain, grief, and despair. With their
 abandonment, he does not become alarmed or frightened. Unafraid, he
 dwells happily. A bhikkhu who dwells happily is said to be quenched in
-that respect.<sup class="footnote-reference"><a href="#fn27">27</a></sup> {634}</p>
+that respect.<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup> {634}</p>
 <p><em>S. III. 42-3.</em></p>
 </blockquote>
 </div>
@@ -1894,7 +1873,7 @@ on those things that one must practise and engage with in order to
 solves life’s predicaments; it does not digress to matters of
 indulgence and excess, i.e. to thoughts seeking to gratify craving,
 conceit, and fixed opinions, which are irrelevant – which cannot be
-used to solve problems.<sup class="footnote-reference"><a href="#fn28">28</a></sup></p>
+used to solve problems.<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup></p>
 </li>
 </ol>
 <p>As mentioned earlier, this fourth kind of reflection corresponds with or
@@ -1953,9 +1932,9 @@ and deficiency. One needs to discover these causes and then perform the
 responsibility of <em>pahāna</em>: elimination or abandonment.</p>
 <p>The Buddha described the principal agents that go hand-in-hand with
 human suffering, both the actor standing at the front of the stage –
-craving (<em>taṇhā</em>)<sup class="footnote-reference"><a href="#fn29">29</a></sup> – and the entire cast, or the complete process,
+craving (<em>taṇhā</em>)<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup> – and the entire cast, or the complete process,
 that is, the chain of conditioning factors beginning with ignorance
-(<em>avijjā</em>), outlined in the teaching of Dependent Origination.<sup class="footnote-reference"><a href="#fn30">30</a></sup></p>
+(<em>avijjā</em>), outlined in the teaching of Dependent Origination.<sup class="footnote-reference" id="fr-fn30-1"><a href="#fn-fn30">30</a></sup></p>
 <p>When one experiences suffering or encounters a specific problem one
 needs to look for the related causes and conditions in accord with the
 first kind of reflection, above (the investigation of causes and
@@ -1989,7 +1968,7 @@ the source of problems, and which are in harmony with the desired goal.
 {636}</p>
 <h3 id="reflection-on-goals-and-principles"><a class="header" href="#reflection-on-goals-and-principles">Reflection on Goals and Principles</a></h3>
 <p>This method refers to reflecting on and understanding the relationship
-between goals (<em>attha</em>) and principles (<em>dhamma</em>).<sup class="footnote-reference"><a href="#fn31">31</a></sup> This is a very
+between goals (<em>attha</em>) and principles (<em>dhamma</em>).<sup class="footnote-reference" id="fr-fn31-1"><a href="#fn-fn31">31</a></sup> This is a very
 important reflection when one undertakes spiritual practice or follows a
 specific teaching, preventing one’s actions from being erratic, aimless,
 or gullible.</p>
@@ -2011,7 +1990,7 @@ to the Dhamma’. It can also be translated as ’practising minor
 principles of Dhamma consistent with major principles of Dhamma’. Very
 simply, this means practising the Dhamma correctly: acting in such a way
 that subsidiary factors of practice are in harmony with and nourish key
-principles of practice, leading to the desired goal.<sup class="footnote-reference"><a href="#fn32">32</a></sup></p>
+principles of practice, leading to the desired goal.<sup class="footnote-reference" id="fr-fn32-1"><a href="#fn-fn32">32</a></sup></p>
 <p>Practising the Dhamma correctly (<em>dhammānudhamma-paṭipatti</em>) as
 described above is vital. One can say that it is the criterion
 determining whether Dhamma practice or a specific activity will succeed
@@ -2037,7 +2016,7 @@ stanzas, expositions, verses, exclamations, sayings, birth stories,
 marvels, and answers to questions.</p>
 <p>How is a monk a meaning-knower (<em>atthaññū</em>)? Here, a monk knows the
 meaning of various teachings thus: ’This is the meaning of this
-teaching; this is the meaning of that teaching.’<sup class="footnote-reference"><a href="#fn33">33</a></sup></p>
+teaching; this is the meaning of that teaching.’<sup class="footnote-reference" id="fr-fn33-1"><a href="#fn-fn33">33</a></sup></p>
 <p><em>A. IV. 113-14.</em></p>
 <p>Monks, how is a person one of great knowledge (<em>bahussuta</em>) and one
 who understands by way of learning (<em>suta</em>)? Some people have learned
@@ -2070,7 +2049,7 @@ monks listen to the Dhamma respectfully; they study the Dhamma
 respectfully; they recollect the Dhamma respectfully; they reflect
 respectfully on the meaning of that Dhamma they have memorized; when
 they understand the meaning and principle, they practise the Dhamma in
-a way appropriate to the Dhamma.<sup class="footnote-reference"><a href="#fn34">34</a></sup> {638}</p>
+a way appropriate to the Dhamma.<sup class="footnote-reference" id="fr-fn34-1"><a href="#fn-fn34">34</a></sup> {638}</p>
 <p><em>A. III. 176-7.</em></p>
 </blockquote>
 </div>
@@ -2084,14 +2063,14 @@ to practise the Dhamma in a way appropriate to the Dhamma.</em></p>
 </blockquote>
 <p>This same sequence is found in many other suttas, and can thus be
 considered an important principle of Buddhist training and
-practice.<sup class="footnote-reference"><a href="#fn35">35</a></sup></p>
+practice.<sup class="footnote-reference" id="fr-fn35-1"><a href="#fn-fn35">35</a></sup></p>
 <p>Let us compare this teaching with the principle of wisdom development,
 or the four factors making for stream-entry:</p>
 <div class="sutta">
 <blockquote>
 <p>Monks, these four things are conducive to the growth of wisdom, that
 is: association with superior persons, hearing the true Dhamma, wise
-reflection, and practice in accordance with the Dhamma.<sup class="footnote-reference"><a href="#fn36">36</a></sup></p>
+reflection, and practice in accordance with the Dhamma.<sup class="footnote-reference" id="fr-fn36-1"><a href="#fn-fn36">36</a></sup></p>
 <p><em>A. II. 246.</em></p>
 </blockquote>
 </div>
@@ -2129,7 +2108,7 @@ knowledge … wrong liberation as condition are the non-essence.</p>
 <p>Various wholesome states that come to completion by right view …
 right thought … right speech … right action … right livelihood
 … right effort … right mindfulness … right concentration …
-right knowledge … right liberation are the essence.<sup class="footnote-reference"><a href="#fn37">37</a></sup> {639}</p>
+right knowledge … right liberation are the essence.<sup class="footnote-reference" id="fr-fn37-1"><a href="#fn-fn37">37</a></sup> {639}</p>
 <p>The benefit of the discipline (vinaya) is restraint (saṁvara); the
 benefit of restraint is non-remorse; the benefit of non-remorse is
 joy; the benefit of joy is delight; the benefit of delight is
@@ -2163,7 +2142,7 @@ benefit and reward.</p>
 reward.</p>
 <p>Thus, monks, things flow into other things, things bring other things
 to fulfilment, for the sake of going from what is not the goal to what
-is the goal.<sup class="footnote-reference"><a href="#fn38">38</a></sup></p>
+is the goal.<sup class="footnote-reference" id="fr-fn38-1"><a href="#fn-fn38">38</a></sup></p>
 <p><em>A. V. 312-3.</em></p>
 <p>The purpose of seeing rightly is disenchantment.</p>
 <p>The purpose of disenchantment is dispassion.</p>
@@ -2190,10 +2169,10 @@ and <em>dhammānudhamma-paṭipatti</em>: {640}</p>
 <blockquote>
 <p>The doing of good (attha) by one who does not recognize what is good
 is not conducive to happiness; a fool squanders the good like a monkey
-watching over an orchard.<sup class="footnote-reference"><a href="#fn39">39</a></sup></p>
+watching over an orchard.<sup class="footnote-reference" id="fr-fn39-1"><a href="#fn-fn39">39</a></sup></p>
 <p><em>J. I. 251.</em></p>
 <p>One should investigate the source of things in order to clearly
-understand their essence (attha).<sup class="footnote-reference"><a href="#fn40">40</a></sup></p>
+understand their essence (attha).<sup class="footnote-reference" id="fr-fn40-1"><a href="#fn-fn40">40</a></sup></p>
 <p><em>A. IV. 3-4.</em></p>
 <p>A person who practises the Dhamma correctly is difficult to find in
 the world.</p>
@@ -2358,7 +2337,7 @@ good and bad sides, both the merits and harmful aspects, of an
 object. One does not simply see only the good aspects or only the
 negative aspects. For example, to truly see into the nature of sense
 desire (<em>kāma</em>), one knows both its merits and its harmful
-aspects.<sup class="footnote-reference"><a href="#fn41">41</a></sup></p>
+aspects.<sup class="footnote-reference" id="fr-fn41-1"><a href="#fn-fn41">41</a></sup></p>
 </li>
 <li>
 <p>When one wishes to solve a problem or to escape from an undesirable
@@ -2377,7 +2356,7 @@ exist?</p>
 one’s practice. For example, although the Buddha clearly understood the
 many harmful effects and faults of sensuality, until he had seen the way
 out of sensuality, he did not assert that he would not return to indulge
-in it:<sup class="footnote-reference"><a href="#fn42">42</a></sup></p>
+in it:<sup class="footnote-reference" id="fr-fn42-1"><a href="#fn-fn42">42</a></sup></p>
 <div class="sutta">
 <blockquote>
 <p>Before my awakening, O monks, when I was still a bodhisatta and not
@@ -2437,7 +2416,7 @@ volitional formations … consciousness, what is its deficiency, and
 what is its escape?’…. So long, monks, as I did not fully understand
 as they really are the gratification, the danger, and the escape in
 the case of these five aggregates subject to clinging, I did not claim
-to have awakened to the unsurpassed perfect enlightenment.<sup class="footnote-reference"><a href="#fn43">43</a></sup> {644}</p>
+to have awakened to the unsurpassed perfect enlightenment.<sup class="footnote-reference" id="fr-fn43-1"><a href="#fn-fn43">43</a></sup> {644}</p>
 <p><em>S. III. 27-8.</em></p>
 </blockquote>
 </div>
@@ -2475,8 +2454,8 @@ satisfaction in it, fixes on it, and becomes devoted to it. His mind
 is well-set, well-trained, well-departed, well-liberated, and released
 from sensual pleasures. Whichever taints and afflictions arise
 dependent on sensual pleasures, he is freed from these taints and
-afflictions. He does not feel that kind of feeling.<sup class="footnote-reference"><a href="#fn44">44</a></sup> This is
-called the deliverance from sense desire (kāma).<sup class="footnote-reference"><a href="#fn45">45</a></sup></p>
+afflictions. He does not feel that kind of feeling.<sup class="footnote-reference" id="fr-fn44-1"><a href="#fn-fn44">44</a></sup> This is
+called the deliverance from sense desire (kāma).<sup class="footnote-reference" id="fr-fn45-1"><a href="#fn-fn45">45</a></sup></p>
 <p><em>D. III. 239-40, 278; A. III. 245.</em></p>
 <p>So too, formerly when I lived the home life, I enjoyed myself,
 provided and endowed with the five cords of sensual pleasure…. On a
@@ -2524,7 +2503,7 @@ steadfast mind, and the refined states of happiness
 (<em>sukhavihāra-dhamma</em>) comprise the advantages (<em>assāda</em>) of
 concentration. The fact that restlessness and the agitation due to
 restlessness can return, and that concentration is impermanent, subject
-to stress, and not-self, comprise its disadvantages (<em>ādīnava</em>).<sup class="footnote-reference"><a href="#fn46">46</a></sup></p>
+to stress, and not-self, comprise its disadvantages (<em>ādīnava</em>).<sup class="footnote-reference" id="fr-fn46-1"><a href="#fn-fn46">46</a></sup></p>
 <p>Generally speaking, in everyday life and practice, people are faced with
 choices, between those things that are harmful and other things that are
 meritorious and free from danger. Even in the case of an escape
@@ -2635,7 +2614,7 @@ for the purpose of mitigating the perils of climate and for enjoying
 retreat.</p>
 <p>Reflecting wisely, he uses the medicinal requisites only for
 dispelling arisen feelings stemming from illness and for the benefit
-of being free from afflicting disease.<sup class="footnote-reference"><a href="#fn47">47</a></sup></p>
+of being free from afflicting disease.<sup class="footnote-reference" id="fr-fn47-1"><a href="#fn-fn47">47</a></sup></p>
 <p><em>M. I. 10; Nd. I. 496.</em></p>
 </blockquote>
 </div>
@@ -2700,7 +2679,7 @@ the factors of mindfulness (<em>sati</em>; to be circumspect; to bear in mind
 those things that need to be engaged with), a sense of urgency
 (<em>saṁvega</em>; motivation), and knowledge (<em>ñāṇa</em>; knowledge in line with
 the truth). Many skilful methods are recommended in regard to reflection
-on death.<sup class="footnote-reference"><a href="#fn48">48</a></sup></p>
+on death.<sup class="footnote-reference" id="fr-fn48-1"><a href="#fn-fn48">48</a></sup></p>
 <p>There are many passages in the Tipiṭaka in which the Buddha describes
 how in the same incident or situation one way of thinking will lead to
 laziness while another way will lead to effort. Here is one example:</p>
@@ -2774,15 +2753,15 @@ will get worse. So I will stir up sufficient energy….’</p>
 <p>Or he is recuperating, having not long recovered from an illness, and
 he thinks: ’I am recuperating, having not long recovered from an
 illness. It is quite possible that the illness will return. So I will
-stir up sufficient energy….’<sup class="footnote-reference"><a href="#fn49">49</a></sup></p>
+stir up sufficient energy….’<sup class="footnote-reference" id="fr-fn49-1"><a href="#fn-fn49">49</a></sup></p>
 </blockquote>
 </div>
 <p>In the case that negative thoughts arise, the scriptures suggest methods
 for addressing them, and most of these methods entail the use of
 reflection rousing wholesome qualities. For example, in the
 Vitakkasaṇṭhāna Sutta the Buddha describes five general principles or
-stages for dealing with unwholesome thoughts.<sup class="footnote-reference"><a href="#fn50">50</a></sup> In sum, if evil,
-unwholesome thoughts accompanied by greed,<sup class="footnote-reference"><a href="#fn51">51</a></sup> hatred, or delusion
+stages for dealing with unwholesome thoughts.<sup class="footnote-reference" id="fr-fn50-1"><a href="#fn-fn50">50</a></sup> In sum, if evil,
+unwholesome thoughts accompanied by greed,<sup class="footnote-reference" id="fr-fn51-1"><a href="#fn-fn51">51</a></sup> hatred, or delusion
 arise, one can rectify them in the following ways:</p>
 <ol>
 <li>
@@ -2824,7 +2803,7 @@ person; or one should consider that person in light of the principles of
 kamma, that that person is the owner of his kamma, the heir to his
 kamma, born of his kamma, related to his kamma, abides supported by his
 kamma, whatever kamma he should do, for good or for ill, of that he will
-be the heir.<sup class="footnote-reference"><a href="#fn52">52</a></sup></p>
+be the heir.<sup class="footnote-reference" id="fr-fn52-1"><a href="#fn-fn52">52</a></sup></p>
 <p>Similarly, Ven. Sāriputta suggested five methods for eliminating malice
 and aversion, which are based on an understanding of the differences
 between people:</p>
@@ -2899,11 +2878,11 @@ them. This is similar to a beautiful lotus pond with clear and cool
 water and with tranquil borders covered with various plants. When a
 traveller arrives, parched, tired, and thirsty, he goes down into the
 pond and drinks the water, and then either sits or lies down in the
-shade of the bordering trees.<sup class="footnote-reference"><a href="#fn53">53</a></sup> {652}</p>
+shade of the bordering trees.<sup class="footnote-reference" id="fr-fn53-1"><a href="#fn-fn53">53</a></sup> {652}</p>
 <p>The Visuddhimagga describes many methods of contemplation for dispelling
 angry, resentful thoughts. These can be summarized as a series of stages
 and should be applied as is suitable to a person’s individual
-disposition:<sup class="footnote-reference"><a href="#fn54">54</a></sup></p>
+disposition:<sup class="footnote-reference" id="fr-fn54-1"><a href="#fn-fn54">54</a></sup></p>
 <ol>
 <li>
 <p>To recollect the Buddha’s teachings on overcoming anger and on
@@ -3053,7 +3032,7 @@ importance and has some attributes requiring special understanding.</p>
 <p>The gist of this kind of reflection is contained and outlined in the
 teaching on the Four Foundations of Mindfulness, which will be discussed
 in the section on the seventh factor of the Eightfold Path – right
-mindfulness.<sup class="footnote-reference"><a href="#fn55">55</a></sup> The reason for including this kind of reflection here
+mindfulness.<sup class="footnote-reference" id="fr-fn55-1"><a href="#fn-fn55">55</a></sup> The reason for including this kind of reflection here
 is that there is a distinct focus in these two contexts. The description
 within the Four Foundations of Mindfulness focuses on the establishment
 of mindfulness, by bearing in mind and being fully awake to things as
@@ -3072,12 +3051,12 @@ understanding will focus on the harmful consequences they believe
 Buddhism causes for its followers.</p>
 <p>The important points to understand concerning the past, the present, and
 the future in relation to this ninth kind of wise reflection are as
-follows:<sup class="footnote-reference"><a href="#fn56">56</a></sup></p>
+follows:<sup class="footnote-reference" id="fr-fn56-1"><a href="#fn-fn56">56</a></sup></p>
 <p>In short, thinking that is not grounded in the present moment –
 thinking caught up in the past or drifting off into the future –
 follows the direction of and is subject to craving; it follows one’s
 feelings, or in modern parlance it falls under the sway of one’s
-emotions.<sup class="footnote-reference"><a href="#fn57">57</a></sup> In this case one hankers after and longs for those things
+emotions.<sup class="footnote-reference" id="fr-fn57-1"><a href="#fn-fn57">57</a></sup> In this case one hankers after and longs for those things
 that have passed one by, because of an attachment to or a lingering over
 a mental image or memory, or one drifts off into abstract thoughts and
 fantasies of things that may or may not take place in the future,
@@ -3149,7 +3128,7 @@ There is no reprieve from the great commander-in-chief, the Lord of
 Death.</p>
 <p>One who dwells thus ardently, not idle, by day and by night – such a
 person the Peaceful Sage has called one who prospers each and every
-day.<sup class="footnote-reference"><a href="#fn58">58</a></sup> {656}</p>
+day.<sup class="footnote-reference" id="fr-fn58-1"><a href="#fn-fn58">58</a></sup> {656}</p>
 <p><em>Bhaddekaratta Sutta, M. III. 187-9.</em></p>
 <p>[Those who have realized the Dhamma] do not sorrow over the past,
 nor do they fantasize about the future. They maintain themselves with
@@ -3178,7 +3157,7 @@ A wise person should not become discouraged.<br />
 I have clearly witnessed for myself that whatever I have wished for<br />
 I have obtained to satisfaction.</p>
 <p><em>E.g.: J. I. 267; J. IV. 269; J. VI. 43.</em></p>
-<p>Complete your activities with heedfulness.<sup class="footnote-reference"><a href="#fn59">59</a></sup></p>
+<p>Complete your activities with heedfulness.<sup class="footnote-reference" id="fr-fn59-1"><a href="#fn-fn59">59</a></sup></p>
 <p><em>The Buddha’s last words; D. II. 156.</em></p>
 </blockquote>
 </div>
@@ -3269,7 +3248,7 @@ Discipline comes corruption of the Dhamma.</p>
 <li>
 <p>Again, in the future there will be monks who are undeveloped in
 body, virtuous conduct, mind, and wisdom. They will give
-dependence<sup class="footnote-reference"><a href="#fn60">60</a></sup> to others but will not be able to train them in
+dependence<sup class="footnote-reference" id="fr-fn60-1"><a href="#fn-fn60">60</a></sup> to others but will not be able to train them in
 higher morality, higher mind, and higher wisdom. These [pupils]
 too will be undeveloped…. Thus, through corruption of the Dhamma
 comes corruption of the Discipline, and from corruption of the
@@ -3360,7 +3339,7 @@ household life…</p>
 monastery stewards and novices. When they fraternize in this way,
 it can be expected that they will engage in the use of various
 kinds of stored-up goods and give gross hints in regard to the
-ground and vegetation.<sup class="footnote-reference"><a href="#fn61">61</a></sup></p>
+ground and vegetation.<sup class="footnote-reference" id="fr-fn61-1"><a href="#fn-fn61">61</a></sup></p>
 </li>
 </ol>
 <p>These, monks, are the five future dangers as yet unarisen that will
@@ -3380,7 +3359,7 @@ effective preparations and plans for the future. This is made manifest
 in the important historical activities of the monastic sangha. The first
 recitation (<em>saṅgāyanā</em>), for example, came about because the monks gave
 consideration to the future, which was connected to their present
-responsibilities.<sup class="footnote-reference"><a href="#fn62">62</a></sup> {660}</p>
+responsibilities.<sup class="footnote-reference" id="fr-fn62-1"><a href="#fn-fn62">62</a></sup> {660}</p>
 <h3 id="reflection-corresponding-to-analytic-discussion-vibhajja-vāda"><a class="header" href="#reflection-corresponding-to-analytic-discussion-vibhajja-vāda">Reflection Corresponding to Analytic Discussion (vibhajja-vāda)</a></h3>
 <p>Analytic discussion (<em>vibhajja-vāda</em>) is not literally a method of
 reflection, but rather a method of speaking or a method of describing
@@ -3389,7 +3368,7 @@ principles contained in specific teachings.</p>
 Before one speaks, one must first think; speech is always preceded by
 thought. There are Dhamma teachings designating applied thought
 (<em>vitakka</em>) and sustained thought (<em>vicāra</em>) as the conditions shaping
-speech (<em>vacī-saṅkhāra</em>).<sup class="footnote-reference"><a href="#fn63">63</a></sup> Thus, it is possible to discuss analytic
+speech (<em>vacī-saṅkhāra</em>).<sup class="footnote-reference" id="fr-fn63-1"><a href="#fn-fn63">63</a></sup> Thus, it is possible to discuss analytic
 speech on the level of thought.</p>
 <p>There are deeper meanings to the Pali word <em>vāda</em> (’speech’;
 ’discussion’), pointing to patterns of thought which are the source of
@@ -3410,14 +3389,14 @@ kinds of reflection more clearly.</p>
 <p>The reason that the term <em>vibhajja-vāda</em> is used as an epithet for
 Buddhism, and is used to represent the Buddhist way of thinking, is most
 likely because the Buddha referred to himself as an ’analytic speaker’
-(a speaker of reason; <em>vibhajja-vāda</em> or <em>vibhajja-vādī</em>).<sup class="footnote-reference"><a href="#fn64">64</a></sup> These
+(a speaker of reason; <em>vibhajja-vāda</em> or <em>vibhajja-vādī</em>).<sup class="footnote-reference" id="fr-fn64-1"><a href="#fn-fn64">64</a></sup> These
 two terms, <em>vibhajja-vāda</em> and <em>vibhajja-vādī</em>, as epithets of the
 Buddha or of Buddhism, have been cited throughout the history of
 Buddhism. For example, at the Third Recitation, the emperor Asoka asked
 Ven. Moggaliputta-Tissa Thera, the leader of the recitation, the
 question: ’What is the doctrine of the Perfectly Enlightened Buddha?’
 The venerable elder answered: ’Your Majesty, the Perfectly Enlightened
-Buddha is a speaker of reason (<em>vibhajja-vādī</em>).’<sup class="footnote-reference"><a href="#fn65">65</a></sup></p>
+Buddha is a speaker of reason (<em>vibhajja-vādī</em>).’<sup class="footnote-reference" id="fr-fn65-1"><a href="#fn-fn65">65</a></sup></p>
 <p>In sum, one can say that <em>vibhajja-vāda</em> is a general term denoting the
 entire spectrum of Buddhist thought.</p>
 <p>The term <em>vibhajja</em> means to ’separate’, ’divide’, ’distinguish’, or
@@ -3467,7 +3446,7 @@ situations.’ Although this second factor appears similar to the
 first, it is distinct; moreover, it reinforces and completes the
 first factor. Examples of this kind of analysis are the teaching on
 the ten kinds of householders and the teaching on praiseworthy and
-blameworthy monks, both forest monks and village monks.<sup class="footnote-reference"><a href="#fn66">66</a></sup></p>
+blameworthy monks, both forest monks and village monks.<sup class="footnote-reference" id="fr-fn66-1"><a href="#fn-fn66">66</a></sup></p>
 </li>
 </ol>
 <p>This way of thinking leads to an understanding of how various factors or
@@ -3489,7 +3468,7 @@ second kind of reflection (the method of analyzing component factors)
 described earlier in this chapter, so it is not necessary to expand on
 it here. The term <em>vibhajja-vāda</em> was not originally used to denote an
 analysis of component factors, but authors of later texts used it in
-this broader sense,<sup class="footnote-reference"><a href="#fn67">67</a></sup> and thus I have included it in this discussion.
+this broader sense,<sup class="footnote-reference" id="fr-fn67-1"><a href="#fn-fn67">67</a></sup> and thus I have included it in this discussion.
 {662}</p>
 <h3 id="reflecting-on-the-sequence-of-momentary-events"><a class="header" href="#reflecting-on-the-sequence-of-momentary-events">Reflecting on the Sequence of Momentary Events</a></h3>
 <p>Here, one analyzes phenomena according to the succession of causes and
@@ -3630,7 +3609,7 @@ a monk, he may answer in accord with the Pali Canon and say: ’If by
 associating with such persons or places unwholesome states increase and
 wholesome states decrease, then one should avoid them, but if wholesome
 states increase and unwholesome states decrease, one should seek them
-out.<sup class="footnote-reference"><a href="#fn68">68</a></sup></p>
+out.<sup class="footnote-reference" id="fr-fn68-1"><a href="#fn-fn68">68</a></sup></p>
 <p>In answer to the question: ’Should a monk observe the austere practices
 (<em>dhutaṅga</em>)?’ – someone who knows the Dhamma well will say: ’If a
 monk’s meditation improves, then he should observe these practices; if
@@ -3639,15 +3618,15 @@ regardless of whether he observes these practices or not, and if he
 wishes to assist later generations, then he should observe them. If a
 monk’s meditation deteriorates regardless of whether he observes these
 practices or not, he should observe them to establish a basis for his
-personal disposition.<sup class="footnote-reference"><a href="#fn69">69</a></sup></p>
+personal disposition.<sup class="footnote-reference" id="fr-fn69-1"><a href="#fn-fn69">69</a></sup></p>
 <p>If someone were to ask whether the Buddha is a proponent of
 annihilationism (<em>uccheda-vāda</em>), by answering according to the Buddha’s
 own words, one would say: ’If you are using this term in this
 definition, then “yes,” but if you are using it in this other
-definition, then “no”.’<sup class="footnote-reference"><a href="#fn70">70</a></sup> Similarly, if someone were to ask whether a
+definition, then “no”.’<sup class="footnote-reference" id="fr-fn70-1"><a href="#fn-fn70">70</a></sup> Similarly, if someone were to ask whether a
 monk who likes to live in solitude and to wander alone can be called one
 who practises correctly according to the Buddha’s teachings, one would
-need to answer by stating certain qualifications.<sup class="footnote-reference"><a href="#fn71">71</a></sup></p>
+need to answer by stating certain qualifications.<sup class="footnote-reference" id="fr-fn71-1"><a href="#fn-fn71">71</a></sup></p>
 <p>Taking an example from modern studies of education, the question comes
 up whether to allow children to encounter particular social influences,
 like news or shows broadcast by the media, without any supervision, or
@@ -3770,7 +3749,7 @@ question.</p>
 </ol>
 <p>These four kinds of answers correspond with four kinds of questions,
 which are listed here along with simple examples given in later
-texts:<sup class="footnote-reference"><a href="#fn72">72</a></sup></p>
+texts:<sup class="footnote-reference" id="fr-fn72-1"><a href="#fn-fn72">72</a></sup></p>
 <ol>
 <li>
 <p><em>Ekaṁsavyākaraṇīya-pañhā</em>: questions that should be answered
@@ -3822,13 +3801,13 @@ understanding. Here, it is better to first instil a basic understanding
 of other matters. Later one may be able to speak about the original
 question, or else the person understands the matter by himself.</p>
 <p>On a more subtle level are those questions incorrectly posed which stem
-from a misunderstanding and are incongruous with truth.<sup class="footnote-reference"><a href="#fn73">73</a></sup> Examples
+from a misunderstanding and are incongruous with truth.<sup class="footnote-reference" id="fr-fn73-1"><a href="#fn-fn73">73</a></sup> Examples
 from the Pali Canon include such questions as: ’Who cognizes?’ ’Whose
 cognition?’ ’Who experiences sense objects?’ and ’Whose feelings?’ One
 is unable to answer these questions in a way that the questioner
 desires, and thus it is better to dismiss these questions. One may
-explain the reasons for not answering,<sup class="footnote-reference"><a href="#fn74">74</a></sup> or ask the questioner to
-reformulate the question so that it accords with reality.<sup class="footnote-reference"><a href="#fn75">75</a></sup></p>
+explain the reasons for not answering,<sup class="footnote-reference" id="fr-fn74-1"><a href="#fn-fn74">74</a></sup> or ask the questioner to
+reformulate the question so that it accords with reality.<sup class="footnote-reference" id="fr-fn75-1"><a href="#fn-fn75">75</a></sup></p>
 <p>Following are some passages from the Pali Canon describing ’detailed
 analysis’ (<em>vibhajja-vāda</em>):</p>
 <div class="sutta">
@@ -3842,7 +3821,7 @@ cause unwholesome states to diminish and wholesome states to increase
 in one who cultivates them should be cultivated….</p>
 <p>Sāriputta, sounds … odours … flavours … tangibles …
 mind-objects cognizable by the mind are of two kinds, I say: to be
-cultivated and not to be cultivated….<sup class="footnote-reference"><a href="#fn76">76</a></sup></p>
+cultivated and not to be cultivated….<sup class="footnote-reference" id="fr-fn76-1"><a href="#fn-fn76">76</a></sup></p>
 <p><em>Sevitabbāsevitabba Sutta: M. III. 45-60</em></p>
 <p>Monks, robes are of two kinds, I say: to be used and not to be used.
 With reference to what was this said? If a monk knows of a robe: ’When
@@ -3855,7 +3834,7 @@ not to be used….</p>
 <p>Villages … towns … districts … are of two kinds, I say: to be
 resorted to and not to be resorted to….</p>
 <p>Persons are of two kinds, I say: to be associated with and not to be
-associated with….<sup class="footnote-reference"><a href="#fn77">77</a></sup></p>
+associated with….<sup class="footnote-reference" id="fr-fn77-1"><a href="#fn-fn77">77</a></sup></p>
 <p><em>A. V. 100.</em></p>
 </blockquote>
 </div>
@@ -3892,7 +3871,7 @@ becomes established, his unconcentrated mind becomes concentrated, his
 undestroyed taints come to destruction, he attains the unattained
 supreme security from bondage; and the requisites of life … are easy
 to come by…. Having reflected thus, that monk should continue living
-in that forest for the rest of his life; he should not depart.<sup class="footnote-reference"><a href="#fn78">78</a></sup></p>
+in that forest for the rest of his life; he should not depart.<sup class="footnote-reference" id="fr-fn78-1"><a href="#fn-fn78">78</a></sup></p>
 <p><em>Vanapattha Sutta: M. I. 104-108.</em></p>
 </blockquote>
 </div>
@@ -3945,7 +3924,7 @@ spiritual endeavour, religious life, or act of propitiation,
 unwholesome states diminish and wholesome states increase, that moral
 precept … act of propitiation is fruitful.’</p>
 <p>So said the Venerable Ānanda and the Supreme Teacher agreed with
-him.<sup class="footnote-reference"><a href="#fn79">79</a></sup></p>
+him.<sup class="footnote-reference" id="fr-fn79-1"><a href="#fn-fn79">79</a></sup></p>
 <p><em>A. I. 225.</em></p>
 <p><em>Religious Wanderers:</em> Is it true, householder, what they say – that
 the ascetic Gotama censures all asceticism and that he categorically
@@ -3956,7 +3935,7 @@ reprove all ascetics who live a harsh and austere life. What is
 blameworthy, the Blessed One blames; what is praiseworthy, he praises.
 The Blessed One is a speaker of reason (vibhajja-vādī); he blames what
 is blameworthy and praises what is praiseworthy; he does not teach
-here in a one-sided way.<sup class="footnote-reference"><a href="#fn80">80</a></sup></p>
+here in a one-sided way.<sup class="footnote-reference" id="fr-fn80-1"><a href="#fn-fn80">80</a></sup></p>
 <p><em>A. V. 190-91.</em></p>
 </blockquote>
 </div>
@@ -3995,7 +3974,7 @@ There is work involving a small amount of activity, small deeds, small
 engagements, and small undertakings, which, when it fails, is of small
 fruit. There is work involving a small amount of activity, small
 deeds, small engagements, and small undertakings, which, when it
-succeeds, is of great fruit.<sup class="footnote-reference"><a href="#fn81">81</a></sup> {670}</p>
+succeeds, is of great fruit.<sup class="footnote-reference" id="fr-fn81-1"><a href="#fn-fn81">81</a></sup> {670}</p>
 <p><em>M. II. 197-8.</em></p>
 </blockquote>
 </div>
@@ -4139,7 +4118,7 @@ meritorious deeds. They are not carried away by or caught up in
 their wealth; they use it by fully understanding its merits and
 disadvantages. They are freed by wisdom and are masters over their
 wealth. Such householders are excellent, distinguished, and supreme;
-they are praiseworthy on all four counts.<sup class="footnote-reference"><a href="#fn82">82</a></sup></li>
+they are praiseworthy on all four counts.<sup class="footnote-reference" id="fr-fn82-1"><a href="#fn-fn82">82</a></sup></li>
 </ul>
 </div>
 <p>This kind of analytic reflection (<em>vibhajja-vāda</em>) leads to clear and
@@ -4209,7 +4188,7 @@ simplicity….</p>
 for the sake of contentment, for the sake of eliminating
 [defilements], for the sake of solitude, for the sake of simplicity,
 is the foremost, the best, the preeminent, the supreme, and the finest
-of these five kind of forest dwellers.<sup class="footnote-reference"><a href="#fn83">83</a></sup> {673}</p>
+of these five kind of forest dwellers.<sup class="footnote-reference" id="fr-fn83-1"><a href="#fn-fn83">83</a></sup> {673}</p>
 <p><em>A. III. 219-21.</em></p>
 <p><em>Buddha:</em> Does your family give gifts, householder?</p>
 <p><em>Dārukammika:</em> My family gives, venerable sir. And those gifts are
@@ -4242,7 +4221,7 @@ then in this respect he is praiseworthy.</p>
 <p><em>A. III. 391-2.</em></p>
 <p>And how does an evil monk wander alone? Here, an evil monk lives by
 himself in the borderlands. Approaching families there, he obtains
-gains. It is in this way that an evil monk wanders alone.<sup class="footnote-reference"><a href="#fn84">84</a></sup></p>
+gains. It is in this way that an evil monk wanders alone.<sup class="footnote-reference" id="fr-fn84-1"><a href="#fn-fn84">84</a></sup></p>
 <p><em>A. III. 130.</em></p>
 <p>One who trains himself in solitude – who sits alone, lies down alone,
 and wanders alone, free from laziness – finds delight in the forest.</p>
@@ -4283,7 +4262,7 @@ and attend closely, I will speak…. Here, what lies in the past has
 been abandoned, what lies in the future has been relinquished, and
 delight and attachment for present forms of individual existence has
 been thoroughly removed. It is in such a way that dwelling alone is
-fulfilled in detail.<sup class="footnote-reference"><a href="#fn85">85</a></sup></p>
+fulfilled in detail.<sup class="footnote-reference" id="fr-fn85-1"><a href="#fn-fn85">85</a></sup></p>
 <p><em>S. II. 282-3.</em></p>
 <p><em>Ven. Migajāla:</em> Venerable sir, it is said, ’a lone dweller, a lone
 dweller.’ In what way is one a lone dweller, and in what way is one
@@ -4318,14 +4297,14 @@ associating with bhikkhus and bhikkhunis, with male and female lay
 followers, with kings and royal minsters, with sectarian teachers and
 their disciples, he is still called a lone dweller. For what reason?
 Because he has abandoned his companion of craving; therefore he is
-called a lone dweller.<sup class="footnote-reference"><a href="#fn86">86</a></sup> {675}</p>
+called a lone dweller.<sup class="footnote-reference" id="fr-fn86-1"><a href="#fn-fn86">86</a></sup> {675}</p>
 <p><em>S. IV. 35-7.</em></p>
 </blockquote>
 </div>
 <div class="sutta">
 <blockquote>
 <p>Monks, wanderers of other sects prescribe these three kinds of
-solitude.<sup class="footnote-reference"><a href="#fn87">87</a></sup> What three? Solitude with respect to robes, solitude
+solitude.<sup class="footnote-reference" id="fr-fn87-1"><a href="#fn-fn87">87</a></sup> What three? Solitude with respect to robes, solitude
 with respect to almsfood, and solitude with respect to lodgings.</p>
 <p>This is what wanderers of other sects prescribe as solitude with
 respect to robes: they wear hemp robes, robes of hemp-mixed cloth,
@@ -4410,7 +4389,7 @@ spaciousness, peace, and inner freedom.</p>
 instruction from others and wise reflection – comprise the link between
 people and the world. They emphasize one’s external environment, before
 one enters upon the Noble Eightfold Path, which consists of internal
-factors.<sup class="footnote-reference"><a href="#fn88">88</a></sup></p>
+factors.<sup class="footnote-reference" id="fr-fn88-1"><a href="#fn-fn88">88</a></sup></p>
 <p>Virtuous friendship (<em>kalyāṇamitta</em> = ’wholesome instruction from
 others’) highlights the correct relationship between people and and the
 world in respect to their community, and wise reflection highlights the
@@ -4418,7 +4397,7 @@ correct relationship between people and the world from the perspective
 of the mind, that is, of the way in which one experiences sense
 impressions and the way in which one thinks. This latter factor refers
 to the way of wisdom, or of discerning things as they really are, as
-explained earlier.<sup class="footnote-reference"><a href="#fn89">89</a></sup></p>
+explained earlier.<sup class="footnote-reference" id="fr-fn89-1"><a href="#fn-fn89">89</a></sup></p>
 <p>The different kinds of wise reflection described above follow the
 presentations in the Buddhist scriptures. It is important that students
 of Buddhism not get stuck on these conventional formats or on a set
@@ -4480,7 +4459,7 @@ wise reflection, the kinds and levels of wise reflection may differ.</p>
 <p>Take an example connected to the two stages of tranquillity (<em>samatha</em>)
 and insight (<em>vipassanā</em>). One man sees the face of a beautiful young
 woman, but instead of focusing on the beauty of her face he sees it as
-comprised of skin and facial hair, along with the unattractive elements
+consisting of skin and facial hair, along with the unattractive elements
 of grease, sweat and dust, and with bones and flesh beneath. In this
 way, lust does not arise in him. The wise reflection applied here is
 considered an aspect of tranquillity meditation (reflection on the
@@ -4496,7 +4475,7 @@ lovingkindness), because it makes the mind peaceful and pure. {678}</p>
 beautiful than mine.’ She begins to feel envy and dislike. This is a
 form of unwise reflection, because it generates unwholesome states and
 causes suffering and anguish.</p>
-<p>A third man sees this woman and sees her face as comprised of various
+<p>A third man sees this woman and sees her face as consisting of various
 physical parts made up of different elements; as a whole they are
 conventionally referred to as the face of this woman with such-and-such
 a name. This woman’s face is nothing more than a physical thing – it is
@@ -4504,7 +4483,7 @@ impermanent, unstable, subject to change, existing according to causes
 and conditions, morally neutral; ultimately, it is neither beautiful nor
 repulsive. This kind of reflection is in line with insight meditation,
 because the person sees the object as it really is or according to the
-truth.<sup class="footnote-reference"><a href="#fn90">90</a></sup></p>
+truth.<sup class="footnote-reference" id="fr-fn90-1"><a href="#fn-fn90">90</a></sup></p>
 <p>Wise reflection (<em>yoniso-manasikāra</em>) is the principal factor initiating
 spiritual training, or it is the pillar of wisdom development,
 especially in systematic or formal study. It should thus be given great
@@ -4782,7 +4761,7 @@ wisdom – which begins with right view.</p>
 <p>In Thailand, Dr. Saroj Buasri has already written about the comparison
 between the scientific method and the method in accord with the Four
 Noble Truths, for example in his book ’<em>A Philosophy of Education for
-Thailand: the Confluence of Buddhism and Democracy</em>’.<sup class="footnote-reference"><a href="#fn91">91</a></sup> This is
+Thailand: the Confluence of Buddhism and Democracy</em>’.<sup class="footnote-reference" id="fr-fn91-1"><a href="#fn-fn91">91</a></sup> This is
 praiseworthy work. However, because in the meantime there has been
 further examination and contemplation on this subject, I have introduced
 some different ideas.</p>
@@ -4801,33 +4780,34 @@ by scholars when there is an opportunity.</p>
 <p>Following are some definitions in the Pali Canon and the commentaries of
 the term <em>dhammānudhamma-paṭipatti</em>: to practise correctly, in an
 integrated fashion, without obstruction, and consistent with the goals
-of practice;<sup class="footnote-reference"><a href="#fn92">92</a></sup> to undertake the initial stages of practice consistent
-with the nine supermundane states (<em>lokuttara-dhamma</em>);<sup class="footnote-reference"><a href="#fn93">93</a></sup> to
+of practice;<sup class="footnote-reference" id="fr-fn92-1"><a href="#fn-fn92">92</a></sup> to undertake the initial stages of practice consistent
+with the nine supermundane states (<em>lokuttara-dhamma</em>);<sup class="footnote-reference" id="fr-fn93-1"><a href="#fn-fn93">93</a></sup> to
 undertake the initial stages of practice, along with virtuous conduct
-(<em>sīla</em>), consistent with the nine supermundane states;<sup class="footnote-reference"><a href="#fn94">94</a></sup> to
+(<em>sīla</em>), consistent with the nine supermundane states;<sup class="footnote-reference" id="fr-fn94-1"><a href="#fn-fn94">94</a></sup> to
 undertake the initial stages of practice along with virtuous conduct
-(<em>sīla</em>) to arrive at the goal: the transcendent state;<sup class="footnote-reference"><a href="#fn95">95</a></sup> to practise
+(<em>sīla</em>) to arrive at the goal: the transcendent state;<sup class="footnote-reference" id="fr-fn95-1"><a href="#fn-fn95">95</a></sup> to practise
 the factors of insight (<em>vipassanā-dhamma</em>), which are consistent with
-the noble truth (<em>ariya-dhamma</em>);<sup class="footnote-reference"><a href="#fn96">96</a></sup> to practise the path of insight
-(<em>vipassanā-magga</em>), conforming to the noble truth;<sup class="footnote-reference"><a href="#fn97">97</a></sup> to follow the
-righteous practice conforming to Nibbāna – the transcendent state;<sup class="footnote-reference"><a href="#fn98">98</a></sup>
+the noble truth (<em>ariya-dhamma</em>);<sup class="footnote-reference" id="fr-fn96-1"><a href="#fn-fn96">96</a></sup> to practise the path of insight
+(<em>vipassanā-magga</em>), conforming to the noble truth;<sup class="footnote-reference" id="fr-fn97-1"><a href="#fn-fn97">97</a></sup> to follow the
+righteous practice conforming to Nibbāna – the transcendent state;<sup class="footnote-reference" id="fr-fn98-1"><a href="#fn-fn98">98</a></sup>
 to develop the subsidiary factor of insight meditation
-(<em>vipassanā-bhāvanā</em>), conforming to the transcendent state;<sup class="footnote-reference"><a href="#fn99">99</a></sup> the
+(<em>vipassanā-bhāvanā</em>), conforming to the transcendent state;<sup class="footnote-reference" id="fr-fn99-1"><a href="#fn-fn99">99</a></sup> the
 term <em>dhammānudhamma</em> refers to the Dhamma and all its minor parts
-(<em>anudhamma</em>);<sup class="footnote-reference"><a href="#fn100">100</a></sup> <em>dhammānudhamma</em> refers to the parts of the Dhamma:
-those practices compatible with the Dhamma;<sup class="footnote-reference"><a href="#fn101">101</a></sup> the nine supermundane
+(<em>anudhamma</em>);<sup class="footnote-reference" id="fr-fn100-1"><a href="#fn-fn100">100</a></sup> <em>dhammānudhamma</em> refers to the parts of the Dhamma:
+those practices compatible with the Dhamma;<sup class="footnote-reference" id="fr-fn101-1"><a href="#fn-fn101">101</a></sup> the nine supermundane
 states are called the Dhamma, qualities such as <em>vipassanā</em>, for
 instance, are called <em>anudhamma</em>, and the practice suitable to the
-Dhamma is called <em>anudhamma-paṭipadā</em>.<sup class="footnote-reference"><a href="#fn102">102</a></sup></p>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
+Dhamma is called <em>anudhamma-paṭipadā</em>.<sup class="footnote-reference" id="fr-fn102-1"><a href="#fn-fn102">102</a></sup></p>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
 <p>Here, ’the words of others’ (<em>paratoghosa</em>) refers to skilful,
-wholesome words by others.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
+wholesome words by others. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
 <p>Note that the term ’feeling’ here refers to sensation, not to
-emotions.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+emotions. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>The five hindrances (<em>nīvaraṇa</em>): sensual desire (<em>kāma-chanda</em>,
 or ’covetousness’ – <em>abhijjhā</em>), ill-will (<em>byāpāda</em>), ’sloth and
 torpor’ (<em>thīna-middha</em>), restlessness and worry
@@ -4835,13 +4815,13 @@ torpor’ (<em>thīna-middha</em>), restlessness and worry
 of enlightenment (<em>bojjhaṅga</em>): mindfulness (<em>sati</em>), investigation
 of Dhamma (<em>dhamma-vicaya</em>), effort (<em>viriya</em>), bliss (<em>pīti</em>),
 tranquillity (<em>passaddhi</em>), concentration (<em>samādhi</em>), and
-equanimity (<em>upekkhā</em>).</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+equanimity (<em>upekkhā</em>). <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
 <p>In particular, one knows the means of generating wise attention
-and preventing unwise attention.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+and preventing unwise attention. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
 <p>For the definition of <em>yoniso-manasikāra</em> as <em>upāya-manasikāra</em>
 (’methodical reflection’), <em>patha-manasikāra</em> (’suitable
 reflection’) and <em>uppādaka-manasikāra</em> (’effective reflection’),
@@ -4858,27 +4838,27 @@ Vism. 131-32; VinṬ.: Tatiya-pārājikaṁ,
 Ānāpānassatisamādhikathāvaṇṇanā; VismṬ.:
 Pathavīkasiṇaniddesavaṇṇanā, Dasavidha-appanākosallavaṇṇanā; cf.:
 Pañcikā Abhidhammatthavibhāvinī-atthayojanā: [1/432; 2/115, 267].
-These definitions also include some of my own interpretations.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+These definitions also include some of my own interpretations. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
 <p>This is the true meaning of the axiom: <em>Attā hi attano nātho</em> –
-’one is indeed one’s own refuge.’</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
+’one is indeed one’s own refuge.’ <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
 <p>This is referred to as ’devotion to unwise attention’
 (<em>ayonisomanasikāra-bahula</em>), which nourishes the five hindrances.
 Conversely, devotion to wise attention (<em>yonisomanasikāra-bahula</em>)
 nourishes the seven factors of enlightenment. There are many
-passages describing these dynamics, e.g.: S. V. 64-7.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
+passages describing these dynamics, e.g.: S. V. 64-7. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
 <p>See: Vism. 230; VismṬ.: Anussatikammaṭṭhānaniddesavaṇṇanā,
-Maraṇassatikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
-<p>Miln.: Manasikāralakkhaṇapañho aṭṭhamo.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
+Maraṇassatikathāvaṇṇanā. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
+<p>Miln.: Manasikāralakkhaṇapañho aṭṭhamo. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
 <p>The following passages containing the terms <em>yoniso-manasikāra</em>
 and <em>ayoniso-manasikāra</em> may clarify the meanings of these terms:
 when quarrels erupt in the community, a person who uses wise
@@ -4897,49 +4877,49 @@ reflection helps a person to benefit from listening to the Dhamma
 a substitute for the phrase ’developing insight’ (in many passages,
 e.g.: MA. I. 72 = ItA. I. 62; AA. I. 214, 380 – cf.: [AA. 1/215];
 UdA. 354. Apart from these references, see: MA. I. 195; SA. III.
-111; AA. III. 266; KhA. 232; DhA. I. 157; ItA. II. 150; PsA. I. 302.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
-<p>MA. I. 65.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
-<p>A. V. 115, 118.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
+111; AA. III. 266; KhA. 232; DhA. I. 157; ItA. II. 150; PsA. I. 302. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
+<p>MA. I. 65. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
+<p>A. V. 115, 118. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
 <p>For wise reflection acting as a root cause for faith, see, e.g.:
-ItA. II. 79.</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
+ItA. II. 79. <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
 <p>See: D. II. 100-101; see also footnote n. 27. To be one’s own
 refuge is to have the Dhamma as one’s refuge. This refers to living
 one’s life with effort, mindfulness, clear comprehension, and
 wisdom, knowing thoroughly the body, feelings, the mind, and mind
 objects, according to the teaching on the Four Foundations of
 Mindfulness. <em>Yoniso-manasikāra</em> nourishes mindfulness and generates
-wisdom (A. I. 87-8; A. V. 115, 118).</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
-<p>E.g.: S. V. 65, 94, 103-104; A. V. 115, 118.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
+wisdom (A. I. 87-8; A. V. 115, 118). <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
+<p>E.g.: S. V. 65, 94, 103-104; A. V. 115, 118. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
 <p>In respect to ignorance and craving acting as the chief agents
 and root causes for the round of rebirth (<em>vaṭṭa</em>), apart from the
 passage cited earlier at MA. I. 65, see also the original teaching
 on this matter in the Pali Canon at A. V. 113 and 116-17, and the
-later explanation at Vism. 524-5 and 577-8.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
+later explanation at Vism. 524-5 and 577-8. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
 <p>The standard formula: ’… with the cessation of this, that
 ceases. That is, with ignorance as condition, there are volitional
 formations….’ occurs frequently, e.g.: S. II. 65, 70, 95-7; S. V.
-389; Nd. II. 43.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+389; Nd. II. 43. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
 <p>In reference to the contemplations of the Buddha Vipassī and of
 all seven of the perfectly enlightened Buddhas, see: D. II. 31;
-S. II. 5-9.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+S. II. 5-9. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
 <p>See: VismṬ.: Khandhaniddesavaṇṇanā, Rūpakkhandakathāvaṇṇanā;
 VismṬ.: Diṭṭhivisuddhiniddesavaṇṇanā, Nāmarūpapariggahakathāvaṇṇanā;
 VismṬ.: Paññābhūminiddesavaṇṇanā,
@@ -4948,95 +4928,95 @@ Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā,
 Maggāmaggavavatthānakathāvaṇṇanā. An analysis of causes and
 conditions according to Dependent Origination is also considered a
 mode of detailed analysis (Vism. 523-4; VbhA. 129; VismṬ.:
-Paññābhūminiddesavaṇṇanā, Paṭiccasamuppādakathāvaṇṇanā).</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
+Paññābhūminiddesavaṇṇanā, Paṭiccasamuppādakathāvaṇṇanā). <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
 <p>See: Vism. 587; Comp.: Kammaṭṭhānaparicchedo,
 Vipassanākammaṭṭhānaṁ, Visuddhibhedo. It is also sometimes called
 the ’division of mentality and materiality’ (<em>nāmarūpa-pariccheda</em>)
-or the ’division of formations’ (<em>saṅkhāra-pariccheda</em>).</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
+or the ’division of formations’ (<em>saṅkhāra-pariccheda</em>). <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
 <p>In the sutta the term <em>yoniso-upaparikkhā</em> (’thorough
-investigation’) is used as a substitute for <em>yoniso-manasikāra</em>.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
+investigation’) is used as a substitute for <em>yoniso-manasikāra</em>. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
 <p>The Buddha continues to describe the other four aggregates in a
-similar way and then concludes with the following verse.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
-<p>See the Rathavinīta Sutta: M. I. 145-51.</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
-<p>Ñāṇakathā: Ps. I. 1-4, 53-7.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
+similar way and then concludes with the following verse. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
+<p>See the Rathavinīta Sutta: M. I. 145-51. <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
+<p>Ñāṇakathā: Ps. I. 1-4, 53-7. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
 <p>See: Vism. 587-638; Comp.: Kammaṭṭhānaparicchedo,
-Vipassanākammaṭṭhānaṁ, Visuddhibhedo.</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
+Vipassanākammaṭṭhānaṁ, Visuddhibhedo. <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
 <p>This form of reflection is described through almost the entire
 Khandhavagga of the Saṁyutta Nikāya, and is also found spread
-throughout other volumes of the Pali Canon.</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
+throughout other volumes of the Pali Canon. <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
 <p>’Quenched in that respect’ = <em>tadaṅga-nibbāna</em> (’Nibbāna by
-substitution of opposites’ or ’temporary Nibbāna’).</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
-<p>See the Cūḷamāluṅkayovāda Sutta: M. I. 426-32.</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
+substitution of opposites’ or ’temporary Nibbāna’). <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
+<p>See the Cūḷamāluṅkayovāda Sutta: M. I. 426-32. <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
 <p>Craving (<em>taṇhā</em>) as the origin of suffering: see, e.g.: Vin. I.
-10; D. II. 308; S. V. 421-22.</p>
-</div>
-<div class="footnote-definition" id="fn30"><sup class="footnote-definition-label">30</sup>
+10; D. II. 308; S. V. 421-22. <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn30"><sup class="footnote-definition-label">30</sup>
 <p>The process of Dependent Origination, beginning with ignorance,
 as the origin of suffering: see, e.g.: A. I. 177, and see the
 passages by the Buddha on Dependent Origination ending with the
-phrase: <em>evametassa dukkhakkhandhassa samudayo hoti</em>.</p>
-</div>
-<div class="footnote-definition" id="fn31"><sup class="footnote-definition-label">31</sup>
+phrase: <em>evametassa dukkhakkhandhassa samudayo hoti</em>. <a href="#fr-fn30-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn31"><sup class="footnote-definition-label">31</sup>
 <p>The expression ’the method of reflecting on the relationship
 between goals and principles’ is not the original title for this way
 of reflection. Technically, the order of the these two terms should
 be ’principles and goals’ (<em>dhamma attha</em>), but as a compound word
 the term <em>attha-dhamma</em> is common in the scriptures (e.g.: D. III.
-155; J. VI. 222; JA. VI. 223; Ps. II. 194).</p>
-</div>
-<div class="footnote-definition" id="fn32"><sup class="footnote-definition-label">32</sup>
+155; J. VI. 222; JA. VI. 223; Ps. II. 194). <a href="#fr-fn31-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn32"><sup class="footnote-definition-label">32</sup>
 <p>For definitions of the term <em>dhammānudhamma-paṭipatti</em> see
-Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn33"><sup class="footnote-definition-label">33</sup>
+Appendix 2. <a href="#fr-fn32-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn33"><sup class="footnote-definition-label">33</sup>
 <p>In relation to an emperor or great king, the term <em>dhamma</em> in the
 context of <em>dhammaññū</em> refers to principles of governing: e.g. the
 customs of rulership according to royal tradition (see: A. III.
-148-9; AA. III. 283).</p>
-</div>
-<div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
+148-9; AA. III. 283). <a href="#fr-fn33-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn34"><sup class="footnote-definition-label">34</sup>
 <p>The term ’respectfully’ (<em>sakkaccaṁ</em>) means to act with sincere
 determination, to take a matter seriously, for example in the
 phrase: <em>vacchakaṁ sakkaccaṁ upanijjhāyati</em> = ’to watch over a calf
-with commitment and careful attention’ (Vin. I. 193).</p>
-</div>
-<div class="footnote-definition" id="fn35"><sup class="footnote-definition-label">35</sup>
+with commitment and careful attention’ (Vin. I. 193). <a href="#fr-fn34-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn35"><sup class="footnote-definition-label">35</sup>
 <p>See: A. I. 35-6; A. II. 97; A. IV. 116, 220-23, 296 (= 328),
-337-8, 391-92; A. V. 126-7, 154-5.</p>
-</div>
-<div class="footnote-definition" id="fn36"><sup class="footnote-definition-label">36</sup>
-<p>This teaching occurs in many places; see previous references.</p>
-</div>
-<div class="footnote-definition" id="fn37"><sup class="footnote-definition-label">37</sup>
+337-8, 391-92; A. V. 126-7, 154-5. <a href="#fr-fn35-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn36"><sup class="footnote-definition-label">36</sup>
+<p>This teaching occurs in many places; see previous references. <a href="#fr-fn36-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn37"><sup class="footnote-definition-label">37</sup>
 <p>An abridged translation from A. V. 222-32. At A. V. 254-61 and 275
 the ten unwholesome courses of action (<em>akusala-kammapatha</em>) are
 defined as <em>adhamma</em> and the ten wholesome courses of action
-(<em>kusala-kammapatha</em>) are defined as <em>dhamma</em>.</p>
-</div>
-<div class="footnote-definition" id="fn38"><sup class="footnote-definition-label">38</sup>
-<p>See similar passages at: A. V. 1-3, 311-12.</p>
-</div>
-<div class="footnote-definition" id="fn39"><sup class="footnote-definition-label">39</sup>
+(<em>kusala-kammapatha</em>) are defined as <em>dhamma</em>. <a href="#fr-fn37-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn38"><sup class="footnote-definition-label">38</sup>
+<p>See similar passages at: A. V. 1-3, 311-12. <a href="#fr-fn38-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn39"><sup class="footnote-definition-label">39</sup>
 <p>’One who does not recognize what is good’ is a translation of
 <em>anattha-kusala</em>; this term literally means a ’clever person who
 misses the point’. The Abhidhānappadīpikā presents nine different
@@ -5049,52 +5029,52 @@ called concentration in the sense of “well-established” ’ (Vism.
 84-5). In the original Pali texts, however, this term is used to
 denote ’benefit’ or ’objective’, for example: ’The benefit [or
 purpose] of concentration is knowledge and vision according to
-reality’ (e.g.: A. V. 1-2).</p>
-</div>
-<div class="footnote-definition" id="fn40"><sup class="footnote-definition-label">40</sup>
+reality’ (e.g.: A. V. 1-2). <a href="#fr-fn39-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn40"><sup class="footnote-definition-label">40</sup>
 <p>’The source of things’ is a translation of <em>yoniso</em>. The
 commentaries explain this passage from the Pali Canon in an
 elevated, ideal way, stating that an investigation of things here
 refers to a wise reflection on the Four Noble Truths, resulting in a
 realization of truth by way of Path-wisdom (<em>magga-paññā</em>) along
-with insight (<em>vipassanā</em>) – AA. IV. 1.</p>
-</div>
-<div class="footnote-definition" id="fn41"><sup class="footnote-definition-label">41</sup>
+with insight (<em>vipassanā</em>) – AA. IV. 1. <a href="#fr-fn40-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn41"><sup class="footnote-definition-label">41</sup>
 <p>Beware of an overly restricted interpretation of the word <em>kāma</em>
 (which can be used to refer specifically to sexual desire). Take for
 example a monk who meets with some laypeople and asks about their
 wellbeing and the wellbeing of their relatives. If instead of acting
 through lovingkindness he wants them to like him and to offer
 patronage, this is called speech with the desire for ’sensuality’
-(<em>kāma</em>) – see: DhA. II. 156.</p>
-</div>
-<div class="footnote-definition" id="fn42"><sup class="footnote-definition-label">42</sup>
+(<em>kāma</em>) – see: DhA. II. 156. <a href="#fr-fn41-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn42"><sup class="footnote-definition-label">42</sup>
 <p>Here the way out (<em>nissaraṇa</em>) is the bliss and happiness
-independent of sensuality (see the following quote).</p>
-</div>
-<div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
+independent of sensuality (see the following quote). <a href="#fr-fn42-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn43"><sup class="footnote-definition-label">43</sup>
 <p>The following two suttas follow a similar template to the
 previous quotation, on the gratification in, danger in, and escape
 from the world. There are several other passages by the Buddha
 similar to this one, on the following subjects: the four elements
 (<em>dhātu</em>) – S. II. 170-73; the six internal sense bases and the six
 external sense objects (S. IV. 6-12); and the five spiritual
-faculties (S. V. 204).</p>
-</div>
-<div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
+faculties (S. V. 204). <a href="#fr-fn43-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn44"><sup class="footnote-definition-label">44</sup>
 <p>Trans.: Bhikkhu Bodhi quotes the Manorathapūraṇī, explaining this
 sentence as: ’He does not feel that sensual feeling or that
-distressful and feverish feeling.’</p>
-</div>
-<div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
+distressful and feverish feeling.’ <a href="#fr-fn44-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn45"><sup class="footnote-definition-label">45</sup>
 <p>The following passages address the escape from ill-will, cruelty,
 etc. At It. 61 renunciation (<em>nekkhamma</em>) is described as the escape
-(<em>nissaraṇa</em>) from sense desire.</p>
-</div>
-<div class="footnote-definition" id="fn46"><sup class="footnote-definition-label">46</sup>
-<p>Ps. II. 8-10.</p>
-</div>
-<div class="footnote-definition" id="fn47"><sup class="footnote-definition-label">47</sup>
+(<em>nissaraṇa</em>) from sense desire. <a href="#fr-fn45-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn46"><sup class="footnote-definition-label">46</sup>
+<p>Ps. II. 8-10. <a href="#fr-fn46-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn47"><sup class="footnote-definition-label">47</sup>
 <p>Cf.: D. III. 130. Of these reflections on the four requisites,
 the most commonly mentioned one is the reflection on eating; a
 person who practises this is called ’one who knows moderation in
@@ -5107,35 +5087,35 @@ term <em>yoniso-manasikāra</em>, according to the principle expressed at
 M. I. 7. These two terms are clearly used interchangeably at: M. I.
 11 and S. V. 79. The Sabbāsavasaṁvara Sutta provides a good example
 for showing the range of meaning of the term <em>yoniso-manasikāra</em>
-(M. I. 6-12); a similar sutta exists at A. III. 387-8.</p>
-</div>
-<div class="footnote-definition" id="fn48"><sup class="footnote-definition-label">48</sup>
-<p>See: Vism. 229-39.</p>
-</div>
-<div class="footnote-definition" id="fn49"><sup class="footnote-definition-label">49</sup>
+(M. I. 6-12); a similar sutta exists at A. III. 387-8. <a href="#fr-fn47-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn48"><sup class="footnote-definition-label">48</sup>
+<p>See: Vism. 229-39. <a href="#fr-fn48-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn49"><sup class="footnote-definition-label">49</sup>
 <p>A description of <em>kusīta-vatthu</em> and <em>ārabbha-vatthu</em> occurs at:
-D. III. 255-8, 287; A. IV. 332-5.</p>
-</div>
-<div class="footnote-definition" id="fn50"><sup class="footnote-definition-label">50</sup>
+D. III. 255-8, 287; A. IV. 332-5. <a href="#fr-fn49-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn50"><sup class="footnote-definition-label">50</sup>
 <p>M. I. 118-22. The summary below includes a commentarial analysis
-and explanations by the author of <em>Buddhadhamma</em>.</p>
-</div>
-<div class="footnote-definition" id="fn51"><sup class="footnote-definition-label">51</sup>
+and explanations by the author of <em>Buddhadhamma</em>. <a href="#fr-fn50-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn51"><sup class="footnote-definition-label">51</sup>
 <p><em>Chanda</em>; here, this term refers to <em>taṇhā-chanda</em>, i.e. lust
-(<em>rāga</em>) or greed (<em>lobha</em>).</p>
-</div>
-<div class="footnote-definition" id="fn52"><sup class="footnote-definition-label">52</sup>
-<p>A. III. 185-6.</p>
-</div>
-<div class="footnote-definition" id="fn53"><sup class="footnote-definition-label">53</sup>
+(<em>rāga</em>) or greed (<em>lobha</em>). <a href="#fr-fn51-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn52"><sup class="footnote-definition-label">52</sup>
+<p>A. III. 185-6. <a href="#fr-fn52-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn53"><sup class="footnote-definition-label">53</sup>
 <p>A. III. 186-91 (this is a liberal translation). See also: the
 nine <em>āghāta-vatthu</em> (things giving rise to malice) and the nine
 <em>āghāta-paṭivinaya</em> (means for eliminating malice) at: D. III.
 262-3, 289 and A. IV. 408-409; and the ten <em>āghāta-vatthu</em> and the ten
 <em>āghāta-paṭivinaya</em> at: A. V. 150-51. (The <em>āghāta-vatthu</em> alone are
-mentioned at: Vin. V. 168; Vbh. 389, 391.)</p>
-</div>
-<div class="footnote-definition" id="fn54"><sup class="footnote-definition-label">54</sup>
+mentioned at: Vin. V. 168; Vbh. 389, 391.) <a href="#fr-fn53-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn54"><sup class="footnote-definition-label">54</sup>
 <p>Vism. 295-306. Here, in the Visuddhimagga, this subject is
 discussed in the context of developing the meditation on the divine
 abiding of lovingkindness. In a similar way, numerous methods of
@@ -5143,40 +5123,40 @@ contemplation exist in reference to other meditation techniques,
 like the meditation on foulness (<em>asubha</em>) and the meditation on the
 four elements. Note also that these contemplations are intended for
 monks, but laypeople can select and apply them as is suitable to
-their disposition.</p>
-</div>
-<div class="footnote-definition" id="fn55"><sup class="footnote-definition-label">55</sup>
-<p>See chapter 18.</p>
-</div>
-<div class="footnote-definition" id="fn56"><sup class="footnote-definition-label">56</sup>
+their disposition. <a href="#fr-fn54-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn55"><sup class="footnote-definition-label">55</sup>
+<p>See chapter 18. <a href="#fr-fn55-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn56"><sup class="footnote-definition-label">56</sup>
 <p>I wrote this chapter on wise reflection twice, because the
 original hand-written manuscript was lost and I therefore had to
 rewrite it. In the original manuscript I gave special emphasis to
 presenting a clear description on how to rectify this aforementioned
 misunderstanding. When rewriting this material, I could not remember
 exactly what I had written before, and thus have presented only a
-synopsis of the main points.</p>
-</div>
-<div class="footnote-definition" id="fn57"><sup class="footnote-definition-label">57</sup>
+synopsis of the main points. <a href="#fr-fn56-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn57"><sup class="footnote-definition-label">57</sup>
 <p>The Thai word for ’emotion’ here is <em>ahrom</em> (อารมณ์), which stems
 from the Pali word <em>ārammaṇa</em> (literally ’sense object’). Although
 the meaning here is of ’falling under the sway of emotions’, on a
 deeper level one also falls under the sway of sense impressions in
-general.</p>
-</div>
-<div class="footnote-definition" id="fn58"><sup class="footnote-definition-label">58</sup>
+general. <a href="#fr-fn57-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn58"><sup class="footnote-definition-label">58</sup>
 <p>See also the subsequent sutta at M. III. 189-202. ’One who
 prospers each and every day’ is a translation of <em>bhaddekaratta</em>,
 which literally means ’one who prospers for a single night’; it can
-also be translated as ’one for whom each night brings good fortune’.</p>
-</div>
-<div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
-<p>’Activities’ = personal benefit and the benefit of others.</p>
-</div>
-<div class="footnote-definition" id="fn60"><sup class="footnote-definition-label">60</sup>
-<p>Trans.: act as mentors.</p>
-</div>
-<div class="footnote-definition" id="fn61"><sup class="footnote-definition-label">61</sup>
+also be translated as ’one for whom each night brings good fortune’. <a href="#fr-fn58-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn59"><sup class="footnote-definition-label">59</sup>
+<p>’Activities’ = personal benefit and the benefit of others. <a href="#fr-fn59-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn60"><sup class="footnote-definition-label">60</sup>
+<p>Trans.: act as mentors. <a href="#fr-fn60-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn61"><sup class="footnote-definition-label">61</sup>
 <p>Trans.: Bhikkhu Bodhi explains this passage: ’Use of stored-up
 food is prohibited by Pācittiya 38. Regarding “giving a gross hint”,
 Mp says: “Here, digging the ground and ordering, ’Dig!’ is called
@@ -5184,9 +5164,9 @@ giving a gross hint in regard to the ground. Cutting and ordering
 ’Cut!’ is called giving a gross hint with regard to vegetation.” The
 reference is to Pācittiyas 10 and 11.’ <em>The Numerical Discourses of
 the Buddha: A Translation of the Aṅguttara Nikāya</em>, translated by
-Bhikkhu Bodhi; Wisdom Publications; © 2012, endnote 1090.</p>
-</div>
-<div class="footnote-definition" id="fn62"><sup class="footnote-definition-label">62</sup>
+Bhikkhu Bodhi; Wisdom Publications; © 2012, endnote 1090. <a href="#fr-fn61-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn62"><sup class="footnote-definition-label">62</sup>
 <p>The Saṅgīti Sutta in the Tipiṭaka resulted from the Buddha
 referring both to the past (i.e. to the breaking up into factions of
 the Nigaṇṭhā after the death of their teacher) and to the future
@@ -5194,16 +5174,16 @@ the Nigaṇṭhā after the death of their teacher) and to the future
 sangha from breaking up into factions). A useful summary of these
 principles is the Buddha’s definition for mindfulness (<em>sati</em>): ’An
 ability to recollect actions performed and words spoken, even those
-from long ago’ (e.g.: D. III. 268; Vbh. 227).</p>
-</div>
-<div class="footnote-definition" id="fn63"><sup class="footnote-definition-label">63</sup>
-<p>M. I. 301; S. IV. 293.</p>
-</div>
-<div class="footnote-definition" id="fn64"><sup class="footnote-definition-label">64</sup>
+from long ago’ (e.g.: D. III. 268; Vbh. 227). <a href="#fr-fn62-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn63"><sup class="footnote-definition-label">63</sup>
+<p>M. I. 301; S. IV. 293. <a href="#fr-fn63-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn64"><sup class="footnote-definition-label">64</sup>
 <p>E.g.: M. II. 197-8; A. V. 190-91. The gist of these teachings
-will be discussed below.</p>
-</div>
-<div class="footnote-definition" id="fn65"><sup class="footnote-definition-label">65</sup>
+will be discussed below. <a href="#fr-fn64-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn65"><sup class="footnote-definition-label">65</sup>
 <p>VinA. I. 61; PañcA. 7; VismṬ.: Paññābhūminiddesavaṇṇanā,
 Paṭiccasamuppādakathāvaṇṇanā; cf.: Vism. 522, 710 (in the
 ’Conclusion’) ; VbhA. 129; PañcA. 107; and see miscellaneous
@@ -5211,110 +5191,110 @@ references at: VinṬ.: Paṭhamo Bhāgo, Tatiyasaṅgītikathāvaṇṇanā;
 VismṬ.: Khandhaniddesavaṇṇanā, Rūpakkhandakathāvaṇṇanā; VismṬ.:
 Paññābhūminiddesavaṇṇanā, Paṭiccasamuppādakathāvaṇṇanā; VismṬ.:
 Maggāmaggañāṇadassanavisuddhiniddesavaṇṇanā,
-Maggāmaggavavatthānakathāvaṇṇanā; AA. III. 405.</p>
-</div>
-<div class="footnote-definition" id="fn66"><sup class="footnote-definition-label">66</sup>
-<p>See the canonical passages below.</p>
-</div>
-<div class="footnote-definition" id="fn67"><sup class="footnote-definition-label">67</sup>
+Maggāmaggavavatthānakathāvaṇṇanā; AA. III. 405. <a href="#fr-fn65-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn66"><sup class="footnote-definition-label">66</sup>
+<p>See the canonical passages below. <a href="#fr-fn66-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn67"><sup class="footnote-definition-label">67</sup>
 <p>E.g.: VismṬ.: Khandhaniddesavaṇṇanā, Rūpakkhandakathāvaṇṇanā;
 VismṬ.: Paññābhūminiddesavaṇṇanā,
 Saṅkhārapaccayāviññāṇapadavitthārakathāvaṇṇanā; VismṬ.:
 Diṭṭhivisuddhiniddesavaṇṇanā, Nāmarūpapariggahakathāvaṇṇanā. The
 original term used in this context is <em>vibhaṅga</em>, for example:
-<em>dhātu-vibhaṅga</em>, <em>khandha-vibhaṅga</em>, etc.</p>
-</div>
-<div class="footnote-definition" id="fn68"><sup class="footnote-definition-label">68</sup>
+<em>dhātu-vibhaṅga</em>, <em>khandha-vibhaṅga</em>, etc. <a href="#fr-fn67-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn68"><sup class="footnote-definition-label">68</sup>
 <p>See: M. III. 45-61; A. IV. 365-6; A. V. 100. Examples from the
-Pali Canon are presented below.</p>
-</div>
-<div class="footnote-definition" id="fn69"><sup class="footnote-definition-label">69</sup>
-<p>See: Vism. 81.</p>
-</div>
-<div class="footnote-definition" id="fn70"><sup class="footnote-definition-label">70</sup>
-<p>See: Vin. I., Verañjakaṇḍa.</p>
-</div>
-<div class="footnote-definition" id="fn71"><sup class="footnote-definition-label">71</sup>
-<p>See the passages cited below.</p>
-</div>
-<div class="footnote-definition" id="fn72"><sup class="footnote-definition-label">72</sup>
+Pali Canon are presented below. <a href="#fr-fn68-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn69"><sup class="footnote-definition-label">69</sup>
+<p>See: Vism. 81. <a href="#fr-fn69-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn70"><sup class="footnote-definition-label">70</sup>
+<p>See: Vin. I., Verañjakaṇḍa. <a href="#fr-fn70-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn71"><sup class="footnote-definition-label">71</sup>
+<p>See the passages cited below. <a href="#fr-fn71-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn72"><sup class="footnote-definition-label">72</sup>
 <p>These four questions are found at: D. III. 229; A. I. 197; A. II.
 46; they are cited at: NdA. I. 8. Explanatory examples are presented
-at: Miln. 144; DA. II. 567; AA. II. 308.</p>
-</div>
-<div class="footnote-definition" id="fn73"><sup class="footnote-definition-label">73</sup>
+at: Miln. 144; DA. II. 567; AA. II. 308. <a href="#fr-fn72-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn73"><sup class="footnote-definition-label">73</sup>
 <p>The scriptures explain that the views and perceptions leading to
 such questions arise as a result of unwise reflection
 (<em>ayoniso-manasikāra</em>) or incorrect instruction from others. See:
-A. V. 186-7; Miln.: Abhejjavaggo, Abyākaraṇīyapañho; AA. II. 308.</p>
-</div>
-<div class="footnote-definition" id="fn74"><sup class="footnote-definition-label">74</sup>
-<p>E.g.: M. I. 428-32; S. IV. 374-403.</p>
-</div>
-<div class="footnote-definition" id="fn75"><sup class="footnote-definition-label">75</sup>
-<p>E.g.: S. II. 13-14, 60-62.</p>
-</div>
-<div class="footnote-definition" id="fn76"><sup class="footnote-definition-label">76</sup>
+A. V. 186-7; Miln.: Abhejjavaggo, Abyākaraṇīyapañho; AA. II. 308. <a href="#fr-fn73-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn74"><sup class="footnote-definition-label">74</sup>
+<p>E.g.: M. I. 428-32; S. IV. 374-403. <a href="#fr-fn74-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn75"><sup class="footnote-definition-label">75</sup>
+<p>E.g.: S. II. 13-14, 60-62. <a href="#fr-fn75-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn76"><sup class="footnote-definition-label">76</sup>
 <p>This sutta refers to many other things which should either be
 cultivated or not, including the four requisites and association
-with various people.</p>
-</div>
-<div class="footnote-definition" id="fn77"><sup class="footnote-definition-label">77</sup>
+with various people. <a href="#fr-fn76-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn77"><sup class="footnote-definition-label">77</sup>
 <p>These same things are mentioned in the Sevitabbāsevitabba Sutta,
 above. A similar and expanded version of this teaching is found at:
 A. IV. 365 (quoted in the chapter on virtuous friends –
-<em>kalyāṇamitta</em>).</p>
-</div>
-<div class="footnote-definition" id="fn78"><sup class="footnote-definition-label">78</sup>
+<em>kalyāṇamitta</em>). <a href="#fr-fn77-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn78"><sup class="footnote-definition-label">78</sup>
 <p>This sutta similarly mentions living in a village, town, city,
 and country, and living in dependence on a certain person. The
 section on living in dependence on a person resembles the passage at
-A. IV. 365-6. This is an abridged translation.</p>
-</div>
-<div class="footnote-definition" id="fn79"><sup class="footnote-definition-label">79</sup>
+A. IV. 365-6. This is an abridged translation. <a href="#fr-fn78-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn79"><sup class="footnote-definition-label">79</sup>
 <p>’Engaging in religious practices’ is a translation of <em>jīvita</em>.
 ’Act of propitiation’ is a translation of <em>upaṭṭhāna-sāra</em>. See also
-the definitions provided by the commentaries.</p>
-</div>
-<div class="footnote-definition" id="fn80"><sup class="footnote-definition-label">80</sup>
+the definitions provided by the commentaries. <a href="#fr-fn79-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn80"><sup class="footnote-definition-label">80</sup>
 <p>’In this matter he is not a one-sided speaker (<em>ekaṁsavādī</em>).’
 Later, Vajjiyamāhita went and inquired about this matter from the
 Buddha, who described those ascetic practices which should be
 undertaken and those which should not, according to the increase and
 decrease of wholesome and unwholesome states, in a way similar to
-the teachings above.</p>
-</div>
-<div class="footnote-definition" id="fn81"><sup class="footnote-definition-label">81</sup>
+the teachings above. <a href="#fr-fn80-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn81"><sup class="footnote-definition-label">81</sup>
 <p>The Buddha goes on to explain and to provide examples for these
 four kinds of work. The work of a householder
 (<em>gharāvāsa-kammaṭṭhāna</em>) refers to various forms of occupations to
 earn a livelihood, like farming and agriculture. The work of a
 renunciant (<em>pabbajjā-kammaṭṭhāna</em>) refers to the duties of a
-renunciant.</p>
-</div>
-<div class="footnote-definition" id="fn82"><sup class="footnote-definition-label">82</sup>
-<p>S. IV. 331-37; A. V. 177.</p>
-</div>
-<div class="footnote-definition" id="fn83"><sup class="footnote-definition-label">83</sup>
+renunciant. <a href="#fr-fn81-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn82"><sup class="footnote-definition-label">82</sup>
+<p>S. IV. 331-37; A. V. 177. <a href="#fr-fn82-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn83"><sup class="footnote-definition-label">83</sup>
 <p>This sutta describes the same factors in reference to many other
 kinds of ascetic practices, including the wearing of rag-robes and
-dwelling at the foot of a tree.</p>
-</div>
-<div class="footnote-definition" id="fn84"><sup class="footnote-definition-label">84</sup>
-<p>This is one of five passages on evil-minded monks.</p>
-</div>
-<div class="footnote-definition" id="fn85"><sup class="footnote-definition-label">85</sup>
+dwelling at the foot of a tree. <a href="#fr-fn83-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn84"><sup class="footnote-definition-label">84</sup>
+<p>This is one of five passages on evil-minded monks. <a href="#fr-fn84-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn85"><sup class="footnote-definition-label">85</sup>
 <p>’Forms of individual existence’ is a translation of
-<em>attabhāva-paṭilābha</em>.</p>
-</div>
-<div class="footnote-definition" id="fn86"><sup class="footnote-definition-label">86</sup>
+<em>attabhāva-paṭilābha</em>. <a href="#fr-fn85-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn86"><sup class="footnote-definition-label">86</sup>
 <p><em>Nandi</em> = ’delight’, ’exuberance’; <em>saṁyojana</em> (or <em>saññojana</em>) =
-defilements that constrict the mind.</p>
-</div>
-<div class="footnote-definition" id="fn87"><sup class="footnote-definition-label">87</sup>
-<p><em>Paviveka</em> = solitude; seclusion from mental defilement.</p>
-</div>
-<div class="footnote-definition" id="fn88"><sup class="footnote-definition-label">88</sup>
+defilements that constrict the mind. <a href="#fr-fn86-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn87"><sup class="footnote-definition-label">87</sup>
+<p><em>Paviveka</em> = solitude; seclusion from mental defilement. <a href="#fr-fn87-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn88"><sup class="footnote-definition-label">88</sup>
 <p>Note that the threefold training (<em>sikkhā</em>) is a system of
 training. Compared to the Noble Eightfold Path, the threefold
 training pertains primarily to an engagement with one’s external
@@ -5323,15 +5303,15 @@ that one hones become internal virtuous qualities, comprising the
 essence or content of the Eightfold Path. The <em>sīla</em> factors of the
 Path, for example, are personal qualities preventing a person from
 immoral or abusive physical and verbal actions. These virtues or
-character traits arise from effective training.</p>
-</div>
-<div class="footnote-definition" id="fn89"><sup class="footnote-definition-label">89</sup>
+character traits arise from effective training. <a href="#fr-fn88-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn89"><sup class="footnote-definition-label">89</sup>
 <p>This is the end of the newly written material, used to replace
 the missing manuscript. (At the time of writing this section I had
 no other manuscripts to use for comparison or inspection; please
-forgive any redundancy.)</p>
-</div>
-<div class="footnote-definition" id="fn90"><sup class="footnote-definition-label">90</sup>
+forgive any redundancy.) <a href="#fr-fn89-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn90"><sup class="footnote-definition-label">90</sup>
 <p>Cf.: Vism. 243. To avoid confusion, note that some forms of
 meditation which have one see people or things as unattractive,
 repulsive or impure are classified as the stage of tranquillity
@@ -5341,43 +5321,44 @@ labels that help to dispel one’s defilements. In insight meditation,
 on the other hand, one sees things as they truly are, as they really
 exist, according to causes and conditions. At this level things are
 neither ’beautiful’ nor ’ugly’, neither ’attractive’ nor
-’repulsive’.</p>
-</div>
-<div class="footnote-definition" id="fn91"><sup class="footnote-definition-label">91</sup>
-<p>Bangkok: Ministry of Education, 1970.</p>
-</div>
-<div class="footnote-definition" id="fn92"><sup class="footnote-definition-label">92</sup>
-<p>Nd. II. 46.</p>
-</div>
-<div class="footnote-definition" id="fn93"><sup class="footnote-definition-label">93</sup>
-<p>DA. II. 578 ; DA. III. 1020; SA. II. 267; AA. IV. 57.</p>
-</div>
-<div class="footnote-definition" id="fn94"><sup class="footnote-definition-label">94</sup>
-<p>AA. II. 203; AA. III. 6, 118, 164.</p>
-</div>
-<div class="footnote-definition" id="fn95"><sup class="footnote-definition-label">95</sup>
-<p>AA. III. 290.</p>
-</div>
-<div class="footnote-definition" id="fn96"><sup class="footnote-definition-label">96</sup>
-<p>DA. II. 555; SA. III. 254; UdA. 326.</p>
-</div>
-<div class="footnote-definition" id="fn97"><sup class="footnote-definition-label">97</sup>
-<p>AA. IV. 151.</p>
-</div>
-<div class="footnote-definition" id="fn98"><sup class="footnote-definition-label">98</sup>
-<p>SA. II. 34.</p>
-</div>
-<div class="footnote-definition" id="fn99"><sup class="footnote-definition-label">99</sup>
-<p>SnA. I. 329.</p>
-</div>
-<div class="footnote-definition" id="fn100"><sup class="footnote-definition-label">100</sup>
-<p>DA. III. 929.</p>
-</div>
-<div class="footnote-definition" id="fn101"><sup class="footnote-definition-label">101</sup>
-<p>MA. III. 220.</p>
-</div>
-<div class="footnote-definition" id="fn102"><sup class="footnote-definition-label">102</sup>
-<p>NdA. I. 65.</p>
+’repulsive’. <a href="#fr-fn90-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn91"><sup class="footnote-definition-label">91</sup>
+<p>Bangkok: Ministry of Education, 1970. <a href="#fr-fn91-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn92"><sup class="footnote-definition-label">92</sup>
+<p>Nd. II. 46. <a href="#fr-fn92-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn93"><sup class="footnote-definition-label">93</sup>
+<p>DA. II. 578 ; DA. III. 1020; SA. II. 267; AA. IV. 57. <a href="#fr-fn93-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn94"><sup class="footnote-definition-label">94</sup>
+<p>AA. II. 203; AA. III. 6, 118, 164. <a href="#fr-fn94-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn95"><sup class="footnote-definition-label">95</sup>
+<p>AA. III. 290. <a href="#fr-fn95-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn96"><sup class="footnote-definition-label">96</sup>
+<p>DA. II. 555; SA. III. 254; UdA. 326. <a href="#fr-fn96-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn97"><sup class="footnote-definition-label">97</sup>
+<p>AA. IV. 151. <a href="#fr-fn97-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn98"><sup class="footnote-definition-label">98</sup>
+<p>SA. II. 34. <a href="#fr-fn98-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn99"><sup class="footnote-definition-label">99</sup>
+<p>SnA. I. 329. <a href="#fr-fn99-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn100"><sup class="footnote-definition-label">100</sup>
+<p>DA. III. 929. <a href="#fr-fn100-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn101"><sup class="footnote-definition-label">101</sup>
+<p>MA. III. 220. <a href="#fr-fn101-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn102"><sup class="footnote-definition-label">102</sup>
+<p>NdA. I. 65. <a href="#fr-fn102-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

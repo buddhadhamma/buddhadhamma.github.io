@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html" class="active">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -210,7 +191,7 @@ explained the danger, degradation, and defilement in sensual pleasures
 and the blessing of renunciation. When he knew that the householder
 Upāli’s mind was ready, receptive, free from hindrances, delighted,
 and confident, he expounded to him the teaching special to the
-Buddhas: suffering, its origin, its cessation, and the path.<sup class="footnote-reference"><a href="#fn1">1</a></sup></p>
+Buddhas: suffering, its origin, its cessation, and the path.<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup></p>
 <p><em>M. I. 379-80.</em></p>
 <p>A person lives the holy life under the Blessed One in order to know,
 to see, to realize, to experience for himself, to attain that which is
@@ -315,7 +296,7 @@ have taught this.</p>
 <p>’Therefore, monks, you should make effort in order to understand
 according to the truth: “This is suffering, this is the origin of
 suffering, this is the cessation of suffering, this is the way leading
-to the cessation of suffering.” ’<sup class="footnote-reference"><a href="#fn2">2</a></sup></p>
+to the cessation of suffering.” ’<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup></p>
 <p><em>S. V. 437-8.</em></p>
 </blockquote>
 </div>
@@ -341,12 +322,12 @@ Therefore they are called noble truths….</p>
 <p>Monks, the Tathāgata is the Noble One in this world with its devas,
 Māra, and Brahma, in this generation with its ascetics and brahmins,
 its devas and humans. Therefore they are called noble truths (because
-they are realized and revealed by the Buddha, the Noble One).<sup class="footnote-reference"><a href="#fn3">3</a></sup>
+they are realized and revealed by the Buddha, the Noble One).<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup>
 {849}</p>
 <p><em>S. V. 435.</em></p>
 <p>Monks, it is because he has fully awakened to these Four Noble Truths
 as they really are that the Tathāgata, the Arahant, the Perfectly
-Enlightened One, is called the Noble One.<sup class="footnote-reference"><a href="#fn4">4</a></sup></p>
+Enlightened One, is called the Noble One.<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup></p>
 <p><em>S. V. 433.</em></p>
 </blockquote>
 </div>
@@ -400,7 +381,7 @@ to it.</p>
 <p>Now this, monks, is the noble truth of the way leading to the
 cessation of suffering: it is this Noble Eightfold Path; that is,
 right view, right thought, right speech, right action, right
-livelihood, right effort, right mindfulness, right concentration.<sup class="footnote-reference"><a href="#fn5">5</a></sup></p>
+livelihood, right effort, right mindfulness, right concentration.<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup></p>
 </blockquote>
 </div>
 <p>Further explanations are as follows:</p>
@@ -465,7 +446,7 @@ Origination. Let us look at the scriptural evidence for this assertion:</p>
 beginning with the time immediately after his enlightenment, when for an
 entire week he experienced the bliss of liberation and contemplated
 Dependent Origination, both the forward sequence (the arising of
-suffering) and the reverse sequence (the cessation of suffering).<sup class="footnote-reference"><a href="#fn6">6</a></sup>
+suffering) and the reverse sequence (the cessation of suffering).<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup>
 After seven weeks of experiencing the bliss of liberation, the Buddha
 considered proclaiming the Dhamma to others and he had this thought:</p>
 <div class="sutta">
@@ -584,7 +565,7 @@ suffering (truths 3 and 4).</p>
 <p>In some suttas, these two cycles of Dependent Origination are used as
 definitions for the second and third noble truths: the origination cycle
 is a definition for the second truth, and the cessation cycle is a
-definition for the third.<sup class="footnote-reference"><a href="#fn7">7</a></sup></p>
+definition for the third.<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup></p>
 <p>In these definitions, however, only craving (<em>taṇhā</em>) is revealed as the
 cause for suffering (<em>samudaya</em>); and similarly, the end of craving is
 the definition for cessation (<em>nirodha</em>). This is because craving is the
@@ -694,7 +675,7 @@ action. A failure to do this results in misunderstandings and incorrect
 practice. A lack of understanding about the duties connected to each of
 the Four Noble Truths also leads to misunderstanding about Buddhism in
 general, for example the belief that Buddhism is a pessimistic teaching.</p>
-<p>The four duties in respect to the Four Noble Truths are as follows:<sup class="footnote-reference"><a href="#fn8">8</a></sup></p>
+<p>The four duties in respect to the Four Noble Truths are as follows:<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup></p>
 <ol>
 <li>
 <p>Suffering should be fully understood<br />
@@ -799,9 +780,8 @@ for determining enlightenment: when a person truly knows the Four Noble
 Truths with these three kinds of knowledge (comprising twelve factors),
 he or she is said to be awakened. {856}</p>
 <p>These three kinds of knowledge are referred to collectively as
-’knowledge and vision’ (<em>ñāṇa-dassana</em>). This knowledge and vision is
-comprised of three cycles or rounds (<em>parivaṭṭa</em>), constituting the
-three kinds of knowledge:<sup class="footnote-reference"><a href="#fn9">9</a></sup></p>
+’knowledge and vision’ (<em>ñāṇa-dassana</em>). This knowledge and vision consists of three cycles or rounds (<em>parivaṭṭa</em>), constituting the
+three kinds of knowledge:<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup></p>
 <ol>
 <li>
 <p>Knowledge of the truths (<em>sacca-ñāṇa</em>): knowledge of the Four Noble
@@ -898,7 +878,7 @@ to the refined, and from relating to external things to realizing
 profound phenomena in the mind – it is always possible to associate the
 things which one experiences with one of these four groups. For example,
 at the highest level of practice, of contemplating the essence of truth,
-the Buddha described these four qualities as follows:<sup class="footnote-reference"><a href="#fn10">10</a></sup></p>
+the Buddha described these four qualities as follows:<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup></p>
 <ol>
 <li>
 <p><em>Dukkha</em>: things to be understood (<em>pariññeyya-dhamma</em>) = the five
@@ -919,7 +899,7 @@ knowledge (<em>vijjā</em>) and liberation (<em>vimutti</em>).</p>
 </ol>
 <h2 id="summary-of-the-four-noble-truths"><a class="header" href="#summary-of-the-four-noble-truths">Summary of the Four Noble Truths</a></h2>
 <p>The commentaries offer some interesting analogies for the Four Noble
-Truths:<sup class="footnote-reference"><a href="#fn11">11</a></sup></p>
+Truths:<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup></p>
 <ol>
 <li>
 <p>An illness:</p>
@@ -993,7 +973,7 @@ load. {859}</p>
 </ol>
 <p>The Visuddhimagga, the Sammohavinodanī, and the Saddhammapakāsinī offer
 brief and cogent explanations for why the Buddha arranged the Four Noble
-Truths in the order that he did:<sup class="footnote-reference"><a href="#fn12">12</a></sup></p>
+Truths in the order that he did:<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup></p>
 <h3 id="dukkha"><a class="header" href="#dukkha">Dukkha</a></h3>
 <p><em>The Focus Commences on Suffering in order to Apply Wisdom</em></p>
 <p>Suffering is oppressive and affects all human beings. Whenever suffering
@@ -1066,7 +1046,7 @@ focus on events removed from what is happening in the present moment.
 They therefore look for an external agent on whom to lay blame or try to
 distance themselves from the problem so as to feel that they are not
 responsible.</p>
-<p>Laying blame on external factors leads to three false doctrines:<sup class="footnote-reference"><a href="#fn13">13</a></sup></p>
+<p>Laying blame on external factors leads to three false doctrines:<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup></p>
 <ol>
 <li>
 <p>Doctrine of past karma (<em>pubbekata-vāda</em>): the belief that all
@@ -1198,7 +1178,7 @@ constantly witness the increasing fruits of practice, both in regard to
 personal benefits and in regard to those blessings one can bestow on
 others.</p>
 <p>In ascending order, cessation (<em>nirodha</em>) is outlined by five
-stages:<sup class="footnote-reference"><a href="#fn14">14</a></sup></p>
+stages:<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup></p>
 <ol>
 <li>
 <p><em>Vikkhambhana-nirodha</em>: cessation of suffering and defilement
@@ -1314,7 +1294,7 @@ sees clearly with wisdom the Four Noble Truths: suffering, the origin
 of suffering, the transcendence of suffering, and the Noble Eightfold
 Path leading to the end of suffering. This, indeed, is a safe refuge;
 this, indeed, is the refuge supreme. By reaching such a refuge, one is
-freed from all misery.<sup class="footnote-reference"><a href="#fn15">15</a></sup></p>
+freed from all misery.<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup></p>
 <p><em>Dh. verses 188-92.</em></p>
 </blockquote>
 </div>
@@ -1337,7 +1317,7 @@ relate to things with insight, and to deal with them at their source,
 then one can solve problems in the best possible way. One will realize
 the truth and live an excellent life.</p>
 <p>A recollection of the Sangha provides us with the confidence that a
-virtuous community is founded on truth and is comprised of members who
+virtuous community is founded on truth and consists of members who
 are free from suffering. Although they have arrived at varying degrees
 of spiritual accomplishment, they are united and equal in the face of
 Dhamma. Every person participates in building this community by
@@ -1529,7 +1509,7 @@ undertaking the threefold training. {868}</p>
 <p>Faith in the Triple Gem assists in progressing in the threefold
 training. One then develops the factors of the Path until one reaches
 the goal.</p>
-<p>The threefold training is comprised of the training in higher morality
+<p>The threefold training consists of the training in higher morality
 (<em>adhisīla-sikkhā</em>), the training in higher mind (<em>adhicitta-sikkhā</em>),
 and the training in higher wisdom (<em>adhipaññā-sikkhā</em>). For simplicity
 and convenience, these factors are normally referred to as moral conduct
@@ -1620,7 +1600,7 @@ unison. (See
 Note <a href="#note-physical">Physical Development</a>)</p>
 <p>Note that the Buddhist teaching on the four kinds of development
 (<em>bhāvanā</em>) contains the extra factor of physical development
-(<em>kāya-bhāvanā</em>).<sup class="footnote-reference"><a href="#fn16">16</a></sup> The term ’physical development’ in this context,
+(<em>kāya-bhāvanā</em>).<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup> The term ’physical development’ in this context,
 however, differs from how it is used in modern parlance. In Buddhism,
 this term refers to developing one’s relationship to one’s environment
 by way of one’s physical body, giving rise to favourable results. It
@@ -1901,7 +1881,7 @@ benefit one’s life at all times. {874}</p>
 accords with the original system of the Four Noble Truths taught by the
 Buddha; it does not diverge in any way. The chapters and sections of
 <em>Buddhadhamma</em> can be classified in accord with the Four Noble Truths,
-as follows:<sup class="footnote-reference"><a href="#fn17">17</a></sup></p>
+as follows:<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup></p>
 <p>Part I: Middle Teaching (<em>majjhena-dhammadesanā</em>)</p>
 <p><em>Dukkha</em></p>
 <blockquote>
@@ -2088,7 +2068,7 @@ awakened beings are released from suffering and have transcended
 happiness. Unawakened beings, on the other hand, must constantly pursue
 happiness, because they possess a shortage of it or they are assailed by
 suffering.</p>
-<p>The Path leading to the end of suffering is comprised of eight factors.
+<p>The Path leading to the end of suffering comprises eight factors.
 These factors are presented as a threefold process of training and
 spiritual development:</p>
 <ul>
@@ -2132,7 +2112,7 @@ Figure <a href="#fig-training-and-development">Training and Development</a>.</p
 </div>
 <p>’Old kamma’ is defined as the six senses – the eyes, ears, nose,
 tongue, body, and mind – which act as the principal agents to start
-with on the spiritual path.<sup class="footnote-reference"><a href="#fn18">18</a></sup> From this point, spiritual training
+with on the spiritual path.<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup> From this point, spiritual training
 relies on external influences and instruction (<em>paratoghosa</em>), which may
 be summed up by the saying: ’people are shaped and moulded by their
 environment’, and on wise reflection (<em>yoniso-manasikāra</em>), which may be
@@ -2168,7 +2148,7 @@ Buddhism. The original term with an all-embracing meaning is
 ’Dhammavinaya’.</p>
 <p>This volume discusses the Dhamma at length and is thus aptly titled
 <em>Buddhadhamma</em>, but it only briefly discusses the Vinaya. Perhaps there
-ought to be a companion volume to this text titled <em>Ariya-Vinaya</em>.<sup class="footnote-reference"><a href="#fn19">19</a></sup></p>
+ought to be a companion volume to this text titled <em>Ariya-Vinaya</em>.<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup></p>
 <ol>
 <li>
 <p><em>Dhamma</em>: teachings on truth and virtue, pertaining to essential
@@ -2204,19 +2184,19 @@ Chapter 3: Three Characteristics</p>
 Chapter 4: Dependent Origination<br />
 Chapter 5: Kamma</p>
 <p>Section IV: Goal of Life<br />
-Chapter 6: <em>Vijjā</em>, <em>Vimutti</em>, <em>Visuddhi</em>, <em>Santi</em>, <em>Nibbāna</em><sup class="footnote-reference"><a href="#fn20">20</a></sup><br />
-Chapter 7: Types and Levels of Nibbāna and Awakened Beings<sup class="footnote-reference"><a href="#fn21">21</a></sup><br />
+Chapter 6: <em>Vijjā</em>, <em>Vimutti</em>, <em>Visuddhi</em>, <em>Santi</em>, <em>Nibbāna</em><sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup><br />
+Chapter 7: Types and Levels of Nibbāna and Awakened Beings<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup><br />
 Chapter 8: Auxiliary Material:<br />
-<em>Samatha</em>-<em>Vipassanā</em>, <em>Cetovimutti</em>-<em>Pannāvimutti</em><sup class="footnote-reference"><a href="#fn22">22</a></sup><br />
-Chapter 9: Essential Principles of Realizing Nibbāna<sup class="footnote-reference"><a href="#fn23">23</a></sup><br />
-Chapter 10: Summary of Nibbāna<sup class="footnote-reference"><a href="#fn24">24</a></sup></p>
+<em>Samatha</em>-<em>Vipassanā</em>, <em>Cetovimutti</em>-<em>Pannāvimutti</em><sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup><br />
+Chapter 9: Essential Principles of Realizing Nibbāna<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup><br />
+Chapter 10: Summary of Nibbāna<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup></p>
 </blockquote>
 <p><strong>Part II</strong>: Middle Way (<em>majjhimā-paṭipadā</em>)</p>
 <blockquote>
 <p><em>Section V: A Worthy Life<br />
 Chapter 11: Introduction to the Middle Way<br />
 Chapter 12: Forerunner to the Middle Way #1:<br />
-Virtuous Friendship<sup class="footnote-reference"><a href="#fn25">25</a></sup><br />
+Virtuous Friendship<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup><br />
 Chapter 13: Forerunner to the Middle Way #2:<br />
 Wise Reflection<br />
 Chapter 14: Path Factors of Wisdom<br />
@@ -2229,34 +2209,35 @@ of Life of Those Endowed with Noble Qualities (<em>ariyadhamma-vīthi</em>)</p>
 <blockquote>
 <p><em>Section VI: A Noble Life<br />
 Chapter 18: auxiliary chapter #1:<br />
-Essential Conduct and Virtues of Noble Beings<sup class="footnote-reference"><a href="#fn26">26</a></sup><br />
+Essential Conduct and Virtues of Noble Beings<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup><br />
 Chapter 19: auxiliary chapter #2:<br />
-Social Objectives of Moral Conduct<sup class="footnote-reference"><a href="#fn27">27</a></sup><br />
+Social Objectives of Moral Conduct<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup><br />
 Chapter 20: auxiliary chapter #3:<br />
 The Supernatural and the Divine<br />
 Chapter 21: auxiliary chapter #4:<br />
 The Buddhist Teachings on Desire<br />
 Chapter 22: auxiliary chapter #5:<br />
-Happiness: Doctrinal Analysis<sup class="footnote-reference"><a href="#fn28">28</a></sup><br />
+Happiness: Doctrinal Analysis<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup><br />
 Chapter 23: auxiliary chapter #6:<br />
 Happiness: Practical Analysis</em></p>
 </blockquote>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
 <p>See also: A. IV. 209-10. <em>Sāmukkaṁsikā-dhammadesanā</em> (’teaching
 special to the Buddhas’) means ’eminent Dhamma teachings’,
 ’teachings extolled by the Buddhas’, or ’Dhamma teachings revealed
 and explained by the Buddhas themselves’ – they are unlike the
 teachings ordinarily given when people answer questions or when they
-converse with others.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
-<p>Trans.: the author uses the spelling Sīsapā grove.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+converse with others. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
+<p>Trans.: the author uses the spelling Sīsapā grove. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>The passage in parentheses is from the commentarial interpretation
-at: SA. III. 299.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+at: SA. III. 299. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
 <p>This translation accords with the quotation in the Visuddhimagga
 at Vism. 495. In the Thai Pali edition the term <em>ariya</em> is not
 found; with this omission the passage is translated as: ’It is
@@ -2264,38 +2245,38 @@ because he has fully awakened to these Four Noble Truths as they
 really are that the Tathāgata is called the Arahant, the Perfectly
 Enlightened One.’ [Trans.: this is how it is translated by Bhikkhu
 Bodhi in <em>The Connected Discourses of the Buddha: A New Translation
-of the Saṁyutta Nikāya</em>; Wisdom Publications; © 2000.]</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+of the Saṁyutta Nikāya</em>; Wisdom Publications; © 2000.] <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
 <p>E.g.: in the Dhammacakkappavattana Sutta: Vin. I. 10; S. V.
-421-22; and at: Ps. II. 147-150; Vbh. 99-104.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
-<p>Vin. I. 1-5.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
-<p>See, e.g.: S. II. 104-105.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
-<p>See the Dhammacakkappavattana Sutta.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
-<p>Ibid.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
+421-22; and at: Ps. II. 147-150; Vbh. 99-104. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
+<p>Vin. I. 1-5. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
+<p>See, e.g.: S. II. 104-105. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
+<p>See the Dhammacakkappavattana Sutta. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
+<p>Ibid. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
 <p>M. III. 290; A. II. 247. Note that in the Pali Canon the term
 <em>bhāvetabba-dhamma</em> (i.e. <em>samatha</em> and <em>vipassanā</em>) is listed before
-<em>sacchikātabba-dhamma</em> (i.e. <em>vijjā</em> and <em>vimutti</em>).</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
-<p>Vism. 512; VbhA. 88; PsA. I. 198.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
+<em>sacchikātabba-dhamma</em> (i.e. <em>vijjā</em> and <em>vimutti</em>). <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
+<p>Vism. 512; VbhA. 88; PsA. I. 198. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
 <p>Vism. 497-8; VbhA. 86; PsA. I. 54, 198. The passages are
 identical in all three texts. Here, I provide only an extract of
-these teachings.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
+these teachings. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
 <p>E.g.: M. II. 214-23; A. I. 173; Vbh. 367-8; J. V. 232-43; J. VI.
 206-211; JA. V. 237-41. <em>Issaranimmāna-vāda</em> is also known as
 <em>issaranimmita-vāda</em>, <em>issarakaraṇa-vāda</em>, or <em>issarakutti-vāda</em>.
@@ -2308,12 +2289,12 @@ kamma. The commentaries at VbhA. 497 claim that the first doctrine
 is that of the Nigaṇṭhā, the second of the brahmins, and the third
 of the Ājīvakas. At J. V. 239-41 the doctrine of annihilationism
 (<em>uccheda-vāda</em>) is added as a fourth item to this list of false
-doctrines.</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
-<p>Ps. I. 27; Ps. II. 220.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
+doctrines. <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
+<p>Ps. I. 27; Ps. II. 220. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
 <p>Cited in Chapter 7 on awakened beings. The Triple Gem
 (<em>ratanattaya</em>) comprises the three essential pillars of Buddhism,
 which Buddhists should constantly bear in mind: the Buddha (’true
@@ -2323,54 +2304,55 @@ understanding of which leads to the realization of ultimate truth,
 which transcends causes and conditions); and Sangha (’community’;
 the ideal community consisting of noble beings who exist at
 different levels of Dhamma realization and who follow the Path of
-the Buddha).</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
+the Buddha). <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
 <p>When describing the qualities of an individual (e.g. ’one
-developed in body’) the term <em>bhāvita</em> is used.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
-<p>On the order of chapters in the Thai edition see Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
-<p>S. IV. 132-3.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+developed in body’) the term <em>bhāvita</em> is used. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
+<p>On the order of chapters in the Thai edition see Appendix 2. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
+<p>S. IV. 132-3. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
 <p>Trans. the author includes an extensive outline and analysis of
 this ’noble discipline’ (<em>ariya-vinaya</em>) in the book ’The Buddhist
 Discipline in Relation to Bhikkhunis’, translated by Robin Moore ©
-2015.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
-<p>This material is included in chapter 6 of the English edition.</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
+2015. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
+<p>This material is included in chapter 6 of the English edition. <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
 <p>This material is included in chapters 6 and 7 of the English
-edition.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
-<p>This material is included in chapter 8 of the English edition.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
+edition. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
+<p>This material is included in chapter 8 of the English edition. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
 <p>This material is included in chapters 7 and 8 of the English
-edition.</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
-<p>This material is included in chapter 6 of the English edition.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
+edition. <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
+<p>This material is included in chapter 6 of the English edition. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
 <p>Note that chapter 14 in the English edition on faith is an
-extract from this chapter.</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
-<p>This material is included in chapter 7 of the English edition.</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
-<p>This material is included in chapter 17 of the English edition.</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
+extract from this chapter. <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
+<p>This material is included in chapter 7 of the English edition. <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
+<p>This material is included in chapter 17 of the English edition. <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
 <p>Note that these two chapters on happiness have been combined into
-a single chapter in the English edition.</p>
+a single chapter in the English edition. <a href="#fr-fn28-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

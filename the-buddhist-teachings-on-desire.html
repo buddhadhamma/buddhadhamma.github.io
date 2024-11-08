@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html" class="active">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -526,7 +507,7 @@ desire, delight, enthusiasm, zeal, contentment, satisfaction,
 aspiration, yearning, wish, love, and passion. At this point, let us
 simply refer to it as ’desire’.</p>
 <p>Drawing from different sources, the commentaries mention three kinds of
-desire (<em>chanda</em>):<sup class="footnote-reference"><a href="#fn1">1</a></sup></p>
+desire (<em>chanda</em>):<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup></p>
 <ol>
 <li>
 <p><em>Taṇhā-chanda</em>: desire as craving (<em>taṇhā</em>); unwholesome desire.</p>
@@ -544,12 +525,12 @@ of virtue; aspiration for goodness) or <em>dhamma-chanda</em> (love of
 truth; aspiration for truth).</p>
 </li>
 </ol>
-<p><strong>Taṇhā-chanda:</strong><sup class="footnote-reference"><a href="#fn2">2</a></sup> the term <em>chanda</em> in this context is a synonym for
+<p><strong>Taṇhā-chanda:</strong><sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup> the term <em>chanda</em> in this context is a synonym for
 craving (<em>taṇhā</em>), in the same way as the terms <em>rāga</em> (’lust’) and
-<em>lobha</em> (’greed’).<sup class="footnote-reference"><a href="#fn3">3</a></sup> This form of <em>chanda</em> is found frequently in the
+<em>lobha</em> (’greed’).<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup> This form of <em>chanda</em> is found frequently in the
 Pali Canon, including in the term <em>kāma-chanda</em> (’sensual desire’),
 which is the first of the five hindrances (<em>nīvaraṇa</em>) and is equivalent
-to <em>kāma-taṇhā</em> (’craving for sensuality’).<sup class="footnote-reference"><a href="#fn4">4</a></sup> {979} <em>Chanda</em> in this
+to <em>kāma-taṇhā</em> (’craving for sensuality’).<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup> {979} <em>Chanda</em> in this
 context is usually used on its own, but sometimes it is used together
 with synonyms, for example in this passage by the Buddha:</p>
 <div class="sutta">
@@ -565,26 +546,26 @@ Note <a href="#note-synonyms">Synonyms of Desire</a>)</p>
 </div>
 <p>Because <em>chanda</em> in this context is identical to <em>taṇhā</em>, it is possible
 to replace the term <em>chanda</em> with the term <em>taṇhā</em> in the following
-passages: ’a desire for existence’,<sup class="footnote-reference"><a href="#fn5">5</a></sup> ’a desire for sense
-pleasures’,<sup class="footnote-reference"><a href="#fn6">6</a></sup> ’delight for the body’,<sup class="footnote-reference"><a href="#fn7">7</a></sup> ’love of sexual
-intercourse’,<sup class="footnote-reference"><a href="#fn8">8</a></sup> ’delight in the body and feelings, which are
-impermanent, unsatisfactory, and insubstantial’,<sup class="footnote-reference"><a href="#fn9">9</a></sup> and ’desire for
+passages: ’a desire for existence’,<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup> ’a desire for sense
+pleasures’,<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup> ’delight for the body’,<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup> ’love of sexual
+intercourse’,<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup> ’delight in the body and feelings, which are
+impermanent, unsatisfactory, and insubstantial’,<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup> and ’desire for
 sounds, smells and tastes, which are impermanent, unsatisfactory, and
-insubstantial’.<sup class="footnote-reference"><a href="#fn10">10</a></sup></p>
+insubstantial’.<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup></p>
 <p>Compound words are created with <em>chanda</em> in a similar way to <em>taṇhā</em>,
 for example: <em>rūpa-chanda</em> (’delight in forms’), <em>sadda-chanda</em>
 (’delight in sounds’), <em>gandha-chanda</em> (’delight in smells’),
 <em>rasa-chanda</em> (’delight in tastes’), <em>phoṭṭhabba-chanda</em> (’delight in
 tactile objects’), and <em>dhamma-chanda</em> (’delight in mental
-objects’).<sup class="footnote-reference"><a href="#fn11">11</a></sup> <em>Chanda</em> can be used in the context of human
-relationships,<sup class="footnote-reference"><a href="#fn12">12</a></sup> referring to love or affection, as is seen in the
+objects’).<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup> <em>Chanda</em> can be used in the context of human
+relationships,<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup> referring to love or affection, as is seen in the
 Gandhabhaga Sutta, where it refers to love for one’s wife and
-children.<sup class="footnote-reference"><a href="#fn13">13</a></sup> In this same sutta it states: ’<em>Chanda</em> is the root of
+children.<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup> In this same sutta it states: ’<em>Chanda</em> is the root of
 suffering,’ in the same manner as the second noble truth, which states
 that craving is the cause for suffering. In another sutta the Buddha
 says that one should abandon <em>chanda</em> (for things that are impermanent,
-<em>dukkha</em>, and not-self),<sup class="footnote-reference"><a href="#fn14">14</a></sup> in the same way that in the
-Dhammacakkapavattana Sutta he says that one should abandon craving.<sup class="footnote-reference"><a href="#fn15">15</a></sup></p>
+<em>dukkha</em>, and not-self),<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup> in the same way that in the
+Dhammacakkapavattana Sutta he says that one should abandon craving.<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup></p>
 <div class="note">
 <p><span class="caption">Synonyms of Desire</span><a id="note-synonyms"></a></p>
 <blockquote>
@@ -608,23 +589,23 @@ Pathavīkasiṇa-niddesavaṇṇanā, Paṭhamajjhānakathāvanṇṇanā.&gt;</
 equivalent to the group of mental factors (<em>cetasika</em>) classified in the
 Abhidhamma as ’miscellaneous’ or ’apportioned’ (<em>pakiṇṇaka-cetasika</em>),
 that is, they can arise in both a wholesome mind state and in an
-unwholesome mind state.<sup class="footnote-reference"><a href="#fn16">16</a></sup></p>
+unwholesome mind state.<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup></p>
 <p>The <em>kattukamyatā-chanda</em> most familiar to students of Buddhism is the
 desire or enthusiasm (<em>chanda</em>) classified as the first factor in the
-Four Paths to Success (<em>iddhi-pāda</em>),<sup class="footnote-reference"><a href="#fn17">17</a></sup> and which is also the
-essential quality in the Four Right Efforts (<em>sammappadhāna</em>).<sup class="footnote-reference"><a href="#fn18">18</a></sup> The
+Four Paths to Success (<em>iddhi-pāda</em>),<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup> and which is also the
+essential quality in the Four Right Efforts (<em>sammappadhāna</em>).<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup> The
 meaning of <em>kattukamyatā-chanda</em> is very similar to the meaning of
 <em>viriya</em> (’energy’), <em>vāyāma</em> (’effort’), and <em>ussāha</em> (’endeavour’).
 {980} These terms are occasionally used together to complement each
-other.<sup class="footnote-reference"><a href="#fn19">19</a></sup> This form of desire is considered an essential factor in
+other.<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup> This form of desire is considered an essential factor in
 Dhamma practice.</p>
 <p>The commentaries tend to include this form of desire in the third form,
 of <em>kusaladhamma-chanda</em>, as if they are one and the same. For example,
 the desire in the Four Paths to Success and in the Four Right Efforts is
-classified as both <em>kattukamyatā-chanda</em> and <em>kusaladhamma-chanda.</em><sup class="footnote-reference"><a href="#fn20">20</a></sup></p>
+classified as both <em>kattukamyatā-chanda</em> and <em>kusaladhamma-chanda.</em><sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup></p>
 <p><strong>Kusaladhamma-chanda:</strong> this form of desire is mentioned in one sutta,
 in which it is the final factor in a list describing the six things that
-are difficult to encounter in the world.<sup class="footnote-reference"><a href="#fn21">21</a></sup> It is considered an
+are difficult to encounter in the world.<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup> It is considered an
 essential factor for people in order to benefit from the Buddhist
 teachings or to lead a virtuous life, because although one may have
 encountered the first five factors, if one lacks a desire for wholesome
@@ -678,16 +659,16 @@ ingredient of effort (<em>viriya</em>), which is included in the thirty-seven
 factors of enlightenment (<em>bodhipakkhiya-dhamma</em>).</p>
 <p>The term <em>chanda</em> in other passages related to Dhamma practice has a
 similar meaning, for example: the desire to fulfil all wholesome
-qualities,<sup class="footnote-reference"><a href="#fn22">22</a></sup> the desire to undertake training,<sup class="footnote-reference"><a href="#fn23">23</a></sup> the desire to
-develop the faculty of wisdom,<sup class="footnote-reference"><a href="#fn24">24</a></sup> the desire to abandon all mental
-impurities,<sup class="footnote-reference"><a href="#fn25">25</a></sup> and the desire for Nibbāna.<sup class="footnote-reference"><a href="#fn26">26</a></sup> {981}</p>
+qualities,<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup> the desire to undertake training,<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup> the desire to
+develop the faculty of wisdom,<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup> the desire to abandon all mental
+impurities,<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup> and the desire for Nibbāna.<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup> {981}</p>
 <p><em>Chanda</em> in these cases should be interpreted as both
 <em>kattukamyatā-chanda</em> and <em>kusaladhamma-chanda</em>: as both the desire to
 act and the desire for virtuous qualities, or in brief: the desire to do
-good.<sup class="footnote-reference"><a href="#fn27">27</a></sup></p>
+good.<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup></p>
 <p>The Vibhaṅga of the Abhidhamma defines <em>chanda</em> in the Four Right
 Efforts and in the Four Paths to Success as
-<em>kattukamyatā-kusaladhamma-chanda</em>:<sup class="footnote-reference"><a href="#fn28">28</a></sup></p>
+<em>kattukamyatā-kusaladhamma-chanda</em>:<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup></p>
 <ul>
 <li>
 <p>The Four Right Efforts: In the phrase ’generate chanda’, how is
@@ -747,7 +728,7 @@ Dhammacakkapavattana Sutta, in which the Buddha states:</p>
 <p>All of the commentarial and sub-commentarial explanations of the second
 passage (on the five aggregates of clinging) are consistent, stating
 that ’rooted in desire’ means ’rooted in craving (<em>taṇhā</em>)’ or ’rooted
-in covetous desire (<em>taṇhā-chanda</em>)’.<sup class="footnote-reference"><a href="#fn29">29</a></sup> These texts occasionally
+in covetous desire (<em>taṇhā-chanda</em>)’.<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup> These texts occasionally
 confirm that these explanations are consistent with crav-ing (<em>taṇhā</em>)
 being denoted as the origin of suffering (<em>dukkha-samudaya</em>).</p>
 <p><strong>B.</strong> Desire as the root of all things:</p>
@@ -802,7 +783,7 @@ answer them as follows:</p>
 </li>
 <li>
 <p>All things culminate in Nibbāna<br />
-(<em>nibbāna-pariyosānā sabbe dhammā</em>).<sup class="footnote-reference"><a href="#fn30">30</a></sup></p>
+(<em>nibbāna-pariyosānā sabbe dhammā</em>).<sup class="footnote-reference" id="fr-fn30-1"><a href="#fn-fn30">30</a></sup></p>
 <p><em>A. V. 106-107.</em></p>
 </li>
 </ol>
@@ -830,7 +811,7 @@ from one another? The Buddha said that in the case that the five
 aggregates are a supportive condition for the mental taints (<em>sāsava</em>)
 and for clinging (<em>upādāniya</em>), they constitute the five aggregates of
 clinging. If they are free from the taints and from clinging they are
-the five aggregates in a sheer or absolute sense.<sup class="footnote-reference"><a href="#fn31">31</a></sup></p>
+the five aggregates in a sheer or absolute sense.<sup class="footnote-reference" id="fr-fn31-1"><a href="#fn-fn31">31</a></sup></p>
 <p>Many sub-commentarial passages explaining these ten factors explicitly
 state that wholesome qualities are rooted in desire (<em>chandamūlakā
 kusalā dhammā</em>): wholesome desire (<em>chanda</em>) is the source of wholesome
@@ -838,7 +819,7 @@ things. One of these passages defines this desire specifically as the
 ’desire to act’ (<em>kattukamyatā-chanda</em>), which incorporates the desire
 for virtuous qualities (<em>kusaladhamma-chanda</em>; this includes the love of
 goodness – <em>kusala-chanda</em> – and the love of truth –
-<em>dhamma-chanda</em>).<sup class="footnote-reference"><a href="#fn32">32</a></sup></p>
+<em>dhamma-chanda</em>).<sup class="footnote-reference" id="fr-fn32-1"><a href="#fn-fn32">32</a></sup></p>
 <h3 id="definitive-definition-for-chanda"><a class="header" href="#definitive-definition-for-chanda">Definitive Definition for Chanda</a></h3>
 <p>When we have considered the various definitions of the term <em>chanda</em> and
 thoroughly examined the divergent passages in which it is used, we are
@@ -878,7 +859,7 @@ provided. Although this analysis is not always comprehensive, it is
 clear that the authors of these texts wished to point out the difference
 between these two kinds of desire. (Note that there is no single passage
 in which the three aforementioned kinds of desire are clearly listed
-together.)<sup class="footnote-reference"><a href="#fn33">33</a></sup> Occasionally, a pair of clearly defined terms is used;
+together.)<sup class="footnote-reference" id="fr-fn33-1"><a href="#fn-fn33">33</a></sup> Occasionally, a pair of clearly defined terms is used;
 the most common distinction is as follows:</p>
 <ol>
 <li>
@@ -891,7 +872,7 @@ the most common distinction is as follows:</p>
 <p>There are two commentarial texts which present a clear account of these
 principles dealing with desire. In the Papañcasūdanī and the
 Paramatthadīpanī, ’desire’ (here, the Pali term <em>patthanā</em> is used) may
-be classified into two kinds:<sup class="footnote-reference"><a href="#fn34">34</a></sup> (See
+be classified into two kinds:<sup class="footnote-reference" id="fr-fn34-1"><a href="#fn-fn34">34</a></sup> (See
 Note <a href="#note-desire-action">Desire as Craving or Action</a>)</p>
 <ol>
 <li>
@@ -937,7 +918,7 @@ wholesome, healthy, and supportive.</p>
 <h3 id="motivation-of-craving"><a class="header" href="#motivation-of-craving">Motivation of Craving</a></h3>
 <p><em>Taṇhā</em> may be translated as ’thirst’, ’craving’, ’yearning’,
 ’infatuation’, ’fervour’, ’lust’, ’agitation’, ’anxiety’, or
-’insatiability’.<sup class="footnote-reference"><a href="#fn35">35</a></sup></p>
+’insatiability’.<sup class="footnote-reference" id="fr-fn35-1"><a href="#fn-fn35">35</a></sup></p>
 <p>According to the teaching of Dependent Origination, <em>taṇhā</em> is
 conditioned by feeling (<em>vedanā</em>) and rooted in ignorance (<em>avijjā</em>).
 When one receives a pleasurable or displeasurable sense impression –
@@ -965,7 +946,7 @@ sounds, smells, tastes, tactile objects, and mental objects.</p>
 <p>The first five – sights, sounds, smells, tastes, and tactile objects –
 are connected to the material world and are particularly pronounced.
 They are referred to as the five objects of sensual enjoyment
-(<em>kāma-guṇa</em>).<sup class="footnote-reference"><a href="#fn36">36</a></sup> The six sense objects, and especially the five
+(<em>kāma-guṇa</em>).<sup class="footnote-reference" id="fr-fn36-1"><a href="#fn-fn36">36</a></sup> The six sense objects, and especially the five
 objects of sensual enjoyment, are both the aim and the source of
 craving. Craving is thus a thirst for things that provide sensation and
 a thirst for pleasing sense objects – a desire for pleasing sense
@@ -1037,7 +1018,7 @@ annihilation of the self; craving for non-existence. {987}</p>
 </ol>
 <p>In brief, these three kinds of craving may be referred to as craving for
 sense pleasure, craving for existence, and craving for
-non-existence.<sup class="footnote-reference"><a href="#fn37">37</a></sup></p>
+non-existence.<sup class="footnote-reference" id="fr-fn37-1"><a href="#fn-fn37">37</a></sup></p>
 <p>According to the Buddhist teaching on the mode of conditionality
 (<em>paccayākāra</em>), craving leads to ’seeking’ (<em>pariyesanā</em> or <em>esanā</em>,
 see
@@ -1095,7 +1076,7 @@ expressions of <em>taṇhā</em>.</p>
 as desire for wholesome qualities (<em>kusaladhamma-chanda</em>), love of
 virtue (<em>kusala-chanda</em>), or love of truth (<em>dhamma-chanda</em>).</p>
 <p><em>Kusaladhamma-chanda</em> is translated as desire for wholesome qualities:
-an enthusiasm for and delight in virtue.<sup class="footnote-reference"><a href="#fn38">38</a></sup> <em>Kusala-chanda</em> is
+an enthusiasm for and delight in virtue.<sup class="footnote-reference" id="fr-fn38-1"><a href="#fn-fn38">38</a></sup> <em>Kusala-chanda</em> is
 translated as love of virtue; although the term <em>dhamma</em> is removed,
 <em>kusala-chanda</em> has an identical meaning to <em>kusaladhamma-chanda</em>.</p>
 <p><em>Kusala</em> may be translated as ’wholesome’, ’skilful’, ’favourable’,
@@ -1161,7 +1142,7 @@ action performed in order to know the truth and to create goodness.</p>
 mentioned in the texts, it is usually linked to the desire to act
 (<em>kattukamyatā</em>)? The desire for knowledge and goodness solicits action.
 In order to arrive at knowledge, truth, and fulfilment, one must act. To
-use a play on words, to access the real one must have zeal.<sup class="footnote-reference"><a href="#fn39">39</a></sup></p>
+use a play on words, to access the real one must have zeal.<sup class="footnote-reference" id="fr-fn39-1"><a href="#fn-fn39">39</a></sup></p>
 <p>For this reason, the desire to act is an attribute of wholesome desire
 or the love of truth. One can even say that the term <em>chanda</em> is a
 synonym for <em>kattukamyatā</em>: the desire to act is wholesome desire.
@@ -1170,13 +1151,13 @@ Sooner or later, when the texts mention wholesome desire
 conclude by stating that <em>chanda</em> is equivalent to the desire to act
 (<em>kattukamyatā-chanda</em>).</p>
 <p>In reference to the mode of conditionality (<em>paccayākāra</em>), the Buddha
-said that <em>chanda</em> leads to perseverance (<em>ussāha</em>),<sup class="footnote-reference"><a href="#fn40">40</a></sup> or he
+said that <em>chanda</em> leads to perseverance (<em>ussāha</em>),<sup class="footnote-reference" id="fr-fn40-1"><a href="#fn-fn40">40</a></sup> or he
 mentioned <em>chanda</em> as preceding effort (<em>vāyāma</em>) or energy
-(<em>viriya</em>).<sup class="footnote-reference"><a href="#fn41">41</a></sup> Put simply, <em>chanda</em> generates action (just as <em>taṇhā</em>
+(<em>viriya</em>).<sup class="footnote-reference" id="fr-fn41-1"><a href="#fn-fn41">41</a></sup> Put simply, <em>chanda</em> generates action (just as <em>taṇhā</em>
 generates seeking).</p>
 <p>Related to this subject, the commentaries say that the cause of
 wholesome desire (<em>chanda</em>) is wise reflection
-(<em>yoniso-manasikāra</em>).<sup class="footnote-reference"><a href="#fn42">42</a></sup></p>
+(<em>yoniso-manasikāra</em>).<sup class="footnote-reference" id="fr-fn42-1"><a href="#fn-fn42">42</a></sup></p>
 <p>This passage indicates that wholesome desire is part of a conditional
 process involving wisdom. Wholesome desire commences when a person
 begins to apply wisdom (just as the arising of craving depends on
@@ -1271,7 +1252,7 @@ the action itself, which is the cause for that virtue.</p>
 This helps to explain why the second kind of <em>chanda</em>
 (<em>kattukamyatā-chanda</em> – the desire to act) is equated to
 <em>kusala-chanda</em> or <em>dhamma-chanda</em> (the desire for virtue or
-truth).<sup class="footnote-reference"><a href="#fn43">43</a></sup></p>
+truth).<sup class="footnote-reference" id="fr-fn43-1"><a href="#fn-fn43">43</a></sup></p>
 <p>If behaviour is guided by <em>chanda</em>, Mr. Gully will have an enthusiasm
 for sweeping the building that is distinct from receiving a salary, and
 the child will read the book without her father’s enticement to see a
@@ -1422,14 +1403,14 @@ without being enslaved by delicious flavours. {993}</p>
 generate these results, one also realizes the intermediate benefits
 that arise during the course of action. The wish to act and the
 reaping of benefits from action leads to satisfaction, contentment,
-happiness, and a deep sense of peace.<sup class="footnote-reference"><a href="#fn44">44</a></sup></p>
+happiness, and a deep sense of peace.<sup class="footnote-reference" id="fr-fn44-1"><a href="#fn-fn44">44</a></sup></p>
 </li>
 </ul>
 <p>In the context of Dhamma practice, <em>chanda</em> is classified as one of the
 ’paths to power’ (<em>iddhi-pāda</em>), which is a vital principle for the
 development of concentration (<em>samādhi</em>). Wholesome desire brings about
 concentration, which the Buddha called ’concentration as a result of
-desire’ (<em>chanda-samādhi</em>).<sup class="footnote-reference"><a href="#fn45">45</a></sup> Wholesome desire promotes mental
+desire’ (<em>chanda-samādhi</em>).<sup class="footnote-reference" id="fr-fn45-1"><a href="#fn-fn45">45</a></sup> Wholesome desire promotes mental
 health, as opposed to craving, which creates mental illness.</p>
 <p>Even in the case when a person is unable to fully accomplish the results
 of an action, wholesome desire does not create suffering or mental
@@ -1641,7 +1622,7 @@ entertainment centres and various places of licentiousness. {997}</p>
 <p>In this activity of reproduction people pay no attention and offer no
 opportunity to the biological needs. And they apply a similar attitude
 of neglect to other activities like eating, giving rise to various
-widespread addictions.<sup class="footnote-reference"><a href="#fn46">46</a></sup></p>
+widespread addictions.<sup class="footnote-reference" id="fr-fn46-1"><a href="#fn-fn46">46</a></sup></p>
 <p>People should deal with this matter of reproduction in ways that are
 beneficial to themselves and their communities, by fostering sincerity
 and goodwill. They should develop wisdom, which recognizes the true
@@ -1667,7 +1648,7 @@ process giving rise to craving. Craving arises wrapped up in ignorance.
 When encountering an agreeable object, one is pleased; when encountering
 a disagreeable object, one is displeased. Craving follows automatically
 from feeling, without a person needing to think or to have any
-understanding of the process.<sup class="footnote-reference"><a href="#fn47">47</a></sup></p>
+understanding of the process.<sup class="footnote-reference" id="fr-fn47-1"><a href="#fn-fn47">47</a></sup></p>
 <p>The process involving wholesome desire is one of ending ignorance; it is
 a process of wisdom: of applying thought, understanding, and awareness.
 When one eats, reflection and awareness are involved; one does not allow
@@ -1700,7 +1681,7 @@ a natural, healthy state of existence is conducive to performing one’s
 duties. One does not eat primarily for delicious flavours, amusement, or
 beautification, which would be detrimental to one’s health, lead to the
 exploitation of others, increase defilements, and be unfavourable to the
-truly desirable results of eating.<sup class="footnote-reference"><a href="#fn48">48</a></sup></p>
+truly desirable results of eating.<sup class="footnote-reference" id="fr-fn48-1"><a href="#fn-fn48">48</a></sup></p>
 <p>Wise reflection is not in itself a motivating force, but it conditions
 the wholesome motivation of <em>chanda</em>, which in this case leads to
 enthusiasm and desire for the health and ease of the body, for a good
@@ -1727,11 +1708,11 @@ rather than mixing up these factors, etc. and then analyzing them in a
 jumbled way.</p>
 <p>A state of good health, absence of illness, and ease is inherently
 favourable and positive. What one then decides to do with this good
-health is another stage in the process.<sup class="footnote-reference"><a href="#fn49">49</a></sup> One may not be desiring
+health is another stage in the process.<sup class="footnote-reference" id="fr-fn49-1"><a href="#fn-fn49">49</a></sup> One may not be desiring
 pleasant sensations, but rather wish to rely on good health in order to
 perform kind deeds or to practise for the elimination of mental
 impurity.</p>
-<p>In general, people’s thinking tends to be comprised of a mixture of
+<p>In general, people’s thinking tends to comprise a mixture of
 factors and it is important that one is able to distinguish them. At
 times this mixture of factors is very complicated.</p>
 <p>A person, for example, may think in this way: ’I will eat only enough
@@ -1842,7 +1823,7 @@ from these women, and the preservation of the women’s lives is merely a
 precondition to indulge in this pleasure.</p>
 <h3 id="wholesome-desire-and-lovingkindness"><a class="header" href="#wholesome-desire-and-lovingkindness">Wholesome Desire and Lovingkindness</a></h3>
 <p>This subject of desire is linked to the vital quality of lovingkindness
-(<em>mettā</em>), as well as to the other three ’divine abidings’.<sup class="footnote-reference"><a href="#fn50">50</a></sup> An
+(<em>mettā</em>), as well as to the other three ’divine abidings’.<sup class="footnote-reference" id="fr-fn50-1"><a href="#fn-fn50">50</a></sup> An
 examination of lovingkindness helps to clarify the meanings of <em>taṇhā</em>
 and <em>chanda</em>.</p>
 <p>The quality of <em>mettā</em> is familiar to most Buddhists, but it does give
@@ -1866,7 +1847,7 @@ the advantage of <em>mettā</em> is a reduction of ill-will, while its
 disadvantage is that it can cause selfish love. They describe how the
 distant enemy of lovingkindness is ill-will, while the close enemy is
 lust (<em>rāga</em>). People must be extremely cautious of lust; one moment of
-carelessness and it suddenly flares up.<sup class="footnote-reference"><a href="#fn51">51</a></sup></p>
+carelessness and it suddenly flares up.<sup class="footnote-reference" id="fr-fn51-1"><a href="#fn-fn51">51</a></sup></p>
 <p><em>Sineha</em> is a synonym for <em>taṇhā</em>. Unwholesome love, which is the
 opposite of <em>mettā</em>, is therefore love springing from or adulterated by
 craving. As stated earlier, the main characteristics of craving are a
@@ -1925,7 +1906,7 @@ lovingkindness, one’s sense of self feels impacted and the mind is
 confined, stressed, and tainted by craving. One harbours infatuation,
 lust, envy, jealousy, or malice, all of which are unwholesome, turbid,
 and uncomfortable states of mind, forms of mental illness, and
-obstructive to oneself and others.<sup class="footnote-reference"><a href="#fn52">52</a></sup></p>
+obstructive to oneself and others.<sup class="footnote-reference" id="fr-fn52-1"><a href="#fn-fn52">52</a></sup></p>
 <p>A guideline to verify whether one’s love for another person is true
 <em>mettā</em>, or is <em>mettā</em> mixed with craving or simply a symptom of
 craving, is to ask oneself these questions: If I am unable to derive
@@ -1954,7 +1935,7 @@ considerable damage. From the perspective of <em>mettā</em>, the important
 point is that the love is unconditional: the parents love the child
 regardless of whether he or she boosts their sense of self-importance.
 When the child is abandoned by everyone else, the parents continue to
-provide love and support.)<sup class="footnote-reference"><a href="#fn53">53</a></sup></p>
+provide love and support.)<sup class="footnote-reference" id="fr-fn53-1"><a href="#fn-fn53">53</a></sup></p>
 <p>When conflict arises between their children and someone else, parents
 tend to feel indignant towards the opposing party and are biased towards
 their children. They are unable to consider the issue in a truly
@@ -1964,15 +1945,15 @@ love still gives rise to a division between the ’loved’ and the
 <p>An understanding of <em>mettā</em> helps to increase an understanding of
 <em>chanda</em>, because both of these qualities concern the subject of love
 and desire, and they are both wholesome, pure, and supportive to the
-mind.<sup class="footnote-reference"><a href="#fn54">54</a></sup></p>
+mind.<sup class="footnote-reference" id="fr-fn54-1"><a href="#fn-fn54">54</a></sup></p>
 <p>There is a distinction, however, between these two qualities: the term
 <em>chanda</em> has a broad definition and can be applied universally, whereas
 the term <em>mettā</em> technically has a more narrow definition, and pertains
 specifically to a person’s relationship to living creatures, to animals
 and other people. Living creatures are the objects (<em>ārammaṇa</em>) of
-lovingkindness.<sup class="footnote-reference"><a href="#fn55">55</a></sup> In addition, <em>mettā</em> (along with the other three
+lovingkindness.<sup class="footnote-reference" id="fr-fn55-1"><a href="#fn-fn55">55</a></sup> In addition, <em>mettā</em> (along with the other three
 divine abidings – <em>brahmavihāra</em>) relies on <em>chanda</em> (specifically,
-<em>kattukamyatā-chanda</em>) as a foundation or as a primary agent.<sup class="footnote-reference"><a href="#fn56">56</a></sup></p>
+<em>kattukamyatā-chanda</em>) as a foundation or as a primary agent.<sup class="footnote-reference" id="fr-fn56-1"><a href="#fn-fn56">56</a></sup></p>
 <h3 id="review-of-wholesome-desire"><a class="header" href="#review-of-wholesome-desire">Review of Wholesome Desire</a></h3>
 <p>The former example of a person delighting in the healthy state of a
 tree, without the interference from selfish desires, was a way to
@@ -2003,9 +1984,9 @@ refreshing grove of trees, a harmonious community, or a peaceful,
 contented person.</p>
 <p><em>Chanda</em> is a love of virtue, wholesome conditions, and a good quality
 of life, for example: cleanliness, orderliness, tranquillity, a natural
-countryside, and a healthy, refreshing environment.<sup class="footnote-reference"><a href="#fn57">57</a></sup></p>
+countryside, and a healthy, refreshing environment.<sup class="footnote-reference" id="fr-fn57-1"><a href="#fn-fn57">57</a></sup></p>
 <p>This state of mind is pure: it does not require a desire for sense
-pleasure, or an involvement by selfish thoughts and preoccupations.<sup class="footnote-reference"><a href="#fn58">58</a></sup></p>
+pleasure, or an involvement by selfish thoughts and preoccupations.<sup class="footnote-reference" id="fr-fn58-1"><a href="#fn-fn58">58</a></sup></p>
 <p>Such a state of mind does not arise independently or randomly, but
 requires reason and understanding. This is opposed to the perpetual
 stream of ignorance and craving, which requires no reflection. The love
@@ -2022,7 +2003,7 @@ it may involve a great amount of consideration, analysis, inquiry, and
 reasoning. {1006}</p>
 <p>When wise reflection arises, the stream of ignorance ends. When the mind
 sees the value of something, it naturally inclines towards and engages
-with it, without the need for force or enticement.<sup class="footnote-reference"><a href="#fn59">59</a></sup> At this stage
+with it, without the need for force or enticement.<sup class="footnote-reference" id="fr-fn59-1"><a href="#fn-fn59">59</a></sup> At this stage
 perseverance arises, an effort to produce, establish, and fulfil that
 wholesome thing or wholesome state.</p>
 <p>In some situations the Buddha revealed intermediate, subsidiary factors
@@ -2062,7 +2043,7 @@ a person achieves perfect understanding (<em>aññārādhanā</em> or
 <p>The stage of examining the meaning of the teachings is precisely the
 stage of wise reflection. The understanding according with the subject
 of contemplation is the result of this examination, and these two stages
-comprise the application of wisdom.<sup class="footnote-reference"><a href="#fn60">60</a></sup> When a person discerns and
+comprise the application of wisdom.<sup class="footnote-reference" id="fr-fn60-1"><a href="#fn-fn60">60</a></sup> When a person discerns and
 understands the goodness and value of something, <em>chanda</em> arises: the
 mind inclines towards, delights in, and desires this thing. In sum, wise
 reflection leads to wholesome desire, which then leads to perseverance.</p>
@@ -2102,7 +2083,7 @@ and this is frequently the case. But the desire by craving for wholesome
 things is connected to and contingent on increasing pleasurable sense
 experiences or on reinforcing self-importance.</p>
 <p>Normally, this desire for goodness is the function of craving for
-existence (<em>bhava-taṇhā</em>),<sup class="footnote-reference"><a href="#fn61">61</a></sup> for example: the desire to be born as a
+existence (<em>bhava-taṇhā</em>),<sup class="footnote-reference" id="fr-fn61-1"><a href="#fn-fn61">61</a></sup> for example: the desire to be born as a
 god (to have splendour, long-life, heavenly pleasures, or an entourage
 of celestial nymphs), the desire to be a hero (to receive praise and
 adoration, which will enhance one’s self-image), the desire to become a
@@ -2111,7 +2092,7 @@ desire to be a good person (to receive honour and praise, which will
 reinforce the sense of self).</p>
 <p>Craving is not interested in whether the action is good or bad; it only
 requires that the action is a precondition for pleasure or
-self-aggrandizement.<sup class="footnote-reference"><a href="#fn62">62</a></sup> Indeed, because craving often desires
+self-aggrandizement.<sup class="footnote-reference" id="fr-fn62-1"><a href="#fn-fn62">62</a></sup> Indeed, because craving often desires
 wholesome things, people get confused and have trouble distinguishing
 between <em>taṇhā</em> and <em>chanda</em>.</p>
 <h3 id="interference-and-intrusion-by-craving"><a class="header" href="#interference-and-intrusion-by-craving">Interference and Intrusion by Craving</a></h3>
@@ -2131,7 +2112,7 @@ object, or creating the division of ’mine’ and ’yours’. {1008}</p>
 <p>The arising of craving then sows the seeds for suffering and various
 problems. For example, when one is able to sustain wholesome desire
 throughout an activity, one will be gladdened and fulfilled by the
-goodness and merits of this activity.<sup class="footnote-reference"><a href="#fn63">63</a></sup> One’s mind will be absorbed
+goodness and merits of this activity.<sup class="footnote-reference" id="fr-fn63-1"><a href="#fn-fn63">63</a></sup> One’s mind will be absorbed
 in and devoted to the activity and to the excellence it brings, and one
 will work with joy and concentration. But whenever craving interrupts
 and displaces wholesome desire, such assertions creep in like ’my work’,
@@ -2242,7 +2223,7 @@ to seek out an object that is recognized as beneficial and desirable.</p>
 action, the beginning of all wholesome engagement. Craving is a desire
 for something that is separate and alien to oneself. Craving only has an
 obscure understanding of things; it simply hopes to profit from an
-object and seeks ways to obtain or consume it.<sup class="footnote-reference"><a href="#fn64">64</a></sup> {1010}</p>
+object and seeks ways to obtain or consume it.<sup class="footnote-reference" id="fr-fn64-1"><a href="#fn-fn64">64</a></sup> {1010}</p>
 <h3 id="abandonment-of-desire"><a class="header" href="#abandonment-of-desire">Abandonment of Desire</a></h3>
 <p>In reference to Dhamma practice, we can conclude the following:</p>
 <ul>
@@ -2267,13 +2248,13 @@ wholesome desire (<em>chanda</em>) supports the realization and acquisition of
 things that are truly beneficial, and thus one should establish and
 apply it as much as possible. Moreover, wholesome desire prevents and
 eliminates craving.</p>
-<p>The Buddha stated that craving should be eliminated;<sup class="footnote-reference"><a href="#fn65">65</a></sup> on the other
+<p>The Buddha stated that craving should be eliminated;<sup class="footnote-reference" id="fr-fn65-1"><a href="#fn-fn65">65</a></sup> on the other
 hand wholesome desire should be performed or accomplished
-(<em>karaṇīya</em>).<sup class="footnote-reference"><a href="#fn66">66</a></sup></p>
+(<em>karaṇīya</em>).<sup class="footnote-reference" id="fr-fn66-1"><a href="#fn-fn66">66</a></sup></p>
 <p>It is equally accurate to say that both craving and <em>chanda</em> should be
 abandoned. However, the abandonment of these two factors differs: the
 Buddha explained that craving should be abandoned or eliminated right at
-the point where it arises.<sup class="footnote-reference"><a href="#fn67">67</a></sup> <em>Chanda</em> on the other hand should be
+the point where it arises.<sup class="footnote-reference" id="fr-fn67-1"><a href="#fn-fn67">67</a></sup> <em>Chanda</em> on the other hand should be
 abandoned by completing the action that is motivated by wholesome
 desire. When this is accomplished the person will no longer require
 <em>chanda</em> and it will end automatically.</p>
@@ -2324,7 +2305,7 @@ attainment of arahantship, and when he attained arahantship, the
 corresponding desire subsided. He earlier had aroused energy …
 applied focused reflection … used wisdom to investigate, and when he
 attained arahantship, the corresponding energy … reflection …
-investigation subsided.<sup class="footnote-reference"><a href="#fn68">68</a></sup></p>
+investigation subsided.<sup class="footnote-reference" id="fr-fn68-1"><a href="#fn-fn68">68</a></sup></p>
 <p><em>S. V. 272-3.</em></p>
 </blockquote>
 </div>
@@ -2377,7 +2358,7 @@ the taints, in this very life enters and dwells in the taintless
 liberation of mind, liberation by wisdom, having realized it for
 himself by direct knowledge.’ Then he thinks, ’Oh, when shall I too
 realize the taintless liberation of mind, liberation by wisdom?’ Then
-some time later, based on that craving, he abandons craving.<sup class="footnote-reference"><a href="#fn69">69</a></sup></p>
+some time later, based on that craving, he abandons craving.<sup class="footnote-reference" id="fr-fn69-1"><a href="#fn-fn69">69</a></sup></p>
 <p><em>A. II. 145-6.</em></p>
 </blockquote>
 </div>
@@ -2406,7 +2387,7 @@ desire the nymphs instead. The Buddha guaranteed Nanda that if he
 continued to put forth effort in the holy life, he could expect to enjoy
 the company of celestial nymphs. When Nanda began to apply himself once
 again to the holy life, he recognized its true purpose and progressed on
-the spiritual path until he eventually attained arahantship.<sup class="footnote-reference"><a href="#fn70">70</a></sup></p>
+the spiritual path until he eventually attained arahantship.<sup class="footnote-reference" id="fr-fn70-1"><a href="#fn-fn70">70</a></sup></p>
 <p>The Buddha seldom used this method of promising a reward; he used it
 carefully, only when he determined that it was most suitable for the
 circumstances.</p>
@@ -2559,7 +2540,7 @@ the objects encountered and asks such questions as: ’What is this?’ ’How
 did this come to be?’ ’What does this depend on?’ and ’What are its
 advantages and disadvantages?’ This way of thinking leads to an
 understanding of an object’s true value, to wholesome enthusiasm, to
-active engagement with the object, and to deeper learning.<sup class="footnote-reference"><a href="#fn71">71</a></sup> {1016}</p>
+active engagement with the object, and to deeper learning.<sup class="footnote-reference" id="fr-fn71-1"><a href="#fn-fn71">71</a></sup> {1016}</p>
 <p><strong>B.</strong> Although <em>chanda</em> is a wholesome, pure quality and is beneficial
 to a person’s life, its benefits depend on the degree of understanding
 concerning the truth and value of the things a person interacts with.
@@ -2577,7 +2558,7 @@ life?’ and ’What is worthy as a goal in life?’ One should then develop
 virtues by generating a desire for and love of truth, a love of
 goodness, and a desire for an enhanced quality of life. By increasing
 these virtues one reaches the highest stage of wisdom, which brings
-about utter deliverance and freedom of the mind.<sup class="footnote-reference"><a href="#fn72">72</a></sup></p>
+about utter deliverance and freedom of the mind.<sup class="footnote-reference" id="fr-fn72-1"><a href="#fn-fn72">72</a></sup></p>
 <p><strong>C.</strong> When <em>chanda</em> conditions craving, the result is most often
 harmful even for a well-intentioned person. Even though good people may
 not become arrogant or overbearing by attaching to or identifying with
@@ -2593,7 +2574,7 @@ lie beyond the power of good people to rectify, this can increase their
 suffering and sense of affliction.</p>
 <p>This form of suffering is particular to virtuous people; a base, immoral
 person is not troubled by such circumstances. It is fair to say that
-virtuous people experience a unique form of suffering.<sup class="footnote-reference"><a href="#fn73">73</a></sup> Suffering
+virtuous people experience a unique form of suffering.<sup class="footnote-reference" id="fr-fn73-1"><a href="#fn-fn73">73</a></sup> Suffering
 then offers an opportunity for the wheel of mental defilement to spin
 once more, generating such mind states as confusion, depression,
 self-pity, indignation, restlessness, and hot-headedness. {1017}</p>
@@ -2602,7 +2583,7 @@ help in order to be free from suffering, to have no hidden vices, and to
 not convert back to acting immorally. The factor that provides this
 freedom and prevents craving from returning is wisdom, which leads to
 the supreme liberation of the mind. A person who desires this state of
-liberation should apply wholesome desire to lead the way.<sup class="footnote-reference"><a href="#fn74">74</a></sup></p>
+liberation should apply wholesome desire to lead the way.<sup class="footnote-reference" id="fr-fn74-1"><a href="#fn-fn74">74</a></sup></p>
 <h3 id="consummate-wholesome-desire"><a class="header" href="#consummate-wholesome-desire">Consummate Wholesome Desire</a></h3>
 <p>The preceding material should help to dispel some common doubts,
 including: Do arahants, who have completely done away with craving and
@@ -2641,7 +2622,7 @@ the utmost of his ability.</p>
 <p>This consummate wholesome desire is one of the Buddha’s attributes. It
 is one of the eighteen qualities of the Buddha (<em>buddha-dhamma</em>),
 referred to in the phrase: ’(The Buddha) is endowed with unremitting
-wholesome desire.’<sup class="footnote-reference"><a href="#fn75">75</a></sup></p>
+wholesome desire.’<sup class="footnote-reference" id="fr-fn75-1"><a href="#fn-fn75">75</a></sup></p>
 <p>Motivated by this unremitting wholesome desire, the Buddha acted to
 liberate beings from mental impurity, suffering, and distress, and to
 lead them to peace, by way of his great kindness and compassion. {1018}</p>
@@ -2698,7 +2679,7 @@ should look on closely in a detached manner, allowing the child to
 practise on her own. They are ready to assist if the child trips, but
 they do not carry her around all the time out of fear that she may fall.
 This refraining from interference is referred to as ’equanimity’
-(<em>upekkhā</em>).<sup class="footnote-reference"><a href="#fn76">76</a></sup> {1019}</p>
+(<em>upekkhā</em>).<sup class="footnote-reference" id="fr-fn76-1"><a href="#fn-fn76">76</a></sup> {1019}</p>
 <p>One may wonder how equanimity is connected to wholesome desire and
 well-wishing. In fact, this is the ultimate form of well-wishing, based
 on true wisdom. One wishes for others to be successful and upright. One
@@ -2729,9 +2710,9 @@ suffering.</p>
 <p>The end of ignorance, craving, and grasping enables an arahant to act
 with purity: to act blamelessly and without such inhibiting defilements
 as fear and laziness. The motivating force behind an arahant’s actions
-is comprised of two factors: wisdom and compassion.<sup class="footnote-reference"><a href="#fn77">77</a></sup></p>
+comprises two factors: wisdom and compassion.<sup class="footnote-reference" id="fr-fn77-1"><a href="#fn-fn77">77</a></sup></p>
 <p>With wisdom lighting up the way and compassion acting as a force
-propelling them onwards,<sup class="footnote-reference"><a href="#fn78">78</a></sup> the Purified Ones – the Buddha and the
+propelling them onwards,<sup class="footnote-reference" id="fr-fn78-1"><a href="#fn-fn78">78</a></sup> the Purified Ones – the Buddha and the
 arahants – act steadfastly and earnestly for the welfare and happiness
 of the manyfolk. Their great works (the Buddha’s deeds –
 <em>buddha-kicca</em>, and the teaching activities – <em>sāsana-kicca</em>) have
@@ -2884,12 +2865,12 @@ awakening until he was enlightened as the Buddha.</p>
 concepts of libido, life-instinct, and death-instinct, although they are
 not exactly the same.</p>
 <p><em>Kāma-taṇhā</em> can be defined as a craving for the five cords of
-sensuality – as a delight in sensuality,<sup class="footnote-reference"><a href="#fn79">79</a></sup> or as a craving for the
-six sense objects.<sup class="footnote-reference"><a href="#fn80">80</a></sup></p>
+sensuality – as a delight in sensuality,<sup class="footnote-reference" id="fr-fn79-1"><a href="#fn-fn79">79</a></sup> or as a craving for the
+six sense objects.<sup class="footnote-reference" id="fr-fn80-1"><a href="#fn-fn80">80</a></sup></p>
 <p><em>Bhava-taṇhā</em> is accompanied by a ’view of existence’ (<em>bhava-diṭṭhi</em>:
 i.e. an eternalist view – <em>sassata-diṭṭhi</em>), <em>vibhava-taṇhā</em> is
 accompanied by an annihilationist view (<em>uccheda-diṭṭhi</em>); <em>kāma-taṇhā</em>
-comprises all remaining forms of craving.<sup class="footnote-reference"><a href="#fn81">81</a></sup></p>
+comprises all remaining forms of craving.<sup class="footnote-reference" id="fr-fn81-1"><a href="#fn-fn81">81</a></sup></p>
 <p>According to the Buddhist teachings, the attachment to sensuality is
 more deep-seated and fundamental than an attachment to self or the view
 of existing as a distinct self: for example, in terms of the ten fetters
@@ -2900,7 +2881,7 @@ attachment to the idea of self (<em>attavādupādāna</em> = <em>sakkāya-diṭ�
 abandoned at the stage of stream-entry, whereas grasping onto sensuality
 (<em>kāmupādāna</em>) is abandoned at the realization of arahantship
 (<em>kāmupādāna</em> includes attachment to fine-material form – <em>rūpa-rāga</em>
-– and attachment to immateriality – <em>arūpa-rāga</em>).<sup class="footnote-reference"><a href="#fn82">82</a></sup></p>
+– and attachment to immateriality – <em>arūpa-rāga</em>).<sup class="footnote-reference" id="fr-fn82-1"><a href="#fn-fn82">82</a></sup></p>
 <h2 id="appendix-2-harm-of-craving"><a class="header" href="#appendix-2-harm-of-craving">Appendix 2: Harm of Craving</a></h2>
 <p>If craving (along with conceit – <em>māna</em> and fixed views – <em>diṭṭhi</em>)
 replaces <em>chanda</em> and overwhelms the mind, it can cause severe suffering
@@ -2954,7 +2935,7 @@ and</p>
 <p>compassion (<em>karuṇā</em>), leading to the accomplishment of the Buddha’s
 deeds (<em>buddha-kicca</em>), to being the ’saviour of the world’
 (<em>loka-nātha</em>), and to living a life of benefiting others
-(<em>parahita-paṭipatti</em>).<sup class="footnote-reference"><a href="#fn83">83</a></sup></p>
+(<em>parahita-paṭipatti</em>).<sup class="footnote-reference" id="fr-fn83-1"><a href="#fn-fn83">83</a></sup></p>
 </li>
 </ol>
 <p>In some of the commentaries, purity (<em>visuddhi</em>) is distinguished as a
@@ -2963,7 +2944,7 @@ wisdom because it is an automatic result of enlightenment and therefore
 this quality is usually not designated as a separate attribute. In the
 Vajirabuddhiṭīkā, the Buddha’s deeds (<em>buddha-kicca</em>) are stated as
 twofold: work that is done with knowledge (<em>ñāṇa-kicca</em>) and work that
-is done with compassion (<em>karuṇā-kicca</em>).<sup class="footnote-reference"><a href="#fn84">84</a></sup> The Buddha’s and the
+is done with compassion (<em>karuṇā-kicca</em>).<sup class="footnote-reference" id="fr-fn84-1"><a href="#fn-fn84">84</a></sup> The Buddha’s and the
 arahants’ wisdom is free from conceit and selfishness, and their
 compassion is free from attachment and grief. The compassion of
 unawakened persons is still a pseudo-compassion, because their minds are
@@ -2984,7 +2965,8 @@ tradition emphasizes compassion.</p>
 <p>Lotus Buds in Lotus Leaves</p>
 </div>
 </div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
 <p>See: Nd1A. I. 17, 62; PsA. I. 117-19; DhsA. 370; VismṬ.:
 Pathavīkasiṇaniddesavaṇṇanā, Paṭhamajjhānakathāvanṇṇanā; VismṬ.:
 Paññābhūminiddesavaṇṇanā,
@@ -2993,84 +2975,84 @@ Taṇhāpaccayā-upādānapadavitthārakathāvaṇṇanā. These three terms –
 most often used in commentarial passages to distinguish specific
 forms of desire in different contexts. In the Pali Canon the single
 word <em>chanda</em> is used in different contexts and one must distinguish
-the specific form of desire oneself.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
-<p>E.g.: MA. IV. 94; SA. I. 62; SA II. 280, 307; SA. III. 258.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+the specific form of desire oneself. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
+<p>E.g.: MA. IV. 94; SA. I. 62; SA II. 280, 307; SA. III. 258. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>Besides these terms, there are many other synonyms for <em>taṇhā</em>,
 e.g.: <em>anunaya</em>, <em>nandi</em>, <em>icchā</em>, <em>māyā</em>, <em>paṇidhi</em>, <em>sineha</em>,
-<em>āsā</em>, and <em>abhijjhā</em>; see: Dhs. 189-90, 201; Vbh. 145.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+<em>āsā</em>, and <em>abhijjhā</em>; see: Dhs. 189-90, 201; Vbh. 145. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
 <p><em>Kāma-chanda</em> can also be translated as ’sensual pleasure’ or
-’lustful desire’.</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+’lustful desire’. <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
 <p>Thig. verse 14. <em>Bhava-chanda</em> here is equivalent to
 <em>bhava-taṇhā</em>; compare with the terms <em>kāma-chanda</em> and
-<em>kāma-taṇhā</em>.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
-<p>Thag. verse 1105.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
-<p>M. I. 500; Sn. 35.</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
-<p>Sn. 164.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
-<p>S. III. 77-8.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
-<p>S. IV. 195; cf.: S. I. 186-7; Thag. 1216.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
+<em>kāma-taṇhā</em>. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
+<p>Thag. verse 1105. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
+<p>M. I. 500; Sn. 35. <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
+<p>Sn. 164. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
+<p>S. III. 77-8. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
+<p>S. IV. 195; cf.: S. I. 186-7; Thag. 1216. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
 <p>E.g.: S. II. 144-9. Compare with the terms <em>rūpa-taṇhā</em>,
 <em>sadda-taṇhā</em> … <em>dhamma-taṇhā</em>, which occur frequently in the
 scriptures, e.g. at: S. II. 3. Also note that the term
 <em>dhamma-chanda</em> here refers to desire for mental objects (thoughts)
 and is distinct from the <em>dhamma-chanda</em> in the third kind of desire
-(<em>kusaladhamma-chanda</em>) mentioned above.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
-<p>S. I. 197.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
+(<em>kusaladhamma-chanda</em>) mentioned above. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
+<p>S. I. 197. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
 <p>S. IV. 327-30. In this sutta <em>chanda</em> appears with the terms
-<em>rāga</em> and <em>pema</em> (’love’).</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
-<p>S. III. 76-8.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
-<p>Vin. I. 11; S. V. 422.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
+<em>rāga</em> and <em>pema</em> (’love’). <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
+<p>S. III. 76-8. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
+<p>Vin. I. 11; S. V. 422. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
 <p>Vism. 462-3, 466; Comp.: Cetasikaparicchedo, Aññasamānacetasikaṁ;
 CompṬ.: Cetasikaparicchedavaṇṇanā, Aññasamānacetasikavaṇṇanā. The
 commentaries explain the mind states according to the quality,
 ’flavour’ (<em>rasa</em>), appearance (<em>paccupaṭṭhāna</em>), and proximate
 cause (<em>padaṭṭhāna</em>) of desire, but I won’t go into length about
 this here. Readers who are interested can look more closely at these
-references.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
+references. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
 <p>The Four Paths to Success are found frequently in the scriptures,
 e.g.: D. III. 221-2; Vbh. 216; throughout S. V. 254-93; Vbh. 216-26;
-and see the explanation at: PañcA. 107.</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
-<p>E.g.: A. II. 15-16, 74; S. V. 244-8; Vbh. 208-215.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+and see the explanation at: PañcA. 107. <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
+<p>E.g.: A. II. 15-16, 74; S. V. 244-8; Vbh. 208-215. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
 <p>For example: in the Buddha’s explanation of right effort – Sn.
 196; S. V. 440-41; A. I. 174-5; A. II. 93-4, 195; A. III. 306-307;
-DhA. III. 9.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
+DhA. III. 9. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
 <p>For an interpretation of <em>chanda</em> as <em>kattukamyatā-chanda</em> see,
 e.g.: MA. III. 426 (an explanation of M. II. 174); AA. III. 352 (an
 explanation of: A. III. 306-307; A. IV. 320); AA. III. 412 (an
@@ -3084,32 +3066,32 @@ A. I. 38-9); MA. III. 193 (an explanation of M. I. 480); AA. II. 346
 290 (an explanation of Vbh. 211). These commentaries offer further
 classifications of <em>chanda</em>, for example as <em>taṇhā-chanda</em>,
 <em>diṭṭhi-chanda</em>, <em>viriya-chanda</em>, and <em>dhamma-chanda</em>, but I won’t
-expand on this subject here.</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
+expand on this subject here. <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
 <p>I.e. it is difficult for a person to encounter all six of these
 things. For a person to encounter these things is considered to be
 an extremely valuable opportunity, for such a person is endowed with
 a complete set of factors conducive to Dhamma practice or progress
-in the truth of the noble ones (<em>ariya-dhamma</em>); see: A. III. 440.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
-<p>A. III. 431-32.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
-<p>A. I. 229; A. IV. 15</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
-<p>Ps. II. 24-5.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
-<p>Ibid.</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
+in the truth of the noble ones (<em>ariya-dhamma</em>); see: A. III. 440. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
+<p>A. III. 431-32. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
+<p>A. I. 229; A. IV. 15 <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
+<p>Ps. II. 24-5. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
+<p>Ibid. <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
 <p>Dh. verse 218 (DhA. III. 289 states that this refers to
-<em>kattukamyatā-chanda</em>).</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
+<em>kattukamyatā-chanda</em>). <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
 <p>See also: ’the desire for all aspects of Dhamma’ (Thag. verse
 305), ’a fondness for Dhamma stanzas’ (S. I. 202), and ’the desire
 to attain the fruit of arahantship’ (S. V. 273). Some passages in
@@ -3117,37 +3099,37 @@ the scriptures state that <em>chanda</em> is a quality present at the
 moment of the four paths (<em>magga</em>) and the four fruits (<em>phala</em>),
 and that <em>chanda</em> is the Path, is insight (<em>abhisamaya</em>), is
 dispassion (<em>virāga</em>), and is liberation (<em>vimutti</em>). See: Ps. I.
-74-6; Ps. II. 87, 143, 145-6, 216-17.</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
+74-6; Ps. II. 87, 143, 145-6, 216-17. <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
 <p><em>Kattukamyatā kusalo dhammacchando</em>: Vbh. 208, 211, 213, 216,
 220, 223. Note that in the passage quoted above the spelling is:
-<em>kusala-dhammacchando</em>.</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
+<em>kusala-dhammacchando</em>. <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
 <p>E.g.: MA. IV. 77; SA. II. 307; Majjhima Nikāya Uparipaṇṇāsaka
 Ṭīkā: Mahāpuṇṇamasuttavaṇṇanā; Saṁyutta Nikāya Ṭīkā:
-Khandhavaggaṭīkā, Khajjanīyavaggo, Puṇṇamasuttavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn30"><sup class="footnote-definition-label">30</sup>
-<p>At A. IV. 338-9 only the first eight factors are listed.</p>
-</div>
-<div class="footnote-definition" id="fn31"><sup class="footnote-definition-label">31</sup>
+Khandhavaggaṭīkā, Khajjanīyavaggo, Puṇṇamasuttavaṇṇanā. <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn30"><sup class="footnote-definition-label">30</sup>
+<p>At A. IV. 338-9 only the first eight factors are listed. <a href="#fr-fn30-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn31"><sup class="footnote-definition-label">31</sup>
 <p>The Buddha’s words on the five aggregates and the five aggregates
 of clinging, see: S. III. 47; see further explanations at: DA. III.
 1006; SA. II. 243; VismṬ.: Khandhaniddesavaṇṇanā,
-Kamādivinicchayakathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn32"><sup class="footnote-definition-label">32</sup>
+Kamādivinicchayakathāvaṇṇanā. <a href="#fr-fn31-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn32"><sup class="footnote-definition-label">32</sup>
 <p>For the passage defining ’all things’ as the five aggregates,
 see: AA. IV. 158. For sub-commentarial texts, see: VismṬ.:
 Brahmavihāraniddesavaṇṇanā, Pakiṇṇakakathāvaṇṇanā; Dīgha Nikāya
 Ṭīkā: Sīlakkhandhavaggaṭīkā, Nidānakathāvaṇṇanā,
 Paṭhamamahāsaṅgītikathāvaṇṇanā; Majjhimā Nikāya, Mūlapaṇṇāsaṭīkā,
 Mūlapariyāyavaggo, Tathāgatavārasattamanayavaṇṇanā; Aṅguttara Nikāya
-Ṭīkā: Ekakanipātaṭīkā, Ekapuggalavaggavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn33"><sup class="footnote-definition-label">33</sup>
+Ṭīkā: Ekakanipātaṭīkā, Ekapuggalavaggavaṇṇanā. <a href="#fr-fn32-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn33"><sup class="footnote-definition-label">33</sup>
 <p>There is only the following passage in which these three kinds of
 desire are implied: ’Sensual desire (<em>kāma-chanda</em>), namely, desire
 as sense desire, not as the desire to act (<em>kattukamyatā-chanda</em>) or
@@ -3156,67 +3138,67 @@ as the desire for truth (<em>dhamma-chanda</em>).’ E.g.: NdA. 17; DhsA.
 VismṬ.: Paññābhūminiddesavaṇṇanā,
 Taṇhāpaccayā-upādānapadavitthārakathāvaṇṇanā; VinṬ.:
 Verañjakaṇḍavaṇṇanā, Paṭhamajjhānakathā; Aṅguttara Nikāya Ṭīkā:
-[1/91].</p>
-</div>
-<div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
-<p>MA. I. 41; ItA. I. 61.</p>
-</div>
-<div class="footnote-definition" id="fn35"><sup class="footnote-definition-label">35</sup>
-<p>See: UdA. 42; ItA. I. 58; ItA. II. 19; SnA. I. 17; PsA. I. 79.</p>
-</div>
-<div class="footnote-definition" id="fn36"><sup class="footnote-definition-label">36</sup>
+[1/91]. <a href="#fr-fn33-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn34"><sup class="footnote-definition-label">34</sup>
+<p>MA. I. 41; ItA. I. 61. <a href="#fr-fn34-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn35"><sup class="footnote-definition-label">35</sup>
+<p>See: UdA. 42; ItA. I. 58; ItA. II. 19; SnA. I. 17; PsA. I. 79. <a href="#fr-fn35-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn36"><sup class="footnote-definition-label">36</sup>
 <p>Trans.: also known as the five ’cords’ or ’strands’ of sensual
-pleasure.</p>
-</div>
-<div class="footnote-definition" id="fn37"><sup class="footnote-definition-label">37</sup>
-<p>For more on the three kinds of craving see Appendix 1.</p>
-</div>
-<div class="footnote-definition" id="fn38"><sup class="footnote-definition-label">38</sup>
+pleasure. <a href="#fr-fn36-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn37"><sup class="footnote-definition-label">37</sup>
+<p>For more on the three kinds of craving see Appendix 1. <a href="#fr-fn37-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn38"><sup class="footnote-definition-label">38</sup>
 <p>Compare this term with <em>kusaladhamma-asantuṭṭhī</em> (<em>asantuṭṭhitā
 kusalesu dhammesu</em>): ’discontentment in regard to wholesome
 qualities’, which is an essential factor supporting the Buddha’s
 enlightenment and a factor that all Dhamma practitioners should
 possess in tandem with perseverance (D. III. 213-14; A. I. 50, 95;
-A. III. 432; Dhs. 7-8, 234).</p>
-</div>
-<div class="footnote-definition" id="fn39"><sup class="footnote-definition-label">39</sup>
+A. III. 432; Dhs. 7-8, 234). <a href="#fr-fn38-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn39"><sup class="footnote-definition-label">39</sup>
 <p>Trans: the Thai play on words used by the author here is somewhat
 more effective: อยากธรรม ก็อยากทำ: <em>yahk tam gaw yahk tam</em>: ’if one
-desires the truth, one desires to act.’</p>
-</div>
-<div class="footnote-definition" id="fn40"><sup class="footnote-definition-label">40</sup>
-<p>M. I. 480; M. II. 174.</p>
-</div>
-<div class="footnote-definition" id="fn41"><sup class="footnote-definition-label">41</sup>
-<p>For references, see the section on <em>kattukamyatā-chanda</em> above.</p>
-</div>
-<div class="footnote-definition" id="fn42"><sup class="footnote-definition-label">42</sup>
+desires the truth, one desires to act.’ <a href="#fr-fn39-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn40"><sup class="footnote-definition-label">40</sup>
+<p>M. I. 480; M. II. 174. <a href="#fr-fn40-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn41"><sup class="footnote-definition-label">41</sup>
+<p>For references, see the section on <em>kattukamyatā-chanda</em> above. <a href="#fr-fn41-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn42"><sup class="footnote-definition-label">42</sup>
 <p>VismṬ.: Khandhaniddesavaṇṇanā, Saṅkhārakkhandhakathāvaṇṇanā.
 <em>Yoniso-manasikāra</em>: wise reflection; skilful reflection; proper
-reflection; rational thinking. ’Cause’ = ’origin’: <em>samuṭṭhāna</em>.</p>
-</div>
-<div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
+reflection; rational thinking. ’Cause’ = ’origin’: <em>samuṭṭhāna</em>. <a href="#fr-fn42-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn43"><sup class="footnote-definition-label">43</sup>
 <p>A corroborative passage is: <em>Kattukamyatā-lakkhaṇo
 kusala-chando</em>, which translates as: ’The enthusiasm for virtue has
 the characteristic of desiring action’, or: ’the mark of desiring
 virtue is the desire to act’ (VinṬ.: Tatiyapārājikaṁ,
-Ānāpānassatisamādhikathāvaṇṇanā).</p>
-</div>
-<div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
+Ānāpānassatisamādhikathāvaṇṇanā). <a href="#fr-fn43-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn44"><sup class="footnote-definition-label">44</sup>
 <p>In relation to this subject, it is possible here to add an
 explanation on the development of mindfulness of breathing (Ps. I.
 178). In this passage it is described how when a person develops
 mindfulness of breathing and focuses on the in- and out-breath,
 <em>chanda</em> arises. When <em>chanda</em> arises, the breathing becomes more
 refined. By continuing one’s focus on breathing, delight arises,
-etc. (cf.: VinṬ.: Tatiyapārājikaṁ, Ānāpānassatisamādhikathāvaṇṇanā).</p>
-</div>
-<div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
+etc. (cf.: VinṬ.: Tatiyapārājikaṁ, Ānāpānassatisamādhikathāvaṇṇanā). <a href="#fr-fn44-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn45"><sup class="footnote-definition-label">45</sup>
 <p>’If a bhikkhu gains concentration, gains one-pointedness of mind
 based upon desire, this is called concentration due to desire’
-(S. V. 268).</p>
-</div>
-<div class="footnote-definition" id="fn46"><sup class="footnote-definition-label">46</sup>
+(S. V. 268). <a href="#fr-fn45-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn46"><sup class="footnote-definition-label">46</sup>
 <p>The comparison of reproduction to eating concludes with the
 discussion of craving. There are no similar comparisons in reference
 to <em>chanda</em>, because <em>chanda</em> is not required for the act of
@@ -3226,15 +3208,15 @@ craving for existence (<em>bhava-taṇhā</em>), in order to maintain the
 stability of the ’self’. Dhamma practice depends on eating, but it
 does not depend on reproduction; eating is required to practise the
 Dhamma, but reproduction is not; the life that presently exists is
-sustained by eating, not by procreating.</p>
-</div>
-<div class="footnote-definition" id="fn47"><sup class="footnote-definition-label">47</sup>
+sustained by eating, not by procreating. <a href="#fr-fn46-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn47"><sup class="footnote-definition-label">47</sup>
 <p>The thinking or understanding referred to here is of the kind
 that intervenes and cuts off craving. It should not be confused with
 thinking that arises to serve craving, by seeking ways of satisfying
-craving.</p>
-</div>
-<div class="footnote-definition" id="fn48"><sup class="footnote-definition-label">48</sup>
+craving. <a href="#fr-fn47-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn48"><sup class="footnote-definition-label">48</sup>
 <p>See the Buddha’s frequently mentioned teaching on the proper
 reflection while using the four requisites, in which he uses the
 term <em>yoniso-paṭisaṅkhā</em> (a synonym for <em>yoniso-manasikāra</em>). (This
@@ -3242,23 +3224,23 @@ reflection in later times has been referred to as
 <em>taṅkhaṇika-paccavekkhaṇa</em> or colloquially as ’<em>paṭisaṅkhāyo</em>’.) In
 relation to eating, this reflection is described as ’moderation in
 eating’ (<em>bhojane-mattaññutā</em>), e.g.: M. I. 355; M. III. 2; S. IV.
-176-7; A. I. 113-14; A. II. 39-40; A. IV. 167-8.</p>
-</div>
-<div class="footnote-definition" id="fn49"><sup class="footnote-definition-label">49</sup>
+176-7; A. I. 113-14; A. II. 39-40; A. IV. 167-8. <a href="#fr-fn48-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn49"><sup class="footnote-definition-label">49</sup>
 <p>Compare this with mindfulness, which is a wholesome and
 supportive factor, but which may be applied either in a correct
 fashion, as ’right mindfulness’ (<em>sammā-sati</em>), or incorrectly, as
-’wrong-mindfulness’ (<em>micchā-sati</em>).</p>
-</div>
-<div class="footnote-definition" id="fn50"><sup class="footnote-definition-label">50</sup>
+’wrong-mindfulness’ (<em>micchā-sati</em>). <a href="#fr-fn49-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn50"><sup class="footnote-definition-label">50</sup>
 <p>The four divine abidings (<em>brahmavihāra</em>): lovingkindness,
 compassion (<em>karuṇā</em>), empathetic joy (<em>muditā</em>), and equanimity
-(<em>upekkhā</em>).</p>
-</div>
-<div class="footnote-definition" id="fn51"><sup class="footnote-definition-label">51</sup>
-<p>See: DhsA. 192; Vism. 317-18.</p>
-</div>
-<div class="footnote-definition" id="fn52"><sup class="footnote-definition-label">52</sup>
+(<em>upekkhā</em>). <a href="#fr-fn50-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn51"><sup class="footnote-definition-label">51</sup>
+<p>See: DhsA. 192; Vism. 317-18. <a href="#fr-fn51-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn52"><sup class="footnote-definition-label">52</sup>
 <p>The Sakkapañha Sutta (D. II. 277) presents the following process:
 <em>chanda</em> (here meaning <em>taṇhā-chanda</em>, i.e. <em>taṇhā</em>) → <em>piya-apiya</em>
 (separation into the loved and the despised) → <em>issā-macchariya</em>
@@ -3267,22 +3249,22 @@ with pleasant objects, which relate to <em>chanda</em>, <em>taṇhā</em>, and
 <em>mettā</em>. In contrast, when one encounters unpleasant, infirm,
 painful, or troubling objects, if one’s mind is wholesome, one will
 experience compassion; if one’s mind is unwholesome, one will
-experience contempt or hatred.</p>
-</div>
-<div class="footnote-definition" id="fn53"><sup class="footnote-definition-label">53</sup>
+experience contempt or hatred. <a href="#fr-fn52-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn53"><sup class="footnote-definition-label">53</sup>
 <p>Trans.: the author quotes a Thai saying: ’Parents can never
-completely disinherit their children.’</p>
-</div>
-<div class="footnote-definition" id="fn54"><sup class="footnote-definition-label">54</sup>
+completely disinherit their children.’ <a href="#fr-fn53-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn54"><sup class="footnote-definition-label">54</sup>
 <p>Compare these teachings: <em>mettā</em> = <em>hitasukhūpanayana-kāmatā</em>
 (the desire to bring benefit and happiness to others), SnA. I. 128;
 and <em>chanda</em> = <em>kattukamyatā</em> (the desire to act), e.g.: Vbh. 208;
-Vism. 466.</p>
-</div>
-<div class="footnote-definition" id="fn55"><sup class="footnote-definition-label">55</sup>
-<p>See DhsA. 195; Vism. 318.</p>
-</div>
-<div class="footnote-definition" id="fn56"><sup class="footnote-definition-label">56</sup>
+Vism. 466. <a href="#fr-fn54-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn55"><sup class="footnote-definition-label">55</sup>
+<p>See DhsA. 195; Vism. 318. <a href="#fr-fn55-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn56"><sup class="footnote-definition-label">56</sup>
 <p><em>Kattukamyatā-chanda</em> is the starting point (<em>ādi</em>) for all four
 divine abidings (<em>brahmavihāra</em>): DhsA. 195; Vism. 318; VismṬ.:
 Brahmavihāraniddesavaṇṇanā, Pakiṇṇakakathāvaṇṇanā; cf.: A. IV.
@@ -3291,9 +3273,9 @@ Pakiṇṇakakathāvaṇṇanā, it states that even equanimity (<em>upekkhā</e
 not devoid of a wish for others’ welfare (<em>hita-chanda</em>); in this
 case, the lack of exertion is the appropriate course of action, like
 in the case of a mother who steps back and watches her child act in
-a proper way.</p>
-</div>
-<div class="footnote-definition" id="fn57"><sup class="footnote-definition-label">57</sup>
+a proper way. <a href="#fr-fn56-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn57"><sup class="footnote-definition-label">57</sup>
 <p>People with an abundance of <em>chanda</em> strive for quality of life
 and seek what is truly valuable for their lives. In the Pali Canon,
 a person who strives for goodness is called a <em>kusalānu-esī</em>,
@@ -3301,13 +3283,13 @@ meaning someone who seeks the noble path (<em>ariya-magga</em>) or seeks
 Nibbāna (Sn. 187; Nd. I. 486). The Bodhisatta (the Buddha), when he
 went in search of the Truth, is referred to as ’one who seeks that
 which is wholesome’ (<em>kiṅkusalānu-esī</em> – D. II. 151-2, or
-<em>kiṅkusala-gavesī</em> – M. I. 163-4).</p>
-</div>
-<div class="footnote-definition" id="fn58"><sup class="footnote-definition-label">58</sup>
+<em>kiṅkusala-gavesī</em> – M. I. 163-4). <a href="#fr-fn57-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn58"><sup class="footnote-definition-label">58</sup>
 <p>Of course, if one allows craving to interfere, then sense desire
-and selfish intentions can manifest.</p>
-</div>
-<div class="footnote-definition" id="fn59"><sup class="footnote-definition-label">59</sup>
+and selfish intentions can manifest. <a href="#fr-fn58-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn59"><sup class="footnote-definition-label">59</sup>
 <p>Beware of confusion between <em>chanda</em> and <em>taṇhā</em>. When one enters
 an area that is clean and refreshing, for example, craving too can
 lead to feelings of delight and satisfaction. The difference is that
@@ -3315,110 +3297,110 @@ craving delights in the pleasant sensations stemming from seeing,
 hearing, touching, etc. various sense objects located in that place;
 it does not delight in goodness directly. The action resulting from
 craving is to linger in that place to experience sense pleasure, and
-may lead to laziness.</p>
-</div>
-<div class="footnote-definition" id="fn60"><sup class="footnote-definition-label">60</sup>
+may lead to laziness. <a href="#fr-fn59-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn60"><sup class="footnote-definition-label">60</sup>
 <p>’Examining the meaning of the teachings’ = <em>atthupaparikkhā</em>;
 ’understanding according with the subject of contemplation’ =
-<em>dhamma-nijjhānakkhanti</em>.</p>
-</div>
-<div class="footnote-definition" id="fn61"><sup class="footnote-definition-label">61</sup>
-<p>See: Vism. 525.</p>
-</div>
-<div class="footnote-definition" id="fn62"><sup class="footnote-definition-label">62</sup>
+<em>dhamma-nijjhānakkhanti</em>. <a href="#fr-fn60-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn61"><sup class="footnote-definition-label">61</sup>
+<p>See: Vism. 525. <a href="#fr-fn61-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn62"><sup class="footnote-definition-label">62</sup>
 <p>The desire to destroy the self or the desire for extinction,
 which are forms of <em>vibhava-taṇhā</em>, resemble the desire for
 goodness. For example, a person holding an annihilationist view
 (<em>uccheda-diṭṭhi</em>) may yearn to become an arahant in order to cease
 existing and cease being born. (The desire to become an arahant in
 order to become a supreme Buddhist, however, is an example of
-<em>bhava-taṇhā</em>).</p>
-</div>
-<div class="footnote-definition" id="fn63"><sup class="footnote-definition-label">63</sup>
+<em>bhava-taṇhā</em>). <a href="#fr-fn62-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn63"><sup class="footnote-definition-label">63</sup>
 <p>Such good actions lead to a faultless or impeccable state
 (<em>anavajja-bhāva</em>), in which a person does not experience any
 harmful consequences of his actions, either to himself or to others.
 The commentaries include this teaching: <em>Faith that possesses great
 devotion to an object is both an attribute of and a special
 condition for chanda, which has the nature of desiring to act</em>;
-Nettipakaraṇa [Burmese edition, p. 70].</p>
-</div>
-<div class="footnote-definition" id="fn64"><sup class="footnote-definition-label">64</sup>
+Nettipakaraṇa [Burmese edition, p. 70]. <a href="#fr-fn63-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn64"><sup class="footnote-definition-label">64</sup>
 <p>On some occasions, the commentaries and sub-commentaries claim
 that craving (<em>taṇhā</em>) is a desire for an object that one has not
 yet reached, similar to a thief who stretches out his hand in the
 dark (Vism. 569; CompṬ.: Paccayaparicchedavaṇṇanā,
-Paṭiccasamuppādanayavaṇṇanā).</p>
-</div>
-<div class="footnote-definition" id="fn65"><sup class="footnote-definition-label">65</sup>
+Paṭiccasamuppādanayavaṇṇanā). <a href="#fr-fn64-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn65"><sup class="footnote-definition-label">65</sup>
 <p>A quality to be eliminated: <em>pahātabba</em> or <em>pahātabba-dhamma</em>.
 Craving as the origin of suffering in the Four Noble Truths, see:
 V. I. 11; S. V. 422. The six ’divisions’ of craving: D. III. 280;
 Ps. I. 26. The craving for existence: A. II. 247. Other references
 to craving: M. II. 256; S. IV. 83-4; A. II. 249; Nd. I. 432. Craving
-referred to as <em>chanda</em>: S. III. 177-9.</p>
-</div>
-<div class="footnote-definition" id="fn66"><sup class="footnote-definition-label">66</sup>
+referred to as <em>chanda</em>: S. III. 177-9. <a href="#fr-fn65-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn66"><sup class="footnote-definition-label">66</sup>
 <p>S. II. 131-2. See also: S. V. 440; A. II. 93; A. III. 306-307;
 A. IV. 320; A. V. 95-6. To bring about <em>chanda</em> (i.e. one should
 bring about <em>chanda</em>), e.g.: S. V. 244 (<em>chanda</em> should be generated
 in relation to all four forms of ’right endeavour’ –
-<em>sammappadhāna</em>).</p>
-</div>
-<div class="footnote-definition" id="fn67"><sup class="footnote-definition-label">67</sup>
-<p>E.g.: D. II. 308-311; S. II. 108-109.</p>
-</div>
-<div class="footnote-definition" id="fn68"><sup class="footnote-definition-label">68</sup>
+<em>sammappadhāna</em>). <a href="#fr-fn66-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn67"><sup class="footnote-definition-label">67</sup>
+<p>E.g.: D. II. 308-311; S. II. 108-109. <a href="#fr-fn67-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn68"><sup class="footnote-definition-label">68</sup>
 <p>The Pali word <em>ārāma</em>, translated here as ’monastery’ can also be
-translated as ’park’.</p>
-</div>
-<div class="footnote-definition" id="fn69"><sup class="footnote-definition-label">69</sup>
+translated as ’park’. <a href="#fr-fn68-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn69"><sup class="footnote-definition-label">69</sup>
 <p>The nun in this story was smitten by Ven. Ānanda and pretended to
 be sick so that he would come and offer teachings. Oddly, the
 commentaries at AA. III. 136 claim that the craving (<em>taṇhā</em>) of the
-monk in this story is wholesome craving (<em>kusala-taṇhā</em>).</p>
-</div>
-<div class="footnote-definition" id="fn70"><sup class="footnote-definition-label">70</sup>
+monk in this story is wholesome craving (<em>kusala-taṇhā</em>). <a href="#fr-fn69-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn70"><sup class="footnote-definition-label">70</sup>
 <p>See: Ud. 21-22; Thag. verse 158. This story is often quoted in
 the commentaries; see: DhA. I. 118; UdA. 170; SnA. I. 274; [JA.
-2/121-4].</p>
-</div>
-<div class="footnote-definition" id="fn71"><sup class="footnote-definition-label">71</sup>
+2/121-4]. <a href="#fr-fn70-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn71"><sup class="footnote-definition-label">71</sup>
 <p>This first point emphasizes present-moment benefits
-(<em>diṭṭha-dhammikattha</em>) or everyday ethics.</p>
-</div>
-<div class="footnote-definition" id="fn72"><sup class="footnote-definition-label">72</sup>
+(<em>diṭṭha-dhammikattha</em>) or everyday ethics. <a href="#fr-fn71-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn72"><sup class="footnote-definition-label">72</sup>
 <p>This second point concerns the three levels of benefits: present
 benefits (<em>diṭṭha-dhammikattha</em>), future benefits
-(<em>samparāyikattha</em>), and ultimate benefit (<em>paramattha</em>).</p>
-</div>
-<div class="footnote-definition" id="fn73"><sup class="footnote-definition-label">73</sup>
+(<em>samparāyikattha</em>), and ultimate benefit (<em>paramattha</em>). <a href="#fr-fn72-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn73"><sup class="footnote-definition-label">73</sup>
 <p>On the harmful consequences of having craving replace <em>chanda</em>
-see Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn74"><sup class="footnote-definition-label">74</sup>
+see Appendix 2. <a href="#fr-fn73-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn74"><sup class="footnote-definition-label">74</sup>
 <p>This third point moves beyond future, spiritual benefits
 (<em>samparāyikattha</em>) and emphasizes the supreme benefit
-(<em>paramattha</em>), which is the highest goal in Buddhism.</p>
-</div>
-<div class="footnote-definition" id="fn75"><sup class="footnote-definition-label">75</sup>
+(<em>paramattha</em>), which is the highest goal in Buddhism. <a href="#fr-fn74-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn75"><sup class="footnote-definition-label">75</sup>
 <p><em>Natthi chandassa hāni</em>. This is the tenth of the eighteen
 qualities; see, e.g.: DA. III. 994; MilnA. [369]; Dīgha Nikāya
 Pāṭikavagga Ṭīkā: Sampasādanīyasuttavaṇṇanā,
-Sāriputtasīhanādavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn76"><sup class="footnote-definition-label">76</sup>
+Sāriputtasīhanādavaṇṇanā. <a href="#fr-fn75-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn76"><sup class="footnote-definition-label">76</sup>
 <p>As a group, these four factors – <em>mettā</em>, <em>karuṇā</em>, <em>muditā</em>,
 and <em>upekkhā</em> – are usually referred to as the ’excellent abidings’
 (<em>brahmavihāra</em>; ’divine abidings’). The commentators state that
 these four factors have wholesome desire as their starting point
 (<em>sabbesampi ca etesaṁ kattukamyatā-chando ādi</em>); see, e.g.: DhsA.
-194. See footnote 64.</p>
-</div>
-<div class="footnote-definition" id="fn77"><sup class="footnote-definition-label">77</sup>
-<p>On the Buddha’s chief attributes see Appendix 3.</p>
-</div>
-<div class="footnote-definition" id="fn78"><sup class="footnote-definition-label">78</sup>
+194. See footnote 64. <a href="#fr-fn76-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn77"><sup class="footnote-definition-label">77</sup>
+<p>On the Buddha’s chief attributes see Appendix 3. <a href="#fr-fn77-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn78"><sup class="footnote-definition-label">78</sup>
 <p>Note the corresponding expression in the commentaries:
 <em>karuṇāvegasamussāhita-mānasa</em>, which translates as: ’[the Buddha]
 has a mind empowered by the strength of compassion [and therefore
@@ -3428,26 +3410,27 @@ the Pali Canon describing the moment when the Buddha began to
 proclaim the Dhamma: <em>sattesu ca kāruññataṁ paṭicca</em>, which
 translates as: ’[The Blessed One] relies on the quality of
 compassion (and thus shows consideration to the human race)’; see:
-Vin. I. 6-7 = M. I. 169 = S. I. 138; D. II. 37-8.</p>
-</div>
-<div class="footnote-definition" id="fn79"><sup class="footnote-definition-label">79</sup>
-<p>DhsA. 366.</p>
-</div>
-<div class="footnote-definition" id="fn80"><sup class="footnote-definition-label">80</sup>
-<p>PañcA. 312.</p>
-</div>
-<div class="footnote-definition" id="fn81"><sup class="footnote-definition-label">81</sup>
-<p>See: Vbh. 365-6; ItA. II. 19 – explaining It. 50.</p>
-</div>
-<div class="footnote-definition" id="fn82"><sup class="footnote-definition-label">82</sup>
-<p>Dhs. 212-13; Vism. 570.</p>
-</div>
-<div class="footnote-definition" id="fn83"><sup class="footnote-definition-label">83</sup>
+Vin. I. 6-7 = M. I. 169 = S. I. 138; D. II. 37-8. <a href="#fr-fn78-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn79"><sup class="footnote-definition-label">79</sup>
+<p>DhsA. 366. <a href="#fr-fn79-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn80"><sup class="footnote-definition-label">80</sup>
+<p>PañcA. 312. <a href="#fr-fn80-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn81"><sup class="footnote-definition-label">81</sup>
+<p>See: Vbh. 365-6; ItA. II. 19 – explaining It. 50. <a href="#fr-fn81-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn82"><sup class="footnote-definition-label">82</sup>
+<p>Dhs. 212-13; Vism. 570. <a href="#fr-fn82-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn83"><sup class="footnote-definition-label">83</sup>
 <p>See: VinṬ.: Paṭhamo Bhāgo, Verañjakaṇḍavaṇṇanā; VismṬ.:
-Cha-anussatiniddesavaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn84"><sup class="footnote-definition-label">84</sup>
-<p>[Burmese edition, p. 34].</p>
+Cha-anussatiniddesavaṇṇanā. <a href="#fr-fn83-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn84"><sup class="footnote-definition-label">84</sup>
+<p>[Burmese edition, p. 34]. <a href="#fr-fn84-1">↩</a></p>
+</aside>
 </div>
 
                     </main>

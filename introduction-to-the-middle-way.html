@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,17 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/output-html.css">
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,19 +63,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -83,43 +82,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="titlepage.html">Buddhadhamma</a></li><li class="chapter-item expanded affix "><a href="anumodana.html">Anumodanā</a></li><li class="chapter-item expanded affix "><a href="abbreviations.html">Abbreviations</a></li><li class="chapter-item expanded affix "><a href="foreword-by-ajahn-jayasaro.html">Foreword by Ven. Ajahn Jayasaro</a></li><li class="chapter-item expanded affix "><a href="foreword-by-khun-yongyuth.html">Foreword by the President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="foreword-by-translator.html">Foreword by the Translator</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="middle-teaching.html">Part 1: Middle Teaching</a></li><li class="chapter-item expanded "><a href="nature-of-human-life.html">Section 1: Nature of Human Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="five-aggregates.html">Ch. 1. Five Aggregates</a></li><li class="chapter-item expanded "><a href="six-sense-spheres.html">Ch. 2. Six Sense Spheres</a></li></ol></li><li class="chapter-item expanded "><a href="attributes-of-life.html">Section 2: Attributes of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="three-characteristics.html">Ch. 3. Three Characteristics</a></li></ol></li><li class="chapter-item expanded "><a href="process-of-life.html">Section 3: Process of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dependent-origination.html">Ch. 4. Dependent Origination</a></li><li class="chapter-item expanded "><a href="law-of-kamma.html">Ch. 5. The Law of Kamma</a></li></ol></li><li class="chapter-item expanded "><a href="goal-of-life.html">Section 4: Goal of Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nibbana-supreme-peace.html">Ch. 6. Nibbāna: the Supreme Peace</a></li><li class="chapter-item expanded "><a href="awakened-beings.html">Ch. 7. Awakened Beings</a></li><li class="chapter-item expanded "><a href="calm-and-insight.html">Ch. 8. Calm and Insight</a></li></ol></li><li class="chapter-item expanded "><a href="a-noble-life.html">Section 5: A Noble Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="the-supernatural-and-the-divine.html">Ch. 9. The Supernatural and the Divine</a></li><li class="chapter-item expanded "><a href="the-buddhist-teachings-on-desire.html">Ch. 10. The Buddhist Teachings on Desire</a></li><li class="chapter-item expanded "><a href="happiness.html">Ch. 11. Happiness</a></li></ol></li><li class="chapter-item expanded "><a href="middle-way.html">Part 2: Middle Way</a></li><li class="chapter-item expanded "><a href="a-worthy-life.html">Section 6: A Worthy Life</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction-to-the-middle-way.html" class="active">Ch. 12. Introduction to the Middle Way</a></li><li class="chapter-item expanded "><a href="virtuous-friendship.html">Ch. 13. Virtuous Friendship</a></li><li class="chapter-item expanded "><a href="faith-and-confidence.html">Ch. 14. Faith and Confidence</a></li><li class="chapter-item expanded "><a href="wise-reflection.html">Ch. 15. Wise Reflection</a></li></ol></li><li class="chapter-item expanded "><a href="path-factors.html">Section 7: Path Factors</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="path-factors-of-wisdom.html">Ch. 16. Path Factors of Wisdom</a></li><li class="chapter-item expanded "><a href="path-factors-of-virtuous-conduct.html">Ch. 17. Path Factors of Virtuous Conduct</a></li><li class="chapter-item expanded "><a href="path-factors-of-concentration.html">Ch. 18. Path Factors of Concentration</a></li><li class="chapter-item expanded "><a href="four-noble-truths.html">Ch. 19. Four Noble Truths</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-citta-vinnana-mano.html">Appendix: Citta, Viññāṇa, Mano</a></li><li class="chapter-item expanded "><a href="authors-postscript.html">Author's Postscript</a></li><li class="chapter-item expanded "><a href="bibliography.html">Bibliography</a></li><li class="chapter-item expanded "><a href="p-a-payutto.html">P. A. Payutto</a></li><li class="chapter-item expanded "><a href="president-of-the-buddhadhamma-foundation.html">President of the Buddhadhamma Foundation</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -288,7 +269,7 @@ of phenomena, both material and mental. One then practises with accurate
 knowledge, in tune with causes and conditions, and conducive to bearing
 fruit in accord with the goal. One does not practise simply to
 experience pleasurable sense impressions or out of some naive belief
-that things must be done in a particular way.<sup class="footnote-reference"><a href="#fn1">1</a></sup></p>
+that things must be done in a particular way.<sup class="footnote-reference" id="fr-fn1-1"><a href="#fn-fn1">1</a></sup></p>
 <p>If someone alludes to a middle way or to walking a middle path, one
 should ask whether he or she understands the problems at hand and the
 goal to which this path leads.</p>
@@ -367,7 +348,7 @@ wrong path? It is: wrong view … wrong concentration.</p>
 Whether it is a layperson or one gone forth who is practising
 correctly, because of undertaking the right way of practice he attains
 the right path which is wholesome. And what is the right path? It is:
-right view … right concentration.<sup class="footnote-reference"><a href="#fn2">2</a></sup></p>
+right view … right concentration.<sup class="footnote-reference" id="fr-fn2-1"><a href="#fn-fn2">2</a></sup></p>
 <p><em>S. V. 18-19.</em></p>
 <p>Monks, just as the river Ganges flows, slopes and inclines towards the
 ocean, so too a monk who develops and cultivates the Noble Eightfold
@@ -389,7 +370,7 @@ everyone – monks and householders alike. {529}</p>
 <blockquote>
 <p>Ānanda, having good friends, having good companions, and a delight in
 associating with virtuous people is equivalent to the entire holy
-life. When a monk has a good friend<sup class="footnote-reference"><a href="#fn3">3</a></sup> … it is to be expected that
+life. When a monk has a good friend<sup class="footnote-reference" id="fr-fn3-1"><a href="#fn-fn3">3</a></sup> … it is to be expected that
 he will develop and cultivate the Noble Eightfold Path.</p>
 <p><em>S. V. 2-3.</em></p>
 <p>Monks, just as the dawn is the forerunner and precursor of the rising
@@ -437,7 +418,7 @@ reflection. {530}</p>
 persons who can progress safely on the Path relying solely on their own
 inherent spiritual endowment. They are able to commence with wise
 reflection without outside influence and to constantly summon wise
-reflection without relying on social factors.<sup class="footnote-reference"><a href="#fn4">4</a></sup> These passages are
+reflection without relying on social factors.<sup class="footnote-reference" id="fr-fn4-1"><a href="#fn-fn4">4</a></sup> These passages are
 thus intended for the majority of people, who possess an average degree
 of spiritual faculties.</p>
 <p>This subject of social factors in relation to internal factors is very
@@ -452,7 +433,7 @@ kamma, that is, right view … right concentration.</p>
 </div>
 <p>The Middle Way here is the way leading to the cessation of kamma. It is
 very important, however, not to interpret this to mean the following:
-that it simply refers to the passing away of the body, to dying;<sup class="footnote-reference"><a href="#fn5">5</a></sup> or
+that it simply refers to the passing away of the body, to dying;<sup class="footnote-reference" id="fr-fn5-1"><a href="#fn-fn5">5</a></sup> or
 that it refers to ending kamma by not producing kamma or not doing
 anything at all, which is the doctrine of the Jains, as described in the
 chapter on kamma; or that it refers to abandoning activity and living in
@@ -536,7 +517,7 @@ states.</p>
 enthralled by it, cherish it, and treat it as a possession, would you
 then understand the Dhamma that has been taught as similar to a raft,
 being for the purpose of crossing over, not for the purpose of
-grasping?<sup class="footnote-reference"><a href="#fn6">6</a></sup></p>
+grasping?<sup class="footnote-reference" id="fr-fn6-1"><a href="#fn-fn6">6</a></sup></p>
 <p><em>M. I. 260-61.</em></p>
 </blockquote>
 </div>
@@ -557,7 +538,7 @@ complete, to know what other qualities take over responsibility.</p>
 vehicles at various stages to pass over land, water, and air. It is
 insufficient to simply have a general idea of one’s destination. One
 needs to know how far each vehicle can travel, and having reached a
-location one knows which is the next vehicle to use.<sup class="footnote-reference"><a href="#fn7">7</a></sup></p>
+location one knows which is the next vehicle to use.<sup class="footnote-reference" id="fr-fn7-1"><a href="#fn-fn7">7</a></sup></p>
 <p>Spiritual practice lacking insight into these objectives, requirements,
 and interrelationships is limited and obstructed. Even worse it leads
 people off the right track, it misses the target, and it is stagnant,
@@ -588,7 +569,7 @@ arahantship; this is the fruit of the holy life.</p>
 its blessing, or the perfection of virtue as its blessing, or the
 attainment of concentration as its blessing, or knowledge and vision
 as its blessing. But it is this unshakeable deliverance of mind that
-is the goal of this holy life, its heartwood, and its end.<sup class="footnote-reference"><a href="#fn8">8</a></sup> {533}</p>
+is the goal of this holy life, its heartwood, and its end.<sup class="footnote-reference" id="fr-fn8-1"><a href="#fn-fn8">8</a></sup> {533}</p>
 <p><em>M. I. 197; 204-205.</em></p>
 </blockquote>
 </div>
@@ -631,9 +612,9 @@ in which he states that the holy life will truly flourish when members
 of the four assemblies – the bhikkhus, bhikkhunis, laymen, and laywomen
 – both renunciants (<em>brahmacārī</em>) and householders (<em>kāmabhogī</em> –
 ’those who enjoy sense pleasures’; those who have families) –
-understand and practise the Dhamma well.<sup class="footnote-reference"><a href="#fn9">9</a></sup></p>
-<p><em>Brahmacariya</em> is comprised of the terms <em>brahma</em> and <em>cariya</em>. <em>Brahma</em>
-means ’excellent’, ’superior’, ’supreme’, ’pure’.<sup class="footnote-reference"><a href="#fn10">10</a></sup> <em>Cariya</em> is
+understand and practise the Dhamma well.<sup class="footnote-reference" id="fr-fn9-1"><a href="#fn-fn9">9</a></sup></p>
+<p><em>Brahmacariya</em> is made up of the terms <em>brahma</em> and <em>cariya</em>. <em>Brahma</em>
+means ’excellent’, ’superior’, ’supreme’, ’pure’.<sup class="footnote-reference" id="fr-fn10-1"><a href="#fn-fn10">10</a></sup> <em>Cariya</em> is
 derived from the root <em>cara</em>, which in a concrete sense means ’to
 travel’, ’to proceed’, ’to wander’, and in an abstract sense it means
 ’behaviour’, ’to lead one’s life’, ’to conduct one’s life’, ’to exist’.
@@ -643,7 +624,7 @@ Note <a href="#note-brahmacariya">Definitions of Brahmacariya</a> for further a
 <p>As a compound word <em>brahmacariya</em> thus means: excellent conduct;
 excellent behaviour; pure, divine conduct (conduct resembling that of
 the Brahma gods); leading one’s life in an excellent way; living in an
-excellent way; or an excellent life.<sup class="footnote-reference"><a href="#fn11">11</a></sup></p>
+excellent way; or an excellent life.<sup class="footnote-reference" id="fr-fn11-1"><a href="#fn-fn11">11</a></sup></p>
 <p>The term <em>cariya-dhamma</em> (จริยธรรม) is a newly established word in the
 Thai language. Although in Pali the word <em>cariya</em> occurs on its own,
 there is no contradiction to add the word <em>dhamma</em>. <em>Cariya-dhamma</em> here
@@ -707,7 +688,7 @@ wellbeing.</p>
 <p><em>Brahmacariya</em> – excellent conduct, the Path, or the Middle Way – is
 equivalent to the entire practical teachings of Buddhism. This term has
 a much broader definition than the Thai term <em>sīla-dhamma</em> (ศีลธรรม –
-’morality’, ’ethical behaviour’).<sup class="footnote-reference"><a href="#fn12">12</a></sup> In regard to its general
+’morality’, ’ethical behaviour’).<sup class="footnote-reference" id="fr-fn12-1"><a href="#fn-fn12">12</a></sup> In regard to its general
 characteristics, subject matter, and objective, <em>sīla-dhamma</em> has a
 narrower meaning. Generally speaking, <em>sīla-dhamma</em> refers to external
 behaviour by way of body and speech, to non-harming, to abstaining from
@@ -826,10 +807,10 @@ lifetime.</p>
 </ol>
 <p>In this case, the supreme good (<em>paramattha</em>) is included in the second
 factor of higher good (<em>samparāyikattha</em>): it is the apex of this second
-form of spiritual benefit.<sup class="footnote-reference"><a href="#fn13">13</a></sup> The authors of later texts, however,
+form of spiritual benefit.<sup class="footnote-reference" id="fr-fn13-1"><a href="#fn-fn13">13</a></sup> The authors of later texts, however,
 wished to give special emphasis to the supreme good and thus
 distinguished it as a separate factor, resulting in three levels of
-spiritual benefit or spiritual goals:<sup class="footnote-reference"><a href="#fn14">14</a></sup></p>
+spiritual benefit or spiritual goals:<sup class="footnote-reference" id="fr-fn14-1"><a href="#fn-fn14">14</a></sup></p>
 <ol>
 <li>
 <p><em>Diṭṭhadhammikattha</em>: present good; good in this lifetime; visible
@@ -935,7 +916,7 @@ and charitable; to be ready to help those in need.</p>
 <p><em>Paññā-sampadā</em>: to live wisely; to know how to reflect on things;
 to apply discriminative knowledge; to fully understand the world; to
 be able to detach the mind from unwholesome states according to the
-circumstances.<sup class="footnote-reference"><a href="#fn15">15</a></sup></p>
+circumstances.<sup class="footnote-reference" id="fr-fn15-1"><a href="#fn-fn15">15</a></sup></p>
 </li>
 </ol>
 <p>In regard to the supreme benefit or goal (<em>paramattha</em>), because it is
@@ -984,7 +965,7 @@ restructured as the general teaching referred to as ’meritorious action’
 (<em>puñña-kiriyā</em>) or the ’bases of meritorious action’
 (<em>puññakiriyā-vatthu</em>).</p>
 <p>In this teaching, there are likewise three factors, but with different
-names.<sup class="footnote-reference"><a href="#fn16">16</a></sup> They are as follows:</p>
+names.<sup class="footnote-reference" id="fr-fn16-1"><a href="#fn-fn16">16</a></sup> They are as follows:</p>
 <ol>
 <li>
 <p><em>Dāna</em>: giving, relinquishment, generosity. The reasons for giving
@@ -1085,7 +1066,7 @@ states surpassing those of ordinary people, that is, knowledge and
 vision (ñāṇa-dassana), which is capable of leading to awakening. Why
 is that? Because his mind is unclouded.</p>
 <p><em>A. I. 9.</em></p>
-<p>When a person is impassioned with lust,<sup class="footnote-reference"><a href="#fn17">17</a></sup> overwhelmed and possessed
+<p>When a person is impassioned with lust,<sup class="footnote-reference" id="fr-fn17-1"><a href="#fn-fn17">17</a></sup> overwhelmed and possessed
 by lust … when a person harbours hatred, is overwhelmed and
 possessed by hatred … when a person is bewildered through delusion,
 overwhelmed and possessed by delusion, then he plans for his own harm,
@@ -1108,7 +1089,7 @@ for Nibbāna. Seeing the harm in lust … in hatred … in delusion, I
 teach the abandoning of lust … hatred … delusion….</p>
 <p>Indeed, this Noble Eightfold Path, that is, right view … right
 concentration, is the path, is the way of practice, to abandon lust,
-hatred and delusion.<sup class="footnote-reference"><a href="#fn18">18</a></sup></p>
+hatred and delusion.<sup class="footnote-reference" id="fr-fn18-1"><a href="#fn-fn18">18</a></sup></p>
 <p><em>A. I. 216.</em></p>
 <p>Monks, considering personal wellbeing, you should accomplish it with
 care. Considering others’ wellbeing, you should accomplish it with
@@ -1117,7 +1098,7 @@ care. {542}</p>
 <p><em>S. II. 29.</em></p>
 </blockquote>
 </div>
-<p>Here are definitions for these three kinds of benefits (<em>attha</em>):<sup class="footnote-reference"><a href="#fn19">19</a></sup></p>
+<p>Here are definitions for these three kinds of benefits (<em>attha</em>):<sup class="footnote-reference" id="fr-fn19-1"><a href="#fn-fn19">19</a></sup></p>
 <ol>
 <li>
 <p><em>Attattha</em>: personal benefit; the realization of personal goals,
@@ -1268,7 +1249,7 @@ upon them, providing comprehensive details of practice.</p>
 (<em>ariya-aṭṭhaṅgikamagga</em>), can alternatively be translated as the
 ’Eightfold Path of Noble Beings’, ’Eightfold Path Leading One to Become
 a Noble Being’, ’Eightfold Path Discovered by the Noble One (the
-Buddha)’, or the ’Supreme Path Comprised of Eight Factors’. The eight
+Buddha)’, or the ’Supreme Path Comprising Eight Factors’. The eight
 factors are as follows:</p>
 <ol>
 <li>
@@ -1309,7 +1290,7 @@ road’s borders; the lanes; banks where the road curves; light signals;
 road signs indicating direction, distance and location; road maps; and
 street lamps.</p>
 <p>Just as a road is composed of these different parts and someone driving
-on it relies on all of them together, so too, the Path is comprised of
+on it relies on all of them together, so too, the Path comprises
 eight factors and a Dhamma practitioner must apply all of them in an
 integrated fashion. {545}</p>
 <p>For ease of understanding the Buddha classified the eight Path factors
@@ -1355,7 +1336,7 @@ mind (<em>adhicitta-sikkhā</em>), and the training in higher wisdom
 (<em>adhipaññā-sikkhā</em>).</p>
 <p>Both of these two groups can be referred to simply as
 <em>sīla-samādhi-paññā</em>. (Roughly speaking, <em>adhisīla</em> equals <em>sīla</em>,
-<em>adhicitta</em> equals <em>samādhi</em>, and <em>adhipaññā</em> equals <em>paññā</em>.)<sup class="footnote-reference"><a href="#fn20">20</a></sup>
+<em>adhicitta</em> equals <em>samādhi</em>, and <em>adhipaññā</em> equals <em>paññā</em>.)<sup class="footnote-reference" id="fr-fn20-1"><a href="#fn-fn20">20</a></sup>
 These trainings can be illustrated as follows: {546}</p>
 <div class="figure">
 <p><img src="./includes/images/diagrams/three-trainings.jpg" alt="image" /></p>
@@ -1388,15 +1369,15 @@ term <em>bhāvita</em> is most often used: <em>bhāvita-kāya</em>, <em>bhāvita
 <em>bhāvita-citta</em>, and <em>bhāvita-paññā</em>.</p>
 </blockquote>
 </div>
-<p>Brief definitions for the three trainings are as follows:<sup class="footnote-reference"><a href="#fn21">21</a></sup></p>
+<p>Brief definitions for the three trainings are as follows:<sup class="footnote-reference" id="fr-fn21-1"><a href="#fn-fn21">21</a></sup></p>
 <ol>
 <li>
-<p>Training in higher virtue (<em>adhisīla-sikkhā</em>):<sup class="footnote-reference"><a href="#fn22">22</a></sup> training and
+<p>Training in higher virtue (<em>adhisīla-sikkhā</em>):<sup class="footnote-reference" id="fr-fn22-1"><a href="#fn-fn22">22</a></sup> training and
 study on the level of conduct and in line with a moral code, in
 order to be upright in body, speech, and livelihood.</p>
 </li>
 <li>
-<p>Training in higher mind (<em>adhicitta-sikkhā</em>):<sup class="footnote-reference"><a href="#fn23">23</a></sup> training the
+<p>Training in higher mind (<em>adhicitta-sikkhā</em>):<sup class="footnote-reference" id="fr-fn23-1"><a href="#fn-fn23">23</a></sup> training the
 mind, cultivating spiritual qualities, generating happiness,
 developing the state of one’s mind, and gaining proficiency at
 concentration.</p>
@@ -1464,7 +1445,7 @@ individual behaviour, and those dealing with communal issues:
 administration, looking into and considering legal issues, imposing
 penalties, appointing sangha officials, procedures for sangha meetings,
 proper decorum for both receiving visitors and for being a guest
-oneself, and the use of communal possessions.<sup class="footnote-reference"><a href="#fn24">24</a></sup></p>
+oneself, and the use of communal possessions.<sup class="footnote-reference" id="fr-fn24-1"><a href="#fn-fn24">24</a></sup></p>
 <p>In the context of the wider society the Buddha suggested broad
 principles to be used by leaders and rulers, who should determine the
 details of behaviour in relation to their state or nation. An example is
@@ -1472,7 +1453,7 @@ the teaching on the ’imperial observances’ (<em>cakkavatti-vatta</em>), whic
 presents principles for a king or emperor to rule in a righteous fashion
 favourable to all members of the population, to prevent lawlessness,
 immorality and evil in the country, and to distribute wealth so that
-none of the citizens are left destitute.<sup class="footnote-reference"><a href="#fn25">25</a></sup></p>
+none of the citizens are left destitute.<sup class="footnote-reference" id="fr-fn25-1"><a href="#fn-fn25">25</a></sup></p>
 <p>In contemporary parlance a disciplinary code (<em>vinaya</em>) fostering
 virtuous conduct (<em>sīla</em>) in society as a whole encompasses many
 aspects, including: the government, legislature, and judiciary; the
@@ -1483,7 +1464,7 @@ ill-repute, addictive substances, crime, and professional standards.</p>
 methods of developing tranquillity (<em>samatha</em>) and to various methods of
 (tranquillity) meditation, which many teachers and meditation centres
 have designed and established in the evolution of Buddhism, as is
-evident in the meditation systems described in the commentaries,<sup class="footnote-reference"><a href="#fn26">26</a></sup>
+evident in the meditation systems described in the commentaries,<sup class="footnote-reference" id="fr-fn26-1"><a href="#fn-fn26">26</a></sup>
 which have been adapted over the ages. But in a general, comprehensive
 sense, higher mind or concentration encompasses all the methods and
 means to induce calm in people’s minds, to make people be steadfast in
@@ -1603,11 +1584,11 @@ meritorious action consisting of virtue, and the ground for
 meritorious action consisting of cultivation.</p>
 <p>[One who desires the good] should train in acts of merit, which have
 far-reaching effects and end in bliss.</p>
-<p>Let him practise generosity, righteous behaviour (samacariyā),<sup class="footnote-reference"><a href="#fn27">27</a></sup>
+<p>Let him practise generosity, righteous behaviour (samacariyā),<sup class="footnote-reference" id="fr-fn27-1"><a href="#fn-fn27">27</a></sup>
 and a heart of lovingkindness.</p>
 <p>A wise person who cultivates these three qualities leading to
 happiness,</p>
-<p>Attains a world of joy, free from misery.<sup class="footnote-reference"><a href="#fn28">28</a></sup></p>
+<p>Attains a world of joy, free from misery.<sup class="footnote-reference" id="fr-fn28-1"><a href="#fn-fn28">28</a></sup></p>
 <p><em>It. 51-52.</em></p>
 </blockquote>
 </div>
@@ -1909,7 +1890,7 @@ this time one is giving special emphasis and importance to developing
 specific factors or a group of factors, or that at this time specific
 factors have been summoned to play a salient role.</p>
 <p>From one perspective it appears that there are two systems of practice:
-an external training and an internal training.<sup class="footnote-reference"><a href="#fn29">29</a></sup> These two systems
+an external training and an internal training.<sup class="footnote-reference" id="fr-fn29-1"><a href="#fn-fn29">29</a></sup> These two systems
 are connected, and the validity of both is acknowledged in the Buddhist
 teachings.</p>
 <p>The relationship between the levels of practice outlined in the
@@ -1989,7 +1970,7 @@ with the interrelationship of the Path factors. Right view thus
 generates and fosters moral conduct, which then leads to the ensuing
 Path factors. Moreover, right view enhances the quality of spiritual
 training and both strengthens and refines all the other Path
-factors.<sup class="footnote-reference"><a href="#fn30">30</a></sup></p>
+factors.<sup class="footnote-reference" id="fr-fn30-1"><a href="#fn-fn30">30</a></sup></p>
 <p>From a preliminary perspective this cycle of the threefold training is
 similar to three distinct ways of practice functioning in parallel at
 all times. An example of this is a description in the Visuddhimagga of
@@ -2000,7 +1981,7 @@ morality (<em>adhisīla-sikkhā</em>); to make the mind steadfast and stable
 (i.e. to remain with the activity or object of attention) is the
 training in higher concentration (<em>adhicitta-sikkhā</em>); to apply wisdom
 or the knowledge arising during this activity is the training in higher
-wisdom (<em>adhipaññā-sikkhā</em>).<sup class="footnote-reference"><a href="#fn31">31</a></sup> {555}</p>
+wisdom (<em>adhipaññā-sikkhā</em>).<sup class="footnote-reference" id="fr-fn31-1"><a href="#fn-fn31">31</a></sup> {555}</p>
 <p>The threefold training is a teaching frequently presented by the Buddha
 (<em>bahula-dhammīkathā</em>). The following passage describes the sequential
 nature of this training:</p>
@@ -2038,7 +2019,7 @@ mental ’sediment’.</p>
 format for spiritual practice, and these teachings are often referred to
 by later generations of Buddhists. For example, the threefold training
 is an important component of the key teaching known as the Ovāda
-Pāṭimokkha, of which one verse contains three clauses:<sup class="footnote-reference"><a href="#fn32">32</a></sup></p>
+Pāṭimokkha, of which one verse contains three clauses:<sup class="footnote-reference" id="fr-fn32-1"><a href="#fn-fn32">32</a></sup></p>
 <ol>
 <li>
 <p><em>Sabbapāpassa akaraṇaṁ</em>: to refrain from all evil.</p>
@@ -2090,7 +2071,7 @@ of the goal. For this reason there are passages in the scriptures in
 which two more factors are added to the end of the Eightfold Path: right
 knowledge (<em>sammā-ñāṇa</em>; corresponding to <em>ñāṇa-karaṇī</em> and
 <em>cakkhu-karaṇī</em>), and right liberation (<em>sammā-vimutti</em>; corresponding
-to ’peace, awakening, Nibbāna’).<sup class="footnote-reference"><a href="#fn33">33</a></sup></p>
+to ’peace, awakening, Nibbāna’).<sup class="footnote-reference" id="fr-fn33-1"><a href="#fn-fn33">33</a></sup></p>
 <p>Right view is thus similar to a bridge, leading from ignorance
 (<em>avijjā</em>) to true knowledge (<em>vijjā</em>). When one possesses true
 knowledge (<em>vijjā</em>), ’right knowledge’ (<em>sammā-ñāṇa</em>) arises and one
@@ -2108,13 +2089,13 @@ forward. Right mindfulness is like an instrument which controls, guides
 and guards one’s movements, so that one remains on the path, travels at
 the proper pace, and avoids danger.</p>
 <p>All levels of practice, whether it be of moral conduct, concentration,
-or wisdom, thus rely on these three Path factors.<sup class="footnote-reference"><a href="#fn34">34</a></sup> {557}</p>
+or wisdom, thus rely on these three Path factors.<sup class="footnote-reference" id="fr-fn34-1"><a href="#fn-fn34">34</a></sup> {557}</p>
 <h3 id="beginning-and-end-of-the-path"><a class="header" href="#beginning-and-end-of-the-path">Beginning and End of the Path</a></h3>
 <p><em>Sammā-diṭṭhi</em> is translated as right view or correct view. On a mundane
 level this refers to seeing things in accord with the teachings on truth
 (Dhamma). On a transcendent level this refers to seeing things directly
 in accord with truth: according to reality or to the law of
-conditionality.<sup class="footnote-reference"><a href="#fn35">35</a></sup> Seeing things, or even believing in things, in
+conditionality.<sup class="footnote-reference" id="fr-fn35-1"><a href="#fn-fn35">35</a></sup> Seeing things, or even believing in things, in
 accord with Dhamma teachings, for example believing that by doing good
 one will receive good and by doing evil one will receive evil, is enough
 to begin Dhamma practice. By having such views and beliefs one is ready
@@ -2216,12 +2197,12 @@ development of right view as beginning solely by way of faith.</p>
 cultivate wisdom without relying on faith in others. They rely entirely
 on wise reflection (<em>yoniso-manasikāra</em>) – the ability to see things as
 they truly are and according to causes and conditions – until they
-develop wisdom to the stage of penetrative insight into truth.<sup class="footnote-reference"><a href="#fn36">36</a></sup>
+develop wisdom to the stage of penetrative insight into truth.<sup class="footnote-reference" id="fr-fn36-1"><a href="#fn-fn36">36</a></sup>
 {559}</p>
 <p>Likewise, the wisdom development of ordinary people, who begin with
 faith, relies on their ability to apply wise reflection. Transcendent
 wisdom in particular, which fathoms the truth and completely dispels
-mental impurity, is unable to arise without wise reflection.<sup class="footnote-reference"><a href="#fn37">37</a></sup>
+mental impurity, is unable to arise without wise reflection.<sup class="footnote-reference" id="fr-fn37-1"><a href="#fn-fn37">37</a></sup>
 Correct, desirable faith is linked to or activates wise reflection.
 Therefore, the complete process should be illustrated as shown on
 Figure <a href="#fig-wisdom-development">Wisdom Development</a>.</p>
@@ -2280,11 +2261,11 @@ restraint in accord with the monastic code of discipline
 (<em>pāṭimokkhasaṁvara-sīla</em>), <em>adhicitta-sikkhā</em> refers to the four
 jhānas, and <em>adhipaññā-sikkhā</em> refers either to knowledge of the Four
 Noble Truths or to realization of liberation of mind (<em>cetovimutti</em>) and
-liberation by wisdom (<em>paññāvimutti</em>).<sup class="footnote-reference"><a href="#fn38">38</a></sup> The Niddesa expands this
-definition slightly.<sup class="footnote-reference"><a href="#fn39">39</a></sup> {562}</p>
+liberation by wisdom (<em>paññāvimutti</em>).<sup class="footnote-reference" id="fr-fn38-1"><a href="#fn-fn38">38</a></sup> The Niddesa expands this
+definition slightly.<sup class="footnote-reference" id="fr-fn39-1"><a href="#fn-fn39">39</a></sup> {562}</p>
 <p>The Paṭisambhidāmagga broadens this definition, defining <em>adhisīla</em> as
 restraint (<em>saṁvara</em>), <em>adhicitta</em> as non-distraction, and <em>adhipaññā</em>
-as right view or right understanding.<sup class="footnote-reference"><a href="#fn40">40</a></sup></p>
+as right view or right understanding.<sup class="footnote-reference" id="fr-fn40-1"><a href="#fn-fn40">40</a></sup></p>
 <p>The Samantapāsādikā claims that the threefold training does not simply
 refer to the five or ten precepts, the eight concentrative attainments,
 or an understanding conforming to the law of karma, of reaping what one
@@ -2296,25 +2277,25 @@ concentration and wisdom accompanying the appearance of a Buddha, i.e.
 discipline, <em>adhicitta</em> equals the mind possessed of the eight
 concentrative attainments, which act as a basis for insight, and
 <em>adhipaññā</em> equals insight knowledge (<em>vipassanā-ñāṇa</em>) which is able to
-discern the three characteristics.<sup class="footnote-reference"><a href="#fn41">41</a></sup></p>
+discern the three characteristics.<sup class="footnote-reference" id="fr-fn41-1"><a href="#fn-fn41">41</a></sup></p>
 <p>In the highest sense, the commentaries say that the threefold training
 refers to transcendent virtue, concentration, and wisdom, but this
 definition can only be applied in limited contexts.</p>
 <p>Occasionally they relax the definition, stating that <em>adhisīla</em> refers
 to the moral conduct – either the five or ten precepts – undertaken by
 someone who aims for Nibbāna, and <em>adhicitta</em> refers to the eight
-concentrative attainments.<sup class="footnote-reference"><a href="#fn42">42</a></sup> In regard to the passages in which the
-Buddha speaks about ’higher virtue’ for laypeople,<sup class="footnote-reference"><a href="#fn43">43</a></sup> the commentaries
-say that this refers to the five or ten precepts.<sup class="footnote-reference"><a href="#fn44">44</a></sup></p>
+concentrative attainments.<sup class="footnote-reference" id="fr-fn42-1"><a href="#fn-fn42">42</a></sup> In regard to the passages in which the
+Buddha speaks about ’higher virtue’ for laypeople,<sup class="footnote-reference" id="fr-fn43-1"><a href="#fn-fn43">43</a></sup> the commentaries
+say that this refers to the five or ten precepts.<sup class="footnote-reference" id="fr-fn44-1"><a href="#fn-fn44">44</a></sup></p>
 <p>Sometimes the prefix <em>adhi</em>- simply means ’better’ or ’higher’ when
 comparing two things, for example the ten precepts are <em>adhisīla</em> in
 comparison to the five precepts, and the fine-material mind
 (<em>rūpāvacara-citta</em>) is <em>adhicitta</em> in comparison to the sense-sphere
-mind (<em>kāmāvacara-citta</em>).<sup class="footnote-reference"><a href="#fn45">45</a></sup></p>
+mind (<em>kāmāvacara-citta</em>).<sup class="footnote-reference" id="fr-fn45-1"><a href="#fn-fn45">45</a></sup></p>
 <p>In essence the threefold training refers to virtuous conduct,
 concentration, and wisdom which are practised correctly according to the
 Buddhist teachings and are conducive to advancing in spiritual
-practice.<sup class="footnote-reference"><a href="#fn46">46</a></sup></p>
+practice.<sup class="footnote-reference" id="fr-fn46-1"><a href="#fn-fn46">46</a></sup></p>
 <p>The commentaries often describe the threefold training in the context of
 various stages of abandoning mental defilement:</p>
 <ol>
@@ -2343,10 +2324,10 @@ abandonment by suppression (<em>vikkhambhana-pahāna</em>), and <em>paññā</em
 abandonment by cutting off (<em>samuccheda-pahāna</em>); and: <em>sīla</em> is a way
 of abandoning immoral conduct, <em>samādhi</em> is a way of abandoning craving
 (<em>taṇhā</em>), and <em>paññā</em> is a way of abandoning fixed views
-(<em>diṭṭhi</em>).<sup class="footnote-reference"><a href="#fn47">47</a></sup></p>
+(<em>diṭṭhi</em>).<sup class="footnote-reference" id="fr-fn47-1"><a href="#fn-fn47">47</a></sup></p>
 <p>The Path factors are arranged into the three trainings in a similar way
 that they are arranged into the three ’bodies of doctrine’
-(<em>dhamma-khandha</em>).<sup class="footnote-reference"><a href="#fn48">48</a></sup></p>
+(<em>dhamma-khandha</em>).<sup class="footnote-reference" id="fr-fn48-1"><a href="#fn-fn48">48</a></sup></p>
 <h2 id="appendix-2-two-extremes"><a class="header" href="#appendix-2-two-extremes">Appendix 2: Two Extremes</a></h2>
 <p>A passage from the Aṅguttara Nikāya defines <em>kāma-sukhallikānuyoga</em> as
 <em>āgāḷha-paṭipadā</em> (rough path; coarse path), referring to those people
@@ -2359,7 +2340,7 @@ as any of the groups of spiritual qualities contained in the
 thirty-seven factors of enlightenment (<em>bodhipakkhiya-dhamma</em>: the four
 foundations of mindfulness; the four right efforts; the four roads to
 success; the five faculties; the five powers; the seven factors of
-enlightenment; and the Eightfold Path).<sup class="footnote-reference"><a href="#fn49">49</a></sup></p>
+enlightenment; and the Eightfold Path).<sup class="footnote-reference" id="fr-fn49-1"><a href="#fn-fn49">49</a></sup></p>
 <p>The Udāna contains this passage:</p>
 <div class="sutta">
 <blockquote>
@@ -2378,7 +2359,7 @@ no round (of rebirth) to be declared.</p>
 </div>
 <p>(The commentaries define ’earning a living’ as ’living as an ascetic’,
 and they equate <em>atta-kilamathānuyoga</em> with an adherence to precepts and
-religious practices (<em>sīlabbata-parāmāsa</em>).)<sup class="footnote-reference"><a href="#fn50">50</a></sup></p>
+religious practices (<em>sīlabbata-parāmāsa</em>).)<sup class="footnote-reference" id="fr-fn50-1"><a href="#fn-fn50">50</a></sup></p>
 <div class="illustration" style="width: 40%;">
 <p><a href="https://buddhadhamma.github.io/includes/images/illustrations/lotus-flowers-2.pdf"><img src="./includes/images/illustrations/lotus-flowers-2.jpg" alt="image" /></a></p>
 <p class="caption">
@@ -2390,85 +2371,86 @@ religious practices (<em>sīlabbata-parāmāsa</em>).)<sup class="footnote-refer
 <p>Lotus Flowers</p>
 </div>
 </div>
-<div class="footnote-definition" id="fn1"><sup class="footnote-definition-label">1</sup>
-<p>For more on the two extremes see Appendix 2.</p>
-</div>
-<div class="footnote-definition" id="fn2"><sup class="footnote-definition-label">2</sup>
+<div class="footnotes">
+<aside class="footnote-definition" id="fn-fn1"><sup class="footnote-definition-label">1</sup>
+<p>For more on the two extremes see Appendix 2. <a href="#fr-fn1-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn2"><sup class="footnote-definition-label">2</sup>
 <p>’The right path which is wholesome’ (<em>ñāya-dhamma</em>) can also be
 translated as ’whole-someness leading to deliverance’. <em>Ñāya</em> or
 <em>ñāya-dhamma</em> refers to the transcendent path, the Truth, or
-Nibbāna.</p>
-</div>
-<div class="footnote-definition" id="fn3"><sup class="footnote-definition-label">3</sup>
+Nibbāna. <a href="#fr-fn2-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn3"><sup class="footnote-definition-label">3</sup>
 <p>The term <em>kalyāṇamitta</em> does not simply refer to common
 friendships, but refers to anyone who is a teacher, friend, or
 guide, including books and forms of media, which offer advice,
 bestow knowledge, introduce ways of thinking, and reveal paths of
-spiritual practice.</p>
-</div>
-<div class="footnote-definition" id="fn4"><sup class="footnote-definition-label">4</sup>
+spiritual practice. <a href="#fr-fn3-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn4"><sup class="footnote-definition-label">4</sup>
 <p>The commentaries state that only a person with exceptional wisdom,
 like an omniscient Buddha or a Silent Buddha, is able to develop
 comprehensive insight through his own wise reflection, without
-relying on social factors (see: MA. II. 346).</p>
-</div>
-<div class="footnote-definition" id="fn5"><sup class="footnote-definition-label">5</sup>
+relying on social factors (see: MA. II. 346). <a href="#fr-fn4-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn5"><sup class="footnote-definition-label">5</sup>
 <p>Trans.: the expression <em>sin wayn sin gam</em> (’the end of
-retribution, the end of kamma’) in Thai means to die.</p>
-</div>
-<div class="footnote-definition" id="fn6"><sup class="footnote-definition-label">6</sup>
+retribution, the end of kamma’) in Thai means to die. <a href="#fr-fn5-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn6"><sup class="footnote-definition-label">6</sup>
 <p>’View’ (<em>diṭṭhi</em>) here refers to beliefs, theories, and an
-understanding of the truth.</p>
-</div>
-<div class="footnote-definition" id="fn7"><sup class="footnote-definition-label">7</sup>
+understanding of the truth. <a href="#fr-fn6-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn7"><sup class="footnote-definition-label">7</sup>
 <p>The Rathavinīta Sutta (M. I. 145-51) gives special emphasis to
 this subject, describing both the general and specific objectives of
 various spiritual qualities, according to the seven stages of purity
-(<em>visuddhi</em>).</p>
-</div>
-<div class="footnote-definition" id="fn8"><sup class="footnote-definition-label">8</sup>
+(<em>visuddhi</em>). <a href="#fr-fn7-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn8"><sup class="footnote-definition-label">8</sup>
 <p>’Unshakeable deliverance of mind’ (<em>akuppā-cetovimutti</em>) is
-perfect, immutable liberation of mind.</p>
-</div>
-<div class="footnote-definition" id="fn9"><sup class="footnote-definition-label">9</sup>
+perfect, immutable liberation of mind. <a href="#fr-fn8-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn9"><sup class="footnote-definition-label">9</sup>
 <p>M. I. 490-94; D. III. 123-6; cf.: D. II. 104-5 = S. V. 260-62 =
-A. IV. 310 = Ud. 63.</p>
-</div>
-<div class="footnote-definition" id="fn10"><sup class="footnote-definition-label">10</sup>
+A. IV. 310 = Ud. 63. <a href="#fr-fn9-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn10"><sup class="footnote-definition-label">10</sup>
 <p>For different definitions of the term <em>brahma</em>, see: MA. I. 34;
-BvA. 18; VbhA. 399.</p>
-</div>
-<div class="footnote-definition" id="fn11"><sup class="footnote-definition-label">11</sup>
-<p><em>Brahmacariyanti seṭṭhacariyaṁ</em>, e.g.: DA. III. 708.</p>
-</div>
-<div class="footnote-definition" id="fn12"><sup class="footnote-definition-label">12</sup>
+BvA. 18; VbhA. 399. <a href="#fr-fn10-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn11"><sup class="footnote-definition-label">11</sup>
+<p><em>Brahmacariyanti seṭṭhacariyaṁ</em>, e.g.: DA. III. 708. <a href="#fr-fn11-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn12"><sup class="footnote-definition-label">12</sup>
 <p>For the definition of <em>sīla-dhamma</em>, see Appendix 2 in chapter
-17.</p>
-</div>
-<div class="footnote-definition" id="fn13"><sup class="footnote-definition-label">13</sup>
-<p>See Appendix 2: ’Diṭṭhadhammika and Samparāyika’ in chapter 6.</p>
-</div>
-<div class="footnote-definition" id="fn14"><sup class="footnote-definition-label">14</sup>
+17. <a href="#fr-fn12-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn13"><sup class="footnote-definition-label">13</sup>
+<p>See Appendix 2: ’Diṭṭhadhammika and Samparāyika’ in chapter 6. <a href="#fr-fn13-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn14"><sup class="footnote-definition-label">14</sup>
 <p>E.g.: Nd. II. 57, 66, 72; cf.: SnA. I. 74; NdA. II. 296; VismṬ.:
-Cha-anussatiniddesavaṇṇanā, Buddhānussatikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn15"><sup class="footnote-definition-label">15</sup>
-<p>A. IV. 281-4.</p>
-</div>
-<div class="footnote-definition" id="fn16"><sup class="footnote-definition-label">16</sup>
+Cha-anussatiniddesavaṇṇanā, Buddhānussatikathāvaṇṇanā. <a href="#fr-fn14-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn15"><sup class="footnote-definition-label">15</sup>
+<p>A. IV. 281-4. <a href="#fr-fn15-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn16"><sup class="footnote-definition-label">16</sup>
 <p>See: D. III. 218; A. IV. 241-2; It. 15, 51-2; DA. III. 999;
-ItA. I. 78; ItA. II. 23.</p>
-</div>
-<div class="footnote-definition" id="fn17"><sup class="footnote-definition-label">17</sup>
-<p>Lust (<em>rāga</em>) here is the same as greed (<em>lobha</em>).</p>
-</div>
-<div class="footnote-definition" id="fn18"><sup class="footnote-definition-label">18</sup>
+ItA. I. 78; ItA. II. 23. <a href="#fr-fn16-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn17"><sup class="footnote-definition-label">17</sup>
+<p>Lust (<em>rāga</em>) here is the same as greed (<em>lobha</em>). <a href="#fr-fn17-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn18"><sup class="footnote-definition-label">18</sup>
 <p>Another sutta, which is similar but shorter, is: A. I. 157-8. At
 S. V. 124 and A. III. 64, 234-5, the five hindrances (<em>nīvaraṇa</em>) are
 described as the source of failing to recognize these three forms of
-welfare.</p>
-</div>
-<div class="footnote-definition" id="fn19"><sup class="footnote-definition-label">19</sup>
+welfare. <a href="#fr-fn18-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn19"><sup class="footnote-definition-label">19</sup>
 <p>The source of this information is the same as that on the first
 triad of benefits: <em>diṭṭhadhammikattha</em>, <em>samparāyikattha</em>, and
 <em>paramattha</em>; see the sutta references above. See also the
@@ -2476,65 +2458,65 @@ explanations of the Buddha’s virtues (<em>buddha-guṇa</em>) at VismṬ.:
 Cha-anussatiniddesavaṇṇanā, Buddhānussatikathāvaṇṇanā (in two
 passages) and VinṬ.: Paṭhamo Bhāgo, Verañjakaṇḍavaṇṇanā, pointing out
 the relationship between <em>attattha</em> and <em>paññā</em>, and between
-<em>parattha</em> and <em>karuṇā</em>.</p>
-</div>
-<div class="footnote-definition" id="fn20"><sup class="footnote-definition-label">20</sup>
+<em>parattha</em> and <em>karuṇā</em>. <a href="#fr-fn19-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn20"><sup class="footnote-definition-label">20</sup>
 <p>Note that referring to the threefold training as
 <em>sīla-samādhi-paññā</em> is informal; in the Pali Canon the terms
 <em>sīla-sikkhā</em>, <em>samādhi-sikkhā</em>, and <em>paññā-sikkhā</em> do not exist. In
 some canonical texts the three aggregates and the three trainings
 are arranged in sequence, but their original names
 (<em>adhisīla-sikkhā</em>, etc.) are strictly preserved (e.g.: VbhA. 122;
-PsA. 196).</p>
-</div>
-<div class="footnote-definition" id="fn21"><sup class="footnote-definition-label">21</sup>
+PsA. 196). <a href="#fr-fn20-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn21"><sup class="footnote-definition-label">21</sup>
 <p>For a doctrinal explanation of the threefold training, see
-Appendix 1.</p>
-</div>
-<div class="footnote-definition" id="fn22"><sup class="footnote-definition-label">22</sup>
+Appendix 1. <a href="#fr-fn21-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn22"><sup class="footnote-definition-label">22</sup>
 <p>Trans.: the author uses the English translation ’training in
-higher morality’.</p>
-</div>
-<div class="footnote-definition" id="fn23"><sup class="footnote-definition-label">23</sup>
+higher morality’. <a href="#fr-fn22-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn23"><sup class="footnote-definition-label">23</sup>
 <p>Trans.: the author uses the English translations ’training in
-higher mentality’ and ’training in higher mental discipline’.</p>
-</div>
-<div class="footnote-definition" id="fn24"><sup class="footnote-definition-label">24</sup>
+higher mentality’ and ’training in higher mental discipline’. <a href="#fr-fn23-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn24"><sup class="footnote-definition-label">24</sup>
 <p>The term <em>vinaya</em> tends to be interpreted by Buddhist scholars in
 a very narrow sense, as referring merely to rules and regulations
-dealing with individual behaviour.</p>
-</div>
-<div class="footnote-definition" id="fn25"><sup class="footnote-definition-label">25</sup>
+dealing with individual behaviour. <a href="#fr-fn24-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn25"><sup class="footnote-definition-label">25</sup>
 <p>See the teaching on the imperial observances at D. III. 61, and
 on the ’royal acts of service’ (<em>rājasaṅgaha-vatthu</em>) according to
 the Kūṭadanta Sutta (D. I. 135); see also SA. I. 144, ItA. I. 93. A
 prominent example of laying down a moral code for society based on
 Buddhist principles is the system of rulership prescribed by Emperor
-Asoka (BE. 218-260 or 270-312; CE. 325-283 or 273-231).</p>
-</div>
-<div class="footnote-definition" id="fn26"><sup class="footnote-definition-label">26</sup>
-<p>E.g.: Vism. 84-228.</p>
-</div>
-<div class="footnote-definition" id="fn27"><sup class="footnote-definition-label">27</sup>
-<p>Behaviour according to or consistent with Dhamma.</p>
-</div>
-<div class="footnote-definition" id="fn28"><sup class="footnote-definition-label">28</sup>
+Asoka (BE. 218-260 or 270-312; CE. 325-283 or 273-231). <a href="#fr-fn25-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn26"><sup class="footnote-definition-label">26</sup>
+<p>E.g.: Vism. 84-228. <a href="#fr-fn26-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn27"><sup class="footnote-definition-label">27</sup>
+<p>Behaviour according to or consistent with Dhamma. <a href="#fr-fn27-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn28"><sup class="footnote-definition-label">28</sup>
 <p>On the ten bases of meritorious action, see: DA. III. 999; Comp.:
-Vīthimuttaparicchedo, Kammacatukkaṁ.</p>
-</div>
-<div class="footnote-definition" id="fn29"><sup class="footnote-definition-label">29</sup>
+Vīthimuttaparicchedo, Kammacatukkaṁ. <a href="#fr-fn28-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn29"><sup class="footnote-definition-label">29</sup>
 <p>This matter will become more clear by considering the teachings
 on a virtuous friend (<em>kalyāṇamitta</em>) and on wise reflection
-(<em>yoniso-manasikāra</em>); see chapters 13 and 15.</p>
-</div>
-<div class="footnote-definition" id="fn30"><sup class="footnote-definition-label">30</sup>
+(<em>yoniso-manasikāra</em>); see chapters 13 and 15. <a href="#fr-fn29-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn30"><sup class="footnote-definition-label">30</sup>
 <p>See the section ’Right View in the Context of Spiritual Study’ in
-chapter 16.</p>
-</div>
-<div class="footnote-definition" id="fn31"><sup class="footnote-definition-label">31</sup>
-<p>See: Vism. 274.</p>
-</div>
-<div class="footnote-definition" id="fn32"><sup class="footnote-definition-label">32</sup>
+chapter 16. <a href="#fr-fn30-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn31"><sup class="footnote-definition-label">31</sup>
+<p>See: Vism. 274. <a href="#fr-fn31-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn32"><sup class="footnote-definition-label">32</sup>
 <p>D. II. 49-50; Dh. verses 183-5. For the classification of this
 teaching as matching the threefold training, see: DA. II. 479 and
 DhA. III. 237. The Dīghanikāya Aṭṭhakathā states that the first
@@ -2550,9 +2532,9 @@ second clause as <em>samādhi</em> and <em>paññā</em>, and the third clause a
 <em>samādhi</em> and <em>paññā</em> (here, one may also include <em>vimutti</em> –
 liberation). In any case, the Visuddhimagga presents a simple
 classification, as clause 1 = <em>sīla</em>, clause 2 = <em>samādhi</em>, and
-clause 3 = <em>paññā</em>, respectively; see: Vism. 4-5.</p>
-</div>
-<div class="footnote-definition" id="fn33"><sup class="footnote-definition-label">33</sup>
+clause 3 = <em>paññā</em>, respectively; see: Vism. 4-5. <a href="#fr-fn32-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn33"><sup class="footnote-definition-label">33</sup>
 <p>The addition of these two factors to the Eightfold Path, thus
 comprising ten factors, is referred to as the ten forms of
 righteousness (<em>sammatta</em>) or the ten qualities of an adept
@@ -2560,68 +2542,69 @@ righteousness (<em>sammatta</em>) or the ten qualities of an adept
 that <em>sammā-ñāṇa</em> is equivalent to knowledge of fruition
 (<em>phala-ñāṇa</em>) and knowledge of reviewing (<em>paccavekkhaṇa-ñāṇa</em>);
 see: MA. I. 189; AA. II. 382. <em>Sammā-ñāṇa</em> is the final stage of
-right view (see: MA. IV. 135; AA. V. 70).</p>
-</div>
-<div class="footnote-definition" id="fn34"><sup class="footnote-definition-label">34</sup>
+right view (see: MA. IV. 135; AA. V. 70). <a href="#fr-fn33-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn34"><sup class="footnote-definition-label">34</sup>
 <p>For an description of how these three Path factors arise together
 with the other Path factors, see the Mahācattārīsaka Sutta (M. III.
-71-78).</p>
-</div>
-<div class="footnote-definition" id="fn35"><sup class="footnote-definition-label">35</sup>
-<p>For a more detailed discussion on right view, see chapter 16.</p>
-</div>
-<div class="footnote-definition" id="fn36"><sup class="footnote-definition-label">36</sup>
+71-78). <a href="#fr-fn34-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn35"><sup class="footnote-definition-label">35</sup>
+<p>For a more detailed discussion on right view, see chapter 16. <a href="#fr-fn35-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn36"><sup class="footnote-definition-label">36</sup>
 <p>The commentaries state that Buddhas and Silent Buddhas are
 awakened solely by wise reflection, which acts as the condition for
-right view – see: MA. II. 346.</p>
-</div>
-<div class="footnote-definition" id="fn37"><sup class="footnote-definition-label">37</sup>
+right view – see: MA. II. 346. <a href="#fr-fn36-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn37"><sup class="footnote-definition-label">37</sup>
 <p>The commentaries at UdA. 107 state that learning from others
 (<em>paratoghosa</em>; i.e. the way of faith) is the condition for mundane
 right view, while wise reflection is the condition for transcendent
-right view.</p>
-</div>
-<div class="footnote-definition" id="fn38"><sup class="footnote-definition-label">38</sup>
-<p>A. I. 235-6.</p>
-</div>
-<div class="footnote-definition" id="fn39"><sup class="footnote-definition-label">39</sup>
-<p>Nd. I. 148; Nd. II. 9.</p>
-</div>
-<div class="footnote-definition" id="fn40"><sup class="footnote-definition-label">40</sup>
-<p>Ps. I. 47-8.</p>
-</div>
-<div class="footnote-definition" id="fn41"><sup class="footnote-definition-label">41</sup>
-<p>VinA. I. 244.</p>
-</div>
-<div class="footnote-definition" id="fn42"><sup class="footnote-definition-label">42</sup>
-<p>E.g.: DA. III. 1002.</p>
-</div>
-<div class="footnote-definition" id="fn43"><sup class="footnote-definition-label">43</sup>
-<p>E.g.: A. III. 263-4; A. IV. 25-6; spoken by another at A. I. 279.</p>
-</div>
-<div class="footnote-definition" id="fn44"><sup class="footnote-definition-label">44</sup>
-<p>AA. II. 378; AA. III. 332; AA. IV. 24.</p>
-</div>
-<div class="footnote-definition" id="fn45"><sup class="footnote-definition-label">45</sup>
-<p>AA. II. 346.</p>
-</div>
-<div class="footnote-definition" id="fn46"><sup class="footnote-definition-label">46</sup>
+right view. <a href="#fr-fn37-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn38"><sup class="footnote-definition-label">38</sup>
+<p>A. I. 235-6. <a href="#fr-fn38-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn39"><sup class="footnote-definition-label">39</sup>
+<p>Nd. I. 148; Nd. II. 9. <a href="#fr-fn39-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn40"><sup class="footnote-definition-label">40</sup>
+<p>Ps. I. 47-8. <a href="#fr-fn40-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn41"><sup class="footnote-definition-label">41</sup>
+<p>VinA. I. 244. <a href="#fr-fn41-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn42"><sup class="footnote-definition-label">42</sup>
+<p>E.g.: DA. III. 1002. <a href="#fr-fn42-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn43"><sup class="footnote-definition-label">43</sup>
+<p>E.g.: A. III. 263-4; A. IV. 25-6; spoken by another at A. I. 279. <a href="#fr-fn43-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn44"><sup class="footnote-definition-label">44</sup>
+<p>AA. II. 378; AA. III. 332; AA. IV. 24. <a href="#fr-fn44-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn45"><sup class="footnote-definition-label">45</sup>
+<p>AA. II. 346. <a href="#fr-fn45-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn46"><sup class="footnote-definition-label">46</sup>
 <p>For more information on this subject, see, e.g.: VinA. V. 993;
-UdA. 253; AA. II. 362; AA. III. 357.</p>
-</div>
-<div class="footnote-definition" id="fn47"><sup class="footnote-definition-label">47</sup>
+UdA. 253; AA. II. 362; AA. III. 357. <a href="#fr-fn46-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn47"><sup class="footnote-definition-label">47</sup>
 <p>See: VinA. I. 22 = DA. I. 19 = DhsA. 21; Vism. 5-6; VinṬ.:
 Paṭhamo Bhāgo, Paṭhamamahāsaṅgītikathāvaṇṇanā; VismṬ.: Paṭhamo
-Bhāgo, Nidānādikathāvaṇṇanā.</p>
-</div>
-<div class="footnote-definition" id="fn48"><sup class="footnote-definition-label">48</sup>
-<p>VbhA. 122; PsA. I. 196.</p>
-</div>
-<div class="footnote-definition" id="fn49"><sup class="footnote-definition-label">49</sup>
-<p>A. I. 295-6.</p>
-</div>
-<div class="footnote-definition" id="fn50"><sup class="footnote-definition-label">50</sup>
-<p>See: UdA. 351.</p>
+Bhāgo, Nidānādikathāvaṇṇanā. <a href="#fr-fn47-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn48"><sup class="footnote-definition-label">48</sup>
+<p>VbhA. 122; PsA. I. 196. <a href="#fr-fn48-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn49"><sup class="footnote-definition-label">49</sup>
+<p>A. I. 295-6. <a href="#fr-fn49-1">↩</a></p>
+</aside>
+<aside class="footnote-definition" id="fn-fn50"><sup class="footnote-definition-label">50</sup>
+<p>See: UdA. 351. <a href="#fr-fn50-1">↩</a></p>
+</aside>
 </div>
 
                     </main>
